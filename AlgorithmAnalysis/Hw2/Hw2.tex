@@ -1547,11 +1547,9 @@
         % ============================================================
         \subsubsection{Mejor Caso}
 
-            Ok, voy a ser un poco tramposo, pero el mejor caso sería cuando $n = 0$
-            en ese caso nunca entramos al while y por lo tanto es cero.
-
-            Es bastante obvio que otro caso bastante bueno es cuando $ m = kn$ es decir
-            que uno es multiplo de otro, pero nada supera a ese caso.
+            Ok, esta también esta sencilla, no puedes hacer nada para cambiar el flow del programa
+            mas que evitando entrar en los ifs, así como al while, por lo tanto si nuestro array
+            esta ordenado, en cuyo cas tenemos que $n - 1$
 
 
         % ============================================================
@@ -1560,14 +1558,16 @@
         \subsubsection{Peor Caso}
 
 
-            Ok, tengo que admitir que este es un problema conocido, es el clásico algoritmo de Euclides
-            y hay un caso muy feo para ese algoritmo, y es que sean dos número de Fibonacci consecutivos.
+            Es lo inverso, es cuando siempre entramos en el while y siempre en el if, por lo tanto
+            es lo inverso, cuando esta ordenado pero de mayor a menor.
 
-            Vamos a dar una explicación de porque:
-            Por definición $F_{k} = F_{k -1} + F_{k - 2}$, por lo tanto cuanto lo divides tienes que 
-            que el cociente siempre sera 1 en cada iteración, por lo tanto tardaremos $k$ divisiones en 
-            llegar a $k$, y como los números de Fibonacci se aproximan a $\phi^k$ entonces
-            tenemos que el peor caso será $f(n) = \log{\phi}(n)$
+            Por lo tanto:
+            \begin{align*}
+                f(n)
+                    &= \sum_{i = 0}^{n - 2} \sum_{i = 0}^{n - 2 - i} 4      \\
+                    &= 4(n-1)(n-1) - \frac{4(n-1)(n-1)}{2}                  \\
+                    &= 2n^2 - 2n 
+            \end{align*}
 
 
 
@@ -1576,9 +1576,246 @@
         % ============================================================
         \subsubsection{Caso Medio}
 
-            Si no son el peor caso entonces el cociente nunca podrá ser 1, es decir en cada paso podremos
-            dividir a la mitad el mayor número por lo tanto, es lo inverso a una exponcial es sencillo deducir
-            que es $f(n) = \log_2(n)$
+            De forma similar tenemos dos bifuraciones con el if, suponiendo que tenemos la misma
+            probabilidad de entrar es sencillo ver que:
+            $f(n) = \frac{5n^2 - 5n}{2}$
+
+
+
+    % ============================================================
+    % =================          ALGORITMOS      =================
+    % ============================================================
+    \clearpage
+    \subsection{Algoritmo 13}
+
+        Considera el siguiente algoritmos
+        \begin{lstlisting}[language=C, gobble=12, basicstyle=\small\color{white}]
+            func BurbujaSimple(A, n)
+                Para i = 0 hasta n - 2 hacer            
+                    Para j = 0 hasta (n - 2) - i hacer  
+                        Si A[j + 1] < A[j] hacer        
+                            aux = A[j]
+                            A[j] = A[j + 1]
+                            A[j + 1] = aux
+                        Fin Si                          
+                    Fin Para
+                Fin Para
+            Fin func
+        \end{lstlisting}
+
+        Usaremos las recomendaciónes, las comparaciones entre elementos del arreglo A, asignaciones
+        a aux y al arreglo A.
+
+        % ============================================================
+        % ================     MEJOR CASO      =======================
+        % ============================================================
+        \subsubsection{Mejor Caso}
+
+            Ok, esta también esta sencilla, no puedes hacer nada para cambiar el flow del programa
+            mas que evitando entrar en los ifs, así como al while.
+            Por lo tanto lo mejor que nos puede pasar es que el arreglo ya este ordenado ascendentemente
+
+            Ahora, vemos que la función se puede sacar facilmente como:
+            \begin{itemize}
+                \item El for interno se ejecuta cada $n-1 - i + 1$ veces, mas sencillo
+                es $n - i$ veces
+                \item Ahora vamos a ver cuantas veces se ejecuta el for de afuera, es sencillo
+                pues son $(n-1)$ veces 
+            \end{itemize}
+
+            Por lo tanto su suma es sencillamente $\frac{n^2 - n}{2}$
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Peor Caso}
+
+
+            Es lo inverso, es cuando siempre entramos en el while y siempre en el if, por lo tanto
+            es lo inverso, cuando esta ordenado pero de mayor a menor.
+
+            Por lo tanto:
+            \begin{align*}
+                f(n)
+                    &= \sum_{i = 0}^{n - 2} \sum_{i = 0}^{n - 2 - i} 4      \\
+                    &= 4(n-1)(n-1) - \frac{4(n-1)(n-1)}{2}                  \\
+                    &= 2n^2 - 2n 
+            \end{align*}
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Caso Medio}
+
+            De forma similar tenemos dos bifuraciones con el if, suponiendo que tenemos la misma
+            probabilidad de entrar es sencillo ver que:
+            $f(n) = \frac{5n^2 - 5n}{2}$
+
+
+
+
+    % ============================================================
+    % =================          ALGORITMOS      =================
+    % ============================================================
+    \clearpage
+    \subsection{Algoritmo 14}
+
+        Considera el siguiente algoritmos
+        \begin{lstlisting}[language=C, gobble=12, basicstyle=\small\color{white}]
+            func Ordena(a, b, c)
+                if(a > b)
+                    if(a > c)
+                        if(b > c)
+                            salida(a, b, c);        
+                        else
+                            salida(a, c, b);       
+                    else
+                        salida(c, a, b);           
+                else
+                    if(b > c)
+                        if(a > c)
+                            salida(b, a, c);        
+                        else
+                            salida(b, c, a);        
+                    else
+                        salida(c, b, a);           
+            Fin func
+        \end{lstlisting}
+
+        Usaremos las recomendaciónes, las comparaciones entre a, b, c.
+
+        Ok, voy a analizar este problema un poco diferente, porque voy a ir a cada camino posible
+        como no son muchos contando las comparaciones:
+        \begin{lstlisting}[language=C, gobble=12, basicstyle=\small\color{white}]
+            func Ordena(a, b, c)
+                if(a > b)
+                    if(a > c)
+                        if(b > c)
+                            salida(a, b, c);        // 3 Operaciones  
+                        else
+                            salida(a, c, b);        // 3 Operaciones        
+                    else
+                        salida(c, a, b);            // 2 Operaciones  
+                else
+                    if(b > c)
+                        if(a > c)
+                            salida(b, a, c);        // 3 Operaciones
+                        else
+                            salida(b, c, a);        // 3 Operaciones
+                    else
+                        salida(c, b, a);            // 2 Operaciones
+            Fin func
+        \end{lstlisting}
+
+        % ============================================================
+        % ================     MEJOR CASO      =======================
+        % ============================================================
+        \subsubsection{Mejor Caso}
+
+            Ok, este problema esta sencillo de analizar por la falta de ciclos raros y feos,
+            esto ayuda mucho.
+
+            Entonces, lo mejor que nos prodria pasar es entrar al primer if, y al segundo ... y al
+            tercero, es decir cuando $a > b$ y $a \leq c$.
+
+            O bien, igualmente cuando $a \leq b$ y $b \leq c$
+
+            Con $f(n) = 2$
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Peor Caso}
+
+
+            Es lo inverso, y pasa que como este algoritmo solo puede tardar 2 tiempos diferentes
+            entonces el peor caso es cualquier entrada que no sea el mejor caso.
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Caso Medio}
+
+            Por primera vez creo que hare una función que si sea realmente la correcta, es decir
+            es cada uno de los tiempos por la probabilidad de que ocurra, es decir:
+            $f(n) = \frac{4}{6}(2) + \frac{2}{6}(3) = \frac{8}{3}$
+
+
+
+
+    % ============================================================
+    % =================          ALGORITMOS      =================
+    % ============================================================
+    \clearpage
+    \subsection{Algoritmo 15}
+
+        Considera el siguiente algoritmos
+        \begin{lstlisting}[language=C, gobble=12, basicstyle=\small\color{white}]
+            func Seleccion(A, n)
+                Para k = 0 hasta n - 2 hacer            
+                    p = k
+                    Para i = k + 1 hasta n - 1 hacer    
+                        Si A[i] < A[p] entonces         
+                            p = i
+                        Fin Si                          
+                    Fin Para
+                    temp = A[p]
+                    A[p] = A[k]
+                    A[k] = temp                         
+                Fin Para
+            Fin func
+        \end{lstlisting}
+
+        Usaremos como operaciones basicas las comparaciones entre elementos del arreglo A, asignaciones
+        a temp y al arreglo A.
+
+        % ============================================================
+        % ================     MEJOR CASO      =======================
+        % ============================================================
+        \subsubsection{Mejor Caso}
+
+            Como ya va siendo costumbre en el mejor caso en los algoritmos de ordenamiento es que
+            este ordenado ascendentemente,porque en ese caso nunca entramos a los if, por lo tanto 
+            podemos encontrar la función facilmente gracias a las operaciones que estamos contando:
+            \begin{align*}
+                f(n)
+                    &= \sum_{k = 0}^{n-2} \Wrap{3 + \sum_{i = k +1}^{n-1} 1}    
+                    &&= \sum_{k = 0}^{n-2} 3 + n  - 1 + k                        \\
+                    &= \frac{2n^2 + 2n - 4 - n^2+ 3n -2}{2}                     
+                    &&= \frac{n^2 + 5n - 6}{2}
+            \end{align*}
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Peor Caso}
+
+
+            Es lo inverso, y pasa que como este algoritmo incluso si entra dentro del if  y en 
+            la vida real si que se tardaría mas como no estamos contando eso como una operación resulta
+            que el valor es igual:
+            $f(n) = \frac{n^2 + 5n - 6}{2}$
+
+
+
+        % ============================================================
+        % ================      PEOR CASO      =======================
+        % ============================================================
+        \subsubsection{Caso Medio}
+
+            Jajaja, ahora esto esta sencillo, porque si su caso mejor y peor son el mismo adivina cual es su
+            caso medio $f(n) = \frac{n^2 + 5n - 6}{2}$
+
 
 
 \end{document}
