@@ -1,0 +1,733 @@
+% ****************************************************************************************
+% *****************          ANALISIS DE ALGORITMOS           ****************************
+% ****************************************************************************************
+
+
+% =======================================================
+% =======         HEADER FOR DOCUMENT        ============
+% =======================================================
+    
+    % *********   HEADERS AND FOOTERS ********
+    \def\ProjectAuthorLink{https://github.com/SoyOscarRH}           %Just to keep it in line
+    \def\ProjectNameLink{https://github.com/CompilandoConocimiento} %Just to keep it in line
+
+    % *********   DOCUMENT ITSELF   **************
+    \documentclass[12pt, fleqn]{article}                            %Type of docuemtn and size of font and left eq
+    \usepackage[margin = 1.2in]{geometry}                           %Margins and Geometry pacakge
+    \usepackage[spanish]{babel}                                     %Please use spanish
+    \usepackage[utf8]{inputenc}                                     %Please use spanish - UFT
+    \usepackage{ifthen}                                             %Allow simple programming
+    \usepackage{hyperref}                                           %Create MetaData for a PDF and LINKS!
+    \usepackage{pdfpages}                                           %Create MetaData for a PDF and LINKS!
+    \hypersetup{pageanchor = false}                                 %Solve 'double page 1' warnings in build
+    \setlength{\parindent}{0pt}                                     %Eliminate ugly indentation
+    \author{Oscar Andrés Rosas}                                     %Who I am
+
+    % *********   LANGUAJE AND UFT-8   *********
+    \usepackage[T1]{fontenc}                                        %Please use spanish
+    \usepackage{textcmds}                                           %Allow us to use quoutes
+    \usepackage{changepage}                                         %Allow us to use identate paragraphs
+    \usepackage{anyfontsize}                                        %All the sizes
+
+    % *********   MATH AND HIS STYLE  *********
+    \usepackage{ntheorem, amsmath, amssymb, amsfonts}               %All fucking math, I want all!
+    \usepackage{mathrsfs, mathtools, empheq}                        %All fucking math, I want all!
+    \usepackage{cancel}                                             %Negate symbol
+    \usepackage{centernot}                                          %Allow me to negate a symbol
+    \decimalpoint                                                   %Use decimal point
+
+    % *********   GRAPHICS AND IMAGES *********
+    \usepackage{graphicx}                                           %Allow to create graphics
+    \usepackage{float}                                              %For images
+    \usepackage{wrapfig}                                            %Allow to create images
+    \graphicspath{ {Graphics/} }                                    %Where are the images :D
+
+    % *********   LISTS AND TABLES ***********
+    \usepackage{listings, listingsutf8}                             %We will be using code here
+    \usepackage[inline]{enumitem}                                   %We will need to enumarate
+    \usepackage{tasks}                                              %Horizontal lists
+    \usepackage{longtable}                                          %Lets make tables awesome
+    \usepackage{booktabs}                                           %Lets make tables awesome
+    \usepackage{tabularx}                                           %Lets make tables awesome
+    \usepackage{multirow}                                           %Lets make tables awesome
+    \usepackage{multicol}                                           %Create multicolumns
+
+    % *********   HEADERS AND FOOTERS ********
+    \usepackage{fancyhdr}                                           %Lets make awesome headers/footers
+    \pagestyle{fancy}                                               %Lets make awesome headers/footers
+    \setlength{\headheight}{16pt}                                   %Top line
+    \setlength{\parskip}{0.5em}                                     %Top line
+    \renewcommand{\footrulewidth}{0.5pt}                            %Bottom line
+
+    \lhead{                                                         %Left Header
+        \hyperlink{section.\arabic{section}}                        %Make a link to the current chapter
+        {\normalsize{\textsc{\nouppercase{\leftmark}}}}             %And fot it put the name
+    }
+
+    \rhead{                                                         %Right Header
+        \hyperlink{section.\arabic{section}.\arabic{subsection}}    %Make a link to the current chapter
+            {\footnotesize{\textsc{\nouppercase{\rightmark}}}}      %And fot it put the name
+    }
+
+    \rfoot{\textsc{\small{\hyperref[sec:Index]{Ve al Índice}}}}     %This will always be a footer  
+
+    \fancyfoot[L]{                                                  %Algoritm for a changing footer
+        \ifthenelse{\isodd{\value{page}}}                           %IF ODD PAGE:
+            {\href{https://compilandoconocimiento.com/nosotros/}    %DO THIS:
+                {\footnotesize                                      %Send the page
+                    {\textsc{Oscar Andrés Rosas}}}}                 %Send the page
+            {\href{https://compilandoconocimiento.com}              %ELSE DO THIS: 
+                {\footnotesize                                      %Send the author
+                    {\textsc{Laura Andres Morales}}}}               %Send the author
+    }
+    
+    
+    
+% =======================================================
+% ===================   COMMANDS    =====================
+% =======================================================
+
+    % =========================================
+    % =======   NEW ENVIRONMENTS   ============
+    % =========================================
+    \newenvironment{Indentation}[1][0.75em]                         %Use: \begin{Inde...}[Num]...\end{Inde...}
+        {\begin{adjustwidth}{#1}{}}                                 %If you dont put nothing i will use 0.75 em
+        {\end{adjustwidth}}                                         %This indentate a paragraph
+    \newenvironment{SmallIndentation}[1][0.75em]                    %Use: The same that we upper one, just 
+        {\begin{adjustwidth}{#1}{}\begin{footnotesize}}             %footnotesize size of letter by default
+        {\end{footnotesize}\end{adjustwidth}}                       %that's it
+
+    \newenvironment{MultiLineEquation}[1]                           %Use: To create MultiLine equations
+        {\begin{equation}\begin{alignedat}{#1}}                     %Use: \begin{Multi..}{Num. de Columnas}
+        {\end{alignedat}\end{equation}}                             %And.. that's it!
+    \newenvironment{MultiLineEquation*}[1]                          %Use: To create MultiLine equations
+        {\begin{equation*}\begin{alignedat}{#1}}                    %Use: \begin{Multi..}{Num. de Columnas}
+        {\end{alignedat}\end{equation*}}                            %And.. that's it!
+    
+
+    % =========================================
+    % == GENERAL TEXT & SYMBOLS ENVIRONMENTS ==
+    % =========================================
+    
+    % =====  TEXT  ======================
+    \newcommand \Quote {\qq}                                        %Use: \Quote to use quotes
+    \newcommand \Over {\overline}                                   %Use: \Bar to use just for short
+    \newcommand \ForceNewLine {$\Space$\\}                          %Use it in theorems for example
+
+    % =====  SPACES  ====================
+    \DeclareMathOperator \Space {\quad}                             %Use: \Space for a cool mega space
+    \DeclareMathOperator \MegaSpace {\quad \quad}                   %Use: \MegaSpace for a cool mega mega space
+    \DeclareMathOperator \MiniSpace {\;}                            %Use: \Space for a cool mini space
+    
+    % =====  MATH TEXT  =================
+    \newcommand \Such {\MiniSpace | \MiniSpace}                     %Use: \Such like in sets
+    \newcommand \Also {\MiniSpace \text{y} \MiniSpace}              %Use: \Also so it's look cool
+    \newcommand \Remember[1]{\Space\text{\scriptsize{#1}}}          %Use: \Remember so it's look cool
+    
+    % =====  THEOREMS  ==================
+    \newtheorem{Theorem}{Teorema}[section]                          %Use: \begin{Theorem}[Name]\label{Nombre}...
+    \newtheorem{Corollary}{Colorario}[Theorem]                      %Use: \begin{Corollary}[Name]\label{Nombre}...
+    \newtheorem{Lemma}[Theorem]{Lemma}                              %Use: \begin{Lemma}[Name]\label{Nombre}...
+    \newtheorem{Definition}{Definición}[section]                    %Use: \begin{Definition}[Name]\label{Nombre}...
+    \theoremstyle{break}                                            %THEOREMS START 1 SPACE AFTER
+
+    % =====  LOGIC  =====================
+    \newcommand \lIff {\leftrightarrow}                             %Use: \lIff for logic iff
+    \newcommand \lEqual {\MiniSpace \Leftrightarrow \MiniSpace}     %Use: \lEqual for a logic double arrow
+    \newcommand \lInfire {\MiniSpace \Rightarrow \MiniSpace}        %Use: \lInfire for a logic infire
+    \newcommand \lLongTo {\longrightarrow}                          %Use: \lLongTo for a long arrow
+
+    % =====  FAMOUS SETS  ===============
+    \DeclareMathOperator \Naturals     {\mathbb{N}}                 %Use: \Naturals por Notation
+    \DeclareMathOperator \Primes       {\mathbb{P}}                 %Use: \Primes por Notation
+    \DeclareMathOperator \Integers     {\mathbb{Z}}                 %Use: \Integers por Notation
+    \DeclareMathOperator \Racionals    {\mathbb{Q}}                 %Use: \Racionals por Notation
+    \DeclareMathOperator \Reals        {\mathbb{R}}                 %Use: \Reals por Notation
+    \DeclareMathOperator \Complexs     {\mathbb{C}}                 %Use: \Complex por Notation
+    \DeclareMathOperator \GenericField {\mathbb{F}}                 %Use: \GenericField por Notation
+    \DeclareMathOperator \VectorSet    {\mathbb{V}}                 %Use: \VectorSet por Notation
+    \DeclareMathOperator \SubVectorSet {\mathbb{W}}                 %Use: \SubVectorSet por Notation
+    \DeclareMathOperator \Polynomials  {\mathbb{P}}                 %Use: \Polynomials por Notation
+
+    % =====  CONTAINERS   ===============
+    \newcommand{\Set}[1]{\left\{ \; #1 \; \right\}}                 %Use: \Set {Info} for INTELLIGENT space 
+    \newcommand{\bigSet}[1]{\big\{ \; #1 \; \big\}}                 %Use: \bigSet  {Info} for space 
+    \newcommand{\BigSet}[1]{\Big\{ \; #1 \; \Big\}}                 %Use: \BigSet  {Info} for space 
+    \newcommand{\biggSet}[1]{\bigg\{ \; #1 \; \bigg\}}              %Use: \biggSet {Info} for space 
+    \newcommand{\BiggSet}[1]{\Bigg\{ \; #1 \; \Bigg\}}              %Use: \BiggSet {Info} for space 
+    
+    \newcommand{\Brackets}[1]{\left[ #1 \right]}                    %Use: \Brackets {Info} for INTELLIGENT space
+    \newcommand{\bigBrackets}[1]{\big[ \; #1 \; \big]}              %Use: \bigBrackets  {Info} for space 
+    \newcommand{\BigBrackets}[1]{\Big[ \; #1 \; \Big]}              %Use: \BigBrackets  {Info} for space 
+    \newcommand{\biggBrackets}[1]{\bigg[ \; #1 \; \bigg]}           %Use: \biggBrackets {Info} for space 
+    \newcommand{\BiggBrackets}[1]{\Bigg[ \; #1 \; \Bigg]}           %Use: \BiggBrackets {Info} for space 
+    
+    \newcommand{\Wrap}[1]{\left( #1 \right)}                        %Use: \Wrap {Info} for INTELLIGENT space
+    \newcommand{\bigWrap}[1]{\big( \; #1 \; \big)}                  %Use: \bigBrackets  {Info} for space 
+    \newcommand{\BigWrap}[1]{\Big( \; #1 \; \Big)}                  %Use: \BigBrackets  {Info} for space 
+    \newcommand{\biggWrap}[1]{\bigg( \; #1 \; \bigg)}               %Use: \biggBrackets {Info} for space 
+    \newcommand{\BiggWrap}[1]{\Bigg( \; #1 \; \Bigg)}               %Use: \BiggBrackets {Info} for space 
+
+    % =====  BETTERS MATH COMMANDS   =====
+    \newcommand{\pfrac}[2]{\Wrap{\dfrac{#1}{#2}}}                   %Use: Put fractions in parentesis
+
+    % =========================================
+    % ====   LINEAL ALGEBRA & VECTORS    ======
+    % =========================================
+
+    % ===== UNIT VECTORS  ================
+    \newcommand{\hati} {\hat{\imath}}                               %Use: \hati for unit vector    
+    \newcommand{\hatj} {\hat{\jmath}}                               %Use: \hatj for unit vector    
+    \newcommand{\hatk} {\hat{k}}                                    %Use: \hatk for unit vector
+
+    % ===== MAGNITUDE  ===================
+    \newcommand{\abs}[1]{\left\lvert #1 \right\lvert}               %Use: \abs{expression} for |x|
+    \newcommand{\Abs}[1]{\left\lVert #1 \right\lVert}               %Use: \Abs{expression} for ||x||
+    \newcommand{\Mag}[1]{\left| #1 \right|}                         %Use: \Mag {Info} 
+    
+    \DeclareMathOperator \LinealTransformation {\mathcal{T}}        %Use: \LinealTransformation for a cool T
+    \newcommand{\bVec}[1]{\mathbf{#1}}                              %Use for bold type of vector
+    \newcommand{\lVec}[1]{\overrightarrow{#1}}                      %Use for a long arrow over a vector
+    \newcommand{\uVec}[1]{\mathbf{\hat{#1}}}                        %Use: Unitary Vector Example: $\uVec{i}
+
+    % ===== ALL FOR DOT PRODUCT  =========
+    \makeatletter                                                   %WTF! IS THIS
+    \newcommand*\dotP{\mathpalette\dotP@{.5}}                       %Use: \dotP for dot product
+    \newcommand*\dotP@[2] {\mathbin {                               %WTF! IS THIS            
+        \vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}           %WTF! IS THIS
+    }                                                               %WTF! IS THIS
+    \makeatother                                                    %WTF! IS THIS
+
+    % === WRAPPERS FOR COLUMN VECTOR ===
+    \newcommand{\pVector}[1]                                        %Use: \pVector {Matrix Notation} use parentesis
+        { \ensuremath{\begin{pmatrix}#1\end{pmatrix}} }             %Example: \pVector{a\\b\\c} or \pVector{a&b&c} 
+    \newcommand{\lVector}[1]                                        %Use: \lVector {Matrix Notation} use a abs 
+        { \ensuremath{\begin{vmatrix}#1\end{vmatrix}} }             %Example: \lVector{a\\b\\c} or \lVector{a&b&c} 
+    \newcommand{\bVector}[1]                                        %Use: \bVector {Matrix Notation} use a brackets 
+        { \ensuremath{\begin{bmatrix}#1\end{bmatrix}} }             %Example: \bVector{a\\b\\c} or \bVector{a&b&c} 
+    \newcommand{\Vector}[1]                                         %Use: \Vector {Matrix Notation} no parentesis
+        { \ensuremath{\begin{matrix}#1\end{matrix}} }               %Example: \Vector{a\\b\\c} or \Vector{a&b&c}
+
+    % === MAKE MATRIX BETTER  =========
+    \makeatletter                                                   %Example: \begin{matrix}[cc|c]
+    \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c] {             %WTF! IS THIS
+        \hskip -\arraycolsep                                        %WTF! IS THIS
+        \let\@ifnextchar\new@ifnextchar                             %WTF! IS THIS
+        \array{#1}                                                  %WTF! IS THIS
+    }                                                               %WTF! IS THIS
+    \makeatother                                                    %WTF! IS THIS
+
+    % =========================================
+    % =======   FAMOUS FUNCTIONS   ============
+    % =========================================
+
+    % == TRIGONOMETRIC FUNCTIONS  ====
+    \newcommand{\Cos}[1] {\cos\Wrap{#1}}                            %Simple wrappers
+    \newcommand{\Sin}[1] {\sin\Wrap{#1}}                            %Simple wrappers
+    \newcommand{\Tan}[1] {tan\Wrap{#1}}                             %Simple wrappers
+    
+    \newcommand{\Sec}[1] {sec\Wrap{#1}}                             %Simple wrappers
+    \newcommand{\Csc}[1] {csc\Wrap{#1}}                             %Simple wrappers
+    \newcommand{\Cot}[1] {cot\Wrap{#1}}                             %Simple wrappers
+
+    % === COMPLEX ANALYSIS TRIG ======
+    \newcommand \Cis[1]  {\Cos{#1} + i \Sin{#1}}                    %Use: \Cis for cos(x) + i sin(x)
+    \newcommand \pCis[1] {\Wrap{\Cis{#1}}}                          %Use: \pCis for the same with parantesis
+    \newcommand \bCis[1] {\Brackets{\Cis{#1}}}                      %Use: \bCis for the same with Brackets
+
+
+    % =========================================
+    % ===========     CALCULUS     ============
+    % =========================================
+
+    % ====== TRANSFORMS =============
+    \newcommand{\FourierT}[1]{\mathscr{F} \left\{ #1 \right\} }     %Use: \FourierT {Funtion}
+    \newcommand{\InvFourierT}[1]{\mathscr{F}^{-1}\left\{#1\right\}} %Use: \InvFourierT {Funtion}
+
+    % ====== DERIVATIVES ============
+    \newcommand \MiniDerivate[1][x] {\dfrac{d}{d #1}}               %Use: \MiniDerivate[var] for simple use [var]
+    \newcommand \Derivate[2] {\dfrac{d \; #1}{d #2}}                %Use: \Derivate [f(x)][x]
+    \newcommand \MiniUpperDerivate[2] {\dfrac{d^{#2}}{d#1^{#2}}}    %Mini Derivate High Orden Derivate -- [x][pow]
+    \newcommand \UpperDerivate[3] {\dfrac{d^{#3} \; #1}{d#2^{#3}}}  %Complete High Orden Derivate -- [f(x)][x][pow]
+    
+    \newcommand \MiniPartial[1][x] {\dfrac{\partial}{\partial #1}}  %Use: \MiniDerivate for simple use [var]
+    \newcommand \Partial[2] {\dfrac{\partial \; #1}{\partial #2}}   %Complete Partial Derivate -- [f(x)][x]
+    \newcommand \MiniUpperPartial[2]                                %Mini Derivate High Orden Derivate -- [x][pow] 
+        {\dfrac{\partial^{#2}}{\partial #1^{#2}}}                   %Mini Derivate High Orden Derivate
+    \newcommand \UpperPartial[3]                                    %Complete High Orden Derivate -- [f(x)][x][pow]
+        {\dfrac{\partial^{#3} \; #1}{\partial#2^{#3}}}              %Use: \UpperDerivate for simple use
+
+    \DeclareMathOperator \Evaluate  {\Big|}                         %Use: \Evaluate por Notation
+
+    % =========================================
+    % ========    GENERAL STYLE     ===========
+    % =========================================
+    
+    % =====  COLORS ==================
+    \definecolor{RedMD}{HTML}{F44336}                               %Use: Color :D        
+    \definecolor{Red100MD}{HTML}{FFCDD2}                            %Use: Color :D        
+    \definecolor{Red200MD}{HTML}{EF9A9A}                            %Use: Color :D        
+    \definecolor{Red300MD}{HTML}{E57373}                            %Use: Color :D        
+    \definecolor{Red700MD}{HTML}{D32F2F}                            %Use: Color :D 
+
+    \definecolor{PurpleMD}{HTML}{9C27B0}                            %Use: Color :D        
+    \definecolor{Purple100MD}{HTML}{E1BEE7}                         %Use: Color :D        
+    \definecolor{Purple200MD}{HTML}{EF9A9A}                         %Use: Color :D        
+    \definecolor{Purple300MD}{HTML}{BA68C8}                         %Use: Color :D        
+    \definecolor{Purple700MD}{HTML}{7B1FA2}                         %Use: Color :D 
+
+    \definecolor{IndigoMD}{HTML}{3F51B5}                            %Use: Color :D        
+    \definecolor{Indigo100MD}{HTML}{C5CAE9}                         %Use: Color :D        
+    \definecolor{Indigo200MD}{HTML}{9FA8DA}                         %Use: Color :D        
+    \definecolor{Indigo300MD}{HTML}{7986CB}                         %Use: Color :D        
+    \definecolor{Indigo700MD}{HTML}{303F9F}                         %Use: Color :D 
+
+    \definecolor{BlueMD}{HTML}{2196F3}                              %Use: Color :D        
+    \definecolor{Blue100MD}{HTML}{BBDEFB}                           %Use: Color :D        
+    \definecolor{Blue200MD}{HTML}{90CAF9}                           %Use: Color :D        
+    \definecolor{Blue300MD}{HTML}{64B5F6}                           %Use: Color :D        
+    \definecolor{Blue700MD}{HTML}{1976D2}                           %Use: Color :D        
+    \definecolor{Blue900MD}{HTML}{0D47A1}                           %Use: Color :D  
+
+    \definecolor{CyanMD}{HTML}{00BCD4}                              %Use: Color :D        
+    \definecolor{Cyan100MD}{HTML}{B2EBF2}                           %Use: Color :D        
+    \definecolor{Cyan200MD}{HTML}{80DEEA}                           %Use: Color :D        
+    \definecolor{Cyan300MD}{HTML}{4DD0E1}                           %Use: Color :D        
+    \definecolor{Cyan700MD}{HTML}{0097A7}                           %Use: Color :D        
+    \definecolor{Cyan900MD}{HTML}{006064}                           %Use: Color :D 
+
+    \definecolor{TealMD}{HTML}{009688}                              %Use: Color :D        
+    \definecolor{Teal100MD}{HTML}{B2DFDB}                           %Use: Color :D        
+    \definecolor{Teal200MD}{HTML}{80CBC4}                           %Use: Color :D        
+    \definecolor{Teal300MD}{HTML}{4DB6AC}                           %Use: Color :D        
+    \definecolor{Teal700MD}{HTML}{00796B}                           %Use: Color :D        
+    \definecolor{Teal900MD}{HTML}{004D40}                           %Use: Color :D 
+
+    \definecolor{GreenMD}{HTML}{4CAF50}                             %Use: Color :D        
+    \definecolor{Green100MD}{HTML}{C8E6C9}                          %Use: Color :D        
+    \definecolor{Green200MD}{HTML}{A5D6A7}                          %Use: Color :D        
+    \definecolor{Green300MD}{HTML}{81C784}                          %Use: Color :D        
+    \definecolor{Green700MD}{HTML}{388E3C}                          %Use: Color :D        
+    \definecolor{Green900MD}{HTML}{1B5E20}                          %Use: Color :D
+
+    \definecolor{AmberMD}{HTML}{FFC107}                             %Use: Color :D        
+    \definecolor{Amber100MD}{HTML}{FFECB3}                          %Use: Color :D        
+    \definecolor{Amber200MD}{HTML}{FFE082}                          %Use: Color :D        
+    \definecolor{Amber300MD}{HTML}{FFD54F}                          %Use: Color :D        
+    \definecolor{Amber700MD}{HTML}{FFA000}                          %Use: Color :D        
+    \definecolor{Amber900MD}{HTML}{FF6F00}                          %Use: Color :D
+
+    \definecolor{BlueGreyMD}{HTML}{607D8B}                          %Use: Color :D        
+    \definecolor{BlueGrey100MD}{HTML}{CFD8DC}                       %Use: Color :D        
+    \definecolor{BlueGrey200MD}{HTML}{B0BEC5}                       %Use: Color :D        
+    \definecolor{BlueGrey300MD}{HTML}{90A4AE}                       %Use: Color :D        
+    \definecolor{BlueGrey700MD}{HTML}{455A64}                       %Use: Color :D        
+    \definecolor{BlueGrey900MD}{HTML}{263238}                       %Use: Color :D        
+
+    \definecolor{DeepPurpleMD}{HTML}{673AB7}                        %Use: Color :D
+
+    \newcommand{\Color}[2]{\textcolor{#1}{#2}}                      %Simple color environment
+    \newenvironment{ColorText}[1]                                   %Use: \begin{ColorText}
+        { \leavevmode\color{#1}\ignorespaces }                      %That's is!
+
+    % =====  CODE EDITOR =============
+    \lstdefinestyle{CompilandoStyle} {                              %This is Code Style
+        backgroundcolor     = \color{BlueGrey900MD},                %Background Color  
+        basicstyle          = \tiny\color{white},                   %Style of text
+        commentstyle        = \color{BlueGrey200MD},                %Comment style
+        stringstyle         = \color{Green300MD},                   %String style
+        keywordstyle        = \color{Blue300MD},                    %keywords style
+        numberstyle         = \tiny\color{TealMD},                  %Size of a number
+        frame               = shadowbox,                            %Adds a frame around the code
+        breakatwhitespace   = true,                                 %Style   
+        breaklines          = true,                                 %Style   
+        showstringspaces    = false,                                %Hate those spaces                  
+        breaklines          = true,                                 %Style                   
+        keepspaces          = true,                                 %Style                   
+        numbers             = left,                                 %Style                   
+        numbersep           = 10pt,                                 %Style 
+        xleftmargin         = \parindent,                           %Style 
+        tabsize             = 4,                                    %Style
+        inputencoding       = utf8/latin1                           %Allow me to use special chars
+    }
+ 
+    \lstset{style = CompilandoStyle}                                %Use this style
+
+
+
+
+
+
+
+% =====================================================
+% ============        COVER PAGE       ================
+% =====================================================
+\begin{document}
+\begin{titlepage}
+    
+    % ============ TITLE PAGE STYLE  ================
+    \definecolor{TitlePageColor}{cmyk}{1,.60,0,.40}                 %Simple colors
+    \definecolor{ColorSubtext}{cmyk}{1,.50,0,.10}                   %Simple colors
+    \newgeometry{left=0.20\textwidth}                               %Defines an Offset
+    \pagecolor{TitlePageColor}                                      %Make it this Color to page
+    \color{white}                                                   %General things should be white
+
+    % ===== MAKE SOME SPACE =========
+    \vspace                                                         %Give some space
+    \baselineskip                                                   %But we need this to up command
+
+    % ============ NAME OF THE PROJECT  ============
+    \makebox[0pt][l]{\rule{1.3\textwidth}{3pt}}                     %Make a cool line
+    
+    \href{https://compilandoconocimiento.com}                       %Link to project
+    {\textbf{\textsc{\Huge ESCOM - IPN}}}\\[2.7cm]                  %Name of project   
+
+    % ============ NAME OF THE BOOK  ===============
+    \href{\ProjectNameLink/LibroAnalisisDeAlgoritmos}               %Link to Author
+    {\fontsize{35}{40}                                              %Size of the book
+        \selectfont
+        \textbf{Reporte 1: \\Sensores Potenciométricos}}\\[0.5cm]   %Name of the book
+    \textcolor{ColorSubtext}                                        %Color or the topic
+        {\textsc{\LARGE Instrumentación}}                           %Name of the general theme
+    
+    \vfill                                                          %Fill the space
+    
+    % ============ NAME OF THE AUTHOR  =============
+    \href{\ProjectAuthorLink}                                       %Link to Author
+    {\LARGE 
+    \textsf{Oscar Andrés Rosas Hernandez y Laura Andres Morales}}   %Author
+
+    % ===== MAKE SOME SPACE =========
+    \vspace                                                         %Give some space
+    \baselineskip                                                   %But we need this to up command
+    
+    {\large \textsf{Realizada 12 de Febrero 2018}}                  %Date
+    
+    {\large \textsf{Entregada 19 de Febrero 2018}}                  %Date
+
+\end{titlepage}
+
+
+% =====================================================
+% ==========      RESTORE TO DOCUMENT      ============
+% =====================================================
+\restoregeometry                                                    %Restores the geometry
+\nopagecolor                                                        %Use to restore the color to white
+
+
+
+
+% =====================================================
+% ========                INDICE              =========
+% =====================================================
+\tableofcontents{}
+\label{sec:Index}
+
+\clearpage
+
+
+
+% ===============================================================================
+% ===================          INTRODUCCIÓN                ======================
+% ===============================================================================
+\section{Introducción: Sensores Potenciométricos}
+
+
+    % ==============================================================
+    % =================      RESISTORES           ==================
+    % ==============================================================
+    \subsection{Los Resistores}
+
+
+        % ==============================================================
+        % =================      DEFINICION           ==================
+        % ==============================================================
+        \subsubsection{Definición}
+
+            \begin{wrapfigure}{r}{0.35\textwidth}
+                \centering
+                \includegraphics[width=0.30\textwidth]{Resistencias}
+            \end{wrapfigure}
+
+            Las resistencias (o resistores si eres bien exquisito) son componentes electrónicos
+            que tienen un valor que nunca cambia especificado, la resistencia eléctrica,
+            esta se mide en Ohms.
+
+        % ==============================================================
+        % =================      CARACTERISTICAS      ==================
+        % ==============================================================
+        \subsubsection{Características}
+
+            \begin{itemize}
+                \item La resistencia del resistor limita el flujo de electrones a
+                    través de un circuito.
+
+                \item Son componentes pasivos, lo que significa que sólo consumen energía 
+                (y no pueden generarla).
+
+                \item Las resistencias se añaden habitualmente a los circuitos en los que
+                complementan los componentes activos como amplificadores operacionales,
+                microcontroladores, y otros circuitos integrados.
+
+                \item  Comúnmente se utilizan resistencias para limitar la corriente,
+                Divisores de Voltaje y controlar las líneas de I/O S (Entrada y salida
+                de datos pues).
+            \end{itemize}
+
+
+
+    % ==============================================================
+    % =================      POTENCIOMETRO        ==================
+    % ==============================================================
+    \vspace{1em}
+    \subsection{Potenciómetros}
+
+        Un potenciometro es un dispositivo conformado por 2 resistencias en serie,
+        las cuales poseen valores que pueden ser modificados por el usuario.
+        Existen múltiples tipos de potenciometros, variando su forma y el método
+        cómo modifican los valores de las resistencias. 
+
+        Para regular su valor se acciona un mando que se desplaza, en unos modelos
+        de forma giratoria, en otros, de forma rectilínea.
+
+
+        % ==============================================================
+        % =================        ESTRUCTURA         ==================
+        % ==============================================================
+        \clearpage
+        \subsubsection{Estructura}
+
+            A nivel interno, la estructura de un potenciometro es la siguiente:
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.95\textwidth]{Estructura}
+            \end{figure}
+            
+            \begin{wrapfigure}{r}{0.20\textwidth}
+                \centering
+                \includegraphics[width=0.20\textwidth]{Potenciometro}
+            \end{wrapfigure}
+            Un potenciometro son 2 resistencias conectadas en serie. A partir del nodo que
+            se forma entre estas dos resistencias tenemos un terminal, el cual normalmente
+            será la pata del centro en un potenciometro de 3 patas. 
+
+            Es, básicamente, el símbolo de una resistencia con una flecha que nos indica que
+            podemos variar su valor. Los potenciómetros que encontramos en el mercado vienen
+            con un valor de resistencia determinado.
+
+
+        % ==============================================================
+        % =================        TRIMMERS           ==================
+        % ==============================================================
+        \subsection{Trimmers}
+
+            \begin{wrapfigure}{r}{0.25\textwidth}
+                \centering
+                \includegraphics[width=0.20\textwidth]{Trimmer}
+            \end{wrapfigure}
+
+            También existen otros modelos especiales de potenciómetros llamados trimmers,
+            los cuales son potenciómetros de precisión.
+
+            Los trimmer son utilizados para ajustes de precisión en circuitos donde se
+            requiere que el usuario pueda modificar ciertos parámetros. Sea un potenciometro
+            común y corriente o un trimmer, ambos dispositivos comparten una característica:
+            tienen 3 terminales (o patas).
+
+
+
+
+
+
+
+% ===============================================================================
+% ===================          DESARROLLO                  ======================
+% ===============================================================================
+\clearpage
+\section{Desarrollo}
+
+
+    % ==============================================================
+    % =================      DIAGRAMAS            ==================
+    % ==============================================================
+    \subsection{Diagramas}
+
+        Veamos que nuestro circuito puede ser descrito con el siguiente diagrama:
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.85\textwidth]{Diagrama3}
+        \end{figure}
+
+        Este lo podemos dividir basicamente en 2 partes:
+        \begin{itemize}
+            \item 
+                \textbf{Circuito Sensor}
+
+                Es basicamente un divisor de voltaje entre una resistencia fija, que
+                nos permite limitar el paso de corriente a unos miliampers.
+
+                Usamos nuestro sensor potenciometrico para variar la resistencia
+                resultante a la salida de nuestro divisor de voltaje, esta diseñado para 
+                que vaya una salida de 0 a 1 volts.
+
+
+            \item 
+                \textbf{Circuito Acondicionamiento}
+
+                Es basicamente un amplificador operacional que nos permite amplificar la señal
+                de entrada en 5, por lo tanto tenemos a su salida de 0 a 5 Volts, perfecto
+                para un convertidor analogico-digital
+
+        \end{itemize}
+
+
+    % ==============================================================
+    % =================      CIRCUITO REAL        ==================
+    % ==============================================================
+    \clearpage
+    \subsection{Circuito Real}
+
+        Veamos que nuestro circuito fue construido de la siguiente manera:
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.85\textwidth]{CircuitoGeneral2}
+        \end{figure}
+
+
+    % ==============================================================
+    % =================      MEDICIONES           ==================
+    % ==============================================================
+    \clearpage
+    \subsection{Mediciones}
+
+
+        % ==============================================================
+        % =================      CIRCUITO SENSOR      ==================
+        % ==============================================================
+        \subsubsection{Circuito Sensor}
+
+            Podemos medir la cantidad de voltaje que nos arrojaba nuestro circuito 
+            en:
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.35\textwidth]{Medicion1VoltajeMax}
+                \caption{Voltaje Máximo: 1V}
+            \end{figure}
+
+
+            Por otro lado podemos ver la corriente a la salida del circuito sensor:
+            \begin{figure}[!htb]
+                \centering
+                \begin{minipage}{.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion1AmperajeMin}
+                \caption{Corriente Mínima: 0.9 $x10^{-6}$ A}
+                \end{minipage}%
+                \begin{minipage}{0.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion1AmperajeMax}
+                \caption{Corriente Máxima: 1.17 mA}
+                \end{minipage}
+            \end{figure}
+
+           
+
+        % ==============================================================
+        % =======   CIRCUITO DE ACONDICIONAMIENTO SENSOR    ============
+        % ==============================================================
+        \clearpage
+        \subsubsection{Circuito de Acondicionamiento}  
+
+
+            Podemos medir la cantidad de voltaje que nos arrojaba nuestro circuito 
+            en:
+            \begin{figure}[!htb]
+                \centering
+                \begin{minipage}{.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion2VoltajeMin}
+                \caption{Voltaje Máximo: 0.07V}
+                \end{minipage}%
+                \begin{minipage}{0.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion2VoltajeMax}
+                \caption{Voltaje Máximo: 4.87V}
+                \end{minipage}
+            \end{figure}
+
+            Por otro lado podemos ver la corriente a la salida del circuito sensor:
+            \begin{figure}[!htb]
+                \centering
+                \begin{minipage}{.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion1AmperajeMin}
+                \caption{Corriente Mínima: 13.13 $x10^{-6}$ A}
+                \end{minipage}%
+                \begin{minipage}{0.5\textwidth}
+                    \centering
+                \includegraphics[width=0.85\linewidth]{Medicion1AmperajeMax}
+                \caption{Corriente Máxima: 0.91 mA}
+                \end{minipage}
+            \end{figure}
+
+
+
+    % ==============================================================
+    % =============     CONCLUSIONES      ==========================
+    % ==============================================================
+    \clearpage
+    \subsection{Conclusiones} 
+
+        La práctica la logramos realizar con exito comprobando que la funcionalidad del sensor es lineal,
+        lograno obtener un voltaje de salida de 1 v en la salida maxima del sensor, se hizo un ajuste con
+        resistores para lograr este voltaje a partir de una bateria de 5 v, pasando esta etapa entra el 
+        acondicionamiento para aprovechar mejor la salida y tener un espectro mas grande de lectura a la
+        salida así que con un amplificador operacional se logró que la salida máxima del circuito completo
+        fuera de 4.83v y la mínima de 0.07v.
+
+
+
+
+    % ==============================================================
+    % ==========    APLICACION TENTATIVA     =======================
+    % ==============================================================
+    \subsection{Aplicación Tentativa} 
+
+        \begin{wrapfigure}{r}{0.25\textwidth}
+                \centering
+                \includegraphics[width=0.20\textwidth]{Aplicaciones1}
+            \end{wrapfigure}
+
+        Entre las posibles aplicaciones de este dispositivo se encuentra una de las más comunes que es 
+        su uso en aparatos para reducir volumen, tambien en ecualizadores, pero, tambien se pueden ocuparpara controlar más 
+        parámetros, como por ejemplo la intesidad de iluminación de una lámpara, brillo y contraste de la TV, como sensores 
+        de posición angular y desplazamiento.
+        Todos estos trabajan con el mismo principio de cambiar la resistencia de despositivo dependiendo de su posicion con
+        su cursor.
+
+        Veamos más a detalle uno: Regulador de intensidad de una lámpara
+
+        Cuando circula corriente en la compuerta del triac, el mismo dejara pasar más corriente
+        hacia la lámpara, permitiendo eso variar su brillo. El potenciómetro de 250K se encarga de
+        regular la corriente hacia la compuerta del triac de modo de regular la corriente circulante
+        y como consecuencia su brillo.
+        Dicho potenciómetro conforma una red resistiva junto a los resistores de 8,2K.
+        El condensador de 47nF y el de 100nf conforma un filtro tipo , cuya 
+        función es la de atenuar los pulsos de tensión que puedan llegar, puesto que estos 
+        provocarían falsos disparos, con la consecuencia visual de verse variaciones continuas en el
+        brillo de la lámpara.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.85\textwidth]{Aplicaciones3}
+        \end{figure}
+
+
+
+
+
+
+
+
+
+\end{document}
