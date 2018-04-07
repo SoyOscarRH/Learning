@@ -512,7 +512,7 @@
     \subsection{Funcionamiento}
 
         La base del funcionamiento de este circuito es bastante sencillo una vez que se abre, se usa
-        un péndulo inverdido con una masa de metal en la parte superior, esto no da una solución a los
+        un péndulo invertido con una masa de metal en la parte superior, esto no da una solución a los
         problemas de sensibilidad.
 
         En la aprte inferior del péndulo se encuentra una arilla de metal que hace de conductor con la parte
@@ -547,7 +547,7 @@
         Veamos que nuestro circuito puede ser descrito con el siguiente diagrama:
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.85\textwidth]{CircuitoGeneral}
+            \includegraphics[width=0.85\textwidth]{PequenoMolesto}
         \end{figure}
 
         Este lo podemos dividir basicamente en 2 partes:
@@ -555,18 +555,22 @@
             \item 
                 \textbf{Circuito Sensor}
 
-                    **** Es el switch  ***
+                Consta de 2 partes, es básicamente un switch, se coloca el pendulo como una parte del mismo, y una base que será la segunda.
+                
+                Usamos un candado como peso principal y un palo de paleta para el pendulo, esto lo recubrimos de cable y logramos que condujera hasta la base del mismo, después la base fue un anillo recubierto de cable, esots elementos se calibraron con una sensibilidad alta, una vez que estuvimos contentos con la sensibilidad pasamos a la etapa del circuito.
 
    
             \item 
                 \textbf{Circuito Control}
 
-                    **** Es el TIP  ***
+                 Como se mencionó es un switch y para evitar pulsos bajos o con poco amperaje lo que se hizo fue colocar un transistor NPN de manera que una vez que recibiera el pulso lo dejara pasar por el colector y el emisor.
+                 
+                 Para nuestra aplicación para evitr que el pulso se perdiera rápido usamos un capacitor, eso nos dio un rango mayor de pulsos.
 
 
             \item 
                 \textbf{Aplicación}
-                    **** Es el LED, Buzzer  ***
+                   Colocamos un buzzer Pequeño y Molesto pues su frecuencia es aguda y estresante, además que cambia con respecto a la intensidad del pulso que recibe, adicional colocamos un led ultra brillante.
 
 
         \end{itemize}
@@ -575,13 +579,17 @@
     % ==============================================================
     % =================      CIRCUITO REAL        ==================
     % ==============================================================
-    \clearpage
     \subsection{Circuito Real}
 
         Veamos que nuestro circuito fue construido de la siguiente manera:
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.85\textwidth]{CircuitoGeneral1}
+            \includegraphics[width=0.85\textwidth]{Real2}
+        \end{figure}
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.35\textwidth]{Real1}
         \end{figure}
 
 
@@ -649,7 +657,10 @@
 
         Un posible diagrama de esta aplicación puede ser:
 
-
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.85\textwidth]{Usos}
+        \end{figure}
         Así se puede por ejemplo:
         \begin{itemize}
             \item Desconectar suministros de gas centralizado y energía eléctrica
