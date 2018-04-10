@@ -539,6 +539,160 @@
     \subsection{Preguntas}
 
 
+        \begin{itemize}
+            \item 
+                \textbf{¿Cuál de los 3 algoritmos es más fácil de implementar?}
+
+                El más sencillo (o en algoritmia conocido coloquialmente como la bruta)
+                es la búsqueda lineal. Es la solución mas sencilla con apenas 3 o 4 línea de código.
+
+                Además de ser sencilla de implementar es la que es menos probable que cometas un error
+                a la hora de definir los índices o variables de apoyo.
+
+            \item 
+                \textbf{¿Cuál de los 3 algoritmos es el más difícil de implementar?}
+
+                El más difícil de implementar en la búsqueda usando un Binary Search Tree, porque
+                nos obliga o bien a diseñar algoritmos que son comunmente recursivos en algo
+                iterativos.
+
+            \item
+                \textbf{¿Cuál de los 3 algoritmos es el más difícil de implementar en su variante
+                con hilos?}
+
+                Curiosamente la respuesta creo que tiene que ir para la versión con hilos de la búsqueda
+                lineal.
+
+                Por un lado el trabajar con hilos siempre complica las cosas, sobretodo porque involucra
+                problemas de sincronicidad y el manejo de variables que pueden ser posiblemente accedidas
+                por varios hilos. Aquí hay una consideración importante que hay que hacer:
+                Solo estamos buscando una variable, por lo que no me tengo que preocupar con la memoria, 
+                el primer hilo que me mande una respuesta, esa la tomaré y todos los demas hilos al notar
+                el cambio en la variable se matan.
+
+            \item
+                \textbf{¿Cuál de los 3 algoritmos en su variante con hilos resulto ser mas rápido?}
+
+                La búsqueda binaria, es cierto, que fue más rapido la versión lineal, pero aún así
+                la versión con hilos es endemoniadamente rápida.
+
+            \item
+                \textbf{¿Cuál algoritmo tiene menor complejidad temporal?}
+
+                La búsqueda binaria. Es uno de los algoritmos más famosos por tener un $O(\ln_2(n))$
+                aunque en ciertos casos, CON UN ÁRBOL BALANCEADO la búsqueda con árbol puede tener esa
+                complejidad.
+
+            \clearpage
+
+            \item
+                \textbf{¿Cuál algoritmo tiene mayor complejidad temporal?}
+
+                Sin duda alguna ese premio tiene que ir para la búsqueda lineal, en el peor de los casos
+                tenemos un búsqueda de $O(n)$.
+            \item
+                \textbf{¿El comportamiento experimental de los algoritmos era el esperado? ¿Porque?}
+
+                Si, al menos en rangos generales de los algoritmos se esperaba y se ve la gran diferencia entre
+                los algoritmos de búsqueda rápidos y la búsqueda lineal.
+
+                Por otro lado a simple vista uno puede pensar que una variante con hilos siempre será más rapida
+                que una versión que no es concurrente, pero esto no tiene porque ser así, por ejemplo
+                en la búsqueda binaria es más que obvio que como solo estamos haciendo serie de comparaciones
+                entonces el añadir hilos no mejora nada y solo sobrecarga al sistema operativo con su creación.
+
+            \item
+                \textbf{¿Sus resultados experimentales difieren mucho de los análisis teóricos
+                    que realizo? ¿A que se debe?}
+
+                No, como continuación de la respuesta anterior, si se analizaban con algo de tranquilidad
+                los algoritmos se podia llegar a unas muy buenas estimaciones.
+
+            \item
+                \textbf{¿Los resultados experimentales de las implementación con hilos de los
+                algoritmos realmente tardaron $\dfrac{F(t)}{\#hilos}$ de su implementación sin hilos?}
+
+                \textbf{¿Cuál es el % de mejora que tiene cada uno de los algoritmos en su
+                variante con hilos? ¿Es lo que esperabas? ¿Por qué?}
+
+                Jajaja, si hablamos de la búsqueda lineal, claro, es decir, no fue exactamente esa cantidad
+                sobretodo por los grandes margenes de error que tenemos a la hora de medir tiempos
+                tan pequeños pero el punto es que si, casi casi tenemos una mejora linealmente correspondiente
+                con la cantidad de hilos, despues de todo dividimos el trabajo entre la cantidad de hilos.
+
+                Pero en los otros dos al ser escencialemente una gran cantidad de comparaciones en lineal
+                entonces no podemos llegar a practicamente ninguna mejora, incluso un desempeño un poco peor.
+
+                En general tenemos que para n hilos tenemos una nueva función complejidad:
+                \begin{itemize}
+                    \item Búsqueda Lineal: $f_h(t) = \frac{f(t)}{\text{Número de hilos}}$
+                    \item Búsqueda Binaria: $f_h(t) = 1 f(t)$
+                    \item Búsqueda BTS: $f_h(t) = 1 f(t)$
+                \end{itemize}
+
+            \clearpage
+
+            \item
+                \textbf{¿Existió un entorno controlado para realizar las pruebas experimentales?
+                ¿Cuál fue?}
+
+                Sí, usamos una PC con las siguientes características:
+                \begin{itemize}\setlength\itemsep{0em}
+                    \item HP EliteDesk 700 G1 SFF
+                    \item 8GB de memoria RAM, DDR3 SDRAM non-ECC, 1600MHz
+                    \item Procesador Intel(R) Core(TM) i5-4590 (4$^\circ$ generación), CPU @ 3.30GHz (4 CPUs), $\sim$3.3GHz. Intel vPro Technology
+                    \item 1TB de disco duro HDD, Serial ATA-600 6Gb/s, 7200 rpm
+                \end{itemize}
+                
+                Y el software fue el siguiente:
+                \begin{itemize}\setlength\itemsep{0em}
+                    \item Sistema operativo Linux
+                    \item Distribución Elementary OS 0.4
+                    \item Compliador GCC con soporte para C11
+                    \item Python 3.6 con las bibliotecas \texttt{matplotlib} y \texttt{numpy}
+                    \item No había ninguna aplicación abierta al momento de ejecutar los algoritmos
+                \end{itemize}
+
+            \item
+                \textbf{¿Si solo se realizará el análisis teórico de un algoritmo antes de
+                implementarlo, podrías asegurar cual es el mejor?}
+
+                Con un anális básico, es decir con el uso de cotas rápidamente podríamos descartar a
+                la búsqueda lineal SI ES QUE NUESTRO ARREGLO ESTUVIERA ORDENADO, y ya que el BTS
+                requiere otro tiempo inicial para la creación del árbol sería fácil decantarse por
+                la sencilla búsqueda binaria.
+
+                Pero si tenemos un arreglo que no esta ordenado las cosas cambian, ahí depende mucho
+                del tamaño del problema y de la cantidad de hilos que podemos correr eficientemente
+                lo que decanta la balanza por BTS o un búsqueda lineal.
+
+            \item
+                \textbf{¿Qué tan difícil fue realizar el análisis teórico de cada algoritmo?}
+
+                \begin{itemize}
+                    \item Búsqueda Lineal: Sencillo, de esos que son ejemplos básico en clase
+                    \item Búsqueda Binaria: Algo más compleja, sobretodo por el cálculo de los
+                    valores límites, pero al verdad es que no hay mucho más álla.
+                    \item Búsqueda BTS: Igualmente, el peor caso en un árbol BALANCEADO es bastante sencillo
+                    de obtener
+
+                \end{itemize}
+
+            \clearpage
+
+            \item 
+                \textbf{¿Qué recomendaciones darían a nuevos equipos para realizar esta práctica?}
+                
+                \begin{itemize}\setlength\itemsep{0em}
+                    \item Hagan sus scripts jóvenes, pues aunque parezca más tedioso y crean que es más rápido anotar toda la información solicitada (que es mucha) a mano, es más eficiente por si se requiere cambiar algún algoritmo o los valores de entrada. Al menos que el script guarde los tiempos en algún archivo de texto con un formato que quieran.
+                    \item Prueben sus algoritmos con arreglos pequeños antes de ordenar los 10 millones para ver si realmente los programaron bien.
+                    \item Hagan sus programas generales, es decir, que reciban cualquier tamaño de subarreglo y el algoritmo a usar.
+                    \item Usen Linux, pues en Windows no están las bibliotecas para medir los tres tiempos.
+                    \item Cuando corran sus algoritmos, procuren cerrar todas las tareas en segundo plano para que los tiempos obtenidos sean lo más apegados a la realidad posible.
+                \end{itemize}
+
+        \end{itemize}
+
 
 
 
