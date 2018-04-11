@@ -383,6 +383,25 @@
     \lstset{style = CompilandoStylePurity}                          %Use this style
 
 
+
+
+
+
+
+
+
+
+
+\usepackage{algpseudocode}  %Los 2 paquetes son para poner pseudocodigo 
+\usepackage{algorithm}
+\usepackage{dirtree}
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}
+
+
+
+
+
+
 % =====================================================
 % ============        COVER PAGE       ================
 % =====================================================
@@ -505,6 +524,69 @@
 % ===============================================================================
 \clearpage
 \section{Diseño de la Solución}
+
+    \subsection{Búsqueda Lineal}
+        \begin{algorithm}[H]
+        \caption{LinealSearch}
+        \begin{algorithmic}[1]
+            \Procedure{LinealSearch}{$A, n, NumberToSearch$}
+            \For{$i \gets 0$ hasta $n$}
+                \If{$A[i] = NumberToSearch$}
+                    \State regresa i
+                \EndIf
+            \EndFor
+
+            regresa -1
+            \EndProcedure
+            \end{algorithmic}
+        \end{algorithm}
+        
+    \subsection{Búsqueda Binaria}
+        \begin{algorithm}[H]
+        \caption{BinarySearch}
+        \begin{algorithmic}[1]
+            \Procedure{BinarySearch}{$A, n, NumberToSearch$}
+            \State $inicio \gets 0$
+            \State $final \gets n$
+            \While{inicio $\leq$ final}
+               \State medio $\gets$ inicio + ((final - inicio) / 2)
+                \If{$A[medio] = NumberToSearch$}
+                    \State regresa medio
+                \EndIf
+                \If{$A[medio] > NumberToSearch$}
+                    \State final $\gets$ medio -1
+                \EndIf
+                \If{$A[medio] > NumberToSearch$}
+                    \State inicio $\gets$ medio + 1
+                \EndIf
+            \EndWhile
+            regresa -1
+            \EndProcedure
+            \end{algorithmic}
+        \end{algorithm}
+        
+    \subsection{Búsqueda con BTS}
+        \begin{algorithm}[H]
+        \caption{SearchBTS}
+        \begin{algorithmic}[1]
+            \Procedure{SearchBTS}{$A, n, NumberToSearch$}
+            \State arbol $\gets$ CreaArbol(A, n)
+            \State nodo $\gets$ Raiz del árbol
+            \While{nodo no sea nulo}
+                \If{nodo.informacion = NumberToSearch}
+                    \State nodo.indice
+                \EndIf
+                \If{NumberToSearch < nodo.informacion}
+                    \State nodo $\gets$ nodo.derecha
+                \EndIf
+                \If{NumberToSearch > nodo.informacion}
+                    \State nodo $\gets$ nodo.izquierda
+                \EndIf
+            \EndWhile
+            regresa -1
+            \EndProcedure
+            \end{algorithmic}
+        \end{algorithm}
 
 
 
@@ -758,30 +840,30 @@
     El Tiempo.
 
     A la hora de medir el tiempo de los algoritmos tenemos un grave problema,
-    y es que a la hora de usar las funciones estandar proporcionadas por el profesor
-    para medir el tiempo tenemos que sus mediciciones son incorrectas en el sentido
+    y es que a la hora de usar las funciones estándar proporcionadas por el profesor
+    para medir el tiempo tenemos que sus medicaciones son incorrectas en el sentido
     de que sabemos que la ecuación para calcular el porcentaje de uso de la CPU 
     esta dada por:
     \begin{align*}
         CPUWall = (UserTime + SysTime) / RealTime
     \end{align*}
 
-    Pero al momento de intentar medir este porcentaje con búsquedas ridiculamente
+    Pero al momento de intentar medir este porcentaje con búsquedas ridículamente
     rápida tenemos que nos dan valores sobre el 100\% lo que indica que las mediciones
-    de tiempo son impresisas si trabajamos con intervalos pequeños de tiempo
+    de tiempo son imprecisas si trabajamos con intervalos pequeños de tiempo
 
     Por otro lado no \Quote{errores} en si, pero cosas que podrían ocasionar un error
     en los programas son:
     \begin{itemize}
-        \item Que no se sigan las indicaciones de los parametros de consola, es decir:
+        \item Que no se sigan las indicaciones de los parámetros de consola, es decir:
         \begin{itemize}
             \item Darme mas casos de los que tengo en el archivo
             \item Darme mas tamaño para el arreglo que números
             \item Darme rutas incorrectas a la hora de abrir los ficheros
         \end{itemize}
-        \item Que no se ingresen los parametros de consola
+        \item Que no se ingresen los parámetros de consola
         \item Que no se tenga configurada la versión de python3.6 sino la 3.5 que es
-        la estandar en este momento
+        la estándar en este momento
         \item Que no existan los directorios donde estarán las salidas y las gráficas
     \end{itemize}
 
@@ -794,6 +876,27 @@
 \section{Posibles Mejoras}
 
 
+    Las posibles mejoras que podemos hacer a estos algoritmos son sencillas:
+
+    \begin{itemize}
+        \item 
+            Podemos crear una interfaz de entrada de comandos mucho mas sencilla, como
+            una que no requiera pasar la cantidad de casos a buscar, sino un simple
+            path al archivo, así como un path al archivo de datos del arreglo
+
+        \item
+            Podemos asegurarnos de los errores que podría traer la entrada de datos,
+            por ejemplo al asegurarnos de que estamos leyendo enteros o que el path
+            existe
+
+        \item
+            Podemos usar una documentación acorde al lenguaje, mas exactamente usar algo
+            como el estándar para documentar en C++11/14
+
+        \item
+            Podríamos haber hecho la organización del script Make.py mucho mas documentada
+            separar en funciones el código
+    \end{itemize}
 
 % ===============================================================================
 % ===================         CONCLUSIONES                 ======================
@@ -810,6 +913,61 @@
     
     
     \item \textbf{Óscar:} 
+    
+                Gracias a esta practica pudimos entender mucho más a fondo los algoritmos de búsqueda,
+        primeramente al implementarlo, al pasar de sus respectivos 
+        diseños en pseudo-código (o PSeint) a implementaciones en c11, casi todos pudieron ser
+        modelados completamente como una función solo dependiente de sus valores de entrada
+        pero tuvimos además de eso que armar algunas estructuras auxiliares (como BST-árbol
+        binario de búsqueda y un pequeño stack-pila), y al momento de intentar crear funciones paralelas
+        tuvimos que hacer tanto otra función auxiliar y una maestra, así como la declaración de diversas estructuras
+        para enviarlas a las estructuras como parámetros.
+
+        Además usamos una característica importante de las versiones modernas de C, como son las funciones
+        inline que nos permiten la modularidad que nos dan las funciones
+        sin tener que perder rendimiento entre los cambios de contexto, pues inline nos permite crear
+        funciones que el compilador puede optimizar de gran manera.
+        
+        Usamos Python como lenguaje de script para automatizar todo el proceso de corrimiento y de recolección de datos.
+        
+        Además es importante puntualizar que todas las conclusiones posteriores están bajo los resultados obtenidos, y si bien en cierto que buscamos
+        crear un ambiente de pruebas lo más estable y parejo es importante recordar que estamos tratando con un conjunto, grande si, pero también con
+        una distribución casi normal, con lo cual estamos hablando de que los algoritmos están siendo expuestos y testeados bajo condiciones que no 
+        representan como se comportarían bajo una distribución completamente aleatoria, sobretodo hablando del comportamiento en BTS pues la creación
+        de un árbol balanceado a partir de información aleatoria es otro problema completamente diferente, uno que por cierto usa un AVL-RebBlack Tree
+        
+        Pero dejando en claro estas limitaciones por el tipo de entrada que recibían los algoritmos podemos ver conclusiones muy interesantes, 
+        sobre todo hay que tener en cuenta que los ejes que usamos no están acordes, por lo que a primera vista las gráficas pueden dar la
+        apariencia de rectas, pero no nos engañemos.
+
+        Podemos también ver por las comparativas como es que casi dictado por su nombre la búsqueda lineal, sus tiempos, se aproximan de manera
+        casi perfecta a un recta. La gran sorpresa con los modelos teóricos es la búsqueda paralela, igual hablando de una cantidad minúscula de tiempo tenemos
+        que es mucho mas rápido simplemente buscar el arreglo que esperar a lanzar los hilos, terminando con tiempos casi iguales.
+
+        Creo que a nadie le sorprende como es que son los tiempos de la búsqueda binaria, y porque tiene su gran fama, 
+        este algoritmo tiene un comportamiento mas bien digno de un $log_2(n)$ y eso es en el peor, caso, definitivamente
+        es tu mejor opción para trabajar sobre datos ordenados y como cabía esperar su versión en hilos no mejoro nada.
+
+        Un trato casi igual se puede dar al BTS, pero hay que hacer una importante nota, y es que no estamos tomando el tiempo que toma
+        la creación del árbol, eso si que podría hacer que los tiempos cambiaran considerablemente, sobretodo como dije antes si no implementamos
+        un árbol autobalanceable.
+
+        Finalmente creo que es importante escribir porque es que sus versiones con hilos no hicieron casi nada, para empezar aunque
+        para un algoritmo de ordenamiento el tamaño de problema es enorme, para un algoritmo de búsqueda es ridículo,  por lo que el tiempo
+        de la creación de hilos puede ser una gran desventaja, también que para los casos de los 2 últimos algoritmos no ayudan en nada.
+
+        Pero en nada, por ejemplo en la búsqueda binaria, lanzar por ejemplo 4 búsquedas binarias no hace nada porque en el primer
+        intento 3 de ellas saldrán porque el mismo algoritmo las insta a buscar mas allá de sus limites, por lo tanto mucho ayuda no nos proporcionan
+        y solo sobrecargan al sistema.
+
+        Creo que la gran beneficiada teórica es la búsqueda lineal, pero claro, hablamos sobre la búsqueda de tamaños de problema mucho
+        mas grandes para que se puede notar una diferencia.
+
+        Al final concluyo que me voy sin sorpresas con respecto a BinarySearch, pero me voy sorprendido por como es que
+        fue el desempeño de los algoritmos en paralelo.
+        
+        Hay mucho mas en el análisis de algoritmos que la notación $O()$, mucho más.
+        
 \end{itemize}
 
 
