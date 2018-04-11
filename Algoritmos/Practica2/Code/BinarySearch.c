@@ -1,7 +1,6 @@
 /*===================================================================
 ==================      BINARY SEARCH           =====================
 ===================================================================*/
-
 /**
  * Is just binary search ...
  * 
@@ -45,7 +44,6 @@ int BinarySearch(int Data[], int DataSize, int NumberToSearch) {    //=== BINARY
 /*===================================================
 =======    PARALELL AUXILIAR FUNCTIONS     ==========
 ===================================================*/
-
 typedef struct BinarySearchDataStruct {                             //Parameters to the threads
     int Initial;                                                    //Initial index to found    
     int Final;                                                      //Final index to found
