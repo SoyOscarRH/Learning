@@ -485,7 +485,7 @@
         $T(3) = 10 = c_1(6.222) + c_2(-0.073) + c_3(-0.073)$
 
 
-        Teniendo que $c_3 \neq 0$, entonces tenemos que $O(k^n)$
+        Teniendo que $c_3 \neq 0$, entonces tenemos que $O(1.89^n)$
 
 
 
@@ -536,7 +536,7 @@
             T(n) = c_1(1.83928675)^n + c_2(-0.41964 - 0.60629i)^n + c_3(-0.41964 + 0.60629i)^n
         \end{align*}
 
-        Ahora vamos a calcular las constantes:
+        y como $c_3 \neq 0$ tenemos que $T(n) \in O(1.83928675^n)$
 
 
 
@@ -636,7 +636,7 @@
             \item $T(3) = 559 = -c_1 + 64c_2 + 64c_3 + 192c_4$
         \end{itemize}
 
-        Ninguna de las constantes son cero, por lo tanto es obvio que $O(2n^n)$
+        Ninguna de las constantes son cero, por lo tanto es obvio que $O(n2^n)$
 
 
 
@@ -817,39 +817,25 @@
     \section{Algoritmo 6.2}
 
         \begin{align*}
-            T(n) = 3T(n / 3) + 4(n / 2) + 2n^2 + n
+            T(n) = T(n-1) + T(n-2) + T(n/2)
         \end{align*}
 
-        Ahora vamos a usar el teorema maestro tenemos dividiendo en 2 partes:
+        Ahora, ya con más experiencia ya tenemos que el termino $T(n/2)$ solo nos da
+        una complejidad de $O(\log n)$ al algoritmo.
 
+        Así que podemos ignorarlo y con ello llegar a que $T(n) = T(n -1) + T(n -2)$,
+        es decir su ecuación característica es $x^2 - x- 1= 0$, cuyas raíces son:
         \begin{itemize}
-            
-            \item 
-                $3T(n / 3) + n$
-                
-                Ahora vamos a usar el teorema maestro tenemos que $f(n) = n$, $b = 3$, $a = 3$
-                y vemos claramente que: 
-
-                $f(n) = n = O(n) = O(n^{\log_3 3}) = 0(n^1)$.
-
-                Por lo tanto es sencillo ver que $T(n) \in O(n \ln(n))$ 
-
-            \item 
-                $4T(n / 2) + 2n^2$
-                
-                Ahora vamos a usar el teorema maestro tenemos que $f(n) = 2n^2$, $b = 2$, $a = 4$
-                y vemos claramente que: 
-
-                $f(n) = 2n^2 = O(n^2) = O(n^{\log_2 4}) = 0(n^2)$.
-
-                Por lo tanto es sencillo ver que $T(n) \in O(n^2 \ln(n))$ 
-
+            \item $x_1 = \dfrac{1+\sqrt{5}}{2}$
+            \item $x_2 = \dfrac{1-\sqrt{5}}{2}$
         \end{itemize}
 
-        Por lo tanto el algoritmo en general se da en $O(n^2 \ln(n))$
+        Por lo tanto tenemos que:
+        \begin{align*}
+            T(n) \approx C_1 (1.61)^n + C_2(-0.618)^n
+        \end{align*}
 
-
-
+        Por lo tanto tenemos que $T(n) \in O(1.61^n)$
 
 
 
