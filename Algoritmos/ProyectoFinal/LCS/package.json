@@ -1,7 +1,7 @@
 {
-    "name": "TDetTiendita",
+    "name": "LCS",
     "version": "0.0.1",
-    "description": "App for controling an store",
+    "description": "Simulation of LCS",
     "main": "index.jsx",
     "scripts": {
         "build": "webpack -p --progress --config webpack.config.js",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/SoyOscarRH/TdeTiendita"
+        "url": "https://github.com/SoyOscarRH/LCS"
     },
     "author": "SoyOscarRH",
     "license": "GPL-2.0",

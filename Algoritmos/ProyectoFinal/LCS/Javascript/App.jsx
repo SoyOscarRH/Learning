@@ -109,7 +109,7 @@ export default class App extends React.Component {
                         <div className="modal-content">
                             <div className="container">
                                 <h4 className="center-align blue-grey-text text-darken-3">
-                                    <strong>Cadenas</strong> para Animación
+                                    <strong>Cadenas</strong> para la simulación
                                 </h4>
                                 <br />
                                 <div className="row">
@@ -159,7 +159,7 @@ export default class App extends React.Component {
                         <div className="modal-content">
                             <div className="container">
                                 <h4 className="center-align blue-grey-text text-darken-3">
-                                    <strong>Cadenas</strong> para Animación
+                                    <strong>Tutorial</strong> para Usar
                                 </h4>
                                 <br />
                                 <div className="row">
