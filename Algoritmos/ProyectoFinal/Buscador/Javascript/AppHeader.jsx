@@ -11,7 +11,14 @@ export default class AppHeader extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {value: null}
+
+        const Name = (window.innerWidth <= 800)? this.props.MiniName: this.props.Name
+        this.state = {HeaderName: Name}
+
+        window.onresize = () => {
+            const Name = (window.innerWidth <= 800)? this.props.MiniName: this.props.Name
+            this.setState({HeaderName: Name})
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const Elements = document.querySelectorAll('.sidenav')
@@ -20,6 +27,8 @@ export default class AppHeader extends React.Component {
     }
 
     render () {
+
+
         return (
             <div>
                 {/*=========================================================*/}
@@ -31,7 +40,7 @@ export default class AppHeader extends React.Component {
                             
                             {/*+++++++++++   NAME OF PAGE   ++++++++++++*/}
                             <div className="brand-logo white-text center" style={{fontSize: '1.5rem'}}>
-                                {this.props.Name}
+                                {this.state.HeaderName}
                             </div>
 
                             {/*+++++++++++   LINK TO HOME   ++++++++++++*/}
@@ -68,12 +77,11 @@ export default class AppHeader extends React.Component {
                             Cambiar Cadenas
                         </a>
                     </li>
-                    <li><div className="divider" /></li>
-                    <li><a className="subheader">Productos</a></li>
                     <li>
-                        <a className="waves-effect">
-                            <i className="material-icons">add_circle</i>
-                            Añadir Productos
+                        <a className="waves-effect"
+                            onClick={(e) => M.Modal.getInstance(document.getElementById('TutorialModal')).open()}>
+                            <i className="material-icons">info</i>
+                            Tutorial de Uso
                         </a>
                     </li>
                 </ul>
