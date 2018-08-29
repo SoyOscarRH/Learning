@@ -1,0 +1,31 @@
+1)  La empresa x_4 inicia sus operaciones con las siguientes aportaciones:
+        * Efectivo:             $0 230 000
+        * Cuenta Bancaria:      $1 100 000
+        * Mercancias:           $0 200 000
+        * Edificios:            $3 500 000
+        * Mobiliario:           $0 180 000
+        * Equipo de Reparto:    $0 320 000
+        * Equipo de Computo:    $0 300 000
+
+2)  Vendemos mercancias por $12 000 a credito
+
+3)  Les rentamos al señor maldonado uno de nuestros locales y nos paga
+    $10 000 por la renta adelantada del mes de Septiembre (rentas cobradas
+    por anticipado)
+
+4)  Compramos papelería y consumibles por $4 500
+
+5)  Compramos mercancias por $130 000 y firmamos un pagare
+
+6)  Vendemos mercancias por $20 000 de los cuales la mitad nos la pagan con cheque
+    y la otra mitad nos lo quedan a deber
+
+7)  Le vendemos a nuestro almacenista una computadora (no mercancias) con valor de
+    $6 000 a credito, el no firma nada
+
+8)  Compramos muebles por $30 000 que pagamos con cheque
+
+9)  Le devolvemos a nuestro proveedor $10 000 de mercancia por estar defectuosa,
+    (se le quita a doc por pagar)
+
+10) Pagamos $5 000 por la impresion de volantes

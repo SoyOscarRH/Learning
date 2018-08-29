@@ -1,0 +1,27 @@
+{
+    "variables": {
+        "names": ["x", "y", "z"],
+        "areAllPositive": true
+    },
+    "objectiveFunction": {
+        "type": "max",
+        "fn":   {"x": 5, "y": -5, "z": 1}
+    },
+    "restrictions": [
+        {
+            "fn":   {"x": 1, "y": -1, "z": 3},
+            "type": ">=",
+            "val":  10
+        },
+        {
+            "fn":   {"x": 4, "y": -3, "z": 1},
+            "type": "<=",
+            "val":  3
+        },
+        {
+            "fn":   {"x": 2, "y": -1, "z": 3},
+            "type": ">=",
+            "val":  15
+        }
+    ]
+}

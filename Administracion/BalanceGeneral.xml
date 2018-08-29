@@ -10,7 +10,7 @@
         />
         <DeConfianza>
             <Clientes 
-                des="Son las personas que compraron mercancias de la empresa intereses" 
+                des="Son las personas que compraron mercancias de la empresa a intereses" 
             />
             <DeudoresDiversos 
                 des="Son las personas que deben al negocio por algo que no es mercancias" 
@@ -35,9 +35,7 @@
             <GastosDeOrganizacion 
                 desc"Pagos por tramites y permisos para que la empresa funcione"
             />
-            <DepositosEnGarantias 
-                desc"Pagos por tramites y permisos para que la empresa funcione,
-                como importes">
+            <DepositosEnGarantias />
                 <RentaPagadasPorAnticipado />
             </DepositosEnGarantias>
             <Publicidad />
