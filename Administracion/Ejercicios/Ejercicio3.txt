@@ -45,4 +45,4 @@ Otros Gastos
 Otros Productos
 
 
-Utilidad del ejercicio = (Utilidad neta - otros)
+Utilidad del ejercicio = (Utilidad operacion  - otros)
