@@ -112,6 +112,9 @@
     \newenvironment{MultiLineEquation*}[1]                          %Use: To create MultiLine equations
         {\begin{\Eq*}\begin{alignedat}{#1}}                         %Use: \begin{Multi..}{Num. de Columnas}
         {\end{alignedat}\end{\Eq*}}                                 %And.. that's it!
+
+    \newenvironment{LargeEq} {\begingroup \Large}{\endgroup}        %Make eq bigger
+    \newenvironment{HugeEq} {\begingroup \Huge}{\endgroup}          %Make eq bigger!
     
 
     % =========================================
@@ -146,6 +149,9 @@
     \newcommand \lEqual  {\MiniSpace \Leftrightarrow \MiniSpace}    %Use: \lEqual for a logic double arrow
     \newcommand \lInfire {\MiniSpace \Rightarrow \MiniSpace}        %Use: \lInfire for a logic infire
     \newcommand \lLongTo {\longrightarrow}                          %Use: \lLongTo for a long arrow
+    \newcommand \lAnd    {\land}                                    %Use: \lAnd ^
+    \newcommand \lOr     {\lor}                                     %Use: \lOr or symbol
+    \newcommand \lNot    {\neg}                                     %Use: \lNot for negation
 
     % =====  FAMOUS SETS  ===============
     \DeclareMathOperator \Naturals     {\mathbb{N}}                 %Use: \Naturals por Notation
@@ -283,8 +289,8 @@
 
     % ====== INTEGRALS ============
     \newcommand{\inftyInt} {\int_{-\infty}^{\infty}}                %Use: \inftyInt for simple integrants
-    
-        
+      
+
 % =======================================================
 % ===========      COLOR: MATERIAL DESIGN     ===========
 % =======================================================
@@ -435,8 +441,7 @@
 
     % ============ NAME OF THE BOOK  ===============
     \href{\ProjectNameLink}                                         %Link to Author
-    {\fontsize{45}{52}\selectfont \textbf{Tarea 3}}\\[0.5cm]        %Name of the book
-    \textcolor{ColorSubtext}{\textsc{\Huge Lógica de predicados}}   %Name of the general theme
+    {\fontsize{45}{52}\selectfont \textbf{Retos 2}}\\[0.5cm]        %Name of the book
     
     \vfill                                                          %Fill the space
     
@@ -477,425 +482,89 @@
 \clearpage
 \section{1}
 
+    Vamos a hacerlo por partes:
     \begin{itemize}
-
-        \item  $a)$
-            Para todo $x$ tenemos que pasa $A(x)$ ó $B(x)$ y pero no $A(x)$ y $B(x)$ al mismo tiempo
-
-        \item  $b)$
-            Para todo $x$ tenemos que para toda $y$ se cumple que si $P(x, y)$ entonces $P(y, x)$
-
-        \item  $c)$
-            Para todo $x$ se cumple que si $P(x)$ entonces $Q(x)$
-
-        \item  $d)$
-            Existe alguna $x$ tal que $A(x)$ o para toda $y$ se cumple $B(x, y)$
-
-        \item  $e)$
-            Si pasa que para todo x se cumple $A(x)$ y para toda x se cumple $B(x)$ entonces para todo x se cumple
-            que si $A(x)$ entonces $B(x)$
-
+        \item Suponte que $A$ es falso, entonces el cofre no esta
+        ahi, ni en el b, ni en el b, por lo tanto esta en el C.
+        \item ... Ya, creo que ya quedo
     \end{itemize}
-
 
 
 
 % ===============================================
 % ========              2                 =======
 % ===============================================
-\clearpage
 \section{2}
 
-    \begin{itemize}
+    El cuadrado es sencillo de calcular, tiene un lado de tamaño $2cm$
+    entonces, solo basta calcular la diagonal del mismo.
 
-        \item  $a)$
-            \begin{itemize}
-                \item El alcance del primer para todo es $P(x) \lLongTo Q(y)$
-                \item Variable libre: $y$ del primer cuantificador
-            \end{itemize}
-
-        \item  $b)$
-            \begin{itemize}
-                \item El alcance del primer existe es $A(x) \wedge \forall y, B(y)$
-                \item El alcance del primer para todoses $B(y)$
-                \item No hay variables que sean libres para todos los cuantificadores
-            \end{itemize}
-
-        \item  $c)$
-            \begin{itemize}
-                \item El alcance del primer existe es 
-                    $\forall y P(x, y) \wedge Q(x, y)$
-                \item El alcance del primer para todoses $P(x, y)$
-                \item No hay variables que sean libres para todos los cuantificadores
-            \end{itemize}
-
-        \item  $d)$
-            \begin{itemize}
-                \item El alcance del primer existe es 
-                    $\exists x A(x, y) \wedge B(y, z) \lLongTo A(a, z)$
-                \item El alcance del segundo existe es $A(x, y) \wedge B(y, z) \lLongTo A(a, z)$
-                \item Hay una variable que es libres para todos los cuantificadores: $z$
-            \end{itemize}
-
-    \end{itemize}   
-
+    Esto sale por pitagoras, $r^2 = 2^2 + 2^2 = 4 + 4 = 8$, por lo
+    tanto es la raíz de 8.
 
 
 % ===============================================
 % ========              3                 =======
 % ===============================================
-\clearpage
 \section{3}
 
-    \begin{itemize}
-        
-        \item $a)$
-            \begin{MultiLineEquation*}{3}
-                \exists x ( W(x) \wedge J(x) \wedge C(x) )
-            \end{MultiLineEquation*}
+    Esta es un clasico, sale con la formula de Euler:
+   $caras - aristas + vertices = 2$
 
-        \item $b)$
-            \begin{MultiLineEquation*}{3}
-                \forall x \neg ( W(x) \wedge J(x) \wedge C(x) )
-            \end{MultiLineEquation*}
+   Por lo tanto tenemos que:
+   $20 - (20 * 6 +12 * 5) \\ 2 + v = 2$
 
-        \item $c)$
-            \begin{MultiLineEquation*}{3}
-                \exists x ( 
-                L(x) 
-                \wedge 
-                \forall y ( \neg J(y) \lLongTo \neg A(x, y) ) 
-                \wedge 
-                \exists y (J(y) \wedge A(x, y) ) 
-                )
-            \end{MultiLineEquation*}
+   Por lo tanto $vertices = 60$
 
-        \item $d)$
-            \begin{MultiLineEquation*}{3}
-                \forall x ( 
-                J(x) \lLongTo
-                \forall y ( \neg J(y) \lLongTo \neg A(x, y) ) 
-                )
-            \end{MultiLineEquation*}
-
-        \item $e)$
-            \begin{MultiLineEquation*}{3}
-                \forall x ( 
-                \neg J(x) \lLongTo
-                \forall y ( J(y) \lLongTo \neg A(x, y) ) 
-                )
-            \end{MultiLineEquation*}
-
-        \item $f)$
-            \begin{MultiLineEquation*}{3}
-                \forall x ( 
-                (L(x) \wedge W(x)) \lLongTo
-                \exists y ( J(y) \lLongTo A(x, y) ) 
-                )
-            \end{MultiLineEquation*}
-                
-    \end{itemize}
 
 % ===============================================
 % ========              4                 =======
 % ===============================================
-\clearpage
 \section{4}
 
+   Lo que necesitamos es encontrar un número que divida a todos, es
+   decir $LCM(1, 2, 3, 4, 5, 6, 7) = 420$
 
-    \begin{itemize}
-        \item $a)$
-            Todos los alumnos de esta clase tienen más de 18 años
-
-           \begin{itemize}
-               \item $universo$ = alumnos de esta clase
-               \item $p(x) = $ x tiene mas de 18 años
-           \end{itemize}
-
-           $\forall x p(x)$
-
-        \item $b)$
-            Todo el que plagia el trabajo ajeno es un inepto. Es sabido que los
-            expertos en programación no son ineptos 
-            y 
-            que algunos expertos en
-            programación dominan las técnicas de la programación paralela. Por
-            tanto, algunos de los que dominan las técnicas de la Programación
-            Paralela, no plagian el trabajo ajeno.
-
-           \begin{itemize}
-               \item $p(x) = $ x plagia el trabajo ajeno
-               \item $q(x) = $ x es un inepto
-               \item $r(x) = $ x es un experto en programación
-               \item $z(x) = $ x domina las técnicas de la programación paralela
-           \end{itemize}
-
-            $
-            (
-                \forall x (
-                    p(x) \lLongTo (
-                        q(x)
-                    )
-                )
-                \wedge
-                \forall x (
-                    r(x) \lLongTo (
-                        q(x)
-                    )
-                )
-                \wedge
-                \exists x (
-                    r(x) \wedge z(x)
-                )
-            )
-            \lLongTo
-            \exists x (
-                z(x) \wedge \neg p(x)
-            )
-            $
-
-        \item $c)$
-            Todo estudiante que deja la adquisición de conocimientos sobre la
-            materia para la semana antes del examen, tiene una disculpa interesante.
-            Hay estudiantes aburridos interesantes. Así pues, de lo dicho
-            se concluye que no hay quien, preocupándose de adquirir conocimientos
-            sobre una materia durante todo el curso, sea aburrido.
-
-            \begin{itemize}
-                \item universo = estudiantes
-               \item $p(x) = $ x deja la adquisición de conocimientos sobre la
-                                materia para la semana antes del examen
-               \item $q(x) = $ x tiene una disculpa interesantes
-               \item $r1(x) = $ x es aburrido
-               \item $r2(x) = $ x es interesante
-               \item $z(x) = $ x se preocupa de adquirir conocimientos
-                                sobre una materia durante todo el curso
-           \end{itemize}
-
-           $
-            (
-               (
-                    \forall x (
-                        p(x) \lLongTo q(x)
-                    )
-               )
-               \wedge
-               (
-                    \exists x (
-                        r1(x) \wedge r2(x)
-                    )
-               )
-            )
-            \lLongTo
-            (
-                \forall x \neg (
-                    z(x) \lLongTo r1(x)
-                )
-            )
-           $
-                
-    \end{itemize}
 
 
 % ===============================================
 % ========              5                 =======
 % ===============================================
-\clearpage
 \section{5}
 
-    Conste que dice determine, no pruebe :v
-
-    \begin{itemize}
-        
-        \item $a)$
-            Esta bien la negación.
-
-            Y de hecho la negación es la correcta, toma $x = -1$, $y = 0$
-            entonces $1 > 0$ y $-1 \leq y$
-
-        \item $b)$
-            Esta mal la negación.
-
-            Para todos los números reales x, y se cumple que o bien
-            $x, y$ no son ambos racionales o bien $x+y$ es racional.
-
-            Ahora, por cerradura de los racionales, suma de racionales se queda
-            en los racionales, por lo tanto es la negación la que es correcta
-
-        \item $c)$
-            Muy buena negación, esta bien.
-
-            Y si, igual, por propiedades de los reales, cualquier real
-            que no sea el cero tiene un inverso multiplicativo.
-
-        \item $d)$
-            Casi estaba bien la negacion: 
-            El producto de cualesquiera dos números enteros
-            impares es par
-
-            Ahora, sea $x = 2q + 1$ y $y = 2q' + 1$
-            entonces su suma se ve como $x+y=2(q + q' + 1)$
-            Por lo tanto, es la negación la que esta bien
-
-
-    \end{itemize}
+   Lo que pasa es que efectivamente nos movemos 1 metro cada dia, pero 3 por la 
+   mañana, por lo tanto lo que estamos buscando es la $n$ mas pequeña que cumple
+   que $(n - 1)+ 3 \geq 30$. Esto sería 27 días despues.
 
 
 
 % ===============================================
 % ========              6                 =======
 % ===============================================
-\vspace{1em}
 \section{6}
 
-    Consideremos nuestro universo el $\Set{ 0, 1}$
-    y a R(x, y) como que x es diferente de y.
+   $\pfrac{2}{3}^n = 8 // 27$
 
-    Entonces esta claro que existe una x, y, por ejemplo
-    x = 1, y = 0 tal que si 0 es igual a cero entonces 1 es diferente a 1.
 
-    Por otro lado para $P2$ tenemos que no existen un par de elementos
-    tal que el hecho de que sean diferentes implica una tautología, eso simplemente
-    no pasa.
 
 
 % ===============================================
-% ========              7                 =======
+% ========              8                 =======
 % ===============================================
-\clearpage
-\section{7}
+\section{8}
 
-    \begin{itemize}
-        \item F(p) es " Impresora p esta fuera de servicio"
-        \item B(p) es " Impresora p está ocupada"
-        \item L(j) es " Trabajo de impresión j esta perdido"
-        \item Q(j) es " Trabajo de impresión esta en cola"
-    \end{itemize}
+   Es una ecuación diofantica:
+   \begin{itemize}
+       \item $5x + 10y = 350$
+       \item $x+y=50$
+   \end{itemize}
 
-    Entonces:
-    \begin{itemize}
-        
-        \item $a)$
-            Existe alguna impresora $p$ tal que si $p$ esta fuera de servicio
-            y $p$ esta ocupada implica que existe algun trabajo de impresion
-            que esta perdido.
+   El primero se puede hacer mas sencillo:
+   $x + 2y = 70$
 
-        \item $b)$
-            Para toda impresiora $p$ si la impresora esta ocupada implica
-            que existe algún trabajo que esta en la cola de impresión.
-
-        \item $c)$
-            Si existe algún trabajo de impresión $j$ tal que si $j$ esta
-            en la cola y $j$ esta perdido entonces existe alguna impresora
-            que esta fuera de servicio.
-
-        \item $d)$
-            Si toda impresora esta ocupada y todo trabajo esta en la cola
-            entonces existe algun trabajo perdido
-
-    \end{itemize}
+   Por lo tanto $x = 30$  $y = 20$
 
 
-% ===============================================
-% ========              9                 =======
-% ===============================================
-\clearpage
-\section{9}
-
-    \begin{itemize}
-        
-        \item En el a) 
-            \begin{itemize}
-                \item 
-                    Para que sea verdadero considera a los
-                    estudiantes inscrito a la materia
-                \item
-                    Para que sea falso considera a los
-                    estudiantes de la UNAM
-            \end{itemize}
-
-        \item En el b) 
-            \begin{itemize}
-                \item 
-                    Para que sea verdadero a todos las
-                    personas en una discoteca VIP en USA (donde
-                    se bebe hasta los 21)
-                \item
-                    Considera a los estudiantes de la UNAM (incluyendo
-                    al niño genio)
-            \end{itemize}
-
-        \item En el c) 
-            \begin{itemize}
-                \item 
-                    Considera el universo a mi y a mis dos hermanos
-                \item
-                    Considera a un grupo de amigos de la universidad
-            \end{itemize}
-
-        \item En el d) 
-            \begin{itemize}
-                \item 
-                    Considera a mi a mis primos
-                \item
-                    Considera a un grupo de amigos de la universidad
-            \end{itemize}
-
-    \end{itemize}
-
-
-% ===============================================
-% ========              10                =======
-% ===============================================
-\clearpage
-\section{10}
-
-    \begin{itemize}
-        
-        \item a)
-            \begin{MultiLineEquation*}{3}
-                \neg \forall x \forall y P(x, y) 
-                    &= \exists x \neg \forall y P(x, y)  \\
-                    &= \exists x \exists y \neg P(x, y)
-            \end{MultiLineEquation*}
-
-        \item b)
-            \begin{MultiLineEquation*}{3}
-                \neg \forall y \forall x ( P(x, y) \lor Q(x, y)) 
-                    &= \exists y \neg \forall x ( P(x, y) \lor Q(x, y))          \\
-                    &= \exists y \exists x \neg ( P(x, y) \lor Q(x, y))          \\
-                    &= \exists y \exists x ( \neg P(x, y) \land \neg Q(x, y))    \\
-            \end{MultiLineEquation*}
-
-        \item c)
-            \begin{MultiLineEquation*}{3}
-                \neg (\exists x \exists y \neg P(x, y) \land \forall x \forall y Q(x, y))
-                    &= (\neg \exists x \exists y \neg P(x, y) ) 
-                        \lor 
-                        (\neg \forall x \forall y Q(x, y))      \\
-                    &= (\forall x \forall y P(x, y) ) 
-                        \lor 
-                        (\exists x \exists y \neg Q(x, y)) 
-            \end{MultiLineEquation*}
-
-        \item d)
-            \begin{MultiLineEquation*}{3}
-                \neg \forall x (\exists y \forall z) P(x, y) \land \exists z \forall x, y P(x, y, z)
-                    &= \exists x \neg (\exists y \forall z) P(x, y) \land \exists z \forall x, y P(x, y, z) \\
-                    &= \exists x (\forall y \neg \forall z) P(x, y) \land \exists z \forall x, y P(x, y, z) \\
-                    &= \exists x (\forall y \exists z) \neg P(x, y) \land \exists z \forall x, y P(x, y, z) 
-            \end{MultiLineEquation*}
-
-        \item e)
-            \begin{MultiLineEquation*}{3}
-                \neg \forall y \exists x P(x, y)
-                    &= \neg \forall y \exists x P(x, y)         \\
-                    &= \exists y \neg \exists x P(x, y)         \\
-                    &= \exists y \forall x \neg P(x, y)
-            \end{MultiLineEquation*}
-                
-
-    \end{itemize}
 
 
                 
