@@ -8,7 +8,7 @@ A24 = [
     -1 -1 1 0 1;
     -1 -1 -1 1 1;
     -1 -1 -1 -1 1;
-]
+];
 
 [L, U, P, Q] = CompleteLUDecomposition(A24);
 

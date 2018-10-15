@@ -25,7 +25,7 @@ for i = (1 : 5)
 
     disp("Solving...")
 
-    [x24] = GaussianElimination(A24, b24);
+    [x24] = PartialGaussianElimination(A24, b24);
 
     disp("x:")
     disp(x24)
