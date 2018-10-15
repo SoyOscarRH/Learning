@@ -1,9 +1,13 @@
-getd('/Users/mac/Documents/Projects/Reference/Code/NumericalAnalysis')
+// @Author: Rosas Hernandez Oscar Andres
+// @Author: Alarcón Alvarez Aylin Yadira Guadalupe
+// @Author: Laurrabaquio Rodríguez Miguel Salvador
+// @Author: Pahua Castro Jesús Miguel Ángel
 
+getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/Algorithms')
 clc;
 disp("Ax = b")
 
-A26 = fscanfMat("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homewok2/Code/26.matrix");
+A26 = fscanfMat("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/26.matrix");
 b26 = zeros(100, 1);
 b26(:,1) = 1;
 

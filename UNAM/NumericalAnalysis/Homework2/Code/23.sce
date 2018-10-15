@@ -1,14 +1,10 @@
-getd('/Users/mac/Documents/Projects/Reference/Code/NumericalAnalysis')
+// @Author: Rosas Hernandez Oscar Andres
+// @Author: Alarcón Alvarez Aylin Yadira Guadalupe
+// @Author: Laurrabaquio Rodríguez Miguel Salvador
+// @Author: Pahua Castro Jesús Miguel Ángel
 
+getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/Algorithms')
 clc;
-
-data23 = [
-    -1, 1;
-    -0.0034, 0.3434;
-    10, 230230;
-    -1212, 32032032,
-];
-
 for i = (1 : 4)
     A23 = grand(8, 8, "unf", data23(i, 1), data23(i, 2));
 

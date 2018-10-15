@@ -1,5 +1,9 @@
-getd('/Users/mac/Documents/Projects/Reference/Code/NumericalAnalysis')
+// @Author: Rosas Hernandez Oscar Andres
+// @Author: Alarcón Alvarez Aylin Yadira Guadalupe
+// @Author: Laurrabaquio Rodríguez Miguel Salvador
+// @Author: Pahua Castro Jesús Miguel Ángel
 
+getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/Algorithms')
 clc;
 
 A24 = [
