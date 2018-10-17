@@ -32,29 +32,25 @@ module Main where
     -- valor 2 pts
     sumaLista :: [Int] -> Int
     sumaLista [] = 0 
-    sumaLista list = head(list) + sumaLista(tail(list))
+    sumaLista (head:tail) = head + sumaLista(tail)
 
     -- Recibe un elemento y una lista.
     -- Devuelve el número de veces que aparece ese elemento en la lista
     -- valor 2 pts
     cuentaElem :: (Eq a) => a -> [a] -> Int
     cuentaElem e [] = 0
-    cuentaElem e x = do 
-      if (head(x) == e) then 
-        1 + cuentaElem e (tail x) 
+    cuentaElem e (head:tail) = do 
+      if (head == e) then 
+        1 + cuentaElem e tail
       else 
-        cuentaElem e (tail x)
+        cuentaElem e tail
 
     -- Recibe un elemento y una lista.
     -- Devuelve la lista sin todas las incidencias de ese elemento
     -- valor 2 pts
     eliminaElem :: (Eq a) => a -> [a] -> [a]
     eliminaElem e [] = []
-    eliminaElem e x = do 
-      if (head(x) == e) then 
-        eliminaElem e (tail x) 
-      else 
-        [head(x)] ++ eliminaElem e (tail x)
+    eliminaElem e (head:tail) = if (head == e) then eliminaElem e tail else [head] ++ eliminaElem e tail
 
     -- Recibe una lista.
     -- Devuelva una lista que indica cuantas veces aparece cada elemento de
@@ -66,7 +62,6 @@ module Main where
       let h = head x
       let rest = eliminaElem h x
       [(h, cuentaElem h x)] ++ repeticiones rest
-
 
     main = do
 
