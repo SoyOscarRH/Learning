@@ -481,7 +481,7 @@
     \vspace                                                         %Give some space
     \baselineskip                                                   %But we need this to up command
     
-    {\large \textsf{Octubre 2018}}                                  %Date
+    {\large \textsf{Noviembre 2018}}                                %Date
 \end{titlepage}
 
 
@@ -522,26 +522,6 @@
             exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/22a.sce", -1)
         \end{lstlisting}
 
-        % ==============================================
-        % =============      22           ==============
-        % ==============================================
-        \vspace{1em}
-        \subsection{22}
-
-            Ejecuta los scripts que esta dentro de Code llamado:
-            \begin{itemize}
-                \item 22a.sce
-                \item 22b.sce
-            \end{itemize}
-
-            Pero ya que esto es un pdf y no me puedo quejar del espacio que utilizo:
-            \lstinputlisting[language=scilab, gobble=12]{Code/22a.sce}
-
-            \clearpage
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/22b.sce}
-
-            
             
         % ==============================================
         % =============        23         ==============
@@ -549,16 +529,31 @@
         \clearpage
         \subsection{23}
 
+            \begin{SmallIndentation}[0em]
+            
             Ejecuta los scripts que esta dentro de Code llamado: 23.sce
 
-            En este código mostramos el resultado de la implementación
-            del algoritmo que estima la condición, dicho algoritmo esta
-            dentro del archivo Condicion.sci de la carpeta de algoritmos.
+            En este código muestra justo lo que se nos pide, por el método de ecuaciones normales
+            veremos la solución aproximada para cada una de las 2 $b$ que nos dan y vemos a aunque son
+            muy parecidas los resultados son completamente diferentes, y si, aunque puede parecer que
+            o el algoritmo esta mal o algo raro acaba de pasar basta con dar un vistazo a la matriz $A$
+            y verla como lo que la estamos interpretando, un conjunto de vectores.
 
-            En script lo que hace es generar varias matrices aleatoriamente
-            y muestra nuestra estimación y el valor calculado de verdad.
+            Recuerda que lo que estamos haciendo es encontrar una combinación lineal de estos vectores
+            para aproximar a nuestros vectores $b$.
 
-            Pero ya que esto es un pdf y no me puedo quejar del espacio que utilizo:
+            Pues si nuestros vectores no son ortogonales lo que pasa es que un pequeño cambio 
+            en el resultado nos da una combinación lineal muy diferente. Es justo lo que esta pasando
+            estamos trabajando con vectores muy parecidos.
+
+            La mejor forma de explicar este fenomeno y mostrar porque la ortogonalidad es tan importante
+            es ver este video que justo habla de porque $1, x, x^2, \dots$ es una base horrible para los 
+            polinomios. El link es $https://youtu.be/pYoGYQOXqTk$
+
+            Esto es un pdf y no me puedo quejar del espacio que utilizo, así que dejo el código:
+
+            \end{SmallIndentation}
+
             \lstinputlisting[language=scilab, gobble=12]{Code/23.sce}
 
         % ==============================================
@@ -567,33 +562,8 @@
         \clearpage
         \subsection{24}
 
-            Ejecuta los scripts que esta dentro de Code llamado:
-            \begin{itemize}
-                \item 24ab.sce
-                \item 24c.sce
-            \end{itemize}
-
-            Ahora, la parte a) nos pregunta que pasa cuando resolvemos la matriz:
-            \begin{MultiLineEquation*}{3}
-                \bVector{
-                    1  &  0 &  0 &  0 & 1 \\
-                    -1 &  1 &  0 &  0 & 1 \\
-                    -1 & -1 &  1 &  0 & 1 \\
-                    -1 & -1 & -1 &  1 & 1 \\
-                    -1 & -1 & -1 & -1 & 1 \\
-                }
-            \end{MultiLineEquation*}
-
-            Y la respuesta es sencilla, pues se resuelve, :v
-
-            Nunca se hace el pivoteo y siempre es muy sencillo poner ceros debajo del pivote
-            basta con sumar una fila con la otra, por lo tanto no entiendo muy bien este inciso.
-
-            Mientras que en el inciso b) lo que hicimos fue solucionar 5 sistemas con $\vec b$
-            elegidos aleatorios y mostrar su condición (estimada y calculada).
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/24ab.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/24c.sce}
+           
+            \lstinputlisting[language=scilab, gobble=12]{Code/24.sce}
 
 
         % ==============================================
@@ -601,24 +571,6 @@
         % ==============================================
         \clearpage
         \subsection{25}
-
-            Pasa algo muy interesante en este problema, lo que hacemos es basicamente resolver el sistema
-            \begin{MultiLineEquation*}{3}
-                \bVector{
-                    \epsilon & 1 \\
-                    1 & 1 \\
-                }
-                \bVector{x_1 \\ x_2}
-                = 
-                \bVector{1 + \epsilon \\ 2}
-            \end{MultiLineEquation*}
-
-            Este sistema el principio lo podemos resolver muy bonito, pero alrededor de $1 \times 10^{-8}$
-            resulta que la operación $1 + \epsilon = 1$, por lo tanto el vector solución esta mal y tenemos 
-            pequeños errores, pero $1 \times 10^{-16}$ tambien $\epsilon = 0$, por lo que nuestro error ahora
-            si se va por las nubes, nunca mejor dicho, aritmetica de punto flotante, esa locura.
-
-            Puedes verlo por ti mismo en 25.sce
 
             \lstinputlisting[language=scilab, gobble=12]{Code/25.sce}
 
@@ -629,13 +581,9 @@
         \clearpage
         \subsection{26}
 
-            Para hacer este tuve primero que crear la matriz, en este caso la cargo desde un archivo, así que para comprobarlo
-            porfavor, cambia el path del archivo a donde lo estes ejecutando.
-
-            Luego resolvemos, nota que al ser un algoritmo $O(n^3)$ toma su ratito, pero cuando lo resolvemos y hacemos
-            la norma de la diferencia de nuestras soluciones.
-
             \lstinputlisting[language=scilab, gobble=12]{Code/26a.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/26b.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/26c.sce}
 
 
             
@@ -645,29 +593,19 @@
         \clearpage
         \subsection{27}
 
-            Esto estuvo bueno, porque tuvimos que hacer el mismo algoritmo el de Cholesky de dos maneras:
-            \begin{itemize}
-                \item La clasica que se basa en Gauss Jordan como $A = L * L^T$, esta se puede hacer muy sencilla
-                        y se encuentra en CholeskyGaussian.sci  
-                \item La otra se basa en primero hacer la clásica factorización L * U, y luego factorizar de U una matriz diagonal
-                    y una U que es triangular unitaria superior, es decir creamos $A = L D L^T$
-                        y se encuentra en CholeskyBanachiewicz.sci  
-            \end{itemize}
+            Este proceso lo haremos hasta $\epsilon = 2^{-10}$ porque $\epsilon$ más pequeñas simplemente ya
+            hacer que se trate a la matriz como singular pues se ve como una matriz con 3 columnas iguales, por lo
+            tanto causa errores al tomarse como una matriz singular.
 
+            Lo que podemos ver que mientras epsilon más y más pequeña nos acercamos al claro resultado
+            donde $x_1 = x_2 = x_3 = 0.333$
 
+            Algo curioso y diferente de los métodos anteriores, del parcial pasado es que practicamente
+            todos los métodos dan el mismo resultado, curiosamente GramSchmidt es el único diferente
+            en ciertos $\epsilon$.
 
-        % ==============================================
-        % =============        28         ==============
-        % ==============================================
-        \clearpage
-        \subsection{28}
+            \lstinputlisting[language=scilab, gobble=12]{Code/27.sce}
 
-        Ejecuta los scripts que esta dentro de Code llamado:
-        \begin{itemize}
-            \item 28.sce
-        \end{itemize}
-
-        \lstinputlisting[language=scilab, gobble=12]{Code/28.sce}
 
 
     
@@ -677,6 +615,22 @@
     \clearpage
     \section{Anexo}
 
+        \subsection{Givens}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Givens.sci}
+
+        \clearpage
+        \subsection{GramSchmidt}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/GramSchmidt.sci}
+
+        \clearpage
+        \subsection{HouseHolder}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/HouseHolder.sci}
+
+        \subsection{LeastSquares}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/LeastSquares.sci}
+
+
+        \clearpage
         \subsection{BackwardSubstitution}
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/BackwardSubstitution.sci}
 
@@ -693,36 +647,13 @@
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/CompleteLUDecomposition.sci}
 
         \clearpage
-        \subsection{Condition}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Condition.sci}
-
         \subsection{FowardSubstitution}
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/FowardSubstitution.sci}
 
         \clearpage
-        \subsection{GaussianElimination}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/GaussianElimination.sci}
-
         \subsection{LUDecomposition}
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/LUDecomposition.sci}
 
-        \clearpage
-        \subsection{Norm1}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Norm1.sci}
-
-        \subsection{NormInfty}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Norm1.sci}
-
-        \clearpage
-        \subsection{PartialGaussianElimination}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/PartialGaussianElimination.sci}
-
-        \clearpage
-        \subsection{PartialLUDecomposition}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/PartialLUDecomposition.sci}
-
-
-        
 
 
 \end{document}
