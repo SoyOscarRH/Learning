@@ -514,12 +514,12 @@
 
         Esta linea: \\
         \begin{lstlisting}[language=scilab, gobble=12]
-            getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/Algorithms')
+            getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework3/Code/Algorithms')
         \end{lstlisting}
 
         Para ejecutar cada uno basta con hacer algo como: \\
         \begin{lstlisting}[language=scilab, gobble=12]
-            exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/22a.sce", -1)
+            exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework3/Code/23.sce", -1)
         \end{lstlisting}
 
             
@@ -562,8 +562,52 @@
         \clearpage
         \subsection{24}
 
+            Antes que nada, espero estar haciendo el problema correcto, este:
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.5\textwidth]{24Text}
+            \end{figure}
+
+            Ahhhh, este problema estuvo demasiado genial, ojala tuviera mas tiempo de intentar más problemas
+            así, pero este si que requiere más explicación.
+
+            Lo que haremos primero será capturar 2 arreglos con la información que tenemos,
+            después generaremos la matriz, que se basa justo en la ecuación $ay^2 + by + cd+ e = x^2$
+
+            Ahora podemos resolver nuestro problema usando ecuaciones normales, con ello obtenemos un vector
+            de coheficientes.
+
+            Por lo tanto ya nos podemos poner a hacer pronosticos, lo que harmeos será generar un arreglo con 
+            puntos equidistantes de $x \in [0, 1]$.
+
+            Ahora, solo basta con ver que si $x$ es una constante, la función que hemos calculado ahora nos regresa
+            dos $y$, nos quedaremos con una y vamos a graficarla, despues de todo con un $x$ constante entonces
+            $ay^2 + by + cd+ e = x^2$ es una simple ecuación de segundo grado.
+
+            Así que mostramos, nuestra predicción, mira que hermoso, hasta te puse una foto de como se ve.
+
+            \clearpage
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{24Plot}
+            \end{figure}
+
            
-            \lstinputlisting[language=scilab, gobble=12]{Code/24.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/24a.sce}
+
+
+            \clearpage
+
+            La sección b trata de intentar mover un poco los datos sobre alguna insertudimbre y con eso ver como
+            afecta la orbita y nuestras estimaciones y la verdad... todo Ok
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{24Plot2}
+            \end{figure}
+
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/24b.sce}
 
 
         % ==============================================
@@ -572,6 +616,7 @@
         \clearpage
         \subsection{25}
 
+            Dejemos que el códgo hable:
             \lstinputlisting[language=scilab, gobble=12]{Code/25.sce}
 
 
@@ -580,6 +625,33 @@
         % ==============================================
         \clearpage
         \subsection{26}
+
+            Admiremos antes que nada lo bonita que es la matriz de Hilbert:
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.4\textwidth]{Hilbert}
+            \end{figure}
+
+            Ahora si, basicamente lo que nos piden es graficar diversos métodos y los
+            digitos de presición conforme se hace crecer esta matriz.
+
+            Miremos los resultados y el código necesario para hacerlo funcionar:
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{263}
+            \end{figure}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{262}
+            \end{figure}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{261}
+            \end{figure}
+
+            \clearpage
 
             \lstinputlisting[language=scilab, gobble=12]{Code/26a.sce}
             \lstinputlisting[language=scilab, gobble=12]{Code/26b.sce}
@@ -643,17 +715,8 @@
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/CholeskyGaussian.sci}
 
         \clearpage
-        \subsection{CompleteLUDecomposition}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/CompleteLUDecomposition.sci}
-
-        \clearpage
         \subsection{FowardSubstitution}
         \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/FowardSubstitution.sci}
-
-        \clearpage
-        \subsection{LUDecomposition}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/LUDecomposition.sci}
-
 
 
 \end{document}

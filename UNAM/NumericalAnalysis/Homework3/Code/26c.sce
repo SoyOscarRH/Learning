@@ -48,6 +48,6 @@ plot(data,digitsAltered, '.r-')
 plot(data,digitsTwo, '.g-')
 plot(data,digitsNormal, '.black-')
 
-title("Digits of precisition")
 
 hl=legend(['Classical GramSchmidt'; 'Altered GramSchmidt'; 'Two times GramSchmidt'; 'Normal equation']);
+xtitle("Presition Digits", "n size", "bits")

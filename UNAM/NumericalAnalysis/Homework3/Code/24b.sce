@@ -45,30 +45,7 @@ for i = (1 : 10)
     b24(i) = x24(i) * x24(i)
 end
 
-disp("Ax = b")
-
-disp("xs:")
-disp(x24)
-
-disp("ys:")
-disp(y24)
-
-disp("A:")
-disp(A24)
-
-disp("b:")
-disp(b24)
-
-estimedx24 = LeastSquares(A24, b24)
-disp("x:")
-disp(estimedx24)
-
-disp("Ax:")
-disp(A24 * estimedx24)
-
 clf()
-
-
 
 function [x] = solveEquation(a, b, c)
     x = (-1 * b + sqrt(b*b - 4*a*c)) / (2 * a)
@@ -88,13 +65,56 @@ function [y] = solve(coefficients, x)
     y = solveEquation(reala, realb, realc)
 endfunction
 
-someX = linspace(0, 1.10, 50)
+someX = linspace(0, 1, 50)'
 someY = someX
 
 for i = (1 : 50)
     someY(i) = solve(estimedx24, someX(i))
 end
 
+x24_2 = eye(10, 1)
+y24_2 = eye(10, 1)
+
+A24_2 = eye(10, 5)
+b24_2 = x24_2
+
+for i = (1 : 10)
+    x24_2(i) = x24(i) + (rand() * 0.010 - 0.005)
+    y24_2(i) = y24(i) + (rand() * 0.010 - 0.005)
+
+    A24_2(i, 1) = y24_2(i) * y24_2(i)
+    A24_2(i, 2) = x24_2(i) * y24_2(i)
+    A24_2(i, 3) = x24_2(i)
+    A24_2(i, 4) = y24_2(i)
+    A24_2(i, 5) = 1
+    
+    b24_2(i) = x24_2(i) * x24_2(i)
+end
+
+estimedx24_2 = LeastSquares(A24_2, b24_2)
+
+clf()
+
+someX_2 = linspace(0, 1, 50)'
+someY_2 = someX_2
+
+for i = (1 : 50)
+    someY_2(i) = solve(estimedx24_2, someX_2(i))
+end
+
+
+plot(x24, y24, '.b')
 plot(someX, someY, 'r-')
 
-scatter(x24, y24)
+disp("====")
+disp(someX_2)
+disp(someY_2)
+
+plot(x24, y24, '.b')
+plot(someX, someY, 'r-')
+
+plot(x24_2, y24_2, '.green')
+plot(someX_2, someY_2, 'black-')
+
+hl=legend(['Data'; 'Estimated Elipse'; 'Data 2'; 'Estimated Elipse 2']);
+xtitle("Elipse estimation", "x-axis", "y-axis")

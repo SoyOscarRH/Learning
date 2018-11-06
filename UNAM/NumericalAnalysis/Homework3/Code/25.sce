@@ -3,49 +3,73 @@
 // @Author: Laurrabaquio Rodríguez Miguel Salvador
 // @Author: Pahua Castro Jesús Miguel Ángel
 
-getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework2/Code/Algorithms')
-clc;
+// Creates a very bad conditioned least squares problem
+// @param: m a number, the size of the problem
+// @param: n a number, the size of the problem
+// @param: epsilon a number, the pertubation size
+
+// @return: Q a matriz in M_{m x25 m} that is ortogonal
+// @return: R a matriz in M_{m x25 n} that is triangular superior
 
 
-for k = (1 : 10)
-    epsilon = 10 ** (-2 * k)
+function [] = 25(m, n, epsilon)
 
-    A25 = [
-        epsilon 1;
-        1 1;
-    ];
+    // Create the polynomial
+    t = zeros(m, 1)
+    for(i = 1 : m)
+        t(i) = (i-1) / (m-1)
+    end
+
+    //Some valuation result 
+    y25 = zeros(m, 1)
+    for(i = 1 : m)
+        for(j = 1 : n)
+            y25(i) = y25(i) + t(i)^(j-1)
+        end
+    end
+
+    //Create the least square matrix
+    A25 = zeros(m, n)
+    for(i = 1 : m)
+        for(j = 1 : n)
+            A25(i, j) = t(i)^(j - 1)
+        end
+    end
+
+    //Lets create the perturbations
+    y2_25 = zeros(m, 1)
+    for(i = 1 : m)
+        y2_25(i) = y25(i) + (2*rand() - 1) * epsilon
+    end
+
+    //Lets solve
+    x25 = LeastSquares(A25, y25)
+    z = LeastSquares(A25, y2_25)
+
+    [Q1, R1] = GramSchmidt(A25, 0)
+    x2_25 = QRDecomposition(Q1, R1, y25)
+
+    [Q1, R1] = GramSchmidt(A25, 0)
+    x2_25 = QRDecomposition(Q1, R1, y2_25)
+
+   disp("a)")
+   if(norm(x25-z) < norm(x2_25-z2))
+       disp("Least square is the least sensitive to pertubations")
+    else 
+       disp("QR Decomposition is the least sensitive to pertubations")
+    end
     
-    b25 = [
-        1 + epsilon;
-        2;
-    ];
+    disp("c)")
+    if(A25*x25 == y25)
+        disp("The difference in the solution to least squares do not affect the ajust in the polynomial")
+    else
+        disp("The difference in the solution to least squares do affect the ajust in the polynomial")
+    end
+    
+    if(A25*x2_25 == y25)
+        disp("The difference in the solution to QR do not affect the ajust in the polynomial")
+    else
+        disp("The difference in the solution to QR do affect the ajust in the polynomial")
+    end
 
-    realX25 = [
-        1;
-        1;
-    ]
-
-    disp("A")
-    disp(A25)
-
-    disp("b")
-    disp(b25)
-
-    [x] = GaussianElimination(A25, b25);
-
-    disp("Estimated Solution: A \tilde x")
-    disp(A25 * x)
-
-    disp("Real Solution: A x")
-    disp(A25  * realX25)
-
-    disp("Difference of Error: \tilde x - x")
-    disp(x -  realX25)
-
-    disp("Estimated Condition")
-    disp( Condition(A25, 10) )
-
-    disp("Real Condition")
-    disp( cond(A25) )
-
-end
+endfunction
