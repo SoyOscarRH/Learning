@@ -29,15 +29,24 @@ catch
     b = 0
 end
 
+deff('y = f(x)', ['y = evstr(someFunction)']);
+
 select number
     case 1 then
-        deff('y = f(x)', ['y = evstr(someFunction)']);
         if (f(a) * f(b) >= 0) then
             disp("No valid point :(");
             break;
         end
-        [estimation, iterations] = Bisection(a, b, someFunction, tolerance, MaxIterations)
+        [estimation, iterations] = Bisection(a, b, f, tolerance, MaxIterations)
 
+    case 2 then
+        [estimation, iterations] = Secant(a, b, f, tolerance, MaxIterations)
+
+    case 3 then
+        [estimation, iterations] = NewtonRaphson(a, f, tolerance, MaxIterations)
+
+    case 4 then
+        [estimation, iterations] = RegulaFalsi(a, b, f, tolerance, MaxIterations)
 end
 
 disp("estimation: " + string(estimation))
