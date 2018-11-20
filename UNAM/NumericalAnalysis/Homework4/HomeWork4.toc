@@ -1,0 +1,11 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Problemas de Computadora}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Notas}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}1}{4}{subsection.1.2}
+\contentsline {section}{\numberline {2}Anexo}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Bisection}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}FixedPoint}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Helpers}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}NewtonRaphson}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}NewtonSecant}{8}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}RegulaFalsi}{8}{subsection.2.6}

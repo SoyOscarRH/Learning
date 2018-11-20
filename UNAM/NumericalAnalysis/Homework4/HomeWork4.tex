@@ -464,7 +464,7 @@
 
     % ============ NAME OF THE BOOK  ===============
     \href{\ProjectNameLink}                                         %Link to Author
-    {\fontsize{65}{78}\selectfont \textbf{Tarea 3}}\\[0.5cm]        %Name of the book
+    {\fontsize{65}{78}\selectfont \textbf{Tarea 4}}\\[0.5cm]        %Name of the book
     \textcolor{ColorSubtext}{\textsc{\Huge Análisis Númerico}}      %Name of the general theme
     
     \vfill                                                          %Fill the space
@@ -510,175 +510,95 @@
     \section{Problemas de Computadora}
 
         \textbf{Una nota importante es que al inicio de CADA script se incluyen los algoritmos, porfavor cambia
-        la primera linea de cada script para que el path sea el correcto, porfavor.} \\
+        el valor de la variable Directory para que sea un string que apunte desde donde estas a donde estan 
+        la carpeta de los algoritmos} \\
 
         Esta linea: \\
         \begin{lstlisting}[language=scilab, gobble=12]
-            getd('/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework3/Code/Algorithms')
+            getd(pwd() + Directory);
         \end{lstlisting}
 
         Para ejecutar cada uno basta con hacer algo como: \\
         \begin{lstlisting}[language=scilab, gobble=12]
-            exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework3/Code/23.sce", -1)
+            exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework4/Code/1.sce", -1)
         \end{lstlisting}
+
+        % ==============================================
+        % =============     NOTAS         ==============
+        % ==============================================
+        \clearpage
+        \subsection{Notas}
+
+            Sobre la tolerancia:
+
+            Hay que definir que es la tolerancia porque puede significar varias cosas:
+            \begin{itemize}
+                \item Que $|f(x)| < tolerance$
+                \item Que $|x_{k+1} - x_k| < tolerance$
+            \end{itemize}
+
+            Así que cuando tu me mandas una tolerancia en cualquiera de los métodos la solución
+            que recibes de regrese cumple con \textbf{alguna} de las condiciones que he dicho antes.
 
             
         % ==============================================
-        % =============        23         ==============
+        % =============        1         ==============
         % ==============================================
         \clearpage
-        \subsection{23}
+        \subsection{1}
 
             \begin{SmallIndentation}[0em]
             
-            Ejecuta los scripts que esta dentro de Code llamado: 23.sce
+            Ejecuta los scripts que esta dentro de Code llamado: 1.sce
 
-            En este código muestra justo lo que se nos pide, por el método de ecuaciones normales
-            veremos la solución aproximada para cada una de las 2 $b$ que nos dan y vemos a aunque son
-            muy parecidas los resultados son completamente diferentes, y si, aunque puede parecer que
-            o el algoritmo esta mal o algo raro acaba de pasar basta con dar un vistazo a la matriz $A$
-            y verla como lo que la estamos interpretando, un conjunto de vectores.
+            En este código muestra justo lo que se nos pide, por ejemplo una entrada válida sería:
+            \begin{enumerate}
+                \item $1$
+                \item $"x**3 - 10"$
+                \item $[0, 3]$
+                \item $0.001$
+                \item $30$
+            \end{enumerate}
 
-            Recuerda que lo que estamos haciendo es encontrar una combinación lineal de estos vectores
-            para aproximar a nuestros vectores $b$.
-
-            Pues si nuestros vectores no son ortogonales lo que pasa es que un pequeño cambio 
-            en el resultado nos da una combinación lineal muy diferente. Es justo lo que esta pasando
-            estamos trabajando con vectores muy parecidos.
-
-            La mejor forma de explicar este fenomeno y mostrar porque la ortogonalidad es tan importante
-            es ver este video que justo habla de porque $1, x, x^2, \dots$ es una base horrible para los 
-            polinomios. El link es $https://youtu.be/pYoGYQOXqTk$
-
-            Esto es un pdf y no me puedo quejar del espacio que utilizo, así que dejo el código:
+            Despúes de esto tienes acceso a una variable llamada $estimation$ por si quieres probar
+            algo.
 
             \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/23.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/1.sce}
 
+        
+                        
         % ==============================================
-        % =============        24         ==============
+        % =============        2         ==============
         % ==============================================
-        \clearpage
-        \subsection{24}
+        \subsection{2}
 
-            Antes que nada, espero estar haciendo el problema correcto, este:
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.5\textwidth]{24Text}
-            \end{figure}
-
-            Ahhhh, este problema estuvo demasiado genial, ojala tuviera mas tiempo de intentar más problemas
-            así, pero este si que requiere más explicación.
-
-            Lo que haremos primero será capturar 2 arreglos con la información que tenemos,
-            después generaremos la matriz, que se basa justo en la ecuación $ay^2 + by + cd+ e = x^2$
-
-            Ahora podemos resolver nuestro problema usando ecuaciones normales, con ello obtenemos un vector
-            de coheficientes.
-
-            Por lo tanto ya nos podemos poner a hacer pronosticos, lo que harmeos será generar un arreglo con 
-            puntos equidistantes de $x \in [0, 1]$.
-
-            Ahora, solo basta con ver que si $x$ es una constante, la función que hemos calculado ahora nos regresa
-            dos $y$, nos quedaremos con una y vamos a graficarla, despues de todo con un $x$ constante entonces
-            $ay^2 + by + cd+ e = x^2$ es una simple ecuación de segundo grado.
-
-            Así que mostramos, nuestra predicción, mira que hermoso, hasta te puse una foto de como se ve.
-
-            \clearpage
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.9\textwidth]{24Plot}
-            \end{figure}
-
-           
-            \lstinputlisting[language=scilab, gobble=12]{Code/24a.sce}
-
-
-            \clearpage
-
-            La sección b trata de intentar mover un poco los datos sobre alguna insertudimbre y con eso ver como
-            afecta la orbita y nuestras estimaciones y la verdad... todo Ok
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.9\textwidth]{24Plot2}
-            \end{figure}
-
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/24b.sce}
-
-
-        % ==============================================
-        % =============        25         ==============
-        % ==============================================
-        \clearpage
-        \subsection{25}
-
-            Dejemos que el códgo hable:
-            \lstinputlisting[language=scilab, gobble=12]{Code/25.sce}
-
-
-        % ==============================================
-        % =============        26         ==============
-        % ==============================================
-        \clearpage
-        \subsection{26}
-
-            Admiremos antes que nada lo bonita que es la matriz de Hilbert:
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.4\textwidth]{Hilbert}
-            \end{figure}
-
-            Ahora si, basicamente lo que nos piden es graficar diversos métodos y los
-            digitos de presición conforme se hace crecer esta matriz.
-
-            Miremos los resultados y el código necesario para hacerlo funcionar:
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.9\textwidth]{263}
-            \end{figure}
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.9\textwidth]{262}
-            \end{figure}
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.9\textwidth]{261}
-            \end{figure}
-
-            \clearpage
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/26a.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/26b.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/26c.sce}
-
-
+            \begin{SmallIndentation}[0em]
             
+            Ejecuta los scripts que esta dentro de Code llamado: 2.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/2.sce}
+
+        
         % ==============================================
-        % =============        27         ==============
+        % =============        3         ==============
         % ==============================================
-        \clearpage
-        \subsection{27}
+        \subsection{3}
 
-            Este proceso lo haremos hasta $\epsilon = 2^{-10}$ porque $\epsilon$ más pequeñas simplemente ya
-            hacer que se trate a la matriz como singular pues se ve como una matriz con 3 columnas iguales, por lo
-            tanto causa errores al tomarse como una matriz singular.
+        \begin{SmallIndentation}[0em]
+        
+        Ejecuta los scripts que esta dentro de Code llamado: 3.sce
 
-            Lo que podemos ver que mientras epsilon más y más pequeña nos acercamos al claro resultado
-            donde $x_1 = x_2 = x_3 = 0.333$
+        En este código muestra justo lo que se nos pide y pues...ya :v
 
-            Algo curioso y diferente de los métodos anteriores, del parcial pasado es que practicamente
-            todos los métodos dan el mismo resultado, curiosamente GramSchmidt es el único diferente
-            en ciertos $\epsilon$.
+        \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/27.sce}
-
-
+        \lstinputlisting[language=scilab, gobble=12]{Code/3.sce}
 
     
     % ==============================================
@@ -687,36 +607,28 @@
     \clearpage
     \section{Anexo}
 
-        \subsection{Givens}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Givens.sci}
+        \subsection{Bisection}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Bisection.sci}
 
         \clearpage
-        \subsection{GramSchmidt}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/GramSchmidt.sci}
+        \subsection{FixedPoint}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/FixedPoint.sci}
+
+        \subsection{Helpers}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Helpers.sci}
 
         \clearpage
-        \subsection{HouseHolder}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/HouseHolder.sci}
-
-        \subsection{LeastSquares}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/LeastSquares.sci}
-
+        \subsection{NewtonRaphson}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NewtonRaphson.sci}
 
         \clearpage
-        \subsection{BackwardSubstitution}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/BackwardSubstitution.sci}
+        \subsection{NewtonSecant}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NewtonSecant.sci}
 
         \clearpage
-        \subsection{CholeskyBanachiewicz}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/CholeskyBanachiewicz.sci}
+        \subsection{RegulaFalsi}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/RegulaFalsi.sci}
 
-        \clearpage
-        \subsection{CholeskyGaussian}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/CholeskyGaussian.sci}
-
-        \clearpage
-        \subsection{FowardSubstitution}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/FowardSubstitution.sci}
 
 
 \end{document}

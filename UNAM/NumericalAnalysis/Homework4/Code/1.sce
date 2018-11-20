@@ -26,7 +26,7 @@ a = initialPoints(1)
 try
     b = initialPoints(2)
 catch
-    b = 0
+    if (number ~= 3) disp("Not enough initial points") end
 end
 
 deff('y = f(x)', ['y = evstr(someFunction)']);
@@ -48,6 +48,8 @@ select number
     case 4 then
         [estimation, iterations] = RegulaFalsi(a, b, f, tolerance, MaxIterations)
 end
+
+
 
 disp("estimation: " + string(estimation))
 disp("f(estimation): " + string(f(estimation)))
