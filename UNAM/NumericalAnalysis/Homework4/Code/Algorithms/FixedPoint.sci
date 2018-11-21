@@ -15,11 +15,12 @@
 //  * @author: Pahua Castro Jesús Miguel Ángel
 //  */
 
-function [estimation] = FixedPoint(initialPoint, f, tolerance, MaximumIterations)
+function [estimation, iterations] = FixedPoint(initialPoint, f, tolerance, MaximumIterations)
     iterations = 0;
     estimation = f(initialPoint);
     
     while ((abs(norm(f(estimation))) > tolerance) && (iterations < MaximumIterations))
+        disp(estimation)
         oldEstimation = estimation;
         estimation = f(estimation);
 

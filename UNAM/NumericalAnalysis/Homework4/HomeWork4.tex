@@ -415,28 +415,35 @@
 % ===========           VARIABLES             ===========
 % =======================================================
 
-
     % =====  SOLVE LINEAL SYSTEM   =============
 
-    \newcommand \ColorMatrixA       {Teal700MD}                     %Color definition
-    \newcommand \ColorVecX          {Green700MD}                    %Color definition
-    \newcommand \ColorVecB          {Red700MD}                      %Color definition
-    \newcommand \ColorMatrixL       {Amber700MD}                    %Color definition
-    \newcommand \ColorMatrixU       {Indigo700MD}                   %Color definition
-    \newcommand \ColorVecSemiX      {Green900MD}                    %Color definition
-    \newcommand \ColorVecSemiB      {Red900MD}                      %Color definition
-    \newcommand \ColorVecY          {Purple700MD}                   %Color definition
-    \newcommand \ColorMatrixP       {Cyan900MD}                     %Color definition
+    \newcommand \ColorFun          {Teal700MD}                      %Color definition
+    \newcommand \ColorBigFun       {Teal700MD}                      %Color definition
+    \newcommand \ColorFunG         {Orange900MD}                    %Color definition
+    \newcommand \ColorFunDer       {Blue700MD}                      %Color definition
+    \newcommand \ColorBigFunDer    {Blue700MD}                      %Color definition
+    \newcommand \ColorFunDerDer    {Purple700MD}                    %Color definition
+    \newcommand \ColorRoot         {Green700MD}                     %Color definition
+    \newcommand \ColorVarA         {Purple700MD}                    %Color definition
+    \newcommand \ColorVarB         {BlueGrey700MD}                  %Color definition
+    \newcommand \ColorVarC         {Orange900MD}                    %Color definition
+    \newcommand \ColorVarX         {Purple300MD}                    %Color definition
+    \newcommand \ColorVarXpu       {Purple700MD}                    %Color definition
+    \newcommand \ColorVarXmu       {Blue300MD}                      %Color definition
 
-    \newcommand \MatrixA      {\Color{\ColorMatrixA}{A}}            %Use: Ax = b
-    \newcommand \VecX         {\Color{\ColorVecX}{\vec x}}          %Use: Ax = b
-    \newcommand \VecB         {\Color{\ColorVecB}{\vec b}}          %Use: Ax = b
-    \newcommand \MatrixL      {\Color{\ColorMatrixL}{L}}            %Use: A = LU
-    \newcommand \MatrixU      {\Color{\ColorMatrixU}{U}}            %Use: A = LU
-    \newcommand \VecSemiX     {\Color{\ColorVecSemiX}{\tilde x}}    %Use: Ax = b
-    \newcommand \VecSemiB     {\Color{\ColorVecSemiB}{\tilde b}}    %Use: Ax = b
-    \newcommand \VecY         {\Color{\ColorVecY}{\vec y}}          %Use: Ax = b
-    \newcommand \MatrixP      {\Color{\ColorMatrixP}{P}}            %Use: PA = LU
+    \newcommand \Fun[1]      {\Color{\ColorFun}{\pmb{f}\Wrap{#1}}}          %Use: \Fun{x} = y
+    \newcommand \BigFun[1]   {\Color{\ColorBigFun}{\pmb{F}\Wrap{#1}}}       %Use: \Fun{x} = y
+    \newcommand \FunG[1]     {\Color{\ColorFunG}{\pmb{g}\Wrap{#1}}}         %Use: \Fun{x} = y
+    \newcommand \FunDer[1]   {\Color{\ColorFunDer}{\pmb{f'}\Wrap{#1}}}      %Use: \Fun{x} = y
+    \newcommand \BigFunDer[1]{\Color{\ColorFunDer}{\pmb{F'}\Wrap{#1}}}      %Use: \Fun{x} = y
+    \newcommand \FunDerDer[1]{\Color{\ColorFunDerDer}{\pmb{f''}\Wrap{#1}}}  %Use: \Fun{x} = y
+    \newcommand \Root        {\Color{\ColorRoot}{\pmb{\xi} }}               %Use: f(root) = 0
+    \newcommand \VarA        {\Color{\ColorVarA}{\pmb{a} }}                 %Use: f(root) = 0
+    \newcommand \VarB        {\Color{\ColorVarB}{\pmb{b} }}                 %Use: f(root) = 0
+    \newcommand \VarC        {\Color{\ColorVarC}{\pmb{c} }}                 %Use: f(root) = 0
+    \newcommand \VarX        {\Color{\ColorVarX}{x_k }}                     %Use: f(root) = 0
+    \newcommand \VarXpu      {\Color{\ColorVarXpu}{x_{k+1}  }}              %Use: f(root) = 0
+    \newcommand \VarXmu      {\Color{\ColorVarXmu}{x_{k-1}  }}              %Use: f(root) = 0
 
 
 % =====================================================
@@ -572,6 +579,7 @@
         % ==============================================
         % =============        2         ==============
         % ==============================================
+        \clearpage
         \subsection{2}
 
             \begin{SmallIndentation}[0em]
@@ -586,21 +594,230 @@
 
         
         % ==============================================
-        % =============        3         ==============
+        % =============        4          ==============
         % ==============================================
-        \subsection{3}
+        \clearpage
+        \subsection{4}
 
-        \begin{SmallIndentation}[0em]
-        
-        Ejecuta los scripts que esta dentro de Code llamado: 3.sce
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 4.sce
 
-        En este código muestra justo lo que se nos pide y pues...ya :v
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/4.sce}
+
+
+        % ==============================================
+        % =============        4          ==============
+        % ==============================================
+        \subsection{9}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 9.sce
+
+            En este código muestra justo lo que se nos pide y pues nos muestra como es que 
+            se comporta de función $g(x)$ comparandola con la identidad y el punto en donde
+            se intersectan calculado usando las iteraciones de punto fijo
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/9.sce}
+
+
+
+        % ==============================================
+        % =============        13         ==============
+        % ==============================================
+        \clearpage
+        \subsection{13, 14, 15}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 13.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
 
         \end{SmallIndentation}
 
-        \lstinputlisting[language=scilab, gobble=12]{Code/3.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/13.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/14.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/14.sce}
 
-    
+
+
+        % ==============================================
+        % =============        16         ==============
+        % ==============================================
+        \clearpage
+        \subsection{16}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 9.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
+
+
+
+        % ==============================================
+        % =============        18         ==============
+        % ==============================================
+        \clearpage
+        \subsection{18}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 18.sce
+
+            En este código nos da dos métodos, y ahhhhh, este si me costo un rato, así que añadiré un fragmento del
+            texto que explica como funciona esto:
+
+                    
+            % ==============================================================
+            % ======              USARLO PARA SQRT(A)               ========
+            % ==============================================================
+            \subsubsection{Usar Newton para calcular la $\sqrt[n]{A}$}
+
+                Si quieres calcular $\sqrt[n]{A}$ entonces puedes solucionar
+                la ecuación $\Fun{x} = x^n - A = 0$.
+
+                En ese caso $\FunDer{x} = n x^{n-1}$ y nuestra iteración es:
+                \begin{LargeEq}
+                    \begin{MultiLineEquation*}{3}
+                        \VarXpu 
+                            &= \VarX - \dfrac{(\VarX)^n - A}{n (\VarX)^{n-1}}  
+                            = \dfrac{(n-1)(\VarX)^n + A}{n (\VarX)^{n-1}} 
+                    \end{MultiLineEquation*}
+                \end{LargeEq}
+
+                           
+            % ==============================================================
+            % ======              USARLO PARA SQRT(A)               ========
+            % ==============================================================
+            \subsubsection{¿Como calcular raíces de números negativos?}
+
+                Ok, si quieres usar Newton para calcular raices de números positivos no hay problema.
+
+                Ahora, si es negativo pero la n-abla raíz es impar entonces tampoco hay problema basta
+                con calcular la raíz absoluta y luego negar la respuesta, pero, pero que pasa si tratamos
+                con un número negativo y una raíz n-abla par.
+
+                En ese caso lo que podemos calcular es con este método es $r$ del número complejo $re^{i\theta}$
+
+                Ahora, solo usamos nuestro formulazo para sacar $\theta$ y pasarlo a forma rectangular y listo :v
+
+
+                USAR EL METODO ROOT
+            \end{SmallIndentation}
+
+            \clearpage
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NRootNewtonRaphson.sci}
+
+
+
+
+
+        % ==============================================
+        % =============        19         ==============
+        % ==============================================
+        \clearpage
+        \subsection{19}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 19.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \begin{itemize}
+                \item La primera opción queda como anillo al dedo porque cumple con todas las restricciones
+                    así que no hay mucho que comentar
+                \item Pero la segunda, se toma casi el doble de iteraciones y no llega a un punto válido según
+                    las restricciones, pero eso se debe basicamente a la periodicidad de las trigonometricas
+            \end{itemize}
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
+
+
+        % ==============================================
+        % =============        19         ==============
+        % ==============================================
+        \clearpage
+        \subsection{20}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 20.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \begin{itemize}
+                \item La primera opción nos muestra una respuesta, una buena respuesta
+                \item La segunda casi casi niega el primer término de la primera pero la
+                    segunda componente se mueve $pi$
+                \item Finalmente la tercera se comporta igual se mueve y salta $2\pi$
+                    causado por la periodicidad de las trigonometricas
+            \end{itemize}
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
+
+
+
+
+        % ==============================================
+        % =============        20         ==============
+        % ==============================================
+        \clearpage
+        \subsection{21}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 21a / b / c.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/21a.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/21b.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/21c.sce}
+
+
+
+
+        % ==============================================
+        % =============        22         ==============
+        % ==============================================
+        \clearpage
+        \subsection{22}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 22.sce
+
+            En este código muestra justo lo que se nos pide y pues...ya :v
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/22.sce}
+
+
+
+
+        
     % ==============================================
     % ========          ANEXO           ============
     % ==============================================

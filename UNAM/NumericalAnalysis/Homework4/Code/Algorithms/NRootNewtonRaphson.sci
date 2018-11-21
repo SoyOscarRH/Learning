@@ -38,8 +38,6 @@ function [estimation] = Roots(A, n)
             real = estimation * cos(theta)  
             imaginary = estimation * sin(theta) * %i
             estimation = real + imaginary
-        else
-            estimation = estimation * -1
         end
     end
 endfunction
