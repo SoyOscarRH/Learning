@@ -1,111 +1,113 @@
 clc
 
+function [y] = FowardSubstitution(L, b)
+    [m, n] = size(L);
+    y = zeros(n, 1);
 
-///Isaí López Servín 
-// 18-Octubre-2018
-//Función que resuelve el sistema Ax=b con
-//A de dimensión mxn con m>n
-//Input 
-//A,b del sistema Ax=v
-function[x]=MCuadrados(A,b)
-    //Plantemos el sistema de mínimos cuadrados 
-    b=A'*b;
-    A=A'*A;
-    n=size(A,'c');
-    //Resolvemos mediante factorizaición de Cholesky 
-    for j=(1:n)
-        for k=(1:j-1)
-            for i=(j:n)
-                A(i,j)=A(i,j)-A(i,k)*A(j,k);
-            end
+    for i = (1 : n)
+        if (L(i, i) == 0)
+            error('Error: Singular matrix');
+            return;
         end
-        A(j,j)=sqrt(A(j,j));
-        for k=(j+1:n)
-            A(k,j)=A(k,j)/A(j,j);
-        end
-    end
-    //Resilvemos lel sistema 
-    y=Lx(A,b);
-    x=Ux(A',y)
-endfunction
-//Output
-//x: Aproximación a la solución del sistema Ax=b
 
-   //Función que resuelve un sistema diagonal inferior
-//Parametros de entrada:
-//L:Matríz diagonal inferior del sistema Lx=b
-//b:Vector del sistema Lx=b
-function [x] = Lx(L,b)  
-    [m,n]=size(L);//Obtenemos las dimensiones de L
-    x=zeros(m,1);//Vector que guardará la soluciones del sistema Lx=b
-    for j=(1:n)
-        if(L(j,j)==0)
-            x='Error, hay un cero en la diagonal';//Si hay un cero en la diagonal, se manda mensaje de error
-            break;
-        else
-            x(j)=b(j)/L(j,j);   //Obtenemos el vector de soluciones x
-            for i=(j+1:n)
-                b(i)=b(i)-L(i,j)*x(j);//Reasignamos los valores de b
-            end
+        y(i) = b(i) / L(i, i);
+
+        for j = (i + 1 : n)
+            b(j) = b(j) - L(j, i) * y(i);
         end
     end
 endfunction
-//Parametros de salida:
-//x:Solución del sistema Lx=b
 
-//Función que resuelve un sistema diagonal inferior
-//Parametros de entrada:
-//U:Matríz diagonal superior del sistema Ux=b
-//b:Vector del sistema Ux=b
-function [x] = Ux(U,b)  
-    [m,n]=size(U);//Obtenemos las dimensiones de L
-    x=zeros(m,1);//Vector que guardará la soluciones del sistema Lx=b
-    for j=(n:-1:1)
-        if(U(j,j)==0)
-            x='Error, hay un cero en la diagonal';;//Si hay un cero en la diagonal, se manda mensaje de error
-            break;
-        else
-            x(j)=b(j)/U(j,j);   //Obtenemos el vector de soluciones x
-            for i=(1:j-1)
-                b(i)=b(i)-U(i,j)*x(j);//Reasignamos los valores de b
-            end
+function [x] = BackwardSubstitution(U, b)
+    [m, n] = size(U);
+    x = zeros(n, 1);
+
+    for i = (n : -1 : 1)
+        if (U(i, i) == 0)
+            error('Error: Singular matrix');
+            return;
+        end
+
+        x(i) = b(i) / U(i,i);
+
+        for j = (1 : i - 1)
+            b(j) = b(j) - U(j, i) * x(i);
         end
     end
 endfunction
-//Parametros de salida:
-//x:Solución del sistema Ux=b
+
+function[L, D] = CholeskyBanachiewicz(A, option)
+    [m, n] = size(A);       
+    D = eye(n, n);     
+    L = eye(m, n);
+    U = A; 
+
+    for step = (1 : n - 1)
+        if (A(step, step) == 0)
+            error('Error: Singular matrix');
+            return;
+        end
+
+        for row = (step + 1 : n)
+            L(row, step) = U(row, step) / U(step, step);
+            for column = (1 : n)
+                U(row, column) = U(row, column) - L(row, step) * U(step, column);
+            end
+        end
+    end
+
+    if option == 1
+        for step = (1 : n) 
+            for row = (step : n) 
+                L(row, step) = L(row, step) * sqrt(U(step, step));
+            end
+        end
+    else
+        for step = (1 : n) 
+            D(step, step) = U(step, step);
+        end
+    end
+
+endfunction
 
 
-function [a, b, c, d] = InterpolacionCubica(a, b, c, f, MaxIterations, tolerance)
-    intentos = 0
+function [x] = LeastSquares(A, b)
+    [L] = CholeskyBanachiewicz(A' * A, 1);
 
-    while (intentos < MaxIterations)
+    y = FowardSubstitution(L, A' * b);
+    x = BackwardSubstitution(L', y);
+endfunction
+
+function [a, b, c, d] = MinimazeWithCubic(a, b, c, f, MaxIterations, tolerance)
+    iterations = 0
+
+    while (iterations < MaxIterations)
         disp("a = " + string(a))
         disp("b = " + string(b))
         disp("c = " + string(c))
         disp("d = " + string(d))
         disp("")
 
-        plot(a, f(a), ".m")
-        plot(b, f(b), ".m")
-        plot(c, f(c), ".m")
-        plot(d, f(d), ".m")
+        plot(a, f(a), ".b")
+        plot(b, f(b), ".b")
+        plot(c, f(c), ".b")
+        plot(d, f(d), ".b")
 
         x = linspace(4, 7)
-        [puntos, min] = intentocubica(a, b, c, d, f, x)
+        [points, min] = EstimateCubic(a, b, c, d, f, x)
 
-        if (intentos == 1)
-            plot(x, puntos, "-black")
-        elseif (intentos == 2)
-            plot(x, puntos, "-m")
+        if (iterations == 1)
+            plot(x, points, "-black")
+        elseif (iterations == 2)
+            plot(x, points, "-m")
         else
-            plot(x, puntos, "-g")
+            plot(x, points, "-g")
         end
         
         plot(min, f(min), "*black")
         disp("min = " + string(min))
 
-        interacionAnterior = abs(b - c);
+        oldEstimation = abs(b - c);
 
 
         if (a < min && min < b) 
@@ -122,14 +124,14 @@ function [a, b, c, d] = InterpolacionCubica(a, b, c, f, MaxIterations, tolerance
             d = d
         end
 
-        if (abs(abs(b-c) - interacionAnterior) < tolerance) then break end
+        if (abs(abs(b-c) - oldEstimation) < tolerance) then break end
 
-        intentos = intentos + 1;
+        iterations = iterations + 1;
     end
 endfunction
 
 
-function [puntos, min] = intentocubica(a, b, c, d, f, puntos)
+function [points, min] = EstimateCubic(a, b, c, d, f, points)
 
     A = [
         a^3 a^2 a^1 1;
@@ -139,14 +141,14 @@ function [puntos, min] = intentocubica(a, b, c, d, f, puntos)
     ]
 
 
-    vectorSolucion = [
+    solutions = [
         f(a);
         f(b);
         f(c);
         f(d);
     ]
 
-    [x] = MCuadrados(A, vectorSolucion);
+    [x] = LeastSquares(A, solutions);
 
     A = x(1)
     B = x(2)
@@ -155,13 +157,13 @@ function [puntos, min] = intentocubica(a, b, c, d, f, puntos)
 
     disp(x)
 
-    puntos = A * (puntos)^3 + B * (puntos)^2 + C * puntos + D
+    points = A * (points)^3 + B * (points)^2 + C * points + D
 
-    puntoInfl1 = (-2*B + sqrt(4*B^2 - 12*A*C))/(6*A)
-    puntoInfl2 = (-2*B - sqrt(4*B^2 - 12*A*C))/(6*A)
+    pointOfInflection1 = (-2*B + sqrt(4*B^2 - 12*A*C))/(6*A)
+    pointOfInflection2 = (-2*B - sqrt(4*B^2 - 12*A*C))/(6*A)
 
-    if (puntoInfl1 < a || puntoInfl1 > d) min = puntoInfl2
-    else min = puntoInfl1 end
+    if (pointOfInflection1 < a || pointOfInflection1 > d) min = pointOfInflection2
+    else min = pointOfInflection1 end
 
 endfunction
 
@@ -171,25 +173,18 @@ function [x] = f(x)
     x = sin(x) + 2*cos(x+2)^2
 endfunction
 
-
 a = 4.6
 b = 5
 c = 6
 d = 7.3
 
-
-plot(a, f(a), ".m")
-plot(b, f(b), ".m")
-plot(c, f(c), ".m")
-plot(d, f(d), ".m")
-
-x = linspace(4.4, 7.4)
+x = linspace(3, 9)
 y = f(x)
 
 plot(x, y, "-red")
 
-[a, b, c] = InterpolacionCubica(a, b, c, f, 4, 0.01);
+[a, b, c] = MinimazeWithCubic(a, b, c, f, 4, 0.01);
 
-puntofinal = ( (b + c) / 2)
-
-plot(puntofinal, f(puntofinal), ".y")
+disp("Minimum at " + string( (b + c) / 2 ));
+hl=legend(['Original function';]);
+xtitle("Estimate the minimums", "x", "y");
