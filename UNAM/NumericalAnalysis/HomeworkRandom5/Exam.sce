@@ -6,17 +6,16 @@ function [x] = f(x)
     x = x^3 - 6*x^2 - 15*x + 2
 endfunction
 
-
-a = 0
-b = 1
-c = 9
+a = 1
+b = 2
+c = 13.5
 
 
 plot(a, f(a), ".green")
 plot(b, f(b), ".green")
 plot(c, f(c), ".green")
 
-x = linspace(-0.5, 10)
+x = linspace(1, 14)
 y = f(x)
 
 plot(x, y)
