@@ -1,3 +1,7 @@
+// @Author: Rosas Hernandez Oscar Andres
+// @Author: Alarcón Alvarez Aylin Yadira Guadalupe
+// @Author: Pahua Castro Jesús Miguel Ángel
+
 // Solve a system Ux = y where U is an upper triangular 
 // using the famous algorithm backward substitution
 // @param: U triangular superior matrix

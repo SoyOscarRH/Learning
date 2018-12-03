@@ -1,3 +1,7 @@
+// @Author: Rosas Hernandez Oscar Andres
+// @Author: Alarcón Alvarez Aylin Yadira Guadalupe
+// @Author: Pahua Castro Jesús Miguel Ángel
+
 // Solve a system Ly = b where L is triangular inferior
 // using the famous algorithm foward substitution
 // @param: L triangular inferior matrix

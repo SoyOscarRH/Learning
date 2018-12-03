@@ -471,7 +471,7 @@
 
     % ============ NAME OF THE BOOK  ===============
     \href{\ProjectNameLink}                                         %Link to Author
-    {\fontsize{65}{78}\selectfont \textbf{Tarea 4}}\\[0.5cm]        %Name of the book
+    {\fontsize{65}{78}\selectfont \textbf{Tarea 5}}\\[0.5cm]        %Name of the book
     \textcolor{ColorSubtext}{\textsc{\Huge Análisis Númerico}}      %Name of the general theme
     
     \vfill                                                          %Fill the space
@@ -481,14 +481,13 @@
     \href{\ProjectAuthorLink}                                       %Link to Author
     {\LARGE \textsf{Oscar Andrés Rosas Hernandez}}  \\ \\           %Author
     {\LARGE \textsf{Alarcón Alvarez Aylin}} \\ \\                   %Author
-    {\LARGE \textsf{Laurrabaquio Rodríguez Miguel Salvador}} \\ \\  %Author
     {\LARGE \textsf{Pahua Castro Jesús Miguel Ángel}}       \\ \\   %Author
 
     % ===== MAKE SOME SPACE =========
     \vspace                                                         %Give some space
     \baselineskip                                                   %But we need this to up command
     
-    {\large \textsf{Noviembre 2018}}                                %Date
+    {\large \textsf{Diciembre 2018}}                                %Date
 \end{titlepage}
 
 
@@ -529,126 +528,103 @@
         \begin{lstlisting}[language=scilab, gobble=12]
             exec("/Users/mac/Documents/Projects/Learning/UNAM/NumericalAnalysis/Homework4/Code/1.sce", -1)
         \end{lstlisting}
-
-        % ==============================================
-        % =============     NOTAS         ==============
-        % ==============================================
-        \clearpage
-        \subsection{Notas}
-
-            Sobre la tolerancia:
-
-            Hay que definir que es la tolerancia porque puede significar varias cosas:
-            \begin{itemize}
-                \item Que $|f(x)| < tolerance$
-                \item Que $|x_{k+1} - x_k| < tolerance$
-            \end{itemize}
-
-            Así que cuando tu me mandas una tolerancia en cualquiera de los métodos la solución
-            que recibes de regrese cumple con \textbf{alguna} de las condiciones que he dicho antes.
-
-            
-        % ==============================================
-        % =============        1         ==============
-        % ==============================================
-        \clearpage
-        \subsection{1}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 1.sce
-
-            En este código muestra justo lo que se nos pide, por ejemplo una entrada válida sería:
-            \begin{enumerate}
-                \item $1$
-                \item $"x**3 - 10"$
-                \item $[0, 3]$
-                \item $0.001$
-                \item $30$
-            \end{enumerate}
-
-            Despúes de esto tienes acceso a una variable llamada $estimation$ por si quieres probar
-            algo.
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/1.sce}
-
         
-                        
-        % ==============================================
-        % =============        2         ==============
-        % ==============================================
-        \clearpage
-        \subsection{2}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 2.sce
-
-            En este código muestra justo lo que se nos pide y pues...ya :v
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/2.sce}
-
         
         % ==============================================
-        % =============        4          ==============
+        % =============        12         ==============
         % ==============================================
         \clearpage
-        \subsection{4}
+        \subsection{12}
 
             \begin{SmallIndentation}[0em]
             
-            Ejecuta los scripts que esta dentro de Code llamado: 4.sce
+            Ejecuta los scripts que esta dentro de Code llamado: 12a.sce y 12b.sce
 
-            En este código muestra justo lo que se nos pide y pues...ya :v
+            En este código muestra justo lo que se nos pide, eso si, calcular este interpolante
+            toma un par de segundos, ten paciencia.
+
 
             \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/4.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/12a.sce}
 
-
-        % ==============================================
-        % =============        4          ==============
-        % ==============================================
-        \subsection{9}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 9.sce
-
-            En este código muestra justo lo que se nos pide y pues nos muestra como es que 
-            se comporta de función $g(x)$ comparandola con la identidad y el punto en donde
-            se intersectan calculado usando las iteraciones de punto fijo
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/9.sce}
-
+            \lstinputlisting[language=scilab, gobble=12]{Code/12b.sce}
 
 
         % ==============================================
         % =============        13         ==============
         % ==============================================
         \clearpage
-        \subsection{13, 14, 15}
+        \subsection{13}
 
             \begin{SmallIndentation}[0em]
             
-            Ejecuta los scripts que esta dentro de Code llamado: 13.sce
+            Ejecuta los scripts que esta dentro de Code llamado: 13a.sce, 13b.sce y 13c.sce
 
-            En este código muestra justo lo que se nos pide y pues...ya :v
+            Creo que es obvio que gracias a la información en la derivada Hermite será mejor
 
-        \end{SmallIndentation}
+            \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/13.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/14.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/14.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/13a.sce}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/13b.sce}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/13c.sce}
 
 
+        % ==============================================
+        % =============        14         ==============
+        % ==============================================
+        \clearpage
+        \subsection{14}
 
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 14a.sce y 14b.sce
+
+            En este código muestra justo lo que se nos pide, eso si, grafico ambos interpolantes de Newton, para que
+            veas que son iguales e incluso hice que dentro del interpolante de Newton nos genere un string con la 
+            representación del interpolante, se ve bonito.
+
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/14a.sce}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/14b.sce}
+
+        
+        % ==============================================
+        % =============        15         ==============
+        % ==============================================
+        \clearpage
+        \subsection{15}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 15.sce
+
+            En este código muestra justo lo que se nos pide.
+            Se puso todo en un solo archivo justo para comparar:
+
+
+            Ahora si:
+            \begin{itemize}
+                \item En $[1, 5]$ El mejor tiene que ser el polinomio por lo cerca
+                    que esta con respecto a la verdadera función gamma, digo no hay mucho mas que decir, 
+                    fácil de deducir porque el polinomio tiene un grado mas que el Spline en este Castro
+
+                \item En $[1, 2]$ Tiene mucho mejor rendimiento el Spline, por la misma razón, al solo representar
+                    un fragmento lo peude hacer mucho mejor, mientras que el polinomio tiene que ser el mismo para este
+                    fragmento y para todo lo demas, por lo que en giros bruscos es mcuho mejor el spline. Como en este caso.
+            \end{itemize}
+
+
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/15.sce}
+
+        
         % ==============================================
         % =============        16         ==============
         % ==============================================
@@ -656,17 +632,65 @@
         \subsection{16}
 
             \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 9.sce
 
-            En este código muestra justo lo que se nos pide y pues...ya :v
+            \begin{itemize}
+                \item a) En el inciso A hay solo que calcular condicionales
+                    y como dice que lo hagamos a través de una libreria
+                    lo hice usando la función de scilab. Donde si bien
+                    a todas las fue de la patada, tengo que admitir que 
+                    la versión 4) es la mejor y por mucho.
+
+                \item 
+                    c) Pues hace lo que tiene que hacer :v 
+
+                \item 
+                    d) Ahi notamos la ventaja del Spline, porque en los
+                    polinomio en los extremos tienen unas pendientes terriblemente
+                    feas. Pero el spline no :)
+                    
+                    No esta extremadamente cerca pero la idea esta bien.
+                
+                \item 
+                    e) Toma su tiempo, no te preocupes, pero obviamente da el
+                    mismo polinomio.
+
+                \item 
+                    f) Da obviamente da el
+                    mismo polinomio.
+
+            \end{itemize}
+            
+            \end{SmallIndentation}
+
+            \lstinputlisting[language=scilab, gobble=12]{Code/16a.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/16c.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/16d.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/16e.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/16f.sce}
+
+                
+        % ==============================================
+        % =============        17         ==============
+        % ==============================================
+        \clearpage
+        \subsection{17}
+
+            \begin{SmallIndentation}[0em]
+            
+            Ejecuta los scripts que esta dentro de Code llamado: 17.sce
+
+            En este código muestra justo lo que se nos pide, eso si,
+            el snoppy se ve mas bonito se mueves la grafica, haciendola mas horizontal
+
 
             \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/17.sce}
 
 
-
+        
+                        
+       
         % ==============================================
         % =============        18         ==============
         % ==============================================
@@ -677,146 +701,18 @@
             
             Ejecuta los scripts que esta dentro de Code llamado: 18.sce
 
-            En este código nos da dos métodos, y ahhhhh, este si me costo un rato, así que añadiré un fragmento del
-            texto que explica como funciona esto:
-
-                    
-            % ==============================================================
-            % ======              USARLO PARA SQRT(A)               ========
-            % ==============================================================
-            \subsubsection{Usar Newton para calcular la $\sqrt[n]{A}$}
-
-                Si quieres calcular $\sqrt[n]{A}$ entonces puedes solucionar
-                la ecuación $\Fun{x} = x^n - A = 0$.
-
-                En ese caso $\FunDer{x} = n x^{n-1}$ y nuestra iteración es:
-                \begin{LargeEq}
-                    \begin{MultiLineEquation*}{3}
-                        \VarXpu 
-                            &= \VarX - \dfrac{(\VarX)^n - A}{n (\VarX)^{n-1}}  
-                            = \dfrac{(n-1)(\VarX)^n + A}{n (\VarX)^{n-1}} 
-                    \end{MultiLineEquation*}
-                \end{LargeEq}
-
-                           
-            % ==============================================================
-            % ======              USARLO PARA SQRT(A)               ========
-            % ==============================================================
-            \subsubsection{¿Como calcular raíces de números negativos?}
-
-                Ok, si quieres usar Newton para calcular raices de números positivos no hay problema.
-
-                Ahora, si es negativo pero la n-abla raíz es impar entonces tampoco hay problema basta
-                con calcular la raíz absoluta y luego negar la respuesta, pero, pero que pasa si tratamos
-                con un número negativo y una raíz n-abla par.
-
-                En ese caso lo que podemos calcular es con este método es $r$ del número complejo $re^{i\theta}$
-
-                Ahora, solo usamos nuestro formulazo para sacar $\theta$ y pasarlo a forma rectangular y listo :v
-
-
-                USAR EL METODO ROOT
-            \end{SmallIndentation}
-
-            \clearpage
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NRootNewtonRaphson.sci}
-
-
-
-
-
-        % ==============================================
-        % =============        19         ==============
-        % ==============================================
-        \clearpage
-        \subsection{19}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 19.sce
-
-            En este código muestra justo lo que se nos pide y pues...ya :v
-
-            \begin{itemize}
-                \item La primera opción queda como anillo al dedo porque cumple con todas las restricciones
-                    así que no hay mucho que comentar
-                \item Pero la segunda, se toma casi el doble de iteraciones y no llega a un punto válido según
-                    las restricciones, pero eso se debe basicamente a la periodicidad de las trigonometricas
-            \end{itemize}
+            En este código muestra justo lo que se nos pide, eso si,
+            el snoppy se ve mas bonito se mueves la grafica, haciendola mas horizontal
+            y debo de admitir que con este spline me gusto mas como se ve
 
             \end{SmallIndentation}
 
-            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
+            \lstinputlisting[language=scilab, gobble=12]{Code/18.sce}
 
 
-        % ==============================================
-        % =============        19         ==============
-        % ==============================================
-        \clearpage
-        \subsection{20}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 20.sce
-
-            En este código muestra justo lo que se nos pide y pues...ya :v
-
-            \begin{itemize}
-                \item La primera opción nos muestra una respuesta, una buena respuesta
-                \item La segunda casi casi niega el primer término de la primera pero la
-                    segunda componente se mueve $pi$
-                \item Finalmente la tercera se comporta igual se mueve y salta $2\pi$
-                    causado por la periodicidad de las trigonometricas
-            \end{itemize}
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/16.sce}
-
-
-
-
-        % ==============================================
-        % =============        20         ==============
-        % ==============================================
-        \clearpage
-        \subsection{21}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 21a / b / c.sce
-
-            En este código muestra justo lo que se nos pide y pues...ya :v
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/21a.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/21b.sce}
-            \lstinputlisting[language=scilab, gobble=12]{Code/21c.sce}
-
-
-
-
-        % ==============================================
-        % =============        22         ==============
-        % ==============================================
-        \clearpage
-        \subsection{22}
-
-            \begin{SmallIndentation}[0em]
-            
-            Ejecuta los scripts que esta dentro de Code llamado: 22.sce
-
-            En este código muestra justo lo que se nos pide y pues...ya :v
-
-            \end{SmallIndentation}
-
-            \lstinputlisting[language=scilab, gobble=12]{Code/22.sce}
-
-
-
-
+        
+                        
+       
         
     % ==============================================
     % ========          ANEXO           ============
@@ -824,28 +720,23 @@
     \clearpage
     \section{Anexo}
 
-        \subsection{Bisection}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Bisection.sci}
+        \subsection{HermiteInterpolant}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/HermiteInterpolant.sci}
 
         \clearpage
-        \subsection{FixedPoint}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/FixedPoint.sci}
 
-        \subsection{Helpers}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Helpers.sci}
+        \subsection{LagrangeInterpolant}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/LagrangeInterpolant.sci}
 
         \clearpage
-        \subsection{NewtonRaphson}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NewtonRaphson.sci}
+
+        \subsection{NewtonInterpolant}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NewtonInterpolant.sci}
 
         \clearpage
-        \subsection{NewtonSecant}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/NewtonSecant.sci}
 
-        \clearpage
-        \subsection{RegulaFalsi}
-        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/RegulaFalsi.sci}
-
+        \subsection{Spline3Interpolant}
+        \lstinputlisting[language=scilab, gobble=12]{Code/Algorithms/Spline3Interpolant.sci}
 
 
 \end{document}
