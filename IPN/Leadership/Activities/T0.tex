@@ -56,7 +56,6 @@
     \hfuzz=\maxdimen\newdimen\hfuzz                                 %Ignore \vbox and \hbox warings
 
     
-    
 % =======================================================
 % ===================   COMMANDS    =====================
 % =======================================================
@@ -402,338 +401,40 @@
 % =====================================================
 \begin{document}
 
-    \title{Estudio sobre los algoritmos usados para la \\ detección de exoplanetas mediante curvas de luz}
+    \title{Control de actividades individuales - Primer parcial}
 
     \author{
-        Oscar Andrés Rosas Hernández,
-        Jose Manuel Ramirez Vives
-    
-        \thanks {
-            O. Rosas estudia Ingeniería en Sistemas Computacionales en ESCOM -IPN y Ciencias de
-            la Computación en la Facultad de Ciencias UNAM
-        }
+        Oscar Andrés Rosas Hernández - 4CM3
         
-        \thanks {
-            M. Ramirez estudia Ingeniería en Sistemas Computacionales en ESCOM -IPN
-        }
         \textit{
-            Insituto Politécnico Nacional, Escuela Superior de Cómputo, CDMX, México
+            Insituto Politécnico Nacional, Escuela Superior de Cómputo
         }
     }
     
 
-    \markboth{Planteamiento del Problema}{COE}
+    \markboth{Liderazgo y Desarrollo Profesional}{}
+
+
 
     \maketitle
 
 
-% ===============================================
-% ====      PLANTEAMIENTO DEL PROBLEMA      =====
-% ===============================================
-\section{Planteamiento del Problema}
 
-    % ===============================================
-    % ====              PREGUNTAS               =====
-    % ===============================================
-    \subsection{Preguntas de Investigación}
-
-        A continuación mostramos las preguntas más importantes que buscamos
-        resolver a lo largo de nuestra investigación.
-
-        \begin{itemize}
-            \item ¿Qué es un exoplaneta?¿Cuál es la utilidad de conocerlos?
-            \item ¿Qué es una curva de luz?¿Qué unidades tiene?
-            \item ¿Cuáles son las técnicas más comunes para encontrar exoplanetas?
-            \item ¿Podemos, con alguno de estos métodos, encontrar más de un planeta en un mismo sistema? ¿Cuánto complicaría
-                los cálculos dicha idea?
-            \item ¿Cómo se encuentra el campo de detección de exoplanetas actualmente?
-            \item ¿Existen otras misiones espaciales, telescopios, etcétera, que sean una fuente de información viable
-                para esta tarea además de la misión de Kepler de la NASA?
-            \item ¿Cúal es el porcentaje de exoplanetas que se han descubirto con cada método?
-            \item ¿Cúal fue el método utilizado para poder encontrar exoplanetas realizado por el único equipo
-                méxicano?
-            \item ¿Qué teorías matemáticas son las necesarias para poder entender dichos métodos?
-            \item ¿Qué técnicas de optimización y de análisis númerico usan?
-        \end{itemize}
-
-
-    % ===============================================
-    % ====          JUSTIFICACIÓN               =====
-    % ===============================================
-    \vspace{1em}
-    \subsection{Justificación}
-
-        El propósito de este trabajo es incitar a que en el futuro se puedan aplicar algoritmos clásicos de la carrera
-        como algoritmos genéticos, algoritmos de optimización y demás métodos númericos enfocados en una
-        de sus aplicaciones más fasciantes, la búsqueda de planetas más allá del sistema solar.
-
-        Buscamos dar a conocer de manera general los métodos que se usan actualmente en el campo de la
-        astrofísica y con ello demostrar lo relacionados que están dichos campos y motivar a nuestros compañeros
-        a que se interesen y vean la capacidad que tendrán de aportar en campos como estos usandos los 
-        conociemientos dados en la carrera en el area de algoritmos, computación teórica y métodos númericos.
-
-    % ===============================================
-    % ====          OBJETIVO GENERAL            =====
-    % ===============================================
-    \vspace{1em}
-    \subsection{Objetivo General}
-        
-        Analizar el avance en el campo de la astrofísica, sobretodo en cómo es que se implementan de código real
-        ideas físicas desarrolladas por la comunidad de astrofísicos. Buscamos comparar dichos algoritmos desde
-        un punto de vista de las ciencias de la computación, sus características, ventajas y las principales
-        diferencias.
-
-
-        % ===============================================
-        % ====          OBJETIVO ESPECIFICOS        =====
-        % ===============================================
-        \subsubsection{Objetivo Específicos}
-
-            \begin{itemize}
-                \item Definir qué son los exoplanetas y la utilidad de conocerlos.
-                \item Explicar qué son y cómo interpretar las curvas de luz.
-                \item Definir los métodos para la identificación de objetos astronómicos y algunas consideraciones de estos.
-                \item Evaluar los avances en el tema y sus principales recursos de investigación.
-                \item Conocer las diferencias y las características más importantes para cada algoritmo.
-            \end{itemize}
-            
-    \vspace{1em}
-    \section{Introducción}
-    
-        Como todos sabemos, nuestro universo es infinito (de ser que la la curvatura del espacio tiempo siga estando dentro 
-        el margén en el que esta, cercano a un valor igual a 0 y con ello mostrando que vivimos en un universo plano e infinito)
-        y en esta infinidad podemos encontrar una cantidad inimaginable de estrellas, planetas y otros cuerpos celestes formando
-        variados tipos de agrupaciones. 
-        
-        Con esto en mente, desde hace ya varios años el ser humano se ha preguntado ¿existirán acaso otros sistemas solares
-        como el nuestro? ¿Estos sistemas contendran algún planeta habitable como el nuestro?. Estas preguntas han llevado a
-        los expertos a idear métodos para la detección de planetas en busca de uno como el nuestro y, afortunadamente, esta
-        actividad ha dado resultados muy positivos, pudiendo responder ahora con seguridad: sí, existen planetas como el
-        nuestro orbitando otros soles. 
-        
-        La pregunta que nosotros planteamos ahora es: ¿Cómo lo hacen y cómo podríamos apoyar en la optimización de estos métodos?
-
-        \clearpage
-
-        \Quote{Sea como sea, en algún momento, de algún modo, la humanidad saltará a las estrellas. [Hasta] hace relativamente poco no
-        teníamos la menor garantía de que existiesen mundos en otras estrellas a los que viajar. Hoy sabemos que existen, 
-        conocemos cada vez más sobre ellos. Algún día, cuando decidamos dar el salto a las estrellas, sabremos qué dirección tomar. 
-        No será una búsqueda a ciegas} \cite{wea8}
-    
-    \section{Desarrollo}
-    
-        \vspace{1em}
-        \subsection{Exoplanetas}
-    
-
-            \subsubsection{Definición}
-
-            \subsubsection{Historia}
-
-            \subsubsection{Hot Jupiters}
-        
-        
-        \vspace{1em}
-        \subsection{Curvas de luz}
-
-            \subsubsection{Definiciones}
-
-        
-        \vspace{1em}
-        \subsection{Métodos utilizados en la identificación de exoplanetas}
-        
-            \vspace{1em}
-            \subsubsection{Velocidades Radiales}
-
-                El método de velocidad radial, también conocido como espectroscopia Doppler, es el método más efectivo para ubicar
-                exoplanetas con tecnología existente. 
-
-                Aunque otros enfoques son muy prometedores para el futuro (como el transtito u una visualización directa), 
-                la gran mayoría de los exoplanetas descubiertos hasta ahora fueron detectados por este método.
-
-                \begin{figure}[h]
-                    \includegraphics[width=0.40\textwidth]{Radial}
-                    \caption{Documental: Exoplanets de Clash Course}
-                \end{figure}
-
-                El método de la velocidad radial se basa en el hecho de que una estrella no permanece completamente estacionaria
-                cuando es orbitada por un planeta. Se mueve, aunque sea ligeramente, en un pequeño círculo o elipse,
-                respondiendo al tirón gravitacional de su compañero más pequeño. Cuando se ven desde una distancia,
-                estos movimientos leves afectan el espectro de luz normal de la estrella, o la firma de color.
-                
-                Si la estrella se está moviendo hacia el observador, entonces su espectro aparecerá ligeramente desplazado hacia
-                el azul; si se está alejando, se desplazará hacia el rojo.
-                \cite{wea6}
-                
-                
-            \vspace{1em}
-            \subsubsection{Transito}
-
-                Este método detecta planetas distantes midiendo el minuto de atenuación de una estrella a medida que un
-                planeta en órbita pasa entre ella y la Tierra. El paso de un planeta entre una estrella y la Tierra se
-                llama un "tránsito". Si tal atenuación se detecta a intervalos regulares y dura un período de tiempo fijo,
-                es muy probable que un planeta esté orbitando la estrella y pasando frente a ella una vez por cada período orbital.
-
-
-                \begin{figure}[h]
-                    \includegraphics[width=0.40\textwidth]{Transit}
-                    \caption{Documental: Exoplanets de Clash Course}
-                \end{figure}
-
-                La atenuación de una estrella durante el tránsito refleja directamente la relación de tamaño entre la estrella
-                y el planeta: un pequeño planeta que transita una gran estrella creará solo una ligera atenuación, mientras
-                que un gran planeta que transita una pequeña estrella tendrá un efecto más notable. El tamaño de la estrella
-                anfitriona se puede conocer con una precisión considerable de su espectro, y la fotometría, por lo tanto,
-                proporciona a los astrónomos una buena estimación del tamaño del planeta orbital, pero no de su masa.
-                
-                Esto hace que la fotometría sea un excelente complemento del método espectroscópico, que proporciona una estimación
-                de la masa de un planeta, pero no su tamaño. Usando ambos métodos, combinando masa y tamaño, los científicos pueden
-                calcular la densidad del planeta, un paso importante para evaluar su composición.
-            
-                \vspace{1em}
-                \textbf{Análizar las atmósfera}
-
-                A medida que el planeta se mueve frente a la estrella, su brillo disminuye. 
-                Este planeta tiene una atmósfera que absorbe la luz azul y verde de manera eficiente
-                mientras deja pasar la luz roja. Midiendo la disminución del brillo en diferentes longitudes 
-                de onda, se puede obtener la transmitancia de la atmósfera dependiente de la longitud de onda.
-
-        
-        \vspace{1em}
-        \subsection{Avances en este campo de investigación}
-        
-            \vspace{1em}
-            \subsubsection{Kepler}
-
-            \vspace{1em}
-            \subsubsection{TESS}
-
-            \vspace{1em}
-            \subsubsection{Aportaciones de México}
-
-                En México solo se ha descubierto un solo exoplaneta por parte del Instituto de Astronomía de la UNAM
-                que desarrollaron su propio algoritmo, todo bajo el mando del doctor Jorge Cantú.
-
-                Paso que el hallazgo no se realizó porque el trabajo era buscar exoplanetas, sino que fue por
-                el desarrollo de una aplicación para hacer un ajuste de otros modelos astronómicos.
-
-                Se empleó un algoritmo llamado “algoritmo genético asexual” (AGA) que regularmente tiene aplicaciones
-                en áreas genéticas.
-
-                Se probó el AGA para ver su funcionabilidad en la estrella 55 Cancri,
-                de la cual se sabía que tenía cuatro planetas. Se aplicó el método y el resultado fue
-                infalible, era el mismo con el que los otros científicos habían logrado su descubrimiento.
-
-                Tiempo después, se aplicó a la observación de la estrella de Upsilon Andrómeda, en esta
-                estrella se había confirmado la presencia de 3 planetas que orbitaban alrededor de Upsilon Andrómeda.
-                
-                El primero descubierto en 1997 y los otros dos en 1999, ambos por grupos de científicos estadunidenses,
-                de la San Francisco State University y del Harvard-Smithsonian Center for Astrophysics.
-
-                Pero AGA predijo cuatro, este cuarto planeta mejoraba bastante toda la información que tenián sobre
-                el sistema, por lo que el grupo de Cantú publicó un paper con sus descubrimientos.
-                \cite{wea4}
-            
-        \subsection{Análisis de los algoritmos utilizados}
-                
-            \vspace{1em}
-            \subsubsection{Redes Neuronales}
-
-                Las redes neuronales se basan en algunas ideas sobre cómo funcionan las neuronas en el cerebro,
-                aunque creo que hay algunas diferencias significativas entre las redes neuronales informáticas y
-                las redes neuronales en los organismos vivos.
-
-                \begin{figure}[h]
-                    \includegraphics[width=0.25\textwidth]{redes}
-                    \caption{Fuente: Wikicommons}
-                \end{figure}
-
-                En el aprendizaje automático, una red neuronal se inicializa para tener ciertas neurona
-                conectadas de una manera particular. Cada neurona puede realizar un cálculo dado en su entrada y
-                produce una salida, que puede ir a más neuronas.
-
-                Ejecuta una entrada a través de la red y obtiene un resultado al final. Dependiendo de si el
-                resultado se considera bueno o malo, los pesos de las conexiones entre las neuronas se ajustan
-                (esto se realiza mediante un proceso denominado "propagación hacia atrás"). Usted ejecuta una
-                gran cantidad de entradas y, según el resultado de cada ejecución, se ajustan los pesos, lo que
-                afecta lo que sucederá en la siguiente ejecución.
-
-                No es trivial, pero si puede configurar la red correctamente, el resultado es que la red puede
-                aprender de manera efectiva a través del tiempo cómo producir resultados que se consideran buenos
-                para una entrada determinada.
-
-                Los éxitos modernos en el aprendizaje automático, como el AlphaGo de Deep Mind, dependen de la
-                capacidad de utilizar recursos informáticos distribuidos extremadamente grandes para entrenar
-                la red neuronal.
-
-
-            \vspace{1em}
-            \subsubsection{Algoritmos Geneticos}
-
-                Es una técnica de optimización basada en los principios de la genética y la selección natural.
-                Con frecuencia se utiliza para encontrar soluciones óptimas o casi óptimas para problemas difíciles
-                que, de lo contrario, llevaría toda una vida resolverlos.
-                
-                Se usa frecuentemente para resolver problemas de optimización, en investigación y en aprendizaje automático.
-
-                En estos, tenemos un grupo o una población de soluciones posibles para el problema dado.
-                Estas soluciones luego se someten a recombinación y mutación (como en la genética natural),
-                lo que produce nuevos individuos y el proceso se vuelve a repetir a lo largo de varias generaciones. 
-                
-                A cada individuo (o solución candidata) se le asigna un valor de adecuación
-                (basado en su valor de función objetivo) y a los individuos más en forma se
-                les da una mayor oportunidad de aparearse.
-
-                \begin{figure}[h]
-                    \includegraphics[width=0.30\textwidth]{genetic}
-                    \caption{Fuente: Wikicommons}
-                \end{figure}
-                
-                Esto está en línea con la Teoría Darwiniana de "Supervivencia del más apto".
-
-                \cite{wea1}
-
-
-    \begin{thebibliography}{1}
-
-        \bibitem{wea1}
-            I. A. Ruge, M. A. Alvis,
-            \Quote{Aplicación de los algoritmos genéticos para el diseño de un controlador PID adaptativo},
-            Tecnura, vol. 13,no. 25, p.p. 82,83 y 87, 2009. Disponible en:
-            <http://www.redalyc.org/articulo.oa?id=257020617008>
-
-        \bibitem{wea2}
-            M. Gestal, et. al.,
-            \Quote{Introducción a los algoritmos genéticos y programación
-            genetica} , Universidad de Coruña, Coruña, 2010, ISBN: 978-84-9749-422-9
-
-        \bibitem{wea3}
-            A. Rodríguez-González, et. al., \Quote{Multi-component analysis
-            of position-velocity cubes of the HH 34 Jet}, Astronomical
-            Journal, vol. 143,no. 3, Febrero, 2012. Disponible
-            en: <http://www.astroscu.unam.mx/apn6/PROCEEDINGS/B21-Rodriguez.pdf>
-
-        \bibitem{wea4}
-            J. Canto, S. Curiel and E. Martínez-Gómez.
-            \Quote{
-            A simple algorithm for optimization
-            and model fitting: AGA (Asexual Genetic Algorithm)}, Astronomy
-            \& Astrophysics, manuscript no. 1740ms, Aceptado, Mayo 31, 2008. Disponible:
-            <https://www.aanda.org/articles/aa/pdf/2009/27/aa11740-09.pdf>
-
-        \bibitem{wea5}
-            J. Schneider, \Quote{Definition of Exoplanets and Brown Dwarfs} Handbook of Exoplanets, pp. 1–6, 2018.
-
-        \bibitem{wea6}
-            D. W. Latham, \Quote{Radial-Velocity Planets} Encyclopedia of Astrobiology, pp. 1400–1404, 2011.
-
-        \bibitem{wea7}
-            J. N. Winn, \Quote{Planet Occurrence: Doppler and Transit Surveys,} Handbook of Exoplanets, pp. 1–18, 2018.
-
-        \bibitem{wea8}
-            C. Kitchin, \Quote{Exoplanets and Exoplanetary Systems: Pasts and Futures} 
-            Exoplanets Astronomers Universe, pp. 191–202, 2011.
-
-    \end{thebibliography}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{6cm}|p{7cm}|}
+      \hline
+      \# de actividad & Fecha & Nombre & Observación  \\
+      \hline
+      \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+       &  &  &   \\[4.5em] \hline
+      \end{tabular}
 
 \end{document}
