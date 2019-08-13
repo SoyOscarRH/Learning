@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  9 AUG 2019 21:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  12 AUG 2019 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.tex
-(/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.tex
+**/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.tex
+(/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2018/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
@@ -858,11 +858,11 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@Theorem=\count343
 \c@Corollary=\count344
 \c@Definition=\count345
- (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.aux
+ (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-\openout1 = `1.aux'.
+\openout1 = `T2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 402.
 LaTeX Font Info:    ... okay on input line 402.
@@ -932,9 +932,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 402.
 LaTeX Info: Redefining \pageref on input line 402.
 LaTeX Info: Redefining \nameref on input line 402.
- (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.out) (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.out)
+ (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.out) (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.out)
 \@outlinefile=\write3
-\openout3 = `1.out'.
+\openout3 = `T2.out'.
 
  (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -970,49 +970,40 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \. on input line 402.
 LaTeX Info: Redefining \% on input line 402.
 \c@lstlisting=\count353
-LaTeX Font Info:    Try loading font information for U+msa on input line 413.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 413.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 413.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-\tf@thm=\write4
-\openout4 = `1.thm'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
-LaTeX Info: Redefining \. on input line 421.
-LaTeX Info: Redefining \% on input line 421.
+LaTeX Info: Redefining \. on input line 496.
+LaTeX Info: Redefining \% on input line 496.
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
- (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.aux
+\tf@thm=\write4
+\openout4 = `T2.thm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 514.
+LaTeX Info: Redefining \. on input line 514.
+LaTeX Info: Redefining \% on input line 514.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 514.
+ (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
-Package rerunfilecheck Info: File `1.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 514.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 514.
+Package rerunfilecheck Info: File `T2.out' has not changed.
+(rerunfilecheck)             Checksum: 1F1F9A0E7DB7AB9FDE295ECEF6644D11;186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 514.
  ) 
 Here is how much of TeX's memory you used:
- 23712 strings out of 492616
- 411959 string characters out of 6128982
- 516382 words of memory out of 5000000
- 27355 multiletter control sequences out of 15000+600000
- 628290 words of font info for 120 fonts, out of 8000000 for 9000
+ 23692 strings out of 492616
+ 411417 string characters out of 6128982
+ 520400 words of memory out of 5000000
+ 27347 multiletter control sequences out of 15000+600000
+ 632419 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,8n,63p,1091b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/soyoscarrh/Documents/Projects/Learning/IPN/Economics/HW1/1.pdf (1 page, 26750 bytes).
+ 61i,6n,63p,1092b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/T2/T2.pdf (2 pages, 43499 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
- 1 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 45 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
