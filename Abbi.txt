@@ -1,0 +1,131 @@
+Pre-Basicos (4 semanas)
+
+Sesión de bienvenida [15 de agosto 2019]
+	Que es el club
+	Que se hace
+	Internships
+	Logros, etc....
+
+1a Sesión (E) Dia 1 [19 de agosto 2019] L
+	"Sobre unos y ceros"
+	
+	Como nace el bit y el byte
+	Unidades de memoria informatica Gb, Gib, GB, GiB
+	Operaciones lógicas not, and, or, xor, etc...
+	Como nacen los tipos de dato primitivos
+	¿Qué es ICPC? y sus reglas
+	
+	+ Que es la programacion competitiva?
+	+ ¿Que tan diferente es a la ingeniería de software?
+	+ ¿Como son los problemas de programación competitiva?
+	+ ¿Que es un reference?
+
+2a Sesión (E) Dia 2 [20 de agosto 2019] M
+	"Historia; De circuitos a Python" 
+
+	De circuitos logicos a lenguaje ensamblador
+	De ensamblador a lenguajes de nivel medio
+	De lenguajes de nivel medio a nivel alto
+	Historia del compilador
+	Diferencias entre interprete y compilador
+	Por qué las librerias
+
+3a Sesión (O) Dia 3 [22 de agosto de 2019] J
+	"¿Porque debería aprender C++?"
+
+	Sobre C y C++
+	C++ vs otros lenguajes para programacion competitiva
+
+	IDEs vs un (editor + consola)
+	Instalación y compilación de C++ (Linux, macOS, Windows)
+	
+	Declaraciones en C++
+	Tipos de datos primitivos de C++ (integrals, bool y void)
+	const correctness
+
+4a Sesión (Abii & E) Dia 4 [26 de agosto 2019] L
+	"Ciclos, puntos flotantes y operadores interesantes"
+	
+	Punto flotante y porque solo usarlos si de verdad los necesitas
+	Operadores (+, -, / sobretodo división entera y %)
+
+	Entrada y salida: cin / cout
+	Condicionales
+	ciclo while
+	ciclo for
+
+	Problema
+
+5a Sesión (O) [27 de agosto 2019] M
+	"Arreglos, vectores y apuntadores"
+	
+	Arreglos en C++ (std::array)
+	Intro a std::vector
+
+	Por qué nacen los apuntadores
+	Cómo funciona la memoria RAM
+	Idea apuntadores
+	Paso por referencia
+
+	Intro a std::strings (y const char*)
+	
+6a Sesión (E) Dia 1 [29 de agosto 2019] J
+	"Entrada, funciones y structs"
+	
+	Redireccionamiento de datos
+	Ciclo while por input, o infinito
+
+	Funciones, returns, scope, etc..
+	Qué es la recursividad (Que sepan que es posible)
+	
+	Intro a los tipos de datos propios: structs
+
+7a Sesión (E)[2 de septiembre 2019] L
+	"Intro a los containers en C++ y límites"
+
+	¿Que hacer cuando no tiene sentido nombrar?: std::tupple y std::pair
+	Intro a std::map
+	Intro a std::set
+	
+	Iteradores
+	for (auto x : y)
+
+	Límites
+		Limites en memoria
+		Limite de pila recursiva
+
+8a Sesión (O)[3 de septiembre 2019] M
+	"Complejidad computacional & std::algorithms"
+
+	Introducción a la complejidad algoritmica
+	Cotas de complejidad
+	
+	Introduccion a std::algorithms (sort, find, count, min, next_permutation)
+	Complejidad de std::vector, std::array, std::map, std::set
+	
+	Segundo problema de resolución
+
+	[Tarea / Tiempo extra]: Registro OJ
+
+9a Sesión (E)[5 de septiembre 2019] J
+	Resolución de problemas a pizarron blanco
+	Conociento los Online Judge (codeforces / hackerrank / omegaup)
+
+10a Sesión (Alichos) [9 de septiembre 2019] L
+	Resolución de problemas en online judges
+
+11a Sesión (E) [10 de septiembre 2019] M
+	Problemas super basicos
+
+12a Sesion - Examen a Básicos [12 de septiembre 2019] J 
+
++ (Darlo el fin de semana)
+Lunes 16 de septiembre 2019, Resultados Pre-básicos
+
+Martes 17 de septiembre 2019, básicos. 
+
+
+Básicos:
+	- Corrimiento de Bits
+	- Sobrecarga de Operadores
+	- Busqueda Binaria
