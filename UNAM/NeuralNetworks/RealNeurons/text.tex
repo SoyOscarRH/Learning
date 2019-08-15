@@ -413,8 +413,6 @@
     \maketitle
 
 
-
-
   Dada la siguiente ecuación diferencial:
   \begin{MultiLineEquation}{3}
     C \Derivate{V}{t} 
@@ -428,7 +426,7 @@
   Siendo $V_\infty$ el voltaje en el estado estancionario cuando $t \to \infty$
   y $\MiniDerivate{V}{t} = 0$. \\[0.8em]
 
-  \begin{SmallIndentation}[0.75em]
+  \begin{Indentation}[0.75em]
     Pues primero que nada despejemos y apliquemos las condiciones que nos dijeron:
     \begin{MultiLineEquation*}{3}
       C \Derivate{V}{t} 
@@ -453,14 +451,14 @@
       V_\infty &= V_{rest} + (I _{ext})(R)
     \end{MultiLineEquation}
 
-  \end{SmallIndentation}
+  \end{Indentation}
   
 \section{1.b}
 
   Modifiquemos a (1) para llegar a algo como: \\
   $\tau \Derivate{V}{t} =  -V + V_\infty$:
 
-  \begin{SmallIndentation}[0.75em]
+  \begin{Indentation}[0.75em]
     \begin{MultiLineEquation*}{3}
       C \Derivate{V}{t} 
         &= -  \dfrac{(V - V_{rest})}{R} + I _{ext}    \\
@@ -486,7 +484,7 @@
         && \Space \Space \text{Por (2)}               \\
       &= -V + V_\infty
     \end{MultiLineEquation*}
-  \end{SmallIndentation}
+  \end{Indentation}
 
 
 \section{2.a}
@@ -494,7 +492,7 @@
   Probemos que $V(t) = V_\infty (1 - e^{-\frac{t}{\tau}})$
   es solución a la ecuación diferencial.
 
-  \begin{SmallIndentation}[0.75em]
+  \begin{Indentation}[0.75em]
     Vamos a sustituir como es que es la derivada:
     \begin{MultiLineEquation*}{3}
       \Derivate{V}{t} 
@@ -533,7 +531,7 @@
     De hecho si aplicamos la transformada de Laplace para intentar resolver la
     ecuación llegaremos a esta solución.
       
-  \end{SmallIndentation}
+  \end{Indentation}
 
 
 \section{2.b}
@@ -541,7 +539,7 @@
 Probemos que $V(t) = V_\infty e^{-\frac{t}{\tau}}$
   es solución a la ecuación diferencial.
 
-  \begin{SmallIndentation}[0.75em]
+  \begin{Indentation}[0.75em]
     Vamos a sustituir como es que es la derivada:
     \begin{MultiLineEquation*}{3}
       \Derivate{V}{t} 
@@ -572,7 +570,7 @@ Probemos que $V(t) = V_\infty e^{-\frac{t}{\tau}}$
 
     Es decir, esta solución es la que tenemos cuando dejamos a la neurona sola y en paz.
       
-  \end{SmallIndentation}
+  \end{Indentation}
 
 
 
