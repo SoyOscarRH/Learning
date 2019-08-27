@@ -48,7 +48,7 @@ int main(){
         cont = 0;
     }
     // 13. Se crea la variable para el numero mayor mas cercano al canal.
-    auto numero_arriba = 0;
+    auto numero_arriba = 999;
 
     // 14. Se busca el numero mayor mas cercano al canal.
     for(auto i=999; i>=canal; i--){
@@ -82,19 +82,10 @@ int main(){
 // Retorna 1 si el boton si existe en el canal.
 // Retorna 0 si el boton no existe en el canal.
 int existe(int boton, int canal){
-    int i=100, a=canal, b=-1;
-    if(a < 100){
-        i=10;
-    }
-    while(i > 0){
-        b = a/i;
-        a = a%i;
-        if(b == boton){
-            return 1;
-            break;
-        }
-        i = i/10;
-    }
 
-    return 0;
+    auto p = to_string(canal);
+    auto res = false;
+    for (auto x : p) if (x == '0' + boton) res = true;
+
+    return res;
 }// @luisr-dev
