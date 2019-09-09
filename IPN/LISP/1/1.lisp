@@ -185,4 +185,143 @@
   )
 )
 
+(print "4")
 (print (recombina '((A . x) (B . y) (C . z)) ))
+(terpri)
+
+
+;;;; ====  Seccion 5 =======
+
+;;; Defina un predicado RealNoCero? que reciba un argumento N y responda si su
+;;; argumento es o no un número real diferente de cero.
+
+(defun realNoCero(N)
+  (and 
+    (not (eql N 0)) 
+    (realp N)
+  )
+)
+
+(print "5")
+(print (realNoCero 'a))
+(terpri)
+
+
+;;;; ====  Seccion 6 =======
+
+;; Construya una función Analiza, con argumento X, que responda una lista con los valores
+;; de verdad correspondientes a las respuestas a las siguientes preguntas: ¿es X un átomo?,
+;; ¿es X un número?, ¿es X una lista? , ¿es X una celda de construcci ón? y ¿es X una
+;; lista vacía?
+
+(defun analiza(X)
+  (list 
+    (atom X)
+    (numberp X)
+    (listp X)
+    (consp X)
+    (null X)
+  )
+)
+
+(print "6")
+(print (analiza 6))
+(terpri)
+
+;;;; ====  Seccion 7 =======
+
+;;; Defina una función Intercala que reciba como argumentos dos listas cualesquiera y,
+;;; como resultado entregue otra lista en la que se encuentran intercalados los elementos de
+;;; las listas originales; siempre en el mismo orden: un elemento de la primera lista y otro de
+;;; la segunda lista. Si las listas no tienen la misma longitud, todos los elementos restantes
+;;; de la lista más grande se colocan seguidos en la respuesta.
+
+(defun intercala
+  (x y)
+  (reverse
+    (let 
+      (
+        (result ()) 
+        (total (+ (length x) (length y) ) )
+      ) 
+      (do 
+        ( 
+          (i 0 (+ i 1)) 
+          (j 0 (+ j 1))
+        )
+        ( (<= total (length result)) result )
+        (if (eql (nth i x) nil) nil (push (nth i x) result) )
+        (if (eql (nth j y) nil) nil (push (nth j y) result) )
+      )
+    )
+  )
+)
+
+
+(print "7")
+(print (intercala  '(X Y) '(A B C D)  ))
+(terpri)
+
+
+;;;; ====  Seccion 8 =======
+
+;;; Programe un predicado MismoTipo que reciba como argumento dos listas de la misma
+;;; longitud y como respuesta, devuelva T si ambas listas tienen elementos del mismo
+;;; tipo y en las mismas posiciones, NIL en caso contrario. Observe que los elementos no
+;;; requieren ser iguales, sólo del mismo tipo de datos.
+
+(defun MiTipo
+  (x y)
+  (reverse
+    (let 
+      (
+        (result ()) 
+        (total (length x))
+      ) 
+      (do 
+        ( (i 0 (+ i 1)) )
+        ( (<= total (length result)) result )
+        (push 
+          (eql (type-of (nth i x)) (type-of (nth i y)) ) 
+          result)
+      )
+    )
+  )
+)
+
+(print "8")
+(print (MiTipo (list 'b 5 ()) (list 'A 3 T) ))
+(terpri)
+
+;;;; ====  Seccion 9 =======
+
+;;; Defina una función APalíndromo, sensible a mayúsculas y minúsculas, que reciba como
+;;; argumento una cadena y, como respuesta entrega otra cadena que es el palíndromo de la
+;;; original. Ejemplo: APalíndromo("Hola") = "HolaaloH".
+
+(defun APalíndromo (str)
+  (concatenate 'string str (reverse str))
+)
+
+(print "9")
+(print (APalíndromo "Hola"))
+(terpri)
+
+;;;; ====  Seccion 10 =======
+
+;;; Defina un predicado Bisiesto que reciba como entrada un número entero representando
+;;; un año y, como respuesta, indique si se trata de un año bisiesto o no.
+
+(defun Bisiesto (year)
+  (or
+   (and 
+      (zerop (mod year 4))
+      (not (zerop (mod year 100)))
+    )
+    (zerop (mod year 400))
+  )
+)
+
+(print "10")
+(print (Bisiesto 2020))
+(terpri)
