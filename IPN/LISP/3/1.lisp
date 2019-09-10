@@ -1,4 +1,4 @@
-;;;; Paquete #1
+;;;; Paquete #1 Oscar Andres Rosas Hernandez
 
 ;;;; ====  Seccion 1 =======
 

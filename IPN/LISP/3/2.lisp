@@ -1,4 +1,4 @@
-;;;; Paquete #3 Oscar Andres Rosas Hernandez
+;;;; Paquete #2 Oscar Andres Rosas Hernandez
 
 ;;;; ====  1 =======
 ;;; [sin usar elt ni position] Defina una función ElemInPos
