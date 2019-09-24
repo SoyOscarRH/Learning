@@ -90,11 +90,11 @@
     )
 
     (and
-      (eql tu (nth rana-a-mover-pos estado))
-      (or valido-saltar-otra valido-saltar-vacia)
+      (eql tu (nth rana-a-mover-pos estado))      ;; Tiene que haber una rana de ese tipo ahi
+      (or valido-saltar-otra valido-saltar-vacia) ;; Algun tipo de salto posible
       (or 
-        (and valido-saltar-vacia (eql '_ (nth piedra-vacia estado)))
-        (and valido-saltar-otra (eql '_ (nth piedra-salta-rana estado))) 
+        (and valido-saltar-vacia (eql '_ (nth piedra-vacia estado)))      ;; Saltar a una piedra vacia
+        (and valido-saltar-otra (eql '_ (nth piedra-salta-rana estado)))  ;; Saltar a una piedra vacia
       )
     ) 
   ) 
@@ -117,16 +117,16 @@
         (piedra-salta-rana  (+ (if mover-verdes? 2 -2) rana-a-mover-pos))
       )
 
-      (setf (nth rana-a-mover-pos nuevo-estado) '_)
+      (setf (nth rana-a-mover-pos nuevo-estado) '_) ;; Si saltas donde estabas esta ahora vacio
 
       (if 
-        (valid-operator? op estado)
+        (valid-operator? op estado)                 ;; Si es valido hacemos lo siguiente:
         (if 
-          (eql '_ (nth piedra-vacia estado))
-          (setf (nth piedra-vacia nuevo-estado) tu)
-          (setf (nth piedra-salta-rana nuevo-estado) tu)
-        )
-        nuevo-estado
+          (eql '_ (nth piedra-vacia estado))          ;; Si vamos a saltar a la siguiente
+          (setf (nth piedra-vacia nuevo-estado) tu)    ;; Lo hacemos
+          (setf (nth piedra-salta-rana nuevo-estado) tu)  ;; Sino saltamos 2
+        ) 
+        nuevo-estado                                ;; Sino es valido, no importa que regresemos
       )
 
       nuevo-estado ) )  
