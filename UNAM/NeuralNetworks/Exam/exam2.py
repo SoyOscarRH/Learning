@@ -1,7 +1,7 @@
 import numpy as np
 
-x1 = 0
-x2 = 0
+x1 = 1
+x2 = 1
 
 
 def sigm(x): return 1 / (1 + np.exp(-x))
@@ -13,14 +13,14 @@ a1 = x1
 a2 = x2
 
 # w input - layer 1
-w01 = 1.72
-w02 = -5.25
+w01 = 1
+w02 = 0.5
 
-w11 = -5.12
-w12 = 3.38
+w11 = 1
+w12 = 0
 
-w21 = -5.1
-w22 = 3.37
+w21 = -1
+w22 = 0.5
 
 # layer 1
 zh1 = (w01 * a0) + (w11 * a1) + (w21 * a2)
@@ -36,9 +36,9 @@ print(f"h2 = {round(h2, 3)}")
 
 
 # w layer 1 - layer 2
-w0o = -3.2
-w1o = 6.6
-w2o = 6.5
+w0o = 0.2
+w1o = 1
+w2o = -1
 
 # layer 1
 zo1 = (w0o * h0) + (w1o * h1) + (w2o * h2)
