@@ -9,7 +9,7 @@
 ;;; Oscar Andres Rosas Hernandez
 
 (defparameter  *open* ())    ;; Frontera de busqueda...                                              
-(defparameter  *memory* ())  ;; Memoria de intentos previos
+(defparameter  *memory* (make-hash-table))  ;; Memoria de intentos previos
 
 (defparameter  *ops*  '( (:arriba           0 )
                          (:arriba-derecha   1 )
@@ -89,7 +89,6 @@
         (+ (abs (- x1 x2)) (abs (- y1 y2)) )
     ) )
 
-
 (defun get-bit-list (cell-id)
   "Te una lista para saber si la puerta esta cerrada"
     (loop for i below 4 collect (if (logbitp i cell-id) 1 0)) )
@@ -107,6 +106,11 @@
         (coordinates (second state))
         (x (first  coordinates))
         (y (second coordinates))
+        
+        (x+ (+ x 1) )
+        (x- (- x 1) )
+        (y+ (+ y 1) )
+        (y- (- y 1) )
 
         (name (first op))
 
@@ -114,25 +118,58 @@
           (if (valid-position? x y)
             (get-bit-list (get-cell-walls x y))
             nil )         )
-        (p0 (first  doors))
-        (p1 (second doors))
-        (p2 (third  doors))
-        (p3 (fourth doors))
+        (p0 (nth 0 doors))
+        (p1 (nth 1 doors))
+        (p2 (nth 2 doors))
+        (p3 (nth 3 doors))
         
         (rows (get-maze-rows))        
         (cols (get-maze-cols))   )
 
         (case name
-          (:arriba           (and (> x 0)               (eql p0 0)) )
-          (:arriba-derecha   (and (> x 0) (< y cols)    (or (eql p0 0) (eql p1 0))) )
-          (:derecha          (and (< y cols)            (eql p1 0)) )
-          (:abajo-derecha    (and (< x rows) (< y cols) (or (eql p1 0) (eql p2 0))) )
-          (:abajo            (and (< x rows)            (eql p2 0)) )
-          (:abajo-izquierda  (and (< x rows) (> y 0)    (or (eql p2 0) (eql p3 0))) )
-          (:izquierda        (and (> y 0)               (eql p3 0)) )
-          (:arriba-izquierda (and (> x 0) (> y 0)       (or (eql p3 0) (eql p0 0)) ))
+          (:arriba           (and (> x 0)                 (eql p0 0)) (remember-state? x- y) )
+          (:derecha          (and (< y+ cols)             (eql p1 0)) (remember-state? x y+) )
+          (:abajo            (and (< x+ rows)             (eql p2 0)) (remember-state? x+ y) )
+          (:izquierda        (and (> y 0)                 (eql p3 0)) (remember-state? x y-) )
+
+          (:arriba-derecha   (and (> x 0) (< y+ cols) (remember-state? x- y+)
+            (let* (
+              (derecha-door (get-bit-list (get-cell-walls x y+)))
+              (arriba-door  (get-bit-list (get-cell-walls x- y)))
+              (p0-derecha (nth 0 derecha-door))
+              (p1-arriba  (nth 1 arriba-door))
+            )
+            (or (and (eql 0 p0) (eql 0 p1-arriba)) (and (eql 0 p1) (eql 0 p0-derecha))))))
+
+          (:abajo-derecha    (and (< x+ rows) (< y+ cols) (remember-state? x+ y+)
+            (let* (
+              (derecha-door (get-bit-list (get-cell-walls x y+)))
+              (abajo-door   (get-bit-list (get-cell-walls x+ y)))
+              (p1-abajo   (nth 1 abajo-door))
+              (p2-derecha (nth 2 derecha-door))
+            )
+            (or (and (eql 0 p1) (eql 0 p2-derecha)) (and (eql 0 p2) (eql 0 p1-abajo))))))
+
+          (:abajo-izquierda  (and (< x+ rows) (> y 0) (remember-state? x+ y-)
+            (let* (
+              (izquierda-door (get-bit-list (get-cell-walls x y-)))
+              (abajo-door     (get-bit-list (get-cell-walls x+ y)))
+              (p2-izquierda (nth 2 izquierda-door))
+              (p3-abajo     (nth 3 abajo-door))
+            )
+            (or (and (eql 0 p2) (eql 0 p3-abajo)) (and (eql 0 p3) (eql 0 p2-izquierda))))))
+
+          (:arriba-izquierda (and (> x 0) (> y 0) (remember-state? x- y-)
+            (let* (
+              (arriba-door     (get-bit-list (get-cell-walls x- y)))
+              (izquierda-door  (get-bit-list (get-cell-walls x y-)))
+              (p3-arriba      (nth 3 arriba-door))
+              (p0-izquierda   (nth 0 izquierda-door))
+            )
+            (or (and (eql 0 p3) (eql 0 p0-izquierda)) (and (eql 0 p0) (eql 0 p3-arriba))))))
         )
       ) )
+
 
 
 ;;;=======================================================================================
@@ -184,6 +221,25 @@
       (list (aptitude new-coordinates) new-coordinates)   ) )
 
 
+
+;;;=======================================================================================
+;;  REMEMBER-STATE?  y  FILTER-MEMORIES
+;;        Permiten administrar la memoria de intentos previos
+;;;=======================================================================================
+(defun  get-hash?  (x y)
+  (+ x (* y (+ 1 (get-maze-cols))))
+)
+
+(defun  remember-state?  (x y)
+  (gethash (get-hash? x y) *memory*)
+)
+
+(defun  add-to-memory  (x y)
+  (gethash (get-hash? x y) *memory*)
+  (setf (gethash (get-hash? x y) *memory*) T)
+)
+
+
 ;;;=======================================================================================
 ;;  EXPAND (state)
 ;;        Construye y regresa una lista con todos los descendientes validos de [estado]
@@ -198,6 +254,8 @@
         (dolist  (op  *Ops*)
           (cond ( (valid-operator? op state)
               (setq  new-state  (apply-operator  op state))
+              (print state)
+              (add-to-memory (second (first state)) (second (second state)))
               (setq  descendests  (cons (list new-state op) descendests)
               
             ) )     ) )
@@ -205,33 +263,6 @@
         descendests ) )
 
 
-
-
-
-
-
-
-
-;;;=======================================================================================
-;;  REMEMBER-STATE?  y  FILTER-MEMORIES
-;;        Permiten administrar la memoria de intentos previos
-;;;=======================================================================================
-(defun  remember-state?  (estado  lista-memoria)
-"Busca un estado en una lista de nodos que sirve como memoria de intentos previos
-     el estado tiene estructura:  [(<m0><c0><b0>) (<m1><c1><b1>)],
-     el nodo tiene estructura : [<Id> <estado> <id-ancestro> <operador> ]"  
-     (cond ((null  lista-memoria)  Nil)
-	        ((equal  estado  (second (first  lista-memoria)))  T)  ;;el estado es igual al que se encuentra en el nodo?
-		(T  (remember-state?  estado  (rest  lista-memoria))))  )
-
-
-(defun  filter-memories (lista-estados-y-ops) 
-"Filtra una lista de estados-y-operadores quitando aquellos elementos cuyo estado está en la memoria *memory*
-     la lista de estados y operadores tiene estructura: [(<estado> <op>) (<estado> <op>) ... ]"
-     (cond ((null  lista-estados-y-ops)  Nil)
-	       ((remember-state? (first (first  lista-estados-y-ops)) *memory*)  ;; si se recuerda el primer elemento de la lista, filtrarlo...
-		       (filter-memories  (rest  lista-estados-y-ops)))
-		(T  (cons  (first lista-estados-y-ops) (filter-memories  (rest  lista-estados-y-ops))))) )  ;; de lo contrario, incluirlo en la respuesta
 
 ;;;=======================================================================================
 ;;  EXTRACT-SOLUTION  y  DISPLAY-SOLUTION
@@ -253,8 +284,6 @@
 		 (setq  current  (locate-node  (third  current) *memory*))))  ;; y luego cambiar a su antecesor...
 	     *solucion*))
 
-
-
 (defun  display-solution (lista-nodos)
 "Despliega la solución en forma conveniente y numerando los pasos"
     (format  t  "1) Solución con ~A pasos (Longitud de la solución)~%" (1- (length  lista-nodos)))
@@ -263,14 +292,10 @@
     (format  t  "4) Longitud máxima de la Frontera de búsqueda: ~A~%~%" *max-frontier*)
 
     (setq *solution* nil)
-    (let  ((nodo  nil))
-        (dotimes  (i (length  lista-nodos))
-	      (setq  nodo  (nth  i  lista-nodos))
-        (push (nth 4 nodo) *solution*)
-	      (if  (= i 0)
-		   (format t "Inicio en: ~A~%" (second  nodo))  ;; a partir de este estado inicial
-	       ;;else
-		   (format t "\(~2A\)  aplicando ~20A se llega a ~A~%"  i (fourth  nodo)  (second  nodo)))))
+    (setq *solution* (reverse *solution*))
+    (pop *solution*)
+    
+    (format  t  "~%Solution list: ~A ~%" *solution*)
        
     (format  t  "~%5) Tiempo: ~%")
 )  ;; imprimir el número de paso, operador y estado...
@@ -295,11 +320,39 @@
      (setq  *solucion*  nil))
 
 
-(defun  blind-search (edo-inicial  edo-meta)
-"Realiza una búsqueda ciega, por el método especificado y desde un estado inicial hasta un estado meta"
+     
+(defun get-start ()
+  "Te regresa el estado inicial"
+    (let*
+      ( 
+        (x (aref  *start* 0))
+        (y (aref  *start* 1))
+        (coordinate (list x y)  )  )
+      (list (aptitude coordinate) coordinate)   ) )
+
+(defun get-goal ()
+  "Te regresa el estado inicial"
+    (let*
+      ( 
+        (x (aref  *goal* 0))
+        (y (aref  *goal* 1))
+        (coordinate (list x y)  )  )
+      (list (aptitude coordinate) coordinate)   ) )
+
+
+(defun  bestf-search ()
+"Realiza una búsqueda best First, desde un estado inicial hasta un estado meta"
   (reset-all)
+
+  (print (get-maze-data))
+  (print *start*)
+  (print *goal*)
+
+
   (let 
     (
+      (edo-inicial  (get-start))
+      (edo-meta     (get-goal))
       (nodo             nil)
       (estado           nil)
       (sucesores        nil)
@@ -308,6 +361,7 @@
 
       (insert-to-open edo-inicial nil)
 
+      (time 
       (loop until (or meta-encontrada (null *open*)) do
         
         (setq 
@@ -330,28 +384,11 @@
 
             (loop for element in sucesores do
               (insert-to-open (first element) (second element)))
-          ) )))  )
+          ) ))))  )
 			     
-     
-(defun get-start ()
-  "Te regresa el estado inicial"
-    (let*
-      ( 
-        (x (aref  *start* 0))
-        (y (aref  *start* 1))
-        (coordinate (list x y)  )  )
-      (list (aptitude coordinate) coordinate)   ) )
 
-(defun get-goal ()
-  "Te regresa el estado inicial"
-    (let*
-      ( 
-        (x (aref  *goal* 0))
-        (y (aref  *goal* 1))
-        (coordinate (list x y)  )  )
-      (list (aptitude coordinate) coordinate)   ) )
+(add-algorithm 'bestf-search)
+(bestf-search)
 
-(blind-search (get-start) (get-goal))
-(setq *solution* (reverse *solution*))
-(pop *solution*)
-(print *solution*)
+(start-maze)
+

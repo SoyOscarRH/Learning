@@ -22,13 +22,22 @@
      :initform #(1 1))
    (dimensions
      :initarg :dimensions
-     :initform '(5 5))))
+     :initform '(10 10))))
 
 (setq *maze* 
   (make-instance 'maze 
-                 :data #2A((13 1 3 12 3) (9 6 12 3 10) (12 5 3 10 10) (3 9 6 10 10) (12 6 13 4 6))
-                 :start_position #(0 3)
-                 :goal_position #(3 0)))
+                 :data #2A((9 1 1 3 9 1 1 3 9 1)
+                          (8 0 4 6 8 0 0 2 8 0)
+                          (8 0 1 1 0 2 8 0 0 2)
+                          (8 0 4 4 4 6 12 4 4 6)
+                          (8 2 9 1 1 3 9 1 1 1)
+                          (8 2 8 0 0 2 8 0 4 4)
+                          (8 0 0 2 8 2 8 0 1 3)
+                          (12 4 4 6 8 2 12 4 0 2)
+                          (9 1 1 1 0 0 1 1 0 2)
+                          (12 4 4 4 4 4 4 4 4 6))
+                 :start_position #(0 9)
+                 :goal_position #(4 9)))
 
 (setq *start* (slot-value *maze* 'start_position))
 (setq *goal* (slot-value *maze* 'goal_position))
