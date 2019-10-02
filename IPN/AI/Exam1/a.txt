@@ -1,0 +1,132 @@
+
+
+
+
+;;;=======================================================================================
+;;  EXTRACT-SOLUTION  y  DISPLAY-SOLUTION
+;;       Recuperan y despliegan la secuencia de solucion del problema...
+;;       extract-solution   recibe un nodo (el que contiene al estado meta) que ya se encuentra en la memoria y
+;;                                    rastrea todos sus ancestros hasta llegar  al  nodo que contiene al estado inicial...
+;;       display-solution  despliega en pantalla la lista global *solucion* donde ya se encuentra, en orden correcto,
+;;                                    el proceso de solución del problema...
+;;;=======================================================================================
+(defun extract-solution (nodo)
+"Rastrea en *memory* todos los descendientes de [nodo] hasta llegar al estado inicial"
+     (labels ((locate-node  (id  lista)       ;; función local que busca un nodo por Id  y si lo encuentra regresa el nodo completo
+		  (cond ((null  lista)  Nil)
+		        ((eql  id  (first (first  lista))) (first  lista))
+		        (T  (locate-node  id (rest  lista))))))
+	  (let ((current  (locate-node  (first  nodo)  *memory*)))
+	     (loop  while  (not (null  current))  do                        
+		 (push  current  *solucion*)     ;; agregar a la solución el nodo actual
+		 (setq  current  (locate-node  (third  current) *memory*))))  ;; y luego cambiar a su antecesor...
+	     *solucion*))
+
+(defun  display-solution (lista-nodos)
+"Despliega la solución en forma conveniente y numerando los pasos"
+    (format  t  "1) Solución con ~A pasos (Longitud de la solución)~%" (1- (length  lista-nodos)))
+    (format  t  "2) ~A nodos creados ~%" *id*)
+    (format  t  "3) ~A nodos expandidos ~%" *expanded*)
+    (format  t  "4) Longitud máxima de la Frontera de búsqueda: ~A~%~%" *max-frontier*)
+
+    (setq *solution* nil)
+    (setq *solution* (reverse *solution*))
+    (pop *solution*)
+    
+    (format  t  "~%Solution list: ~A ~%" *solution*)
+       
+    (format  t  "~%5) Tiempo: ~%")
+)  ;; imprimir el número de paso, operador y estado...
+
+
+;;;=======================================================================================
+;;  RESET-ALL  y  BLIND-SEARCH
+;;
+;;       Recuperan y despliegan la secuencia de solucion del problema...
+;;
+;;       reset-all   Reinicializa todas las variables globales para una nueva ejecución
+;;       blind-search  Función principal, realiza búsqueda desde un estado inicial a un estado meta
+;;;=======================================================================================
+(defun reset-all () 
+"Reinicia todas las variables globales para realizar una nueva búsqueda..."
+     (setq  *open*  ())
+     (setq  *memory*  ())
+     (setq  *id*  -1)
+     (setq  *current-ancestor*  nil)
+     (setq  *expanded*  0)  
+     (setq  *max-frontier*  0) 
+     (setq  *solucion*  nil))
+
+
+     
+(defun get-start ()
+  "Te regresa el estado inicial"
+    (let*
+      ( 
+        (x (aref  *start* 0))
+        (y (aref  *start* 1))
+        (coordinate (list x y)  )  )
+      (list (aptitude coordinate) coordinate)   ) )
+
+(defun get-goal ()
+  "Te regresa el estado inicial"
+    (let*
+      ( 
+        (x (aref  *goal* 0))
+        (y (aref  *goal* 1))
+        (coordinate (list x y)  )  )
+      (list (aptitude coordinate) coordinate)   ) )
+
+
+(defun  bestf-search ()
+"Realiza una búsqueda best First, desde un estado inicial hasta un estado meta"
+  (reset-all)
+
+  (print (get-maze-data))
+  (print *start*)
+  (print *goal*)
+
+
+  (let 
+    (
+      (edo-inicial  (get-start))
+      (edo-meta     (get-goal))
+      (nodo             nil)
+      (estado           nil)
+      (sucesores        nil)
+      (operador         nil)
+      (meta-encontrada  nil)  )
+
+      (insert-to-open edo-inicial)
+
+      (time 
+      (loop until (or meta-encontrada (null *open*)) do
+        
+        (setq 
+            nodo      (get-from-open)       ;;Extraer el siguiente nodo de la frontera de búsqueda
+            estado    (second nodo)         ;;Identificar el estado y operador que contiene
+            operador  (third  nodo)   )             
+        (push nodo *memory*)                ;;Recordarlo antes de que algo pueda pasar...
+
+        (cond    
+          ((equal  edo-meta estado)  
+            (format  t  "Éxito. Meta encontrada ~%~%")
+
+            (display-solution  (extract-solution  nodo))
+            (setq  meta-encontrada  T)    
+          )
+          (t
+            (setq  *current-ancestor* (first  nodo)) 
+            (setq  sucesores          (expand estado))
+            (setq  sucesores          (filter-memories  sucesores))    ;;Filtrar los estados ya revisados...
+
+            (loop for element in sucesores do
+              (insert-to-open (first element) (second element)))
+          ) ))))  )
+			     
+
+(add-algorithm 'bestf-search)
+(bestf-search)
+
+(start-maze)
+

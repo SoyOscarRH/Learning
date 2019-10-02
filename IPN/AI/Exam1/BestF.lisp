@@ -1,15 +1,22 @@
 (load "maze_lib.lisp")
 
 ;;; BestF.lisp
-;;;   Resuelve el problema de los laberintos
+;;;   Resuelve el problema de los laberintos usando best first search
 ;;;
 ;;;   Representación de los estados:
 ;;;     Lista con dos elementos: Un valor de aptitud y una lista (x, y) de su posicion
+;;;     (aptitud (x y)) 
 ;;;
 ;;; Oscar Andres Rosas Hernandez
 
-(defparameter  *open* ())    ;; Frontera de busqueda...                                              
-(defparameter  *memory* (make-hash-table))  ;; Memoria de intentos previos
+(defparameter  *id*         -1)                   ;; Cantidad de nodos creados                                          
+(defparameter  *open*       ())                   ;; Frontera de busqueda.                                           
+(defparameter  *memory-op*  (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-an*  (make-hash-table))    ;; Memoria de ancestros
+(defparameter  *expanded*         0)              ;; Almacena cuantos estados han sido expandidos
+(defparameter  *max-frontier*     0)              ;; Almacena el tamano de la maximo de la frontera 
+(defparameter  *closest*     '(9999999999 nil))   ;; Almacena el la mejor solucion 
+(defparameter  *current-ancestor* nil)            ;; referencia al ancestro actual
 
 (defparameter  *ops*  '( (:arriba           0 )
                          (:arriba-derecha   1 )
@@ -21,60 +28,30 @@
                          (:arriba-izquierda 7 )  ) )
 
 
-(defparameter  *id*               -1)    ;; Identificador del ultimo nodo creado
-(defparameter  *expanded*         0)     ;; Almacena cuantos nodos fueron creados
-(defparameter  *max-frontier*     0)     ;; Almacena el tamano de la maximo de la frontera 
-(defparameter  *current-ancestor* nil)   ;; Id del ancestro común a todos los descendientes que se generen
-(defparameter  *solucion*         nil)   ;; lista donde se almacenará la solución recuperada de la memoria
-
-;;;=======================================================================================
-;;  CREATE-NODE (state  op)  
-;;      state - Un estado del problema a resolver (sistema)  -> (id estado ancestro operation-name)
-;;         op - El operador cuya aplicación generó el [estado]...
-;;;=======================================================================================
-(defun  create-node (state  op)
-  "Construye y regresa un nuevo nodo de búsqueda que contiene al estado y operador recibidos como parámetro"
-      (incf  *id*)  ;;incrementamos primero para que lo último en procesarse sea la respuesta
-      (list  *id*  state  *current-ancestor*  (first op) (second op)  )  )  ;;los nodos generados son descendientes de *current-ancestor*
-
-
-;;;=======================================================================================
-;;  INSERT-TO-OPEN   y   GET-FROM-OPEN  
-;;        
-;;        Insert-to-open  Recibe un estado, una operacion con el que llegamos ahi y lo inserta
-;;                        segun aptitud
-;;;=======================================================================================
-(defun push-to-ordered-list (value node some_list)
+(defun push-to-ordered-list (value state states)
+  "Inserta en una lista ordenada en O(n)"
   (let
     ( 
-      (front (first some_list))
-      (end    (rest some_list)) )
+      (front (first states))
+      (end    (rest states)) )
 
-    (if (null some_list)
-      (cons node nil)
+    (if (null states)
+      (cons state nil)
       (if (<= value (first front))
-          (cons node some_list)
-          (cons front (push-to-ordered-list value node end) ))) ) )
+          (cons state states)
+          (cons front (push-to-ordered-list value state end) ))) ) )
 
-(defun insert-to-open (estado  op) 
-"Permite insertar nodos de la frontera de busqueda *open* de forma apta para buscar a lo profundo y a lo ancho"
+(defun insert-to-open (state)
+  "Recibe un estado, una operacion con el que llegamos ahi y lo inserta segun aptitud"
      (let 
-        (
-          (node               (create-node  estado  op))
-          (current-frontier   (+ 1 (length *open*)))  )
-
-            (setq *open*          (push-to-ordered-list (first node) node *open*))
-            (setq *max-frontier*  (max current-frontier *max-frontier*))   ) )
+        ((current-frontier   (+ 1 (length *open*))) )
+          (setq *open*          (push-to-ordered-list (first state) state *open*))
+          (setq *max-frontier*  (max current-frontier *max-frontier*))   ) )
 
 (defun get-from-open ()
-"Recupera el siguiente elemento a revisar de  frontera de busqueda *open*"
+"Recupera el siguiente elemento a revisar de frontera de busqueda *open*"
   (pop  *open*) )
 
-
-;;;=======================================================================================
-;;  APTITUDE 
-;;      (x y) - Un estado del problema
-;;;=======================================================================================
 (defun aptitude (coordinates)
   "Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
     (let
@@ -89,9 +66,31 @@
         (+ (abs (- x1 x2)) (abs (- y1 y2)) )
     ) )
 
-(defun get-bit-list (cell-id)
-  "Te una lista para saber si la puerta esta cerrada"
-    (loop for i below 4 collect (if (logbitp i cell-id) 1 0)) )
+;;;=======================================================================================
+;;  REMEMBER-STATE?  y  FILTER-MEMORIES
+;;        Permiten administrar la memoria de intentos previos
+;;;=======================================================================================
+(defun  get-hash-inline  (x y)
+  "Te da un ID unico para usarlo como llave en la memoria"
+  (+ x (* y (+ 1 (get-maze-rows)))))
+
+(defun  not-remember-state-inline?  (x y)
+  "Ya he visto esto antes?"
+  (null (gethash (get-hash-inline x y) *memory-op*))  )
+
+(defun  add-to-memory  (state op)
+  "Anadelo a memoria"
+  (let*  
+    ( 
+      (coordinates (second  state)) 
+      (x           (first  coordinates)) 
+      (y           (second coordinates))
+      (val         (get-hash-inline x y)) )
+
+    (setf (gethash val *memory-op*) op)
+    (setf (gethash val *memory-an*) *current-ancestor*)
+
+  ) )
 
 
 ;;;=======================================================================================
@@ -99,6 +98,11 @@
 ;;        Predicado.  Indica si es posible aplicar el operador [op] a [estado] segun 
 ;;                    los recursos en la orilla de la barca
 ;;;=======================================================================================
+(defun get-bit-list (cell-id)
+  "Te una lista para saber si la puerta esta cerrada"
+    (loop for i below 4 collect (if (logbitp i cell-id) 1 0)) )
+
+
 (defun  valid-operator? (op state)
 "Predicado. Valida la aplicación de un operador a un estado, se supone el estado valido"  
   (let*  
@@ -127,12 +131,12 @@
         (cols (get-maze-cols))   )
 
         (case name
-          (:arriba           (and (> x 0)                 (eql p0 0)) (remember-state? x- y) )
-          (:derecha          (and (< y+ cols)             (eql p1 0)) (remember-state? x y+) )
-          (:abajo            (and (< x+ rows)             (eql p2 0)) (remember-state? x+ y) )
-          (:izquierda        (and (> y 0)                 (eql p3 0)) (remember-state? x y-) )
+          (:arriba           (and (> x 0)                 (eql p0 0) (not-remember-state-inline? x- y)))
+          (:derecha          (and (< y+ cols)             (eql p1 0) (not-remember-state-inline? x y+)))
+          (:abajo            (and (< x+ rows)             (eql p2 0) (not-remember-state-inline? x+ y)))
+          (:izquierda        (and (> y 0)                 (eql p3 0) (not-remember-state-inline? x y-)))
 
-          (:arriba-derecha   (and (> x 0) (< y+ cols) (remember-state? x- y+)
+          (:arriba-derecha   (and (> x 0) (< y+ cols) (not-remember-state-inline? x- y+)
             (let* (
               (derecha-door (get-bit-list (get-cell-walls x y+)))
               (arriba-door  (get-bit-list (get-cell-walls x- y)))
@@ -141,7 +145,7 @@
             )
             (or (and (eql 0 p0) (eql 0 p1-arriba)) (and (eql 0 p1) (eql 0 p0-derecha))))))
 
-          (:abajo-derecha    (and (< x+ rows) (< y+ cols) (remember-state? x+ y+)
+          (:abajo-derecha    (and (< x+ rows) (< y+ cols) (not-remember-state-inline? x+ y+)
             (let* (
               (derecha-door (get-bit-list (get-cell-walls x y+)))
               (abajo-door   (get-bit-list (get-cell-walls x+ y)))
@@ -150,7 +154,7 @@
             )
             (or (and (eql 0 p1) (eql 0 p2-derecha)) (and (eql 0 p2) (eql 0 p1-abajo))))))
 
-          (:abajo-izquierda  (and (< x+ rows) (> y 0) (remember-state? x+ y-)
+          (:abajo-izquierda  (and (< x+ rows) (> y 0) (not-remember-state-inline? x+ y-)
             (let* (
               (izquierda-door (get-bit-list (get-cell-walls x y-)))
               (abajo-door     (get-bit-list (get-cell-walls x+ y)))
@@ -159,7 +163,7 @@
             )
             (or (and (eql 0 p2) (eql 0 p3-abajo)) (and (eql 0 p3) (eql 0 p2-izquierda))))))
 
-          (:arriba-izquierda (and (> x 0) (> y 0) (remember-state? x- y-)
+          (:arriba-izquierda (and (> x 0) (> y 0) (not-remember-state-inline? x- y-)
             (let* (
               (arriba-door     (get-bit-list (get-cell-walls x- y)))
               (izquierda-door  (get-bit-list (get-cell-walls x y-)))
@@ -221,104 +225,80 @@
       (list (aptitude new-coordinates) new-coordinates)   ) )
 
 
-
-;;;=======================================================================================
-;;  REMEMBER-STATE?  y  FILTER-MEMORIES
-;;        Permiten administrar la memoria de intentos previos
-;;;=======================================================================================
-(defun  get-hash?  (x y)
-  (+ x (* y (+ 1 (get-maze-cols))))
-)
-
-(defun  remember-state?  (x y)
-  (gethash (get-hash? x y) *memory*)
-)
-
-(defun  add-to-memory  (x y)
-  (gethash (get-hash? x y) *memory*)
-  (setf (gethash (get-hash? x y) *memory*) T)
-)
-
-
 ;;;=======================================================================================
 ;;  EXPAND (state)
 ;;        Construye y regresa una lista con todos los descendientes validos de [estado]
 ;;;=======================================================================================
 (defun expand (state)
 "Obtiene todos los descendientes válidos de un estado, aplicando todos los operadores en *ops*"
-     (let 
-      ((descendests nil)
-	     (new-state   nil))
+  (setq  *current-ancestor* state)
+  (let 
+    ((new-state nil))
+    (incf  *expanded*)
 
-        (incf  *expanded*)
-        (dolist  (op  *Ops*)
-          (cond ( (valid-operator? op state)
-              (setq  new-state  (apply-operator  op state))
-              (print state)
-              (add-to-memory (second (first state)) (second (second state)))
-              (setq  descendests  (cons (list new-state op) descendests)
-              
-            ) )     ) )
-            
-        descendests ) )
+    (dolist  (op  *Ops*)
+      (cond 
+        ((valid-operator? op state)
+
+          (setq  new-state  (apply-operator  op state))
+          (incf  *id*)
+
+          (if 
+            (< (first new-state) (first *closest*))
+            (setq *closest* new-state)
+          )
+          
+          (add-to-memory new-state (second op))
+          (insert-to-open new-state)                       )))))
 
 
 
-;;;=======================================================================================
-;;  EXTRACT-SOLUTION  y  DISPLAY-SOLUTION
-;;       Recuperan y despliegan la secuencia de solucion del problema...
-;;       extract-solution   recibe un nodo (el que contiene al estado meta) que ya se encuentra en la memoria y
-;;                                    rastrea todos sus ancestros hasta llegar  al  nodo que contiene al estado inicial...
-;;       display-solution  despliega en pantalla la lista global *solucion* donde ya se encuentra, en orden correcto,
-;;                                    el proceso de solución del problema...
-;;;=======================================================================================
-(defun extract-solution (nodo)
-"Rastrea en *memory* todos los descendientes de [nodo] hasta llegar al estado inicial"
-     (labels ((locate-node  (id  lista)       ;; función local que busca un nodo por Id  y si lo encuentra regresa el nodo completo
-		  (cond ((null  lista)  Nil)
-		        ((eql  id  (first (first  lista))) (first  lista))
-		        (T  (locate-node  id (rest  lista))))))
-	  (let ((current  (locate-node  (first  nodo)  *memory*)))
-	     (loop  while  (not (null  current))  do                        
-		 (push  current  *solucion*)     ;; agregar a la solución el nodo actual
-		 (setq  current  (locate-node  (third  current) *memory*))))  ;; y luego cambiar a su antecesor...
-	     *solucion*))
+(defun extract-solution (state)
+"Rastrea en *memory* todos los descendientes de [state] hasta llegar al estado inicial"
+  (let 
+    (
+      (current state)
+      (op nil)
+      (ans nil)
+      (value nil)
+    )
 
-(defun  display-solution (lista-nodos)
+      (loop  while  (not (null current)) do 
+        (setq value (get-hash-inline (first (second current)) (second (second current)) ))
+
+        (setq op (gethash value *memory-op*))
+        (setq ans (gethash value *memory-an*))
+
+        (setq current ans)
+        (push op *solution*)  )
+
+      (setq *solution* (rest *solution*)) ))
+
+(defun  display-solution ()
 "Despliega la solución en forma conveniente y numerando los pasos"
-    (format  t  "1) Solución con ~A pasos (Longitud de la solución)~%" (1- (length  lista-nodos)))
-    (format  t  "2) ~A nodos creados ~%" *id*)
-    (format  t  "3) ~A nodos expandidos ~%" *expanded*)
-    (format  t  "4) Longitud máxima de la Frontera de búsqueda: ~A~%~%" *max-frontier*)
 
-    (setq *solution* nil)
-    (setq *solution* (reverse *solution*))
-    (pop *solution*)
-    
-    (format  t  "~%Solution list: ~A ~%" *solution*)
-       
+    (format  t  "Solución con ~A pasos (Longitud de la solución)~%" (length *solution*))
+    (format  t  "~A nodos creados ~%" *id*)
+    (format  t  "~A nodos expandidos ~%" *expanded*)
+    (format  t  "Longitud máxima de la Frontera de búsqueda: ~A~%~%" *max-frontier*)
+
+    (format  t  "~%La solucion es: ~A ~%" *solution*)
+
     (format  t  "~%5) Tiempo: ~%")
-)  ;; imprimir el número de paso, operador y estado...
+)
 
 
-;;;=======================================================================================
-;;  RESET-ALL  y  BLIND-SEARCH
-;;
-;;       Recuperan y despliegan la secuencia de solucion del problema...
-;;
-;;       reset-all   Reinicializa todas las variables globales para una nueva ejecución
-;;       blind-search  Función principal, realiza búsqueda desde un estado inicial a un estado meta
-;;;=======================================================================================
+
 (defun reset-all () 
 "Reinicia todas las variables globales para realizar una nueva búsqueda..."
-     (setq  *open*  ())
-     (setq  *memory*  ())
-     (setq  *id*  -1)
-     (setq  *current-ancestor*  nil)
-     (setq  *expanded*  0)  
-     (setq  *max-frontier*  0) 
-     (setq  *solucion*  nil))
-
+  (setq  *id* -1)                         
+  (setq  *open* ())                       
+  (setq  *memory-op* (make-hash-table))   
+  (setq  *memory-an* (make-hash-table))   
+  (setq  *expanded*         0)            
+  (setq  *max-frontier*     0)
+  (setq  *closest*     '(9999999999 nil))
+  (setq  *current-ancestor* nil)  )
 
      
 (defun get-start ()
@@ -348,47 +328,38 @@
   (print *start*)
   (print *goal*)
 
-
   (let 
     (
       (edo-inicial  (get-start))
       (edo-meta     (get-goal))
-      (nodo             nil)
-      (estado           nil)
+
+      (current          nil)
       (sucesores        nil)
-      (operador         nil)
       (meta-encontrada  nil)  )
 
-      (insert-to-open edo-inicial nil)
+      (insert-to-open edo-inicial)
+      (add-to-memory edo-inicial -1)
 
       (time 
-      (loop until (or meta-encontrada (null *open*)) do
-        
-        (setq 
-            nodo      (get-from-open)       ;;Extraer el siguiente nodo de la frontera de búsqueda
-            estado    (second nodo)         ;;Identificar el estado y operador que contiene
-            operador  (third  nodo)   )             
-        (push nodo *memory*)                ;;Recordarlo antes de que algo pueda pasar...
-
+      (loop until (or meta-encontrada (null *open*) ) do
+        (setq current (get-from-open))
         (cond    
-          ((equal  edo-meta estado)  
+          ((equal edo-meta current) 
+            
+            (setq  meta-encontrada  T)
             (format  t  "Éxito. Meta encontrada ~%~%")
-
-            (display-solution  (extract-solution  nodo))
-            (setq  meta-encontrada  T)    
+            (extract-solution current)
+            (display-solution)
           )
-          (t
-            (setq  *current-ancestor* (first  nodo)) 
-            (setq  sucesores          (expand estado))
-            (setq  sucesores          (filter-memories  sucesores))    ;;Filtrar los estados ya revisados...
 
-            (loop for element in sucesores do
-              (insert-to-open (first element) (second element)))
-          ) ))))  )
+          (t
+             
+            (expand current)
+            (if (null *open*) (progn (extract-solution *closest*) (display-solution)) )
+          ) ))
+          ))  )
 			     
 
 (add-algorithm 'bestf-search)
-(bestf-search)
 
 (start-maze)
-
