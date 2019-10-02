@@ -320,7 +320,7 @@
       (list (aptitude coordinate) coordinate)   ) )
 
 
-(defun  bestf-search ()
+(defun  bestf-manhattan-search ()
 "Realiza una búsqueda best First, desde un estado inicial hasta un estado meta"
   (reset-all)
 
@@ -355,11 +355,15 @@
           (t
              
             (expand current)
-            (if (null *open*) (progn (extract-solution *closest*) (display-solution)) )
-          ) ))
-          ))  )
+            (if (null *open*) 
+              (progn 
+                (format  t  "Lo intenté.%")
+                (extract-solution *closest*) 
+                (display-solution)
+              ) )
+          ) )) ))  )
 			     
 
-(add-algorithm 'bestf-search)
+(add-algorithm 'bestf-manhattan-search)
 
 (start-maze)
