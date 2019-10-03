@@ -188,10 +188,6 @@
             (setq door (if vertical 10 5))
           )
 
-
-          (print "vertical")
-          (print vertical)
-
           (if 
             (not (case name
               (:arriba     (eql (nth 0 door-data ) 0))

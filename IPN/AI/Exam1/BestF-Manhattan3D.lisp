@@ -187,9 +187,6 @@
           )
 
 
-          (print "vertical")
-          (print vertical)
-
           (if 
             (not (case name
               (:arriba     (eql (nth 0 door-data ) 0))
@@ -215,7 +212,7 @@
           (if (not-remember-state-inline? x2 y2 z2)
           (list (aptitude (list x2 y2 z2) ) (list x2 y2 z2)) nil)
 
-      ) ) )
+      )))
 
 
 
