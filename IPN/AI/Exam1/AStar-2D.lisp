@@ -1,7 +1,7 @@
 (load "maze_lib.lisp")
 
 ;;; BestF.lisp
-;;;   Resuelve el problema de los laberintos usando best first search
+;;;   Resuelve el problema de los laberintos usando A*
 ;;;
 ;;;   Representación de los estados:
 ;;;     Lista con dos elementos: Un valor de aptitud y una lista (x, y) de su posicion
@@ -9,25 +9,31 @@
 ;;;
 ;;; Oscar Andres Rosas Hernandez
 
-(defparameter  *id*         -1)                   ;; Cantidad de nodos creados                                          
-(defparameter  *open*       ())                   ;; Frontera de busqueda.                                           
-(defparameter  *memory-op*  (make-hash-table))    ;; Memoria de operaciones
-(defparameter  *memory-open*  (make-hash-table))    ;; Memoria de operaciones
-(defparameter  *memory-an*  (make-hash-table))    ;; Memoria de ancestros
-(defparameter  *memory-distance*  (make-hash-table))    ;; Memoria de ancestros
-(defparameter  *expanded*         0)              ;; Almacena cuantos estados han sido expandidos
-(defparameter  *max-frontier*     0)              ;; Almacena el tamano de la maximo de la frontera 
-(defparameter  *closest*     '(9999999999 nil))   ;; Almacena el la mejor solucion 
-(defparameter  *current-ancestor* nil)            ;; referencia al ancestro actual
 
-(defparameter  *ops*  '( (:arriba           0 )
-                         (:arriba-derecha   1 )
-                         (:derecha          2 )
-                         (:abajo-derecha    3 )
-                         (:abajo            4 )
-                         (:abajo-izquierda  5 )
-                         (:izquierda        6 )
-                         (:arriba-izquierda 7 )  ) )
+;;; ==================================================
+;;; =========       GLOBAL PARAMETERS        =========
+;;; ==================================================
+(defparameter  *id*                -1)                   ;; Cantidad de nodos creados                                          
+(defparameter  *open*              ())                   ;; Frontera de busqueda.                                           
+(defparameter  *memory-open*       (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-operations* (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-ancestor*   (make-hash-table))    ;; Memoria de ancestros
+(defparameter  *memory-distance*   (make-hash-table))    ;; Memoria de la distancia a ese nodo
+(defparameter  *expanded*          0)                    ;; Cuantos estados han sido expandidos
+(defparameter  *max-frontier*      0)                    ;; El tamano de la maximo de la frontera 
+(defparameter  *closest*           '(9999999999 nil))    ;; Almacena el estado con la mejor solucion 
+(defparameter  *current-ancestor*  nil)                  ;; Almacena al ancestro actual (estado)
+(defparameter  *aptitude-id*       nil)                  ;; Almacena el nombre de la funcion
+
+
+(defparameter  *operations*  '((:arriba           0 )
+                               (:arriba-derecha   1 )
+                               (:derecha          2 )
+                               (:abajo-derecha    3 )
+                               (:abajo            4 )
+                               (:abajo-izquierda  5 )
+                               (:izquierda        6 )
+                               (:arriba-izquierda 7 )))
 
 
 (defun push-to-ordered-list (value state states)
@@ -111,7 +117,7 @@
 (defun  not-remember-state-inline?  (x y)
   "Ya he visto esto antes en memory pero no esta en open"
   (or
-    (null (gethash (get-hash-inline x y) *memory-op*))  
+    (null (gethash (get-hash-inline x y) *memory-operations*))  
     (not (null (gethash (get-hash-inline x y) *memory-open*)))
   )
 )
@@ -155,8 +161,8 @@
       (y           (second coordinates))
       (val         (get-hash-inline x y)) )
 
-    (setf (gethash val *memory-op*) op)
-    (setf (gethash val *memory-an*) *current-ancestor*)
+    (setf (gethash val *memory-operations*) op)
+    (setf (gethash val *memory-ancestor*) *current-ancestor*)
 
   ) )
 
@@ -298,7 +304,7 @@
 ;;        Construye y regresa una lista con todos los descendientes validos de [estado]
 ;;;=======================================================================================
 (defun expand (state)
-"Obtiene todos los descendientes válidos de un estado, aplicando todos los operadores en *ops*"
+"Obtiene todos los descendientes válidos de un estado, aplicando todos los operadores en *operations*"
   (setq  *current-ancestor* state)
   (let*
     (
@@ -314,7 +320,7 @@
     (setf (gethash val *memory-open*) Nil)  ; Ya no estoy en open
     (setf (gethash val *memory-open*) Nil)  ; Ya no estoy en open
 
-    (dolist  (op  *Ops*)
+    (dolist  (op  *operations*)
       (cond 
         ((valid-operator? op state)
 
@@ -382,8 +388,8 @@
       (loop  while  (not (null current)) do 
         (setq value (get-hash-inline (first (second current)) (second (second current)) ))
 
-        (setq op (gethash value *memory-op*))
-        (setq ans (gethash value *memory-an*))
+        (setq op (gethash value *memory-operations*))
+        (setq ans (gethash value *memory-ancestor*))
 
         (setq current ans)
         (push op *solution*)  )
@@ -407,16 +413,16 @@
 
 (defun reset-all () 
 "Reinicia todas las variables globales para realizar una nueva búsqueda..."
-  (setq  *id* -1)                         
-  (setq  *open* ())                       
-  (setq  *memory-open* (make-hash-table))   
-  (setq  *memory-op* (make-hash-table))   
-  (setq  *memory-an* (make-hash-table))   
-  (setq  *memory-distance* (make-hash-table))   
-  (setq  *expanded*         0)            
-  (setq  *max-frontier*     0)
-  (setq  *closest*     '(9999999999 nil))
-  (setq  *current-ancestor* nil)  )
+  (setq  *id*                 -1)                         
+  (setq  *open*               ())                       
+  (setq  *memory-open*        (make-hash-table))   
+  (setq  *memory-operations*  (make-hash-table))   
+  (setq  *memory-ancestor*    (make-hash-table))   
+  (setq  *memory-distance*    (make-hash-table))   
+  (setq  *expanded*           0)            
+  (setq  *max-frontier*       0)
+  (setq  *closest*            '(9999999999 nil))
+  (setq  *current-ancestor*   nil))
 
      
 (defun get-start ()

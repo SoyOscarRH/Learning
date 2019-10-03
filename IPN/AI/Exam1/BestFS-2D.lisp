@@ -14,15 +14,15 @@
 ;;; ==================================================
 ;;; =========       GLOBAL PARAMETERS        =========
 ;;; ==================================================
-(defparameter  *id*               -1)                   ;; Cantidad de nodos creados                                          
-(defparameter  *open*             ())                   ;; Frontera de busqueda.                                           
-(defparameter  *memory-open*      (make-hash-table))    ;; Memoria de operaciones
-(defparameter  *memory-ancestor*  (make-hash-table))    ;; Memoria de ancestros
-(defparameter  *expanded*         0)                    ;; Cuantos estados han sido expandidos
-(defparameter  *max-frontier*     0)                    ;; El tamano de la maximo de la frontera 
-(defparameter  *closest*          '(9999999999 nil))    ;; Almacena el estado con la mejor solucion 
-(defparameter  *current-ancestor* nil)                  ;; Almacena al ancestro actual (estado)
-(defparameter  *aptitude-id*      nil)                  ;; Almacena el nombre de la funcion
+(defparameter  *id*                 -1)                   ;; Cantidad de nodos creados                                          
+(defparameter  *open*               ())                   ;; Frontera de busqueda.                                           
+(defparameter  *memory-operations*  (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-ancestor*    (make-hash-table))    ;; Memoria de ancestros
+(defparameter  *expanded*           0)                    ;; Cuantos estados han sido expandidos
+(defparameter  *max-frontier*       0)                    ;; El tamano de la maximo de la frontera 
+(defparameter  *closest*            '(9999999999 nil))    ;; Almacena el estado con la mejor solucion 
+(defparameter  *current-ancestor*   nil)                  ;; Almacena al ancestro actual (estado)
+(defparameter  *aptitude-id*        nil)                  ;; Almacena el nombre de la funcion
 
 (defparameter  *operations*  '((:arriba           0 )
                                (:arriba-derecha   1 )
@@ -96,7 +96,7 @@
 
 (defun  is-first-time-seeing-this-point?  (x y)
   "Predicado. Te regresa si este es la primera vez que veo este estado"
-  (null (gethash (get-hash-point x y) *memory-open*)))
+  (null (gethash (get-hash-point x y) *memory-operations*)))
 
 (defun  add-to-memory (state operation)
   "Añade un estado a la memoria"
@@ -107,7 +107,7 @@
       (y           (second coordinates))
       (val         (get-hash-point x y)))
 
-    (setf (gethash val *memory-open*) operation)
+    (setf (gethash val *memory-operations*) operation)
     (setf (gethash val *memory-ancestor*) *current-ancestor*)))
 
 
@@ -269,7 +269,7 @@
 
       (loop  while  (not (null current)) do
         (setq value     (get-hash-point (first (second current)) (second (second current)) ))
-        (setq operation (gethash value *memory-open*))
+        (setq operation (gethash value *memory-operations*))
         (setq ansestor  (gethash value *memory-ancestor*))
         (setq current   ansestor)
 
@@ -290,7 +290,7 @@
 "Reinicia todas las variables globales para realizar una nueva búsqueda..."
   (setq  *id*               -1)                         
   (setq  *open*             ())                       
-  (setq  *memory-open*      (make-hash-table))   
+  (setq  *memory-operations*      (make-hash-table))   
   (setq  *memory-ancestor*  (make-hash-table))   
   (setq  *expanded*         0)            
   (setq  *max-frontier*     0)
