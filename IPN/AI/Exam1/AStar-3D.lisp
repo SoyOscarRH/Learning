@@ -1,28 +1,30 @@
 (load "maze_lib.lisp")
 
 ;;; BestF.lisp
-;;;   Resuelve el problema de los laberintos en 3D usando BEST First Search
+;;;   Resuelve el problema de los laberintos usando A*
 ;;;
 ;;;   Representación de los estados:
 ;;;     Lista con dos elementos: Un valor de aptitud y una lista (x, y) de su posicion
-;;;     (aptitud (x y z)) 
+;;;     (aptitud (x y)) 
 ;;;
 ;;; Oscar Andres Rosas Hernandez
-
 
 
 ;;; ==================================================
 ;;; =========       GLOBAL PARAMETERS        =========
 ;;; ==================================================
-(defparameter  *id*                 -1)                   ;; Cantidad de nodos creados                                          
-(defparameter  *open*               ())                   ;; Frontera de busqueda.                                           
-(defparameter  *memory-operations*  (make-hash-table))    ;; Memoria de operaciones
-(defparameter  *memory-ancestor*    (make-hash-table))    ;; Memoria de ancestros
-(defparameter  *expanded*           0)                    ;; Cuantos estados han sido expandidos
-(defparameter  *max-frontier*       0)                    ;; El tamano de la maximo de la frontera 
-(defparameter  *closest*            '(9999999999 nil))    ;; Almacena el estado con la mejor solucion 
-(defparameter  *current-ancestor*   nil)                  ;; Almacena al ancestro actual (estado)
-(defparameter  *aptitude-id*        nil)                  ;; Almacena el nombre de la funcion
+(defparameter  *id*                -1)                   ;; Cantidad de nodos creados                                          
+(defparameter  *open*              ())                   ;; Frontera de busqueda.                                           
+(defparameter  *memory-open*       (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-operations* (make-hash-table))    ;; Memoria de operaciones
+(defparameter  *memory-ancestor*   (make-hash-table))    ;; Memoria de ancestros
+(defparameter  *memory-distance*   (make-hash-table))    ;; Memoria de la distancia a ese nodo
+(defparameter  *expanded*          0)                    ;; Cuantos estados han sido expandidos
+(defparameter  *max-frontier*      0)                    ;; El tamano de la maximo de la frontera 
+(defparameter  *closest*           '(9999999999 nil))    ;; Almacena el estado con la mejor solucion 
+(defparameter  *current-ancestor*  nil)                  ;; Almacena al ancestro actual (estado)
+(defparameter  *aptitude-id*       nil)                  ;; Almacena el nombre de la funcion
+
 
 (defparameter  *operations*  '( (:arriba           0)
                                 (:derecha          2)
@@ -50,10 +52,21 @@
   (setq *max-frontier*  (max (length *open*) *max-frontier*)))
 
 
+(defun delete-from-ordered-list (coordinates states)
+  "Elimina en una lista ordenada en O(n)"
+  (if (null states) (return-from delete-from-ordered-list nil))
+  (let
+    ( 
+      (front (first states))
+      (end    (rest states)))
+    
+      (if (equal coordinates (second front))
+        end
+        (cons front (delete-from-ordered-list coordinates end)))))
+
 ;;; ==================================================
 ;;; =========       APTITUDES FUNCTIONS      =========
 ;;; ==================================================
-
 (defun Manhattan (coordinates)
   "Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
     (let ( 
@@ -82,6 +95,16 @@
     (1 (Euclidean coordinates))  
   ))
 
+(defun get-cost-and-aptitude (coordinates)
+"Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
+  (let
+    ( 
+      (aptitude-value (aptitude coordinates))
+      (distance-value (get-distance (list 0 coordinates))))
+
+      (+ aptitude-value distance-value)))
+
+
 
 ;;; ==================================================
 ;;; =========            MEMORY              =========
@@ -109,6 +132,38 @@
 
 
 ;;; ==================================================
+;;; =========     DISTANCE (NODE'S DEPTH)     ========
+;;; ==================================================
+(defun  set-distance  (state distance)
+  "Anadelo a memoria"
+  (let*  
+    ( 
+      (coordinates (second  state)) 
+      (x           (first  coordinates)) 
+      (y           (second coordinates))
+      (z           (third  coordinates))
+      (val         (get-hash-point x y z)))
+
+    (setf (gethash val *memory-distance*) distance)))
+
+
+(defun  get-distance  (state)
+  "Obten su valor en memoria, si no esta dale un 0 (origen)"
+  (let*  
+    ( 
+      (coordinates (second  state)) 
+      (x           (first  coordinates)) 
+      (y           (second coordinates))
+      (z           (third  coordinates))
+      (val         (get-hash-point x y z)) 
+      (distance    (gethash val *memory-distance*))
+    )
+
+    (if (null distance) 0 distance)))
+
+
+
+;;; ==================================================
 ;;; ======       OLD STATE -> NEW STATE      =========
 ;;; ==================================================
 (defun get-bit-list (door-id)
@@ -118,11 +173,8 @@
 (defun  valid-position? (x y)
 "Predicado. Valida  un estado según las restricciones generales del problema..."
   (let*  
-      (
-        (rows (get-maze-rows))        
-        (cols (get-maze-cols)))
-
-        (and (>= x 0) (>= y 0) (< x rows) (< y cols))))
+    ((rows (get-maze-rows))  (cols (get-maze-cols)))
+    (and (>= x 0) (>= y 0) (< x rows) (< y cols))))
 
 (defun  apply-operator (operation state)
 "Predicado. Valida la aplicación de un operador a un estado, si no es valido regresa nil"
@@ -219,7 +271,7 @@
 
 
           (if (is-first-time-seeing-this-point? x2 y2 z2)
-          (list (aptitude (list x2 y2 z2) ) (list x2 y2 z2)) nil)
+          (list (get-cost-and-aptitude (list x2 y2 z2) ) (list x2 y2 z2)) nil)
 
       )))
 
@@ -233,23 +285,50 @@
     (< (first state) (first *closest*))
     (setq *closest* state)))
 
+(defun get-hash-coordinate (coordinate)
+"Get better node"
+  (let*
+    (
+      (x (first  coordinate))
+      (y (second coordinate))
+      (z (second coordinate)))
+
+      (get-hash-point x y z)))
+
 (defun expand (state)
 "Obtiene todos los descendientes válidos de un estado, aplicando todos los operadores en *operations*"
-  (setq *current-ancestor* state)
-  (let 
-    ((new-state nil))
+  (setq  *current-ancestor* state)
+  (let*
+    (
+      (val       (get-hash-coordinate (second state)))
+      (new-state nil)
+      (pre-value nil))
 
-    (incf *expanded*)
-    (dolist (operation *operations*)
+    (incf  *expanded*)
+    (setf (gethash val *memory-open*) Nil)  ; Ya no estoy en open
+
+    (dolist  (operation  *operations*)
       (setq  new-state  (apply-operator operation state))
 
       (cond 
         ((not (null new-state))
+
           (incf  *id*)
           (update-closest-state new-state)
-          (add-to-memory        new-state (second operation))
-          (insert-to-open       new-state)                )))))
 
+          (setq pre-value (gethash (get-hash-coordinate (second new-state)) *memory-open*))
+
+          (set-distance 
+            new-state
+            (+ 1 (get-distance *current-ancestor*)))
+
+          (add-to-memory new-state (second operation))
+
+          (if 
+            (and (not (null pre-value)) (< pre-value (first new-state)))
+            (delete-from-open (second new-state)))
+
+          (insert-to-open new-state))))))
 
 
 ;;; ==================================================
@@ -283,6 +362,7 @@
   (format t "3) ~A nodos expandidos ~%" *expanded*)
   (format t "4) Longitud máxima de la Frontera de búsqueda: ~A~%" *max-frontier*))
 
+
 (defun reset-all () 
 "Reinicia todas las variables globales para realizar una nueva búsqueda..."
   (setq  *id*               -1)                         
@@ -294,6 +374,7 @@
   (setq  *closest*          '(9999999999 nil))
   (setq  *current-ancestor* nil))
 
+     
 (defun get-start ()
   "Te regresa el estado inicial"
     (let*
@@ -315,12 +396,9 @@
       (list (aptitude coordinate) coordinate)))
 
 
-;;; ==================================================
-;;; ======             BESTFS                =========
-;;; ==================================================
-(defun  BestFSearch ()
-"Realiza una búsqueda best First, desde un estado inicial hasta un estado meta"
-  (reset-all)
+(defun  AStar ()
+"Realiza una búsqueda A*, desde un estado inicial hasta un estado meta"
+(reset-all)
   (let
     (
       (start  (get-start))
@@ -360,16 +438,24 @@
   (print (get-maze-data))
   (print *start*)
   (print *goal*))
+			     
 
 
-(defun BestFSearch-Manhattan ()
+(defun AStar-Manhattan ()
   (setq *aptitude-id* 0)
-  (BestFSearch))
+  (AStar))
 
-(defun BestFSearch-Euclidean ()
+(defun AStar-Euclidean ()
   (setq *aptitude-id* 1)
-  (BestFSearch))
+  (AStar))
 
-(add-algorithm 'BestFSearch-Manhattan)
-(add-algorithm 'BestFSearch-Euclidean)
+
+(add-algorithm 'AStar-Manhattan)
+(add-algorithm 'AStar-Euclidean)
 (start-maze)
+
+
+
+
+
+
