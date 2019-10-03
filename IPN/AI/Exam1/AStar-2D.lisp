@@ -36,50 +36,55 @@
                                (:arriba-izquierda 7 )))
 
 
-(defun push-to-ordered-list (value state states)
+;;; ==================================================
+;;; =========       INSERT INTO OPEN         =========
+;;; ==================================================
+(defun insert-in-ordered-list (value state states)
   "Inserta en una lista ordenada en O(n)"
   (let
-    ( 
-      (front (first states))
-      (end    (rest states)) )
+    ((front (first states)))
 
     (if (null states)
       (cons state nil)
       (if (<= value (first front))
-          (cons state states)
-          (cons front (push-to-ordered-list value state end) ))) ) )
+        (cons state states)
+        (cons front (insert-in-ordered-list value state (rest states)))))))
+
+(defun insert-to-open (state)
+  "Inserta un estado en la posicion correcta en *open*"
+  (setq *open*          (insert-in-ordered-list (first state) state *open*))
+  (setq *max-frontier*  (max (length *open*) *max-frontier*)))
 
 
 (defun delete-from-ordered-list (coordinates states)
-  "Inserta en una lista ordenada en O(n)"
+  "Elimina en una lista ordenada en O(n)"
   (if (null states) (return-from delete-from-ordered-list nil))
   (let
     ( 
       (front (first states))
-      (end    (rest states)) )
+      (end    (rest states)))
     
       (if (equal coordinates (second front))
         end
-        (cons front (delete-from-ordered-list coordinates end) ))) )
-
-(defun insert-to-open (state)
-  "Recibe un estado y lo inserta segun aptitud"
-     (let 
-        ((current-frontier   (+ 1 (length *open*))) )
-          (setq *open*          (push-to-ordered-list (first state) state *open*))
-          (setq *max-frontier*  (max current-frontier *max-frontier*))   ) )
+        (cons front (delete-from-ordered-list coordinates end)))))
 
 
-(defun delete-from-open (coordinates)
-  "Recibe un estado y lo inserta segun aptitud"
-  (setq *open*          (delete-from-ordered-list coordinates *open*)))
 
-(defun get-from-open ()
-"Recupera el siguiente elemento a revisar de frontera de busqueda *open*"
-  (pop  *open*) )
+;;; ==================================================
+;;; =========       APTITUDES FUNCTIONS      =========
+;;; ==================================================
 
+(defun Manhattan (coordinates)
+  "Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
+    (let ( 
+      (x1 (first  coordinates))
+      (y1 (second coordinates))  
+      (x2 (aref *goal* 0))
+      (y2 (aref *goal* 1)))
 
-(defun aptitude (coordinates)
+      (+ (abs (- x2 x1)) (abs (- y2 y1)) )))
+
+(defun Euclidean (coordinates)
   "Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
     (let
       ( 
@@ -87,95 +92,92 @@
         (y1 (second coordinates))  
 
         (x2 (aref *goal* 0))
-        (y2 (aref *goal* 1))  
-      )
-        
-        (+ (abs (- x1 x2)) (abs (- y1 y2)) )
-    ) )
+        (y2 (aref *goal* 1)))
+        (sqrt(+ (* (- x1 x2) (- x1 x2)) (* (- y1 y2) (- y1 y2))))))
+
+(defun aptitude (coordinates)
+  "Llama a la funcion correcta"
+  (case *aptitude-id*
+    (0 (Manhattan coordinates))  
+    (1 (Euclidean coordinates))  
+  ))
 
 
-(defun cost (coordinates)
+(defun get-cost-and-aptitude (coordinates)
   "Te regresa el valor de aptitud de un nodo, mientras mas pequeño mejor"
     (let
       ( 
         (aptitude-value (aptitude coordinates))
-        (distance-value (get-distance (list 3 coordinates)))
-      )
+        (distance-value (get-distance (list 0 coordinates))))
 
-        (+ aptitude-value distance-value)
-    ) )
+        (+ aptitude-value distance-value)))
 
 
-;;;=======================================================================================
-;;  REMEMBER-STATE?  y  FILTER-MEMORIES
-;;        Permiten administrar la memoria de intentos previos
-;;;=======================================================================================
-(defun  get-hash-inline  (x y)
+;;; ==================================================
+;;; =========            MEMORY              =========
+;;; ==================================================
+(defun  get-hash-point (x y)
   "Te da un ID unico para usarlo como llave en la memoria"
   (+ x (* y (+ 1 (get-maze-rows)))))
 
-(defun  not-remember-state-inline?  (x y)
-  "Ya he visto esto antes en memory pero no esta en open"
-  (or
-    (null (gethash (get-hash-inline x y) *memory-operations*))  
-    (not (null (gethash (get-hash-inline x y) *memory-open*)))
-  )
-)
+(defun  is-first-time-seeing-this-point?  (x y)
+  "Predicado. Te regresa si este es la primera vez que veo este estado"
+  (null (gethash (get-hash-point x y) *memory-operations*)))
 
-(defun  set-distance  (state dis)
+(defun  add-to-memory (state operation)
+  "Añade un estado a la memoria"
+  (let*  
+    ( 
+      (coordinates (second  state)) 
+      (x           (first  coordinates)) 
+      (y           (second coordinates))
+      (val         (get-hash-point x y)))
+
+    (setf (gethash val *memory-operations*) operation)
+    (setf (gethash val *memory-ancestor*) *current-ancestor*)))
+
+
+;;; ==================================================
+;;; =========     DISTANCE (NODE'S DEPTH)     ========
+;;; ==================================================
+(defun  set-distance  (state distance)
   "Anadelo a memoria"
   (let*  
     ( 
       (coordinates (second  state)) 
       (x           (first  coordinates)) 
       (y           (second coordinates))
-      (val         (get-hash-inline x y)) )
+      (val         (get-hash-point x y)))
 
-    (setf (gethash val *memory-distance*) dis)
-  ) )
+    (setf (gethash val *memory-distance*) distance)))
 
 
 (defun  get-distance  (state)
-  "Anadelo a memoria"
-
+  "Obten su valor en memoria, si no esta dale un 0 (origen)"
   (let*  
     ( 
       (coordinates (second  state)) 
       (x           (first  coordinates)) 
       (y           (second coordinates))
-      (val         (get-hash-inline x y)) 
-      (val2        (gethash val *memory-distance*) )
+      (val         (get-hash-point x y)) 
+      (distance    (gethash val *memory-distance*))
     )
 
-    (if (null val2) 0 val2)
-
-  ) )
+    (if (null distance) 0 distance)))
 
 
-(defun  add-to-memory  (state op)
-  "Anadelo a memoria"
+;;; ==================================================
+;;; ======       OLD STATE -> NEW STATE      =========
+;;; ==================================================
+(defun get-bit-list (door-id)
+  "Helper. Te una lista de 1's y 0's para saber si í-esima puerta esta cerrada"
+  (loop for i below 4 collect (if (logbitp i door-id) 1 0)))
+
+(defun  valid-position? (x y)
+"Predicado. Valida  un estado según las restricciones generales del problema..."
   (let*  
-    ( 
-      (coordinates (second  state)) 
-      (x           (first  coordinates)) 
-      (y           (second coordinates))
-      (val         (get-hash-inline x y)) )
-
-    (setf (gethash val *memory-operations*) op)
-    (setf (gethash val *memory-ancestor*) *current-ancestor*)
-
-  ) )
-
-
-;;;=======================================================================================
-;;  VALID-OPERATOR [op, state]
-;;        Predicado.  Indica si es posible aplicar el operador [op] a [estado] segun 
-;;                    los recursos en la orilla de la barca
-;;;=======================================================================================
-(defun get-bit-list (cell-id)
-  "Te una lista para saber si la puerta esta cerrada"
-    (loop for i below 4 collect (if (logbitp i cell-id) 1 0)) )
-
+    ((rows (get-maze-rows))  (cols (get-maze-cols)))
+    (and (>= x 0) (>= y 0) (< x rows) (< y cols))))
 
 (defun  valid-operator? (op state)
 "Predicado. Valida la aplicación de un operador a un estado, se supone el estado valido"  
@@ -205,12 +207,12 @@
         (cols (get-maze-cols))   )
 
         (case name
-          (:arriba           (and (> x 0)                 (eql p0 0) (not-remember-state-inline? x- y)))
-          (:derecha          (and (< y+ cols)             (eql p1 0) (not-remember-state-inline? x y+)))
-          (:abajo            (and (< x+ rows)             (eql p2 0) (not-remember-state-inline? x+ y)))
-          (:izquierda        (and (> y 0)                 (eql p3 0) (not-remember-state-inline? x y-)))
+          (:arriba           (and (> x 0)                 (eql p0 0) (is-first-time-seeing-this-point? x- y)))
+          (:derecha          (and (< y+ cols)             (eql p1 0) (is-first-time-seeing-this-point? x y+)))
+          (:abajo            (and (< x+ rows)             (eql p2 0) (is-first-time-seeing-this-point? x+ y)))
+          (:izquierda        (and (> y 0)                 (eql p3 0) (is-first-time-seeing-this-point? x y-)))
 
-          (:arriba-derecha   (and (> x 0) (< y+ cols) (not-remember-state-inline? x- y+)
+          (:arriba-derecha   (and (> x 0) (< y+ cols) (is-first-time-seeing-this-point? x- y+)
             (let* (
               (derecha-door (get-bit-list (get-cell-walls x y+)))
               (arriba-door  (get-bit-list (get-cell-walls x- y)))
@@ -219,7 +221,7 @@
             )
             (or (and (eql 0 p0) (eql 0 p1-arriba)) (and (eql 0 p1) (eql 0 p0-derecha))))))
 
-          (:abajo-derecha    (and (< x+ rows) (< y+ cols) (not-remember-state-inline? x+ y+)
+          (:abajo-derecha    (and (< x+ rows) (< y+ cols) (is-first-time-seeing-this-point? x+ y+)
             (let* (
               (derecha-door (get-bit-list (get-cell-walls x y+)))
               (abajo-door   (get-bit-list (get-cell-walls x+ y)))
@@ -228,7 +230,7 @@
             )
             (or (and (eql 0 p1) (eql 0 p2-derecha)) (and (eql 0 p2) (eql 0 p1-abajo))))))
 
-          (:abajo-izquierda  (and (< x+ rows) (> y 0) (not-remember-state-inline? x+ y-)
+          (:abajo-izquierda  (and (< x+ rows) (> y 0) (is-first-time-seeing-this-point? x+ y-)
             (let* (
               (izquierda-door (get-bit-list (get-cell-walls x y-)))
               (abajo-door     (get-bit-list (get-cell-walls x+ y)))
@@ -237,7 +239,7 @@
             )
             (or (and (eql 0 p2) (eql 0 p3-abajo)) (and (eql 0 p3) (eql 0 p2-izquierda))))))
 
-          (:arriba-izquierda (and (> x 0) (> y 0) (not-remember-state-inline? x- y-)
+          (:arriba-izquierda (and (> x 0) (> y 0) (is-first-time-seeing-this-point? x- y-)
             (let* (
               (arriba-door     (get-bit-list (get-cell-walls x- y)))
               (izquierda-door  (get-bit-list (get-cell-walls x y-)))
@@ -249,38 +251,19 @@
       ) )
 
 
-
-;;;=======================================================================================
-;;  VALID-POSITION (estado)
-;;        Predicado.  Indica si una posicion  es valido segun las restricciones del problema
-;;;=======================================================================================
-(defun  valid-position? (x y)
-"Predicado. Valida  un estado según las restricciones generales del problema..."
-  (let*  
-      (
-        (rows (get-maze-rows))        
-        (cols (get-maze-cols))   )
-
-        (and (>= x 0) (>= y 0) (< x rows) (< y cols))   ) )
-
-
-;;;=======================================================================================
-;;  APPLY-OPERATOR (op, estado)
-;;        Resuelve la tarea básica de cambiar de estado el sistema...
-;;;=======================================================================================
-(defun  apply-operator (op  state) 
-"Obtiene el descendiente de [estado] al aplicarle  [op]  SIN VALIDACIONES"
+(defun  apply-operator (operation state) 
+"Obtiene el descendiente de un estado al aplicarle una operacion SIN VALIDACIONES"
     (let*  
       (
         (coordinates (second state))
-        (x (first  coordinates))
-        (y (second coordinates))
-        (x+ (+ x 1) )
-        (x- (- x 1) )
-        (y+ (+ y 1) )
-        (y- (- y 1) )
+        (x  (first  coordinates))
+        (y  (second coordinates))
+        (x+ (+ x 1))
+        (x- (- x 1))
+        (y+ (+ y 1))
+        (y- (- y 1))
 
-        (name (first op))
+        (name (first operation))
 
         (new-coordinates
           (case name
@@ -291,138 +274,107 @@
             (:abajo            (list x+ y ))
             (:abajo-izquierda  (list x+ y-))
             (:izquierda        (list x  y-))
-            (:arriba-izquierda (list x- y-))
-          )
-        )
-      )
+            (:arriba-izquierda (list x- y-)))))
 
-      (list (cost new-coordinates) new-coordinates)   ) )
+      (list (get-cost-and-aptitude new-coordinates) new-coordinates)))
 
 
-;;;=======================================================================================
-;;  EXPAND (state)
-;;        Construye y regresa una lista con todos los descendientes validos de [estado]
-;;;=======================================================================================
+
+;;; ==================================================
+;;; ======           EXPAND STATE            =========
+;;; ==================================================
+(defun update-closest-state (state)
+"Get better node"
+  (if
+    (< (first state) (first *closest*))
+    (setq *closest* state)))
+
+(defun get-hash-coordinate (coordinate)
+"Get better node"
+  (let*
+    (
+      (x (first  coordinate))
+      (y (second coordinate)))
+
+      (get-hash-point x y)))
+
 (defun expand (state)
 "Obtiene todos los descendientes válidos de un estado, aplicando todos los operadores en *operations*"
   (setq  *current-ancestor* state)
   (let*
     (
-      (current-coordinates (second state))
-      (x (first  current-coordinates))
-      (y (second current-coordinates))
-      (val       (get-hash-inline x y))
+      (val       (get-hash-coordinate (second state)))
       (new-state nil)
-      (pre-value nil)
-    )
+      (pre-value nil))
 
     (incf  *expanded*)
     (setf (gethash val *memory-open*) Nil)  ; Ya no estoy en open
-    (setf (gethash val *memory-open*) Nil)  ; Ya no estoy en open
 
-    (dolist  (op  *operations*)
+    (dolist  (operation  *operations*)
       (cond 
-        ((valid-operator? op state)
+        ((valid-operator? operation state)
 
-          (setq  new-state  (apply-operator  op state))
           (incf  *id*)
+          (setq  new-state  (apply-operator  operation state))
+          (update-closest-state new-state)
 
-          (if 
-            (< (first new-state) (first *closest*))
-            (setq *closest* new-state)
-          )
-
-          (setq current-coordinates (second new-state))
-
-          (setq x (first  current-coordinates))
-          (setq y (second current-coordinates))
-          (setq val       (get-hash-inline x y))
-          (setq pre-value (gethash val *memory-open*))
-
+          (setq pre-value (gethash (get-hash-coordinate (second new-state)) *memory-open*))
 
           (set-distance 
             new-state
-            (+ 1 (get-distance *current-ancestor*))
-          )
+            (+ 1 (get-distance *current-ancestor*)))
 
-          (setq  new-state  (apply-operator  op state))
+          (add-to-memory new-state (second operation))
 
-          (cond
-            ((null pre-value)
-              (add-to-memory new-state (second op))
-              (insert-to-open new-state)
-            )
-            ((and
-              (not (null pre-value))
-              (< pre-value (first new-state))
-            )
-            (progn  ; Vamos a cambiarlo
-              (add-to-memory new-state (second op))
+          (if 
+            (and (not (null pre-value)) (< pre-value (first new-state)))
+            (delete-from-open (second new-state)))
 
-              (delete-from-open (second new-state))
-              (insert-to-open new-state)
-            ))
-          )
-
-          
+          (insert-to-open new-state))))))
 
 
-                                 )))
-
-                                 
-                                 
-                                 ))
-
-
-
+;;; ==================================================
+;;; ======             SOLUTION              =========
+;;; ==================================================
 (defun extract-solution (state)
-"Rastrea en *memory* todos los descendientes de [state] hasta llegar al estado inicial"
-  (let 
+"Rastrea en *memory* todos los descendientes de state hasta llegar al estado inicial"
+  (let
     (
-      (current state)
-      (op nil)
-      (ans nil)
-      (value nil)
-    )
+      (current    state)
+      (operation  nil)
+      (ansestor   nil)
+      (value      nil))
 
-      (loop  while  (not (null current)) do 
-        (setq value (get-hash-inline (first (second current)) (second (second current)) ))
+      (loop  while  (not (null current)) do
+        (setq value     (get-hash-point (first (second current)) (second (second current)) ))
+        (setq operation (gethash value *memory-operations*))
+        (setq ansestor  (gethash value *memory-ancestor*))
+        (setq current   ansestor)
 
-        (setq op (gethash value *memory-operations*))
-        (setq ans (gethash value *memory-ancestor*))
+        (push operation *solution*))
 
-        (setq current ans)
-        (push op *solution*)  )
-
-      (setq *solution* (rest *solution*)) ))
+      (setq *solution* (rest *solution*))))
 
 (defun  display-solution ()
 "Despliega la solución en forma conveniente y numerando los pasos"
+  (format t "~%La solucion es: ~A ~%~%" *solution*)
 
-    (format  t  "Solución con ~A pasos (Longitud de la solución)~%" (length *solution*))
-    (format  t  "~A nodos creados ~%" *id*)
-    (format  t  "~A nodos expandidos ~%" *expanded*)
-    (format  t  "Longitud máxima de la Frontera de búsqueda: ~A~%~%" *max-frontier*)
-
-    (format  t  "~%La solucion es: ~A ~%" *solution*)
-
-    (format  t  "~%5) Tiempo: ~%")
-)
-
+  (format t "1) Solución con ~A pasos (Longitud de la solución)~%" (length *solution*))
+  (format t "2) ~A nodos creados ~%" *id*)
+  (format t "3) ~A nodos expandidos ~%" *expanded*)
+  (format t "4) Longitud máxima de la Frontera de búsqueda: ~A~%" *max-frontier*))
 
 
 (defun reset-all () 
 "Reinicia todas las variables globales para realizar una nueva búsqueda..."
-  (setq  *id*                 -1)                         
-  (setq  *open*               ())                       
-  (setq  *memory-open*        (make-hash-table))   
-  (setq  *memory-operations*  (make-hash-table))   
-  (setq  *memory-ancestor*    (make-hash-table))   
-  (setq  *memory-distance*    (make-hash-table))   
-  (setq  *expanded*           0)            
-  (setq  *max-frontier*       0)
-  (setq  *closest*            '(9999999999 nil))
-  (setq  *current-ancestor*   nil))
+  (setq  *id*               -1)                         
+  (setq  *open*             ())                       
+  (setq  *memory-operations*      (make-hash-table))   
+  (setq  *memory-ancestor*  (make-hash-table))   
+  (setq  *expanded*         0)            
+  (setq  *max-frontier*     0)
+  (setq  *closest*          '(9999999999 nil))
+  (setq  *current-ancestor* nil))
 
      
 (defun get-start ()
@@ -431,8 +383,8 @@
       ( 
         (x (aref  *start* 0))
         (y (aref  *start* 1))
-        (coordinate (list x y)  )  )
-      (list (aptitude coordinate) coordinate)   ) )
+        (coordinate (list x y)))
+      (list (aptitude coordinate) coordinate)))
 
 (defun get-goal ()
   "Te regresa el estado inicial"
@@ -440,55 +392,64 @@
       ( 
         (x (aref  *goal* 0))
         (y (aref  *goal* 1))
-        (coordinate (list x y)  )  )
-      (list (aptitude coordinate) coordinate)   ) )
+        (coordinate (list x y)))
+      (list (aptitude coordinate) coordinate)))
 
 
-(defun  a*-manhattan-search ()
+(defun  AStar ()
 "Realiza una búsqueda A*, desde un estado inicial hasta un estado meta"
-  (reset-all)
-
-  (print (get-maze-data))
-  (print *start*)
-  (print *goal*)
-
-  (let 
+(reset-all)
+  (let
     (
-      (edo-inicial  (get-start))
-      (edo-meta     (get-goal))
+      (start  (get-start))
+      (goal    (get-goal))
 
-      (current          nil)
-      (sucesores        nil)
-      (i 0)
-      (meta-encontrada  nil)  )
+      (current     nil)
+      (sucesores   nil)
+      (goal-found  nil))
 
-      (insert-to-open edo-inicial)
-      (add-to-memory edo-inicial -1)
-      (set-distance edo-inicial 0)
+      (insert-to-open start)
+      (add-to-memory  start -1)
 
       (time 
-      (loop until (or meta-encontrada (null *open*)) do
-        (setq current (get-from-open))
+        (loop until (or goal-found (null *open*)) do
+          (setq current (pop *open*))
+          
+          (cond    
+            ((equal goal current)
+              (setq  goal-found T)
+              (format t "Éxito. Meta encontrada ~%")
+            )
 
-        (cond    
-          ((equal edo-meta current) 
-            
-            (setq  meta-encontrada  T)
-            (format  t  "Éxito. Meta encontrada ~%~%")
-            (extract-solution current)
-            (display-solution)
-          )
-
-          (t
-            (expand current)
-            (if (null *open*) 
-              (progn 
-                (format  t  "Lo intenté.%")
-                (extract-solution *closest*) 
-                (display-solution)
-              ) )
-          ) )) ))  )
+            (t
+              (expand current)
+              (if (null *open*) 
+                (progn 
+                  (format t "Lo intenté.%")
+                  (setq current *closest*)
+                ))
+            ))
+        )
+      )
+      
+      (extract-solution current)
+      (display-solution))
+          
+  (print (get-maze-data))
+  (print *start*)
+  (print *goal*))
 			     
 
-(add-algorithm 'a*-manhattan-search)
+
+(defun AStar-Manhattan ()
+  (setq *aptitude-id* 0)
+  (AStar))
+
+(defun AStar-Euclidean ()
+  (setq *aptitude-id* 1)
+  (AStar))
+
+
+(add-algorithm 'AStar-Manhattan)
+(add-algorithm 'AStar-Euclidean)
 (start-maze)
