@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  9 AUG 2019 02:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  8 OCT 2019 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,31 +985,31 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \tf@thm=\write4
 \openout4 = `T0.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 441.
+LaTeX Info: Redefining \. on input line 441.
+LaTeX Info: Redefining \% on input line 441.
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 441.
  (/Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/Activities/T0.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 441.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 441.
 Package rerunfilecheck Info: File `T0.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 441.
  ) 
 Here is how much of TeX's memory you used:
  23712 strings out of 492616
  412076 string characters out of 6128982
- 519395 words of memory out of 5000000
+ 520395 words of memory out of 5000000
  27355 multiletter control sequences out of 15000+600000
  628290 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,8n,63p,1100b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/Activities/T0.pdf (1 page, 24922 bytes).
+Output written on /Users/soyoscarrh/Documents/Projects/Learning/IPN/Leadership/Activities/T0.pdf (1 page, 25222 bytes).
 PDF statistics:
  21 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream
