@@ -1,0 +1,8 @@
+
+((#2A((X NIL NIL X) (NIL O O NIL) (O O O X) (X NIL O X)) 6)
+ (#2A((X NIL NIL X) (NIL NIL O O) (O O O X) (X NIL O X)) 8)
+ (#2A((X NIL NIL X) (O NIL O NIL) (O O O X) (X NIL O X)) 5)
+ (#2A((X NIL NIL X) (NIL NIL O NIL) (O O O X) (X O O X)) 14)
+ (#2A((X NIL O X) (NIL NIL O NIL) (O O O X) (X NIL O X)) 3)
+ (#2A((X O NIL X) (NIL NIL O NIL) (O O O X) (X NIL O X)) 2)) 
+3 
