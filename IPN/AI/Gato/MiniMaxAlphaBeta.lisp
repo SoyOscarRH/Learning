@@ -4,13 +4,6 @@
 ;;; Oscar Andres Rosas Hernandez
 
 
-(defparameter list-board 
-  '(( NIL NIL NIL NIL)
-    ( NIL NIL  X  NIL)
-    ( NIL X O NIL)
-    ( NIL NIL NIL NIL))  
-)
-
 ;;; ==================================================
 ;;; =========      FUNCIONES AUXILIARES      =========
 ;;; ==================================================
@@ -148,111 +141,52 @@
 )
 
 
+(defparameter 
+  *moves* 
+  '(
+    ;; Primero probemos los movimientos normales
+    (0 1   2)
+    (0 2   3)
+    (3 1  14)
+    (3 2  15)
+    (1 0   5)
+    (1 3   8)
+    (2 0   9)
+    (2 3  12)
+
+    ;; Lo siguiente mejor es probar las esquinas
+    (0 0   1)
+    (0 3   4)
+    (3 0  13)
+    (3 3  16)
+
+    ;; Lo mejor es probar primero los centros
+    (1 1   6)
+    (1 2   7)
+    (2 1  10)
+    (2 2  11)
+  )
+) 
 (defun get-moves (board is-O-playing)
-  "Dame una lista de (tablero jugada) posibles dado un tablero"
+  "Dame una lista de (tablero jugada) posibles dado un tablero, el orden de esta, maximiza podas"
   (let
     (
       (new-board nil)
       (mark (if is-O-playing 'O 'X))
       (moves nil))
 
-      ;; Primero probemos los movimientos normales
-      (cond ((null (aref board 0 1))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 0 1) mark)
-          (push (list new-board 2) moves)
-      ))
+      (loop for move in *moves* do
+        (let 
+          (
+            (i   (first  move))
+            (j   (second move))
+            (num (third  move)))
 
-      (cond ((null (aref board 0 2))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 0 2) mark)
-          (push (list new-board 3) moves)
-      ))
-
-      (cond ((null (aref board 3 1))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 3 1) mark)
-          (push (list new-board 14) moves)
-      ))
-
-      (cond ((null (aref board 3 2))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 3 2) mark)
-          (push (list new-board 15) moves)
-      ))
-
-      (cond ((null (aref board 1 0))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 1 0) mark)
-          (push (list new-board 5) moves)
-      ))
-
-      (cond ((null (aref board 1 3))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 1 3) mark)
-          (push (list new-board 8) moves)
-      ))
-
-      (cond ((not (aref board 2 0))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 2 0) mark)
-          (push (list new-board 9) moves)
-      ))
-
-      (cond ((null (aref board 2 3))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 2 3) mark)
-          (push (list new-board 12) moves)
-      ))
-
-      ;; Lo siguiente mejor es probar las esquinas
-      (cond ((null (aref board 0 0))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 0 0) mark)
-          (push (list new-board 1) moves)
-      ))
-
-      (cond ((null (aref board 0 3))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 0 3) mark)
-          (push (list new-board 4) moves)
-      ))
-
-      (cond ((null (aref board 3 0))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 3 0) mark)
-          (push (list new-board 13) moves)
-      ))
-
-      (cond ((null (aref board 3 3))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 3 3) mark)
-          (push (list new-board 16) moves)
-      ))
-
-      ;; Lo mejor es probar primero los centros
-      (cond ((null (aref board 1 1))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 1 1) mark)
-          (push (list new-board 6) moves)
-      ))
-
-      (cond ((null (aref board 1 2))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 1 2) mark)
-          (push (list new-board 7) moves)
-      ))
-
-      (cond ((null (aref board 2 1))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 2 1) mark)
-          (push (list new-board 10) moves)
-      ))
-
-      (cond ((null (aref board 2 2))
-          (setq new-board (copy-array board))
-          (setf (aref new-board 2 2) mark)
-          (push (list new-board 11) moves)
+          (cond ((null (aref board i j))
+              (setq new-board (copy-array board))
+              (setf (aref new-board i j) mark)
+              (push (list new-board num) moves)
+          ))
       ))
 
       moves
@@ -304,7 +238,7 @@
           (setq current-board (first board-move))
           (setq current-move (second board-move))
 
-          (setq evaluation (first (minimax-alphabeta current-board new-depth alpha beta nil)))
+          (setq evaluation (first (minimax-alphabeta current-board new-depth alpha beta T)))
 
           (cond ((< evaluation min-evaluation)
             (setq min-evaluation evaluation)
