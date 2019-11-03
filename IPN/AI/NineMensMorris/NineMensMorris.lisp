@@ -150,10 +150,20 @@
       (setq local-row    0)
       (setq local-column 0)
       (loop for y from 0 to 6 do
-        (if (eql (aref board x y) player) 
-          (incf local-row))
-        (if (eql (aref board y x) player) 
-          (incf local-column))
+        (if (eql (aref board x y) #\+) 
+          (progn 
+            (incf result (expt 10 local-row))
+            (incf result (expt 10 local-column))
+
+            (setq local-row    0)
+            (setq local-column 0))
+          (progn
+            (if (eql (aref board x y) player) 
+              (incf local-row))
+            (if (eql (aref board y x) player) 
+              (incf local-column))
+          )
+        )
       )
       
       (incf result (expt 10 local-row))
