@@ -261,10 +261,12 @@
 (let
   (
     (board (create-board))
-    (keys (create-keys))
-    (player-me 9)
-    (player-other 9)
-    (move  #\a)
+    (keys  (create-keys))
+    (player-me      9)
+    (player-other   9)
+    (move         #\a)
+    (alpha most-negative-fixnum)
+    (beta  most-positive-fixnum)
   )
 
   (change board keys #\a *other*)
@@ -282,10 +284,7 @@
     (decf player-other)
     (print-board board)
 
-    (setq move (second 
-      (minimax-alphabeta board 4 most-negative-fixnum most-positive-fixnum T)
-    ))
-
+    (setq move (second (minimax-alphabeta board 4 alpha beta T)))
     (format t "~%Moving the ~a: ~%" move)
 
     (change board keys move *me*)
