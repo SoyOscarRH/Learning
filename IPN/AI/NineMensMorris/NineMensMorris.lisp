@@ -262,8 +262,8 @@
   (
     (board (create-board))
     (keys (create-keys))
-    (player1 9)
-    (player2 9)
+    (player-me 9)
+    (player-other 9)
     (move  #\a)
   )
 
@@ -273,21 +273,23 @@
   (format t "Board: ~%")
   (print-board board)
 
-  (loop while (or (> player1 2) (> player2 2)) do 
+  (loop while (or (> player-me 2) (> player-other 2)) do 
     (format t "~%Select a letter to place a move: ~%")
     (setq move (read-char))
     (read-char)
 
     (change board keys move *other*)
+    (decf player-other)
     (print-board board)
 
     (setq move (second 
       (minimax-alphabeta board 4 most-negative-fixnum most-positive-fixnum T)
     ))
 
-    (change board keys move *me*)
-    (format t "~%value: ~a~%" (evaluate board))
+    (format t "~%Moving the ~a: ~%" move)
 
+    (change board keys move *me*)
+    (decf player-me)
     (print-board board)
   )
 )
