@@ -159,7 +159,7 @@
             (setq local-column 0))
           (progn
             (if (eql (aref board x y) player) 
-              (incf local-row))
+              (incf local-row))x
             (if (eql (aref board y x) player) 
               (incf local-column))
           )
