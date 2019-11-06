@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  5 NOV 2019 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  6 NOV 2019 00:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1018,10 +1018,10 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \. on input line 403.
 LaTeX Info: Redefining \% on input line 403.
 \c@lstlisting=\count356
-<Graphics/Table3.png, id=61, 795.97375pt x 705.63625pt>
+<Graphics/Table3.png, id=65, 795.97375pt x 705.63625pt>
 File: Graphics/Table3.png Graphic file (type png)
 <use Graphics/Table3.png>
-Package pdftex.def Info: Graphics/Table3.png  used on input line 441.
+Package pdftex.def Info: Graphics/Table3.png  used on input line 442.
 (pdftex.def)             Requested size: 209.12683pt x 185.38841pt.
 LaTeX Info: Redefining \. on input line 469.
 LaTeX Info: Redefining \% on input line 469.
@@ -1029,80 +1029,188 @@ LaTeX Info: Redefining \% on input line 469.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.469         L
-               os 500 representan, según Morningstar, los fondos más exito... </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table3.png>]
-<Graphics/Table1.png, id=74, 723.70375pt x 110.4125pt>
+l.469 
+       </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table3.png>]
+<Graphics/Table1.png, id=78, 723.70375pt x 110.4125pt>
 File: Graphics/Table1.png Graphic file (type png)
 <use Graphics/Table1.png>
-Package pdftex.def Info: Graphics/Table1.png  used on input line 491.
+Package pdftex.def Info: Graphics/Table1.png  used on input line 492.
 (pdftex.def)             Requested size: 355.51817pt x 54.24074pt.
-<Graphics/Table2.png, id=76, 727.71875pt x 285.065pt>
+<Graphics/Table2.png, id=80, 727.71875pt x 285.065pt>
 File: Graphics/Table2.png Graphic file (type png)
 <use Graphics/Table2.png>
-Package pdftex.def Info: Graphics/Table2.png  used on input line 497.
+Package pdftex.def Info: Graphics/Table2.png  used on input line 498.
 (pdftex.def)             Requested size: 355.51817pt x 139.26984pt.
-LaTeX Info: Redefining \. on input line 519.
-LaTeX Info: Redefining \% on input line 519.
+LaTeX Info: Redefining \. on input line 514.
+LaTeX Info: Redefining \% on input line 514.
  [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.519         P
-               ara verificar esto, buscamos en la Tabla 3.1 el primer grupo ...pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+l.514         H
+               ay otras tres neuronas que contienen dos mutual funds.pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.519         P
-               ara verificar esto, buscamos en la Tabla 3.1 el primer grupo ... </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table1.png> </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table2.png>]
-LaTeX Info: Redefining \. on input line 589.
-LaTeX Info: Redefining \% on input line 589.
- [3]
-LaTeX Font Info:    Try loading font information for U+msa on input line 630.
+l.514         H
+               ay otras tres neuronas que contienen dos mutual funds. </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table1.png> </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table2.png>]
+<Graphics/Table5.png, id=89, 570.13pt x 722.7pt>
+File: Graphics/Table5.png Graphic file (type png)
+<use Graphics/Table5.png>
+Package pdftex.def Info: Graphics/Table5.png  used on input line 542.
+(pdftex.def)             Requested size: 167.2989pt x 212.06984pt.
+LaTeX Info: Redefining \. on input line 581.
+LaTeX Info: Redefining \% on input line 581.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.581       P
+             or lo tanto realizar la planificación de la trayectoria utiliz... </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Table5.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 638.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 630.
+LaTeX Font Info:    Try loading font information for U+msb on input line 638.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 630.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 638.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Info: Redefining \. on input line 657.
-LaTeX Info: Redefining \% on input line 657.
+LaTeX Info: Redefining \. on input line 647.
+LaTeX Info: Redefining \% on input line 647.
  [4]
+<Graphics/Tesis1.png, id=101, 748.7975pt x 769.87625pt>
+File: Graphics/Tesis1.png Graphic file (type png)
+<use Graphics/Tesis1.png>
+Package pdftex.def Info: Graphics/Tesis1.png  used on input line 719.
+(pdftex.def)             Requested size: 418.25368pt x 430.03526pt.
+LaTeX Info: Redefining \. on input line 720.
+LaTeX Info: Redefining \% on input line 720.
+ [5]
+<Graphics/Tesis2.png, id=105, 1197.47375pt x 811.03pt>
+File: Graphics/Tesis2.png Graphic file (type png)
+<use Graphics/Tesis2.png>
+Package pdftex.def Info: Graphics/Tesis2.png  used on input line 724.
+(pdftex.def)             Requested size: 418.25368pt x 283.27074pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis3.png, id=106, 1057.9525pt x 750.805pt>
+File: Graphics/Tesis3.png Graphic file (type png)
+<use Graphics/Tesis3.png>
+Package pdftex.def Info: Graphics/Tesis3.png  used on input line 729.
+(pdftex.def)             Requested size: 418.25368pt x 296.8225pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis4.png, id=107, 1445.4pt x 903.375pt>
+File: Graphics/Tesis4.png Graphic file (type png)
+<use Graphics/Tesis4.png>
+Package pdftex.def Info: Graphics/Tesis4.png  used on input line 734.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis5.png, id=108, 1445.4pt x 903.375pt>
+File: Graphics/Tesis5.png Graphic file (type png)
+<use Graphics/Tesis5.png>
+Package pdftex.def Info: Graphics/Tesis5.png  used on input line 739.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis6.png, id=109, 1445.4pt x 903.375pt>
+File: Graphics/Tesis6.png Graphic file (type png)
+<use Graphics/Tesis6.png>
+Package pdftex.def Info: Graphics/Tesis6.png  used on input line 744.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis7.png, id=110, 1445.4pt x 903.375pt>
+File: Graphics/Tesis7.png Graphic file (type png)
+<use Graphics/Tesis7.png>
+Package pdftex.def Info: Graphics/Tesis7.png  used on input line 749.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis8.png, id=111, 1445.4pt x 903.375pt>
+File: Graphics/Tesis8.png Graphic file (type png)
+<use Graphics/Tesis8.png>
+Package pdftex.def Info: Graphics/Tesis8.png  used on input line 754.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Tesis9.png, id=112, 1445.4pt x 903.375pt>
+File: Graphics/Tesis9.png Graphic file (type png)
+<use Graphics/Tesis9.png>
+Package pdftex.def Info: Graphics/Tesis9.png  used on input line 759.
+(pdftex.def)             Requested size: 418.25368pt x 261.40688pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+[6 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis1.png>]
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+ [7 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis2.png>]
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+ [8 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis3.png> </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis4.png>]
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+ [9 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis5.png> </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis6.png>]
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+ [10 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis7.png> </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis8.png>]
+LaTeX Info: Redefining \. on input line 763.
+LaTeX Info: Redefining \% on input line 763.
+ [11 </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/Tesis9.png>]
+<Graphics/a.png, id=142, 476.78125pt x 1068.99374pt>
+File: Graphics/a.png Graphic file (type png)
+<use Graphics/a.png>
+Package pdftex.def Info: Graphics/a.png  used on input line 768.
+(pdftex.def)             Requested size: 125.47737pt x 281.32462pt.
 \tf@thm=\write4
 \openout4 = `Kohomen.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
-LaTeX Info: Redefining \. on input line 705.
-LaTeX Info: Redefining \% on input line 705.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 813.
+LaTeX Info: Redefining \. on input line 813.
+LaTeX Info: Redefining \% on input line 813.
+ [12
+
+ </Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Graphics/a.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 813.
  (/Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Kohomen.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 705.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 705.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 813.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 813.
 Package rerunfilecheck Info: File `Kohomen.out' has not changed.
-(rerunfilecheck)             Checksum: 347EA6D7078D05B0C604682195A1F05B;962.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
+(rerunfilecheck)             Checksum: C422CA5B0EE4A7404BE7180E7F83237A;1012.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 813.
  ) 
 Here is how much of TeX's memory you used:
- 24220 strings out of 492616
- 419451 string characters out of 6128982
- 533395 words of memory out of 5000000
- 27830 multiletter control sequences out of 15000+600000
+ 24292 strings out of 492616
+ 420766 string characters out of 6128982
+ 533479 words of memory out of 5000000
+ 27886 multiletter control sequences out of 15000+600000
  635749 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,7n,63p,1107b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,7n,63p,1107b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Kohomen.pdf (5 pages, 625284 bytes).
+Output written on /Users/soyoscarrh/Documents/Projects/Learning/UNAM/NeuralNetworks/Kohomen/Kohomen.pdf (12 pages, 5369702 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

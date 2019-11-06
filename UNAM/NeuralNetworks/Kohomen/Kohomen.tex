@@ -423,17 +423,18 @@
       
       La idea es usar mapas auto organizados (en su versión original en la que tenemos un vector
       en una sola dimensión) que nos permitan traducir datos multidimensionales
-      de fondos mutuos (mutual funds) en simples mapas de dos dimensiones.
+      de varios mutual funds (herramientas de inversion de la cual la verdad
+      desconozco una traduccion al español) en simples mapas de dos dimensiones.
       
       Estos mapas proporcionan un mejora significativa sobre la información que
       tradicionalmente se publica en los fondos de inversión.
       Crean una mejor base para la selección de una cartera, para la comparación de
-      el desempeño de los fondos mutuos y para la creación de puntos de referencia.
+      el desempeño de los mutual funds y para la creación de puntos de referencia.
       
       Para esto usaron datos publicados por Morningstar, utilizaron los mapas auto organizados
-      para demostrar claramente distinciones y patrones entre los fondos mutuos mejor calificados.
+      para demostrar claramente distinciones y patrones entre los mutual funds mejor calificados.
       
-      Como entradas usamos el rendimiento de los fondos mutuos, las mediciones de riesgo de Morningstar, la
+      Como entradas usamos el rendimiento de los mutual funds, las mediciones de riesgo de Morningstar, la
       \Quote{tenencia} de los gestores de inversiones, y las diversas relaciones de gastos.
 
       \begin{wrapfigure}{r}{0.5\textwidth}
@@ -444,10 +445,10 @@
       
       Con este trabajo se puede ver que los SOM simplifican clasificación de fondos;
       pueden usarse para el apoyo en la toma de decisiones; y para proporcionar
-      clasificaciones que tienen más significado que simples las listas ordenadas basadas en múltiples
+      clasificaciones que tienen más significado que las listas ordenadas basadas en múltiples
       criterios pues no necesitan hacer presuposiciones.
 
-      Estos mapas se utiliza para buscar patrones entre fondos mutuos aparentemente similares. 
+      Estos mapas se utiliza para buscar patrones entre mutual funds aparentemente similares. 
       La principal razon para usar SOM son:
       \begin{itemize}
         \item Es un método de minería de datos numérico en lugar de simbólico
@@ -463,8 +464,8 @@
         información útil para tomar decisiones de inversión inteligentes e informadas. 
         
         Morningstar publica Morningstar Mutual Funds, una revista analítica exhaustiva sobre 
-        fondos mutuos \Quote{Morningstar Investor}, este es un compendio mensual de 450 fondos abiertos
-        y 50 fondos cerrados seleccionados de un universo de más de 6000 fondos mutuos. 
+        mutual funds \Quote{Morningstar Investor}, este es un compendio mensual de 450 fondos abiertos
+        y 50 fondos cerrados seleccionados de un universo de más de 6000 mutual funds. 
          
         Los 500 representan, según Morningstar, los fondos más exitosos en la industria de fondos 
         mutuos en la actualidad.
@@ -510,7 +511,7 @@
         Morgan Stanley África (AFR) y los mercados emergentes de Morgan Stanley (MSE) se 
         agrupan en otra neurona. 
         
-        Hay otras tres neuronas que contienen dos fondos mutuos. 
+        Hay otras tres neuronas que contienen dos mutual funds. 
         
         Dado que los vectores de entrada que son similares se agrupan en las mismas neuronas o 
         en las cercanas, las agrupaciones que se muestran en la Figura 3.1 indican la similitud 
@@ -526,7 +527,7 @@
         o mercados emergentes, respectivamente. 
         
         El sombreado gris de las neuronas en este mapa indica que esas neuronas con sombreado
-        similar contienen fondos mutuos que están más cercanos entre sí, mientras que las 
+        similar contienen mutual funds que están más cercanos entre sí, mientras que las 
         neuronas que están sombreadas de manera oscura crean brechas entre los grupos.
 
 
@@ -535,6 +536,13 @@
         
 
       \subsection{Mi idea, arquitectura y demás}
+
+      \begin{wrapfigure}{r}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{Table5}
+        \caption{ \cite{Robot}}
+      \end{wrapfigure}
+
 
       Mi idea era desarrollar un mapa que le permitiera a un robot aprender como
       estaban relacionados los movimientos de los que era capaz, por ejemplo
@@ -610,8 +618,8 @@
 
       Ahora el problema que acabamos de ver seria bastante dificil que hacer usando una red
       neuronal como las anteriores, de mismo modo que la idea que acabo de contar, pues por ejemplo
-      para el brazo robotico tendriamos que darle a una red neuronal la relacion (y encontrar
-      una forma de cuantificar la relacion) que existe entre las dimensiones cartesianas y las 
+      para el brazo robotico tendriamos que darle a una red neuronal la relación (y encontrar
+      una forma de cuantificar la relación) que existe entre las dimensiones cartesianas y las 
       de articulaciones, pero en que en mi ejemplo justo lo que no tenemos son dichas relaciones
       y usamos los mapas autorganizados para encontrarlas.
 
@@ -654,16 +662,42 @@
     En particular, es poco probable que se aplique para el caso donde la entrada tenía una 
     dimensión mucho más alta que la red. 
 
-    La decisión sobre qué tamaño de vecindario se debe ajustar también parece determinarse de 
+    La decisión sobre qué tamaño de vecindario se debe usar también parece determinarse de 
     una manera un tanto ad hoc.
 
   \section{Ideas biológicas}
 
+    Parece claro que, al menos que los mamíferos se refieren, el 
+    cerebro contiene un registro de la información sensorial previa. 
+    Además, dado que el número de entradas posibles supera mucho el número de 
+    neuronas en el cerebro parece claro que se produce una forma de compresión (o abstracción). 
+    
+    El mecanismo por el cual el cerebro almacena estas representaciones comprimidas no está 
+    bien entendida, sin embargo, se hace las hipótesis que se registran en grandes hojas
+    de neuronas en dos dimensiones y organizadas topologicamente". (me costo mucho entender y traducir
+    este termino de la literatura, originalmente se llaman:  "2-D
+    metrically and topologically organized" sheets of neural cells)
+    
+    En otras palabras el cerebro forma un mapeo entre el espacio de entrada 
+    multidimensional y el de dos dimensiones de las neuronas.
+    
+    Hay unas evidencias para esta idea. Se han encontrado encontrado en la
+    parte del cerebro donde se procesa el sonido en los mamíferos las neuronas 
+    responden selectivamente a los sonidos de diferentes frecuencias. 
+    
+    De manera que la ubicación de una neurona parece estar directamente relacionada con la 
+    frecuencia de del sonido de entrada.
+
+    Se han encontrado otras representaciones topográficas en la zona de procesamiento visual,
+    sensorial y motor del cerebro.
+
+    Las redes de Kohonen son un intento, mas bien modesto de modelar el funcionamento del
+    cerebro en esta regiones.
 
   \section{Desventajas de este tipo de red}
 
     Otra desventaja ademas de toda las que ya hemos dicho antes es que que el comportamiento 
-    de tales redes no está bien definido matemáticamente.
+    de estas redes no está bien definido matemáticamente.
     
     Esto significa que la selección de parámetros de red (como factores de ganancia y tamaños de 
     vecindad) debe realizarse de una manera un tanto ad hoc. 
@@ -671,9 +705,69 @@
     En particular existe la preocupación de una falta de garantía de que una red, 
     que tiene permitido adaptarse en el mundo real, siempre mantendrá un mapeo ordenado consistente.
 
+  \section{Cosas curiosas}
+
+      Resulta que investigando todo esto encontre con que hay alguien (Eklavya Sarkar) que
+      como tesis hizo unas visualizaciones de estos mapas, anexo la tesis y varios screenshots 
+      del resultado.
+
+      Porque resulta que el codigo que uso puede ser visto facilmente montando un servidor
+      basado en sus codigos en github. \cite{Tesis}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis1}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis2}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis3}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis4}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis5}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis6}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis7}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis8}
+      \end{figure}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{Tesis9}
+      \end{figure}
+
+
+  \clearpage
   \section{Memes}
 
-    
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\textwidth]{a}
+  \end{figure}
+
 
     \begin{thebibliography}{10}
 
@@ -697,7 +791,21 @@
         Self-Organizing Map: ScienceDirect
         https://www.sciencedirect.com/topics/engineering/self-organizing-map
 
+        \bibitem{Robot}
 
+        Craig Sayers, May 1991, University of Pennsylvania
+        Self Organizing Feature Maps and Their Applications to Robotics
+
+        \bibitem{Otro}
+
+        Kohonen Self-Organizing Maps        
+        https://towardsdatascience.com/kohonen-self-organizing-maps-a29040d688da
+
+        \bibitem{Tesis}
+        Eklavya Sarkar, University of Liverpool
+        Artificial Neural Networks: Kohonen Self-Organising Maps
+
+        Link: https://eklavyafcb.github.io/som.html
 
     \end{thebibliography}
 
