@@ -2,7 +2,10 @@
 (defrule start
 	:group :initialization
 	:when
-	:do (set-entities :herbivore 3 :desert))
+	:do   
+    (set-entities :herbivore 3 :grass)
+    (set-entities :carnivore 3 :desert)
+    (set-entities :scavenger 3 :desert))
 
 (defrule move
 	:group :herbivores
@@ -15,21 +18,19 @@
 	:do
 		(move-entity-to @id @cell1 :orthogonal))
 
-(defrule move-disperse
-	:group :herbivores
+(defrule move-scab
+	:group :scavengers
 	:when
-		(view-field-vision @id1 
-			(> 2 (get-entity-type-count @id1 :herbivore))
-			(equal :desert (get-cell-type (get-entity-coordinates @id1)))
-			(simulate-move @cell2 @cell (get-entity-coordinates @id1) :diagonal))
+		(search-distant-cell @cell1
+		  (simulate-move @cell2 @cell @cell1 :orthogonal))
 	:do
-		(move-entity-to @id (get-entity-coordinates @id1) :diagonal))
+		(move-entity-to @id @cell1 :orthogonal))
 
 ; ==== Eat stuff ====
 (defrule feed
-	:group :herbivores
+	:group :all
 	:when
-    (< (get-entity-food @id) 80)
+    (< (get-entity-food @id) 70)
 
 		(view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id)))
 		(simulate-move @cell1
@@ -42,9 +43,9 @@
 
 ; ==== Drink stuff ====
 (defrule drink
-	:group :herbivores
+	:group :all
 	:when
-    (< (get-entity-water @id) 30)
+    (< (get-entity-water @id) 50)
 		(search-cell @cell1 
       (area-around @cell1 :water)
       (not (equal :contamination (get-cell-type @cell1))))
@@ -54,7 +55,7 @@
 
 ; ==== Not contamited ====
 (defrule move-contamination
-	:group 	:herbivores
+	:group :carnivores-herbivores
 	:when	
 		(equal (get-entity-cell-type @id) :contamination)
     (search-cell @cell1 
@@ -66,8 +67,37 @@
 
 ; Find water
 (defrule search-water
-  :group :herbivores
+  :group :all
   :when
     (not (search-cell-lim @cell1 3 (equal (get-cell-type @cell1) :water)))
   :do 
     (move-entity @id :south 3))
+
+(defrule reproduce-her
+	:group
+			:herbivores
+	:when	
+			(>= (get-entity-water @id) (/ (get-type-water (get-entity-type @id)) 2))
+			(>= (get-entity-food @id) (/ (get-type-food (get-entity-type @id)) 2))
+			(>= (get-entity-days @id) 4)
+	:do	
+			(reproduce-entity @id))
+
+
+(defrule reproduce-car
+	:group
+			:carnivores
+	:when	
+			(>= (get-entity-water @id) 70)
+			(>= (get-entity-food @id) 70)
+			(>= (get-entity-days @id) 20)
+	:do	
+			(reproduce-entity @id))
+
+
+(defrule reproduce-scar
+	:group
+			:scavengers
+	:when
+	:do	
+			(reproduce-entity @id))
