@@ -36,7 +36,7 @@
 	:when
     (< 1 (get-entity-type-count @id :herbivore))
 
-    (< (get-entity-food @id) 40)
+    (< (get-entity-food @id) 60)
 		(view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id)))
 		(simulate-move @cell1
 			(get-entity-coordinates @id)
@@ -62,7 +62,7 @@
 (defrule search-water
   :group :herbivores
   :when
-    (< (get-entity-water @id) 30)
+    (< (get-entity-water @id) 40)
     (not (search-cell @cell1 (equal (get-cell-type @cell1) :water)))
   :do 
     (move-entity @id :north 3))
