@@ -8,25 +8,8 @@
 (defrule move
 	:group :herbivores
 	:when
-    (< (get-entity-food @id) 60)
-
+		(not (view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id))))
 		(search-distant-cell @cell1
-      (< (get-cell-entity-type-number @cell1 :herbivore) 1)
-      (equal :desert (get-cell-type @cell1))
-      (search-cell@cell1 <conditions>)
-      (not (area-around @cell1 :water)
-      )
-		  (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
-	:do
-		(move-entity-to @id @cell1 :orthogonal))
-
-(defrule move-des
-	:group :herbivores
-	:when
-    (< (get-entity-food @id) 30)
-
-		(search-distant-cell @cell1
-      (< (get-cell-entity-type-number @cell1 :herbivore) 1)
       (equal :desert (get-cell-type @cell1))
       (not (area-around @cell1 :water))
 		  (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
@@ -52,7 +35,8 @@
 	:group :herbivores
 	:when
     (< 1 (get-entity-type-count @id :herbivore))
-    (< (get-entity-food @id) 50)
+
+    (< (get-entity-food @id) 40)
 		(view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id)))
 		(simulate-move @cell1
 			(get-entity-coordinates @id)
@@ -62,13 +46,11 @@
 		(move-entity-to @id @cell1 :orthogonal)
 		(feed-entity @id @id1))
 
-
-
 ; ==== Drink stuff ====
 (defrule drink
 	:group :herbivores
 	:when
-    (< (get-entity-water @id) 40)
+    (< (get-entity-water @id) 30)
 		(search-cell @cell1 
       (area-around @cell1 :water)
       (not (equal :contamination (get-cell-type @cell1))))
@@ -77,11 +59,22 @@
 		(drink-water @id))
 
 ; ==== Move around to find water ====
-; Find water
 (defrule search-water
   :group :herbivores
   :when
-    (< (get-entity-water @id) 40)
+    (< (get-entity-water @id) 30)
     (not (search-cell @cell1 (equal (get-cell-type @cell1) :water)))
   :do 
-    (move-entity @id :south 3))
+    (move-entity @id :north 3))
+
+; ==== Not contamited ====
+(defrule move-contamination
+	:group 	:herbivores
+	:when	
+		(equal (get-entity-cell-type @id) :contamination)
+    (search-cell @cell1 
+      (not (equal :contamination (get-cell-type @cell1)))
+      (not (equal :water (get-cell-type @cell1)))
+      (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
+	:do
+		(move-entity-to @id @cell1 :orthogonal))

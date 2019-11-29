@@ -13,9 +13,7 @@
 		(search-distant-cell @cell1
       (< (get-cell-entity-type-number @cell1 :herbivore) 1)
       (equal :desert (get-cell-type @cell1))
-      (search-cell@cell1 <conditions>)
-      (not (area-around @cell1 :water)
-      )
+      (not (area-around @cell1 :water))
 		  (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
 	:do
 		(move-entity-to @id @cell1 :orthogonal))
@@ -62,8 +60,6 @@
 		(move-entity-to @id @cell1 :orthogonal)
 		(feed-entity @id @id1))
 
-
-
 ; ==== Drink stuff ====
 (defrule drink
 	:group :herbivores
@@ -77,7 +73,6 @@
 		(drink-water @id))
 
 ; ==== Move around to find water ====
-; Find water
 (defrule search-water
   :group :herbivores
   :when
@@ -85,3 +80,4 @@
     (not (search-cell @cell1 (equal (get-cell-type @cell1) :water)))
   :do 
     (move-entity @id :south 3))
+
