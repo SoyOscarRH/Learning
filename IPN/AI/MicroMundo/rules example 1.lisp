@@ -14,7 +14,6 @@ Manadas muy grandes
 			(set-entities :scavenger 15 :desert)
 )
 
-
 ;Regla para recuperar puntos :food 
 (defrule food-herbivores
 	:group
