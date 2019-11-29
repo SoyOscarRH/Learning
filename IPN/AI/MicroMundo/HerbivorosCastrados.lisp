@@ -4,46 +4,40 @@
 	:when
 	:do (set-entities :herbivore 10 :desert))
 
-; ==== Move around to find food ====
 (defrule move
 	:group :herbivores
 	:when
-		(not (view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id))))
-		(search-distant-cell @cell1
+		(search-cell @cell1
       (equal :desert (get-cell-type @cell1))
-      (not (area-around @cell1 :water))
-		  (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
+			(not (area-around @cell1 :water))
+			(equal 0 (get-cell-entity-type-number @cell1 :herbivore))
+		  (simulate-move @cell2 @cell @cell1 :orthogonal))
 	:do
 		(move-entity-to @id @cell1 :orthogonal))
 
+(defrule move-disperse
+	:group :herbivores
+	:when
+		(view-field-vision @id1 
+			(> 2 (get-entity-type-count @id1 :herbivore))
+			(equal :desert (get-cell-type (get-entity-coordinates @id1)))
+			(simulate-move @cell2 @cell (get-entity-coordinates @id1) :diagonal))
+	:do
+		(move-entity-to @id (get-entity-coordinates @id1) :diagonal))
+
 ; ==== Eat stuff ====
-(defrule feed-alone
+(defrule feed
 	:group :herbivores
 	:when
-    (equal 1 (get-entity-type-count @id :herbivore))
+    (< (get-entity-food @id) 80)
 
 		(view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id)))
 		(simulate-move @cell1
 			(get-entity-coordinates @id)
 			(get-entity-coordinates @id1)
-			:orthogonal)
+			:diagonal)
 	:do
-		(move-entity-to @id (get-entity-coordinates @id1) :orthogonal)
-		(feed-entity @id @id1))
-
-(defrule feed-group
-	:group :herbivores
-	:when
-    (< 1 (get-entity-type-count @id :herbivore))
-
-    (< (get-entity-food @id) 60)
-		(view-field-vision @id1 (in (get-entity-type @id1) (get-consumable-type @id)))
-		(simulate-move @cell1
-			(get-entity-coordinates @id)
-			(get-entity-coordinates @id1)
-			:orthogonal)
-	:do
-		(move-entity-to @id @cell1 :orthogonal)
+		(move-entity-to @id (get-entity-coordinates @id1) :diagonal)
 		(feed-entity @id @id1))
 
 ; ==== Drink stuff ====
@@ -58,15 +52,6 @@
 		(move-entity-to @id @cell1 :diagonal)
 		(drink-water @id))
 
-; ==== Move around to find water ====
-(defrule search-water
-  :group :herbivores
-  :when
-    (< (get-entity-water @id) 40)
-    (not (search-cell @cell1 (equal (get-cell-type @cell1) :water)))
-  :do 
-    (move-entity @id :north 3))
-
 ; ==== Not contamited ====
 (defrule move-contamination
 	:group 	:herbivores
@@ -78,3 +63,11 @@
       (simulate-move @cell2 (get-entity-coordinates @id) @cell1 :orthogonal))
 	:do
 		(move-entity-to @id @cell1 :orthogonal))
+
+; Find water
+(defrule search-water
+  :group :herbivores
+  :when
+    (not (search-cell-lim @cell1 3 (equal (get-cell-type @cell1) :water)))
+  :do 
+    (move-entity @id :south 3))
