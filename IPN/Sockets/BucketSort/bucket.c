@@ -16,6 +16,12 @@ fragment_args* create_args(real_array numbers, int start, int end, real_array* b
   return args;
 }
 
+int compare(const void* _a, const void* _b) {
+  int *a = (int*)_a, *b = (int*)_b;
+
+  return (*a - *b);
+}
+
 void* fragment_sort(void* _args) {
   fragment_args* args = _args;
 
@@ -39,7 +45,7 @@ void* fragment_sort(void* _args) {
   }
 
   qsort(bucket->data, bucket->size, sizeof(int), compare);
-  // free(_args);
+  free(_args);
 
   return NULL;
 }

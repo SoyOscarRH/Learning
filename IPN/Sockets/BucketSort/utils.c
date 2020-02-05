@@ -13,8 +13,3 @@ real_array create_randoms(const int num_numbers, const int min, const int max) {
   return result;
 }
 
-int compare(const void* _a, const void* _b) {
-  int *a = (int*)_a, *b = (int*)_b;
-
-  return (*a - *b);
-}
