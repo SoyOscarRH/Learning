@@ -53,7 +53,7 @@ auto main() -> int {
   auto s = vector<int>(61, 0);
   s[30] = 1;
 
-  const auto rule = 110;
+  const auto rule = 30;
   const auto iterations = 60;
 
   print_rules(rule);
