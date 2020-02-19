@@ -11,8 +11,8 @@ public class TicTacToe {
 
   private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
   private ReentrantLock changingGamestate = new ReentrantLock();
-  private boolean gameOver = false;
   private final int gameID;
+  boolean gameOver = false;
 
   static final public char BLANK = ' ', O = 'O', X = 'X';
   private char current = O;
@@ -31,6 +31,36 @@ public class TicTacToe {
     board2.repaint(100);
     board2.changeText();
     board1.changeText();
+
+    if (won(X) || won(O) || isDraw()) {
+      gameOver = true;
+    }
+
+    if (won(X)) {
+      new Thread(() -> {
+        board1.showBeforeClose("X won");
+      }).start();
+      new Thread(() -> {
+        board2.showBeforeClose("X won");
+      }).start();
+
+    } else if (won(O)) {
+      new Thread(() -> {
+        board1.showBeforeClose("O won");
+      }).start();
+      new Thread(() -> {
+        board2.showBeforeClose("O won");
+      }).start();
+
+    } else if (isDraw()) {
+      new Thread(() -> {
+        board1.showBeforeClose("Draw");
+      }).start();
+      new Thread(() -> {
+        board2.showBeforeClose("Draw");
+      }).start();
+
+    }
   }
 
   boolean isDraw() {
@@ -71,8 +101,32 @@ public class TicTacToe {
     public void changeText() {
       var title = "Tic Tac Toe [" + gameID + "] [Player " + player + "] ";
       title += player == current ? "[Your turn]" : " [Not your turn]";
-      title += gameOver ? " [GAME OVER]" : "";
       this.setTitle(title);
+    }
+
+    public void showBeforeClose(String message) {
+      var optionPane = new JOptionPane(message);
+      var dialog = optionPane.createDialog(null, "Result");
+      dialog.setModal(false);
+      dialog.show();
+
+      final var wea = this;
+
+      dialog.addComponentListener(new ComponentListener() {
+        public void componentHidden(ComponentEvent e) {
+          wea.dispose();
+        }
+
+        public void componentMoved(ComponentEvent e) {
+        }
+
+        public void componentResized(ComponentEvent e) {
+        }
+
+        public void componentShown(ComponentEvent e) {
+        }
+
+      });
     }
 
     private class BoardPanel extends JPanel implements MouseListener {
@@ -131,24 +185,7 @@ public class TicTacToe {
             position[pos] = player;
             current = player == O ? X : O;
 
-            final var close = JOptionPane.CLOSED_OPTION;
             updateBoth();
-
-            if (won(X)) {
-              JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
-              gameOver = true;
-              updateBoth();
-
-            } else if (won(O)) {
-              JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
-              gameOver = true;
-              updateBoth();
-
-            } else if (isDraw()) {
-              JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
-              gameOver = true;
-              updateBoth();
-            }
           }
         } finally {
           changingGamestate.unlock();
