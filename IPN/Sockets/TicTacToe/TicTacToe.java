@@ -5,42 +5,53 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class TicTacToe extends JFrame implements ChangeListener, ActionListener {
-  private Board board;
+public class TicTacToe {
   static final char BLANK = ' ', O = 'O', X = 'X';
 
-  // Board position (BLANK, O, or X)
-  private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
-
   public TicTacToe() {
-    super("Tic Tac Toes");
-
-    var board = new Board();
-    add(board, BorderLayout.CENTER);
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    setSize(400, 400);
-    setVisible(true);
+    new Board(O);
+    new Board(X);
   }
 
-  public void stateChanged(ChangeEvent e) {
-    board.repaint();
+  private class Board extends JFrame implements ChangeListener, ActionListener {
+    private BoardPanel boardPanel;
+
+    public void stateChanged(ChangeEvent e) {
+      boardPanel.repaint();
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      boardPanel.repaint();
+    }
+
+    public Board(char gamer) {
+      super("Tic Tac Toe");
+
+      boardPanel = new BoardPanel(this);
+
+      add(boardPanel, BorderLayout.CENTER);
+      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+      setSize(400, 400);
+      setVisible(true);
+    }
+
   }
 
-  public void actionPerformed(ActionEvent e) {
-    board.repaint();
-  }
-
-  private class Board extends JPanel implements MouseListener {
+  private class BoardPanel extends JPanel implements MouseListener {
     private char current = O;
+    // Board position (BLANK, O, or X)
+    private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
     private int rows[][] = { { 0, 2 }, { 3, 5 }, { 6, 8 }, { 0, 6 }, { 1, 7 }, { 2, 8 }, { 0, 8 }, { 2, 6 } };
     private ReentrantLock changingGamestate = new ReentrantLock();
     private boolean gameOver = false;
+    private Board window;
 
     int x = -1, y = -1;
 
     // Endpoints of the 8 rows in position[] (across, down, diagonally)
 
-    public Board() {
+    public BoardPanel(Board board) {
+      window = board;
       addMouseListener(this);
 
       new Thread(() -> {
@@ -68,8 +79,6 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
           }
         }
       }).start();
-      ;
-
     }
 
     public void paintComponent(Graphics g) {
@@ -149,15 +158,15 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
         if (won(X)) {
           JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
           gameOver = true;
-          dispose();
+          window.dispose();
         } else if (won(O)) {
           JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
           gameOver = true;
-          dispose();
+          window.dispose();
         } else if (isDraw()) {
           JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
           gameOver = true;
-          dispose();
+          window.dispose();
         }
       }
     }
