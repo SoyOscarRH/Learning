@@ -3,8 +3,9 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import javax.swing.*;
 import javax.swing.event.*;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class TicTacToe extends JFrame implements ChangeListener, ActionListener, Runnable {
+public class TicTacToe extends JFrame implements ChangeListener, ActionListener {
   private Board board;
   static final char BLANK = ' ', O = 'O', X = 'X';
 
@@ -13,9 +14,7 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener,
 
   public TicTacToe() {
     super("Tic Tac Toes");
-  }
 
-  public void run() {
     var board = new Board();
     add(board, BorderLayout.CENTER);
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -34,10 +33,43 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener,
   private class Board extends JPanel implements MouseListener {
     private char current = O;
     private int rows[][] = { { 0, 2 }, { 3, 5 }, { 6, 8 }, { 0, 6 }, { 1, 7 }, { 2, 8 }, { 0, 8 }, { 2, 6 } };
+    private ReentrantLock changingGamestate = new ReentrantLock();
+    private boolean gameOver = false;
+
+    int x = -1, y = -1;
+
     // Endpoints of the 8 rows in position[] (across, down, diagonally)
 
     public Board() {
       addMouseListener(this);
+
+      new Thread(() -> {
+        while (!gameOver) {
+          changingGamestate.lock();
+          try {
+            if (current == O) {
+              changeState();
+            }
+          } finally {
+            changingGamestate.unlock();
+          }
+        }
+      }).start();
+
+      new Thread(() -> {
+        while (!gameOver) {
+          changingGamestate.lock();
+          try {
+            if (current == X) {
+              changeState();
+            }
+          } finally {
+            changingGamestate.unlock();
+          }
+        }
+      }).start();
+      ;
+
     }
 
     public void paintComponent(Graphics g) {
@@ -101,7 +133,12 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener,
       final var xpos = e.getX() * 3 / getWidth();
       final var ypos = e.getY() * 3 / getHeight();
 
-      final var pos = xpos + 3 * ypos;
+      this.x = xpos;
+      this.y = ypos;
+    }
+
+    private void changeState() {
+      final var pos = this.x + 3 * this.y;
       if (pos >= 0 && pos < 9 && position[pos] == BLANK) {
         position[pos] = current;
         current = current == O ? X : O;
@@ -111,15 +148,17 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener,
 
         if (won(X)) {
           JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
+          gameOver = true;
           dispose();
         } else if (won(O)) {
           JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
+          gameOver = true;
           dispose();
         } else if (isDraw()) {
           JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
+          gameOver = true;
           dispose();
         }
-
       }
     }
 
