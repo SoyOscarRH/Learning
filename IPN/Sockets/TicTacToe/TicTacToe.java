@@ -7,34 +7,60 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TicTacToe {
   // Endpoints of the 8 rows in position[] (across, down, diagonally)
-  private int rows[][] = { { 0, 2 }, { 3, 5 }, { 6, 8 }, { 0, 6 }, { 1, 7 }, { 2, 8 }, { 0, 8 }, { 2, 6 } };
+  final private int rows[][] = { { 0, 2 }, { 3, 5 }, { 6, 8 }, { 0, 6 }, { 1, 7 }, { 2, 8 }, { 0, 8 }, { 2, 6 } };
+
+  private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
+  private ReentrantLock changingGamestate = new ReentrantLock();
+  private boolean gameOver = false;
+  private final int gameID;
 
   static final public char BLANK = ' ', O = 'O', X = 'X';
+  private char current = O;
+  final private Board board1, board2;
 
-  public TicTacToe() {
-    new Board(O);
-    new Board(X);
+  public TicTacToe(int i) {
+    board1 = new Board(O);
+    board2 = new Board(X);
+    this.gameID = i;
+
+    updateBoth();
   }
 
-  private class Board extends JFrame implements ActionListener, ChangeListener {
-    private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
+  private void updateBoth() {
+    board1.repaint(100);
+    board2.repaint(100);
+    board2.changeText();
+    board1.changeText();
+  }
 
+  boolean isDraw() {
+    for (var pos : position)
+      if (pos == BLANK)
+        return false;
+
+    return true;
+  }
+
+  boolean won(char player) {
+    for (var i = 0; i < 8; ++i)
+      if (testRow(player, rows[i][0], rows[i][1]))
+        return true;
+    return false;
+  }
+
+  // Has player won in the row from position[a] to position[b]?
+  boolean testRow(char player, int a, int b) {
+    return position[a] == player && position[b] == player && position[(a + b) / 2] == player;
+  }
+
+  private class Board extends JFrame {
     private BoardPanel boardPanel;
     private char player;
 
-    public void actionPerformed(ActionEvent e) {
-      boardPanel.repaint();
-    }
-
-    public void stateChanged(ChangeEvent e) {
-      boardPanel.repaint();
-    }
-
     public Board(char player) {
-      super("Tic Tac Toe");
       this.player = player;
-
-      boardPanel = new BoardPanel(this);
+      this.changeText();
+      boardPanel = new BoardPanel();
 
       add(boardPanel, BorderLayout.CENTER);
       setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -42,16 +68,16 @@ public class TicTacToe {
       setVisible(true);
     }
 
+    public void changeText() {
+      var title = "Tic Tac Toe [" + gameID + "] [Player " + player + "] ";
+      title += player == current ? "[Your turn]" : " [Not your turn]";
+      title += gameOver ? " [GAME OVER]" : "";
+      this.setTitle(title);
+    }
+
     private class BoardPanel extends JPanel implements MouseListener {
-      private char current = O;
-      private ReentrantLock changingGamestate = new ReentrantLock();
-      private boolean gameOver = false;
-      private Board window;
 
-      int x = -1, y = -1;
-
-      public BoardPanel(Board board) {
-        window = board;
+      public BoardPanel() {
         addMouseListener(this);
       }
 
@@ -91,53 +117,43 @@ public class TicTacToe {
         }
       }
 
-      boolean isDraw() {
-        for (var pos : position)
-          if (pos == BLANK)
-            return false;
-
-        return true;
-      }
-
-      // Return true if player has won
-      boolean won(char player) {
-        for (var i = 0; i < 8; ++i)
-          if (testRow(player, rows[i][0], rows[i][1]))
-            return true;
-        return false;
-      }
-
-      // Has player won in the row from position[a] to position[b]?
-      boolean testRow(char player, int a, int b) {
-        return position[a] == player && position[b] == player && position[(a + b) / 2] == player;
-      }
-
       public void mousePressed(MouseEvent e) {
-        final var xpos = e.getX() * 3 / getWidth();
-        final var ypos = e.getY() * 3 / getHeight();
+        changingGamestate.lock();
+        try {
+          if (current != player || gameOver)
+            return;
 
-        final var pos = xpos + 3 * ypos;
-        if (pos >= 0 && pos < 9 && position[pos] == BLANK) {
-          position[pos] = current;
-          current = current == O ? X : O;
-          repaint();
+          final var xpos = e.getX() * 3 / getWidth();
+          final var ypos = e.getY() * 3 / getHeight();
 
-          final var close = JOptionPane.CLOSED_OPTION;
+          final var pos = xpos + 3 * ypos;
+          if (pos >= 0 && pos < 9 && position[pos] == BLANK) {
+            position[pos] = player;
+            current = player == O ? X : O;
 
-          if (won(X)) {
-            JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
-            gameOver = true;
-            window.dispose();
-          } else if (won(O)) {
-            JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
-            gameOver = true;
-            window.dispose();
-          } else if (isDraw()) {
-            JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
-            gameOver = true;
-            window.dispose();
+            final var close = JOptionPane.CLOSED_OPTION;
+            updateBoth();
+
+            if (won(X)) {
+              JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
+              gameOver = true;
+              updateBoth();
+
+            } else if (won(O)) {
+              JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
+              gameOver = true;
+              updateBoth();
+
+            } else if (isDraw()) {
+              JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
+              gameOver = true;
+              updateBoth();
+            }
           }
+        } finally {
+          changingGamestate.unlock();
         }
+
       }
 
       public void mouseClicked(MouseEvent e) {
