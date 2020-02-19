@@ -3,24 +3,22 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import javax.swing.*;
 import javax.swing.event.*;
-import java.util.Random;
 
-public class TicTacToe extends JFrame implements ChangeListener, ActionListener {
+public class TicTacToe extends JFrame implements ChangeListener, ActionListener, Runnable {
   private Board board;
   static final char BLANK = ' ', O = 'O', X = 'X';
 
   // Board position (BLANK, O, or X)
   private char position[] = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK };
 
-  public static void main(String args[]) {
-    new TicTacToe();
+  public TicTacToe() {
+    super("Tic Tac Toes");
   }
 
-  public TicTacToe() {
-    super("Tic Tac Toe #n");
+  public void run() {
     var board = new Board();
     add(board, BorderLayout.CENTER);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     setSize(400, 400);
     setVisible(true);
   }
@@ -34,8 +32,6 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
   }
 
   private class Board extends JPanel implements MouseListener {
-    private Random random = new Random();
-
     private char current = O;
     private int rows[][] = { { 0, 2 }, { 3, 5 }, { 6, 8 }, { 0, 6 }, { 1, 7 }, { 2, 8 }, { 0, 8 }, { 2, 6 } };
     // Endpoints of the 8 rows in position[] (across, down, diagonally)
@@ -44,14 +40,12 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
       addMouseListener(this);
     }
 
-    // Redraw the board
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
 
-      // Draw the grid
-      var w = getWidth();
-      var h = getHeight();
-      var g2d = (Graphics2D) g;
+      final var w = getWidth();
+      final var h = getHeight();
+      final var g2d = (Graphics2D) g;
 
       g2d.setPaint(Color.WHITE);
       g2d.fill(new Rectangle2D.Double(0, 0, w, h));
@@ -66,10 +60,10 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
       final var oColor = Color.BLUE;
       final var xColor = Color.RED;
       for (int i = 0; i < 9; ++i) {
-        var xpos = (i % 3 + 0.5) * w / 3.0;
-        var ypos = (i / 3 + 0.5) * h / 3.0;
-        var xr = w / 8.0;
-        var yr = h / 8.0;
+        final var xpos = (i % 3 + 0.5) * w / 3.0;
+        final var ypos = (i / 3 + 0.5) * h / 3.0;
+        final var xr = w / 8.0;
+        final var yr = h / 8.0;
 
         if (position[i] == O) {
           g2d.setPaint(oColor);
@@ -78,31 +72,6 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
           g2d.setPaint(xColor);
           g2d.draw(new Line2D.Double(xpos - xr, ypos - yr, xpos + xr, ypos + yr));
           g2d.draw(new Line2D.Double(xpos - xr, ypos + yr, xpos + xr, ypos - yr));
-        }
-      }
-    }
-
-    public void mouseClicked(MouseEvent e) {
-      var xpos = e.getX() * 3 / getWidth();
-      var ypos = e.getY() * 3 / getHeight();
-
-      var pos = xpos + 3 * ypos;
-      if (pos >= 0 && pos < 9 && position[pos] == BLANK) {
-        position[pos] = current;
-        current = current == O ? X : O;
-        repaint();
-
-        final var close = JOptionPane.CLOSED_OPTION;
-
-        if (won(X)) {
-          JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
-          System.exit(0);
-        } else if (won(O)) {
-          JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
-          System.exit(0);
-        } else if (isDraw()) {
-          JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
-          System.exit(0);
         }
       }
     }
@@ -117,7 +86,7 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
 
     // Return true if player has won
     boolean won(char player) {
-      for (int i = 0; i < 8; ++i)
+      for (var i = 0; i < 8; ++i)
         if (testRow(player, rows[i][0], rows[i][1]))
           return true;
       return false;
@@ -129,6 +98,32 @@ public class TicTacToe extends JFrame implements ChangeListener, ActionListener 
     }
 
     public void mousePressed(MouseEvent e) {
+      final var xpos = e.getX() * 3 / getWidth();
+      final var ypos = e.getY() * 3 / getHeight();
+
+      final var pos = xpos + 3 * ypos;
+      if (pos >= 0 && pos < 9 && position[pos] == BLANK) {
+        position[pos] = current;
+        current = current == O ? X : O;
+        repaint();
+
+        final var close = JOptionPane.CLOSED_OPTION;
+
+        if (won(X)) {
+          JOptionPane.showConfirmDialog(null, "You win X", "Result", close);
+          dispose();
+        } else if (won(O)) {
+          JOptionPane.showConfirmDialog(null, "You win O", "Result", close);
+          dispose();
+        } else if (isDraw()) {
+          JOptionPane.showConfirmDialog(null, "Draw", "Result", close);
+          dispose();
+        }
+
+      }
+    }
+
+    public void mouseClicked(MouseEvent e) {
     }
 
     public void mouseReleased(MouseEvent e) {
