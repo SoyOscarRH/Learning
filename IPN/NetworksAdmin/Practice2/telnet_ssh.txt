@@ -76,6 +76,8 @@ show ip interface brief (para checar que las conexiones en las interfaces se hic
 	ip route 192.168.0.0 255.255.255.128 10.10.0.133
 	end
 10) Usuario, Telnet y ssh router 1
+	enable
+	configure terminal
 	username admin priv 0 password admin01
 	enable password 1234
 	enable secret 12345678
@@ -99,6 +101,8 @@ show ip interface brief (para checar que las conexiones en las interfaces se hic
 	login local
 	exit
 11) Usuario, Telnet y ssh router 2
+	enable
+	configure terminal
 	username admin priv 0 password admin01
 	enable password 1234
 	enable secret 12345678
@@ -122,6 +126,8 @@ show ip interface brief (para checar que las conexiones en las interfaces se hic
 	login local
 	exit
 12) Usuario, Telnet y ssh router 3
+	enable
+	configure terminal
 	username admin priv 0 password admin01
 	enable password 1234
 	enable secret 12345678
