@@ -55,7 +55,10 @@ class ContainerApp {
       append("Soy el hilo #" + workerID + " buscando: " + fileName + who);
 
       if (jumps == numThreads) {
-        append("-> Ya regrese al mismo lugar, paro, no lo encontre");
+        append("-> Ya regrese al mismo lugar, paro, no lo encontre, aviso a " + sender);
+        if (jumps != 0) {
+          append("Informacion recibida, paro busqueda");
+        }
         return null;
       }
 
@@ -71,11 +74,12 @@ class ContainerApp {
         path = next.findFile(fileName, workerID, jumps + 1);
       }
 
-      if (path != null)
+      if (path != null) {
         append("-> Lo encontre, gracias al hilo " + next.workerID + ", la ruta es: " + path);
-
-      if (jumps != 0)
-        append("-> Regresando informacion a " + sender);
+        if (jumps != 0)
+          append("-> Regresando informacion a " + sender);
+      } else if (sender != workerID)
+        append("No encontre el archivo en " + next.workerID + ", regresando informacion a " + sender);
 
       return path;
     }
