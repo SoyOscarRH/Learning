@@ -11,159 +11,136 @@ public class Program {
   public static void main(String args[]) {
     final var messageID = JOptionPane.showInputDialog(null, "How threads to run?");
     final var threads = Math.min(Integer.valueOf(messageID), 10);
-    final var program = new ProgramPanel(threads);
+    final var program = new ContainerApp(threads);
   }
 }
 
-class ProgramPanel extends JPanel {
-  private ReentrantLock searchHere = new ReentrantLock();
+class ContainerApp {
   final int numThreads;
-  int currentThread = 0;
-  int searched = 0;
-  boolean searching = false;
 
   JLabel history;
-  JTextField fileName;
-
-  Worker[] workers;
-
-  class Worker extends Thread {
-    Worker prev, next;
-    int ID;
-
-    void doWork() {
-      if (!searching)
-        return;
-      searchHere.lock();
-      try {
-        if (searched >= numThreads) {
-          searching = false;
-          searched = 0;
-          System.out.println("Stopped at " + this.ID);
-        } else {
-          System.out.println("I will do work " + this.ID);
-          searched++;
-
-          final var path = "./" + this.ID + "/" + fileName.getText();
-          if (new File(path).exists()) {
-            System.out.println("Found it: " + this.ID);
-            searching = false;
-            searched = 0;
-          }
-          System.out.println("Work done " + this.ID + "\n");
-        }
-      } finally {
-        searchHere.unlock();
-        if (searching) {
-          prev.interrupt();
-          next.interrupt();
-        }
-      }
-    }
-
-    @Override
-    public void run() {
-      while (true) {
-        try {
-          Thread.sleep(100);
-        } catch (Exception e) {
-          doWork();
-        }
-      }
-    }
-  }
-
-  public ProgramPanel(int numThreads) {
+  public ContainerApp(int numThreads) {
     this.numThreads = numThreads;
-    this.workers = new Worker[numThreads];
-    for (var i = 0; i < this.workers.length; ++i)
-      this.workers[i] = new Worker();
 
-    for (var i = 0; i < this.workers.length; ++i) {
-      this.workers[i].ID = i;
-      this.workers[i].prev = this.workers[id(numThreads, i, -1)];
-      this.workers[i].next = this.workers[id(numThreads, i, +1)];
+    final var workers = new Worker[numThreads];
+    for (var i = 0; i < numThreads; ++i)
+      workers[i] = new Worker(i);
+
+    final var mod = numThreads;
+    for (var i = 0; i < numThreads; ++i) {
+      workers[i].next = workers[(i + 1 + mod) % mod];
+      workers[i].prev = workers[(i - 1 + mod) % mod];
     }
 
-    for (var w : workers)
-      w.start();
-
-    JFrame frame = new JFrame("Searching Files");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    addComponentsToPane(frame.getContentPane());
-
-    frame.pack();
-    frame.setVisible(true);
+    for (final var w : workers)
+      w.paint();
   }
 
-  public void addComponentsToPane(Container pane) {
-    pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+  class Worker {
+    final int workerID;
+    Worker prev, next;
 
-    final var l1 = new JLabel("Hilos activos: " + this.numThreads);
-    l1.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(l1);
+    JTextArea history;
 
-    final var j1 = new JLabel("Hilo actual: " + this.currentThread);
-    j1.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(j1);
+    public Worker(int workerID) {
+      this.workerID = workerID;
+    }
 
-    final var b1 = new JButton("Siguiente Hilo");
-    b1.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(b1);
+    void append(String s) {
+      final var data = history.getText();
+      history.setText(data + "\n " + s);
+    }
 
-    b1.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        currentThread += (numThreads + 1);
-        currentThread = currentThread % numThreads;
-        j1.setText("Hilo actual: " + currentThread);
+    String findFile(final String fileName, int sender, int jumps) {
+      final var who = jumps == 0 ? "" : " Me mando a buscarlo el hilo: " + sender;
+      append("Soy el hilo #" + workerID + " buscando: " + fileName + who);
+
+      if (jumps == numThreads) {
+        append("-> Ya regrese al mismo lugar, paro, no lo encontre");
+        return null;
       }
-    });
 
-    final var b2 = new JButton("Anterior Hilo");
-    b2.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(b2);
+      var path = "../" + workerID + "/" + fileName;
 
-    b2.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        currentThread += (numThreads - 1);
-        currentThread = currentThread % numThreads;
-        j1.setText("Hilo actual: " + currentThread);
+      if (new File(path).exists()) {
+        append("-> Encontrado bajo mi guardia");
+        if (jumps != 0)
+          append("-> Regresando informacion al hilo " + sender);
+        return path;
+      } else {
+        append("-> No lo encontre, buscando en el siguiente hilo: " + next.workerID);
+        path = next.findFile(fileName, workerID, jumps + 1);
       }
-    });
 
-    final var l2 = new JLabel("Nombre del archivo a buscar");
-    l2.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(l2);
+      if (path != null)
+        append("-> Lo encontre, gracias al hilo " + next.workerID + ", la ruta es: " + path);
 
-    fileName = new JTextField("Juan.txt");
-    fileName.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(fileName);
+      if (jumps != 0)
+        append("-> Regresando informacion a " + sender);
 
-    final var bs = new JButton("Buscar archivo");
-    bs.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(bs);
+      return path;
+    }
 
-    bs.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        searching = true;
-        workers[currentThread].interrupt();
-      }
-    });
+    void paint() {
+      JFrame frame = new JFrame("Searching Files at " + this.workerID);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      final var pane = frame.getContentPane();
 
-    history = new JLabel("Historial");
-    history.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(history);
-  }
+      pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
-  private int id(int size, int current, int operation) {
-    var idea = current + operation;
-    if (idea < 0)
-      idea = size - 1;
-    return idea % size;
+      final var j1 = new JLabel("Hilo actual: " + workerID);
+      j1.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(j1);
+
+      final var j2 = new JLabel("Siguiente Hilo: " + next.workerID);
+      j2.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(j2);
+
+      final var j3 = new JLabel("Anterior Hilo: " + prev.workerID);
+      j3.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(j3);
+
+      final var l1 = new JLabel("Nombre del archivo a buscar: ");
+      l1.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(l1);
+
+      final var t1 = new JTextField("Juan.txt       ");
+      t1.setMaximumSize(t1.getPreferredSize());
+
+      t1.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(t1);
+
+      final var bs = new JButton("Buscar archivo");
+      bs.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(bs);
+
+      bs.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          findFile(t1.getText(), workerID, 0);
+        }
+      });
+
+      final var bc = new JButton("Limpiar log");
+      bc.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(bc);
+      bc.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          history.setText("");
+        }
+      });
+
+      history = new JTextArea("Historial: ");
+      history.setEditable(false);
+      history.setAlignmentX(Component.CENTER_ALIGNMENT);
+      pane.add(history);
+
+      frame.pack();
+      frame.setSize(400, 400);
+      frame.setVisible(true);
+    }
+
   }
 
 }
