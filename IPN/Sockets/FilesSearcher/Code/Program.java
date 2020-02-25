@@ -18,7 +18,6 @@ public class Program {
 class ContainerApp {
   final int numThreads;
 
-  JLabel history;
   public ContainerApp(int numThreads) {
     this.numThreads = numThreads;
 
