@@ -5,32 +5,32 @@ import java.util.Scanner;
 
 public class Server {
   public static void main(String[] args) {
-    connectToServer();
-  }
+    var counter = 0;
 
-  public static void connectToServer() {
-    try (ServerSocket serverSocket = new ServerSocket(9991)) {
-      final var connectionSocket = serverSocket.accept();
+    while (true) {
+      try (final var serverSocket = new ServerSocket(5555)) {
+        final var connectionSocket = serverSocket.accept();
 
-      final var inputToServer = connectionSocket.getInputStream();
-      final var outputFromServer = connectionSocket.getOutputStream();
+        final var inputToServer = connectionSocket.getInputStream();
+        final var outputFromServer = connectionSocket.getOutputStream();
 
-      final var scanner = new Scanner(inputToServer, "UTF-8");
-      final var serverPrintOut = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
+        final var scanner = new Scanner(inputToServer, "UTF-8");
+        final var serverPrintOut = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
 
-      serverPrintOut.println("Hello World! Enter Peace to exit.");
+        serverPrintOut.println("Hello Client " + (counter++) + ". Enter Peace to exit.");
 
-      var done = false;
-      while (!done && scanner.hasNextLine()) {
-        final var line = scanner.nextLine();
-        serverPrintOut.println("Echo <Oscar>: " + line);
-
-        if (line.toLowerCase().trim().equals("peace")) {
-          done = true;
+        while (scanner.hasNextLine()) {
+          final var line = scanner.nextLine();
+          if (line.equals("close"))
+            break;
+          serverPrintOut.println("I am server: " + line);
         }
+
+        connectionSocket.close();
+
+      } catch (IOException e) {
+        e.printStackTrace();
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 }
