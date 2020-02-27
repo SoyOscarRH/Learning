@@ -9,24 +9,20 @@ public class Server {
 
     while (true) {
       try (final var serverSocket = new ServerSocket(5555)) {
-        final var connectionSocket = serverSocket.accept();
+        final var connection = serverSocket.accept();
 
-        final var inputToServer = connectionSocket.getInputStream();
-        final var outputFromServer = connectionSocket.getOutputStream();
-
-        final var scanner = new Scanner(inputToServer, "UTF-8");
-        final var serverPrintOut = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
+        final var scanner = new Scanner(connection.getInputStream(), "UTF-8");
+        final var serverPrintOut = new PrintWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"), true);
 
         serverPrintOut.println("Hello Client " + (counter++) + ". Enter Peace to exit.");
 
         while (scanner.hasNextLine()) {
           final var line = scanner.nextLine();
-          if (line.equals("close"))
-            break;
+          if (line.equals("close")) break;
           serverPrintOut.println("I am server: " + line);
         }
 
-        connectionSocket.close();
+        connection.close();
 
       } catch (IOException e) {
         e.printStackTrace();
