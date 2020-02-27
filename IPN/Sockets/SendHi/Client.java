@@ -4,17 +4,14 @@ import java.util.*;
 
 public class Client {
   public static void main(String argv[]) {
+    final var localScanner = new Scanner(System.in);
     try {
       Socket socketClient = new Socket("localhost", 5555);
       System.out.println("Connection Established to server");
 
-      final var inputToServer = socketClient.getInputStream();
-      final var outputFromServer = socketClient.getOutputStream();
+      final var scanner = new Scanner(socketClient.getInputStream(), "UTF-8");
+      final var writeToServer = new PrintWriter(new OutputStreamWriter(socketClient.getOutputStream(), "UTF-8"), true);
 
-      final var scanner = new Scanner(inputToServer, "UTF-8");
-      final var writeToServer = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
-
-      final var localScanner = new Scanner(System.in);
       System.out.println("Server say: " + scanner.nextLine());
 
       while (true) {
