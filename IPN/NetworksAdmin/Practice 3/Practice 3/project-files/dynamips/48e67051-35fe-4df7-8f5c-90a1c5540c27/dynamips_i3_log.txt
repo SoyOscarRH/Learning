@@ -1,0 +1,47 @@
+Feb 25 09:55:45.752 HYPERVISOR: Release 0.2.17-amd64/Darwin (tag 2017072410)
+Feb 25 09:55:45.752 HYPERVISOR: Started on IP = localhost, TCP port = 64182.
+Feb 25 09:55:45.760 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 25 09:55:45.761 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/soyoscarrh/GNS3/projects/Practice 3/project-files/dynamips 
+Feb 25 09:55:45.761 GENERAL: working_dir=/Users/soyoscarrh/GNS3/projects/Practice 3/project-files/dynamips
+Feb 25 09:55:45.761 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/soyoscarrh/GNS3/projects/Practice 3/project-files/dynamips/b9148590-28f7-45f0-8f47-a8902311ea79 
+Feb 25 09:55:45.761 GENERAL: working_dir=/Users/soyoscarrh/GNS3/projects/Practice 3/project-files/dynamips/b9148590-28f7-45f0-8f47-a8902311ea79
+Feb 25 09:55:45.761 HYPERVISOR: exec_cmd: vm create R1 1 c3600 
+Feb 25 09:55:45.762 VM: VM R1 created.
+Feb 25 09:55:45.763 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5002 
+Feb 25 09:55:45.763 HYPERVISOR: exec_cmd: c3600 get_mac_addr R1 
+Feb 25 09:55:45.763 HYPERVISOR: exec_cmd: c3600 set_chassis R1 3660 
+Feb 25 09:55:45.763 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:45.763 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x606071f8 
+Feb 25 09:55:45.765 HYPERVISOR: exec_cmd: vm set_ios R1 /Users/soyoscarrh/GNS3/images/IOS/c3660-a3jk9s-mz.124-25d.image 
+Feb 25 09:55:45.765 HYPERVISOR: exec_cmd: c3600 set_mac_addr R1 cc01.7239.0000 
+Feb 25 09:55:45.765 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Feb 25 09:55:45.765 HYPERVISOR: exec_cmd: vm set_ram R1 192 
+Feb 25 09:55:45.765 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:45.766 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 NM-1FE-TX 
+Feb 25 09:55:45.766 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:45.766 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 NM-1FE-TX 
+Feb 25 09:55:45.767 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5002 
+Feb 25 09:55:45.932 HYPERVISOR: exec_cmd: nio create_udp udp-63d500e1-6152-435c-8ad2-e8052b90cdfc 10002 127.0.0.1 10003 
+Feb 25 09:55:46.174 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-63d500e1-6152-435c-8ad2-e8052b90cdfc 
+Feb 25 09:55:46.176 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:46.466 HYPERVISOR: exec_cmd: nio create_udp udp-88d48d6a-555a-44b0-91c9-de1a910c0b41 10008 127.0.0.1 10009 
+Feb 25 09:55:46.468 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 1 0 udp-88d48d6a-555a-44b0-91c9-de1a910c0b41 
+Feb 25 09:55:46.468 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:46.753 HYPERVISOR: exec_cmd: nio create_udp udp-51039e9d-426e-4a31-9b21-bbeedef01a24 10014 127.0.0.1 10015 
+Feb 25 09:55:46.756 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 2 0 udp-51039e9d-426e-4a31-9b21-bbeedef01a24 
+Feb 25 09:55:46.756 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 09:55:47.340 HYPERVISOR: exec_cmd: nio create_udp udp-00243349-3966-4040-aca0-6031bda86322 10028 127.0.0.1 10029 
+Feb 25 09:55:47.342 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-00243349-3966-4040-aca0-6031bda86322 
+Feb 25 09:55:47.343 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 10:52:31.898 HYPERVISOR: exec_cmd: vm create Ghost 0 c3600 
+Feb 25 10:52:31.898 VM: VM Ghost created.
+Feb 25 10:52:31.908 HYPERVISOR: exec_cmd: vm set_ios Ghost /Users/soyoscarrh/GNS3/images/IOS/c3660-a3jk9s-mz.124-25d.image 
+Feb 25 10:52:31.909 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Feb 25 10:52:31.909 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost '/Users/soyoscarrh/GNS3/projects/Practice 3/project-files/dynamips/c3660-a3jk9s-mz.124-25d.image-192.ghost' 
+Feb 25 10:52:31.913 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 10:52:31.914 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Feb 25 10:52:31.914 HYPERVISOR: exec_cmd: vm start R1 
+Feb 25 11:11:38.356 HYPERVISOR: exec_cmd: vm get_status R1 
+Feb 25 11:11:38.356 HYPERVISOR: exec_cmd: vm stop R1 
+Feb 25 11:11:38.487 VM: VM R1 shutdown.
+Feb 25 11:11:38.488 HYPERVISOR: exec_cmd: vm extract_config R1 

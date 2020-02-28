@@ -74,37 +74,40 @@ show ip interface brief
 	192.168.122.100 / 26 -> gateway 192.168.122.65
 
 
-7) Enruteo estático del router 1
+8) Enruteo estático del router 1
 	enable
 	configure terminal
-	ip route 10.10.0.132 255.255.255.252 10.10.0.130
+	ip route 192.168.122.0 255.255.255.192 f1/0
 	end
+9) Enruteo estático del router 2
 	enable
 	configure terminal
-	ip route 192.168.0.128 255.255.255.128 10.10.0.130
+	ip route 192.168.122.0 255.255.255.192 f0/0
+	ip route 192.168.122.64 255.255.255.192 f0/0
+
+	ip route 192.168.122.136 255.255.255.252 f0/0
+	ip route 192.168.122.132 255.255.255.252 f0/0
 	end
-8) Enruteo estático del router 2
+10) Enruteo estático del router 3
 	enable
 	configure terminal
-	ip route 192.168.0.128 255.255.255.128 10.10.0.134
+	ip route 192.168.122.64 255.255.255.192 f0/1
+
+	ip route 192.168.122.128 255.255.255.252 f0/1
+	ip route 192.168.122.132 255.255.255.252 f0/1
 	end
+11) Enruteo estático del router 4
 	enable
 	configure terminal
-	ip route 192.168.0.0 255.255.255.128 10.10.0.129
-	end
-9) Enruteo estático del router 3
-	enable
-	configure terminal
-	ip route 10.10.0.128 255.255.255.252 10.10.0.133
-	end
-	enable
-	configure terminal
-	ip route 192.168.0.0 255.255.255.128 10.10.0.133
+	ip route 192.168.122.0  255.255.255.192 f0/0
+	ip route 192.168.122.64 255.255.255.192 f0/0
+
+	ip route 192.168.122.128 255.255.255.252 f0/0
+	ip route 192.168.122.136 255.255.255.252 f0/0
 	end
 
 
-
-10) Usuario, Telnet y ssh router 1
+10) Usuario, Telnet 1, 2, 3, 4
 	enable
 	configure terminal
 	username admin priv 0 password admin01
@@ -118,69 +121,7 @@ show ip interface brief
 	password 1234
 	login
 	exit
-	hostname R1
-	ip domain-name R1.LOCAL
-	crypto key generate rsa
-	2048
-	ip ssh time-out 10
-	ip ssh authentication-retries 3
-	ip ssh version 2
-	line vty 0 4
-	transport input ssh telnet
-	login local
-	exit
-11) Usuario, Telnet y ssh router 2
-	enable
-	configure terminal
-	username admin priv 0 password admin01
-	enable password 1234
-	enable secret 12345678
-	service password-encryption
-	line console 0
-	login local
-	exit
-	line vty 0 4
-	password 1234
-	login
-	exit
-	hostname R2
-	ip domain-name R2.LOCAL
-	crypto key generate rsa
-	2048
-	ip ssh time-out 10
-	ip ssh authentication-retries 3
-	ip ssh version 2
-	line vty 0 4
-	transport input ssh telnet
-	login local
-	exit
-12) Usuario, Telnet y ssh router 3
-	enable
-	configure terminal
-	username admin priv 0 password admin01
-	enable password 1234
-	enable secret 12345678
-	service password-encryption
-	line console 0
-	login local
-	exit
-	line vty 0 4
-	password 1234
-	login
-	exit
-	hostname R3
-	ip domain-name R3.LOCAL
-	crypto key generate rsa
-	2048
-	ip ssh time-out 10
-	ip ssh authentication-retries 3
-	ip ssh version 2
-	line vty 0 4
-	transport input ssh telnet
-	login local
-	exit
-
-	
+	end
 
 //Desde una pc
 telnet "gateway router a conectar" 
