@@ -196,7 +196,7 @@
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
                             "x": -6,
-                            "y": 25
+                            "y": 23
                         },
                         "node_id": "48e67051-35fe-4df7-8f5c-90a1c5540c27",
                         "port_number": 1
@@ -697,8 +697,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "40754256-72f2-4632-9cc7-c628b0d05277",
                 "width": 66,
-                "x": 164,
-                "y": -42,
+                "x": 161,
+                "y": -43,
                 "z": 1
             }
         ]
