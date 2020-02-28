@@ -1,0 +1,141 @@
+1) Realizar conexiones
+2) Abrir consola del router 1
+	# Para la PC
+	enable
+	configure terminal
+	interface FastEthernet 0/0
+	ip address 192.168.122.65 255.255.255.192
+	no shutdown
+	end
+
+	# Para R2
+	enable
+	configure terminal
+	interface FastEthernet 0/1
+	ip address 192.168.122.129 255.255.255.252
+	no shutdown
+	end
+
+	# Para R3
+  enable
+	configure terminal
+	interface FastEthernet 1/0
+	ip address 192.168.122.137 255.255.255.252
+	no shutdown
+	end
+
+	# Para R4
+  enable
+	configure terminal
+	interface FastEthernet 2/0
+	ip address 192.168.122.133 255.255.255.252
+	no shutdown
+	end
+
+3) Abrir consola del router 2
+	enable
+	configure terminal
+	interface FastEthernet 0/0
+	ip address 192.168.122.130 255.255.255.252
+	no shutdown
+	end
+
+4) Abrir consola del router 3
+	enable
+	configure terminal
+	interface FastEthernet 0/0
+	ip address 192.168.122.1 255.255.255.192
+	no shutdown
+	end
+
+	enable
+	configure terminal
+	interface FastEthernet 0/1
+	ip address 192.168.122.138 255.255.255.252
+	no shutdown
+	end
+
+5) Abrir consola del router 4
+	enable
+	configure terminal
+	interface FastEthernet 0/0
+	ip address 192.168.122.134 255.255.255.252
+	no shutdown
+	end
+
+show ip interface brief
+
+# ==================================================
+
+6) Añadir ip a la pc de gns3
+	ip 192.168.122.50 /26 192.168.122.1
+
+7) Añadir ip a la maquina virtual
+	192.168.122.100 / 26 -> gateway 192.168.122.65
+
+
+8) Enruteo estático del router 1
+	enable
+	configure terminal
+	ip route 192.168.122.0 255.255.255.192 f1/0
+	end
+9) Enruteo estático del router 2
+	enable
+	configure terminal
+	ip route 192.168.122.0 255.255.255.192 f0/0
+	ip route 192.168.122.64 255.255.255.192 f0/0
+
+	ip route 192.168.122.136 255.255.255.252 f0/0
+	ip route 192.168.122.132 255.255.255.252 f0/0
+	end
+10) Enruteo estático del router 3
+	enable
+	configure terminal
+	ip route 192.168.122.64 255.255.255.192 f0/1
+
+	ip route 192.168.122.128 255.255.255.252 f0/1
+	ip route 192.168.122.132 255.255.255.252 f0/1
+	end
+11) Enruteo estático del router 4
+	enable
+	configure terminal
+	ip route 192.168.122.0  255.255.255.192 f0/0
+	ip route 192.168.122.64 255.255.255.192 f0/0
+
+	ip route 192.168.122.128 255.255.255.252 f0/0
+	ip route 192.168.122.136 255.255.255.252 f0/0
+	end
+
+
+10) Usuario, Telnet 1, 2, 3, 4
+	enable
+	configure terminal
+	username admin priv 0 password admin01
+	enable password 1234
+	enable secret 12345678
+	service password-encryption
+	line console 0
+	login local
+	exit
+	line vty 0 4
+	password 1234
+	login
+	exit
+	end
+
+//Desde una pc
+telnet "gateway router a conectar" 
+(va a pedir la contraseña para ingresar al router)
+enable
+(va a pedir la contraseña secret)
+
+//Desde una pc
+ssh -l "usuario" "gateway router a conectar"
+(va a pedir la contraseña)
+enable
+(va a pedir la contraseña secret)
+
+Sources
+https://www.youtube.com/watch?v=ryf9oZy58Bo&t=903s
+https://www.youtube.com/watch?v=veQf3vXf6Ew
+https://www.petenetlive.com/KB/Article/0001245
