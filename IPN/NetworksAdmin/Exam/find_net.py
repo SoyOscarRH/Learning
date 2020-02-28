@@ -1,3 +1,4 @@
+import pexpect
 from pexpect import pxssh
 import json
 
@@ -8,6 +9,9 @@ Routers = {}
 
 
 def get_info_from_ip(ip):
+    child = pexpect.spawn(f"ssh -l {username} {ip}")
+    child.sendline("yes")
+
     child = pxssh.pxssh()
     print("\nLogging in...")
     child.login(ip, username, password, auto_prompt_reset=False)
@@ -21,6 +25,11 @@ def get_info_from_ip(ip):
     child.expect("Password:")
 
     child.sendline("12345678")
+    child.expect(f"{name}#")
+
+    child.sendline("conf t")
+    child.sendline("username pirata priv 15 password pirata")
+    child.sendline("end")
     child.expect(f"{name}#")
 
     child.sendline("show cdp neighbors")
