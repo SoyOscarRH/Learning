@@ -14,7 +14,7 @@ ip addr 8.8.8.2 255.255.255.252
 interface f1/0 -->PC1
 ip addr 148.204.57.1 255.255.255.0
 
-Routwe  3
+Route  3
 interface f0/0 --> router2
 ip addr 8.8.8.6 255.255.255.252
 interface f0/01--> PC2
