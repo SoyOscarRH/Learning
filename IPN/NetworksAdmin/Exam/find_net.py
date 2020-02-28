@@ -1,4 +1,5 @@
 from pexpect import pxssh
+import json
 
 username = "admin"
 password = "firulais"
@@ -74,3 +75,6 @@ def get_info_from_ip(ip):
 get_info_from_ip("148.204.56.1")
 
 print(Routers)
+
+with open("network.txt", "w") as text_file:
+    text_file.write(json.dumps(Routers))
