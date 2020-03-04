@@ -68,6 +68,12 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/pdfpages/pppdftex.def
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
@@ -220,6 +226,8 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecxc1200.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecxc2488.tfm
@@ -271,6 +279,19 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/eccc1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/eccc1095.tfm
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/28/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/28/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/28/a.png
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/199/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/199/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/199/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/70/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/70/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/70/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/157/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/157/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/157/a.png
 INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/Equivalence.cpp
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -281,7 +302,7 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ectt0800.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/Equivalence.cpp
@@ -292,19 +313,152 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-utf8.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/CellularAutomata.ts
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/CellularAutomata.ts
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/CellularAutomata.ts
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/DrawAutomata.py
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/DrawAutomata.py
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Code/DrawAutomata.py
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/b.png
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/160/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/108/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/126/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/110/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-a.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-b.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-c.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-d.png
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/Images/54/dia-d.png
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 OUTPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/report.thm
 INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/CellularAutomataReport/report.aux
@@ -325,10 +479,11 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc2488.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb

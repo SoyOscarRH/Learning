@@ -17,6 +17,8 @@
     \setlength{\parindent}{0pt}                                     %Eliminate ugly indentation
     \author{Oscar Andrés Rosas}                                     %Who I am
 
+    \usepackage{subcaption}
+
     % *********   LANGUAJE    *****************
     \usepackage[spanish]{babel}                                     %Please allow me to type in spanish
     \usepackage[utf8]{inputenc}                                     %Lets use UFT-8
@@ -432,7 +434,7 @@
     % =====  CODE EDITOR =============
     \lstdefinestyle{CompilandoStyleSolarized} {                     %This is Code Style
         backgroundcolor     = \color{SolarizedBase},                %Background Color  
-        basicstyle          = \fontCodeFoot\color{SolarizedFont},   %Style of text
+        basicstyle          = \fontCodeTiny\color{SolarizedFont},   %Style of text
         commentstyle        = \color{Green300MD},                   %Comment style
         stringstyle         = \color{Teal700MD},                    %String style
         keywordstyle        = \color{Blue700MD},                    %keywords style
@@ -516,7 +518,7 @@
 \part{Marco Teórico}
 \clearpage
 
-    \chapter{Autómata celulares}
+  \chapter{Autómata celulares}
 
         \clearpage
         \section{Definición}
@@ -598,7 +600,34 @@
 
       Asi podemos hacer grupos de 4, este programa en C++ nos permite obtener las clases de manera sencilla:
 
+      \clearpage
+      Mira por ejemplo estas 4 clases:
+      \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.8\textwidth]{Images/28/a.png}
+          \caption{28}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.8\textwidth]{Images/199/a.png}
+          \caption{199}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.8\textwidth]{Images/70/a.png}
+          \caption{70}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.8\textwidth]{Images/157/a.png}
+          \caption{157}
+        \end{subfigure}
+      \end{figure}
+
+
+      \clearpage
       Estas son las clases equivalentes:
+
+      \begin{multicols}{3}
+
       \begin{itemize}
         \item 0, 255, 0, 255
         \item 1, 127, 1, 127
@@ -857,6 +886,7 @@
         \item 254, 128, 254, 128
         \item 255, 0, 255, 0
       \end{itemize}
+      \end{multicols}
 
 
       Eligiendo la regla mas pequeña de cada clase podemos general el conjunto de reglas que vamos a
@@ -877,26 +907,232 @@
       obtenido por Wolfram \cite{Wolfram}.
 
   \chapter{Mi clasificación de los autómatas celulares}
+      \section{Codigo}
+
+        Para esto ocupamos dos versiones una creada en Typescript para crear un simulador
+        web bastante bonito:
+        \lstinputlisting[gobble=6]{Code/CellularAutomata.ts}
+
+        Y otra creada en Python para poder tomar velocidad a la hora de crear las gráficas:
+        \lstinputlisting[language=python, gobble=6]{Code/DrawAutomata.py}
+
+      \clearpage
+
+
       \section{W1}
-        \begin{itemize}
-          \item Regla 160
-        \end{itemize}
+
+        \subsection{160}
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/dia-a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/dia-b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/dia-c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/160/dia-d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
 
       \section{W2}
-        \begin{itemize}
-          \item Regla 108
-        \end{itemize}
+              
+      \subsection{108}
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/dia-a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/dia-b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/dia-c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/108/dia-d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
 
       \section{W3}
-        \begin{itemize}
-          \item Regla 126
-        \end{itemize}
+
+      \subsection{126}
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/dia-a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/dia-b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/dia-c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/126/dia-d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
 
       \section{W4}
-        \begin{itemize}
-          \item Regla 110
-          \item Regla 54
-        \end{itemize}
+
+        \subsection{110}
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/dia-a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/dia-b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/dia-c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/110/dia-d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \subsection{54}
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
+
+        \begin{figure}[h!]
+          \centering
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/dia-a.png}
+            \caption{One}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/dia-b.png}
+            \caption{8\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/dia-c.png}
+            \caption{50\%}
+          \end{subfigure}
+          \begin{subfigure}[b]{0.4\linewidth}
+            \includegraphics[width=0.7\textwidth]{Images/54/dia-d.png}
+            \caption{87\%}
+          \end{subfigure}
+        \end{figure}
 
 \begin{thebibliography}{10}
 

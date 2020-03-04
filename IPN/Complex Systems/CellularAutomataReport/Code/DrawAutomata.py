@@ -97,7 +97,7 @@ def getPercentage(percentage):
 
 inits = [oneMiddle(), getPercentage(0.08), getPercentage(.5), getPercentage(.87)]
 
-for rule in rules:
+for rule in [28, 199, 70, 157]:
     print(rule)
     for i, init in enumerate(inits):
         letter = chr(ord("a") + i)
