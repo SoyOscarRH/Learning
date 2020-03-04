@@ -531,6 +531,13 @@
         El proceso se repite en pasos de tiempo discretos. 
         Resulta que con reglas de actualización sorprendentemente simples se pueden producir 
         dinámicas extremadamente complejas como en el famoso Juego de la vida de John Conway.  \cite{Kari}
+
+        El aspecto que mas los caracteriza es su capacidad de lograr una serie de propiedades 
+        que surgen de la propia dinámica local a través del paso del tiempo y no desde un inicio, 
+        aplicándose a todo el sistema en general. Por lo tanto, no es fácil analizar las propiedades 
+        globales de un AC desde su comienzo, complejo por naturaleza, si no es por medio de una 
+        simulación, partiendo de un estado o configuración inicial de células y cambiando en cada
+        instante los estados de todas ellas de forma síncrona.
         
       \subsection{Caracteristicas}
       \begin{itemize}
@@ -572,11 +579,38 @@
       Wolfram definió las clases de la siguiente manera:
       \begin{itemize}
         \item (W1): Casi todas las configuraciones iniciales conducen a la misma configuración uniforme de punto fijo o a un 
-        estado homogeneo
+        estado homogeneo. Casi todos los patrones iniciales evolucionan rápidamente en un estado estable 
+        y homogéneo. Cualquier aleatoriedad en el patrón inicial desaparece.
+
+        Son aquellos cuya evolución eventualmente conduce a células de un solo tipo.
+
         \item (W2): Casi todas las configuraciones iniciales conducen a una configuración que se repite periódicamente o estructuras
         simples.
+        Casi todos los patrones iniciales evolucionan rápidamente hacia estructuras estables u 
+        oscilantes. Parte de la aleatoriedad del patrón inicial 
+        puede permanecer, pero solo algunos restos. Los cambios locales en el 
+        patrón inicial tienden a permanecer locales.
+
         \item (W3): Casi todas las configuraciones iniciales conducen a un comportamiento esencialmente aleatorio o caoticos
+        Casi todos los patrones iniciales evolucionan de forma pseudo-aleatoria o caótica.
+         Las estructuras estables que aparecen son destruidas rápidamente por el ruido circundante. 
+         Los cambios locales en el patrón inicial tienden a propagarse indefinidamente.
+        
         \item (W4): Surgen estructuras localizadas con interacciones complejas y localizadas veces de larga vida. 
+          Casi todos los patrones iniciales evolucionan en las estructuras que interactúan de 
+          manera compleja e interesante, con la formación de las estructuras locales 
+          que son capaces de sobrevivir por largos períodos de tiempo. 
+          
+          Podría ser el caso de que apareciesen estructuras estables u oscilantes, 
+          pero el número de pasos necesarios para llegar a este estado puede ser muy grande, 
+          incluso cuando el patrón inicial es relativamente simple. 
+          
+          Los cambios locales en el patrón inicial pueden extenderse indefinidamente.
+
+          Puede exhibir cualquiera de los comportamientos anteriores
+          simultáneamente y parecen poseer el tipo de complejidad
+          que se encuentra en la intersección entre modelado matemático y
+          estudios de vida.
       \end{itemize}
 
       \cite{Kari}
@@ -586,6 +620,11 @@
 
       Wolfram conjeturó que los autómatas celulares de esa clase (W4) son computacionalmente universales.
       (cosa que se ha probado para la regla 110).
+
+
+      Algo interesante es que leyendo sobre posibles clasificaciones descubrí que en 1988
+      un grupo de investigadores descubrio  redefiniendo formalmente las clases de Wolfram
+      resulta ser indecidible determinar a qué clase pertenece un automata. \cite{4}
 
   \chapter{La reducción de 256 reglas a solo 88}
 
@@ -927,8 +966,13 @@
       \clearpage
       \section{W1}
 
-          
+      Casi todas las configuraciones iniciales conducen a la misma configuración uniforme de punto fijo o a un 
+      estado homogeneo. Casi todos los patrones iniciales evolucionan rápidamente en un estado estable 
+      y homogéneo. Cualquier aleatoriedad en el patrón inicial desaparece.
 
+      Son aquellos cuya evolución eventualmente conduce a células de un solo tipo.
+
+      Estan son muy sencillas de clasificar viendo de los histogramas basicamente caen a 0 o a 1.
             
       \subsection{0}
       \begin{figure}[ht!]
@@ -1301,8 +1345,17 @@
       \section{W2}
               
 
-       
+      Casi todas las configuraciones iniciales conducen a una configuración que se repite periódicamente o estructuras
+      simples.
+      Casi todos los patrones iniciales evolucionan rápidamente hacia estructuras estables u 
+      oscilantes. Parte de la aleatoriedad del patrón inicial 
+      puede permanecer, pero solo algunos restos. Los cambios locales en el 
+      patrón inicial tienden a permanecer locales.
 
+      Estan son muy sencillas de clasificar viendo de los histogramas basicamente caen a 0 o a 1.
+
+      Estos son relativamente sencillos de clasificar basados en el histograma, buscamos aquellos
+      que se estabilizen y la cantidad de 0 sean mas o menos constante.
             
       \subsection{1}
       \begin{figure}[ht!]
@@ -4168,7 +4221,12 @@
       \section{W3}
 
 
+      Casi todas las configuraciones iniciales conducen a un comportamiento esencialmente aleatorio o caoticos
+      Casi todos los patrones iniciales evolucionan de forma pseudo-aleatoria o caótica.
+       Las estructuras estables que aparecen son destruidas rápidamente por el ruido circundante. 
+       Los cambios locales en el patrón inicial tienden a propagarse indefinidamente.
 
+       Lo que buscamos aqui es un histograma que no se estabilize en una cantidad constante de unos.
             
       \subsection{18}
       \begin{figure}[ht!]
@@ -4250,6 +4308,48 @@
         \end{subfigure}
         \begin{subfigure}[b]{0.4\linewidth}
           \includegraphics[width=0.6\textwidth]{Images/22/dia-d.png}
+          \caption{87\%}
+        \end{subfigure}
+      \end{figure}
+
+      \clearpage
+      \subsection{26}
+      \begin{figure}[ht!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/a.png}
+          \caption{One}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/b.png}
+          \caption{8\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/c.png}
+          \caption{50\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/d.png}
+          \caption{87\%}
+        \end{subfigure}
+      \end{figure}
+
+      \begin{figure}[ht!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/dia-a.png}
+          \caption{One}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/dia-b.png}
+          \caption{8\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/dia-c.png}
+          \caption{50\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/26/dia-d.png}
           \caption{87\%}
         \end{subfigure}
       \end{figure}
@@ -4643,6 +4743,47 @@
 
 
 
+      \clearpage
+      \subsection{154}
+      \begin{figure}[ht!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/a.png}
+          \caption{One}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/b.png}
+          \caption{8\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/c.png}
+          \caption{50\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/d.png}
+          \caption{87\%}
+        \end{subfigure}
+      \end{figure}
+
+      \begin{figure}[ht!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/dia-a.png}
+          \caption{One}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/dia-b.png}
+          \caption{8\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/dia-c.png}
+          \caption{50\%}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \includegraphics[width=0.6\textwidth]{Images/154/dia-d.png}
+          \caption{87\%}
+        \end{subfigure}
+      \end{figure}
 
 
 
@@ -4666,7 +4807,21 @@
       \section{W4}
 
        
+      Surgen estructuras localizadas con interacciones complejas y localizadas veces de larga vida. 
+      Casi todos los patrones iniciales evolucionan en las estructuras que interactúan de 
+      manera compleja e interesante, con la formación de las estructuras locales 
+      que son capaces de sobrevivir por largos períodos de tiempo. 
+      
+      Podría ser el caso de que apareciesen estructuras estables u oscilantes, 
+      pero el número de pasos necesarios para llegar a este estado puede ser muy grande, 
+      incluso cuando el patrón inicial es relativamente simple. 
+      
+      Los cambios locales en el patrón inicial pueden extenderse indefinidamente.
 
+      Puede exhibir cualquiera de los comportamientos anteriores
+      simultáneamente y parecen poseer el tipo de complejidad
+      que se encuentra en la intersección entre modelado matemático y
+      estudios de vida.
 
 
             
@@ -4855,7 +5010,16 @@
 
 
 
+\chapter{Problemas de la regla 30}
 
+  Del unico poblema en el que logre hacer algun avance es en el de intentar calcular 
+  el valor de la columna central.
+
+  Esta pregunta es uno de los tres desafíos planteados por Stephen Wolfram en
+  el sitio web en https://rule30prize.org/. 
+  
+
+  \clearpage
 
 
 
@@ -4870,6 +5034,24 @@
   \bibitem{Wolfram} 
       \textit{A New Kind of Science}. 
       Wolfram Stephen, 2002 \\
+
+  \bibitem{3} 
+      \textit{The Structure of the Element ary
+      Cellular Automata Rule Space}. 
+      Wentian Li, 1990 \\
+      Santa Fe Institute, 1120 Canyon Road, Santa Fe, NM 87501, USA
+
+  \bibitem{4} 
+      \textit{Undecidability of CA Classification Schemes}. 
+      Karel C ulik II, 1988 \\
+      Department of Compu ter Science, University of South Carolina,
+Columbia, SC 29208, USA
+
+
+\bibitem{5} 
+\textit{Introduccion a los automatas celulares elementales}. 
+Carlos Zacarias Reyes Martinez \\
+Escuela Superior de Computo
 
 \end{thebibliography}
 
