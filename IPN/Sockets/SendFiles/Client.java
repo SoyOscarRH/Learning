@@ -7,6 +7,7 @@ public class Client {
   static final String host = "10.100.76.1";
   static final int port = 7000;
   static final int bufferSize = 2048;
+  static final boolean Nagle = false;
 
   public static void main(String[] args) {
     final var fileChooser = new JFileChooser();
@@ -15,6 +16,7 @@ public class Client {
       return;
 
     try (final var socket = new Socket(host, port)) {
+      socket.setTcpNoDelay(Nagle);
       final var out = new DataOutputStream(socket.getOutputStream());
       final var files = fileChooser.getSelectedFiles();
 
