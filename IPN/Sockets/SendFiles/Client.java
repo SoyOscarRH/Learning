@@ -6,21 +6,19 @@ import javax.swing.*;
 public class Client {
   static final String host = "10.100.76.1";
   static final int port = 7000;
-  static JLabel progress;
-  static JLabel info;
+  static final int bufferSize = 2048;
 
   public static void main(String[] args) {
     final var fileChooser = new JFileChooser();
     fileChooser.setMultiSelectionEnabled(true);
     if (fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION)
       return;
-    paint();
 
     try (final var socket = new Socket(host, port)) {
       final var out = new DataOutputStream(socket.getOutputStream());
       final var files = fileChooser.getSelectedFiles();
 
-      out.writeInt(1024);
+      out.writeInt(bufferSize);
       out.flush();
       out.writeInt(files.length);
       out.flush();
@@ -36,8 +34,24 @@ public class Client {
         out.writeLong(size);
         out.flush();
 
+        final var frame = new JFrame("Sending file: " + filename);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(500, 300);
+        frame.setVisible(true);
+
+        final var pane = frame.getContentPane();
+        pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+
+        final var info = new JLabel("");
+        info.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pane.add(info);
+
+        final var progress = new JLabel("");
+        progress.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pane.add(progress);
+
         final var in = new DataInputStream(new FileInputStream(path));
-        var buffer = new byte[1024];
+        var buffer = new byte[bufferSize];
         long bytesSend = 0;
         int percentage, send;
 
@@ -59,23 +73,5 @@ public class Client {
     } catch (Exception e) {
       e.printStackTrace();
     }
-  }
-
-  static void paint() {
-    final var frame = new JFrame("Sending files");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(500, 300);
-    frame.setVisible(true);
-
-    final var pane = frame.getContentPane();
-    pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
-
-    info = new JLabel("");
-    info.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(info);
-
-    progress = new JLabel("");
-    progress.setAlignmentX(Component.CENTER_ALIGNMENT);
-    pane.add(progress);
   }
 }

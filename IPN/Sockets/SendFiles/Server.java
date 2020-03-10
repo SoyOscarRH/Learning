@@ -20,21 +20,20 @@ public class Server {
           System.out.println("size " + size);
 
           final var out = new DataOutputStream(new FileOutputStream(filename));
-          var buffer = new byte[1024];
+          var buffer = new byte[bufferSize];
           long bytesSend = 0;
           int percentage, send;
 
           while (bytesSend < size) {
             if (bytesSend + bufferSize > size)
               buffer = new byte[(int)(size - bytesSend)];
-              
+
             send = in.read(buffer);
             out.write(buffer, 0, send);
             out.flush();
 
             bytesSend = bytesSend + send;
             percentage = (int)(bytesSend * 100 / size);
-            System.out.println("Progress: " + percentage + "%");
           }
 
           System.out.println("File " + filename + " received!");
