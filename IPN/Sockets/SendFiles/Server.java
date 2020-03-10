@@ -10,27 +10,38 @@ public class Server {
         System.out.println(socket.getInetAddress() + ":" + socket.getPort());
 
         final var in = new DataInputStream(socket.getInputStream());
-        final var filename = in.readUTF();
-        System.out.println("Receiving file: " + filename);
-        long size = in.readLong();
-        final var out = new DataOutputStream(new FileOutputStream(filename));
+        final var bufferSize = in.readInt();
+        final var files = in.readInt();
 
-        var buffer = new byte[1024];
-        long bytesSend = 0;
-        int percentage, send;
+        for (var i = 0; i < files; ++i) {
+          final var filename = in.readUTF();
+          System.out.println("Receiving file: " + filename);
+          final var size = in.readLong();
+          System.out.println("size " + size);
 
-        while (bytesSend < size) {
-          send = in.read(buffer);
-          out.write(buffer, 0, send);
-          out.flush();
+          final var out = new DataOutputStream(new FileOutputStream(filename));
+          var buffer = new byte[1024];
+          long bytesSend = 0;
+          int percentage, send;
 
-          bytesSend = bytesSend + send;
-          percentage = (int)(bytesSend * 100 / size);
-          System.out.println("Progress: " + percentage + "%");
+          while (bytesSend < size) {
+            if (bytesSend + bufferSize > size)
+              buffer = new byte[(int)(size - bytesSend)];
+              
+            send = in.read(buffer);
+            out.write(buffer, 0, send);
+            out.flush();
+
+            bytesSend = bytesSend + send;
+            percentage = (int)(bytesSend * 100 / size);
+            System.out.println("Progress: " + percentage + "%");
+          }
+
+          System.out.println("File " + filename + " received!");
+          System.out.println("bytesSend " + bytesSend);
+          out.close();
         }
 
-        System.out.println("File " + filename + " received!");
-        out.close();
         in.close();
         socket.close();
       }
