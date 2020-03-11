@@ -4,12 +4,12 @@ import java.net.*;
 import javax.swing.*;
 
 public class Client {
-  static final String host = "10.100.76.1";
-  static final int port = 7000;
-  static final int bufferSize = 2048;
-  static final boolean Nagle = false;
-
   public static void main(String[] args) {
+    final var host = args[0];
+    final var port = Integer.parseInt(args[1]);
+    final var bufferSize = Integer.parseInt(args[2]);
+    final var Nagle = Boolean.parseBoolean(args[3]);
+
     final var fileChooser = new JFileChooser();
     fileChooser.setMultiSelectionEnabled(true);
     if (fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION)
