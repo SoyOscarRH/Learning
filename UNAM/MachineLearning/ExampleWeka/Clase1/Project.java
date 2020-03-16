@@ -1,12 +1,16 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.J48;
-import weka.core.*;
+
 import weka.core.Instances;
-import weka.core.stemmers.SnowballStemmer;
+import weka.core.Utils;
+import weka.core.tokenizers.WordTokenizer;
+import weka.core.SerializationHelper;
+
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.NominalToString;
 import weka.filters.unsupervised.attribute.NumericToNominal;
@@ -28,39 +32,37 @@ class Project {
 
     // Cleaning / Data preparation
     final var numericToNominal = new NumericToNominal();
-    numericToNominal.setOptions(new String[] {"-R", "last"});
+    numericToNominal.setOptions(Utils.splitOptions("-R last"));
     numericToNominal.setInputFormat(dataset);
     final var datasetV2 = Filter.useFilter(dataset, numericToNominal);
 
     final var nominalToString = new NominalToString();
-    nominalToString.setOptions(new String[] {"-C", "1"});
+    nominalToString.setOptions(Utils.splitOptions("-C first"));
     nominalToString.setInputFormat(datasetV2);
     final var datasetV3 = Filter.useFilter(datasetV2, nominalToString);
 
     printAttibutes(datasetV3);
+    System.out.println(datasetV3.numInstances());
 
     final var stringToWordVector = new StringToWordVector();
-    stringToWordVector.setOptions(new String[] {
-        "-R", "1", "-W", "100", "-prune-rate", "-1.0", "-N", "0",
-        "-stopwords-handler", "weka.core.stopwords.Null", "-M", "2",
-        "-tokenizer",
-        "weka.core.tokenizers.WordTokenizer -delimiters \" \\r\\n\\t.,;:\\\'\\\"()?!\""});
-
+    stringToWordVector.setOptions(Utils.splitOptions("-R 1 -W 100 -N 0 -M 1"));
     stringToWordVector.setInputFormat(datasetV3);
     final var datasetV4 = Filter.useFilter(datasetV3, stringToWordVector);
 
     dataset = datasetV4;
     System.out.println(dataset.numAttributes());
 
-
     // classify
     final var classifier = new J48();
-    classifier.setOptions(new String[] {"-U", "-M", "5", "-batch-size", "64"});
+    classifier.setOptions(Utils.splitOptions("-U -B -M 15 -batch-size 64"));
     dataset.setClassIndex(0);
+    dataset.randomize(new java.util.Random(0));
+
+    final var n = dataset.numInstances();
 
     final var percent = 0.80;
-    final var trainSize = (int)Math.round(dataset.numInstances() * percent / 100);
-    final var testSize = dataset.numInstances() - trainSize;
+    final var trainSize = (int)Math.round(n * percent);
+    final var testSize = n - trainSize;
 
     final var train = new Instances(dataset, 0, trainSize);
     final var test = new Instances(dataset, trainSize, testSize);
@@ -69,6 +71,8 @@ class Project {
 
     final var eval = new Evaluation(train);
     eval.evaluateModel(classifier, test);
-    System.out.println(eval.toSummaryString("", false));
+    System.out.println(eval.toSummaryString());
+
+    SerializationHelper.write("./j48.model", classifier);
   }
 }

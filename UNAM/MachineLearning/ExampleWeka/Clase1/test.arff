@@ -1,0 +1,12 @@
+@relation test
+
+@attribute body string
+@attribute urgency {0,1,2,3}
+
+@data
+'poll full status down poll output partition physical over threshold',0
+'error va sa senior tester en',2
+'hi since recruiter lead permission approve requisitions makes please make thanks recruiter',3
+'icon dear please setup icon per icon engineers please let other details needed thanks lead',3
+'work experience user hi work experience student coming next his name much appreciate him duration thank',3
+'requesting meeting hi please help follow equipments cable pc cord plug',3
