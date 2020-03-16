@@ -22,6 +22,7 @@ class Tests {
   public static void main(String[] args) throws Exception {
     final var path = "test.arff";
 
+    // Create necessary file using the data given
     saveToFile(path, String.format("@relation test\n"
                                        + "@attribute body string\n"
                                        + "@attribute urgency {0, 1, 2, 3}\n"
@@ -29,14 +30,17 @@ class Tests {
                                        + "'%s',0",
                                    String.join(" ", args)));
 
+    // Create the instance
     var tests = new Instances(new BufferedReader(new FileReader(path)));
 
+    // Prepate the dataset
     final J48 classifier = (J48)SerializationHelper.read("./j48.model");
     final var stringToWordVector =
         (StringToWordVector)SerializationHelper.read("./stwv.filter");
     tests = Filter.useFilter(tests, stringToWordVector);
     tests.setClassIndex(0);
 
+    // Classify
     for (int i = 0; i < tests.numInstances(); i++) {
       final var score = classifier.classifyInstance(tests.instance(i));
       final var prediction = tests.classAttribute().value((int)score);

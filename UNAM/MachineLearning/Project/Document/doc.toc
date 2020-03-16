@@ -1,0 +1,21 @@
+\babel@toc {spanish}{}
+\contentsline {part}{I\hspace {1em}Marco Te\IeC {\'o}rico}{2}{part.1}% 
+\contentsline {chapter}{\numberline {1}Aprendizaje Supervisado}{3}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Definici\IeC {\'o}n}{3}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Accuracy}{4}{subsection.1.1.1}% 
+\contentsline {chapter}{\numberline {2}Arboles de Decision}{5}{chapter.2}% 
+\contentsline {part}{II\hspace {1em}Clasificaci\IeC {\'o}n de Textos}{7}{part.2}% 
+\contentsline {chapter}{\numberline {3}El problema}{8}{chapter.3}% 
+\contentsline {subsection}{\numberline {3.0.1}Importancia de resolverlo}{8}{subsection.3.0.1}% 
+\contentsline {chapter}{\numberline {4}El dataset / Business Understanding}{9}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}La propuesta}{11}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}La implementaci\IeC {\'o}n}{12}{chapter.6}% 
+\contentsline {subsection}{\numberline {6.0.1}Preparaci\IeC {\'o}n de los datos}{12}{subsection.6.0.1}% 
+\contentsline {subsection}{\numberline {6.0.2}Creaci\IeC {\'o}n del clasificador}{13}{subsection.6.0.2}% 
+\contentsline {subsection}{\numberline {6.0.3}Evaluaci\IeC {\'o}n}{13}{subsection.6.0.3}% 
+\contentsline {subsection}{\numberline {6.0.4}interpretaci\IeC {\'o}n}{13}{subsection.6.0.4}% 
+\contentsline {subsection}{\numberline {6.0.5}Codigo}{14}{subsection.6.0.5}% 
+\contentsline {subsubsection}{Codigo principal}{14}{section*.7}% 
+\contentsline {subsubsection}{Codigo de pruebas del usuario final}{15}{section*.8}% 
+\contentsline {subsection}{\numberline {6.0.6}Posibles mejoras a futuro}{16}{subsection.6.0.6}% 
+\contentsline {subsection}{\numberline {6.0.7}Conclusi\IeC {\'o}n}{16}{subsection.6.0.7}% 
