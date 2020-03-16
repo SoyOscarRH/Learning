@@ -74,5 +74,6 @@ class Project {
     System.out.println(eval.toSummaryString());
 
     SerializationHelper.write("./j48.model", classifier);
+    SerializationHelper.write("./stwv.filter", stringToWordVector);
   }
 }
