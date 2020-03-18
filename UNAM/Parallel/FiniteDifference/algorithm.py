@@ -41,6 +41,10 @@ for k in range(0, steps_t):
 
     rhs = temperature_at[:, k]
     temperature_at[:, k + 1] = linalg.solve(mat_dig, rhs)
+    print(mat_dig)
+    print(rhs)
+
+    exit(0)
 
 
 # plot the graph

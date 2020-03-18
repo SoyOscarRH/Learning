@@ -1,11 +1,55 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 double initialCondition(double x) { return x * x * (2 - x); }
 
-int steps_x = 50;
-int steps_t = 100;
+const int steps_x = 50;
+const int steps_t = 100;
+
+#define mat_elem(a, y, x, n) (a + ((y) * (n) + (x)))
+
+void swap_row(double* a, double* b, int r1, int r2, int n) {
+  double tmp, *p1, *p2;
+  int i;
+
+  if (r1 == r2) return;
+  for (i = 0; i < n; i++) {
+    p1 = mat_elem(a, r1, i, n);
+    p2 = mat_elem(a, r2, i, n);
+    tmp = *p1, *p1 = *p2, *p2 = tmp;
+  }
+  tmp = b[r1], b[r1] = b[r2], b[r2] = tmp;
+}
+
+void gauss_eliminate(double* a, double* b, double* x, int n) {
+#define A(y, x) (*mat_elem(a, y, x, n))
+  int i, j, col, row, max_row, dia;
+  double max, tmp;
+
+  for (dia = 0; dia < n; dia++) {
+    max_row = dia, max = A(dia, dia);
+
+    for (row = dia + 1; row < n; row++)
+      if ((tmp = fabs(A(row, dia))) > max) max_row = row, max = tmp;
+
+    swap_row(a, b, dia, max_row, n);
+
+    for (row = dia + 1; row < n; row++) {
+      tmp = A(row, dia) / A(dia, dia);
+      for (col = dia + 1; col < n; col++) A(row, col) -= tmp * A(dia, col);
+      A(row, dia) = 0;
+      b[row] -= tmp * b[dia];
+    }
+  }
+  for (row = n - 1; row >= 0; row--) {
+    tmp = b[row];
+    for (j = n - 1; j > row; j--) tmp -= x[j] * A(row, j);
+    x[row] = tmp / A(row, row);
+  }
+#undef A
+}
 
 int main() {
   double time_max = 1.0;
@@ -21,7 +65,6 @@ int main() {
     double point = ((double)i / steps_x) * x_max;
     nodes_x_ini[i] = points_x[i] = point;
     temperature_at[i][0] = initialCondition(point);
-    printf("%g ", temperature_at[i][0]);
   }
 
   double dx = x_max / steps_x;
@@ -44,16 +87,14 @@ int main() {
 
     mat_dig[0][0] = mat_dig[steps_x][steps_x] = 1.0;
 
-    double rhs[steps_t + 1];
+    double rhs[steps_x + 1], x[steps_x + 1];
     for (int i = 0; i < steps_x + 1; ++i) rhs[i] = temperature_at[i][k];
 
-    //temperature_at[:, k + 1] = linalg.solve(mat_dig, rhs);
+    gauss_eliminate((double*)mat_dig, rhs, x, steps_x + 1);
+
+    for (int i = 0; i < steps_x + 1; ++i) temperature_at[i][k + 1] = x[i];
   }
 
-  double x[] = {1, 2, 3, 4, 5, 6};
-  double y[] = {2, 4, 6, 8, 10, 12};
-
-  int count = sizeof(x) / sizeof(double);
 
   FILE* gnuplot = popen("gnuplot", "w");
   fprintf(gnuplot, "set ylabel \"Temperature\"\n");
@@ -63,10 +104,11 @@ int main() {
   fprintf(gnuplot, "plot '-' ");
   fprintf(gnuplot, "with linespoints title 'Ecuacion del calor',");
   fprintf(gnuplot, "'' with linespoints title 'Ecuacion del calor'\n");
-  for (int i = 0; i < count; i++) fprintf(gnuplot, "%g,%g\n", x[i], y[i]);
+  for (int i = 0; i < steps_x + 1; i++) 
+    fprintf(gnuplot, "%g,%g\n", points_x[i], temperature_at[i][(int)round(0.00 / dt)]);
   fprintf(gnuplot, "e\n");
 
-  for (int i = 0; i < count; i++) fprintf(gnuplot, "%g,%g\n", x[i], y[i] + 1);
+  for (int i = 0; i < steps_x + 1; i++) fprintf(gnuplot, "%g,%g\n", points_x[i], temperature_at[i][(int)round(0.05 / dt)]);
   fprintf(gnuplot, "e\n");
   fflush(gnuplot);
 
