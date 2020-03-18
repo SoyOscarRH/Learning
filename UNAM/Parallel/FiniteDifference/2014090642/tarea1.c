@@ -77,7 +77,7 @@ int main() {
 
   for (int _i = 0; _i < n; ++_i) {
     for (int i = 0; i < steps_x + 1; i++) {
-      double y = real_solution(points_x[i]);
+      double y = temperature_at[i][(int)round(interesting_points[_i] / dt)];
       fprintf(gnuplot, "%g,%g\n", points_x[i], y);
     }
 
