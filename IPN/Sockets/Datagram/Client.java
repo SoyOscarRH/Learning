@@ -2,25 +2,21 @@ import java.io.*;
 import java.net.*;
 
 public class Client {
-  static final String ip = "127.0.0.1";
-  static final int myPort = 2001;
-  static final int otherPort = 2000;
+  static final int serverPort = 2000;
+  static final int clientPort = 2001;
 
   public static void main(String[] args) {
-    try (DatagramSocket socket = new DatagramSocket(2001)) {
+    try (final var socket = new DatagramSocket(clientPort)) {
       final var reader = new BufferedReader(new InputStreamReader(System.in));
-      var message = reader.readLine();
-      byte[] data = message.getBytes();
+      final var data = reader.readLine().getBytes();
 
-      final var ip_name = InetAddress.getByName(ip);
-      final var packet = new DatagramPacket(data, data.length, ip_name, otherPort);
-      socket.send(packet);
+      final var ip = InetAddress.getByName("127.0.0.1");
+      socket.send(new DatagramPacket(data, data.length, ip, serverPort));
 
       final var inPacket = new DatagramPacket(new byte[2000], 2000);
       socket.receive(inPacket);
-      message = new String(inPacket.getData(), 0, inPacket.getLength());
-      System.out.println("With message: " + message);
-
+      final var message = new String(inPacket.getData(), 0, inPacket.getLength());
+      System.out.println(">" + message);
     } catch (Exception e) {
       e.printStackTrace();
     }
