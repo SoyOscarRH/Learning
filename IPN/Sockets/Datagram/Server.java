@@ -10,12 +10,12 @@ public class Server {
       while (true) {
         final var inPacket = new DatagramPacket(new byte[2000], 2000);
         socket.receive(inPacket);
-        System.out.println(">" + inPacket.getAddress() + ":" + inPacket.getPort());
+
         final var message = new String(inPacket.getData(), 0, inPacket.getLength());
-        System.out.println("With message: " + message);
+        System.out.println(">" + inPacket.getAddress() + ":" + inPacket.getPort());
+        System.out.println("  " + message);
 
-        final var data = "echo " + message;.getBytes();
-
+        final var data = ("echo " + message).getBytes();
         final var ip = InetAddress.getByName("127.0.0.1");
         final var outPacket = new DatagramPacket(data, data.length, ip, clientPort);
         socket.send(outPacket);
