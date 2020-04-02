@@ -1,35 +1,22 @@
 #include <bitset>
 #include <cstdint>
 #include <iostream>
-#include <unordered_set>
-#include <algorithm>
 using namespace std;
 
-class Solution {
-public:
-  auto isHappy(const int n) -> bool {
-    auto visited = unordered_set<int>{};
-    auto current = n;
+auto show_rules(const uint8_t rule_id) {
+  const auto rule = bitset<8>{rule_id};
 
-    while (true) {
-      auto next = 0;
-      for (auto digit = 0; current != 0; current /= 10) {
-        digit = current % 10;
-        next += digit * digit;
-      }
+  cout << "Rule " << rule.to_ulong() << endl;
+  for (auto i = 0; i < 8; ++i)
+    cout << bitset<3>(i) << " -> " << rule[i] << endl;
 
-      if (next == 1) return true;
-      if (visited.count(next)) return false;
-
-      visited.insert(next);
-      current = next;
-    }
-
-    return false;
-  }
-};
+  cout << endl;
+}
 
 auto main() -> int {
-  cout << Solution().isHappy(2) << endl;
+  const auto rules = {15, 22, 30, 54, 90, 110};
+  for (const auto rule : rules)
+    show_rules(rule);
+
   return 0;
 }
