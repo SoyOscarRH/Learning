@@ -1,5 +1,4 @@
 const nonEmpty = (x: string) => (x === "" ? "∅" : x);
-const addIfNonEmpty = (a: string, b: string) => (a === "" ? "" : a + b);
 
 const parentesis = (x: string) => {
   if (x.length < 2) return x;
@@ -22,6 +21,15 @@ const and = (x: Array<string>) => {
     .filter(e => e !== "ε^*")
     .map(e => parentesis(e))
     .join("");
+};
+
+const kleeneClosure = (x: string) => {
+  const data = x.split(" + ");
+  const result = data.filter(e => e !== "ε").join(" + ");
+
+  if (!result) return "";
+
+  return `(${result}^*)`;
 };
 
 const memo = [
@@ -60,12 +68,12 @@ function R(i: number, j: number, k: number): string {
   const a = R(i, j, k - 1);
 
   const b = parentesis(R(i, k, k - 1));
-  const c = parentesis(R(k, k, k - 1));
+  const c = R(k, k, k - 1);
   let d = parentesis(R(k, j, k - 1));
 
   if (c === "ε" && d === "ε") d = "";
 
-  const concat = and([b, addIfNonEmpty(c, "^*"), d]);
+  const concat = and([b, kleeneClosure(c), d]);
   return nonEmpty(or([a, concat]));
 }
 
