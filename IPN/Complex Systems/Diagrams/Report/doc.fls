@@ -297,21 +297,21 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-utf8.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-iso-8859-1.def
-INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/result1.out
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/result1.output
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
-INPUT ../Code/result1.out
-INPUT ../Code/result1.out
+INPUT ../Code/result1.output
+INPUT ../Code/result1.output
 INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/connections.cpp
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT ../Code/connections.cpp
 INPUT ../Code/connections.cpp
-INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/result2.out
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/result2.output
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
-INPUT ../Code/result2.out
-INPUT ../Code/result2.out
+INPUT ../Code/result2.output
+INPUT ../Code/result2.output
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/eccc1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/eccc1095.tfm
@@ -361,11 +361,11 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
-INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/ecuations.out
+INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/../Code/ecuations.22
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
-INPUT ../Code/ecuations.out
-INPUT ../Code/ecuations.out
+INPUT ../Code/ecuations.22
+INPUT ../Code/ecuations.22
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1440.tfm
 OUTPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/doc.thm
 INPUT /Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/doc.aux

@@ -32,37 +32,37 @@ const kleeneClosure = (x: string) => {
   return `(${result}^*)`;
 };
 
-const memo = [
+const path = [
   ["", "", "", ""],
   ["", "", "", ""],
   ["", "", "", ""],
   ["", "", "", ""]
 ];
 
-memo[0][0] = "0";
-memo[0][1] = "1";
-memo[1][2] = "1";
-memo[1][3] = "0";
-memo[2][0] = "1";
-memo[2][1] = "0";
-memo[3][2] = "0";
-memo[3][3] = "0";
+path[0][0] = "0";
+path[0][1] = "1";
+path[1][2] = "1";
+path[1][3] = "0";
+path[2][0] = "1";
+path[2][1] = "0";
+path[3][2] = "0";
+path[3][3] = "0";
 
-memo[1][1] = "ε";
-memo[2][2] = "ε";
+path[1][1] = "ε";
+path[2][2] = "ε";
 
-memo[0][2] = "∅";
-memo[0][3] = "∅";
-memo[1][0] = "∅";
-memo[2][3] = "∅";
-memo[3][0] = "∅";
-memo[3][1] = "∅";
+path[0][2] = "∅";
+path[0][3] = "∅";
+path[1][0] = "∅";
+path[2][3] = "∅";
+path[3][0] = "∅";
+path[3][1] = "∅";
 
-memo[0][0] = memo[0][0] + " + ε";
-memo[3][3] = memo[3][3] + " + ε";
+path[0][0] = path[0][0] + " + ε";
+path[3][3] = path[3][3] + " + ε";
 
 function R(i: number, j: number, k: number): string {
-  if (k === 0) return memo[i][j];
+  if (k === 0) return path[i][j];
 
   //console.log(`${a}+${b}(${c})^*${d}`);
   const a = R(i, j, k - 1);

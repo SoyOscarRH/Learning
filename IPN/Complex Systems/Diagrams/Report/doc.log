@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  2 APR 2020 20:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.15)  2 APR 2020 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1127,8 +1127,8 @@ Package rerunfilecheck Info: File `doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 621.
  ) 
 Here is how much of TeX's memory you used:
- 25644 strings out of 492616
- 438855 string characters out of 6128982
+ 25646 strings out of 492616
+ 438865 string characters out of 6128982
  995780 words of memory out of 5000000
  28846 multiletter control sequences out of 15000+600000
  558185 words of font info for 88 fonts, out of 8000000 for 9000
@@ -1139,7 +1139,7 @@ pdfTeX warning (dest): name{section.2.0} has been referenced but does not exist,
 pdfTeX warning (dest): name{section.1.0} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx3583.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on "/Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/doc.pdf" (10 pages, 592568 bytes).
+Output written on "/Users/soyoscarrh/Documents/Projects/Learning/IPN/Complex Systems/Diagrams/Report/doc.pdf" (10 pages, 592550 bytes).
 PDF statistics:
  636 PDF objects out of 1000 (max. 8388607)
  579 compressed objects within 6 object streams
