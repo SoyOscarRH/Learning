@@ -518,40 +518,72 @@
 
 \chapter{Diagramas de Bruijn}
 
+  \begin{wrapfigure}{r}{0.35\textwidth}
+      \centering
+      \includegraphics[width=0.3\textwidth]{Graphics/Diagram.png}
+  \end{wrapfigure}
+
   Los diagramas de Bruijn proporcionan una manera conveniente de describir las
   configuraciones de autómatas celulares (CA). 
+
+  Sea $\Sigma$ el alfabeto y $s \geq 1$ un número, y el grafo de Bruijn 
+  $B (s, \Sigma)$ como sigue: $B (s, \Sigma)$ tiene un conjunto de vértices $\Sigma^s$ y vertices
+  $(ax, xb)$ para todo $a, b \in \Sigma, x \in \Sigma^s$.
+
 
   Para calcular estos tuve que mostrar las reglas de una manera que me permitiera
   facilmente crear los diagramas, para eso cree este pequeño programa en \texttt{C++} 
   que me permite mostrarlas de una manera comoda ss:
   \lstinputlisting[language=c++]{../Code/rules.cpp}
   
-  Giving this:
-  \lstinputlisting[language=c++]{../Code/result1.out}
+  Dando este resultado:
+  \begin{multicols}{6}
+    \lstinputlisting[language=c++]{../Code/result1.out}
+  \end{multicols}
 
+  Podemos editarlo un poco para saber el valor de las conexiones del diagrama:
+  \lstinputlisting[language=c++]{../Code/connections.cpp}
+  \begin{multicols}{3}
+    \lstinputlisting[language=c++]{../Code/result2.out}
+  \end{multicols}
 
+  Con esto listo podemos calcular facilmente los diagramas de Bruijn.
+
+  \begin{multicols}{2}
   \section{Regla 15}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram15.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram15.png}
 
   \section{Regla 22}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram22.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram22.png}
 
   \section{Regla 30}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram30.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram30.png}
 
   \section{Regla 54}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram54.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram54.png}
 
   \section{Regla 90}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram90.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram90.png}
 
   \section{Regla 110}
-    \includegraphics[width=0.6\textwidth]{Graphics/Diagram110.png}
+    \includegraphics[width=0.45\textwidth]{Graphics/Diagram110.png}
+  \end{multicols}
 
   \clearpage
 
+\chapter{Ecuaciones simbólicas (expresiones regulares)}
 
+  Una vez que construyeron los diagramas podemos calcular todas las ecuaciones simbólicas 
+  (expresiones regulares). Hasta calcular la ecuación que representa todo el autómata.
 
+  La expresión mas importante es:
+  \large{
+    \begin{align}
+      R_{i,j}^k = R_{i,j}^{k-1} + \; R_{i,k}^{k-1} \; (R_{k,k}^{k-1})^* \; R_{k,j}^{k-1}
+    \end{align}
+  }
+  
+  \cite{Genaro}
 
 \begin{thebibliography}{10}
 
@@ -564,23 +596,18 @@
       \textit{A New Kind of Science}. 
       Wolfram Stephen, 2002 \\
 
-  \bibitem{3} 
-      \textit{The Structure of the Element ary
-      Cellular Automata Rule Space}. 
-      Wentian Li, 1990 \\
-      Santa Fe Institute, 1120 Canyon Road, Santa Fe, NM 87501, USA
+  \bibitem{Genaro} 
+      \textit{On Patterns and Dynamics of Rule 22 Cellular Automaton}. 
+      Genaro J. Martínez,
+      Andrew Adamatzky,
+      Rolf Hoffmann,
+      Rennes, France,
+      Ivan Zelinka
 
-  \bibitem{4} 
-      \textit{Undecidability of CA Classification Schemes}. 
-      Karel C ulik II, 1988 \\
-      Department of Compu ter Science, University of South Carolina,
-Columbia, SC 29208, USA
-
-
-\bibitem{5} 
-\textit{Introduccion a los automatas celulares elementales}. 
-Carlos Zacarias Reyes Martinez \\
-Escuela Superior de Computo
+  \bibitem{5} 
+    \textit{Introduccion a los automatas celulares elementales}. 
+    Carlos Zacarias Reyes Martinez \\ 
+    Escuela Superior de Computo
 
 \end{thebibliography}
 
