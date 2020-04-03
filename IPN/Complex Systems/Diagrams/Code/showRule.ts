@@ -66,14 +66,12 @@ function R(i: number, j: number, k: number): string {
 
   //console.log(`${a}+${b}(${c})^*${d}`);
   const a = R(i, j, k - 1);
-
   const b = parentesis(R(i, k, k - 1));
   const c = R(k, k, k - 1);
-  let d = parentesis(R(k, j, k - 1));
-
-  if (c === "ε" && d === "ε") d = "";
+  const d = parentesis(R(k, j, k - 1));
 
   const concat = and([b, kleeneClosure(c), d]);
+  
   return nonEmpty(or([a, concat]));
 }
 
