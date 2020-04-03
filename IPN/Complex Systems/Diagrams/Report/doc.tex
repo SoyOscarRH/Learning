@@ -18,7 +18,7 @@
     \author{Oscar Andrés Rosas}                                     %Who I am
 
     \usepackage{subcaption}
-
+    \usepackage{listingsutf8}
     % *********   LANGUAJE    *****************
     \usepackage[spanish]{babel}                                     %Please allow me to type in spanish
     \usepackage[utf8]{inputenc}                                     %Lets use UFT-8
@@ -450,9 +450,7 @@
         inputencoding       = utf8/latin1                           %Allow me to use special chars
     }
  
-    \lstset{style = CompilandoStyleSolarized}                          %Use this style
-
-
+    \lstset{style = CompilandoStyleSolarized, literate = {epsilon}{{\tiny$\epsilon$}}1 {empty}{{\tiny$\emptyset$}}1 }                          %Use this style
 
 % =====================================================
 % ============        COVER PAGE       ================
@@ -582,6 +580,13 @@
       R_{i,j}^k = R_{i,j}^{k-1} + \; R_{i,k}^{k-1} \; (R_{k,k}^{k-1})^* \; R_{k,j}^{k-1}
     \end{align}
   }
+
+  Podemos crear un programa que se encarge de generar estas ecuaciones:
+  \lstinputlisting{../Code/showRule.ts}
+
+  Logrando estas ecuaciones para la regla 22:
+  \lstinputlisting[language=c]{../Code/ecuations.out}
+
   
   \cite{Genaro}
 
