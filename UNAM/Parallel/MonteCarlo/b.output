@@ -1,57 +1,57 @@
 10 times
-mass = 1.642074
-(xm, yn) = (0.359971, 0.368145)
-mass error = 0.094716
-xm error = 0.352105
-ym error = 0.397471
+mass = 1.474930
+(xm, yn) = (0.807326, 0.819863)
+mass error = 0.016713
+xm error = 0.453071
+ym error = 0.341838
 
 100 times
-mass = 1.510903
-(xm, yn) = (0.610986, 0.656418)
-mass error = 0.007268
-xm error = 0.099686
-ym error = 0.074333
+mass = 1.632575
+(xm, yn) = (0.601853, 0.608797)
+mass error = 0.088384
+xm error = 0.083248
+ym error = 0.003605
 
 1000 times
-mass = 1.532514
-(xm, yn) = (0.570502, 0.594486)
-mass error = 0.021676
-xm error = 0.026821
-ym error = 0.027027
+mass = 1.473612
+(xm, yn) = (0.581663, 0.606817)
+mass error = 0.017592
+xm error = 0.046910
+ym error = 0.006847
 
 10000 times
-mass = 1.491863
-(xm, yn) = (0.562429, 0.621455)
-mass error = 0.005425
-xm error = 0.012291
-ym error = 0.017112
+mass = 1.498105
+(xm, yn) = (0.560489, 0.602842)
+mass error = 0.001264
+xm error = 0.008800
+ym error = 0.013351
 
 10 times
-mass = 3.081311
-(xm, yn) = (-0.515344, -0.146143)
-mass error = 0.156866
-xm error = 0.515344
-ym error = 0.146143
+mass = 2.425109
+(xm, yn) = (0.209750, 0.131589)
+mass error = 0.089503
+xm error = 0.209750
+ym error = 0.131589
 
 100 times
-mass = 2.682961
-(xm, yn) = (0.085540, -0.036718)
-mass error = 0.007307
-xm error = 0.085540
-ym error = 0.036718
+mass = 2.693056
+(xm, yn) = (0.034351, 0.035669)
+mass error = 0.011097
+xm error = 0.034351
+ym error = 0.035669
 
 1000 times
-mass = 2.672459
-(xm, yn) = (0.007907, 0.034299)
-mass error = 0.003364
-xm error = 0.007907
-ym error = 0.034299
+mass = 2.654825
+(xm, yn) = (0.032611, 0.001421)
+mass error = 0.003257
+xm error = 0.032611
+ym error = 0.001421
 
 10000 times
-mass = 2.667546
-(xm, yn) = (-0.000339, -0.007798)
-mass error = 0.001519
-xm error = 0.000339
-ym error = 0.007798
+mass = 2.666633
+(xm, yn) = (0.018292, 0.003600)
+mass error = 0.001176
+xm error = 0.018292
+ym error = 0.003600
 
-Time taken: 0.002416
+Time taken: 0.013798
