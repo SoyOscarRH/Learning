@@ -8,17 +8,7 @@ import java.util.Iterator;
 
 public class Server {
   public static void main(String[] args) throws SocketException, IOException {
-    final var nets = Collections.list(NetworkInterface.getNetworkInterfaces());
-    for (final var net : nets) Helper.displayInterfaceInfo(net);
-
-    final var channel = DatagramChannel.open(StandardProtocolFamily.INET);
-    channel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
-
-    final var netInterface = NetworkInterface.getByName(Helper.netInterface);
-    channel.setOption(StandardSocketOptions.IP_MULTICAST_IF, netInterface);
-    InetAddress group = InetAddress.getByName(Helper.host);
-    channel.join(group, netInterface);
-    channel.configureBlocking(false);
+    final var channel = Helper.getDatagramChannel();
     channel.socket().bind(new InetSocketAddress(Helper.port));
 
     final var selector = Selector.open();
