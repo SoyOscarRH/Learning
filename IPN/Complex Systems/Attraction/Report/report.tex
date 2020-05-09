@@ -479,7 +479,7 @@
 
     % ============ NAME OF THE BOOK  ===============
     \href{\ProjectNameLink}                                         %Link to Author
-    {\fontsize{45}{52}\selectfont \textbf{Autómata Celulares}}\\[0.5cm] %Name of the book
+    {\fontsize{45}{52}\selectfont \textbf{Autómata Celulares y diagramas de atracción}}\\[0.5cm] %Name of the book
     \textcolor{ColorSubtext}{\textsc{\Huge Sistemas Complejos}}     %Name of the general theme
     
     \vfill                                                          %Fill the space
@@ -523,21 +523,22 @@
         \clearpage
         \section{Definición}
 
-        Un autómata celular es un sistema dinámico discreto que consiste en una red regular
-        de autómatas (celdas) de estado finito que cambian sus estados dependiendo de los estados de sus
-        vecinos (y del mismo), de acuerdo con una función de transferencia. 
-        
-        Todas las células cambian su estado simultáneamente usando la misma regla de actualización. 
-        El proceso se repite en pasos de tiempo discretos. 
-        Resulta que con reglas de actualización sorprendentemente simples se pueden producir 
-        dinámicas extremadamente complejas como en el famoso Juego de la vida de John Conway.  \cite{Kari}
+        Los autómatas celulares son modelos matemáticos que valga la redundancia, modelan
+        sistemas dinámicos, los cuales evolucionan con el paso del tiempo. Los autómatas
+        celulares fueron descubiertos por John von Neumann en la década de 1940, y fue
+        descrito en su libro Theory of Self-reproducing Automata. John von Neumann tenía
+        como objetivo modelar una máquina, que fuese capaz de auto replicarse, al intentar
+        esto llego a un modelo matemático, el cual describe a dicha máquina con ciertas
+        reglas sobre una red rectangular.
 
-        El aspecto que mas los caracteriza es su capacidad de lograr una serie de propiedades 
-        que surgen de la propia dinámica local a través del paso del tiempo y no desde un inicio, 
-        aplicándose a todo el sistema en general. Por lo tanto, no es fácil analizar las propiedades 
-        globales de un AC desde su comienzo, complejo por naturaleza, si no es por medio de una 
-        simulación, partiendo de un estado o configuración inicial de células y cambiando en cada
-        instante los estados de todas ellas de forma síncrona.
+        Como ya se ha mencionado anteriormente, un autómata celular es un modelo matemático
+        para un sistema dinámico, este sistema evoluciona con el paso del tiempo. El autómata celular está compuesto por células o celdas las cuales adquieren ciertos valores
+        o estados. Al ser este un sistema dinámico y al evolucionar a través del tiempo
+        los estados o valores que tienen las células cambian de un instante a otro, esto en
+        unidades de tiempo discreto, en otras palabras es posible hacer una cuantización.
+        Siendo así, el cunjunto de células evolucionan según la expresión matemática, la cual
+        evolucionará según los estados de las células vecinas, a esto se le conoce como regla
+        de transición local.
         
       \subsection{Caracteristicas}
       \begin{itemize}
@@ -558,6 +559,40 @@
 
       Por lo tanto, definimos formalmente a un autómata celular 
       correspondiente como la 4-tupla $A = (d, S, N, f)$.
+
+  \chapter{Juego de la vida y parecidos}
+
+    Para esta práctica se ha creado nuestro primer autómata celular, el cual cumple la
+    función local del "Juego de la vida". El juego de la vida es un autómata celular
+    que fue diseñado por el matemático John Horton Conway en 1970. Este se trata
+    de un juego de cero jugadores, es decir, el estado de evolución está definido por el
+    estado inicial y no requiere entrada de datos alguna posteriormente. El tablero de
+    este juego es una matriz formada con células (espacios cuadrados) que se extienden
+    por el infinito a toda dirección. Cada célula tiene ocho células vecinas, que son las
+    que están más próximas a ella, incluidas las diagonales, de forma gráfica.
+    
+    El “tablero del juego” es una malla plana formada por cuadrados
+    (las células) que se extienden por el infinito en todas las direcciones. Por
+    lo tanto, cada célula tiene 8 células “vecinas”, que son las que están más
+    próximas a ella, incluidas las diagonales. Las células tienen dos estados: están
+    “vivas” o están “muertas” (o “encendidas” y “apagadas”). El estado de las
+    células evoluciona a lo largo de unidades de tiempo discretas (se podría decir
+    que por turnos). El estado de todas las células se tiene en cuenta para calcular
+    el estado de las mismas al turno siguiente. Todas las células se actualizan
+    simultáneamente en cada turno. Siguiendo las reglas R(2, 3, 3, 3).
+    
+    El “tablero del juego” es una malla plana formada
+    por cuadrados (las células) que se extienden por el infinito en todas las
+    direcciones. Por lo tanto, cada célula tiene 8 células “vecinas”.
+
+      Aqui dejo algunas caputas de pantallas:
+      \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=0.35\textwidth]{Game1.png}
+        \includegraphics[width=0.35\textwidth]{Game2.png}
+        \includegraphics[width=0.35\textwidth]{Game3.png}
+        \includegraphics[width=0.35\textwidth]{Game4.png}
+      \end{figure}
 
 
   \chapter{Diagramas de Atracción}
@@ -698,6 +733,26 @@
           de manera indefinida.
         \end{itemize}
 
+        Ademas usando Wolfram Cloud podemos ver otra forma de ver le mismo grafo:
+
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=0.8\textwidth]{life3x3.png}
+          \caption{Game of Life 3x3}
+        \end{figure}
+
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=0.4\textwidth]{life3x31.png}
+          \caption{Game of Life 3x3}
+        \end{figure}
+
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=0.8\textwidth]{life3x32.png}
+          \caption{Game of Life 3x3}
+        \end{figure}
+
       \clearpage
       \section{4x4}
 
@@ -718,6 +773,13 @@
 
        Fue lo mejor que se pudo hacer, pero por lo poco que se puede ver, vemos que tenemos igualmente al cero como el
        gran maximo, pero que a su alrededor hay varios cumulos de nodos.
+
+       Ademas usando Wolfram Cloud podemos ver otra forma de ver le mismo grafo, que si que da mas informacion:
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=\textwidth]{life4x4.png}
+          \caption{Game of Life 4x4}
+        \end{figure}
 
        \clearpage
        \section{5x5}
@@ -794,9 +856,23 @@
           \includegraphics[height=0.4\textwidth]{dif43.png}
           \includegraphics[height=0.4\textwidth]{dif44.png}
           \includegraphics[height=0.4\textwidth]{dif45.png}
+          \caption{Difusión 4x4}
         \end{figure}
 
         Cuanta complejidad.
+
+        Ademas usando Wolfram Cloud podemos ver otra forma de ver le mismo grafo, que si que da mas informacion:
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=\textwidth]{dif4x4.png}
+          \caption{Difusión 4x4}
+        \end{figure}
+
+        \begin{figure}[ht!]
+          \centering
+          \includegraphics[height=\textwidth]{dif4x42.png}
+          \caption{Difusión 4x4}
+        \end{figure}
 
        \section{5x5}
 
