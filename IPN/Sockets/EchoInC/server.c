@@ -10,7 +10,7 @@
 
 #include "./error.h"
 
-const size_t max_list = 5;
+const int max_waiting_connections = 5;
 const size_t buffer_size = 1024;
 
 void manage(int);
@@ -19,27 +19,28 @@ int main(int argc, char** argv) {
   if (argc != 2) show_final_message("Use: [<port>]");
   in_port_t port = atoi(argv[1]);
 
-  const int socket_id = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-  if (socket_id < 0) show_final_message("Error opening a socket");
+  const int socket_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (socket_fd < 0) show_final_message("Error opening a socket_communication");
 
   struct sockaddr_in server;
   {
     memset(&server, 0, sizeof(server));
     server.sin_family = AF_INET;
-    server.sin_addr.s_addr = htons(INADDR_ANY);
     server.sin_port = htons(port);
+    server.sin_addr.s_addr = htons(INADDR_ANY);
   }
 
-  if (bind(socket_id, (struct sockaddr*)&server, sizeof(server)) < 0) show_final_message("Error at binding");
-  if (listen(socket_id, max_list) < 0) show_final_message("Error at listening");
+  const struct sockaddr* generic_address = (struct sockaddr*)&server;
+  if (bind(socket_fd, generic_address, sizeof(server)) < 0) show_final_message("Error at binding");
+  if (listen(socket_fd, max_waiting_connections) < 0) show_final_message("Error at listening");
 
   while (1) {
-    printf("Server ready...\n");
+    printf("Server ready for new connections :) ...\n");
     struct sockaddr_in client;
 
     socklen_t size_of_struct = sizeof(client);
-    int socket = accept(socket_id, (struct sockaddr*)&client, &size_of_struct);
-    if (socket < 0) show_final_message("Fail at connection");
+    int socket_communication = accept(socket_fd, (struct sockaddr*)&client, &size_of_struct);
+    if (socket_communication < 0) show_final_message("Fail at connection");
 
     char client_name[INET_ADDRSTRLEN];
     if (inet_ntop(AF_INET, &client.sin_addr.s_addr, client_name, sizeof(client_name)))
@@ -47,24 +48,19 @@ int main(int argc, char** argv) {
     else
       printf("Not possible to connect\n");
 
-    manage(socket);
+    manage(socket_communication);
   }
 }
 
-void manage(const int socket) {
+void manage(const int socket_communication) {
   char buffer[buffer_size];
 
-  ssize_t num_bytes_received = recv(socket, buffer, buffer_size, 0);
+  ssize_t num_bytes_received = recv(socket_communication, buffer, buffer_size, 0);
   if (num_bytes_received < 0) show_final_message("Failed reception");
 
-  while (num_bytes_received > 0) {
-    const ssize_t num_bytes_sent = send(socket, buffer, num_bytes_received, 0);
-    if (num_bytes_sent < 0) show_final_message("Error sending data");
-    if (num_bytes_sent == 0) show_final_message("Wrong number of bytes sent");
+  const ssize_t num_bytes_sent = send(socket_communication, buffer, num_bytes_received, 0);
+  if (num_bytes_sent < 0) show_final_message("Error sending data");
+  if (num_bytes_sent == 0) show_final_message("Wrong number of bytes sent");
 
-    num_bytes_received = recv(socket, buffer, buffer_size, 0);
-    if (num_bytes_received < 0) show_final_message("Error in the writing of received data");
-  }
-
-  close(socket);
+  close(socket_communication);
 }
