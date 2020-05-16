@@ -16,7 +16,7 @@ const size_t buffer_size = 1024;
 void manage(int);
 
 int main(int argc, char** argv) {
-  if (argc != 2) show_final_message("Use: [<port>]");
+  if (argc != 2) show_final_message("Use: port");
   in_port_t port = atoi(argv[1]);
 
   const int socket_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);

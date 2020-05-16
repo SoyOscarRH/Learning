@@ -11,12 +11,11 @@
 const size_t buffer_size = 2000;
 
 int main(int argc, char** argv) {
-  if (argc < 3 || argc > 4) show_final_message("Use: <server address> <word> [<port>]");
+  if (argc != 4) show_final_message("Use: <server address> <port> <word>");
 
   char* const server_address = argv[1];
-  char* const word_to_send = argv[2];
-
-  in_port_t port = (argc == 4) ? atoi(argv[3]) : 7;
+  in_port_t port = atoi(argv[2]);
+  char* const word_to_send = argv[3];
 
   const int socket_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
   if (socket_fd < 0) show_final_message("Error opening a socket");
