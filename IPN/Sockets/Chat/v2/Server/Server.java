@@ -50,14 +50,14 @@ public class Server {
    * and <private> to open a personal chat with another user.
    */
 
-  public static void handle_message(String message) throws IOException {
+  public static void handle_message(final String message) throws IOException {
     final var message_part = message.split(" ");
     final var message_type = message_part[0].toLowerCase();
 
-    if (message_type.equals("<init>")) {
-      final var info = "<init>".getBytes();
-      server.send(new DatagramPacket(info, info.length, group, port_client));
+    final var info = message_type.getBytes();
+    server.send(new DatagramPacket(info, info.length, group, port_client));
 
+    if (message_type.equals("<init>")) {
       final var userName = message.substring(message_part[0].length() + 1) + " ";
       onlineUserNames.add(userName);
       try (final var byteStream = new ByteArrayOutputStream()) {
@@ -77,21 +77,10 @@ public class Server {
     }
 
     if (message_type.equals("<msg>")) {
-      message = "";
-      String type = "<msg>";
-      String aux = "";
-      byte[] b1 = type.getBytes();
-      DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, port_client);
-      server.send(p1);
-      for (int i = 1; i < message_part.length; i++) {
-        message = message + message_part[i] + " ";
-      } // End for.
-      aux = Emotion.replaceEmotions(message);
-      message = aux;
-      byte[] b = message.getBytes();
-      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
-      server.send(p);
-    } // End if.
+      final var actual_message = message.substring(message_part[0].length() + 1);
+      final var raw_data = Emotion.replaceEmotions(actual_message).getBytes();
+      server.send(new DatagramPacket(raw_data, raw_data.length, group, port_client));
+    }
 
     if (message_type.equals("<private>")) {
       String msgFrom = message_part[message_part.length - 1];
@@ -100,10 +89,9 @@ public class Server {
         msgFor = msgFor + message_part[i];
       } // End for.
       System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
-      String type = "<private>";
-      byte[] b = type.getBytes();
-      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
-      server.send(p);
+
+      byte[] b;
+
       b = msgFrom.getBytes();
       DatagramPacket p1 = new DatagramPacket(b, b.length, group, port_client);
       server.send(p1);
