@@ -7,12 +7,12 @@ import java.util.Hashtable;
 class PrivateServer {
   public static void startServer() {
     final var host_to_port = new Hashtable<String, Integer>();
-    try (final var server1 = new DatagramSocket(9709)) {
+    try (final var server = new DatagramSocket(9709)) {
       System.out.println("Private server is online");
 
       while (true) {
         final var packet = new DatagramPacket(new byte[1024], 1024);
-        server1.receive(packet);
+        server.receive(packet);
         String message = new String(packet.getData(), 0, packet.getLength());
 
         System.out.printf("private message from: %s:%s\n", packet.getAddress(), packet.getPort());
@@ -33,8 +33,8 @@ class PrivateServer {
           byte[] raw = Emotion.replaceEmotions(message).getBytes();
           final var address = InetAddress.getByName("127.0.0.1");
 
-          server1.send(new DatagramPacket(raw, raw.length, packet.getAddress(), packet.getPort()));
-          server1.send(new DatagramPacket(raw, raw.length, address, host_to_port.get(user)));
+          server.send(new DatagramPacket(raw, raw.length, packet.getAddress(), packet.getPort()));
+          server.send(new DatagramPacket(raw, raw.length, address, host_to_port.get(user)));
         }
       }
     } catch (Exception e) {
