@@ -20,37 +20,32 @@ public class Server {
     Runnable t = () -> Private.PrivateServerSocket();
     new Thread(t).start();
 
+    onlineUserNames = new ArrayList<String>();
+
     try {
-      onlineUserNames = new ArrayList<String>();
       System.setProperty("java.net.preferIPv4Stack", "true");
+
+      group = InetAddress.getByName(address);
       server = new MulticastSocket(port_server);
-      System.out.println("\n\tMulticast service initialized...");
-      group = null;
-      try {
-        group = InetAddress.getByName(address);
-      } catch (UnknownHostException e) {
-        System.err.println("\n\tInvalid address.");
-        System.exit(0);
-      } // End try - catch.
       server.joinGroup(group);
       server.setTimeToLive(200);
+      System.out.println("Server is online\n");
+
       while (true) {
-        DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-        server.receive(p);
-        String msg = new String(p.getData(), 0, p.getLength());
-        System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
-            + "\n\tMessage: " + msg);
-        Type(msg);
-        try {
-          Thread.sleep(5000);
-        } catch (InterruptedException ie) {
-        } // End try - catch.
-      } // End for.
+        final var packet = new DatagramPacket(new byte[1024], 1024);
+        server.receive(packet);
+
+        var message = new String(packet.getData(), 0, packet.getLength());
+        System.out.printf("message from: %s:%s", packet.getAddress(), packet.getPort());
+        System.out.printf("\tdata: %s\n\n", message);
+
+        Type(message);
+        Thread.sleep(500);
+      }
     } catch (Exception e) {
       e.printStackTrace();
-    } // End try - catch.
-
-  } // End main.
+    }
+  }
 
   /* The type of the message received from the client
    * can be <msg>, <init> or <private>. If it'server <msg>, the
