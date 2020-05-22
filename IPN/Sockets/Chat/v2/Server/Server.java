@@ -9,11 +9,12 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class Server {
+  public static int port_server = 9000, port_client = 9001;
+  public static String address = "230.1.1.1";
+
   protected static ArrayList<String> onlineUserNames;
-  private static MulticastSocket s;
+  private static MulticastSocket server;
   public static InetAddress group;
-  public static int ports, portc;
-  public static String address;
 
   public static void main(String[] args) {
     Runnable t = () -> Private.PrivateServerSocket();
@@ -22,10 +23,7 @@ public class Server {
     try {
       onlineUserNames = new ArrayList<String>();
       System.setProperty("java.net.preferIPv4Stack", "true");
-      ports = 9000;
-      portc = 9001;
-      address = "230.1.1.1";
-      s = new MulticastSocket(ports);
+      server = new MulticastSocket(port_server);
       System.out.println("\n\tMulticast service initialized...");
       group = null;
       try {
@@ -34,11 +32,11 @@ public class Server {
         System.err.println("\n\tInvalid address.");
         System.exit(0);
       } // End try - catch.
-      s.joinGroup(group);
-      s.setTimeToLive(200);
+      server.joinGroup(group);
+      server.setTimeToLive(200);
       while (true) {
         DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-        s.receive(p);
+        server.receive(p);
         String msg = new String(p.getData(), 0, p.getLength());
         System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
             + "\n\tMessage: " + msg);
@@ -55,7 +53,7 @@ public class Server {
   } // End main.
 
   /* The type of the message received from the client
-   * can be <msg>, <init> or <private>. If it's <msg>, the
+   * can be <msg>, <init> or <private>. If it'server <msg>, the
    * server will send the message to the common chat window,
    * <init> if a new user wants to join to the conversation,
    * and <private> to open a personal chat with another user.
@@ -71,8 +69,8 @@ public class Server {
       byte[] b = type.getBytes();
       byte[] b1;
       String user;
-      DatagramPacket p = new DatagramPacket(b, b.length, group, portc);
-      s.send(p);
+      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
+      server.send(p);
       for (int i = 1; i < sp.length; i++) {
         userName = userName + sp[i] + " ";
       } // End for.
@@ -81,8 +79,8 @@ public class Server {
       for (int i = 0; i < onlineUserNames.size(); i++) {
         user = onlineUserNames.get(i);
         b1 = user.getBytes();
-        DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, portc);
-        s.send(p1);
+        DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, port_client);
+        server.send(p1);
       } // End for.
     } // End if.
 
@@ -90,16 +88,16 @@ public class Server {
       String type = "<msg>";
       String aux = "";
       byte[] b1 = type.getBytes();
-      DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, portc);
-      s.send(p1);
+      DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, port_client);
+      server.send(p1);
       for (int i = 1; i < sp.length; i++) {
         msg = msg + sp[i] + " ";
       } // End for.
       aux = Emotion.replaceEmotions(msg);
       msg = aux;
       byte[] b = msg.getBytes();
-      DatagramPacket p = new DatagramPacket(b, b.length, group, portc);
-      s.send(p);
+      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
+      server.send(p);
     } // End if.
 
     if (sp[0].equalsIgnoreCase("<private>")) {
@@ -111,14 +109,14 @@ public class Server {
       System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
       String type = "<private>";
       byte[] b = type.getBytes();
-      DatagramPacket p = new DatagramPacket(b, b.length, group, portc);
-      s.send(p);
+      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
+      server.send(p);
       b = msgFrom.getBytes();
-      DatagramPacket p1 = new DatagramPacket(b, b.length, group, portc);
-      s.send(p1);
+      DatagramPacket p1 = new DatagramPacket(b, b.length, group, port_client);
+      server.send(p1);
       b = msgFor.getBytes();
-      DatagramPacket p2 = new DatagramPacket(b, b.length, group, portc);
-      s.send(p2);
+      DatagramPacket p2 = new DatagramPacket(b, b.length, group, port_client);
+      server.send(p2);
     } // End if.
 
   } // End Type.
@@ -130,7 +128,7 @@ public class Server {
         stream.flush();
 
         final var data = byteStream.toByteArray();
-        s.send(new DatagramPacket(data, data.length, group, portc));
+        server.send(new DatagramPacket(data, data.length, group, port_client));
       }
     }
   }
