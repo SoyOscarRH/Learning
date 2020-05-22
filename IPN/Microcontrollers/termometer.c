@@ -5,7 +5,7 @@ typedef unsigned char u8;
 typedef unsigned int u16;
 typedef unsigned long int u32;
 
-typedef double f32;
+typedef float f16;
 
 #define ADC_VREF_TYPE ((0 << REFS1) | (0 << REFS0) | (0 << ADLAR))
 
@@ -33,8 +33,7 @@ void main(void) {
 
   u32 units, tens, hundreds;
   u32 current;
-  u32 is_farenheite = 1;
-  f32 transformer;
+  f16 farenheite, celsius;
 
   {
     // Input/Output Ports initialization
@@ -162,14 +161,11 @@ void main(void) {
 
   while (1) {
     current = (read_adc(0) * MAX_VALUE) / ADC_MAX;
-    
-    if (PORTD.0) is_farenheite = !is_farenheite;
 
-    if (is_farenheite) {
-      transformer = current;
-      transformer = (1.8 * transformer) + 32;
-      current = transformer;
-    }
+    celsius = current;
+    farenheite = (1.8 * celsius) + 32;
+    
+    current = PORTD.0? farenheite : celsius;
 
     units = current % 10;
     tens = (current / 10) % 10;
