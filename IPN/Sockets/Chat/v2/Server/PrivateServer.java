@@ -5,17 +5,14 @@ import java.net.InetAddress;
 import java.util.Hashtable;
 
 class PrivateServer {
-  static Hashtable<String, Integer> ht;
-  final static String host = "127.0.0.1";
-  final static int port = 9709;
-
+  static Hashtable<String, Integer> host_to_port;
   private static DatagramSocket server;
 
   public static void startServer() {
-    ht = new Hashtable<String, Integer>();
+    host_to_port = new Hashtable<String, Integer>();
 
     try {
-      server = new DatagramSocket(port);
+      server = new DatagramSocket(9709);
       System.out.println("Private server is online");
 
       while (true) {
@@ -31,12 +28,13 @@ class PrivateServer {
 
         if (server[0].equalsIgnoreCase("<init>")) {
           for (int i = 1; i < server.length; i++) msg = msg + server[i];
-          ht.put(msg, packet.getPort());
+          host_to_port.put(msg, packet.getPort());
         }
 
         if (server[0].equalsIgnoreCase("<msg>")) {
           for (int i = 2; i < server.length; i++) msg = msg + server[i] + " ";
-          Message(packet, msg, server[1]);
+          final var user = server[1];
+          Message(packet, msg, user);
         }
       }
     } catch (Exception e) {
@@ -49,7 +47,7 @@ class PrivateServer {
     byte[] b = msg.getBytes();
     DatagramPacket p1 = new DatagramPacket(b, b.length, p.getAddress(), p.getPort());
     server.send(p1);
-    p = new DatagramPacket(b, b.length, InetAddress.getByName(host), ht.get(user));
+    p = new DatagramPacket(b, b.length, InetAddress.getByName("127.0.0.1"), host_to_port.get(user));
     server.send(p);
   }
 }
