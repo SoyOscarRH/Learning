@@ -16,7 +16,7 @@ public class Server {
   public static InetAddress group;
 
   public static void main(String[] args) {
-    new Thread(() -> Private.PrivateServerSocket()).start();
+    new Thread(() -> PrivateServer.startServer()).start();
 
     onlineUserNames = new ArrayList<String>();
 
@@ -25,7 +25,7 @@ public class Server {
       server = new MulticastSocket(port_server);
       server.joinGroup(group);
       server.setTimeToLive(200);
-      System.out.println("Server is online\n");
+      System.out.println("Server is online");
 
       while (true) {
         final var packet = new DatagramPacket(new byte[1024], 1024);
