@@ -43,13 +43,6 @@ public class Server {
     }
   }
 
-  /* The type of the message received from the client
-   * can be <msg>, <init> or <private>. If it'server <msg>, the
-   * server will send the message to the common chat window,
-   * <init> if a new user wants to join to the conversation,
-   * and <private> to open a personal chat with another user.
-   */
-
   public static void handle_message(final String message) throws IOException {
     final var message_part = message.split(" ");
     final var message_type = message_part[0].toLowerCase();
@@ -83,22 +76,16 @@ public class Server {
     }
 
     if (message_type.equals("<private>")) {
-      String msgFrom = message_part[message_part.length - 1];
-      String msgFor = "";
-      for (int i = 1; i < message_part.length - 2; i++) {
-        msgFor = msgFor + message_part[i];
-      } // End for.
-      System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
+      final var userFrom = message_part[message_part.length - 1];
+      var userFor = "";
+      for (int i = 1; i < message_part.length - 2; i++) userFor += message_part[i];
+      System.out.printf("\tprivate message for: |%s| -> |%s|\n", userFor, userFrom);
 
-      byte[] b;
+      final var raw_from = userFrom.getBytes();
+      server.send(new DatagramPacket(raw_from, raw_from.length, group, port_client));
 
-      b = msgFrom.getBytes();
-      DatagramPacket p1 = new DatagramPacket(b, b.length, group, port_client);
-      server.send(p1);
-      b = msgFor.getBytes();
-      DatagramPacket p2 = new DatagramPacket(b, b.length, group, port_client);
-      server.send(p2);
-    } // End if.
-
-  } // End Type.
+      final var raw_for = userFor.getBytes();
+      server.send(new DatagramPacket(raw_for, raw_for.length, group, port_client));
+    }
+  }
 }
