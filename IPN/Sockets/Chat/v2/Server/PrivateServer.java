@@ -6,48 +6,46 @@ import java.util.Hashtable;
 
 class PrivateServer {
   static Hashtable<String, Integer> host_to_port;
-  private static DatagramSocket server;
+  private static DatagramSocket server1;
 
   public static void startServer() {
     host_to_port = new Hashtable<String, Integer>();
 
     try {
-      server = new DatagramSocket(9709);
+      server1 = new DatagramSocket(9709);
       System.out.println("Private server is online");
 
       while (true) {
         final var packet = new DatagramPacket(new byte[1024], 1024);
-        server.receive(packet);
+        server1.receive(packet);
         String message = new String(packet.getData(), 0, packet.getLength());
 
-        System.out.printf("private message from: %s:%s", packet.getAddress(), packet.getPort());
+        System.out.printf("private message from: %s:%s\n", packet.getAddress(), packet.getPort());
         System.out.printf("\tdata: %s\n\n", message);
 
         String[] server = message.split(" ");
-        String msg = "";
+        final var message_type = server[0].toLowerCase();
 
-        if (server[0].equalsIgnoreCase("<init>")) {
-          for (int i = 1; i < server.length; i++) msg = msg + server[i];
-          host_to_port.put(msg, packet.getPort());
+        message = "";
+
+        if (message_type.equals("<init>")) {
+          for (int i = 1; i < server.length; i++) message += server[i];
+          host_to_port.put(message, packet.getPort());
         }
 
-        if (server[0].equalsIgnoreCase("<msg>")) {
-          for (int i = 2; i < server.length; i++) msg = msg + server[i] + " ";
+        if (message_type.equals("<msg>")) {
+          for (int i = 2; i < server.length; i++) message += server[i] + " ";
           final var user = server[1];
-          Message(packet, msg, user);
+          message = Emotion.replaceEmotions(message);
+          byte[] raw = message.getBytes();
+          final var address = InetAddress.getByName("127.0.0.1");
+
+          server1.send(new DatagramPacket(raw, raw.length, packet.getAddress(), packet.getPort()));
+          server1.send(new DatagramPacket(raw, raw.length, address, host_to_port.get(user)));
         }
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
-  }
-
-  public static void Message(DatagramPacket p, String msg, String user) throws IOException {
-    msg = Emotion.replaceEmotions(msg);
-    byte[] b = msg.getBytes();
-    DatagramPacket p1 = new DatagramPacket(b, b.length, p.getAddress(), p.getPort());
-    server.send(p1);
-    p = new DatagramPacket(b, b.length, InetAddress.getByName("127.0.0.1"), host_to_port.get(user));
-    server.send(p);
   }
 }
