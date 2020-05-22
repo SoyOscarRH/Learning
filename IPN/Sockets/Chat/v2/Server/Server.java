@@ -33,7 +33,7 @@ public class Server {
         var message = new String(packet.getData(), 0, packet.getLength());
 
         System.out.printf("message from: %s:%s", packet.getAddress(), packet.getPort());
-        System.out.printf("\tusers: [%s]\n", String.join(",", onlineUserNames));
+        System.out.printf("\tusers: [%s]\n", String.join("|", onlineUserNames));
         System.out.printf("\tdata: %s\n\n", message);
 
         handle_message(message);
@@ -55,25 +55,26 @@ public class Server {
     final var message_type = message_part[0].toLowerCase();
 
     if (message_type.equals("<init>")) {
-      String type = "<init>";
-      String userName = "";
-      byte[] b = type.getBytes();
-      byte[] b1;
-      String user;
-      DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
-      server.send(p);
-      for (int i = 1; i < message_part.length; i++) {
-        userName = userName + message_part[i] + " ";
-      } // End for.
+      final var info = "<init>".getBytes();
+      server.send(new DatagramPacket(info, info.length, group, port_client));
+
+      final var userName = message.substring(message_part[0].length() + 1) + " ";
       onlineUserNames.add(userName);
-      sendNumberOfOnlineUsersToClient();
-      for (int i = 0; i < onlineUserNames.size(); i++) {
-        user = onlineUserNames.get(i);
-        b1 = user.getBytes();
-        DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, port_client);
-        server.send(p1);
-      } // End for.
-    } // End if.
+      try (final var byteStream = new ByteArrayOutputStream()) {
+        try (final var stream = new DataOutputStream(byteStream)) {
+          stream.writeInt(onlineUserNames.size());
+          stream.flush();
+
+          final var data = byteStream.toByteArray();
+          server.send(new DatagramPacket(data, data.length, group, port_client));
+        }
+      }
+
+      for (final var user : onlineUserNames) {
+        final var raw_data = user.getBytes();
+        server.send(new DatagramPacket(raw_data, raw_data.length, group, port_client));
+      }
+    }
 
     if (message_type.equals("<msg>")) {
       message = "";
@@ -112,16 +113,4 @@ public class Server {
     } // End if.
 
   } // End Type.
-
-  public static void sendNumberOfOnlineUsersToClient() throws IOException {
-    try (final var byteStream = new ByteArrayOutputStream()) {
-      try (final var stream = new DataOutputStream(byteStream)) {
-        stream.writeInt(onlineUserNames.size());
-        stream.flush();
-
-        final var data = byteStream.toByteArray();
-        server.send(new DatagramPacket(data, data.length, group, port_client));
-      }
-    }
-  }
 }
