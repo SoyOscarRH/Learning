@@ -36,6 +36,7 @@ public class Server {
         server.receive(packet);
 
         var message = new String(packet.getData(), 0, packet.getLength());
+        System.out.printf("users: %s\n", String.join(", ", onlineUserNames));
         System.out.printf("message from: %s:%s", packet.getAddress(), packet.getPort());
         System.out.printf("\tdata: %s\n\n", message);
 
