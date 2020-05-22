@@ -1,4 +1,3 @@
-
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,14 +16,11 @@ public class Server {
   public static InetAddress group;
 
   public static void main(String[] args) {
-    Runnable t = () -> Private.PrivateServerSocket();
-    new Thread(t).start();
+    new Thread(() -> Private.PrivateServerSocket()).start();
 
     onlineUserNames = new ArrayList<String>();
 
     try {
-      System.setProperty("java.net.preferIPv4Stack", "true");
-
       group = InetAddress.getByName(address);
       server = new MulticastSocket(port_server);
       server.joinGroup(group);
@@ -34,14 +30,13 @@ public class Server {
       while (true) {
         final var packet = new DatagramPacket(new byte[1024], 1024);
         server.receive(packet);
-
         var message = new String(packet.getData(), 0, packet.getLength());
-        System.out.printf("users: %s\n", String.join(", ", onlineUserNames));
+
         System.out.printf("message from: %s:%s", packet.getAddress(), packet.getPort());
+        System.out.printf("\tusers: [%s]\n", String.join(",", onlineUserNames));
         System.out.printf("\tdata: %s\n\n", message);
 
-        Type(message);
-        Thread.sleep(500);
+        handle_message(message);
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -55,11 +50,11 @@ public class Server {
    * and <private> to open a personal chat with another user.
    */
 
-  public static void Type(String msg) throws IOException {
-    String[] sp = msg.split(" ");
-    msg = "";
+  public static void handle_message(String message) throws IOException {
+    final var message_part = message.split(" ");
+    final var message_type = message_part[0].toLowerCase();
 
-    if (sp[0].equalsIgnoreCase("<init>")) {
+    if (message_type.equals("<init>")) {
       String type = "<init>";
       String userName = "";
       byte[] b = type.getBytes();
@@ -67,8 +62,8 @@ public class Server {
       String user;
       DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
       server.send(p);
-      for (int i = 1; i < sp.length; i++) {
-        userName = userName + sp[i] + " ";
+      for (int i = 1; i < message_part.length; i++) {
+        userName = userName + message_part[i] + " ";
       } // End for.
       onlineUserNames.add(userName);
       sendNumberOfOnlineUsersToClient();
@@ -80,27 +75,28 @@ public class Server {
       } // End for.
     } // End if.
 
-    if (sp[0].equalsIgnoreCase("<msg>")) {
+    if (message_type.equals("<msg>")) {
+      message = "";
       String type = "<msg>";
       String aux = "";
       byte[] b1 = type.getBytes();
       DatagramPacket p1 = new DatagramPacket(b1, b1.length, group, port_client);
       server.send(p1);
-      for (int i = 1; i < sp.length; i++) {
-        msg = msg + sp[i] + " ";
+      for (int i = 1; i < message_part.length; i++) {
+        message = message + message_part[i] + " ";
       } // End for.
-      aux = Emotion.replaceEmotions(msg);
-      msg = aux;
-      byte[] b = msg.getBytes();
+      aux = Emotion.replaceEmotions(message);
+      message = aux;
+      byte[] b = message.getBytes();
       DatagramPacket p = new DatagramPacket(b, b.length, group, port_client);
       server.send(p);
     } // End if.
 
-    if (sp[0].equalsIgnoreCase("<private>")) {
-      String msgFrom = sp[sp.length - 1];
+    if (message_type.equals("<private>")) {
+      String msgFrom = message_part[message_part.length - 1];
       String msgFor = "";
-      for (int i = 1; i < sp.length - 2; i++) {
-        msgFor = msgFor + sp[i];
+      for (int i = 1; i < message_part.length - 2; i++) {
+        msgFor = msgFor + message_part[i];
       } // End for.
       System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
       String type = "<private>";
