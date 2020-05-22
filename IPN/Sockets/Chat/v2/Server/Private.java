@@ -4,7 +4,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Hashtable;
 
-public class Private {
+class Private {
   protected static Hashtable<String, Integer> ht;
   protected static String host;
   private static DatagramSocket s;
@@ -49,17 +49,14 @@ public class Private {
 
   public static void Init(DatagramPacket p, String user) {
     ht.put(user, p.getPort());
-
-  } // End Init.
+  }
 
   public static void Message(DatagramPacket p, String msg, String user) throws IOException {
-    msg = Main.Emoticon(msg);
+    msg = Emotion.replaceEmotions(msg);
     byte[] b = msg.getBytes();
     DatagramPacket p1 = new DatagramPacket(b, b.length, p.getAddress(), p.getPort());
     s.send(p1);
     p = new DatagramPacket(b, b.length, InetAddress.getByName(host), ht.get(user));
     s.send(p);
-
-  } // End Message.
-
-} // End Private class.
+  }
+}
