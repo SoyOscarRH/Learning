@@ -41,7 +41,7 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
   public static String un;
   public static Thread t;
 
-  public ChatRoom(String s) {
+  public ChatRoom(final String s) {
     super("TeamWork-Chat: " + s);
     this.getContentPane().setBackground(Color.white);
     dlm = new DefaultListModel<String>();
@@ -96,16 +96,16 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
 
     /* Mouse event listener. */
     onlineUsers.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent event) {
-        JList list = (JList) event.getSource();
+      public void mouseClicked(final MouseEvent event) {
+        final JList list = (JList) event.getSource();
         if (event.getClickCount() == 2) {
-          int index = list.locationToIndex(event.getPoint());
-          String msgFor = (String) list.getModel().getElementAt(index);
+          final int index = list.locationToIndex(event.getPoint());
+          final String msgFor = (String) list.getModel().getElementAt(index);
           privateMsg = "<private> " + list.getModel().getElementAt(index) + "from " + username;
           counter++;
           try {
             PrivateMessage(msgFor);
-          } catch (IOException e) {
+          } catch (final IOException e) {
             e.printStackTrace();
           } // End try - catch.
         } // End if.
@@ -134,15 +134,15 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
    */
 
   @Override
-  public void actionPerformed(ActionEvent e) {
+  public void actionPerformed(final ActionEvent e) {
     if (e.getSource() == tf) {
       String s = tf.getText();
       s = "<msg> " + un + " " + s;
-      byte[] b = s.getBytes();
+      final byte[] b = s.getBytes();
       try {
-        DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
+        final DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
         Main.cl.send(p);
-      } catch (Exception e1) {
+      } catch (final Exception e1) {
         e1.printStackTrace();
       } // End try - catch.
       tf.setText("");
@@ -151,9 +151,9 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
   } // End actionPerformed.
 
   public void Logotype() {
-    ImageIcon ic = new ImageIcon("Logo.png");
-    Image im = ic.getImage();
-    ImageIcon ic1 = new ImageIcon(im.getScaledInstance(90, 70, Image.SCALE_SMOOTH));
+    final ImageIcon ic = new ImageIcon("Logo.png");
+    final Image im = ic.getImage();
+    final ImageIcon ic1 = new ImageIcon(im.getScaledInstance(90, 70, Image.SCALE_SMOOTH));
     logo.setIcon(ic1);
 
   } // End Logotype.
@@ -172,10 +172,12 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
        */
       String type = "";
       try {
-        DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+        final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
         Main.cl.receive(p);
         type = new String(p.getData(), 0, p.getLength());
-      } catch (IOException e) {
+        System.out.printf("== %s ===\n", type);
+
+      } catch (final IOException e) {
         e.printStackTrace();
       } // End try - catch.
 
@@ -183,16 +185,22 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
         dlm.clear();
         aList.clear();
         try {
-          int numUsers = OnlineUsers();
+          final int numUsers = OnlineUsers();
+          System.out.printf("== %d ===\n", numUsers);
           String user = "";
           for (int i = 0; i < numUsers; i++) {
-            DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+            final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
             Main.cl.receive(p);
             user = new String(p.getData(), 0, p.getLength());
+            System.out.printf("== %s ===\n", user);
             aList.add(user);
             dlm.addElement(aList.get(i));
           } // End for.
-        } catch (IOException e) {
+
+          onlineUsers.setModel(dlm);
+          onlineUsers.updateUI();
+
+        } catch (final IOException e) {
           e.printStackTrace();
         } // End try - catch.
 
@@ -201,12 +209,12 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
       if (type.equalsIgnoreCase("<msg>")) {
         String msg = "";
         try {
-          DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+          final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
           Main.cl.receive(p);
           msg = new String(p.getData(), 0, p.getLength());
           System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
               + "\n\tMessage: " + msg);
-        } catch (IOException e) {
+        } catch (final IOException e) {
           e.printStackTrace();
         } // End try - catch.
         aux = aux + msg + "<BR>";
@@ -223,20 +231,20 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
           p = new DatagramPacket(new byte[1500], 1500);
           Main.cl.receive(p);
           msgFor = new String(p.getData(), 0, p.getLength());
-        } catch (IOException e) {
+        } catch (final IOException e) {
           e.printStackTrace();
         } // End try - catch.
         System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
         if (msgFor.equalsIgnoreCase(username)) {
           try {
-            Private pmsg = new Private();
-            String s = "<init> <" + username + ">";
-            byte[] b = s.getBytes();
+            final Private pmsg = new Private();
+            final String s = "<init> <" + username + ">";
+            final byte[] b = s.getBytes();
             p = new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports);
             Private.cl.send(p);
             pmsg.Components(username, msgFrom);
 
-          } catch (Exception e) {
+          } catch (final Exception e) {
             e.printStackTrace();
           } // End try - catch.
         } // End if.
@@ -254,10 +262,10 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
 
   public static int OnlineUsers() throws IOException {
     int numUsers = 0;
-    DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+    final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
     Main.cl.receive(p);
-    ByteArrayInputStream bais = new ByteArrayInputStream(p.getData());
-    DataInputStream dis = new DataInputStream(bais);
+    final ByteArrayInputStream bais = new ByteArrayInputStream(p.getData());
+    final DataInputStream dis = new DataInputStream(bais);
     numUsers = (int) dis.readInt();
 
     return numUsers;
@@ -272,13 +280,13 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
    */
 
   public static void PrivateMessage(String msgFor) throws IOException {
-    String[] s1 = msgFor.split(" ");
+    final String[] s1 = msgFor.split(" ");
     msgFor = s1[0];
     byte[] b = privateMsg.getBytes();
     DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
     Main.cl.send(p);
-    Private pmsg = new Private();
-    String s = "<init> <" + username + ">";
+    final Private pmsg = new Private();
+    final String s = "<init> <" + username + ">";
     b = s.getBytes();
     p = new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports);
     Private.cl.send(p);

@@ -1,5 +1,4 @@
 package Main;
-import GUI.Private;
 import GUI.StartDialog;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
@@ -18,7 +17,6 @@ public class Main {
       cl.setTimeToLive(200);
       
       StartDialog.show();
-
     } catch (Exception e) {
       e.printStackTrace();
     }
