@@ -33,7 +33,7 @@ public class StartDialog {
         final var username = userName.getText();
         final var raw = ("<init> " + username).getBytes();
         Main.cl.send(new DatagramPacket(raw, raw.length, Main.group, Main.ports));
-        new ChatRoom(username).Components();
+        new ChatRoom(username);
         dialog.dispose();
       } catch (final IOException expection) {
         expection.printStackTrace();

@@ -23,7 +23,7 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-public class ChatRoom extends JFrame implements ActionListener, Runnable {
+public class ChatRoom extends JFrame {
   private static final long serialVersionUID = 1L;
   public static DefaultListModel<String> dlm;
   public static JList<String> onlineUsers;
@@ -49,7 +49,100 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
     aList = new ArrayList<String>();
     label = new JLabel("Online Users:");
     ep = new JEditorPane();
-    t = new Thread(this);
+    t = new Thread(() -> {
+      for (;;) {
+        /* Receive the type of the datagram packet; <msg>, <init> or <private>,
+         * depending the message there is an if sentence for any case.
+         */
+        String type = "";
+        try {
+          final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
+          Main.cl.receive(p);
+          type = new String(p.getData(), 0, p.getLength());
+          System.out.printf("== %s ===\n", type);
+
+        } catch (final IOException e) {
+          e.printStackTrace();
+        } // End try - catch.
+
+        if (type.equalsIgnoreCase("<init>")) {
+          dlm.clear();
+          aList.clear();
+          try {
+            int numUsers = 0;
+            final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+            Main.cl.receive(p);
+            final ByteArrayInputStream bais = new ByteArrayInputStream(p.getData());
+            final DataInputStream dis = new DataInputStream(bais);
+            numUsers = (int) dis.readInt();
+
+            System.out.printf("== %d ===\n", numUsers);
+            String user = "";
+            for (int i = 0; i < numUsers; i++) {
+              final DatagramPacket p2 = new DatagramPacket(new byte[1024], 1024);
+              Main.cl.receive(p2);
+              user = new String(p2.getData(), 0, p2.getLength());
+              System.out.printf("== %s ===\n", user);
+              aList.add(user);
+              dlm.addElement(aList.get(i));
+            } // End for.
+
+            onlineUsers.setModel(dlm);
+            onlineUsers.updateUI();
+
+          } catch (final IOException e) {
+            e.printStackTrace();
+          } // End try - catch.
+
+        } // End if.
+
+        if (type.equalsIgnoreCase("<msg>")) {
+          String msg = "";
+          try {
+            final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+            Main.cl.receive(p);
+            msg = new String(p.getData(), 0, p.getLength());
+            System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
+                + "\n\tMessage: " + msg);
+          } catch (final IOException e) {
+            e.printStackTrace();
+          } // End try - catch.
+          aux = aux + msg + "<BR>";
+          ep.setText(aux);
+        } // End if.
+
+        if (type.equalsIgnoreCase("<private>")) {
+          DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
+          String msgFrom = "";
+          String msgFor = "";
+          try {
+            Main.cl.receive(p);
+            msgFrom = new String(p.getData(), 0, p.getLength());
+            p = new DatagramPacket(new byte[1500], 1500);
+            Main.cl.receive(p);
+            msgFor = new String(p.getData(), 0, p.getLength());
+          } catch (final IOException e) {
+            e.printStackTrace();
+          } // End try - catch.
+          System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
+          if (msgFor.equalsIgnoreCase(username)) {
+            try {
+              final Private pmsg = new Private();
+              final String s2 = "<init> <" + username + ">";
+              final byte[] b = s2.getBytes();
+              p = new DatagramPacket(
+                  b, b.length, InetAddress.getByName(Private.host), Private.ports);
+              Private.cl.send(p);
+              pmsg.Components(username, msgFrom);
+
+            } catch (final Exception e) {
+              e.printStackTrace();
+            } // End try - catch.
+          } // End if.
+        } // End if.
+
+      } // End forever.
+    });
     tf = new JTextField();
     logo = new JLabel();
     scroller1 = new JScrollPane(
@@ -62,22 +155,18 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
     t.start();
     aux = "";
 
-  } // End constructor.
-
-  public void Components() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
     setResizable(false);
     setSize(400, 400);
     setVisible(true);
     setLayout(null);
-    Logotype();
-    Attributes();
 
-  } // End Components.
+    final ImageIcon ic = new ImageIcon("Logo.png");
+    final Image im = ic.getImage();
+    final ImageIcon ic1 = new ImageIcon(im.getScaledInstance(90, 70, Image.SCALE_SMOOTH));
+    logo.setIcon(ic1);
 
-  public void Attributes() {
-    /* Attributes. */
     onlineUsers.setBounds(300, 125, 70, 160);
     scroller1.setBounds(300, 125, 80, 170);
     scroller.setBounds(20, 20, 260, 280);
@@ -122,23 +211,10 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
     add(logo);
     add(tf);
 
-    /* Action Performed. */
-    tf.addActionListener(this);
-
-  } // End Attributes.
-
-  /* When the user press the enter key in the TextField "tf",
-   * the messages will be sended to the server with a type of
-   * message, in this case will be "<msg>" for message in
-   * the common chat room.
-   */
-
-  @Override
-  public void actionPerformed(final ActionEvent e) {
-    if (e.getSource() == tf) {
-      String s = tf.getText();
-      s = "<msg> " + un + " " + s;
-      final byte[] b = s.getBytes();
+    tf.addActionListener(e -> {
+      String s2 = tf.getText();
+      s2 = "<msg> " + un + " " + s2;
+      final byte[] b = s2.getBytes();
       try {
         final DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
         Main.cl.send(p);
@@ -146,131 +222,9 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
         e1.printStackTrace();
       } // End try - catch.
       tf.setText("");
-    } // End if.
+    });
 
-  } // End actionPerformed.
-
-  public void Logotype() {
-    final ImageIcon ic = new ImageIcon("Logo.png");
-    final Image im = ic.getImage();
-    final ImageIcon ic1 = new ImageIcon(im.getScaledInstance(90, 70, Image.SCALE_SMOOTH));
-    logo.setIcon(ic1);
-
-  } // End Logotype.
-
-  /* This thread will be waiting the datagrams in a for ever loop from the server,
-   * in the thread there is a auxiliar string that concatenates all the messages,
-   * this string it's the one that the EditorPane will display. Also will update the
-   * online users list.
-   */
-
-  @Override
-  public void run() {
-    for (;;) {
-      /* Receive the type of the datagram packet; <msg>, <init> or <private>,
-       * depending the message there is an if sentence for any case.
-       */
-      String type = "";
-      try {
-        final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
-        Main.cl.receive(p);
-        type = new String(p.getData(), 0, p.getLength());
-        System.out.printf("== %s ===\n", type);
-
-      } catch (final IOException e) {
-        e.printStackTrace();
-      } // End try - catch.
-
-      if (type.equalsIgnoreCase("<init>")) {
-        dlm.clear();
-        aList.clear();
-        try {
-          final int numUsers = OnlineUsers();
-          System.out.printf("== %d ===\n", numUsers);
-          String user = "";
-          for (int i = 0; i < numUsers; i++) {
-            final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(p);
-            user = new String(p.getData(), 0, p.getLength());
-            System.out.printf("== %s ===\n", user);
-            aList.add(user);
-            dlm.addElement(aList.get(i));
-          } // End for.
-
-          onlineUsers.setModel(dlm);
-          onlineUsers.updateUI();
-
-        } catch (final IOException e) {
-          e.printStackTrace();
-        } // End try - catch.
-
-      } // End if.
-
-      if (type.equalsIgnoreCase("<msg>")) {
-        String msg = "";
-        try {
-          final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-          Main.cl.receive(p);
-          msg = new String(p.getData(), 0, p.getLength());
-          System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
-              + "\n\tMessage: " + msg);
-        } catch (final IOException e) {
-          e.printStackTrace();
-        } // End try - catch.
-        aux = aux + msg + "<BR>";
-        ep.setText(aux);
-      } // End if.
-
-      if (type.equalsIgnoreCase("<private>")) {
-        DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-        String msgFrom = "";
-        String msgFor = "";
-        try {
-          Main.cl.receive(p);
-          msgFrom = new String(p.getData(), 0, p.getLength());
-          p = new DatagramPacket(new byte[1500], 1500);
-          Main.cl.receive(p);
-          msgFor = new String(p.getData(), 0, p.getLength());
-        } catch (final IOException e) {
-          e.printStackTrace();
-        } // End try - catch.
-        System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
-        if (msgFor.equalsIgnoreCase(username)) {
-          try {
-            final Private pmsg = new Private();
-            final String s = "<init> <" + username + ">";
-            final byte[] b = s.getBytes();
-            p = new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports);
-            Private.cl.send(p);
-            pmsg.Components(username, msgFrom);
-
-          } catch (final Exception e) {
-            e.printStackTrace();
-          } // End try - catch.
-        } // End if.
-      } // End if.
-
-    } // End forever.
-
-  } // End Thread.
-
-  /* Method called from the thread, avoid the client to know how many users
-   * are online, the information it's sended by the server, the method returns
-   * an integer an it will be the number of packets that the client must
-   * expect receive from the server.
-   */
-
-  public static int OnlineUsers() throws IOException {
-    int numUsers = 0;
-    final DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-    Main.cl.receive(p);
-    final ByteArrayInputStream bais = new ByteArrayInputStream(p.getData());
-    final DataInputStream dis = new DataInputStream(bais);
-    numUsers = (int) dis.readInt();
-
-    return numUsers;
-
-  } // End OnlineUsers.
+  } // End Attributes.
 
   /* Method called from a nested method if the program detect a mouse event,
    * send a string to the socket with the label "<private>", opens a new
