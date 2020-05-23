@@ -89,9 +89,9 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
     tf.setForeground(Color.blue);
     ep.setForeground(Color.blue);
 
-    onlineUsers.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-    tf.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-    ep.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+    onlineUsers.setFont(new Font("Times New Roman", Font.BOLD, 12));
+    tf.setFont(new Font("Times New Roman", Font.BOLD, 12));
+    ep.setFont(new Font("Times New Roman", Font.BOLD, 12));
     label.setFont(new Font("Helvetica", Font.BOLD, 14));
 
     /* Mouse event listener. */
@@ -228,16 +228,17 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
         } // End try - catch.
         System.out.println("\n\tPrivate Message for: " + msgFor + ". From: " + msgFrom + ".");
         if (msgFor.equalsIgnoreCase(username)) {
-          Private pmsg = new Private();
-          String s = "<init> <" + username + ">";
-          byte[] b = s.getBytes();
           try {
+            Private pmsg = new Private();
+            String s = "<init> <" + username + ">";
+            byte[] b = s.getBytes();
             p = new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports);
             Private.cl.send(p);
+            pmsg.Components(username, msgFrom);
+
           } catch (Exception e) {
             e.printStackTrace();
           } // End try - catch.
-          pmsg.Components(username, msgFrom);
         } // End if.
       } // End if.
 
