@@ -23,27 +23,27 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-public class ChatRoom extends JFrame {
-  private static final long serialVersionUID = 1L;
-  public static DefaultListModel<String> dlm;
-  public static JList<String> onlineUsers;
-  protected static JScrollPane scroller1;
-  public static ArrayList<String> aList;
-  protected static JScrollPane scroller;
-  protected static String username;
-  public static String privateMsg;
-  protected static JEditorPane ep;
-  protected static JTextField tf;
-  protected static JLabel label;
-  protected static JLabel logo;
-  public static int counter;
-  public static String aux;
-  public static String un;
-  public static Thread t;
+public class ChatRoom {
+  String username;
+  String privateMsg;
+  String aux = "";
 
   public ChatRoom(final String s) {
-    super("TeamWork-Chat: " + s);
-    this.getContentPane().setBackground(Color.white);
+    final var frame = new JFrame("TeamWork-Chat: " + s);
+
+    DefaultListModel<String> dlm;
+    JList<String> onlineUsers;
+    JScrollPane scroller1;
+    ArrayList<String> aList;
+    JScrollPane scroller;
+    JEditorPane ep;
+    JTextField tf;
+    JLabel label;
+    JLabel logo;
+    String un;
+    Thread t;
+
+    frame.getContentPane().setBackground(Color.white);
     dlm = new DefaultListModel<String>();
     onlineUsers = new JList<String>(dlm);
     aList = new ArrayList<String>();
@@ -151,16 +151,14 @@ public class ChatRoom extends JFrame {
         ep, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     un = s + ":";
     username = s;
-    counter = -1;
     t.start();
-    aux = "";
 
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLocationRelativeTo(null);
-    setResizable(false);
-    setSize(400, 400);
-    setVisible(true);
-    setLayout(null);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setLocationRelativeTo(null);
+    frame.setResizable(false);
+    frame.setSize(400, 400);
+    frame.setVisible(true);
+    frame.setLayout(null);
 
     final ImageIcon ic = new ImageIcon("Logo.png");
     final Image im = ic.getImage();
@@ -191,7 +189,6 @@ public class ChatRoom extends JFrame {
           final int index = list.locationToIndex(event.getPoint());
           final String msgFor = (String) list.getModel().getElementAt(index);
           privateMsg = "<private> " + list.getModel().getElementAt(index) + "from " + username;
-          counter++;
           try {
             PrivateMessage(msgFor);
           } catch (final IOException e) {
@@ -205,11 +202,11 @@ public class ChatRoom extends JFrame {
     onlineUsers.setModel(dlm);
     ep.setEditable(false);
 
-    add(scroller1);
-    add(scroller);
-    add(label);
-    add(logo);
-    add(tf);
+    frame.add(scroller1);
+    frame.add(scroller);
+    frame.add(label);
+    frame.add(logo);
+    frame.add(tf);
 
     tf.addActionListener(e -> {
       String s2 = tf.getText();
@@ -223,8 +220,7 @@ public class ChatRoom extends JFrame {
       } // End try - catch.
       tf.setText("");
     });
-
-  } // End Attributes.
+  }
 
   /* Method called from a nested method if the program detect a mouse event,
    * send a string to the socket with the label "<private>", opens a new
@@ -233,7 +229,7 @@ public class ChatRoom extends JFrame {
    * and the username of the requester user.
    */
 
-  public static void PrivateMessage(String msgFor) throws IOException {
+  void PrivateMessage(String msgFor) throws IOException {
     final String[] s1 = msgFor.split(" ");
     msgFor = s1[0];
     byte[] b = privateMsg.getBytes();
