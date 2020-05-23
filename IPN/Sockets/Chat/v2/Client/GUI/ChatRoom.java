@@ -1,6 +1,6 @@
 package GUI;
 
-import ClientSocket.Client;
+import Main.Main;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -140,8 +140,8 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
       s = "<msg> " + un + " " + s;
       byte[] b = s.getBytes();
       try {
-        DatagramPacket p = new DatagramPacket(b, b.length, Client.group, Client.ports);
-        Client.cl.send(p);
+        DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
+        Main.cl.send(p);
       } catch (Exception e1) {
         e1.printStackTrace();
       } // End try - catch.
@@ -173,7 +173,7 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
       String type = "";
       try {
         DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-        Client.cl.receive(p);
+        Main.cl.receive(p);
         type = new String(p.getData(), 0, p.getLength());
       } catch (IOException e) {
         e.printStackTrace();
@@ -187,7 +187,7 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
           String user = "";
           for (int i = 0; i < numUsers; i++) {
             DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-            Client.cl.receive(p);
+            Main.cl.receive(p);
             user = new String(p.getData(), 0, p.getLength());
             aList.add(user);
             dlm.addElement(aList.get(i));
@@ -202,7 +202,7 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
         String msg = "";
         try {
           DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-          Client.cl.receive(p);
+          Main.cl.receive(p);
           msg = new String(p.getData(), 0, p.getLength());
           System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
               + "\n\tMessage: " + msg);
@@ -218,10 +218,10 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
         String msgFrom = "";
         String msgFor = "";
         try {
-          Client.cl.receive(p);
+          Main.cl.receive(p);
           msgFrom = new String(p.getData(), 0, p.getLength());
           p = new DatagramPacket(new byte[1500], 1500);
-          Client.cl.receive(p);
+          Main.cl.receive(p);
           msgFor = new String(p.getData(), 0, p.getLength());
         } catch (IOException e) {
           e.printStackTrace();
@@ -254,7 +254,7 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
   public static int OnlineUsers() throws IOException {
     int numUsers = 0;
     DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-    Client.cl.receive(p);
+    Main.cl.receive(p);
     ByteArrayInputStream bais = new ByteArrayInputStream(p.getData());
     DataInputStream dis = new DataInputStream(bais);
     numUsers = (int) dis.readInt();
@@ -274,8 +274,8 @@ public class ChatRoom extends JFrame implements ActionListener, Runnable {
     String[] s1 = msgFor.split(" ");
     msgFor = s1[0];
     byte[] b = privateMsg.getBytes();
-    DatagramPacket p = new DatagramPacket(b, b.length, Client.group, Client.ports);
-    Client.cl.send(p);
+    DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
+    Main.cl.send(p);
     Private pmsg = new Private();
     String s = "<init> <" + username + ">";
     b = s.getBytes();

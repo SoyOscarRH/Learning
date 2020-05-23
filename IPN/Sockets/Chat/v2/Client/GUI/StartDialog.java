@@ -1,6 +1,6 @@
 package GUI;
 
-import ClientSocket.Client;
+import Main.Main;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import javax.swing.JButton;
@@ -32,7 +32,7 @@ public class StartDialog {
       try {
         final var username = userName.getText();
         final var raw = ("<init> " + username).getBytes();
-        Client.cl.send(new DatagramPacket(raw, raw.length, Client.group, Client.ports));
+        Main.cl.send(new DatagramPacket(raw, raw.length, Main.group, Main.ports));
         new ChatRoom(username).Components();
         dialog.dispose();
       } catch (final IOException expection) {
