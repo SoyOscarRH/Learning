@@ -1,17 +1,13 @@
 package Main;
-
 import ClientSocket.Client;
+import GUI.StartDialog;
 import GUI.Private;
-import GUI.Init;
 
 public class Main {
-	
-	public static void main ( String [ ] args ) {
-		Client cl = new Client ( );
-		cl.Launch ( );
-		Private.Launch ( );
-		Init in = new Init ( );
-		in.Launch ( );
-	} // End main.
-
-} // End class.
+  public static void main(final String[] args) {
+    final var cl = new Client();
+    cl.Launch();
+    Private.Launch();
+    StartDialog.show();
+  }
+}
