@@ -22,24 +22,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class ChatRoom {
-  String username;
-  String privateMsg;
   String messages = "";
 
   public ChatRoom(final String username) {
-    this.username = username;
-
     final var onlineUsers = new JList<String>();
     final var messageSection = new JEditorPane();
 
     final var label = new JLabel("Online Users:");
 
     final var newMessageField = new JTextField();
-
-    newMessageField.addActionListener(e -> {
-      Main.send(("<msg> " + username + ": " + newMessageField.getText()).getBytes());
-      newMessageField.setText("");
-    });
 
     final var logo = new JLabel();
 
@@ -48,8 +39,8 @@ public class ChatRoom {
     final var scroller1 = new JScrollPane(onlineUsers, verticalYes, horizontalNo);
     final var scroller = new JScrollPane(messageSection, verticalYes, horizontalNo);
 
-    logo.setIcon(new ImageIcon(
-        new ImageIcon("Logo.png").getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH)));
+    final var image = new ImageIcon("Logo.png").getImage();
+    logo.setIcon(new ImageIcon(image.getScaledInstance(90, 70, Image.SCALE_SMOOTH)));
 
     onlineUsers.setBounds(300, 125, 70, 160);
     scroller1.setBounds(300, 125, 80, 170);
@@ -62,29 +53,11 @@ public class ChatRoom {
     newMessageField.setForeground(Color.blue);
     messageSection.setForeground(Color.blue);
 
-    onlineUsers.setFont(new Font("Times New Roman", Font.BOLD, 14));
-    newMessageField.setFont(new Font("Times New Roman", Font.BOLD, 14));
-    messageSection.setFont(new Font("Times New Roman", Font.BOLD, 15));
-    label.setFont(new Font("Helvetica", Font.BOLD, 15));
-
-    onlineUsers.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(final MouseEvent event) {
-        if (event.getClickCount() != 2)
-          return;
-
-        try {
-          final var list = (JList) event.getSource();
-          final int index = list.locationToIndex(event.getPoint());
-
-          final var msgFor = (String) list.getModel().getElementAt(index);
-          privateMsg = "<private> " + list.getModel().getElementAt(index) + "from " + username;
-
-          PrivateMessage(msgFor);
-        } catch (final IOException e) {
-          e.printStackTrace();
-        }
-      }
-    });
+    final var font = new Font("Helvetica", Font.BOLD, 15);
+    onlineUsers.setFont(font);
+    newMessageField.setFont(font);
+    messageSection.setFont(font);
+    label.setFont(font);
 
     messageSection.setContentType("text/html");
     messageSection.setEditable(false);
@@ -105,6 +78,39 @@ public class ChatRoom {
     frame.setResizable(false);
     frame.setVisible(true);
 
+    newMessageField.addActionListener(e -> {
+      Main.send(("<msg> " + username + ": " + newMessageField.getText()).getBytes());
+      newMessageField.setText("");
+    });
+
+    onlineUsers.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(final MouseEvent event) {
+        if (event.getClickCount() != 2)
+          return;
+
+        try {
+          final var list = (JList) event.getSource();
+          final int index = list.locationToIndex(event.getPoint());
+
+          var msgFor = (String) list.getModel().getElementAt(index);
+          final var privateMsg = "<private> " + msgFor + "from " + username;
+
+          final String[] s1 = msgFor.split(" ");
+          msgFor = s1[0];
+          Main.send(privateMsg.getBytes());
+          final var privateSession = new Private();
+          final var b = ("<init> <" + username + ">").getBytes();
+          Private.cl.send(
+              new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports));
+
+          privateSession.Components(username, msgFor);
+
+        } catch (final IOException e) {
+          e.printStackTrace();
+        }
+      }
+    });
+
     new Thread(() -> {
       while (true) {
         try {
@@ -115,7 +121,7 @@ public class ChatRoom {
           if (type.equals("<init>")) {
             final var users = new DefaultListModel<String>();
 
-            final DatagramPacket p = new DatagramPacket(new byte[1024], 1024);
+            final var p = new DatagramPacket(new byte[1024], 1024);
             Main.cl.receive(p);
 
             final var bytes = new ByteArrayInputStream(p.getData());
@@ -135,12 +141,11 @@ public class ChatRoom {
           }
 
           if (type.equals("<msg>")) {
-            final var packetMessage = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(packetMessage);
-            final var message = new String(packetMessage.getData(), 0, packetMessage.getLength());
+            final var packetMsg = new DatagramPacket(new byte[1024], 1024);
+            Main.cl.receive(packetMsg);
+            final var message = new String(packetMsg.getData(), 0, packetMsg.getLength());
 
-            System.out.printf(
-                "message from: %s:%s\n", packetMessage.getAddress(), packetMessage.getPort());
+            System.out.printf("message from: %s:%s\n", packetMsg.getAddress(), packetMsg.getPort());
             System.out.printf("\tmessage: %s\n", message);
 
             messages += message + "<br />";
@@ -172,23 +177,5 @@ public class ChatRoom {
         }
       }
     }).start();
-  }
-
-  /* Method called from a nested method if the program detect a mouse event,
-   * send a string to the socket with the label "<private>", opens a new
-   * JDialog for private texting with another user. At the same time sends a
-   * message to the UDP socket server with the label <init> to store the port,
-   * and the username of the requester user.
-   */
-
-  void PrivateMessage(String msgFor) throws IOException {
-    final String[] s1 = msgFor.split(" ");
-    msgFor = s1[0];
-    Main.send(privateMsg.getBytes());
-    final var privateSession = new Private();
-    final var b = ("<init> <" + username + ">").getBytes();
-    Private.cl.send(
-        new DatagramPacket(b, b.length, InetAddress.getByName(Private.host), Private.ports));
-    privateSession.Components(username, msgFor);
   }
 }
