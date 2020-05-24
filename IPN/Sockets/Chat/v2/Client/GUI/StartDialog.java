@@ -1,6 +1,6 @@
 package GUI;
 
-import Main.Main;
+import Client.Client;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import javax.swing.JButton;
@@ -29,15 +29,10 @@ public class StartDialog {
     dialog.add(cancel);
 
     confirm.addActionListener(e -> {
-      try {
-        final var username = userName.getText();
-        final var raw = ("<init> " + username).getBytes();
-        Main.cl.send(new DatagramPacket(raw, raw.length, Main.group, Main.ports));
-        new ChatRoom(username);
-        dialog.dispose();
-      } catch (final IOException expection) {
-        expection.printStackTrace();
-      }
+      final var username = userName.getText();
+      Client.send("<init> " + username);
+      new ChatRoom(username);
+      dialog.dispose();
     });
 
     cancel.addActionListener(e -> { dialog.dispose(); });

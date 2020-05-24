@@ -1,6 +1,6 @@
 package GUI;
 
-import Main.Main;
+import Client.Client;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -59,7 +59,7 @@ public class ChatRoom {
     frame.setVisible(true);
 
     newMessageField.addActionListener(e -> {
-      Main.send("<msg> " + username + ": " + newMessageField.getText());
+      Client.send("<msg> " + username + ": " + newMessageField.getText());
       newMessageField.setText("");
     });
 
@@ -75,11 +75,10 @@ public class ChatRoom {
           var msgFor = (String) list.getModel().getElementAt(index);
           final String[] s1 = msgFor.split(" ");
           msgFor = s1[0];
-          System.out.printf("|%s| -> |%s|", username, msgFor);
 
           if (msgFor.equals(username))
             return;
-          Main.send("<private> " + msgFor + " from " + username);
+          Client.send("<private> " + msgFor + " from " + username);
 
           new Private(username, msgFor);
           onlineUsers.clearSelection();
@@ -93,28 +92,29 @@ public class ChatRoom {
     new Thread(() -> {
       while (true) {
         try {
-          final var type = Main.receive().toLowerCase();
+          final var type = Client.receive().toLowerCase();
 
           if (type.equals("<init>")) {
             final var users = new DefaultListModel<String>();
-            final int numUsers = Integer.parseInt(Main.receive());
+            final int numUsers = Integer.parseInt(Client.receive());
 
-            for (var i = 0; i < numUsers; ++i) users.addElement(Main.receive());
+            for (var i = 0; i < numUsers; ++i) users.addElement(Client.receive());
 
             onlineUsers.setModel(users);
             onlineUsers.ensureIndexIsVisible(onlineUsers.getModel().getSize());
           }
 
           if (type.equals("<msg>")) {
-            messages += Main.receive() + "<br />";
+            messages += Client.receive() + "<br />";
             messageSection.setText(messages);
           }
 
           if (type.equals("<private>")) {
-            final var msgFrom = Main.receive();
-            final var msgFor = Main.receive();
+            final var msgFrom = Client.receive();
+            final var msgFor = Client.receive();
 
-            if (msgFor.equals(username)) new Private(username, msgFrom);
+            if (msgFor.equals(username))
+              new Private(username, msgFrom);
           }
         } catch (final Exception e) {
           e.printStackTrace();

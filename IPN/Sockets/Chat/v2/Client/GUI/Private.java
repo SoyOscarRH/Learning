@@ -14,18 +14,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class Private {
-  String aux = "";
+  String messages = "";
 
-  public Private(final String username, final String user) throws Exception {
+  public Private(final String me, final String other) throws Exception {
     final var host = InetAddress.getByName("127.0.0.1");
     final var server_port = 9709;
-
     final var socket = new DatagramSocket();
-
-    final var raw = String.format("<init> <%s>", username).getBytes();
+    final var raw = String.format("<init> <%s>", me).getBytes();
     socket.send(new DatagramPacket(raw, raw.length, host, server_port));
 
-    final var frame = new JFrame(String.format("Private Chat from %s -> %s", username, user));
+    final var frame = new JFrame(String.format("Private Chat from %s to %s", me, other));
     frame.getContentPane().setBackground(Color.WHITE);
     final var messageSection = new JEditorPane();
     final var newMessage = new JTextField();
@@ -33,35 +31,35 @@ public class Private {
     final var scroller = new JScrollPane(messageSection, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
         JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.setLocationRelativeTo(null);
-    frame.setResizable(false);
-    frame.setSize(300, 340);
-    frame.setVisible(true);
     frame.setLayout(null);
+    frame.setSize(300, 340);
 
     scroller.setBounds(20, 20, 260, 240);
 
     messageSection.setContentType("text/html");
-    messageSection.setForeground(Color.RED);
-    messageSection.setFont(new Font("CHelvetica", Font.BOLD, 14));
+    messageSection.setForeground(Color.BLUE);
+    messageSection.setFont(new Font("Helvetica", Font.BOLD, 14));
     messageSection.setEditable(false);
 
     newMessage.setBounds(20, 280, 260, 20);
-    newMessage.setForeground(Color.RED);
+    newMessage.setForeground(Color.BLUE);
     newMessage.setFont(new Font("Helvetica", Font.BOLD, 14));
 
     frame.add(scroller);
     frame.add(newMessage);
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLocationRelativeTo(null);
+    frame.setResizable(false);
     frame.setVisible(true);
 
     newMessage.addActionListener(e -> {
       try {
-        final var bytes =
-            String.format("<msg> <%s> %s: %s", user, username, newMessage.getText()).getBytes();
+        final var message = String.format("<msg> <%s> %s: %s", other, me, newMessage.getText());
+        final var bytes = message.getBytes();
         socket.send(new DatagramPacket(bytes, bytes.length, host, server_port));
-      } catch (final Exception e1) {
-        e1.printStackTrace();
+
+      } catch (final Exception expection) {
+        expection.printStackTrace();
       }
       newMessage.setText("");
     });
@@ -69,12 +67,12 @@ public class Private {
     new Thread(() -> {
       while (true) {
         try {
-          final var p = new DatagramPacket(new byte[1024], 1024);
-          socket.receive(p);
-          final var message = new String(p.getData(), 0, p.getLength());
-          aux = aux + message + "<br />";
-          messageSection.setText(aux);
-        } catch (final IOException e) {
+          final var packet = new DatagramPacket(new byte[1024], 1024);
+          socket.receive(packet);
+          final var message = new String(packet.getData(), 0, packet.getLength());
+          messages += message + "<br />";
+          messageSection.setText(messages);
+        } catch (final Exception e) {
           e.printStackTrace();
         }
       }
