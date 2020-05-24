@@ -14,56 +14,32 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-/* This class allows two clients to interact each other sending
- * private messages, the messages won't be sended to the common chat
- * instead, they will have a personal window.
- */
+public class Private {
+  public static String host = "127.0.0.1";
+  public static String aux;
+  public static int ports = 9709;
+  public static DatagramSocket cl;
 
-public class Private extends JFrame implements Runnable {
-  private static final long serialVersionUID = 1L;
-  protected static JScrollPane scroller;
-  protected static DatagramSocket cl;
-  protected static String username;
-  protected static JEditorPane ep;
-  protected static JTextField tf;
-  protected static String host;
-  protected static String user;
-  protected static String aux;
-  protected static int portc;
-  protected static int ports;
-  public static Thread t;
 
-  public Private() throws SocketException {
-    super("Private Chat");
+  public Private(final String username, final String user) throws SocketException {
+    final var frame = new JFrame("Private Chat");
     cl = new DatagramSocket();
 
-    this.getContentPane().setBackground(Color.WHITE);
-    ep = new JEditorPane();
-    tf = new JTextField();
-    t = new Thread(this);
-    host = "127.0.0.1";
-    ports = 9709;
+    frame.getContentPane().setBackground(Color.WHITE);
+    final var ep = new JEditorPane();
+    final var tf = new JTextField();
+
     aux = "";
-    scroller = new JScrollPane(
+    final var scroller = new JScrollPane(
         ep, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-  }
 
-  public void Components(String username, String user) {
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    setLocationRelativeTo(null);
-    setResizable(false);
-    setSize(300, 340);
-    setVisible(true);
-    setLayout(null);
-    Private.username = username;
-    Private.user = user;
-    t.start();
-    Attributes();
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLocationRelativeTo(null);
+    frame.setResizable(false);
+    frame.setSize(300, 340);
+    frame.setVisible(true);
+    frame.setLayout(null);
 
-  } // End Components.
-
-  public void Attributes() {
-    /* Attributes. */
     scroller.setBounds(20, 20, 260, 240);
     tf.setBounds(20, 280, 260, 20);
 
@@ -71,40 +47,36 @@ public class Private extends JFrame implements Runnable {
     tf.setForeground(Color.RED);
     ep.setForeground(Color.RED);
 
-    tf.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-    ep.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+    tf.setFont(new Font("Helvetica", Font.BOLD, 14));
+    ep.setFont(new Font("CHelvetica", Font.BOLD, 14));
     ep.setEditable(false);
 
-    add(scroller);
-    add(tf);
+    frame.add(scroller);
+    frame.add(tf);
 
-    /* Action Performed. */
     tf.addActionListener(e -> {
       try {
         final var message = tf.getText();
         final var raw = ("<msg> <" + user + "> " + username + ": " + message).getBytes();
         cl.send(new DatagramPacket(raw, raw.length, InetAddress.getByName(host), ports));
-      } catch (Exception e1) {
+      } catch (final Exception e1) {
         e1.printStackTrace();
       }
       tf.setText("");
     });
-  }
 
-  @Override
-  public void run() {
-    while (true) {
-      DatagramPacket p = new DatagramPacket(new byte[1500], 1500);
-      try {
-        cl.receive(p);
-      } catch (IOException e) {
-        e.printStackTrace();
-      } // End try - catch.
-      String msg = new String(p.getData(), 0, p.getLength());
-      System.out.println("\n\tMessage received from: " + p.getAddress() + " : " + p.getPort()
-          + "\n\tMessage: " + msg);
-      aux = aux + msg + "<BR>";
-      ep.setText(aux);
-    }
+    new Thread(() -> {
+      while (true) {
+        try {
+          final var p = new DatagramPacket(new byte[1500], 1500);
+          cl.receive(p);
+          final var msg = new String(p.getData(), 0, p.getLength());
+          aux = aux + msg + "<BR>";
+          ep.setText(aux);
+        } catch (final IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }).start();
   }
 }
