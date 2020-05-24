@@ -123,9 +123,7 @@ public class ChatRoom {
 
             final var p = new DatagramPacket(new byte[1024], 1024);
             Main.cl.receive(p);
-
-            final var bytes = new ByteArrayInputStream(p.getData());
-            final var numUsers = new DataInputStream(bytes).readInt();
+            final var numUsers = Integer.parseInt(new String(p.getData(), 0, p.getLength()));
 
             for (var i = 0; i < numUsers; ++i) {
               final var packetName = new DatagramPacket(new byte[1024], 1024);

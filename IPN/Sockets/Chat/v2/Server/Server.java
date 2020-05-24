@@ -53,15 +53,9 @@ public class Server {
     if (message_type.equals("<init>")) {
       final var userName = message.substring(message_part[0].length() + 1) + " ";
       onlineUserNames.add(userName);
-      try (final var byteStream = new ByteArrayOutputStream()) {
-        try (final var stream = new DataOutputStream(byteStream)) {
-          stream.writeInt(onlineUserNames.size());
-          stream.flush();
 
-          final var data = byteStream.toByteArray();
-          server.send(new DatagramPacket(data, data.length, group, port_client));
-        }
-      }
+      final var raw_number = String.format("%d", onlineUserNames.size()).getBytes();
+      server.send(new DatagramPacket(raw_number, raw_number.length, group, port_client));
 
       for (final var user : onlineUserNames) {
         final var raw_data = user.getBytes();
