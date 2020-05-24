@@ -2,6 +2,7 @@ package Main;
 import GUI.StartDialog;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
+import java.net.DatagramPacket;
 
 public class Main {
   public static MulticastSocket cl;
@@ -15,10 +16,19 @@ public class Main {
       group = InetAddress.getByName(address);
       cl.joinGroup(group);
       cl.setTimeToLive(200);
-      
+
       StartDialog.show();
     } catch (Exception e) {
       e.printStackTrace();
+    }
+  }
+
+  public static void send(final byte[] data) {
+    try {
+      final var packet = new DatagramPacket(data, data.length, Main.group, Main.ports);
+      Main.cl.send(packet);
+    } catch (Exception e) {
+      System.out.println("Error sending message");
     }
   }
 }
