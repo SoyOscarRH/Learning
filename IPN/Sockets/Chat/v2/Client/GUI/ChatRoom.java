@@ -29,27 +29,14 @@ public class ChatRoom {
   String aux = "";
 
   public ChatRoom(final String s) {
-    final var frame = new JFrame("TeamWork-Chat: " + s);
 
-    DefaultListModel<String> dlm;
-    JList<String> onlineUsers;
-    JScrollPane scroller1;
-    ArrayList<String> aList;
-    JScrollPane scroller;
-    JEditorPane ep;
-    JTextField tf;
-    JLabel label;
-    JLabel logo;
-    String un;
-    Thread t;
+    final var dlm = new DefaultListModel<String>();
+    final var onlineUsers = new JList<String>(dlm);
+    final var aList = new ArrayList<String>();
+    final var ep = new JEditorPane();
 
-    frame.getContentPane().setBackground(Color.white);
-    dlm = new DefaultListModel<String>();
-    onlineUsers = new JList<String>(dlm);
-    aList = new ArrayList<String>();
-    label = new JLabel("Online Users:");
-    ep = new JEditorPane();
-    t = new Thread(() -> {
+
+    new Thread(() -> {
       for (;;) {
         /* Receive the type of the datagram packet; <msg>, <init> or <private>,
          * depending the message there is an if sentence for any case.
@@ -142,16 +129,23 @@ public class ChatRoom {
         } // End if.
 
       } // End forever.
-    });
-    tf = new JTextField();
-    logo = new JLabel();
-    scroller1 = new JScrollPane(
+    }).start();
+
+    final var frame = new JFrame("TeamWork-Chat: " + s);
+
+    frame.getContentPane().setBackground(Color.white);
+
+
+    final var label = new JLabel("Online Users:");
+
+    final var tf = new JTextField();
+    final var logo = new JLabel();
+    final var scroller1 = new JScrollPane(
         onlineUsers, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scroller = new JScrollPane(
+    final var scroller = new JScrollPane(
         ep, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    un = s + ":";
+    final var un = s + ":";
     username = s;
-    t.start();
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
@@ -184,18 +178,21 @@ public class ChatRoom {
     /* Mouse event listener. */
     onlineUsers.addMouseListener(new MouseAdapter() {
       public void mouseClicked(final MouseEvent event) {
-        final JList list = (JList) event.getSource();
-        if (event.getClickCount() == 2) {
+        if (event.getClickCount() != 2)
+          return;
+
+        try {
+          final var list = (JList) event.getSource();
           final int index = list.locationToIndex(event.getPoint());
-          final String msgFor = (String) list.getModel().getElementAt(index);
+
+          final var msgFor = (String) list.getModel().getElementAt(index);
           privateMsg = "<private> " + list.getModel().getElementAt(index) + "from " + username;
-          try {
-            PrivateMessage(msgFor);
-          } catch (final IOException e) {
-            e.printStackTrace();
-          } // End try - catch.
-        } // End if.
-      } // End method.
+
+          PrivateMessage(msgFor);
+        } catch (final IOException e) {
+          e.printStackTrace();
+        }
+      }
     });
 
     ep.setContentType("text/html");
@@ -209,16 +206,15 @@ public class ChatRoom {
     frame.add(tf);
 
     tf.addActionListener(e -> {
-      String s2 = tf.getText();
-      s2 = "<msg> " + un + " " + s2;
-      final byte[] b = s2.getBytes();
       try {
-        final DatagramPacket p = new DatagramPacket(b, b.length, Main.group, Main.ports);
+        final var newMessage = "<msg> " + un + " " + tf.getText();
+        final var raw = newMessage.getBytes();
+        final DatagramPacket p = new DatagramPacket(raw, raw.length, Main.group, Main.ports);
         Main.cl.send(p);
+        tf.setText("");
       } catch (final Exception e1) {
         e1.printStackTrace();
-      } // End try - catch.
-      tf.setText("");
+      }
     });
   }
 
