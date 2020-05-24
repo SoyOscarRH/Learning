@@ -79,7 +79,7 @@ public class ChatRoom {
     frame.setVisible(true);
 
     newMessageField.addActionListener(e -> {
-      Main.send(("<msg> " + username + ": " + newMessageField.getText()).getBytes());
+      Main.send("<msg> " + username + ": " + newMessageField.getText());
       newMessageField.setText("");
     });
 
@@ -97,7 +97,7 @@ public class ChatRoom {
 
           final String[] s1 = msgFor.split(" ");
           msgFor = s1[0];
-          Main.send(privateMsg.getBytes());
+          Main.send(privateMsg);
           final var privateSession = new Private();
           final var b = ("<init> <" + username + ">").getBytes();
           Private.cl.send(
@@ -114,36 +114,25 @@ public class ChatRoom {
     new Thread(() -> {
       while (true) {
         try {
-          final var packet = new DatagramPacket(new byte[1024], 1024);
-          Main.cl.receive(packet);
-          final var type = new String(packet.getData(), 0, packet.getLength()).toLowerCase();
+          final var type = Main.receive().toLowerCase();
 
           if (type.equals("<init>")) {
             final var users = new DefaultListModel<String>();
-
-            final var p = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(p);
-            final var numUsers = Integer.parseInt(new String(p.getData(), 0, p.getLength()));
+            final int numUsers = Integer.parseInt(Main.receive());
 
             for (var i = 0; i < numUsers; ++i) {
-              final var packetName = new DatagramPacket(new byte[1024], 1024);
-              Main.cl.receive(packetName);
-              final var user = new String(packetName.getData(), 0, packetName.getLength());
+              final var user = Main.receive();
               System.out.printf("-----%s\n", user);
               users.addElement(user);
             }
 
             onlineUsers.setModel(users);
-            onlineUsers.updateUI();
+            onlineUsers.ensureIndexIsVisible(onlineUsers.getModel().getSize());
             System.out.printf("-----%d\n", onlineUsers.getModel().getSize());
           }
 
           if (type.equals("<msg>")) {
-            final var packetMsg = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(packetMsg);
-            final var message = new String(packetMsg.getData(), 0, packetMsg.getLength());
-
-            System.out.printf("message from: %s:%s\n", packetMsg.getAddress(), packetMsg.getPort());
+            final var message = Main.receive();
             System.out.printf("\tmessage: %s\n", message);
 
             messages += message + "<br />";
@@ -151,13 +140,8 @@ public class ChatRoom {
           }
 
           if (type.equals("<private>")) {
-            final var packetFrom = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(packetFrom);
-            final var msgFrom = new String(packetFrom.getData(), 0, packetFrom.getLength());
-
-            final var packetFor = new DatagramPacket(new byte[1024], 1024);
-            Main.cl.receive(packetFor);
-            final var msgFor = new String(packetFor.getData(), 0, packetFor.getLength());
+            final var msgFrom = Main.receive();
+            final var msgFor = Main.receive();
 
             System.out.printf("private for: %s from %s", msgFor, msgFrom);
 

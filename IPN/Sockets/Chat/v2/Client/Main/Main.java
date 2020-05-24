@@ -1,8 +1,8 @@
 package Main;
 import GUI.StartDialog;
+import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
-import java.net.DatagramPacket;
 
 public class Main {
   public static MulticastSocket cl;
@@ -23,12 +23,26 @@ public class Main {
     }
   }
 
-  public static void send(final byte[] data) {
+  public static void send(final String data) {
     try {
-      final var packet = new DatagramPacket(data, data.length, Main.group, Main.ports);
+      final var raw = data.getBytes();
+      final var packet = new DatagramPacket(raw, raw.length, Main.group, Main.ports);
       Main.cl.send(packet);
     } catch (Exception e) {
       System.out.println("Error sending message");
     }
+  }
+
+  public static String receive() {
+    var result = "";
+    try {
+      final var packet = new DatagramPacket(new byte[1024], 1024);
+      Main.cl.receive(packet);
+      result = new String(packet.getData(), 0, packet.getLength());
+    } catch (Exception e) {
+      System.out.println("Error getting message");
+    }
+
+    return result;
   }
 }
