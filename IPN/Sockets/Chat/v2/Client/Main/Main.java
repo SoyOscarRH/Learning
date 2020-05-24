@@ -10,19 +10,6 @@ public class Main {
   public static String address = "230.1.1.1";
   public static InetAddress group;
 
-  public static void main(final String[] args) {
-    try {
-      cl = new MulticastSocket(portc);
-      group = InetAddress.getByName(address);
-      cl.joinGroup(group);
-      cl.setTimeToLive(200);
-
-      StartDialog.show();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
   public static void send(final String data) {
     try {
       final var raw = data.getBytes();
@@ -44,5 +31,18 @@ public class Main {
     }
 
     return result;
+  }
+
+  public static void main(final String[] args) {
+    try {
+      cl = new MulticastSocket(portc);
+      group = InetAddress.getByName(address);
+      cl.joinGroup(group);
+      cl.setTimeToLive(200);
+
+      StartDialog.show();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }

@@ -82,14 +82,9 @@ public class ChatRoom {
           Main.send("<private> " + msgFor + " from " + username);
 
           new Private(username, msgFor);
-
-          final var b = String.format("<init> <%s>", username).getBytes();
-          final var address = InetAddress.getByName(Private.host);
-          Private.cl.send(new DatagramPacket(b, b.length, address, Private.ports));
-
           onlineUsers.clearSelection();
 
-        } catch (final IOException e) {
+        } catch (final Exception e) {
           e.printStackTrace();
         }
       }
@@ -119,15 +114,9 @@ public class ChatRoom {
             final var msgFrom = Main.receive();
             final var msgFor = Main.receive();
 
-            if (!msgFor.equals(username))
-              return;
-
-            new Private(username, msgFrom);
-            final var raw = ("<init> <" + username + ">").getBytes();
-            final var address = InetAddress.getByName(Private.host);
-            Private.cl.send(new DatagramPacket(raw, raw.length, address, Private.ports));
+            if (msgFor.equals(username)) new Private(username, msgFrom);
           }
-        } catch (final IOException e) {
+        } catch (final Exception e) {
           e.printStackTrace();
         }
       }
