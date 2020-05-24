@@ -31,7 +31,7 @@ public class StartDialog {
     confirm.addActionListener(e -> {
       final var username = userName.getText();
       Client.send("<init> " + username);
-      new ChatRoom(username);
+      new Common(username);
       dialog.dispose();
     });
 

@@ -13,10 +13,10 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-public class Private {
+public class PrivateChat {
   String messages = "";
 
-  public Private(final String me, final String other) throws Exception {
+  public PrivateChat(final String me, final String other) throws Exception {
     final var host = InetAddress.getByName("127.0.0.1");
     final var server_port = 9709;
     final var socket = new DatagramSocket();

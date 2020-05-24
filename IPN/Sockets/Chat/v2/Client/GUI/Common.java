@@ -10,10 +10,10 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class ChatRoom {
+public class Common {
   String messages = "";
 
-  public ChatRoom(final String username) {
+  public Common(final String username) {
     final var onlineUsers = new JList<String>();
     final var messageSection = new JEditorPane();
     final var label = new JLabel("Online Users:");
@@ -24,10 +24,15 @@ public class ChatRoom {
     final var scroller1 = new JScrollPane(onlineUsers, verticalYes, horizontalNo);
     final var scroller = new JScrollPane(messageSection, verticalYes, horizontalNo);
 
-    onlineUsers.setBounds(300, 125, 70, 160);
-    scroller1.setBounds(300, 125, 80, 170);
+    final var frame = new JFrame("Chat: " + username);
+    frame.getContentPane().setBackground(Color.white);
+    frame.setLayout(null);
+    frame.setSize(420, 400);
     scroller.setBounds(20, 20, 260, 280);
-    label.setBounds(300, 80, 120, 50);
+    label.setBounds(300, 0, 120, 50);
+    onlineUsers.setBounds(300, 40, 70, 160);
+    scroller1.setBounds(300, 40, 80, 170);
+
     newMessageField.setBounds(15, 330, 270, 20);
 
     onlineUsers.setForeground(Color.LIGHT_GRAY);
@@ -43,10 +48,7 @@ public class ChatRoom {
     messageSection.setContentType("text/html");
     messageSection.setEditable(false);
 
-    final var frame = new JFrame("Char: " + username);
-    frame.getContentPane().setBackground(Color.white);
-    frame.setLayout(null);
-    frame.setSize(450, 450);
+
 
     frame.add(scroller1);
     frame.add(scroller);
@@ -80,7 +82,7 @@ public class ChatRoom {
             return;
           Client.send("<private> " + msgFor + " from " + username);
 
-          new Private(username, msgFor);
+          new PrivateChat(username, msgFor);
           onlineUsers.clearSelection();
 
         } catch (final Exception e) {
@@ -114,7 +116,7 @@ public class ChatRoom {
             final var msgFor = Client.receive();
 
             if (msgFor.equals(username))
-              new Private(username, msgFrom);
+              new PrivateChat(username, msgFrom);
           }
         } catch (final Exception e) {
           e.printStackTrace();

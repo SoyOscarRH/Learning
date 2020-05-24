@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class Server {
-  public static int port_server = 9000, port_client = 9001;
-  public static String address = "230.1.1.1";
+  static int port_server = 9000, port_client = 9001;
+  static String address = "230.1.1.1";
 
   protected static ArrayList<String> onlineUserNames;
   private static MulticastSocket server;
@@ -15,7 +15,6 @@ public class Server {
 
   public static void main(String[] args) {
     new Thread(() -> PrivateServer.startServer()).start();
-
     onlineUserNames = new ArrayList<String>();
 
     try {
