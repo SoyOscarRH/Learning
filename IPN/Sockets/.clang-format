@@ -19,3 +19,4 @@ PointerAlignment: Left
 Language: Java
 BasedOnStyle: Google
 ColumnLimit: 100
+AllowShortCaseLabelsOnASingleLine: true

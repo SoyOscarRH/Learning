@@ -1,28 +1,25 @@
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
-import java.net.UnknownHostException;
+import java.net.*;
 import java.util.ArrayList;
 
-public class Server {
-  static int port_server = 9000, port_client = 9001;
-  static String address = "230.1.1.1";
+class Server {
+  private static int port_server = 9000, port_client = 9001;
+  private static String addressName = "230.1.1.1";
 
-  protected static ArrayList<String> onlineUserNames;
+  private static ArrayList<String> onlineUserNames;
   private static MulticastSocket server;
-  public static InetAddress group;
+  private static InetAddress address;
 
   public static void main(String[] args) {
-    new Thread(() -> PrivateServer.startServer()).start();
-    onlineUserNames = new ArrayList<String>();
-
     try {
-      group = InetAddress.getByName(address);
+      new Thread(() -> PrivateServer.service()).start();
+      onlineUserNames = new ArrayList<String>();
+
+      address = InetAddress.getByName(addressName);
       server = new MulticastSocket(port_server);
-      server.joinGroup(group);
+      server.joinGroup(address);
       server.setTimeToLive(200);
-      System.out.println("Server is online");
+      System.out.println("Server is online. Waiting for messages");
 
       while (true) {
         final var packet = new DatagramPacket(new byte[1024], 1024);
@@ -40,30 +37,27 @@ public class Server {
     }
   }
 
+  private static void send(final String data) throws IOException {
+    final var raw = data.getBytes();
+    server.send(new DatagramPacket(raw, raw.length, address, port_client));
+  }
+
   public static void handle_message(final String message) throws IOException {
     final var message_part = message.split(" ");
     final var message_type = message_part[0].toLowerCase();
 
-    final var info = message_type.getBytes();
-    server.send(new DatagramPacket(info, info.length, group, port_client));
-
+    send(message_type);
     if (message_type.equals("<init>")) {
       final var userName = message.substring(message_part[0].length() + 1) + " ";
       onlineUserNames.add(userName);
-
-      final var raw_number = String.format("%d", onlineUserNames.size()).getBytes();
-      server.send(new DatagramPacket(raw_number, raw_number.length, group, port_client));
-
-      for (final var user : onlineUserNames) {
-        final var raw_data = user.getBytes();
-        server.send(new DatagramPacket(raw_data, raw_data.length, group, port_client));
-      }
+      send(String.format("%d", onlineUserNames.size()));
+      for (final var user : onlineUserNames) send(user);
     }
 
     if (message_type.equals("<msg>")) {
       final var actual_message = message.substring(message_part[0].length() + 1);
-      final var raw_data = Emotion.replaceEmotions(actual_message).getBytes();
-      server.send(new DatagramPacket(raw_data, raw_data.length, group, port_client));
+      final var message_with_emojis = Emotion.replaceEmotions(actual_message);
+      send(message_with_emojis);
     }
 
     if (message_type.equals("<private>")) {
@@ -72,11 +66,8 @@ public class Server {
       for (int i = 1; i < message_part.length - 2; i++) userFor += message_part[i];
       System.out.printf("\tprivate message for: |%s| -> |%s|\n", userFor, userFrom);
 
-      final var raw_from = userFrom.getBytes();
-      server.send(new DatagramPacket(raw_from, raw_from.length, group, port_client));
-
-      final var raw_for = userFor.getBytes();
-      server.send(new DatagramPacket(raw_for, raw_for.length, group, port_client));
+      send(userFrom);
+      send(userFor);
     }
   }
 }

@@ -1,6 +1,3 @@
-package GUI;
-
-import Client.Client;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -10,10 +7,10 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class Common {
+class Common {
   String messages = "";
 
-  public Common(final String username) {
+  Common(final String username) {
     final var onlineUsers = new JList<String>();
     final var messageSection = new JEditorPane();
     final var label = new JLabel("Online Users:");
@@ -21,17 +18,17 @@ public class Common {
 
     final var verticalYes = JScrollPane.VERTICAL_SCROLLBAR_ALWAYS;
     final var horizontalNo = JScrollPane.HORIZONTAL_SCROLLBAR_NEVER;
-    final var scroller1 = new JScrollPane(onlineUsers, verticalYes, horizontalNo);
-    final var scroller = new JScrollPane(messageSection, verticalYes, horizontalNo);
+    final var scrollerOnlineUsers = new JScrollPane(onlineUsers, verticalYes, horizontalNo);
+    final var scrollerMessages = new JScrollPane(messageSection, verticalYes, horizontalNo);
 
     final var frame = new JFrame("Chat: " + username);
     frame.getContentPane().setBackground(Color.white);
     frame.setLayout(null);
     frame.setSize(420, 400);
-    scroller.setBounds(20, 20, 260, 280);
+    scrollerMessages.setBounds(20, 20, 260, 280);
     label.setBounds(300, 0, 120, 50);
     onlineUsers.setBounds(300, 40, 70, 160);
-    scroller1.setBounds(300, 40, 80, 170);
+    scrollerOnlineUsers.setBounds(300, 40, 80, 170);
 
     newMessageField.setBounds(15, 330, 270, 20);
 
@@ -50,8 +47,8 @@ public class Common {
 
 
 
-    frame.add(scroller1);
-    frame.add(scroller);
+    frame.add(scrollerOnlineUsers);
+    frame.add(scrollerMessages);
     frame.add(label);
     frame.add(newMessageField);
 
@@ -67,21 +64,11 @@ public class Common {
 
     onlineUsers.addMouseListener(new MouseAdapter() {
       public void mouseClicked(final MouseEvent event) {
-        if (event.getClickCount() != 2)
-          return;
-
+        if (event.getClickCount() != 2) return;
         try {
-          final var list = (JList) event.getSource();
-          final int index = list.locationToIndex(event.getPoint());
-
-          var msgFor = (String) list.getModel().getElementAt(index);
-          final String[] s1 = msgFor.split(" ");
-          msgFor = s1[0];
-
-          if (msgFor.equals(username))
-            return;
+          final var msgFor = onlineUsers.getSelectedValue().trim();
+          if (msgFor.equals(username)) return;
           Client.send("<private> " + msgFor + " from " + username);
-
           new PrivateChat(username, msgFor);
           onlineUsers.clearSelection();
 
@@ -115,8 +102,7 @@ public class Common {
             final var msgFrom = Client.receive();
             final var msgFor = Client.receive();
 
-            if (msgFor.equals(username))
-              new PrivateChat(username, msgFrom);
+            if (msgFor.equals(username)) new PrivateChat(username, msgFrom);
           }
         } catch (final Exception e) {
           e.printStackTrace();
