@@ -18,7 +18,7 @@ class Server {
       address = InetAddress.getByName(addressName);
       server = new MulticastSocket(port_server);
       server.joinGroup(address);
-      server.setTimeToLive(200);
+      server.setTimeToLive(32);
       System.out.println("Server is online. Waiting for messages");
 
       while (true) {
