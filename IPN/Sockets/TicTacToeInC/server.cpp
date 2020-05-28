@@ -12,6 +12,10 @@
 #include <unordered_map>
 #include <vector>
 
+#include "./error.h"
+
+typedef int id;
+
 const char* PORT = "9034";
 
 // Get sockaddr, IPv4 or IPv6:
@@ -21,8 +25,7 @@ void* get_in_addr(struct sockaddr* sa) {
   return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
 
-// Return a listening socket
-int get_listener_socket() {
+id get_listener_socket() {
   int listener;  // Listening socket descriptor
   int rv;
 
@@ -62,93 +65,83 @@ int get_listener_socket() {
   // Listen
   if (listen(listener, 10) == -1) { return -1; }
 
-  return listener;
-}
-
-int main() {
-  int listener;  // Listening socket descriptor
-
-  struct sockaddr_storage remoteaddr;  // Client address
-  socklen_t addrlen;
-
-  char buf[256];  // Buffer for client data
-
-  char remoteIP[INET6_ADDRSTRLEN];
-
-  // Start off with room for 5 connections
-  // (We'll realloc as necessary)
-  auto to_monitor = std::vector<struct pollfd> {};
-
-  // Set up and get a listening socket
-  listener = get_listener_socket();
-
   if (listener == -1) {
     fprintf(stderr, "error getting listening socket\n");
     exit(1);
   }
 
-  struct pollfd listener_fd;
-  listener_fd.fd = listener;
-  listener_fd.events = POLLIN;
-  to_monitor.push_back(listener_fd);
+  return listener;
+}
+
+struct pollfd create_poll_data(id fd) {
+  struct pollfd poll_struct;
+  poll_struct.fd = fd;
+  poll_struct.events = POLLIN;
+  return poll_struct;
+}
+
+void add_new_connection(std::vector<struct pollfd>& to_monitor, const id listener) {
+  struct sockaddr_storage client_address;
+  socklen_t addrlen = sizeof(client_address);
+  const id new_client = accept(listener, (struct sockaddr*)&client_address, &addrlen);
+
+  if (new_client == -1) {
+    perror("error accepting connection");
+    return;
+  }
+
+  to_monitor.push_back(create_poll_data(new_client));
+
+  char remoteIP[INET6_ADDRSTRLEN];
+
+  void* correct_address = get_in_addr((struct sockaddr*)&client_address);
+  int family = client_address.ss_family;
+  const char* address_name = inet_ntop(family, correct_address, remoteIP, INET6_ADDRSTRLEN);
+  printf("pollserver: new connection from %s on socket %d\n", address_name, new_client);
+}
+
+void handle_connection(std::vector<struct pollfd>& to_monitor, size_t& i, const id listener) {
+  char buffer[1024];
+  const id sender = to_monitor[i].fd;
+  const ssize_t num_bytes_read = recv(sender, buffer, sizeof(buffer), 0);
+
+  printf("Sending message to the chat: %s", buffer);
+
+  if (num_bytes_read <= 0) {
+    if (num_bytes_read == 0) fprintf(stderr, "socket %d hung up, closing it\n", sender);
+    if (num_bytes_read < 0) fprintf(stderr, "error reading %d, closing it\n", sender);
+
+    close(sender);
+    to_monitor[i--] = to_monitor.back();
+    to_monitor.pop_back();
+
+    return;
+  }
+
+  for (auto& client : to_monitor) {
+    const id destination = client.fd;
+
+    if (destination == listener) continue;
+    if (destination == sender) continue;
+
+    const ssize_t num_bytes_sent = send(destination, buffer, num_bytes_read, 0);
+    if (num_bytes_sent < 1) fprintf(stderr, "error sending to %d\n", destination);
+  }
+}
+
+int main() {
+  const id listener = get_listener_socket();
+  std::vector<struct pollfd> to_monitor {create_poll_data(listener)};
 
   while (true) {
-    int poll_count = poll(to_monitor.data(), to_monitor.size(), -1);
+    int events_to_check = poll(to_monitor.data(), to_monitor.size(), -1);
+    if (events_to_check == -1) perror("Error at polling :/");
 
-    if (poll_count == -1) {
-      perror("poll error");
-      exit(1);
-    }
-
-    for (int i = 0; i < (int)to_monitor.size(); i++) {
-      // Check if someone's ready to read
-      if (to_monitor[i].revents & POLLIN) {  // We got one!!
-        if (to_monitor[i].fd == listener) {
-          // If listener is ready to read, handle new connection
-
-          addrlen = sizeof remoteaddr;
-          auto newfd = accept(listener, (struct sockaddr*)&remoteaddr, &addrlen);
-
-          if (newfd == -1) {
-            perror("accept");
-          } else {
-            struct pollfd new_fd;
-            new_fd.fd = newfd;
-            new_fd.events = POLLIN;
-            to_monitor.push_back(new_fd);
-
-            printf(
-                "pollserver: new connection from %s on "
-                "socket %d\n",
-                inet_ntop(remoteaddr.ss_family, get_in_addr((struct sockaddr*)&remoteaddr),
-                          remoteIP, INET6_ADDRSTRLEN),
-                newfd);
-          }
-        } else {
-          // If not the listener, we're just a regular client
-          int nbytes = recv(to_monitor[i].fd, buf, sizeof buf, 0);
-
-          int sender_fd = to_monitor[i].fd;
-
-          if (nbytes <= 0) {
-            if (nbytes == 0) printf("pollserver: socket %d hung up\n", sender_fd);
-            else
-              perror("recv");
-
-            close(to_monitor[i].fd);
-            to_monitor.pop_back();
-          } else {
-            // We got some good data from a client
-            for (auto& j : to_monitor) {
-              // Send to everyone!
-              int dest_fd = j.fd;
-              // Except the listener and ourselves
-              if (dest_fd != listener && dest_fd != sender_fd) {
-                if (send(dest_fd, buf, nbytes, 0) == -1) { perror("send"); }
-              }
-            }
-          }
-        }
+    for (size_t i = 0; i < to_monitor.size() and events_to_check > 0; ++i) {
+      if (to_monitor[i].revents & POLLIN) {
+        if (to_monitor[i].fd == listener) add_new_connection(to_monitor, listener);
+        if (to_monitor[i].fd != listener) handle_connection(to_monitor, i, listener);
+        --events_to_check;
       }
     }
   }
