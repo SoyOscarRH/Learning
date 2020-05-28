@@ -4,7 +4,6 @@
 #include <poll.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -13,12 +12,6 @@
 #include <vector>
 
 typedef int id;
-
-void* get_in_addr(struct sockaddr* sa) {
-  if (sa->sa_family == AF_INET) { return &(((struct sockaddr_in*)sa)->sin_addr); }
-
-  return &(((struct sockaddr_in6*)sa)->sin6_addr);
-}
 
 id get_listener_socket(const char* port_name) {
   struct addrinfo* possible_addresses;
@@ -35,7 +28,8 @@ id get_listener_socket(const char* port_name) {
 
   id listener;
   int valid_option = 0;
-  for (struct addrinfo* option = possible_addresses; option and !valid_option; option = option->ai_next) {
+  for (struct addrinfo* option = possible_addresses; option and !valid_option;
+       option = option->ai_next) {
     listener = socket(option->ai_family, option->ai_socktype, option->ai_protocol);
     if (listener < 0) continue;
 
@@ -43,7 +37,8 @@ id get_listener_socket(const char* port_name) {
     setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
 
     if (bind(listener, option->ai_addr, option->ai_addrlen) != 0) close(listener);
-    else valid_option = true;
+    else
+      valid_option = true;
   }
 
   freeaddrinfo(possible_addresses);
@@ -68,6 +63,16 @@ struct pollfd create_poll_data(const id fd) {
   return poll_struct;
 }
 
+void show_connection_details(struct sockaddr_storage* address, const id new_client) {
+  int family = address->ss_family;
+  void* real_address = family == AF_INET ? (void*)&(((struct sockaddr_in*)address)->sin_addr)
+                                         : (void*)&(((struct sockaddr_in6*)address)->sin6_addr);
+
+  char remoteIP[INET6_ADDRSTRLEN];
+  const char* address_name = inet_ntop(family, real_address, remoteIP, INET6_ADDRSTRLEN);
+  printf("New connection from %s is now on socket %d\n", address_name, new_client);
+}
+
 void add_new_connection(std::vector<struct pollfd>& to_monitor, const id listener) {
   struct sockaddr_storage client_address;
   socklen_t addrlen = sizeof(client_address);
@@ -78,14 +83,8 @@ void add_new_connection(std::vector<struct pollfd>& to_monitor, const id listene
     return;
   }
 
+  show_connection_details(&client_address, new_client);
   to_monitor.push_back(create_poll_data(new_client));
-
-  char remoteIP[INET6_ADDRSTRLEN];
-
-  void* correct_address = get_in_addr((struct sockaddr*)&client_address);
-  int family = client_address.ss_family;
-  const char* address_name = inet_ntop(family, correct_address, remoteIP, INET6_ADDRSTRLEN);
-  printf("pollserver: new connection from %s on socket %d\n", address_name, new_client);
 }
 
 void handle_connection(std::vector<struct pollfd>& to_monitor, size_t& i, const id listener) {
