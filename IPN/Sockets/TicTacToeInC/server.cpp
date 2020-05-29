@@ -23,6 +23,12 @@ struct game {
   id players[2];
 };
 
+id listener = -1;
+std::vector<pollfd> to_monitor;
+std::unordered_set<id> waiting_for_parther;
+std::unordered_map<id, game*> games_being_play;
+const char hello_message[] = "Welcome to tictactoe. You are now in the queue to find a match\n";
+
 id get_listener_socket(const char* port_name) {
   struct addrinfo* possible_addresses;
   struct addrinfo* hints = (struct addrinfo*) calloc(1, sizeof(struct addrinfo));
@@ -36,7 +42,6 @@ id get_listener_socket(const char* port_name) {
     exit(1);
   }
 
-  id listener;
   int valid_option = 0;
   for (struct addrinfo* option = possible_addresses; option and !valid_option;
        option = option->ai_next) {
@@ -83,108 +88,106 @@ void show_connection_details(struct sockaddr_storage* address, const id new_clie
   printf("New connection from %s is now on socket %d\n", address_name, new_client);
 }
 
-int main() {
-  const char* port = "9034";
-  const char hello_message[] = "Welcome to tictactoe. You are now in the queue to find a match\n";
+void start_possible_games() {
+  while (waiting_for_parther.size() > 1) {
+    auto queue = begin(waiting_for_parther);
+    id player1 = *queue;
+    queue = waiting_for_parther.erase(queue);
+    id player2 = *queue;
+    queue = waiting_for_parther.erase(queue);
 
-  const id listener = get_listener_socket(port);
-  std::vector<pollfd> to_monitor {create_poll_data(listener)};
-  std::unordered_set<id> waiting_for_parther;
-  std::unordered_map<id, game*> games_being_play;
-  printf("Server (port: %s) ready :D\n\n", port);
+    struct game* new_game = (struct game*) malloc(sizeof(game));
+    new_game->players[0] = player1, new_game->players[1] = player2;
+    games_being_play[player1] = new_game;
+    games_being_play[player2] = new_game;
 
-  const auto start_possible_games = [&]() {
-    while (waiting_for_parther.size() > 1) {
-      auto queue = begin(waiting_for_parther);
-      id player1 = *queue;
-      queue = waiting_for_parther.erase(queue);
-      id player2 = *queue;
-      queue = waiting_for_parther.erase(queue);
+    printf("New game started: %d vs %d", player1, player2);
+    const char message[] = "Player found, Match started\n";
+    if (send(player1, message, sizeof(message), 0) != sizeof(message))
+      fprintf(stderr, "error sending greeting info to player 1\n");
+    if (send(player2, message, sizeof(message), 0) != sizeof(message))
+      fprintf(stderr, "error sending greeting info to player 2\n");
+  }
+}
 
-      struct game* new_game = (struct game*) malloc(sizeof(game));
-      new_game->players[0] = player1, new_game->players[1] = player2;
-      games_being_play[player1] = new_game;
-      games_being_play[player2] = new_game;
+void add_new_client() {
+  struct sockaddr_storage client_address;
+  socklen_t addrlen = sizeof(client_address);
+  const id new_client = accept(listener, (struct sockaddr*) &client_address, &addrlen);
 
-      printf("New game started: %d vs %d", player1, player2);
-      const char message[] = "Player found, Match started\n";
-      if (send(player1, message, sizeof(message), 0) != sizeof(message))
-        fprintf(stderr, "error sending greeting info to player 1\n");
-      if (send(player2, message, sizeof(message), 0) != sizeof(message))
-        fprintf(stderr, "error sending greeting info to player 2\n");
-    }
-  };
+  if (new_client == -1) {
+    perror("error accepting connection");
+    return;
+  }
 
-  const auto add_new_client = [&]() {
-    struct sockaddr_storage client_address;
-    socklen_t addrlen = sizeof(client_address);
-    const id new_client = accept(listener, (struct sockaddr*) &client_address, &addrlen);
+  if (send(new_client, hello_message, sizeof(hello_message), 0) != sizeof(hello_message))
+    fprintf(stderr, "error sending greeting to %d\n", new_client);
+  else {
+    show_connection_details(&client_address, new_client);
+    to_monitor.push_back(create_poll_data(new_client));
+    waiting_for_parther.insert(new_client);
+  }
+}
 
-    if (new_client == -1) {
-      perror("error accepting connection");
-      return;
-    }
+void handle_disconection(const id sender, size_t& i) {
+  close(sender);
+  const auto it_waiting = waiting_for_parther.find(sender);
+  if (it_waiting != end(waiting_for_parther)) waiting_for_parther.erase(it_waiting);
 
-    if (send(new_client, hello_message, sizeof(hello_message), 0) != sizeof(hello_message))
-      fprintf(stderr, "error sending greeting to %d\n", new_client);
-    else {
-      show_connection_details(&client_address, new_client);
-      to_monitor.push_back(create_poll_data(new_client));
-      waiting_for_parther.insert(new_client);
-    }
-  };
+  const auto it_game = games_being_play.find(sender);
+  if (it_game != end(games_being_play)) {
+    const game* current_game = it_game->second;
+    const id other =
+        current_game->players[0] == sender ? current_game->players[1] : current_game->players[0];
 
-  const auto handle_disconection = [&](const id sender, size_t& i) {
-    close(sender);
-    const auto it_waiting = waiting_for_parther.find(sender);
-    if (it_waiting != end(waiting_for_parther)) waiting_for_parther.erase(it_waiting);
+    const char message[] = "Other player connection is lost. You are waiting for a new match\n";
+    if (send(other, message, sizeof(message), 0) != sizeof(message))
+      fprintf(stderr, "error sending restarting info to %d\n", other);
+    if (send(other, hello_message, sizeof(hello_message), 0) != sizeof(hello_message))
+      fprintf(stderr, "error sending greeting info to %d\n", other);
+
+    waiting_for_parther.insert(other);
+  }
+
+  to_monitor[i--] = to_monitor.back();
+  to_monitor.pop_back();
+}
+
+void handle_connection(size_t i) {
+  char buffer[1024];
+  const id sender = to_monitor[i].fd;
+  const ssize_t num_bytes_read = recv(sender, buffer, sizeof(buffer), 0);
+
+  if (num_bytes_read == 2) fprintf(stderr, "empty message from %d\n", sender);
+  else if (num_bytes_read <= 0) {
+    if (num_bytes_read == 0) fprintf(stderr, "socket %d hung up, closing it\n", sender);
+    if (num_bytes_read < 0) fprintf(stderr, "error reading %d, closing it\n", sender);
+    handle_disconection(sender, i);
+  } else {
+    buffer[num_bytes_read - 2] = '\0';
+    printf("Message from %d saying: %s\n", sender, buffer);
+    buffer[num_bytes_read - 2] = '\n';
+    buffer[num_bytes_read - 1] = '\0';
 
     const auto it_game = games_being_play.find(sender);
-    if (it_game != end(games_being_play)) {
-      const game* current_game = it_game->second;
-      const id other =
-          current_game->players[0] == sender ? current_game->players[1] : current_game->players[0];
+    if (it_game == end(games_being_play)) return;
 
-      const char message[] = "Other player connection is lost. You are waiting for a new match\n";
-      if (send(other, message, sizeof(message), 0) != sizeof(message))
-        fprintf(stderr, "error sending restarting info to %d\n", other);
-      if (send(other, hello_message, sizeof(hello_message), 0) != sizeof(hello_message))
-        fprintf(stderr, "error sending greeting info to %d\n", other);
+    const game* current_game = it_game->second;
+    const id destination =
+        current_game->players[0] == sender ? current_game->players[1] : current_game->players[0];
 
-      waiting_for_parther.insert(other);
-    }
+    if (send(destination, buffer, num_bytes_read - 1, 0) != num_bytes_read - 1)
+      fprintf(stderr, "error sending to %d\n", destination);
+  }
+}
 
-    to_monitor[i--] = to_monitor.back();
-    to_monitor.pop_back();
-  };
+int main() {
+  const char* port = "9034";
 
-  const auto handle_connection = [&](size_t i) {
-    char buffer[1024];
-    const id sender = to_monitor[i].fd;
-    const ssize_t num_bytes_read = recv(sender, buffer, sizeof(buffer), 0);
+  listener = get_listener_socket(port);
+  to_monitor.push_back(create_poll_data(listener));
 
-    if (num_bytes_read == 2) fprintf(stderr, "empty message from %d\n", sender);
-    else if (num_bytes_read <= 0) {
-      if (num_bytes_read == 0) fprintf(stderr, "socket %d hung up, closing it\n", sender);
-      if (num_bytes_read < 0) fprintf(stderr, "error reading %d, closing it\n", sender);
-      handle_disconection(sender, i);
-    } else {
-      buffer[num_bytes_read - 2] = '\0';
-      printf("Message from %d saying: %s\n", sender, buffer);
-      buffer[num_bytes_read - 2] = '\n';
-      buffer[num_bytes_read - 1] = '\0';
-
-      const auto it_game = games_being_play.find(sender);
-      if (it_game == end(games_being_play)) return;
-
-      const game* current_game = it_game->second;
-      const id destination =
-          current_game->players[0] == sender ? current_game->players[1] : current_game->players[0];
-
-      if (send(destination, buffer, num_bytes_read - 1, 0) != num_bytes_read - 1)
-        fprintf(stderr, "error sending to %d\n", destination);
-    }
-  };
+  printf("Server (port: %s) ready :D\n\n", port);
 
   while (true) {
     const int timeout_ms = 50;
