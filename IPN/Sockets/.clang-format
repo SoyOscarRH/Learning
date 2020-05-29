@@ -9,6 +9,7 @@ AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: Always
 AllowShortLambdasOnASingleLine: All
 AllowShortLoopsOnASingleLine: true
+SpaceAfterCStyleCast: true
 ---
 Language: Cpp
 
