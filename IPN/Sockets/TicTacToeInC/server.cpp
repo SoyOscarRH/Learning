@@ -234,6 +234,13 @@ void handle_connection(const int sender) {
   }
 }
 
+void delete_fd() {
+  const auto f = [&](const struct pollfd x) { return to_delete.find(x.fd) != to_delete.end(); };
+  const auto it = std::remove_if(std::begin(to_monitor), std::end(to_monitor), f);
+  to_monitor.erase(it, to_monitor.end());
+  to_delete.clear();
+}
+
 int main() {
   const char* port = "9034";
 
@@ -264,10 +271,7 @@ int main() {
       }
     }
 
-    const auto f = [&](const struct pollfd x) { return to_delete.find(x.fd) != to_delete.end(); };
-    const auto it = std::remove_if(std::begin(to_monitor), std::end(to_monitor), f);
-    to_monitor.erase(it, to_monitor.end());
-    to_delete.clear();
+    delete_fd();
   }
 
   return 0;
