@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.io.IOException;
 
 class NonBlockingServer {
-  void runServer() throws IOException {
+  void runServer() {
     try (final var selector = Selector.open()) {
       final var channel = ServerSocketChannel.open();
       channel.socket().bind(new InetSocketAddress("localhost", 9090));
@@ -27,9 +27,12 @@ class NonBlockingServer {
         selected.clear();
       }
     }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
-  private void handleAccept(final ServerSocketChannel listener, final Selector selector) throws IOException {
+  void handleAccept(final ServerSocketChannel listener, final Selector selector) throws IOException {
     final var newClient = listener.accept();
     final var id = newClient.socket().getRemoteSocketAddress();
     
@@ -39,10 +42,10 @@ class NonBlockingServer {
     newClient.register(selector, SelectionKey.OP_READ);
   }
 
-  private static void handleRead(final SocketChannel client) throws IOException {
+  void handleRead(final SocketChannel client) throws IOException {
     final var id = client.socket().getRemoteSocketAddress();
     System.out.println("Reading from " + id);
-    final var buffer = ByteBuffer.allocate(1024);
+    final var buffer = ByteBuffer.allocate(20480);
     final var endOfStream = client.read(buffer);
     final var data = new String(buffer.array());
 
