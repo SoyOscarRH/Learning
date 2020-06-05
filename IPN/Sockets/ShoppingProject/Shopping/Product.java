@@ -1,4 +1,6 @@
-class Product implements java.io.Serializable {
+package Shopping;
+
+public class Product implements java.io.Serializable {
   String name;
   int quantity;
   String imageUrl;

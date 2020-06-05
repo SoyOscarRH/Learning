@@ -1,16 +1,20 @@
+package Shopping;
+
 import java.io.*;
+import java.nio.*;
 import java.util.ArrayList;
 
-class Products {
+public class Products {
   static ArrayList<Product> products;
   static String pathToSave = "./data.ser";
 
   @SuppressWarnings(value = "unchecked")
-  static void load() throws Exception {
+  public static void load() throws Exception {
     if (new File(pathToSave).exists() == false) {
       products = new ArrayList<Product>();
       products.add(new Product("te", 5, "te.png"));
-      Products.save();
+      products.add(new Product("jabon", 2, "jabon.png"));
+      Products.save(); 
     }
 
     try (final var fileIn = new FileInputStream(pathToSave)) {
@@ -22,7 +26,16 @@ class Products {
     products.forEach(System.out::println);
   }
 
-  static void save() throws IOException {
+  public static ByteBuffer getBytes() throws IOException {
+    final var out = new ByteArrayOutputStream();
+    final var writer = new ObjectOutputStream(out);
+    writer.writeObject(products);
+    writer.flush();
+
+    return ByteBuffer.wrap(out.toByteArray());
+  }
+
+  public static void save() throws IOException {
     try (final var fileOut = new FileOutputStream("./data.ser")) {
       try (final var out = new ObjectOutputStream(fileOut)) {
         out.writeObject(products);

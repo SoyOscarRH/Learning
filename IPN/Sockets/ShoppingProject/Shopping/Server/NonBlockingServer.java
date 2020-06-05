@@ -1,3 +1,5 @@
+package Shopping.Server;
+
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -7,6 +9,8 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import Shopping.Products;
 
 class NonBlockingServer {
   void runServer() {
@@ -40,6 +44,8 @@ class NonBlockingServer {
 
     newClient.configureBlocking(false);
     newClient.register(selector, SelectionKey.OP_READ);
+
+    newClient.write(Products.getBytes());
   }
 
   void handleRead(final SocketChannel client) throws IOException {
