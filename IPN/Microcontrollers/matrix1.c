@@ -15,14 +15,16 @@ u8 one_hot_encoding(const u8 index) {
 
 void main(void) {
   // Local
-  const u32 delay_of_column = 30;
-  const u32 time_of_figure = 4000;
-  const u8 col = 0;
+  const u32 delay_of_column = 3 * 1000;
+  const u32 time_of_figure = 20 * 1000;
   const u8 data_for_column[5] = {0x1, 0x2, 0x4, 0x8, 0x10};
 
+  u8 col = 0;
+  u32 time = 0;
+
   while (1) {
-    for (u32 time = 0; time < time_of_figure; time += delay_of_column, ++col) {
-      current = col % 5;
+    for (; time < time_of_figure; time += delay_of_column, ++col) {
+      col = col % 5;
 
       PORTC = ~one_hot_encoding(col);
       PORTD = data_for_column[col];
