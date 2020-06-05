@@ -1,59 +1,47 @@
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import java.util.Iterator;
 import java.io.IOException;
-
-class ClientServer extends Thread {
-  final SocketChannel client;
-
-  ClientServer(final SocketChannel client) {
-    this.client = client;
-  }
-
-  public void run() {
-    try (final var selector = Selector.open()) {
-      this.client.configureBlocking(false);
-      this.client.register(selector, this.client.validOps(), null);
-
-      System.out.println("Server started :D");
-      while (true) {
-        selector.select();
-        final var i = selector.selectedKeys().iterator();
-        while (i.hasNext()) {
-          final SelectionKey key = i.next();
-          if (key.isReadable()) {
-            System.out.println("Reading...");
-            final var buffer = ByteBuffer.allocate(1024);
-            this.client.read(buffer);
-            final var data = new String(buffer.array());
-
-            System.out.println("Received message: " + data);
-          }
-          i.remove();
-        }
-      }
-
-    } catch (IOException e) {
-
-    }
-  }
-}
 
 public class Client {
   public static void main(final String[] args) throws Exception {
-    final var client = SocketChannel.open(new InetSocketAddress("localhost", 9090));
+    final var channel = SocketChannel.open(new InetSocketAddress("localhost", 9090));
+    channel.configureBlocking(false);
 
-    new ClientServer(client).start();
+    // keep
+    new Thread(() -> {
+      System.out.println("Client started :D");
+
+      try (final var selector = Selector.open()) {
+        channel.register(selector, channel.validOps(), null);
+
+        while (true) {
+          Thread.sleep(100);
+          if (selector.select() == 0)
+            continue;
+
+          final var buffer = ByteBuffer.allocate(1024);
+          final var bytes = channel.read(buffer);
+          if (bytes == 0) continue;
+          final var data = new String(buffer.array());
+
+          System.out.println("Reading...");
+          System.out.println("Received message: " + data);
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+
+    }).start();
+
+    //
     var i = Integer.valueOf(0);
     while (true) {
       final var message = "Hello" + i.toString();
       i++;
       final var data = ByteBuffer.wrap(message.getBytes());
-      client.write(data);
+      channel.write(data);
       Thread.sleep(2000);
     }
   }

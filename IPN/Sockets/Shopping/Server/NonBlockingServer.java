@@ -11,42 +11,37 @@ import java.io.IOException;
 class NonBlockingServer {
   void runServer() throws IOException {
     try (final var selector = Selector.open()) {
-      final var socket = ServerSocketChannel.open();
-      final var serverSocket = socket.socket();
-      serverSocket.bind(new InetSocketAddress("localhost", 9090));
-      socket.configureBlocking(false);
+      final var channel = ServerSocketChannel.open();
+      channel.socket().bind(new InetSocketAddress("localhost", 9090));
+      channel.configureBlocking(false);
 
-      socket.register(selector, socket.validOps(), null);
+      channel.register(selector, channel.validOps(), null);
       System.out.println("Server started :D");
       while (true) {
         selector.select();
-        final var i = selector.selectedKeys().iterator();
-        while (i.hasNext()) {
-          final SelectionKey key = i.next();
-
-          if (key.isAcceptable())
-            handleAccept(socket, selector, key);
-          else if (key.isReadable())
-            handleRead(key);
-
-          i.remove();
+        final var selected = selector.selectedKeys();
+        for (final var key : selected) {
+          if (key.isAcceptable()) handleAccept(channel, selector);
+          if (key.isReadable()) handleRead((SocketChannel) key.channel());
         }
+        selected.clear();
       }
     }
   }
 
-  private void handleAccept(final ServerSocketChannel mySocket, final Selector selector, final SelectionKey key)
-      throws IOException {
-    System.out.println("\nConnection Accepted...");
+  private void handleAccept(final ServerSocketChannel listener, final Selector selector) throws IOException {
+    final var newClient = listener.accept();
+    final var id = newClient.socket().getRemoteSocketAddress();
+    
+    System.out.println("\nConnection Accepted..." + id);
 
-    final SocketChannel client = mySocket.accept();
-    client.configureBlocking(false);
-    client.register(selector, SelectionKey.OP_READ);
+    newClient.configureBlocking(false);
+    newClient.register(selector, SelectionKey.OP_READ);
   }
 
-  private static void handleRead(final SelectionKey key) throws IOException {
-    System.out.println("Reading...");
-    final var client = (SocketChannel) key.channel();
+  private static void handleRead(final SocketChannel client) throws IOException {
+    final var id = client.socket().getRemoteSocketAddress();
+    System.out.println("Reading from " + id);
     final var buffer = ByteBuffer.allocate(1024);
     final var endOfStream = client.read(buffer);
     final var data = new String(buffer.array());
