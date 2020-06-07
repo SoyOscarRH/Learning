@@ -1,9 +1,9 @@
 package Shopping;
 
 public class Product implements java.io.Serializable {
-  String name;
-  int quantity;
-  String imageUrl;
+  public final String name;
+  public final String imageUrl;
+  public int quantity;
 
   Product(final String name, final int quantity, final String imageUrl) {
     this.name = name;
@@ -12,6 +12,6 @@ public class Product implements java.io.Serializable {
   }
 
   public String toString() {
-    return String.format("%s [%d] [%s]", name, quantity, imageUrl);
+    return String.format("[%d] %s [%s]", quantity, name, imageUrl);
   }
 }

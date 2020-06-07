@@ -7,7 +7,7 @@ class Server {
   public static void main(final String[] args) {
     try {
       Products.load();
-      new NonBlockingServer().runServer();
+      NonBlockingServer.runServer();
     } catch (Exception e) {
       e.printStackTrace();
     }

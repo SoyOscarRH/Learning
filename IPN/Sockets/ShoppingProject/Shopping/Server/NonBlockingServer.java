@@ -1,64 +1,46 @@
 package Shopping.Server;
 
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
-import java.util.Iterator;
-import java.io.IOException;
-import java.nio.ByteBuffer;
+import java.net.*;
+import java.nio.*;
+import java.nio.channels.*;
+import java.util.*;
+import java.io.*;
+
 import Shopping.Products;
 
 class NonBlockingServer {
-  void runServer() {
-    try (final var selector = Selector.open()) {
-      final var channel = ServerSocketChannel.open();
-      channel.socket().bind(new InetSocketAddress("localhost", 9090));
-      channel.configureBlocking(false);
+  static void runServer() throws Exception {
+    final var listener = ServerSocketChannel.open();
+    listener.socket().bind(new InetSocketAddress("localhost", 9090));
+    listener.configureBlocking(false);
 
-      channel.register(selector, channel.validOps(), null);
-      System.out.println("Server started :D");
-      while (true) {
-        selector.select();
-        final var selected = selector.selectedKeys();
-        for (final var key : selected) {
-          if (key.isAcceptable()) handleAccept(channel, selector);
-          if (key.isReadable()) handleRead((SocketChannel) key.channel());
-        }
-        selected.clear();
+    final var selector = Selector.open();
+    listener.register(selector, listener.validOps(), null);
+    System.out.println("Server started :D");
+    while (true) {
+      selector.select();
+      final var selected = selector.selectedKeys();
+      for (final var key : selected) {
+        if (key.isAcceptable()) handleAccept(listener, selector);
+        else if (key.isReadable()) handleRead((SocketChannel) key.channel());
       }
-    }
-    catch (IOException e) {
-      e.printStackTrace();
+      selected.clear();
     }
   }
 
-  void handleAccept(final ServerSocketChannel listener, final Selector selector) throws IOException {
+  static void handleAccept(final ServerSocketChannel listener, final Selector selector) throws IOException {
     final var newClient = listener.accept();
-    final var id = newClient.socket().getRemoteSocketAddress();
-    
-    System.out.println("\nConnection Accepted..." + id);
-
     newClient.configureBlocking(false);
     newClient.register(selector, SelectionKey.OP_READ);
-
-    newClient.write(Products.getBytes());
+    
+    System.out.println("\nConnection Accepted..." + newClient.socket().getRemoteSocketAddress());
+    Products.sendUpdateTo(newClient);
   }
 
-  void handleRead(final SocketChannel client) throws IOException {
-    final var id = client.socket().getRemoteSocketAddress();
-    System.out.println("Reading from " + id);
-    final var buffer = ByteBuffer.allocate(20480);
-    final var endOfStream = client.read(buffer);
-    final var data = new String(buffer.array());
-
-    if (data.length() == 0 || data.equalsIgnoreCase("exit") || endOfStream == -1) {
-      client.close();
-      System.out.println("Connection closed...\n");
-    } else
-      System.out.println("Received message: " + data + "\n");
+  static void handleRead(final SocketChannel client) throws Exception {
+    System.out.println("Reading from " + client.socket().getRemoteSocketAddress());
+    Products.updateFrom(client);
+    System.out.println("Client gave me this update:");
+    Products.print();
   }
 }
