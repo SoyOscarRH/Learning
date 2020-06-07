@@ -12,6 +12,6 @@ public class Product implements java.io.Serializable {
   }
 
   public String toString() {
-    return String.format("[%d] %s [%s]", quantity, name, imageUrl);
+    return String.format("%d %s: \t[%s]", quantity, name, imageUrl);
   }
 }

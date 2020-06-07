@@ -18,7 +18,7 @@ public class Client {
       new Thread(() -> ClientServer.startServer()).start();
       Thread.sleep(1 * 1000);
 
-      Products.products.get(0).quantity = 0;
+      Products.products.get(0).quantity = 100;
       Products.print();
       Thread.sleep(1 * 1000);
       Products.sendUpdateTo(ClientServer.channel);

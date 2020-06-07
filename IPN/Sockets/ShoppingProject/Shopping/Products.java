@@ -10,9 +10,8 @@ public class Products {
   static public ArrayList<Product> products;
 
   public static void print() {
-    System.out.println("Products:");
     products.forEach(System.out::println);
-    System.out.printf("");
+    System.out.println("");
   }
 
   public static void save() throws IOException {
@@ -35,14 +34,15 @@ public class Products {
   }
 
   @SuppressWarnings(value = "unchecked")
-  public static void updateFrom(final SocketChannel channel) throws Exception {
+  public static boolean updateFrom(final SocketChannel channel) throws Exception {
     final var buffer = ByteBuffer.allocate(20480);
     final var bytes = channel.read(buffer);
     if (bytes < 1) {
-      if (bytes == 0) return;
-      channel.close();
-      System.out.println("Connection closed...\n");
-      return;
+      if (bytes < 0) {
+        channel.close();
+        System.out.println("Connection closed...\n");
+      }
+      return false;
     }
 
     try (final var byteStream = new ByteArrayInputStream(buffer.array())) {
@@ -50,6 +50,8 @@ public class Products {
         products = (ArrayList<Product>) objectStream.readObject();
       }
     }
+
+    return true;
   }
 
   public static void sendUpdateTo(final SocketChannel channel) throws IOException {
