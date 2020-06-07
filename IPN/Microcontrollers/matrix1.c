@@ -17,7 +17,7 @@ void main(void) {
   // Local
   const u32 delay_of_column = 10;
   const u32 time_of_figure = 1 * 1000;
-  const u8 data_for_column[9][5] = {
+  const u8 data_for_column[10][5] = {
       {0x41, 0x2e, 0x36, 0x3a, 0x41},  // 0
       {0x3f, 0x3d, 0x00, 0x3f, 0x3f},  // 1
       {0x3d, 0x1e, 0x2e, 0x36, 0x39},  // 2
