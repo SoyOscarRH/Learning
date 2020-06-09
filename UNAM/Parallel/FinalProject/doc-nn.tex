@@ -11,7 +11,7 @@
     \def\ProjectNameLink{\ProjectAuthorLink}    
     
     % *********   DOCUMENT ITSELF   **************
-    \documentclass[9pt, fleqn, journal]{IEEEtran}
+    \documentclass[10pt, fleqn, journal]{IEEEtran}
     \usepackage{ifthen}                                             %Allow simple programming using if - then
     \usepackage[hidelinks]{hyperref}                                %Allow to create hiperlinks and Fuck Firefox
     \usepackage{pdfpages}                                           %Allow us 'import' PDF's
@@ -529,6 +529,12 @@
       Una versión muy, muy simplificada del sistema nervioso. Tanto es así que algunos neurocientíficos 
       probablemente han perdido las esperanzas tan pronto como vieron lo sencilla y alejada de la realidad que es.
 
+      Las redes neuronales son un subgrupo de la Inteligencia Artificial basado en un sistema de 
+      aprendizaje y procesamiento automático inspirado en el funcionamiento del sistema nervioso humano. 
+      Más concretamente, pertenecen al subgrupo del Machine Learning, una tecnología basada en crear 
+      sistemas que puedan aprender automáticamente, es decir, pueden descubrir patrones complejos 
+      enterrados en grandes conjuntos de datos sin la necesidad de interferencia humana.
+
       Las redes neuronales consisten en una capa de entrada, una o varias capas ocultas y una capa de salida. 
       Hay que tener en cuenta que las capas se cuentan desde la primera capa oculta. 
       Cuantas más capas ocultas haya, más compleja es la red. 
@@ -565,6 +571,12 @@
       \end{figure}
 
       \cite{photos}
+
+      Las redes neuronales se diferencian por topología, dependiendo de las características con las 
+      que cuentan: perceptrón monocapa, la más sencilla; perceptrón multicapa, donde se desarrollan 
+      capas ocultas y es capaz de eliminar información irrelevante; Red Neuronal recurrente, donde 
+      cobra un papel importante la temporalidad y, con ella, se dota a la red neuronal de memoria 
+      y, por último, las Redes Neuronales Convolucionales; las más completas.
   
     \subsection{Redes Neuronales Convolucionales}
       Cada parte de una red neuronal convolucional está entrenada para realizar una tarea, 
@@ -595,6 +607,10 @@
               como las probabilidades de una clase.
       \end{itemize}
 
+      Cada parte de una red neuronal convolucional está entrenada para realizar una tarea, 
+      por lo que el entrenamiento de cada una de las partes se desarrolla de manera individual 
+      y se efectúa más rápido. Estas redes se utilizan en especial para el análisis de imágenes.
+
     \subsection{Dropout}
       En pocas palabras, el dropout se refiere a ignorar unidades (es decir, neuronas) durante la fase de 
       entrenamiento de cierto conjunto de neuronas que se elige al azar. 
@@ -621,19 +637,159 @@
 
   \section{TensorFlow}
 
+    TensorFlow es una biblioteca de software de código abierto para computación numérica, que utiliza gráficos 
+    de flujo de datos. Los nodos en las gráficas representan operaciones matemáticas, mientras que los 
+    bordes de las gráficas representan las matrices de datos multidimensionales (tensores) 
+    comunicadas entre ellos.
+
+    TensorFlow es una gran plataforma para construir y entrenar redes neuronales, que permiten 
+    detectar y descifrar patrones y correlaciones, análogos al aprendizaje y razonamiento usados 
+    por los humanos.
+
+    La arquitectura flexible de TensorFlow le permite implementar el cálculo a una o más CPU o GPU
+    en equipos de escritorio, servidores o dispositivos móviles con una sola API. TensorFlow fue
+    desarrollado originalmente por investigadores e ingenieros que trabajaban en el equipo de Google
+    Brain Team, dentro del departamento de investigación de Machine Intelligence, con el propósito de
+    llevar a cabo el aprendizaje automático y la investigación de redes neuronales profundas.
+
+    Sin embargo, el sistema es lo suficientemente general como para ser aplicable a una amplia variedad 
+    de otros dominios igualmente.
+
+    TensorFlow se construyó pensando en el código abierto y en la facilidad de ejecución y escalabilidad. 
+    Permite ser ejecutado en la nube, pero también en local. La idea es que cualquiera pueda ejecutarlo. 
+    Se puede ver a personas que lo ejecutan en una sola máquina, un único dispositivo, una sola CPU (o GPU) 
+    o en grandes clústeres. La disparidad es muy alta.
+
   \section{TensorFlow Distribuido}
+  
 
   \section{Mirror}
 
-  \section{Hirarquical vs NNVLA}
+    \texttt{tf.distribute.MirroredStrategy}
+    admite entrenamiento distribuido sincrónico en múltiples GPU en una máquina. 
+    Este crea una réplica por GPU. Cada variable en el modelo se refleja en todas las réplicas. 
+    Juntas, estas variables forman una sola variable conceptual llamada \texttt{MirroredVariable}. 
+    
+    Estas variables se mantienen sincronizadas entre sí mediante la aplicación de actualizaciones idénticas.
+    Se utilizan algoritmos eficientes de reducción total para comunicar las actualizaciones variables a través 
+    de los dispositivos. Reduzca todos los tensores de agregados en todos los dispositivos agregándolos 
+    y los pone a disposición en cada dispositivo. 
+    
+    Es un algoritmo fusionado que es muy eficiente y puede reducir significativamente la sobrecarga de sincronización. 
+    Hay muchos algoritmos e implementaciones de reducción total disponibles, dependiendo del tipo de 
+    comunicación disponible entre dispositivos. Por defecto, usa \texttt{NVIDIA NCCL} como la implementación 
+    de reducción total. Se puede elegir entre algunas otras opciones que ofrecemos, o escribir la nuestra.
+
+    \begin{figure}[ht!]
+      \centering
+      \includegraphics[width=0.5\textwidth]{syn}
+  \end{figure}
+
+    \subsection{Map Reduce}
+      El paradigma de programación de MapReduce se basa en el concepto de pares clave-valor.
+      También proporciona paradigmas poderosos para el procesamiento de datos en paralelo.
+      Para procesar datos en MapReduce, debe poder asignar una entrada dada y la salida esperada en el paradigma
+       MapReduce, es decir, tanto la entrada como la salida deben asignarse en el formato de múltiples pares 
+       clave-valor. Un único par de valores clave también se conoce como registro.
+
+      Por ejemplo, tiene un archivo de texto ‘input.txt’ con 100 líneas de texto y desea averiguar la frecuencia 
+      de aparición de cada palabra en el archivo. Cada línea en el archivo input.txt se considera como un valor 
+      y el desplazamiento de la línea desde el inicio del archivo se considera como una clave, aquí (desplazamiento, 
+      línea) es un par clave-valor de entrada. Para contar cuántas veces se produjo una palabra (frecuencia de 
+      palabra) en input.txt, una sola palabra se considera como una clave de salida y la frecuencia de una 
+      palabra se considera como un valor de salida. Nuestro valor-clave de entrada es (desplazamiento de 
+      una línea, línea) y el valor-clave de salida es (palabra, frecuencia de palabra).
+
+      Un trabajo Map-Reduce se divide en cuatro fases simples: 
+      \begin{itemize}
+        \item Fase de mapa
+        \item Fase de combinación
+        \item Fase aleatoria
+        \item Fase de reducción. 
+      \end{itemize}
+      
+      En nuestro ejemplo de conteo de palabras, la fase combinar y reducir realiza la misma operación de 
+      agregar frecuencia de palabras. 
+
+      Está inspirado en el map y reduce; las funciones comúnmente utilizadas en la programación funcional, 
+      aunque su propósito en el marco de MapReduce no es el mismo que en sus formas originales. 
+      
+    \subsection{Hirarquical vs NNVLA}
+
+    Hay varias opciones que podemos usar a la hora de hacer un reduce:
+
+    \begin{itemize}
+      \item \texttt{tf.distribute.ReductionToOneDevice}
+      \item \texttt{tf.distribute.ReductionToOneDevice}
+    \end{itemize}
 
   \section{El problema}
-  
+    
+    Para este proyecto buscaré investigar la fiabilidad y los resultados de usar una red neuronal profunda 
+    convolucional  (CNN) para poder clasificar imagenes (tanto fotografías como imagenes esquemáticas 
+    readas por computadora) de diversos elementos eléctricos (se piensa trabajar como mínimo con los 
+    3 elementos básicos: resistores, capacitores e inductores) con un alto grado de confiabilidad 
+    (esperamos que dado un dataset balanceado de prueba obtener al menos un \~85\% de exactitud).
+
+    Para experimentar y llegar un modelo final en este trabajo se usará la librería Tensor Flow, y 
+    Google Colab (dadas las limitaciones de conexion y de los equipos de cómputo que tengo en el momento) 
+    para poder iterar, durante este y dado el largo proceso de entrenamiento que es común que dure de 20
+    minutos a una hora para 40 iteraciones sobre un dataset pequeño buscaré usar las capacidades de 
+    tensor flow para realizar esta tarea en paralelo así como medir diferencias en el tiempo de
+    entrenamiento usando sólo CPUs, usando GPUs y usando multiples GPUs.
+    
+    \subsection{Motivación}
+    
+      Este trabajo servirá como pivote para poder empezar con el plan a más largo plazo de mi trabajo 
+      terminal, medio por el cual me titulare de la carrera de Ingeniería en Sistemas Computacionales 
+      de la ESCOM IPN, esto dado que estoy haciendo ambas carreras de manera simultánea (junto con 
+      Ciencias de la Computación en la Facultad de Ciencias), pero en la primera me encuentro 
+      ya en la recta final.
+
+      El objetivo final de dicho trabajo terminal será ocupar el modelo que estoy proponiendo y que 
+      apoyado con otros dos sistemas: uno que permita encontrar componentes de una imagen, basado en 
+      la arquitectura de YOLO y otro que permita encontrar como se relacionan (si existe conexion 
+      directa entre cualesquiera dos elementos), junto con el modelo que estoy creando que permita 
+      clasificar con fiabilidad a los componentes electrónicos para poder crear un grafo abstracto 
+      de conexion y usarlo para poder crear automáticamente esquemáticos a partir de la imagen de 
+      entrada o crear un archivo de simulación (por ejemplo para abrirlo en proteus) 
+      de manera automática.
+    
+    \subsection{Justificación}
+
+      Cualquier disposición de las diversas fuentes de energía eléctrica junto con los diferentes elementos del 
+      circuito se denomina red eléctrica (circuito eléctrico / electrónico), los circuitos electrónicos son 
+      representados esquemáticamente con diferentes estándares tales como el ANSI o el IEEE. 
+
+      Estos esquemas se ocupan en los diferentes simuladores que hay en el mercado los cuales nos permiten 
+      visualizar los resultados generados por dicha red. 
+
+      Además, generalmente es necesario generar un reporte técnico y para realizarlo se utilizan desde los mismos 
+      simuladores hasta aplicaciones de dibujo para crear esquemas. Buscamos crear una herramienta de 
+      apoyo a la hora de digitalizar circuitos electrónicos minimizando el tiempo que el usuario dedica.
+
+      Existen al menos 12 carreras de licenciatura en el Instituto Politécnico Nacional en las que tienen 
+      mínimo una unidad de aprendizaje relacionada directamente con circuitos electrónicos, al realizar 
+      diseños para dichas UA suele ser necesario simular los resultados o generar un reporte técnico con 
+      esquemas, este proceso donde se involucra la escritura a mano, el realizar la simulación y el reporte 
+      suele ser ocupar varias horas de trabajo, dependiendo de la experiencia con el simulador. 
+
+      Generar un sistema para ayudar a la digitalización de dicho circuito nos minimizará tiempos de realización 
+      de prácticas y la posibilidad de realizar una simulación y obtener resultados en un menor tiempo.
+      
     \subsection{El dataset}
+
+      Planeo usar como base el dataset que existe en Kaggle:
+      \url{https://www.kaggle.com/xuowen/circut-components/kernels} eso si,
+       hagase notar que no existe al parecer otro dataset disponible con las caracteristicas 
+       necesarias para desarrolar el projecto, por lo que se puede usar este como base apoyarnos 
+       con el mismo pero aumentarlo para tener mas datos (o mas clases incluso).
 
     \subsection{El modelo que se uso para resolverlo}
 
     \subsection{Experimientos y resultados}
+
+    \subsection{Modelo final y deploy}
 
   \begin{thebibliography}{10}
 
