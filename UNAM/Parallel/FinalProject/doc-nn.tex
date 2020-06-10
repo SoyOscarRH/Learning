@@ -378,7 +378,7 @@
     \newcommand{\fontCodeTiny}    { \fontCode\tiny }                %Sizes
     \newcommand{\fontCodeFoot}    { \fontCode\footnotesize }        %Sizes
     \newcommand{\fontCodeScript}  { \fontCode\scriptsize }          %Sizes
-    \newcommand{\fontCodeCostume} { \fontCode\fontsize{10}{7} }     %Sizes
+    \newcommand{\fontCodeCostume} { \fontCode\fontsize{2}{3} }     %Sizes
    
 
     % =====  CODE EDITOR =============
@@ -426,7 +426,7 @@
     % =====  CODE EDITOR =============
     \lstdefinestyle{CompilandoStyleSolarized} {                     %This is Code Style
         backgroundcolor     = \color{SolarizedBase},                %Background Color  
-        basicstyle          = \fontCodeFoot\color{SolarizedFont},   %Style of text
+        basicstyle          = \fontCodeTiny\color{SolarizedFont},   %Style of text
         commentstyle        = \color{Green300MD},                   %Comment style
         stringstyle         = \color{Teal700MD},                    %String style
         keywordstyle        = \color{Blue700MD},                    %keywords style
@@ -476,10 +476,11 @@
   
     Se dará una breve introducción a las redes neuronales convoluciones y términos como data aumentation y drop out.
     Una vez entendida la teoría, se procederá a generar la implementación de un modelo en TensorFlow para Python, medir
-    su rendimiento así como la influencia que tiene usar una GPU en los tiempos de entrenamiento del mismo.
+    su rendimiento así como la influencia que tiene usar una GPU (o varias en los tiempos de entrenamiento del mismo.
+    Hablaremos mas sobre la idea de hacer un entrenamiento distribuido usando tensorflow.
     Finalmente se mostrarán los resultados de evaluación del modelo propuesto aquí.
-    
-  \section{Marco Teórico}
+
+    \section{Marco Teórico}
     
     \subsection{Machine learning}
     
@@ -539,7 +540,7 @@
       Hay que tener en cuenta que las capas se cuentan desde la primera capa oculta. 
       Cuantas más capas ocultas haya, más compleja es la red. 
 
-      \begin{figure}[h!]
+      \begin{figure}[ht!]
         \includegraphics[width=0.5\textwidth]{neural}
       \end{figure}
       \cite{photos}
@@ -560,13 +561,13 @@
       Finalmente tras realizar este calculo y para lograr la no linearlidad que generalmente buscamos
       se aplican funciones de activación, entre las mas famosas estan la ReLU (y su prima la Leaky ReLU) y la sigmoide.
 
-      \begin{figure}[h!]
+      \begin{figure}[ht!]
         \includegraphics[width=0.4\textwidth]{activation}
       \end{figure}
 
       \cite{photos}
 
-      \begin{figure}[h!]
+      \begin{figure}[ht!]
         \includegraphics[width=0.4\textwidth]{leaky}
       \end{figure}
 
@@ -658,32 +659,37 @@
     TensorFlow se construyó pensando en el código abierto y en la facilidad de ejecución y escalabilidad. 
     Permite ser ejecutado en la nube, pero también en local. La idea es que cualquiera pueda ejecutarlo. 
     Se puede ver a personas que lo ejecutan en una sola máquina, un único dispositivo, una sola CPU (o GPU) 
-    o en grandes clústeres. La disparidad es muy alta.
+    o en grandes clústeres. 
 
-  \section{TensorFlow Distribuido}
-  
+  \section{TensorFlow Distribuido con muchas GPUs}
 
-  \section{Mirror}
+    Generalmente hay dos formas de distribuir la computación en múltiples dispositivos:
+    \begin{itemize}
+      \item Paralelismo de datos, 
+      
+        Donde un solo modelo se replica en múltiples dispositivos o múltiples máquinas.
+        Cada uno de ellos procesa diferentes lotes de datos, luego fusionan sus resultados. 
+        Existen muchas variantes de esta configuración, que difieren en la forma en que las diferentes 
+        réplicas del modelo combinan los resultados, en si permanecen sincronizadas en cada lote o si 
+        están acopladas más libremente, etc.
 
-    \texttt{tf.distribute.MirroredStrategy}
-    admite entrenamiento distribuido sincrónico en múltiples GPU en una máquina. 
-    Este crea una réplica por GPU. Cada variable en el modelo se refleja en todas las réplicas. 
-    Juntas, estas variables forman una sola variable conceptual llamada \texttt{MirroredVariable}. 
-    
-    Estas variables se mantienen sincronizadas entre sí mediante la aplicación de actualizaciones idénticas.
-    Se utilizan algoritmos eficientes de reducción total para comunicar las actualizaciones variables a través 
-    de los dispositivos. Reduzca todos los tensores de agregados en todos los dispositivos agregándolos 
-    y los pone a disposición en cada dispositivo. 
-    
-    Es un algoritmo fusionado que es muy eficiente y puede reducir significativamente la sobrecarga de sincronización. 
-    Hay muchos algoritmos e implementaciones de reducción total disponibles, dependiendo del tipo de 
-    comunicación disponible entre dispositivos. Por defecto, usa \texttt{NVIDIA NCCL} como la implementación 
-    de reducción total. Se puede elegir entre algunas otras opciones que ofrecemos, o escribir la nuestra.
+      \item Paralelismo de modelos, 
+      
+        Donde diferentes partes de un solo modelo se ejecutan en diferentes dispositivos,
+        procesando un solo lote de datos juntos. Esto funciona mejor con modelos que tienen
+         una arquitectura paralela natural, como los modelos que cuentan con múltiples ramas.
+    \end{itemize}
 
-    \begin{figure}[ht!]
-      \centering
-      \includegraphics[width=0.5\textwidth]{syn}
-  \end{figure}
+    \begin{figure}[h!]
+      \includegraphics[width=0.55\textwidth]{modeltypes}
+    \end{figure}
+
+    Recomiendo mucho ver este video para entender mejor este vídeo:
+    \begin{figure}[h!]
+      \includegraphics[width=0.55\textwidth]{cover}
+    \end{figure}
+
+    \url{https://youtu.be/jKV53r9-H14}
 
     \subsection{Map Reduce}
       El paradigma de programación de MapReduce se basa en el concepto de pares clave-valor.
@@ -713,15 +719,69 @@
 
       Está inspirado en el map y reduce; las funciones comúnmente utilizadas en la programación funcional, 
       aunque su propósito en el marco de MapReduce no es el mismo que en sus formas originales. 
+
+      \subsubsection{Como funciona}
+
+      En cada paso del entrenamiento:
+
+      El lote actual de datos (llamado lote global) se divide en n (supongamos 8 por el resto del ejemplo) 
+      sub-lotes diferentes (llamados lotes locales). 
       
-    \subsection{Hirarquical vs NNVLA}
+      Por ejemplo, si el lote global tiene 512 muestras, cada uno de los 8 lotes locales tendrá 64 muestras.
+      Cada una de las 8 réplicas procesa de forma independiente un lote local: ejecutan un paso hacia adelante,
+      luego un paso hacia atrás, generando el gradiente de los pesos con respecto a la pérdida del modelo en 
+      el lote local.
 
-    Hay varias opciones que podemos usar a la hora de hacer un reduce:
+      Las actualizaciones de peso originadas en gradientes locales se fusionan de manera eficiente en las 
+      8 réplicas. Como esto se hace al final de cada paso, las réplicas siempre permanecen sincronizadas.
 
-    \begin{itemize}
-      \item \texttt{tf.distribute.ReductionToOneDevice}
-      \item \texttt{tf.distribute.ReductionToOneDevice}
-    \end{itemize}
+      En la práctica, el proceso de actualización sincrónica de los pesos de las réplicas del modelo se 
+      maneja a nivel de cada variable de peso individual. 
+      Esto se hace a través de un objeto variable reflejado.
+
+    \subsection{Mirror}
+
+      \texttt{tf.distribute.MirroredStrategy}
+      admite entrenamiento distribuido sincrónico en múltiples GPU en una máquina. 
+      Este crea una réplica por GPU. Cada variable en el modelo se refleja en todas las réplicas. 
+      Juntas, estas variables forman una sola variable conceptual llamada \texttt{MirroredVariable}. 
+      
+      Estas variables se mantienen sincronizadas entre sí mediante la aplicación de actualizaciones idénticas.
+      Se utilizan algoritmos eficientes de reducción total para comunicar las actualizaciones variables a través 
+      de los dispositivos. Reduzca todos los tensores de agregados en todos los dispositivos agregándolos 
+      y los pone a disposición en cada dispositivo. 
+      
+      Es un algoritmo fusionado que es muy eficiente y puede reducir significativamente la sobrecarga de sincronización. 
+      Hay muchos algoritmos e implementaciones de reducción total disponibles, dependiendo del tipo de 
+      comunicación disponible entre dispositivos. Por defecto, usa \texttt{NVIDIA NCCL} como la implementación 
+      de reducción total. Se puede elegir entre algunas otras opciones que ofrecemos, o escribir la nuestra.
+
+      \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{syn}
+      \end{figure}
+      
+      Hay varias opciones que podemos usar a la hora de hacer un reduce:
+
+      \begin{itemize}
+        \item \texttt{tf.distribute.HierarchicalCopyAllReduce}
+          Se reduce a una GPU a lo largo de los bordes en alguna jerarquía y se
+          transmite a cada GPU a lo largo de la misma ruta. 
+           
+          Antes de realizar la reducción total, los tensores serán reempaquetados o
+          agregados para un transporte más eficiente entre dispositivos.
+
+          Esta es una reducción creada para Nvidia DGX-1 que supone que las GPU se conectan 
+          así en la máquina DGX-1. Si tiene diferentes interconexiones de GPU, 
+          es probable que sea más lento que tf.distribute.ReductionToOneDevice.
+
+        \item \texttt{tf.distribute.ReductionToOneDevice}
+          Always do reduction to one device first and then do broadcasting.
+
+        \item \texttt{tf.distribute.NcclAllReduce}
+          Reducción usando NCCL all-reduce.
+      \end{itemize}
+      
 
   \section{El problema}
     
@@ -785,11 +845,133 @@
        necesarias para desarrolar el projecto, por lo que se puede usar este como base apoyarnos 
        con el mismo pero aumentarlo para tener mas datos (o mas clases incluso).
 
+       De hecho se uso la técnica conocida como data aumentation para crear un modelo mas resiliente.
+
     \subsection{El modelo que se uso para resolverlo}
+
+      La idea para este proyecto fue tomar las ideas que he estado realizando durante las 
+      últimas semanas en pytorch y pasarlos a TensorFlow con Keras, 
+      replicar la arquitectura que ya existe que es:
+      \begin{figure}[ht!]
+        \includegraphics[width=0.5\textwidth]{model}
+      \end{figure}
+
+      Esta es una arquitectura bastante basica y clasica para cnn:
+      \begin{lstlisting}[language=python, gobble=7]
+        model = Sequential([
+          Conv2D(8, 4, activation=tf.nn.relu, input_shape=(100, 100, 1)),
+          MaxPooling2D(pool_size=(2, 2)),
+          Conv2D(16, 4, activation=tf.nn.relu),
+          MaxPooling2D(pool_size=(2, 2)),
+          Conv2D(32, 3, activation=tf.nn.relu),
+          Flatten(),
+          Dropout(0.4),
+          Dense(32, activation=tf.nn.leaky_relu),
+          Dense(4, activation=tf.nn.softmax),
+        ])
+
+        loss = tf.keras.losses.CategoricalCrossentropy()
+        model.compile(optimizer='Nadam', loss=loss, metrics=['accuracy'])
+        model.summary()
+      \end{lstlisting}
 
     \subsection{Experimientos y resultados}
 
+    Finalmente veamos que es lo que ha pasado.
+
+    Hemos creado 3 entrenamientos para el sistema, debido a las limitaciones del sistema, no fui
+    capaz de probarlo como me gustaria en un sistema conv arias gpus, asi que tuve que usar gpus
+    virtuales, con esto esperamos un resultado similiar en los primeros dos experimentos.
+
+    \clearpage
+
+    Usando muchas GPUs:
+    \begin{lstlisting}[language=python, gobble=5]
+      import time
+
+      strategy = tf.distribute.MirroredStrategy(
+        cross_device_ops=tf.distribute.ReductionToOneDevice())
+      print('Number of devices: {}'.format(strategy.num_replicas_in_sync))
+
+      with strategy.scope(): 
+        model = create_model()
+
+      start = time.time()
+      model.fit(train_data, epochs=35)
+      end = time.time()
+
+      distribute = end - start
+      print(f"Elapsed (distribute) = {distribute}")
+    \end{lstlisting}
+
+    Usando una GPU:
+    \begin{lstlisting}[language=python, gobble=5]
+      model = create_model()
+
+      start = time.time()
+      model.fit(train_data, epochs=35)
+      end = time.time()
+
+      normal = end - start
+      print(f"Elapsed (normal) = {normal}")
+    \end{lstlisting}
+
+    Usando una CPU:
+    \begin{lstlisting}[language=python, gobble=5]
+      with tf.device('/CPU:0'):
+        model = create_model()
+        start = time.time()
+        model.fit(train_data, epochs=35)
+        end = time.time()
+
+      slow = end - start
+      print(f"Elapsed (slow) = {slow}")
+    \end{lstlisting}
+
+    Este es el resultado de los 3 metodos de ejecución USANDO usar GPU para hacer el preprocesamiento:
+    \begin{figure}[ht!]
+      \includegraphics[width=0.45\textwidth]{experiments}
+    \end{figure}
+
+    Este es el resultado de los 3 metodos de ejecución sin usar GPU para hacer el preprocesamiento:
+    \begin{figure}[ht!]
+      \includegraphics[width=0.45\textwidth]{experiments2}
+    \end{figure}
+
+    Al final todo el codigo del modelo puede encontrarse en:
+
+    \url{https://colab.research.google.com/drive/1qH6eWiQR4_0A-tzwD5LVAmN1BpcpuSh4?usp=sharing}
+
+
     \subsection{Modelo final y deploy}
+
+    El resultado esperado es ocurrio, pudimos crear un modelo que pueda ser usado para
+    predecir correctamente la clase a la que pertenece un componente electrónico 
+    con más de un 80\% de exactitud (dado un dataset de pruebas balanceado y parecido 
+    al que usamos durante el entrenamiento pero si repetir ninguna imagen en ambos).
+
+    Se pudo hacer deploy de este modelo usando un 
+    sistema cliente servidor muy básico o incluso usando tensorflow.js poder crear
+    una pwa (progressive web app) que no requiera de un servidor para ejecutarse.
+
+    Al final todo el codigo del sistema de deploy final puede encontrarse en:
+
+    \begin{figure}[ht!]
+      \includegraphics[width=0.5\textwidth]{final}
+    \end{figure}
+
+    \url{https://github.com/SoyOscarRH/Image2Circuit}
+
+    \subsubsection{Discusión}
+
+    Actualmente no existe una forma de hacer procesamiento en paralelo para la data aumentation, 
+    pero eso será un gran siguiente paso y algo que me alegra mucho de ver que estan trabajando.
+
+    Finalmente es impresionante la forma en la que usar una GPU afecta a la velocidad de 
+    entrenamiento, haciendola muchas veces mas veloz, se esperaria ver un cambio similiar al usar
+    varias gpus pero me temo que sin el equipo necesario para probarlo esta idea no fue ni probada ni
+    descartada, solo se hace la recomendacion a los siguientes estudiantes que le echen un ojo
+    a el sistema distruido de tensorflow.
 
   \begin{thebibliography}{10}
 
@@ -805,6 +987,11 @@
     \bibitem{photos} 
       June 1, 2020 \\
       \url{https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6}
+
+
+    \bibitem{ts} 
+      Multi-GPU and distributed training \\
+      \url{https://keras.io/guides/distributed_training}
 
   \end{thebibliography}
 
