@@ -16,9 +16,9 @@ public class Client {
   public static void main(final String[] args) {
     try {
       new Thread(() -> ClientServer.startServer()).start();
+      Thread.sleep(100);
       Products.print();
-
-      Products.sendUpdateTo(ClientServer.channel);
+      //Products.sendUpdateTo(ClientServer.channel);
       new ClientWindow();
     } catch (Exception e) {
       e.printStackTrace();
