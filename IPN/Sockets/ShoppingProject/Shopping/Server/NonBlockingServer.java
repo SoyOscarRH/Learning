@@ -56,8 +56,13 @@ class NonBlockingServer {
         final var channel = key.channel();
         if (channel == listener) continue;
         if (channel == client) continue;
-        Products.sendUpdateTo((SocketChannel) channel);
+
+        final var other = (SocketChannel) channel;
+        System.out.println(" to " + other.socket().getRemoteSocketAddress());
+        Products.sendUpdateTo(other);
       }
+
+      System.out.println();
     }
   }
 }

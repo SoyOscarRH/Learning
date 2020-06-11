@@ -116,6 +116,15 @@ public class ClientWindow {
     frame.add(title2);
     frame.add(createTable(false));
 
+    final var title3 = new JButton("Comprar");
+    title3.addActionListener(e -> {
+      t2.fireTableDataChanged();
+      buying.clear();
+    });
+    title3.setFont(new Font("helvetica", Font.PLAIN, 24));
+    title3.setAlignmentX(Component.CENTER_ALIGNMENT);
+    frame.add(title3);
+
     frame.setSize(500, 600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
