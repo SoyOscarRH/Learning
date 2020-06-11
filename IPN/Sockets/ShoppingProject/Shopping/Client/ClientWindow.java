@@ -93,7 +93,7 @@ public class ClientWindow {
           totalLabel.setText(String.format("Comprar por %.2f", total));
 
           Products.sendUpdateTo(ClientServer.channel);
-        } catch (Exception ex) {
+        } catch (final Exception ex) {
           ex.printStackTrace();
         }
       }
@@ -128,9 +128,38 @@ public class ClientWindow {
 
     totalLabel = new JButton("");
     totalLabel.addActionListener(e -> {
+      if (buying.size() == 0) return;
       t2.fireTableDataChanged();
+
+      final var ticket = new JFrame("Shopping");
+      ticket.setLayout(new BoxLayout(ticket.getContentPane(), BoxLayout.Y_AXIS));
+  
+      final var total = buying.stream()
+                            .map(product -> product.price * product.quantity)
+                            .mapToDouble(x -> x)
+                            .sum();
+
+      final var title = new JLabel(String.format("Productos comprados por %.2f", total));
+      title.setFont(new Font("helvetica", Font.PLAIN, 20));
+      title.setAlignmentX(Component.CENTER_ALIGNMENT);
+      ticket.add(title);
+
+      for (final var product : buying) {
+        final var name = new JLabel(String.format("%d por $%.2f \t%s", product.quantity, product.price, product.name));
+        name.setFont(new Font("helvetica", Font.PLAIN, 14));
+        name.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        ticket.add(name);
+      }
+
+      ticket.setSize(300, 300);
+      ticket.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      ticket.setLocationRelativeTo(null);
+      ticket.setVisible(true);
+
       buying.clear();
+
     });
+
     totalLabel.setFont(new Font("helvetica", Font.PLAIN, 24));
     totalLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
     frame.add(totalLabel);
