@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.*;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
 public class Products {
   static final String pathToSave = "./data.ser";
@@ -30,6 +31,9 @@ public class Products {
         products = (ArrayList<Product>) in.readObject();
         System.out.printf("Serialized data retrieved\n");
       }
+    }
+    catch (FileNotFoundException e) {
+      products = new ArrayList<Product>();
     }
   }
 

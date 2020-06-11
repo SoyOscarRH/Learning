@@ -45,6 +45,7 @@ class NonBlockingServer {
     if (isOk) {
       System.out.println("Client gave me this update:");
       Products.print();
+      Products.save();
     }
   }
 }
