@@ -2,9 +2,9 @@ package Shopping;
 
 @SuppressWarnings("serial")
 public class Product implements java.io.Serializable {
-  public final String name, imageUrl;
+  public String name, imageUrl;
   public int quantity;
-  public final double price;
+  public double price;
 
   public Product(final String name, final int quantity, final double price, final String imageUrl) {
     this.name = name;
