@@ -2,17 +2,18 @@ package Shopping;
 
 @SuppressWarnings("serial")
 public class Product implements java.io.Serializable {
-  public final String name;
-  public final String imageUrl;
+  public final String name, imageUrl;
   public int quantity;
+  public final double price;
 
-  public Product(final String name, final int quantity, final String imageUrl) {
+  public Product(final String name, final int quantity, final double price, final String imageUrl) {
     this.name = name;
     this.quantity = quantity;
     this.imageUrl = imageUrl;
+    this.price = price;
   }
 
   public String toString() {
-    return String.format("%d %s: \t[%s]", quantity, name, imageUrl);
+    return String.format("%d %s: \t[$%.2f][%s]", quantity, name, price, imageUrl);
   }
 }

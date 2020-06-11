@@ -13,6 +13,7 @@ import Shopping.Product;
 public class ClientWindow {
   final ArrayList<Product> buying;
   static AbstractTableModel t1, t2;
+  final JButton totalLabel;
 
   static String getFullPath(final String data) {
     final var projects = "/Users/soyoscarrh/Documents/Projects/Learning/";
@@ -24,18 +25,19 @@ public class ClientWindow {
     @SuppressWarnings("serial")
     final var model = new AbstractTableModel() {
       public Class<?> getColumnClass(final int column) {
-        if (column == 2) return ImageIcon.class;
+        if (column == 3) return ImageIcon.class;
         return String.class;
       }
 
       public int getColumnCount() {
-        return 3;
+        return 4;
       }
 
       public String getColumnName(final int col) {
         if (col == 0) return "Cantidad";
         if (col == 1) return "Nombre";
-        if (col == 2) return "Foto";
+        if (col == 2) return "Precio";
+        if (col == 3) return "Foto";
 
         return "";
       }
@@ -49,7 +51,8 @@ public class ClientWindow {
 
         if (col == 0) return product.quantity;
         if (col == 1) return product.name;
-        if (col == 2) return new ImageIcon(getFullPath(product.imageUrl));
+        if (col == 2) return product.price;
+        if (col == 3) return new ImageIcon(getFullPath(product.imageUrl));
         return "";
       }
     };
@@ -76,11 +79,18 @@ public class ClientWindow {
                                   .findAny()
                                   .orElse(null);
 
-          if (destination ==  null)  productsDestination.add(new Product(origin.name, 1, origin.imageUrl));
+          if (destination ==  null)  productsDestination.add(new Product(origin.name, 1, origin.price, origin.imageUrl));
           else destination.quantity += 1;
 
           t1.fireTableDataChanged();
           t2.fireTableDataChanged();
+
+          final var total = buying.stream()
+                            .map(product -> product.price * product.quantity)
+                            .mapToDouble(x -> x)
+                            .sum();
+
+          totalLabel.setText(String.format("Comprar por %.2f", total));
 
           Products.sendUpdateTo(ClientServer.channel);
         } catch (Exception ex) {
@@ -116,16 +126,16 @@ public class ClientWindow {
     frame.add(title2);
     frame.add(createTable(false));
 
-    final var title3 = new JButton("Comprar");
-    title3.addActionListener(e -> {
+    totalLabel = new JButton("");
+    totalLabel.addActionListener(e -> {
       t2.fireTableDataChanged();
       buying.clear();
     });
-    title3.setFont(new Font("helvetica", Font.PLAIN, 24));
-    title3.setAlignmentX(Component.CENTER_ALIGNMENT);
-    frame.add(title3);
+    totalLabel.setFont(new Font("helvetica", Font.PLAIN, 24));
+    totalLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+    frame.add(totalLabel);
 
-    frame.setSize(500, 600);
+    frame.setSize(600, 750);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
