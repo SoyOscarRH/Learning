@@ -9,7 +9,7 @@ class Server {
       Products.load();
       Products.print();
 
-      NonBlockingServer.runServer();
+      new NonBlockingServer().runServer();
     } catch (Exception e) {
       e.printStackTrace();
     }

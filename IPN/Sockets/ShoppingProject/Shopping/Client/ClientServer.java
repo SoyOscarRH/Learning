@@ -7,11 +7,13 @@ import java.net.InetSocketAddress;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
+import javax.swing.table.*;
 
 import Shopping.Products;
 
 class ClientServer {
   static SocketChannel channel;
+  static AbstractTableModel t1, t2;
 
   static void startServer() {
     try {
@@ -26,8 +28,10 @@ class ClientServer {
         selector.select();
         final var selected = selector.selectedKeys();
         for (final var key : selected) {
-          if (key.isReadable())
-            Products.updateFrom(channel);
+          if (!key.isReadable()) continue;
+          Products.updateFrom(channel);
+          if (t1 != null) t1.fireTableDataChanged();
+          if (t2 != null) t2.fireTableDataChanged();
         }
         selected.clear();
       }

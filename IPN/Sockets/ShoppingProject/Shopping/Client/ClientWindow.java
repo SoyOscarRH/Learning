@@ -12,7 +12,7 @@ import Shopping.Product;
 
 public class ClientWindow {
   final ArrayList<Product> buying;
-  AbstractTableModel t1, t2;
+  static AbstractTableModel t1, t2;
 
   static String getFullPath(final String data) {
     final var projects = "/Users/soyoscarrh/Documents/Projects/Learning/";
@@ -92,6 +92,9 @@ public class ClientWindow {
     if (isShowing) t1 = model;
     else t2 = model;
 
+    if (isShowing) ClientServer.t1 = model;
+    else ClientServer.t2 = model;
+
     return new JScrollPane(table);
   }
 
@@ -102,18 +105,18 @@ public class ClientWindow {
     frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
     final var title1 = new JLabel("Productos disponibles");
-    title1.setFont(new Font("helvetica", Font.PLAIN, 30));
+    title1.setFont(new Font("helvetica", Font.PLAIN, 26));
     title1.setAlignmentX(Component.CENTER_ALIGNMENT);
     frame.add(title1);
     frame.add(createTable(true));
 
     final var title2 = new JLabel("Tu carrito");
-    title2.setFont(new Font("helvetica", Font.PLAIN, 30));
+    title2.setFont(new Font("helvetica", Font.PLAIN, 26));
     title2.setAlignmentX(Component.CENTER_ALIGNMENT);
     frame.add(title2);
     frame.add(createTable(false));
 
-    frame.setSize(300, 400);
+    frame.setSize(500, 600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
