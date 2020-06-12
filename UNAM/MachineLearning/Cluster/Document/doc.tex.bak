@@ -612,7 +612,7 @@
         \end{itemize}
 
         Como ya vimos la idea de clustering no hace referencia a algoritmos específicos, 
-        pero es un proceso para crear grupos basados en medidas de similitud. 
+        pero es un proceso para crear grupos basados ​​en medidas de similitud. 
         El análisis de clustering utiliza un algoritmo de aprendizaje no supervisado para crear estos clusters.
 
         Los algoritmos de clustering generalmente funcionan según el principio simple de maximización 
