@@ -514,33 +514,41 @@
 
 \clearpage
 
+\section*{Abstract}
+En este reporte mostraré como se puede realizar una segmentación de clientes de 
+un centro comercial utilizando varios algoritmos de machine learning que vimos en el 
+curso. Voy a comparar 2 métodos: KMeans y DBSCAN.
+
+Este documento esta dividido en varias secciones: una introducción básica, un análisis 
+de la lectura de datos y el preprocesamiento, análisis de datos exploratorios, aplicación 
+de los algoritmos, comparación de ellos y una pequeña discusión.
+
 
 \part{Marco Teórico}
 \clearpage
-
-    En este reporte mostraré como se puede realizar una segmentación de clientes de 
-    un centro comercial utilizando varios algoritmos de machine learning que vimos en el 
-    curso. Voy a comparar 2 métodos: KMeans y DBSCAN.
-
-    Este documento esta dividido en varias secciones: una introducción básica, un análisis 
-    de la lectura de datos y el preprocesamiento, análisis de datos exploratorios, aplicación 
-    de los algoritmos, comparación de ellos y una pequeña discusión.
 
     \chapter{Aprendizaje No Supervisado}
         Definimos al machine Learning como el área que estudia como hacer que las computadoras puedan
         aprender de manera automática usando experiencias (data) del pasado para predecir el futuro.
 
-        Hasta ahora, tan en los 2 trabajos pasados habiamos explorado algoritmos y técnicas de aprendizaje 
-        automático supervisado para desarrollar modelos en los que los datos tenían etiquetas previamente 
-        conocidas. 
+        A diferencia del aprendizaje supervisado, en el no supervisado solo se le otorgan las características, 
+        sin proporcionarle al algoritmo ninguna etiqueta. Su función es la agrupación, por lo que el algoritmo 
+        debería catalogar por similitud y poder crear grupos, sin tener la capacidad de definir cómo es cada 
+        individualidad de cada uno de los integrantes del grupo.
         
-        En otras palabras, nuestros datos tenían algunas variables objetivo con valores específicos que 
+        \section{¿Por qué es importante?¿Porque no usar solo supervisado?}
+        
+        Hasta ahora, en los 2 trabajos pasados habíamos explorado algoritmos y técnicas de aprendizaje
+        automático supervisado para desarrollar modelos en los que los datos tenían etiquetas previamente
+        conocidas.
+        
+        En otras palabras, nuestros datos tenían algunas variables objetivo con valores específicos que
         utilizamos para entrenar nuestros modelos.
-
-        Sin embargo, cuando se trata de problemas del mundo real, la mayoría de las veces, 
-        los datos no vienen con etiquetas predefinidas, así que vamos a querer desarrollar 
-        modelos de aprendizaje automático que puedan clasificar correctamente estos datos, encontrando 
-        por sí mismos algunos puntos en común en las características, que se utilizarán para 
+        
+        Sin embargo, cuando se trata de problemas del mundo real, la mayoría de las veces,
+        los datos no vienen con etiquetas predefinidas, así que vamos a querer desarrollar
+        modelos de aprendizaje automático que puedan clasificar correctamente estos datos, encontrando
+        por sí mismos algunos puntos en común en las características, que se utilizarán para
         predecir las clases sobre nuevos datos.
     
     \chapter{Clustering}
@@ -555,7 +563,8 @@
         etiquetas, y eso pasa muchas veces en la vida real.
         
         La aplicación más conocida de clustering es la segmentación de clientes
-        (para una comercialización eficiente), la segmentación de imágenes, la agrupación de documentos.
+        (para una segmentar clientes y hacer publicidad especifica eficiente),
+         la segmentación de imágenes, la agrupación de documentos.
 
         \begin{figure}[ht!]
             \centering
@@ -564,6 +573,8 @@
         
         Existen muchos algoritmos de clustering que se pueden dividir en dos tipos principales: 
         jerárquicos y particionales.
+
+        \clearpage
 
         \begin{itemize}
             \item Los algoritmos jerárquicos dividen recursivamente un conjunto de datos en 
@@ -583,14 +594,18 @@
             de dominio específico que a menudo es desafiante (o incluso imposible) en muchas aplicaciones. 
             Esto condujo al desarrollo de muchas heurísticas y enfoques simplificados que ayudaron a los 
             analistas sin conocimiento de dominio a elegir el número apropiado de grupos.
+
+            Y si, se que algoritmos como DBSCAN puede verse como otra categoria pero si lo piensas bien, no es mas 
+            una subcategoría. 
+
         \end{itemize}
 
-        Hay una gran cantidad de algoritmos de clustering y, actualmente, no hay uno solo que domine 
-        a otros. 
-        Elegir la mejor depende de la base de datos en sí, un dominio de los datos y los requisitos 
-        y expectativas del analisis.
+        Hay una gran cantidad de algoritmos de clustering y actualmente no hay uno solo que domine
+        a otros.
+        Elegir la mejor depende de la base de datos en sí, un dominio de los datos y los requisitos
+        y expectativas del análisis y demás parámetros específicos del problema.
 
-        El objetivo del uso de clusters es identificar patrones o grupos de objetos similares dentro de un 
+        El objetivo del uso de clusters es identificar patrones o grupos de objetos similares dentro de un
         conjunto de datos de interés.
 
         Cada grupo contiene observaciones con un perfil similar de acuerdo con un criterio específico. 
@@ -630,10 +645,6 @@
         a los clientes por atributos personales. Como resultado de esto, 
         se pueden diseñar diferentes campañas de marketing dirigidas a varios tipos de clientes.
 
-        El modelo de clustering es una noción utilizada para indicar qué tipo de clustering estamos 
-        tratando de identificar. Los cuatro modelos más comunes de métodos de agrupación son la agrupación 
-        jerárquica, la agrupación de k-means, la agrupación basada en modelos y la agrupación basada en densidad.
-
 
 \part{Segmentación de clientes}
 
@@ -643,16 +654,16 @@
         clientes y brindar información de segmentación para que por ejemplo un equipo de marketing pudiera planificar
         una estrategia efectiva basada en nuestros clusters.
 
-        \section{Importancia de resolverlo}
+        \section{Importancia de resolverlo / Relevancia}
 
-        Si bien las tácticas de marketing masivo aún pueden obtener resultados, 
+        Si bien las tácticas de marketing masivo aún pueden obtener resultados (la idea que usa DuckDuckGo), 
         la suposición de que simplemente todos estarán interesados en comprar lo que está vendiendo es una 
         estrategia costosa, ineficiente y una forma bastante mala de tirar dinero de marketing a la basura.
 
         En lugar de un enfoque de \Quote{talla única}, la segmentación exitosa agrupa los datos de sus 
         clientes en grupos que comparten las mismas propiedades o características de comportamiento, 
         lo que ayuda a impulsar el contenido dinámico y las tácticas de personalización para comunicaciones 
-        de marketing más oportunas, relevantes y efectivas.
+        de marketing más oportunas, relevantes y efectivas (algo como lo que hace Facebook o Google).
 
         Sin embargo, para que la segmentación se use correctamente, debe tener en cuenta que 
         diferentes clientes compran por diferentes razones, y los especialistas en marketing 
@@ -666,16 +677,20 @@
 
     \chapter{El dataset / Business Understanding}
 
-        Para poder solucionar este problema buscamos un dataset que fuera apropiedo en Kaggle, llegando a este:
+    \section{¿De donde salieron los datos?}
+        Para poder solucionar este problema busque un dataset que fuera apropiedo en 
+        Kaggle, llegando a este:
 
         \url{https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python}
 
         Ahora veamos un poco de contexto de este dataset:
+
         Este conjunto de datos se creo solo con el propósito de aprender los conceptos de 
         segmentación de clientes, también conocidos como análisis de la carrito de compras :v. 
 
         Este fue diseñado para usarse con la técnica de ml no supervisada (algoritmo de kmeans) en la forma más simple.
-        
+        Es decir es un dataset \Quote{didactico} publicado por el creador de un curso que explicaba kmeans. 
+
         Este dataset se supone que es de un centro comercial y, a través de tarjetas de membresía, 
         se tienen algunos datos básicos sobre los clientes, como identificación del cliente, 
         edad, sexo, ingresos anuales y puntaje de gastos.
@@ -685,7 +700,7 @@
 
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.9\textwidth]{x}
+            \includegraphics[width=0.7\textwidth]{x}
         \end{figure}
 
     \chapter{La propuesta}
@@ -699,143 +714,433 @@
 
     \chapter{La implementación}
 
-        \section{Preparación y conocimiento de los datos}
+        \section{Preprocesamiento}
 
-        Lo primero que tuvimos que hacer fue preparar los datos, el primer paso fue descargar el csv y abrirlo para explorar un poco
-        la naturaleza del dataset.
+            \subsection{Preparación y conocimiento de los datos}
 
-        \begin{figure}[ht!]
-            \centering
-            \includegraphics[width=0.8\textwidth]{1}
-            \caption{Primero cargemos las librerias}
-        \end{figure}
+                Lo primero que tuvimos que hacer fue preparar los datos, el primer paso fue descargar el csv y
+                abrirlo para explorar un poco
+                la naturaleza del dataset.
 
-        \begin{figure}[ht!]
-            \centering
-            \includegraphics[width=0.8\textwidth]{2}
-            \caption{Leemos la información y la almacenamos en un dataframe}
-        \end{figure}
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{1}
+                    \caption{Primero cargemos las librerias}
+                \end{figure}
 
-        \begin{figure}[ht!]
-            \centering
-            \includegraphics[width=0.8\textwidth]{3}
-            \caption{Usamos las funciones de r para ver un poco mejor el dataset}
-        \end{figure}
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{2}
+                    \caption{Leemos la información y la almacenamos en un dataframe}
+                \end{figure}
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{3}
+                    \caption{Usamos las funciones de r para ver un poco mejor el dataset}
+                \end{figure}
+
+                \clearpage
+
+            \subsection{Conociendo los datos}
+
+                Hay 5 columnas dentro de nuestra información:
+
+                \begin{itemize}
+                    \item ID de cliente: número de cliente numérico único
+                    \item Género: categórico, binario (hombre / mujer)
+                    \item Edad - numérica, entero
+                    \item Ingreso anual (k \$) - numérico, entero
+                    \item Puntaje de gasto (1-100) - numérico, entero
+                \end{itemize}
+
+            \subsection{Cosa curiosa: usar kmeans sobre columnas binaria}
+
+            Hay una columna binaria, categórica: género.
+            Recuerdo haber hablado con el profesor sobre que era una mala idea usar un numero para poner esa columna
+            (por ejemplo hombre 1 y mujer 0), despues de eso pense en usar algo parecido al one hot encoding.
+            
+            Y llegue a esta conclusion:
+            \begin{itemize}
+                \item técnicamente posible
+                \item teóricamente no prohibido
+                \item prácticamente no recomendado
+            \end{itemize}
+                
+            Por qué no se recomienda, se explica muy bien en el sitio de soporte de IBM. 
+
+            \url{https://www.ibm.com/support/pages/clustering-binary-data-k-means-should-be-avoided}
+
+
+            \subsection{Limpieza de datos}
+                
+            \textbf{No hay datos faltantes. 
+                Esto simplifica el análisis, pero es un escenario muy poco probable
+                en la vida real, donde los científicos de datos se pueden pasan una cantidad significativa de
+                tiempo limpiando
+                sus datos antes de realizar el análisis central.}
+
+                \clearpage
+                
+                Eso si, es importante notar que para que todo funcione en los algoritmos que usaremos después
+                vamos a quedarnos solo con las columnas numéricas, es decir, adiós el género como un dato categorico
+                y al solo ser binario podemos usar valores numéricos.
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{miss}
+                \end{figure}
 
         \clearpage
+        \section{Exploración de datos}
 
-        \subsection{Conociendo los datos}
+            Esta sección contiene una investigación estadística básica de una base de datos dada. 
+            Es un punto crucial en cualquier análisis, ya que permite una mejor comprensión de los datos.
 
-        Hay 5 columnas dentro de nuestra información:
+            Los datos los voy a separar por género, la única variable categórica.
 
-        \begin{itemize}
-            \item ID de cliente: número de cliente numérico único
-            \item Género: categórico, binario (hombre / mujer)
-            \item Edad - numérica, entero
-            \item Ingreso anual (k \$) - numérico, entero
-            \item Puntaje de gasto (1-100) - numérico, entero
-        \end{itemize}
+            \subsection{Edades}
 
-        \subsection{Resultados, usar kmeans sobre columnas binaria}
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{4}
+                \end{figure}
 
-        Hay una columna binaria, categórica: género.
-        Recuerdo haber hablado con el profesor sobre que era una mala idea usar un numero para poner esa columna
-        (por ejemplo hombre 1 y mujer 0), despues de eso pense en usar algo parecido al one hot encoding.
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.3\textwidth]{5}
+                \end{figure}
+
+                La edad promedio de los clientes masculinos es ligeramente más
+                alta que la de las mujeres (39.8 versus 38.1). La distribución de 
+                la edad masculina es más uniforme que la femenina, donde podemos
+                observar que el grupo de edad más grande es de 30 a 35 años. 
+                
+                Sin embargo, la prueba K-S muestra que las diferencias entre estos 
+                dos grupos son estadísticamente insignificantes.
+
+                Aquí hay un poco más de clientes femeninos que masculinos (112 vs. 88). 
+                Las mujeres representan el 56\% del total de clientes.
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{6}
+                \end{figure}
+
+            \clearpage
+            \subsection{Ingresos}
+
+                El ingreso promedio de los hombres es mayor que el de las mujeres (62.2k \$ vs. 59.2k \$). 
+                También el ingreso medio de los clientes masculinos (62.5k \$) es mayor que el de las mujeres (60k \$). 
+                
+                La desviación estándar es similar para ambos grupos. Hay un valor atípico en el grupo masculino con un ingreso anual
+                de aproximadamente 140k \$. La prueba K-S muestra que estos dos grupos no son estadísticamente diferentes.
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{7}
+                \end{figure}
+
+            \clearpage
+            \subsection{Gasto}
+
+                Elgasto promedio para las mujeres (51.5) es más alto que el de los hombres (48.5). 
+                El valor p de la prueba K-S indica que no hay evidencia para rechazar la hipótesis nula, 
+                sin embargo, la evidencia no es tan fuerte como en comparaciones anteriores.
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{8}
+                \end{figure}
+
+            \clearpage
+            \subsection{Posibles correlaciones que no encontre}
+
+                \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{9}
+                    \includegraphics[width=0.5\textwidth]{91}
+                    \includegraphics[width=0.5\textwidth]{92}
+                \end{figure}
+
+            Volvamos un poco atras y hablemos de los clasificadores que vamos a usar:
+
+    \clearpage
+    \section{Técnica: K means}
+        \subsection{Historia y funcionamiento}
+        La agrupación particional (o agrupación de partición) son métodos de agrupación 
+        utilizados para clasificar los elementos dentro de un conjunto de datos en múltiples grupos en función de su similitud. 
+        Los algoritmos requieren que el analista especifique el número de clústeres que se generarán.
+
+        K-Means, el algoritmo por excelencia de clustering, muy popular y el que se enseña en la mayoría de los cursos de aprendizaje automático.
         
-        Y llegue a esta conclusion:
+        Es ademas un algoritmo de agrupación particional.
+        Fue desarrollado independientemente en muchos lugares en los años 50 y 60 y ganó gran popularidad debido a su 
+        facilidad de implementación, simplicidad y muchos éxitos empíricos (por ejemplo, en negocios, medicina y ciencia).
+
+        Hay 3 pasos principales en el algoritmo K-Means (también conocido como algoritmo de Lloyd):
         \begin{itemize}
-            \item técnicamente posible
-            \item teóricamente no prohibido
-            \item prácticamente no recomendado
+            \item Dividir las muestras en grupos iniciales mediante el uso de puntos de semillas. Las muestras más cercanas a estos puntos de origen crearán grupos iniciales.
+            \item Calcule las distancias de las muestras a los puntos centrales de los grupos (centroides) y asigne las muestras más cercanas a su grupo.
+            \item El tercer paso es calcular los centroides de clúster recién creados (actualizados).
         \end{itemize}
-            
-        Por qué no se recomienda, se explica muy bien en el sitio de soporte de IBM. 
 
-        \url{https://www.ibm.com/support/pages/clustering-binary-data-k-means-should-be-avoided}
-
-
-        \subsection{Limpieza de datos}
-            No hay datos faltantes. Esto simplifica el análisis, pero es un escenario muy poco probable 
-            en la vida real, donde los analistas pasan una cantidad significativa de tiempo limpiando 
-            sus datos antes de realizar el análisis central.
-
-        \subsection{Creación del clasificador}
-
-        Esto fue mucho mas sencillo e igualmente buscamos crear el modelo mas sencillo que fuera capaz de resolver el problema, llegando
-        a que el parametro que mas afectba el desempeño del sistema era la cantidad de elementos necesario para crear una hoja,
-        un valor de 15 resulto ser mucho mas efectivo en reducir el tamaño del arbol y aumentar el desempeño.
-
-        Ahora tambien fue importante cambiar el tamaño del bache a 64, siendo una creencia común que conocía y comprobé que usar 
-        una potencia de 2 aumenta significativamente el tiempo de entrenamiento.
-
-        \subsection{Evaluación}
-
-        Lo que hicimos para evaluar al sistema fue partir nuestros datos, elegimos un 80\%, algo muy importante (y que me tomo dos horas
-        darme cuenta y cambio el resultado del sistema de un 40\% a un 85\%) es que antes de partir los datos lso \Quote{revolvimos},
-        para evitar que cierto grupo de etiquetas quedara sobrerepresentado en algun conjunto.
-
-        \subsection{interpretación}
-
-        Con esto listo creamos un evaluador y medimos el resultado de nuestro clasificador.
+        Luego simplemente hay que repetir los pasos 2 y 3 hasta que el algoritmo converja.
+        Como se mencionó anteriormente, el objetivo de K-Means es minimizar la función objetivo (inercia) 
+        en todos los grupos. 
+        
+        La función objetivo comunmene esta definida como:
         \begin{figure}[ht!]
-            \centering
-            \includegraphics[width=0.65\textwidth]{result}
+            \includegraphics[width=0.3\textwidth]{min}
         \end{figure}
 
-        En este podemos ver inmediatamente que nuestro sistema cumplio nuestro objetivo, 
-        logran un mas de 85\% de accuracy en el conjunto de prueba.
+        Esto se conoce como problema NP-fuerte, lo que significa que es un algoritmo greeady y converge al mínimo local. 
+        El costo computacional del algoritmo K-Means de Lloyd es O (kn), donde k es una cantidad de grupos y n es una cantidad de muestras. 
 
-        Ademas viendo a la matriz de confusión vemos que los errores se distribuyen de manera informe.
-        Finalmente y como una posible forma de llevarlo a las manos de los usuarios cree un programa que usa
-        los modelos y al que tu le pasas un texto por la terminal y te regresa su nivel estimado de urgencia.
+        Esto no es malo en comparación con otros algoritmos de agrupación. A pesar de converger generalmente a un mínimo local, K-means.
+        es relativamente rápido y cuando los grupos están bien aislados unos de otros, 
+        es probable que converga al mínimo global. Debido a que el resultado de la agrupación depende de los criterios de inicialización, 
+        es común ejecutar el análisis para varios puntos de inicialización y elegir el que tenga la mínima inercia resultante.
+            
+        Hay algunas
+        mejoras en el algoritmo para resolver el problema de los mínimos locales. Una mejora ejemplar es utilizar 
+        algoritmos mejorados de Firefly.
 
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=0.65\textwidth]{man}
-        \end{figure}
+        Esto se conoce como problema NP-hard, lo que significa que es un algoritmo codicioso y converge al mínimo local. El costo computacional del algoritmo K-Means de Lloyd es O (kn), donde k es una cantidad de grupos yn es una cantidad de muestras. Esto no es malo en comparación con otros algoritmos de agrupación. A pesar de converger generalmente a un mínimo local, K-means es relativamente rápido y cuando los grupos están bien aislados unos de otros, es probable que converja al mínimo global. Debido a que el resultado de la agrupación depende de los criterios de inicialización, es común ejecutar el análisis para varios puntos de inicialización y elegir el que tenga la mínima inercia resultante. Hay algunas mejoras en el algoritmo para resolver el problema de los mínimos locales. Una mejora ejemplar es utilizar Algoritmos mejorados de Firefly sobre los cuales puede leer aquí.
 
-        \subsection{Codigo}
-        \subsubsection{Codigo principal}
-        Compilarse usando: javac -cp weka.jar Project.java \&\& java -cp weka.jar:. Project   
-        y java v13
-        %\lstinputlisting[language=Java, gobble=6]{../Code/Project.java}
+        En general, se requiere definir tres parámetros principales:
 
-        \subsubsection{Codigo de pruebas del usuario final}
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=0.65\textwidth]{result}
-        \end{figure}
-        %\lstinputlisting[language=Java, gobble=6]{../Code/Tests.java}
+        \begin{itemize}
+            \item Criterios de inicialización
+            
+            En muchas librerias, se implementa un ingenioso esquema de 
+            inicialización: "k-means ++" propuesto por Arthur y Vassilvitskii. 
+            
+            Crea centroides iniciales generalmente distantes entre sí, lo que aumenta la 
+            probabilidad de obtener mejores resultados. 
+            También existe la posibilidad de utilizar un generador de puntos aleatorios. 
+            Hay esfuerzos continuos para crear el método de siembra más eficiente para el algoritmo K-Means,
+                uno de ellos se basa en el análisis de componentes independientes.
+
+            \item 
+                Numero de clusters
+
+                La selección de varios grupos es la parte más difícil de configurar este algoritmo. 
+                No existen criterios matemáticos estrictos para esto y se han desarrollado muchos enfoques heurísticos / simplificados. 
+                Uno de los más simples y populares es el método de codo que se muestra en este análisis.
+                
+                También hay otras opciones, a menudo avanzadas, para elegir la cantidad óptima de clústeres, por ejemplo:
+                \begin{itemize}
+                    \item Longitud mínima del mensaje (MML)
+                    \item Longitud mínima de descripción (MDL)
+                    \item Criterio de información de Bayers (BIC)
+                    \item Criterio de información de Akiake (AIC)
+                    \item Proceso de Dirichlet
+                    \item Estadísticas de brecha
+                \end{itemize}
+
+            \item Una métrica de distancia (no se requiere en la implementación)
+            
+                Hay varias opciones para calcular la distancia entre puntos.
+                La más popular es simplemente la métrica euclidiana y es la implementada en R. 
+                A menudo se le llama modelo esférico de k-medias. Tiene el inconveniente de que solo encuentra grupos
+                de tipo esférico y tiende a inflarse en análisis altamente multidimensionales ("maldición de la dimensionalidad"). 
+                Hay otras opciones pero no implementadas en R por defecto, por ejemplo:
+                \begin{itemize}
+                    \item Distancia de Mahalonobis (alto costo de cómputo)
+                    \item Distancia Itakura-Saito
+                    \item L1 distancia
+                    \item Distancia coseno
+                    \item Distancia de Bregman
+                \end{itemize}
+        \end{itemize}
+
+        Algunas conclusiones sobre K-Means:
+        \begin{itemize}
+            \item Se utilizan distancias euclidianas
+            \item Se debe definir el número de grupos para el algoritmo
+            \item El centroide se calcula utilizando la distancia media a los miembros del grupo
+            \item Los grupos se suponen isotrópicos y convexos.
+            \item Algoritmo estocástico: los resultados dependen de los criterios de inicialización
+            \item Crea grupos de igual varianza (minimiza la inercia)
+            \item Propenso a la "maldición de la dimensionalidad"
+            \item Se puede ejecutar en paralelo, por lo que se escala bien
+        \end{itemize}
+
+        \subsection{Ventajas y desventajas}
+
+            K-means es uno de los métodos de clustering más utilizados. 
+            Destaca por la sencillez y velocidad de su algoritmo, sin embargo, presenta una serie de
+                limitaciones que se deben tener en cuenta.
+
+            Requiere que se ponga de antemano el número de clusters que se van a crear. Esto puede ser 
+            complicado si no se tiene la información adicional sobre los datos con los que se trabaja. 
+            Se han desarrollado varias estrategias para ayudar a identificar potenciales valores óptimos de K 
+            (ver más adelante), aunque todas ellas son orientativas.
+
+            Las grupos resultantes pueden variar dependiendo de la asignación aleatoria inicial de los 
+            centroides. Para minimizar este problema se recomienda repetir el proceso de clustering entre 25-50 
+            veces y seleccionar como resultado definitivo el que tenga menor suma total de varianza interna. 
+            Aun así, solo se puede garantizar la reproducibilidad de los resultados si se emplean semillas.
+
+            Presenta problemas de robustez frente a outliers. La única solución es excluirlos o recurrir a 
+            otros métodos de clustering más robustos como K-medoids (PAM).
 
 
+        \clearpage
+        \subsection{Apliquemoslo a los datos}
 
-        \subsection{Posibles mejoras a futuro}
+        \subsubsection{¿Qué parametros usar?}
+
+
+            Para encontrar un número apropiado de clusters, se utilizará una metrica bastante conocida, la del codo:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.75\textwidth]{k1}
+            \end{figure}
+
+            Esta de una resultado entre el 5 y el 6, asi que intentaremos con ambos para ver.
+
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.8\textwidth]{k2}
+                \includegraphics[width=0.8\textwidth]{k21}
+            \end{figure}
+
+            \subsubsection{Para 5 paso esto:}
+
+            El algoritmo K-Means generó los siguientes 5 grupos:
 
             \begin{itemize}
-                \item Por un lado seria interesante ver como usando $IDFTransform/TFTransform$
-                podriamos alterar los resultados.
-                \item Debido a que los datos no estan balanceados usar el accuracy no es la mejor
-                idea y se debe hacer con cuidado.
+                \item clientes con bajo  ingreso anual y  alto  puntaje de gasto
+                \item clientes con ingreso  medio  y  puntaje de gasto  medio
+                \item clientes con alto  ingreso anual y  bajo  puntaje de gasto
+                \item clientes con altos  ingresos anuales y  alto  puntaje de gastos
+                \item clientes con bajo  ingreso anual y  bajo  puntaje de gasto
             \end{itemize}
 
-        \subsection{Conclusión}
+            No hay grupos distintos en términos de edad de los clientes.
 
-        Gracias a los resultados vimos que es posible crear un algoritmo con la ayuda de los árboles de decisión
-        que nos permite clasificar con un gran desempeño la urgencia de un \Quote{support ticket}.
+            \clearpage
+            \subsubsection{Para 6 paso esto:}
+
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.65\textwidth]{k3}
+                \includegraphics[width=0.65\textwidth]{k31}
+            \end{figure}
+
+            El algoritmo K-Means generó los siguientes 6 grupos:
+            \begin{itemize}
+                \item clientes más jóvenes con puntaje de gasto  medio  anual y  medio 
+                \item clientes con  alto  ingreso anual y  bajo  puntaje de gasto
+                \item clientes más jóvenes con puntaje de gasto  medio  anual y  medio 
+                \item clientes con  altos  ingresos anuales y  alto  puntaje de gastos
+                \item clientes con  bajo  ingreso anual y  bajo  puntaje de gasto
+                \item clientes con  bajo  ingreso anual y  alto puntaje de gasto
+            \end{itemize}
+
+            No hay grupos distintos en términos de edad de los clientes.
+
+    \clearpage
+    \section{Técnica: DBSCAN}
+        \subsection{Historia y funcionamiento}
+
+        El clustering basado en la densidad utiliza la idea de de densidad y conectividad de densidad
+        (como alternativa a la medición de distancia), lo que la hace muy útil para descubrir un grupo en 
+        formas no lineales. 
+        
+        Este método encuentra un área con una densidad más alta que el área restante. 
+        Uno de los métodos más famosos es la Agrupación espacial basada en densidad de aplicaciones con ruido 
+        (DBSCAN). Utiliza el concepto de accesibilidad de densidad y conectividad de densidad.
+
+        El algoritmo de agrupamiento basado en densidad DBSCAN es una técnica fundamental de agrupamiento de datos para 
+        encontrar grupos de formas arbitrarias, así como para detectar valores atípicos.
+
+        A diferencia de K-Means, DBSCAN no requiere el número de clústeres como parámetro. Más bien, infiere el número 
+        de grupos basados en los datos, y puede descubrir grupos de forma arbitraria (en comparación, K-Means 
+        generalmente descubre grupos esféricos). Los métodos de partición (K-means, agrupación PAM) y la agrupación 
+        jerárquica son adecuados para encontrar agrupaciones de forma esférica o agrupaciones convexas. En otras palabras,
+        funcionan bien para grupos compactos y bien separados. Además, también se ven gravemente afectados por 
+        la presencia de ruido y valores atípicos en los datos.
+
+        \subsection{Ventajas y desventajas}
+
+        Las ventajas de la agrupación basada en la densidad son:
+        \begin{itemize}
+            \item No se asume el número de grupos. El número de grupos a menudo se desconoce de antemano. 
+            Además, en un flujo de datos en evolución, el número de grupos naturales a menudo está cambiando.
+            \item Descubrimiento de racimos con forma arbitraria. Esto es muy importante para muchas aplicaciones de flujo de datos.
+            \item Capacidad para manejar valores atípicos (resistente al ruido).
+        \end{itemize}
+
+        Las desventajas de la agrupación basada en la densidad son:
+        \begin{itemize}
+            \item Si hay variación en la densidad, no se detectan puntos de ruido
+            \item Sensible a los parámetros, es decir, difícil de determinar el conjunto correcto de parámetros.
+            \item La calidad de DBSCAN depende de la medida de distancia.
+            \item DBSCAN no puede agrupar bien los conjuntos de datos con grandes diferencias de densidad.
+        \end{itemize}
+        
+        Una limitación de DBSCAN es que es sensible a la elección de e, en particular si los 
+        grupos tienen densidades diferentes. Si e es demasiado pequeño, los grupos más dispersos 
+        se definirán como ruido. Si e es demasiado grande, los grupos más densos pueden fusionarse.
+
+        \clearpage
+        \subsection{Apliquemoslo a los datos}   
+
+            \subsubsection{¿Qué parametros usar?}
+
+            Para encontrar el parametro de dbscan usaremos una funcion ya establecida:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.75\textwidth]{d1}
+            \end{figure}
+
+            Esta de una resultado entre el que e = $13 +- 3$, veamos los resultados de usarlo:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.85\textwidth]{d2}
+                \includegraphics[width=0.85\textwidth]{d3.png}
+            \end{figure}
+
+            DBSCAN encontro entonces 6 clusters y uno de ruido, estos tienen una variacion muy grande, hay 25 puntos que clasifico como ruido.
+            En la grafica podemos ver cuales fueron esos outliers, puntos que no tienen la distancia ni la cantidad de datos necesarios para 
+            ser un cluster.
+
+            Y aqui es donde la cosa se puso fea, porque no encontre algo que uniera a los clusters, por un lado por falta de tiempo pero
+            tambien porque no encuentro una característica comun para los clusters que DBSCAN hizo.
 
 
+    \section{Posibles mejoras a futuro}
+
+        \begin{itemize}
+            \item Me puse a investigar mucho sobre un algoritmo conocido como "Affinity Propagation" y siento que seria una gran comparación usarlo.
+            \item Encontrar un patrón sobre los clusters de DBSCAN.
+        \end{itemize}
+
+    \section{Conclusión}
+
+    Gracias a los resultados vimos está claro que DBSCAN no pudo generar grupos razonables.
+    Se debe a sus problemas para reconocer grupos de varias densidades (que están presentes en este caso).
+    
+    A su vez, el algoritmo de K-Means creo 5-6 grupos razonables y que se pudieron con algo de análisis encontrar a que
+    grupos correspondían.
+    
+    \section{Evidencia}
+    
+    Por si quieres corroborar todo lo que aquí se experimento deje adjunto una libreta que puedes usar para jugar con le código
+    
 
 \begin{thebibliography}{10}
 
   \bibitem{1} 
-      \textit{Aidan Wilson}, 
-      Sep 29, 2019 \\
-      \url{https://towardsdatascience.com/a-brief-introduction-to-supervised-learning}
+      \textit{k MEANS}, 
+      \url{https://www.datanovia.com/en/courses/advanced-clustering/}
 
   \bibitem{2} 
-      \textit{Diego Lopez Yse}, 
-      Apr 17, 2019 \\
-      \url{https://towardsdatascience.com/the-complete-guide-to-decision-trees}
+      \textit{DBSCAN}, 
+      \url{https://www.datanovia.com/en/lessons/dbscan-density-based-clustering-essentials/}
 
 \bibitem{3}
     \textit{Anthony Botibol}, 
