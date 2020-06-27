@@ -2,7 +2,6 @@
 #include <delay.h>
 #include <mega8535.h>
 
-// Declare your global variables here
 typedef unsigned char u8;
 typedef unsigned int u16;
 typedef unsigned long int u32;
@@ -39,6 +38,11 @@ void main(void) {
     termometer[1] = '0' + (temperature / 10) % 10;
     termometer[0] = '0' + (temperature / 100) % 10;
 
+    print_lcd(date, 11, 0, 0);
+    print_lcd(time, 9, 0, 1);
+    print_lcd(termometer, 7, 11, 1);
+
+    delay_ms(DELAY_IN_A_DIGIT_MS);
     milis += DELAY_IN_A_DIGIT_MS;
     if (milis >= 500) {
       milis = 0;
@@ -72,7 +76,6 @@ void main(void) {
       month++;
       if (month == 13) month = 1;
     }
-
     date[3] = '0' + ((year / 1) % 10);
     date[2] = '0' + ((year / 10) % 10);
     date[1] = '0' + ((year / 100) % 10);
@@ -84,17 +87,11 @@ void main(void) {
     date[9] = '0' + ((day / 1) % 10);
     date[8] = '0' + ((day / 10) % 10);
 
-    if (PIND .0 == 1) select_is_up = !select_is_up;
-    if (PIND .1 == 1) select_is_up ? year++ : hour++;
-    if (PIND .2 == 1) select_is_up ? month++ : minute++;
-    if (PIND .3 == 1) select_is_up ? day++ : second++;
+    if (PIND.0 == 1) select_is_up = !select_is_up;
+    if (PIND.1 == 1) select_is_up ? year++ : hour++;
+    if (PIND.2 == 1) select_is_up ? month++ : minute++;
+    if (PIND.3 == 1) select_is_up ? day++ : second++;
     lcd_gotoxy(9, 1);
     lcd_putchar(select_is_up ? 'U' : 'D');
-
-    print_lcd(date, 11, 0, 0);
-    print_lcd(time, 9, 0, 1);
-    print_lcd(termometer, 7, 11, 1);
-
-    delay_ms(DELAY_IN_A_DIGIT_MS);
   }
 }
