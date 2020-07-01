@@ -1,4 +1,4 @@
-class result {
+class result implements java.io.Serializable {
   String md5;
   int port;
 

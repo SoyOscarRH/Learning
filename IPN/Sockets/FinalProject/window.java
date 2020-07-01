@@ -9,11 +9,12 @@ import javax.swing.*;
 class window {
   window(final int port) {
     final var multicast = new multiCastManager(port);
+    final var files = new fileManager(port);
 
     final var frame = new JFrame("File checker [Port " + port + " ]");
     frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
-    final var titleLogs = new JLabel("Logs\n");
+    final var titleLogs = new JLabel("Logs from " + port);
     titleLogs.setFont(new Font("helvetica", Font.PLAIN, 24));
     titleLogs.setAlignmentX(Component.CENTER_ALIGNMENT);
     frame.add(titleLogs);
@@ -48,11 +49,11 @@ class window {
     frame.add(name);
 
     new Thread(() -> {
-      rmiServer.startingServer(port);
+      rmiServer.startingServer(port + 100);
     }).start();
 
     findIt.addActionListener(e -> {
-      rmiClient.callServer(multicast.portNext, port);
+      rmiClient.callServer(multicast.portNext + 100, port);
     });
 
     frame.setSize(400, 450);

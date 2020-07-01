@@ -1,19 +1,20 @@
 import java.net.*;
 import java.util.*;
-import java.util.Collections;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class multiCastManager {
   final private int port;
   final private TreeMap<Integer, Integer> timeSinceAliveMessageFrom;
   private MulticastSocket socket;
   private InetAddress group;
-  int portNext;
-  int portPrevious;
+  static int portNext;
+  static int portPrevious;
+  ReentrantLock lock;
 
   multiCastManager(final int port) {
     this.port = port;
     this.timeSinceAliveMessageFrom = new TreeMap<Integer, Integer>();
-
+    this.lock = new ReentrantLock();
     try {
       this.socket = new MulticastSocket(8000);
       this.group = InetAddress.getByName("228.1.1.1");
@@ -40,8 +41,10 @@ public class multiCastManager {
 
   void updatingConnectionTable() {
     while (true) {
+      lock.lock();
       var ports = new ArrayList<Integer>();
-      for (final var entry : timeSinceAliveMessageFrom.entrySet()) {
+      final var old = new TreeMap<>(timeSinceAliveMessageFrom);
+      for (final var entry : old.entrySet()) {
         if (entry.getValue() > 15)
           timeSinceAliveMessageFrom.remove(entry.getKey());
         else {
@@ -49,13 +52,13 @@ public class multiCastManager {
           timeSinceAliveMessageFrom.put(entry.getKey(), entry.getValue() + 1);
         }
       }
+      lock.unlock();
 
       ports.add(this.port);
       Collections.sort(ports);
       final var index = ports.indexOf(this.port);
       portNext = ports.get((index + 1) % ports.size());
       portPrevious = ports.get((ports.size() + index - 1) % ports.size());
-
       try {
         Thread.sleep(1000);
       } catch (Exception e) {
@@ -65,6 +68,7 @@ public class multiCastManager {
   }
 
   public String getListOfConnections() {
+    lock.lock();
     var listOfConnections = "";
     for (final var entry : timeSinceAliveMessageFrom.entrySet()) {
       listOfConnections += String.format("%s:%s  ", socket.getLocalAddress(), entry.getKey());
@@ -73,6 +77,7 @@ public class multiCastManager {
 
     listOfConnections += String.format("\n Next: %d \n", this.portNext);
     listOfConnections += String.format("\n Previous: %d \n", this.portPrevious);
+    lock.unlock();
 
     return listOfConnections;
   }
@@ -82,12 +87,16 @@ public class multiCastManager {
       try {
         final var packet = new DatagramPacket(new byte[512], 512);
         socket.receive(packet);
+        lock.lock();
         final var message = new String(packet.getData(), 0, packet.getLength());
         final var receivedPort = Integer.parseInt(message.trim());
         if (receivedPort != this.port)
           timeSinceAliveMessageFrom.put(receivedPort, 0);
       } catch (Exception e) {
         e.printStackTrace();
+      }
+      finally {
+        lock.unlock();
       }
     }
   }

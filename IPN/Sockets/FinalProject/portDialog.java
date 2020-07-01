@@ -22,7 +22,7 @@ class portDialog {
     dialog.add(cancel);
 
     confirm.addActionListener(e -> {
-      new Window(Integer.parseInt(text.getText()));
+      new window(Integer.parseInt(text.getText()));
       dialog.dispose();
     });
 
