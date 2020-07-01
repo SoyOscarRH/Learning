@@ -6,11 +6,14 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.Arrays;
+import java.util.concurrent.locks.ReentrantLock;
+import java.io.FileOutputStream;
 
 import javax.swing.*;
 
 class window {
   ArrayList<JButton> buttons = new ArrayList<JButton>();
+  int missing;
 
   window(final int port) {
     final var multicast = new multiCastManager(port);
@@ -35,8 +38,8 @@ class window {
         logs.setText(multicast.getListOfConnections());
         try {
           Thread.sleep(1000);
-        } catch (Exception e) {
-          e.printStackTrace();
+        } catch (Exception e3) {
+          e3.printStackTrace();
         }
       }
     }).start();
@@ -104,9 +107,42 @@ class window {
         buttons.add(getThis);
         getThis.addActionListener(e2 -> {
           var i = 0;
+          final var numDestionations = destinations.length;
+          missing = numDestionations;
+          final var lock = new ReentrantLock();
+          final var raws = new byte[numDestionations][];
           for (final var destination : destinations) {
-            fileClient.send(filename, (Integer) destination, i++, destinations.length);
+            final var part = i++;
+            new Thread(() -> {
+              final var to = (Integer) destination;
+              raws[part] = fileClient.send(filename, to, part, numDestionations);
+              lock.lock();
+              missing--;
+              lock.unlock();
+              if (missing == 0) {
+                try (final var stream = new FileOutputStream("./" + port + "/" + filename)) {
+
+                  var size = 0;
+                  for (final var raw : raws)
+                    size += raw.length;
+
+                  final var soClose = new byte[size];
+                  var j = 0;
+                  for (final var raw : raws) {
+                    for (var k = 0; k < raw.length; ++k) {
+                      soClose[j++] = raw[k];
+                    }
+                  }
+
+                  stream.write(soClose);
+                } catch (Exception e4) {
+                  e4.printStackTrace();
+                }
+
+              }
+            }).start();
           }
+
         });
       }
 
@@ -117,4 +153,5 @@ class window {
       result.setText(total);
     });
   }
+
 }

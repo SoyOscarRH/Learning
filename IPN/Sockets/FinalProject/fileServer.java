@@ -1,5 +1,7 @@
 import java.io.*;
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class fileServer {
   ServerSocket serverSocket;
@@ -28,14 +30,21 @@ public class fileServer {
         final var parts = in.readInt();
 
         final var path = String.format("./%d/%s", port, filename);
-        final var toSend = (new File(path)).length();
-        out.writeLong(toSend);
+        final var size = (int) (new File(path)).length();
+        final var numOfElements = size / parts;
+        final var beforeMe = part * numOfElements;
+        final var sending = (part + 1 == parts) ? size - beforeMe : numOfElements;
+        System.out.printf("sending file: %s, part %d/%d: %d bytes\n", filename, part, parts, sending);
+        out.writeLong(sending);
         out.flush();
 
-        System.out.printf("sending file: %s, part %d/%d: \t%d bytes", filename, part, parts, toSend);
+        final byte[] raw = Files.readAllBytes(Paths.get(path));
+        out.write(raw, beforeMe, sending);
+        out.flush();
+
+        out.close();
         in.close();
         socket.close();
-
       } catch (final Exception e) {
         e.printStackTrace();
       }

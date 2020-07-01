@@ -19,7 +19,7 @@ class rmiServer implements finder {
   }
 
   public ArrayList<result> getList(final String filename, final int origin) {
-    System.out.printf("[ID=%d] is searching %s, origin is %d\n", port, filename, origin);
+    System.out.printf("\n[ID=%d] is searching %s, origin is %d\n", port, filename, origin);
     if (port == origin)
       return new ArrayList<result>();
 

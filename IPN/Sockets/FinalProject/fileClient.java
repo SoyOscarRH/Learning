@@ -16,11 +16,16 @@ class fileClient {
       out.flush();
 
       final var toReceive = in.readLong();
-      System.out.printf("goinf to receive \t%d bytes", toReceive);
+      System.out.printf("going to receive %d bytes\n", toReceive);
+      final var raw = new byte[(int)toReceive];
 
+
+      final var reality = in.read(raw);
+      System.out.printf("readed %d bytes\n", reality);
+
+      in.close();
       out.close();
-
-
+      return raw;
     } catch (final Exception e) {
       e.printStackTrace();
     }
