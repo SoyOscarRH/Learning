@@ -3,22 +3,17 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.ArrayList;
 
-
 class rmiClient {
-  static ArrayList<result> callServer(final int serverPort, final int portStarter) {
+  static ArrayList<result> findFile(final String name, final int where, final int origin, int port) {
+    var results = new ArrayList<result>();
     try {
-      final var registry = LocateRegistry.getRegistry(serverPort);
+      final var registry = LocateRegistry.getRegistry(where);
       final var stub = (finder) registry.lookup("finder");
 
-      final var results = stub.getList("3.pdf", portStarter);
-      for (final var result : results) {
-        System.out.printf("%s at %d", result.md5, result.port);
-      }
-
-      return results;
+      results = stub.getList(name, origin);
     } catch (Exception e) {
       e.printStackTrace();
-      return new ArrayList<>();
     }
+    return results;
   }
 }
