@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" />
+    <title>Formulario de registro</title>
+  </head>
+  <style>
+    body {
+      background-color: cadetblue;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 3rem;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+  </style>
+  <body>
+    <section>
+      <h3>Ejemplo sencillo de un formulario</h3>
+      <h4>Formulario de Registro del grupo 3CM6</h4>
+      <img src="shaq.jpg" style="border-radius: 1rem;" />
+    </section>
+    <hr />
+    <section style="text-align: left;">
+      Sea tan amable de rellenar el siguiente formulario.
+      <br />
+      <form action="http://localhost:8000">
+        <span> Nombre: </span>
+        <input type="text" name="Apellido" />
+
+        <span> Dirección: </span>
+        <input type="text" name="Direccion" />
+        
+        <span> Teléfono:</span>
+        <input type="text" name="Telefono" />
+        
+        <span>Comentarios:</span>
+        <textarea name="comentario" rows="7"></textarea>
+        <input style="min-height: 3rem;" type="submit" value="Enviar datos" />
+        <input style="min-height: 3rem;" type="reset" value="Borrar datos" />
+      </form>
+    </section>
+  </body>
+</html>
