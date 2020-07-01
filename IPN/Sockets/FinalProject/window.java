@@ -16,6 +16,7 @@ class window {
   int missing;
 
   window(final int port) {
+    System.out.println("========= " + port + " ============");
     final var multicast = new multiCastManager(port);
     final var files = new fileManager(port);
 
@@ -98,7 +99,7 @@ class window {
       for (final var r : where.entrySet()) {
         final var destinations = r.getValue().toArray();
         final var ids = Arrays.toString(destinations);
-        total += String.format("%s in %s", r.getKey(), ids);
+        total += String.format("%s in %s\n", r.getKey(), ids);
 
         final var getThis = new JButton("Get " + r.getKey());
         getThis.setFont(new Font("helvetica", Font.PLAIN, 14));
