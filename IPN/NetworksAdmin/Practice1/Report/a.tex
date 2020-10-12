@@ -61,18 +61,6 @@
     \setlength{\parskip}{0.5em}                                     %Top line
     \renewcommand{\footrulewidth}{0.5pt}                            %Bottom line
 
-    \lhead {                                                        %Left Header
-        \hyperlink{chapter.\arabic{chapter}}                        %Make a link to the current chapter
-        {\normalsize{\textsc{\nouppercase{\leftmark}}}}             %And fot it put the name
-    }
-
-    \rhead {                                                        %Right Header
-        \hyperlink{section.\arabic{chapter}.\arabic{section}}       %Make a link to the current chapter
-            {\footnotesize{\textsc{\nouppercase{\rightmark}}}}      %And fot it put the name
-    }
-
-    \rfoot{\textsc{\small{\hyperref[sec:Index]{Ve al Índice}}}}     %This will always be a footer  
-
     \fancyfoot[L]{                                                  %Algoritm for a changing footer
         \ifthenelse{\isodd{\value{page}}}                           %IF ODD PAGE:
             {\href{https://SoyOscarRH.github.io/}                   %DO THIS:
@@ -459,7 +447,7 @@
 % =====================================================
 \begin{document}
 
-\title{Practica #1: Conociendo GNS3}
+\title{Practica 1: Conociendo GNS3}
 
 \author{
     Oscar Andrés Rosas Hernández
@@ -475,40 +463,80 @@
 
 \section{Practica 1}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x2}
     \caption{Iniciar GNS3}
   \end{figure}
 
-  \begin{figure}[h]
-    \includegraphics[width=0.85\textwidth]{x3}
+  \begin{figure}[ht!]
+    \includegraphics[width=0.85\textwidth]{new1}
     \caption{Usar el area de trabajo para colocar los componentes en el canvas}
   \end{figure}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x4}
     \caption{Crear dos maquinas virtuales \Quote{lightweight}}
   \end{figure}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x5}
     \caption{Desde la maquina virtual configurar las conexiones}
   \end{figure}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x6}
     \caption{Editar la configuracion de IPv4}
   \end{figure}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x7}
     \includegraphics[width=0.85\textwidth]{x8}
     \caption{Editamos el router con la configuracion dada en las dos interfaces}
   \end{figure}
 
-  \begin{figure}[h]
+  \begin{figure}[ht!]
     \includegraphics[width=0.85\textwidth]{x9}
+    \includegraphics[width=0.85\textwidth]{new4}
     \caption{Ahora podemos hacer hacer ping}
   \end{figure}
+
+  Los comandos usados fueron:
+  \begin{lstlisting}[gobble=4]
+    [FOR ROUTER]
+    enable
+    configure terminal
+    interface FastEthernet 0/0
+    ip address 10.10.1.1 255.255.255.0
+    no shutdown
+    end
+    enable
+    configure terminal
+    interface FastEthernet 0/1
+    ip address 10.10.2.1 255.255.255.0
+    no shutdown
+    end
+    show ip interfacce brief
+    write memory
+
+    [FOR VPS]
+    ip 10.10.2.10 /24 10.10.2.1
+  \end{lstlisting}
+
+  \clearpage
+  \section{Preguntas}
+    \begin{itemize}
+        \item ¿Qué comandos se utilizan para cambiar al modo EXEC privilegiado y al modo de configuración global?
+        \texttt{enable} para el primero y \texttt{configure} para el segundo.
+        \item ¿Cuál es el comando utilizado para que el dispositivo muestre la tabla de enrutamiento? 
+        \texttt{show ip interface brief}
+        \item ¿Cuál es la fuente de información o de qué tipo son las rutas mostradas por este comando? las tablas
+        de enrumatiento del router en ese momento.
+        \item ¿Cuál es la capa del modelo OSI sobre la que se realizan principalmente estas 
+        funciones de comunicación? 
+        En el nivel de red
+        \item Si una PC requiere enviar paquetes hacia otra PC que 
+        se encuentra en una red distinta ¿hacia qué dispositivo son enviados estos paquetes? 
+        A un router y este lo va enviando hasta que un router se los envia a la computadora correcta.
+    \end{itemize}
 
 \end{document}
