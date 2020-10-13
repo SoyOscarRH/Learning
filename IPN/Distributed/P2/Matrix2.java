@@ -1,3 +1,5 @@
+package Learning.IPN.Distributed.P2;
+
 class Matrix2 {
   public static void main(String[] args) {
     final var N = 1000;
