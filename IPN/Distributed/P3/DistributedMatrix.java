@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.math.BigInteger;
 
 class DistributedMatrix {
   private static int PORT = 5_000;
@@ -186,7 +187,7 @@ class DistributedMatrix {
   }
 
   public static void serverNode() {
-    final var n = 4;
+    final var n = 1_000;
     final var matrices = initMatrices(n);
 
     var A = matrices[0];
@@ -232,7 +233,13 @@ class DistributedMatrix {
       }
     }
 
-    printMatrix(C);
+    var checksum = BigInteger.ZERO;
+    for (var i = 0; i < n; ++i)
+      for (var j = 0; j < n; ++j)
+      checksum = checksum.add(BigInteger.valueOf(C[i][j]));
+
+    if (n == 4) printMatrix(C);
+    System.out.println(checksum);
   }
 
   public static void main(final String[] args) {
