@@ -1,0 +1,127 @@
+! RANDOM COMMANDS
+enable
+configure terminal
+interface fx/x
+no shutdown
+exit
+no shutdown
+write memory
+end
+
+! PASSWORD
+admin
+firulais
+12345678
+
+! ======== VM ========
+ip=148.204.56.10 mask=255.255.255.0 gateway=148.204.56.1
+
+! ======== NETWORK A ========
+! ==== Router 1 ====
+interface f0/0 !--> Computadora MV
+ip addr 148.204.56.1 255.255.255.0
+interface f0/1 !--> Router2
+ip addr 8.8.8.13 255.255.255.252
+interface f1/0 !--> Router3
+ip addr 8.8.8.17 255.255.255.252
+ip route 148.204.59.0 255.255.255.0 f0/1 !PC1
+ip route 148.204.60.0 255.255.255.0 f1/0 !PC2
+
+! ==== Router 2 ====
+interface f0/0 !--> Router3
+ip addr 8.8.8.9 255.255.255.252
+interface f0/1 !--> Router1
+ip addr 8.8.8.14 255.255.255.252
+interface f1/0 !--> PC1
+ip addr 148.204.59.1 255.255.255.0
+ip route 148.204.60.0 255.255.255.0 f0/0 !PC2
+ip route 148.204.56.0 255.255.255.0 f0/1 !MV
+
+! ==== Router 3 ====
+interface f0/0 !--> Router2
+ip addr 8.8.8.10 255.255.255.252
+interface f0/1 !--> PC2
+ip addr 148.204.60.1 255.255.255.0
+interface f1/0 !--> Router1
+ip addr 8.8.8.18 255.255.255.252
+ip route 148.204.59.0 255.255.255.0 fc0/0 !PC1
+ip route 148.204.56.0 255.255.255.0 f1/0 !MV
+
+
+! ==== Config PC ====
+ip 148.204.59.10 /24 148.204.59.1 !PC1
+ip 148.204.60.10 /24 148.204.60.1 !PC2
+
+
+! ======== NETWORK B ========
+! ==== Router 4 ====
+interface f0/0 !--> Computadora MV
+ip addr 148.204.56.2 255.255.255.0
+interface f1/0 !--> Router5
+ip addr 8.8.8.5 255.255.255.252
+interface f0/1 !--> Router6
+ip addr 8.8.8.1 255.255.255.252
+ip route 148.204.57.0 255.255.255.0 f0/1 !PC3
+ip route 148.204.58.0 255.255.255.0 f1/0 !PC4
+
+! ==== Router 5 ====
+interface f1/0 !--> Router4
+ip addr 8.8.8.6 255.255.255.252
+interface f0/1 !--> PC4
+ip addr 148.204.58.1 255.255.255.0
+ip route 148.204.57.0 255.255.255.0 f1/0 !PC3
+ip route 8.8.8.0 255.255.255.252 f1/0 !MAYBE R6
+
+! ==== Router 6 ====
+interface f0/1 !--> Router4
+ip addr 8.8.8.2 255.255.255.252
+interface f1/0 !--> PC3
+ip addr 148.204.57.1 255.255.255.0
+ip route 148.204.58.0 255.255.255.0 f0/1 !PC4
+ip route 8.8.8.0 255.255.255.252 f0/1 !MAYBE R6
+
+! ==== Config PC ====
+ip 148.204.57.10 /24 148.204.57.1 !PC3
+ip 148.204.58.10 /24 148.204.58.1 !PC4
+
+
+
+
+
+
+enable
+configure terminal
+username admin priv 0 password firulais
+enable password firulais
+enable secret 12345678
+service password-encryption
+line console 0
+login local
+exit
+line vty 0 4
+transport input ssh
+password e
+login
+exit
+hostname Rn
+ip domain-name Rn.LOCAL
+crypto key generate rsa
+ip ssh time-out 10
+ip ssh authentication-retries 3
+ip ssh version 2
+line vty 0 4
+transport input ssh
+login local
+exit
+exit
+
+
+
+Router 1: 8.8.8.1
+Router 2: 8.8.8.2
+Router 3: 8.8.8.6
+
+
+Router 4: 8.8.8.1
+Router 5: 8.8.8.6
+Router 6: 8.8.8.2
