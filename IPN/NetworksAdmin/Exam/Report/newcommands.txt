@@ -24,8 +24,12 @@ interface f0/1 !--> Router2
 ip addr 8.8.8.13 255.255.255.252
 interface f1/0 !--> Router3
 ip addr 8.8.8.17 255.255.255.252
-ip route 148.204.59.0 255.255.255.0 f0/1 !PC1
-ip route 148.204.60.0 255.255.255.0 f1/0 !PC2
+router rip
+version 2
+no auto-summary
+network 148.204.56.0
+network 8.8.8.12
+network 8.8.8.16
 
 ! ==== Router 2 ====
 interface f0/0 !--> Router3
@@ -34,8 +38,12 @@ interface f0/1 !--> Router1
 ip addr 8.8.8.14 255.255.255.252
 interface f1/0 !--> PC1
 ip addr 148.204.59.1 255.255.255.0
-ip route 148.204.60.0 255.255.255.0 f0/0 !PC2
-ip route 148.204.56.0 255.255.255.0 f0/1 !MV
+router rip
+version 2
+no auto-summary
+network 8.8.8.8
+network 8.8.8.12
+network 148.204.59.0
 
 ! ==== Router 3 ====
 interface f0/0 !--> Router2
@@ -44,8 +52,12 @@ interface f0/1 !--> PC2
 ip addr 148.204.60.1 255.255.255.0
 interface f1/0 !--> Router1
 ip addr 8.8.8.18 255.255.255.252
-ip route 148.204.59.0 255.255.255.0 fc0/0 !PC1
-ip route 148.204.56.0 255.255.255.0 f1/0 !MV
+router rip
+version 2
+no auto-summary
+network 8.8.8.8
+network 148.204.60.0
+network 8.8.8.16
 
 
 ! ==== Config PC ====
@@ -61,24 +73,34 @@ interface f1/0 !--> Router5
 ip addr 8.8.8.5 255.255.255.252
 interface f0/1 !--> Router6
 ip addr 8.8.8.1 255.255.255.252
-ip route 148.204.57.0 255.255.255.0 f0/1 !PC3
-ip route 148.204.58.0 255.255.255.0 f1/0 !PC4
+router rip
+version 2
+no auto-summary
+network 148.204.56.0
+network 8.8.8.4
+network 8.8.8.0
 
 ! ==== Router 5 ====
 interface f1/0 !--> Router4
 ip addr 8.8.8.6 255.255.255.252
 interface f0/1 !--> PC4
 ip addr 148.204.58.1 255.255.255.0
-ip route 148.204.57.0 255.255.255.0 f1/0 !PC3
-ip route 8.8.8.0 255.255.255.252 f1/0 !MAYBE R6
+router rip
+version 2
+no auto-summary
+network 8.8.8.4
+network 148.204.58.0
 
 ! ==== Router 6 ====
 interface f0/1 !--> Router4
 ip addr 8.8.8.2 255.255.255.252
 interface f1/0 !--> PC3
 ip addr 148.204.57.1 255.255.255.0
-ip route 148.204.58.0 255.255.255.0 f0/1 !PC4
-ip route 8.8.8.0 255.255.255.252 f0/1 !MAYBE R6
+router rip
+version 2
+no auto-summary
+network 8.8.8.0
+network 148.204.57.0
 
 ! ==== Config PC ====
 ip 148.204.57.10 /24 148.204.57.1 !PC3
