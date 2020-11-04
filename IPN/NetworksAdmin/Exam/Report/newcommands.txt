@@ -8,11 +8,6 @@ no shutdown
 write memory
 end
 
-! PASSWORD
-admin
-firulais
-12345678
-
 ! ======== VM ========
 ip=148.204.56.10 mask=255.255.255.0 gateway=148.204.56.1
 
@@ -107,13 +102,10 @@ ip 148.204.57.10 /24 148.204.57.1 !PC3
 ip 148.204.58.10 /24 148.204.58.1 !PC4
 
 
-
-
-
-
+! ==== Config SSH ====
 enable
 configure terminal
-username admin priv 0 password firulais
+username admin priv 15 password firulais
 enable password firulais
 enable secret 12345678
 service password-encryption
@@ -138,12 +130,14 @@ exit
 exit
 
 
-
-Router 1: 8.8.8.1
-Router 2: 8.8.8.2
-Router 3: 8.8.8.6
-
+Router 1: 8.8.8.13
+Router 2: 8.8.8.9
+Router 3: 8.8.8.10
 
 Router 4: 8.8.8.1
-Router 5: 8.8.8.6
-Router 6: 8.8.8.2
+Router 5: 8.8.8.2
+Router 6: 8.8.8.6
+
+
+ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc admin@8.8.8.9
+

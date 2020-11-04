@@ -1,25 +1,32 @@
-import pexpect
-from pexpect import pxssh
+from pexpect import pxssh, spawn
 import json
+import netifaces
+
+gateways = netifaces.gateways()
+default_gateway = gateways['default'][netifaces.AF_INET][0]
+
 
 username = "admin"
 password = "firulais"
 
 Routers = {}
 
+ssh_options = {"KexAlgorithms": "diffie-hellman-group1-sha1",
+               "Ciphers": "aes256-cbc"}
+
 
 def get_info_from_ip(ip):
-    child = pexpect.spawn(f"ssh -l {username} {ip}")
-    child.sendline("yes")
+    print("\nLogging into", ip)
 
-    child = pxssh.pxssh()
-    print("\nLogging in...")
+    child = pxssh.pxssh(options=ssh_options)
     child.login(ip, username, password, auto_prompt_reset=False)
-    print("Logged in")
+    child.sync_original_prompt()
+    print(child.prompt)
 
-    name = child.before[-3: -1].decode("UTF-8")
+    name = child.before[-2:].decode("UTF-8")
 
-    if Routers.get(name, "NEW") != "NEW": return
+    if Routers.get(name, "NEW") != "NEW":
+        return
 
     child.sendline("enable")
     child.expect("Password:")
@@ -62,24 +69,28 @@ def get_info_from_ip(ip):
     real_data = []
     seen = []
     for index, line in enumerate(data):
-        if len(line) == 0 or line[0] != "is": continue
-        
+        if len(line) == 0 or line[0] != "is":
+            continue
+
         interface = line[-1][-3:]
-        real_ip = data[index -1][-1]
+        real_ip = data[index - 1][-1]
 
         if "NO" == connections.get(interface, "NO") or interface in seen:
             continue
 
         seen.append(interface)
-        real_data.append({"enlace": connections.get(interface), "salto": real_ip})
-    
+        real_data.append(
+            {"enlace": connections.get(interface), "salto": real_ip})
+
     Routers[name] = real_data
     print(Routers)
 
     for element in real_data:
         print(element)
-        if Routers.get(element["enlace"], "NEW") != "NEW": continue
+        if Routers.get(element["enlace"], "NEW") != "NEW":
+            continue
         get_info_from_ip(element["salto"])
+
 
 get_info_from_ip("148.204.56.1")
 
