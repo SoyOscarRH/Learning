@@ -127,6 +127,7 @@ enable secret 12345678
 service password-encryption
 
 # SSH versions
+crypto key generate rsa
 ip ssh time-out 15
 ip ssh authentication-retries 5
 ip ssh version 2

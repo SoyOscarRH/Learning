@@ -1,100 +1,114 @@
-from pexpect import pxssh, spawn
 import json
 import netifaces
 
-gateways = netifaces.gateways()
-default_gateway = gateways['default'][netifaces.AF_INET][0]
+from pexpect import pxssh, spawn
+from ipaddress import IPv4Address
+from graphviz import Graph
+from threading import Lock, Thread
+
+username, password = "admin", "firulais"
+algorithm, cipher = "diffie-hellman-group1-sha1", "aes256-cbc"
+options = {"KexAlgorithms": algorithm, "Ciphers": cipher}
+
+routers = {}
+lock = Lock()
 
 
-username = "admin"
-password = "firulais"
-
-Routers = {}
-
-ssh_options = {"KexAlgorithms": "diffie-hellman-group1-sha1",
-               "Ciphers": "aes256-cbc"}
-
-
-def get_info_from_ip(ip):
+def crawling_from(ip):
     print("\nLogging into", ip)
 
-    child = pxssh.pxssh(options=ssh_options)
+    child = pxssh.pxssh(options=options)
     child.login(ip, username, password, auto_prompt_reset=False)
-    child.sync_original_prompt()
-    print(child.prompt)
 
-    name = child.before[-2:].decode("UTF-8")
+    name = child.before[-2:].decode("utf-8")
+    print(f"[{name}] logged into")
 
-    if Routers.get(name, "NEW") != "NEW":
-        return
-
-    child.sendline("enable")
-    child.expect("Password:")
-
-    child.sendline("12345678")
-    child.expect(f"{name}#")
-
-    child.sendline("conf t")
-    child.sendline("username pirata priv 15 password pirata")
-    child.sendline("end")
-    child.expect(f"{name}#")
+    with lock:
+        if name in routers and routers[name] != "seen":
+            print(f"[{name}] data already here, logging out")
+            return
 
     child.sendline("show cdp neighbors")
     child.expect(f"{name}#")
 
-    data = child.before
-    data = data.decode("UTF-8")
-    data = data.split("\n")
-    data = data[5: len(data) - 1]
+    data = child.before.decode("utf-8").split("\n")[5:-1]
     connections = {}
 
     for line in data:
-        line = line.split()
-        con_line = line[0].split(".")[0]
-        interface = line[2]
-        connections[interface] = con_line
+        info = line.split()
+        connection_name, interface = info[0][:2], info[2]
+        connections[interface] = connection_name
 
-    print(name)
-    print(connections)
+    print(f"[{name}] neigbours found: {connections}")
 
-    child.sendline("show ip route")
+    child.sendline("show ip interface brief")
     child.expect(f"{name}#")
 
-    data = child.before
+    data = child.before.decode("utf-8").split("\r\n")
+    data = [line for line in data if 'Fast' in line]
 
-    data = data.decode("UTF-8")
-    data = data.split("\r\n")
-    data = [x.split() for x in data]
+    terminals = {}
+    for line in data:
+        info = line.split()
+        interface, network_ip = info[0][-3:], info[1]
+        not_a_router = interface not in connections
+        switch_connection = network_ip[0] != "8"
+        if (not_a_router or switch_connection) and network_ip != "unassigned":
+            terminal_ip = str(IPv4Address(int(IPv4Address(network_ip)) + 9))
+            if terminal_ip[0] != "8":
+                terminals[interface] = terminal_ip
 
-    real_data = []
-    seen = []
-    for index, line in enumerate(data):
-        if len(line) == 0 or line[0] != "is":
-            continue
+    print(f"[{name}] terminals found: {terminals}")
 
-        interface = line[-1][-3:]
-        real_ip = data[index - 1][-1]
+    with lock:
+        routers[name] = {"terminals": terminals, "neigbours": connections}
+    child.sendline("show ip route connected")
+    child.expect(f"{name}#")
 
-        if "NO" == connections.get(interface, "NO") or interface in seen:
-            continue
+    next_jumps = []
+    data = child.before.decode("utf-8").split("\r\n")
+    data = [line for line in data if line != "" and line[0] == "C"]
+    for line in data:
+        info = line.split()
+        network_ip, interface = info[1], info[-1][-3:]
+        if interface in connections:
+            next_ip1 = str(IPv4Address(int(IPv4Address(network_ip)) + 1))
+            next_ip2 = str(IPv4Address(int(IPv4Address(network_ip)) + 2))
+            connection_name = connections[interface]
+            next_jumps.append((connection_name, next_ip1, next_ip2))
 
-        seen.append(interface)
-        real_data.append(
-            {"enlace": connections.get(interface), "salto": real_ip})
+    print(f"[{name}] next jumps: {next_jumps}")
+    for connection_name, next_ip1, next_ip2 in next_jumps:
+        with lock:
+            if connection_name in routers:
+                continue
+            routers[connection_name] = "seen"
 
-    Routers[name] = real_data
-    print(Routers)
-
-    for element in real_data:
-        print(element)
-        if Routers.get(element["enlace"], "NEW") != "NEW":
-            continue
-        get_info_from_ip(element["salto"])
+        print(f"[{name}] searching {connection_name}")
+        crawling_from(next_ip1)
+        crawling_from(next_ip2)
 
 
-get_info_from_ip("148.204.56.1")
+gateways = netifaces.gateways()
+default_gateway = gateways['default'][netifaces.AF_INET][0]
+ip = default_gateway
+crawling_from(ip)
 
-print(Routers)
+dot = Graph(comment='Topology of network', format='png')
+for router in routers:
+    print("\n", router)
+    print("\t neigbours:", routers[router]["neigbours"])
+    print("\t terminals:", routers[router]["terminals"])
+    dot.node(router, router)
 
-with open("network.txt", "w") as text_file:
-    text_file.write(json.dumps(Routers))
+    for interface in routers[router]["neigbours"]:
+        jump_name = routers[router]["neigbours"][interface]
+        dot.edge(router, jump_name)
+
+    for interface in routers[router]["terminals"]:
+        ip = routers[router]["terminals"][interface]
+        dot.node(ip, ip, shape='plaintext')
+        dot.edge(router, ip)
+        dot.edge(ip, router)
+
+dot.render('./net')
