@@ -105,30 +105,34 @@ ip 148.204.58.10 /24 148.204.58.1 !PC4
 ! ==== Config SSH ====
 enable
 configure terminal
-username admin priv 15 password firulais
-enable password firulais
-enable secret 12345678
-service password-encryption
-line console 0
-login local
-exit
-line vty 0 4
-transport input ssh
-password e
-login
-exit
-hostname Rn
-ip domain-name Rn.LOCAL
-crypto key generate rsa
-ip ssh time-out 10
-ip ssh authentication-retries 3
-ip ssh version 2
+
+# Name stuff
+hostname R#
+ip domain-name R#.LOCAL
+
+# Config line
 line vty 0 4
 transport input ssh
 login local
-exit
 exit
 
+line console 0
+logging synchronous
+login local
+exit
+
+# Usernames
+username admin priv 15 password firulais
+enable secret 12345678
+service password-encryption
+
+# SSH versions
+ip ssh time-out 15
+ip ssh authentication-retries 5
+ip ssh version 2
+
+# Generate keys
+crypto key generate rsa
 
 Router 1: 8.8.8.13
 Router 2: 8.8.8.9
@@ -137,7 +141,6 @@ Router 3: 8.8.8.10
 Router 4: 8.8.8.1
 Router 5: 8.8.8.2
 Router 6: 8.8.8.6
-
 
 ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc admin@8.8.8.9
 
