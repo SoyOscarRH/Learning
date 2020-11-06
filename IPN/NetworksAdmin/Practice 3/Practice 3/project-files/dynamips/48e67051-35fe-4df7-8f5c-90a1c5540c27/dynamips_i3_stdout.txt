@@ -1,1 +1,0 @@
-vtty_thread: select: Bad file descriptor
