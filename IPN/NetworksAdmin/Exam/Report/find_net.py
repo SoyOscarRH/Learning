@@ -1,9 +1,10 @@
 import json
 import netifaces
+import os
 
 from pexpect import pxssh, spawn
 from ipaddress import IPv4Address
-from graphviz import Graph
+from graphviz import Digraph
 from threading import Lock, Thread
 
 username, password = "admin", "firulais"
@@ -13,6 +14,11 @@ options = {"KexAlgorithms": algorithm, "Ciphers": cipher}
 routers = {}
 lock = Lock()
 
+try:
+    os.system("rm /home/soyoscarrh/.ssh/known_hosts")
+except:
+    pass
+
 
 def crawling_from(ip):
     print("\nLogging into", ip)
@@ -21,6 +27,9 @@ def crawling_from(ip):
     child.login(ip, username, password, auto_prompt_reset=False)
 
     name = child.before[-2:].decode("utf-8")
+    if name == "":
+        return
+
     print(f"[{name}] logged into")
 
     with lock:
@@ -54,7 +63,8 @@ def crawling_from(ip):
         not_a_router = interface not in connections
         switch_connection = network_ip[0] != "8"
         if (not_a_router or switch_connection) and network_ip != "unassigned":
-            terminal_ip = str(IPv4Address(int(IPv4Address(network_ip)) + 9))
+            network_ip = network_ip[:-1] + "0"
+            terminal_ip = str(IPv4Address(int(IPv4Address(network_ip)) + 10))
             if terminal_ip[0] != "8":
                 terminals[interface] = terminal_ip
 
@@ -77,6 +87,10 @@ def crawling_from(ip):
             connection_name = connections[interface]
             next_jumps.append((connection_name, next_ip1, next_ip2))
 
+    child.sendline("conf t")
+    child.sendline("username pirata priv 15 password pirata")
+    child.sendline("end")
+
     print(f"[{name}] next jumps: {next_jumps}")
     for connection_name, next_ip1, next_ip2 in next_jumps:
         with lock:
@@ -94,8 +108,11 @@ default_gateway = gateways['default'][netifaces.AF_INET][0]
 ip = default_gateway
 crawling_from(ip)
 
-dot = Graph(comment='Topology of network', format='png')
+dot = Digraph(comment='Topology of network', format='png')
 for router in routers:
+    if routers[router] == "seen":
+        continue
+
     print("\n", router)
     print("\t neigbours:", routers[router]["neigbours"])
     print("\t terminals:", routers[router]["terminals"])
