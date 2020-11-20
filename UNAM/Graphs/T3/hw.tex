@@ -449,19 +449,135 @@
 
 \maketitle
     \section*{1 Problema}
-    https://math.stackexchange.com/questions/948123/prove-that-every-connected-graph-of-all-whose-vertices-have-even-degree-contain/948129
-    https://math.stackexchange.com/questions/948123/prove-that-every-connected-graph-of-all-whose-vertices-have-even-degree-contain/948129
 
+    \textbf{Demuestra que si una gráfica conexa G tiene todos sus vértices de grado par, 
+    entonces G no contiene puentes.}
+
+    It's a little easier:
+    Si G contiene un puente entonces sea $G'$ una de las subgraficas que se harian gracias a ese puente.
+
+    La suma de los grados de todos los vertices de $G'$ es igual a 2 veces el numero de aristas en $G'$, por lo tanto
+    ese numero tiene que ser a fuerzas par, pero todos los nodos que tiene $G'$ tienen un grado par excepto el nodo 
+    del que le arrancamos la arista que era un puente, por lo tanto la suma de los grados de vertices seria sumar puros
+    numeros pares y un solo par, dando una suma impar, por lo tanto tenemos una contradiccion, por un lado porque sabemos 
+    por el teorema fundamental de graficas, el primero que vimos en clase que que la suma de grados de todos los vertices
+    tiene que ser par, pero por otro lado estamos llegando a que ese numero tiene que ser impar.
+
+    QED.
+
+    \clearpage
+    \section*{2 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{2}
+        \end{figure}
+        
+
+    \clearpage
     \section*{3 Problema}
 
-    \section*{5 Problema}
-    https://math.stackexchange.com/questions/1919788/cycles-in-a-2-connected-graph
+        \textbf{Dada la grafica de la figura 1 determina cuales son vertices de corte y que aristas son puentes:}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{3}
+        \end{figure}
 
+
+    \clearpage
+    \section*{4 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{4}
+        \end{figure}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{4b}
+        \end{figure}
+
+    \section*{5 Problema}
+
+        \textbf{Demuestra que si G es una grafica 2 - conexa, entonces todo par de vertices esta en un ciclo.}
+
+        Recordemos que una grafica G es 2 - conexa si y solo si quitando cualquier vertice esta seguia siendo conexa.
+        Ahora vamos a elegir a $u$ como un nodo que tiene al menos dos vecinos, estos seran $v, w$.
+
+        Ahora como es 2 conexa entonces hay un camino de $v$ a $w$ que no incluye al nodo ($u$), vamos a llamarlo
+        $caminito := v, x_1, x_2, \dots, x_n, w$ ahora nota que que $v, x_1, x_2, \dots, x_n, w, u, v$ es un ciclo, 
+        esto se puede hacer siempre.
+
+    \section*{6 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{6}
+        \end{figure}
+
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{6c}
+        \end{figure}
+
+    \clearpage
     \section*{7 Problema}
 
+    \textbf{Demuestre que una grafica G es conexa, no trivial y no posee ciclos entonces hay un vertice de grado uno
+    en G.}
+
+    Por contradiccion, supongamos que no es cierto, que hay una grafica G donde todos sus vertices tiene un grado al menos de dos,
+    pues bien, tomemos cualquier vertice, como sabemos que tiene un grado mayor de 1 entonces al menos tiene a dos vecinos
+    sean $u$, $w$ esos dos vecinos que veremos.
+
+    Ahora vamos por partes, supongamos que es una grafica conexa, entonces existe un camino entre cualquier quiera dos vertices
+    en especial un camino entre $uw$, y considerando al vertice original tenemos un ciclo, contradiccion.
+
+    Bueno, ahora supongamos que no existe un ciclo, entonces no existe un camino entre $uw$ (sino ya vimos que existiria un ciclo)
+    por lo tanto G no es conexa.
+
+    Asi que no importa por donde lo veamos, contradiccion.
+
+    \clearpage
+    \section*{8 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{8}
+        \end{figure}
+
+    \clearpage
     \section*{9 Problema}
-    https://math.stackexchange.com/questions/2770061/prove-cut-vertex-v-in-g-is-not-cut-vertex-in-overline-g
+
+        \textbf{Demuestra que si v es un vertice de corte de una grafica G, entonces v no es un vertice de corte de $G^C$}.
+
+        Sea $v$ un vertice de corte de $G$, para probar que $v$ es un vertice de corte en $G^C$ basta ccon mostrar que $G^C - v$
+        es conexa, ahora, sean $u, w \in G - v$, la meta es probar que existe un $u-w$camino en $G^C$.
+
+
+        Como $v$ es un vertice de corte en G entonces $G -v$ tiene mas de un componente, por lo tanto
+        tenemos varios casos:
+
+        Si es que $v, w$ estan dentro de diferentes componentes conexas entoncees $uw \in A(G^C)$ entonces todo listo.
+
+        Si es que estan en la misma componente la cosa se pone mas divertida, sea C1 la componente donde viven $v, w$, 
+        entonces tiene que existir al menos otra componente en $G - v$, eligamos un vertice de alguna de esas otras componentes
+        $z \in C2$ donde $C2 \subset G - v$, como no existe una arista entre elementos de $C1$ y $C2$ dentro de $G$, por lo tanto
+        $z$ tiene que compartir una arista con todos los vertices de $C1$, por lo tanto existe un camino $uw$, de hecho
+        este es $uzw$.
+
+    \section*{10 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{10}
+        \end{figure}
 
     \section*{11 Problema}
+    
+    https://lic.mat.uson.mx/tesis/90TesisMaricela.PDF
+    pagina 46 
+    
+    \clearpage
+    \section*{12 Problema}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{12}
+        \end{figure}
+
+    \section*{13 Problema}
+
+    Pues, una trayectoria es bastante sencilla, supongamos que tenemos una trayectoria 3, esta tiene
+    3 vertices, digamos $x1 --- x2 --- x3$, entonces tenemos ahi dos bloques, $x1x2$ y $x2x3$, entonces
+    podemos ver a la grafica de bloques de la trayectoria $n$ como un isomorfismo de la trayectoria $n - 1$.
+    
+    La idea es tan facilmente extensible a $n$ que siento que la demostracion seria trivial.
+
+
 
 \end{document}
