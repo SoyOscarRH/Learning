@@ -21,23 +21,28 @@ end
   interface FastEthernet 2/0 !--> Router3
   ip address 10.0.4.254 255.255.255.0
 
-  !MANUAL ip route 10.0.5.0 255.255.255.0 f0/1
+  !MANUAL ip route 10.0.5.0 255.255.255.0 f0/1 !TO PC1
 
   !MANUAL router rip
   !MANUAL version 2
   !MANUAL no auto-summary
-  !MANUAL network 10.0.1.0
-  !MANUAL network 10.0.2.0
-  !MANUAL network 10.0.3.0
-  !MANUAL network 10.0.4.0
-  !MANUAL network 10.0.5.0
+  !MANUAL network 10.0.1.0 !TO PC4
+  !MANUAL network 10.0.2.0 !TO R4-R1
+  !MANUAL network 10.0.3.0 !TO R4-R2
+  !MANUAL network 10.0.4.0 !TO R4-R3
+  !MANUAL network 10.0.5.0 !TO PC1
+  !MANUAL network 10.0.6.0 !TO PC2
+  !MANUAL network 10.0.7.0 !TO PC3
+  !MANUAL redistribute static
 
-  !MANUAL router ospf 1
-  !MANUAL network 10.0.1.0 0.0.0.255 area 0
-  !MANUAL network 10.0.2.0 0.0.0.255 area 0
-  !MANUAL network 10.0.3.0 0.0.0.255 area 0
-  !MANUAL network 10.0.4.0 0.0.0.255 area 0
-  !MANUAL network 10.0.5.0 0.0.0.255 area 0
+  router ospf 1
+  network 10.0.1.0 0.0.0.255 area 0 !TO PC4
+  network 10.0.2.0 0.0.0.255 area 0 !TO R4-R1
+  network 10.0.3.0 0.0.0.255 area 0 !TO R4-R2
+  network 10.0.4.0 0.0.0.255 area 0 !TO R4-R3
+  network 10.0.5.0 0.0.0.255 area 0 !TO PC1
+  network 10.0.6.0 0.0.0.255 area 0 !TO PC2
+  network 10.0.7.0 0.0.0.255 area 0 !TO PC3
 
 ! ==== Router 1 ====
   interface FastEthernet 0/0 !--> Computadora MV
@@ -46,11 +51,11 @@ end
   interface FastEthernet 0/1 !--> Router4
   ip address 10.0.2.253 255.255.255.0
 
-  !MANUAL ip route 10.0.1.0 255.255.255.0 f0/1
-  !MANUAL ip route 10.0.3.0 255.255.255.0 f0/1
-  !MANUAL ip route 10.0.4.0 255.255.255.0 f0/1
-  !MANUAL ip route 10.0.6.0 255.255.255.0 f0/1
-  !MANUAL ip route 10.0.7.0 255.255.255.0 f0/1
+  !MANUAL ip route 10.0.1.0 255.255.255.0 f0/1 !TO PC4
+  !MANUAL ip route 10.0.3.0 255.255.255.0 f0/1 !TO R4-R2
+  !MANUAL ip route 10.0.4.0 255.255.255.0 f0/1 !TO R4-R3
+  !MANUAL ip route 10.0.6.0 255.255.255.0 f0/1 !TO PC2
+  !MANUAL ip route 10.0.7.0 255.255.255.0 f0/1 !TO PC3
 
 ! ==== Router 2 ====
   interface FastEthernet 0/0 !--> Computadora MV
@@ -62,8 +67,8 @@ end
   !MANUAL router rip
   !MANUAL version 2
   !MANUAL no auto-summary
-  !MANUAL network 10.0.6.0
-  !MANUAL network 10.0.3.0
+  !MANUAL network 10.0.6.0 !TO PC2
+  !MANUAL network 10.0.3.0 !TO PC2
 
 ! ==== Router 3 ====
   interface FastEthernet 0/0 !--> Computadora MV
@@ -72,9 +77,10 @@ end
   interface FastEthernet 2/0 !--> Router4
   ip address 10.0.4.253 255.255.255.0
 
-  !MANUAL router ospf 1
-  !MANUAL network 10.0.7.0 0.0.0.255 area 0
-  !MANUAL network 10.0.4.0 0.0.0.255 area 0
+  router ospf 1
+  network 10.0.7.0 0.0.0.255 area 0 !TO PC3
+  network 10.0.4.0 0.0.0.255 area 0 !TO PC3
+
 
 ! ==== Config PC ====
   ip 10.0.5.1 /24 10.0.5.254 !PC1
