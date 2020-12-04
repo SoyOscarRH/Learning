@@ -23,6 +23,22 @@ end
 
   !MANUAL ip route 10.0.5.0 255.255.255.0 f0/1
 
+  !MANUAL router rip
+  !MANUAL version 2
+  !MANUAL no auto-summary
+  !MANUAL network 10.0.1.0
+  !MANUAL network 10.0.2.0
+  !MANUAL network 10.0.3.0
+  !MANUAL network 10.0.4.0
+  !MANUAL network 10.0.5.0
+
+  !MANUAL router ospf 1
+  !MANUAL network 10.0.1.0 0.0.0.255 area 0
+  !MANUAL network 10.0.2.0 0.0.0.255 area 0
+  !MANUAL network 10.0.3.0 0.0.0.255 area 0
+  !MANUAL network 10.0.4.0 0.0.0.255 area 0
+  !MANUAL network 10.0.5.0 0.0.0.255 area 0
+
 ! ==== Router 1 ====
   interface FastEthernet 0/0 !--> Computadora MV
   ip address 10.0.5.254 255.255.255.0
@@ -36,27 +52,35 @@ end
   !MANUAL ip route 10.0.6.0 255.255.255.0 f0/1
   !MANUAL ip route 10.0.7.0 255.255.255.0 f0/1
 
-
 ! ==== Router 2 ====
   interface FastEthernet 0/0 !--> Computadora MV
   ip address 10.0.6.254 255.255.255.0
 
-  interface FastEthernet 0/1 !--> Router4
+  interface FastEthernet 1/0 !--> Router4
   ip address 10.0.3.253 255.255.255.0
+
+  !MANUAL router rip
+  !MANUAL version 2
+  !MANUAL no auto-summary
+  !MANUAL network 10.0.6.0
+  !MANUAL network 10.0.3.0
 
 ! ==== Router 3 ====
   interface FastEthernet 0/0 !--> Computadora MV
   ip address 10.0.7.254 255.255.255.0
 
-  interface FastEthernet 0/1 !--> Router4
+  interface FastEthernet 2/0 !--> Router4
   ip address 10.0.4.253 255.255.255.0
 
+  !MANUAL router ospf 1
+  !MANUAL network 10.0.7.0 0.0.0.255 area 0
+  !MANUAL network 10.0.4.0 0.0.0.255 area 0
 
 ! ==== Config PC ====
   ip 10.0.5.1 /24 10.0.5.254 !PC1
   ip 10.0.6.1 /24 10.0.6.254 !PC2
   ip 10.0.7.1 /24 10.0.7.254 !PC3
-
+  ip 10.0.1.1 /24 10.0.7.254 !PC4
 
 
 ! ==== Config SSH ====
