@@ -448,23 +448,60 @@
 \markboth{Ejercicios}{Graficas}
 
 \maketitle
+
+    \section*{1 Problema}
+
+        \textbf{Determina cual de las graficas de la Figura son graficas eulerianas o cuales tienen un paseo euleriano}
+
+        \begin{figure}[h]
+            \includegraphics[width=0.5\textwidth]{1}
+        \end{figure}
+
+        \begin{figure}[h]
+            \includegraphics[width=0.5\textwidth]{1d}
+        \end{figure}
+
+    \clearpage
     \section*{2 Problema}
 
-    \textbf{El diagrama de la Figura 2 muestra las nueve habitaciones del segundo piso de una casa con puertas entre
-    varias estancias ¿Es posible comenzar en alguna habitación y caminar para que cada puerta sea cruzada
-    exactamente una vez? ¿Cómo se relaciona esta pregunta con la teoría de gráficas?}
+        \textbf{El diagrama de la Figura 2 muestra las nueve habitaciones del segundo piso de una casa con puertas entre
+        varias estancias ¿Es posible comenzar en alguna habitación y caminar para que cada puerta sea cruzada
+        exactamente una vez? ¿Cómo se relaciona esta pregunta con la teoría de gráficas?}
 
-      Claro, mira:
+        Claro, mira:
 
-      \begin{figure}[h]
-        \includegraphics[width=0.8\textwidth]{2}
-      \end{figure}
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{2}
+        \end{figure}
 
-      La idea es ver esto como una grafica, donde las habitaciones son nodos / vertices y las puertas son aristas
-      en este caso no es una grafica simple pues por ejemplo hay mas de un vertice entre R6 y R9 (tambien podemos
-      asignarles un peso a cada arista en este casi casi  todas tendrian 1 pero entre R6 y R9 habria un 2).
+        La idea es ver esto como una grafica, donde las habitaciones son nodos / vertices y las puertas son aristas
+        en este caso no es una grafica simple pues por ejemplo hay mas de un vertice entre R6 y R9 (tambien podemos
+        asignarles un peso a cada arista en este casi casi  todas tendrian 1 pero entre R6 y R9 habria un 2).
 
-      Total, ahora el problema se reduce a encontrar un camino euleriano.
+        Total, ahora el problema se reduce a encontrar un camino euleriano.
+
+    \clearpage
+    \section*{3 Problema}
+
+        \textbf{En el vestibulo de un gran hotel, se ha construido un canal que rodea ocho areas terrestres 
+        A, B, C, D, W, X, Y, Z.
+        En ciertas ubicaciones se han construido diez puentes sobre el agua, indicados por a, b, c, d, e, f, g, h, j, k.}
+
+        \begin{itemize}
+            \item ¿Es posible dar un paseo por las regiones terrestres en el vestibulo? tal que cada puente se cruce
+            exactamente una vez?
+
+            \begin{figure}[h]
+                \includegraphics[width=0.8\textwidth]{3a}
+            \end{figure}
+
+            \item ¿Es posible dar un paseo en bote por una parte de la via fluvial para que el barco pase por debajo de
+            cada puente exactamente una vez?
+
+            \begin{figure}[h]
+                \includegraphics[width=0.8\textwidth]{3b}
+            \end{figure}
+        \end{itemize}
 
 
     \clearpage
@@ -483,6 +520,24 @@
       Por lo tanto tendremos $2(|V| - 1)$ viajes por las aristas, vamos a empezar en la raiz
       y cada vez que viajemos por un vertice lo agregaremos al caminno, por lo tanto habra $2|V| - 1$
       vertices en el camino.
+
+    \section*{5 Problema}
+
+        \textbf{En la Figura 4 se muestra una grafica ponderada G que representa la calles en una comunidad cerrada.
+        Los vertices de G representan las intersecciones de calles, las aristas representan las calles y el peso de
+        una arista representa el tiempo minimo (en minutos) que se tarda en conducir a lo largo de la calle,
+        inspeccionando las casas y terrenos a ambos lados.
+        Se ha contratado a un guardia de seguridad para vigilar la comunidad. Cada noche, comienza en la
+        interseccion a y conduce a lo largo de cada calle al menos una vez y vuelve a a. ¿Cual es la cantidad
+        minima de tiempo requerida para hacer esto?}
+
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{5}
+        \end{figure}
+
+        \begin{figure}[h]
+            \includegraphics[width=0.8\textwidth]{5cont}
+        \end{figure}
 
     \clearpage
     \section*{6 Problema}
@@ -506,32 +561,44 @@
       Contradicción.
 
     \clearpage
+    \section*{7 Problema}
+  
+          \textbf{Demuestra que no hay recorrido de caballo en el tablero de ajedrez de 5 x 5}
+  
+
+    \clearpage
     \section*{8 Problema}
 
-    \textbf{La figura muestra una gráfica G de orden 18 ¿G es hamiltoniana?}
+        \textbf{La figura muestra una gráfica G de orden 18 ¿G es hamiltoniana?}
 
-    Pues si, para que una grafica sea hamiltoniana basta con que exista un camino cerrado hamiltoniano
-    es decir que visita todos los vertices una vez. Mira:
+        Pues si, para que una grafica sea hamiltoniana basta con que exista un camino cerrado hamiltoniano
+        es decir que visita todos los vertices una vez. Mira:
 
-    \begin{figure}[h]
-      \includegraphics[width=0.8\textwidth]{8}
-    \end{figure}
+        \begin{figure}[h]
+        \includegraphics[width=0.8\textwidth]{8}
+        \end{figure}
+
+    \clearpage
+    \section*{9 Problema}
+
+        \textbf{¿Toda grafica de orden 10 con grado minimo 5 es Hamiltoniana? Justifica tu respuesta}
+
+        \begin{figure}[h]
+        \includegraphics[width=0.8\textwidth]{9}
+        \end{figure}
 
     \clearpage
     \section*{10 Problema}
 
-    \begin{itemize}
-      \item \textbf{Encuentra una gráfica que sea Euleriana y Hamiltoniana}
-      \item \textbf{Encuentra una gráfica que sea Euleriana y que no sea Hamiltoniana}
-      \item \textbf{Encuentra una gráfica que sea Hamilitoniana y que no sea Euleriana}
-      \item \textbf{Encuentra una gráfica que no sea Euleriana y que no sea Hamiltoniana}
-    \end{itemize}
+        \begin{itemize}
+        \item \textbf{Encuentra una gráfica que sea Euleriana y Hamiltoniana}
+        \item \textbf{Encuentra una gráfica que sea Euleriana y que no sea Hamiltoniana}
+        \item \textbf{Encuentra una gráfica que sea Hamilitoniana y que no sea Euleriana}
+        \item \textbf{Encuentra una gráfica que no sea Euleriana y que no sea Hamiltoniana}
+        \end{itemize}
 
-    \begin{figure}[h]
-      \includegraphics[width=0.8\textwidth]{10}
-    \end{figure}
-
-
-
+        \begin{figure}[h]
+        \includegraphics[width=0.8\textwidth]{10}
+        \end{figure}
 
 \end{document}
