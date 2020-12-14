@@ -1,17 +1,14 @@
-import json
 import netifaces
 import os
 
-from typing import Optional
-
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine
 
 from pexpect import pxssh, spawn
 from ipaddress import IPv4Address
 from graphviz import Digraph
-from threading import Lock, Thread
 
 username, password = "admin", "admin"
 algorithm, cipher = "diffie-hellman-group1-sha1", "aes256-cbc"
@@ -23,18 +20,12 @@ except:
     pass
 
 
-ports = ["3000", "5000"]
-origins = ["http://localhost:" + port for port in ports] + \
-    ["localhost:" + port for port in ports]
-
-
 app = FastAPI()
-
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
     allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"]
 )
@@ -46,25 +37,31 @@ engine = create_engine('mysql://hugo:Oscarj2#@localhost/network')
 def read_root():
     with engine.connect() as connection:
         response = connection.execute('SELECT * FROM router')
-        router = [row[1] for row in response]
+        router = [row[0] for row in response]
 
         return router
 
+@app.get("/router/{router}/{interface}")
+def get_interface(router: str, interface: str):
+    return {"message": "OK"}
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/router/{router}")
+def read_item(router: str):
+    with engine.connect() as connection:
+        query = f"SELECT * FROM router WHERE name = '{router}'"
+        result = tuple(connection.execute(query))[0]
+
+        return result
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/topology")
+def read_item():
+    return FileResponse(f"./net.png")
 
 
 @app.get("/getTopo")
 def create_topology():
     routers = {}
-    lock = Lock()
 
     with engine.connect() as connection:
         connection.execute('DELETE FROM router')
@@ -85,10 +82,9 @@ def create_topology():
 
         print(f"[{name}] logged into")
 
-        with lock:
-            if name in routers and routers[name] != "seen":
-                print(f"[{name}] data already here, logging out")
-                return
+        if name in routers and routers[name] != "seen":
+            print(f"[{name}] data already here, logging out")
+            return
 
         child.sendline("show cdp neighbors")
         child.expect(f"{name}#")
@@ -110,9 +106,12 @@ def create_topology():
         data = [line for line in data if 'Fast' in line]
 
         terminals = {}
+        interfaces = {}
         for line in data:
             info = line.split()
             interface, network_ip = info[0][-3:], info[1]
+            if network_ip != "unassigned":
+                interfaces[interface] = network_ip
             not_a_router = interface not in connections
             switch_connection = network_ip[0] != "8"
             if (not_a_router or switch_connection) and network_ip != "unassigned":
@@ -122,10 +121,30 @@ def create_topology():
                 if terminal_ip[0] != "8":
                     terminals[interface] = terminal_ip
 
+        print(f"[{name}] interfaces found: {interfaces}")
         print(f"[{name}] terminals found: {terminals}")
 
-        with lock:
-            routers[name] = {"terminals": terminals, "neigbours": connections}
+        ip_id = str(IPv4Address(max([int(IPv4Address(interface))
+                                     for interface in interfaces.values()])))
+
+        with engine.connect() as connection:
+            model, version = "Cisco IOS 3600", "Version 12.4(25d)"
+            query = f"insert into router (name, ip_id, model, version) values ('{name}', '{ip_id}', '{model}', '{version}')"
+            connection.execute(query)
+
+        with engine.connect() as connection:
+            for interface_name in interfaces:
+                ip_id = interfaces[interface_name]
+                mask = "255.255.255.0" if ip_id[0] == "1" else "255.255.255.252"
+                connected_router_name = connections[interface_name] if interface_name in connections else "terminal"
+
+                insert_into = "insert into interface (name, router_name, ip_id, mask, connected_router_name)"
+                query = f"{insert_into} values ('{interface_name}', '{name}', '{ip_id}', '{mask}', '{connected_router_name}')"
+
+                connection.execute(query)
+
+        routers[name] = {"terminals": terminals, "neigbours": connections,
+                         "interfaces": interfaces, "ip_id": ip_id}
         child.sendline("show ip route connected")
         child.expect(f"{name}#")
 
@@ -141,15 +160,11 @@ def create_topology():
                 connection_name = connections[interface]
                 next_jumps.append((connection_name, next_ip1, next_ip2))
 
-        with engine.connect() as connection:
-            connection.execute(f"insert into router (name, ip_id, model, os) values ('${name}', '10.10.10.1', 'Cisco C3600', 'v10')")
-
         print(f"[{name}] next jumps: {next_jumps}")
         for connection_name, next_ip1, next_ip2 in next_jumps:
-            with lock:
-                if connection_name in routers:
-                    continue
-                routers[connection_name] = "seen"
+            if connection_name in routers:
+                continue
+            routers[connection_name] = "seen"
 
             print(f"[{name}] searching {connection_name}")
             crawling_from(next_ip1)
@@ -168,11 +183,13 @@ def create_topology():
         print("\n", router)
         print("\t neigbours:", routers[router]["neigbours"])
         print("\t terminals:", routers[router]["terminals"])
-        dot.node(router, router)
+        ip_id = routers[router]["ip_id"]
+        dot.node(router, f"{router}: {ip_id}")
 
         for interface in routers[router]["neigbours"]:
             jump_name = routers[router]["neigbours"][interface]
-            dot.edge(router, jump_name)
+            ip_interface = routers[router]["interfaces"][interface]
+            dot.edge(router, jump_name, f"{interface} {ip_interface}")
 
         for interface in routers[router]["terminals"]:
             ip = routers[router]["terminals"][interface]
@@ -181,3 +198,5 @@ def create_topology():
             dot.edge(ip, router)
 
     dot.render('./net')
+
+    return FileResponse(f"./net.png")

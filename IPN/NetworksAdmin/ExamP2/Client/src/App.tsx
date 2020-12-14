@@ -1,11 +1,12 @@
 import { Switch, Route } from "react-router-dom"
 import Main from "./Main"
+import GetTopo from "./GetTopo"
 import Interface from "./Interface"
 import Router from "./Router"
 
 const App = () => (
   <Switch>
-    <Route path="getTopo" component={Main} />
+    <Route path="/getTopo" component={GetTopo} />
     <Route path="/:router/:int" component={Interface} />
     <Route path="/:router" component={Router} />
     <Route path="/" component={Main} />
