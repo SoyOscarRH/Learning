@@ -15,11 +15,14 @@ ip=148.204.56.10 mask=255.255.255.0 gateway=148.204.56.1
 ! ==== Router 1 ====
 interface f0/0 !--> Computadora MV
 ip addr 148.204.56.1 255.255.255.0
-
 interface f0/1 !--> Router2
 ip addr 8.8.8.13 255.255.255.252
 interface f1/0 !--> Router3
 ip addr 8.8.8.17 255.255.255.252
+router ospf 1
+  network 148.204.56.0 0.0.0.255 area 0
+  network 8.8.8.12 0.0.0.255 area 0
+  network 8.8.8.16 0.0.0.255 area 0
 
 ! ==== Router 2 ====
 interface f0/0 !--> Router3
@@ -28,12 +31,10 @@ interface f0/1 !--> Router1
 ip addr 8.8.8.14 255.255.255.252
 interface f1/0 !--> PC1
 ip addr 148.204.59.1 255.255.255.0
-router rip
-version 2
-no auto-summary
-network 8.8.8.8
-network 8.8.8.12
-network 148.204.59.0
+router ospf 1
+  network 148.204.59.0 0.0.0.255 area 0
+  network 8.8.8.8 0.0.0.255 area 0
+  network 8.8.8.12 0.0.0.255 area 0
 
 ! ==== Router 3 ====
 interface f0/0 !--> Router2
@@ -42,13 +43,10 @@ interface f0/1 !--> PC2
 ip addr 148.204.60.1 255.255.255.0
 interface f1/0 !--> Router1
 ip addr 8.8.8.18 255.255.255.252
-router rip
-version 2
-no auto-summary
-network 8.8.8.8
-network 148.204.60.0
-network 8.8.8.16
-
+router ospf 1
+  network 148.204.60.0 0.0.0.255 area 0
+  network 8.8.8.8 0.0.0.255 area 0
+  network 8.8.8.16 0.0.0.255 area 0
 
 ! ==== Config PC ====
 ip 148.204.59.10 /24 148.204.59.1 !PC1
@@ -63,34 +61,28 @@ interface f1/0 !--> Router5
 ip addr 8.8.8.5 255.255.255.252
 interface f0/1 !--> Router6
 ip addr 8.8.8.1 255.255.255.252
-router rip
-version 2
-no auto-summary
-network 148.204.56.0
-network 8.8.8.4
-network 8.8.8.0
+router ospf 1
+  network 148.204.56.0 0.0.0.255 area 0
+  network 8.8.8.4 0.0.0.255 area 0
+  network 8.8.8.8 0.0.0.255 area 0
 
 ! ==== Router 5 ====
 interface f1/0 !--> Router4
 ip addr 8.8.8.6 255.255.255.252
 interface f0/1 !--> PC4
 ip addr 148.204.58.1 255.255.255.0
-router rip
-version 2
-no auto-summary
-network 8.8.8.4
-network 148.204.58.0
+router ospf 1
+  network 148.204.58.0 0.0.0.255 area 0
+  network 8.8.8.4 0.0.0.255 area 0
 
 ! ==== Router 6 ====
 interface f0/1 !--> Router4
 ip addr 8.8.8.2 255.255.255.252
 interface f1/0 !--> PC3
 ip addr 148.204.57.1 255.255.255.0
-router rip
-version 2
-no auto-summary
-network 8.8.8.0
-network 148.204.57.0
+router ospf 1
+  network 148.204.57.0 0.0.0.255 area 0
+  network 8.8.8.0 0.0.0.255 area 0
 
 ! ==== Config PC ====
 ip 148.204.57.10 /24 148.204.57.1 !PC3
