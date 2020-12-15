@@ -5,7 +5,7 @@ import { useQuery } from "react-query"
 import getJSON from "./getJSON"
 
 const Main = () => {
-  const { isLoading, error, data } = useQuery("/", () => getJSON("/getRoutes"))
+  const { isLoading, error, data } = useQuery("/routesInfo", () => getJSON("/getRoutes"))
 
   const showData = () => {
     if (isLoading) return <Spinner />

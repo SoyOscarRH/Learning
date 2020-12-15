@@ -15,11 +15,6 @@ username, password = "admin", "admin"
 algorithm, cipher = "diffie-hellman-group1-sha1", "aes256-cbc"
 options = {"KexAlgorithms": algorithm, "Ciphers": cipher}
 
-try:
-    os.system("rm /home/oscar/.ssh/known_hosts")
-except:
-    pass
-
 
 app = FastAPI()
 
@@ -45,7 +40,13 @@ def read_root():
 
 @app.get("/router/{router}/{interface}")
 def get_interface(router: str, interface: str):
-    return {"message": "OK"}
+    with engine.connect() as connection:
+        name = f"{interface[0]}/{interface[1]}"
+        query = f"SELECT * FROM interface WHERE router_name = '{router}' AND name = '{name}'"
+        print(query)
+        info = tuple(connection.execute(query))[0]
+
+        return info
 
 
 @app.post("/router/editRouter/{router}")
@@ -54,18 +55,21 @@ def edit_router(router: str, data: Dict[Any, Any]):
         name, ip_id, model, version = data["name"], data["ip_id"], data["model"], data["version"]
         where = f"WHERE name = '{router}'"
         values = f"name = '{name}', ip_id = '{ip_id}', model = '{model}', version = '{version}'"
-        query = f"UPDATE router SET {values} {where}" 
+        query = f"UPDATE router SET {values} {where}"
         connection.execute(query)
-
 
 
 @app.get("/router/{router}")
 def read_router(router: str):
     with engine.connect() as connection:
-        query = f"SELECT * FROM router WHERE name = '{router}'"
-        result = tuple(connection.execute(query))[0]
+        query1 = f"SELECT * FROM router WHERE name = '{router}'"
+        info1 = tuple(connection.execute(query1))[0]
 
-        return result
+        query2 = f"SELECT name, ip_id FROM interface WHERE router_name = '{router}'"
+        info2 = tuple(connection.execute(query2))
+
+        return {"info": info1, "interfaces": info2}
+
 
 @app.get("/topology")
 def get_topology():
@@ -82,6 +86,11 @@ def create_topology():
         connection.execute('DELETE FROM user')
 
     print('deleting tables')
+
+    try:
+        os.system("rm /home/oscar/.ssh/known_hosts")
+    except:
+        pass
 
     def crawling_from(ip: str) -> None:
         print("\nLogging into", ip)

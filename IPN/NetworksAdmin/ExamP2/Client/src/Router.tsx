@@ -1,16 +1,22 @@
 import { useParams } from "react-router-dom"
-import { Box, Heading, Spinner, Input, Button } from "@chakra-ui/react"
+import { Box, Heading, Spinner, Input, Button, Grid, Link } from "@chakra-ui/react"
+import { useQuery } from "react-query"
+import { Link as ReachLink } from "react-router-dom"
 
 import getJSON from "./getJSON"
 
 const Router = () => {
   const { router } = useParams<{ router: string }>()
-  const { isLoading, error, data } = useQuery("/", () => getJSON("/router/" + router))
+  const { isLoading, error, data } = useQuery("/getRouterInfo" + router, () =>
+    getJSON("/router/" + router)
+  )
 
   if (isLoading) return <Spinner />
   if (error) return null
 
-  const { name, ip_id, model, version } = data as {
+  const { info, interfaces } = data as any
+
+  const { name, ip_id, model, version } = info as {
     name: string
     ip_id: string
     model: string
@@ -22,8 +28,6 @@ const Router = () => {
       <Box borderRadius="1" margin="6">
         <form
           onSubmit={e => {
-            // @ts-ignore
-            window.elpepe = e
             const elements = ((e.target as unknown) as { elements: any }).elements
             const data = {
               name: elements.name.value,
@@ -51,6 +55,20 @@ const Router = () => {
             Edit
           </Button>
         </form>
+
+        <Grid templateColumns={"1fr 1fr"} gap={2} margin={3}>
+          {interfaces.map((int: any) => (
+            <Link
+              as={ReachLink}
+              to={`/${router}/${int.name[0] + int.name[2]}`}
+              backgroundColor="#d0e8f2"
+              padding="4"
+              borderRadius="0.5rem"
+            >
+              {int.name}: {int.ip_id}
+            </Link>
+          ))}
+        </Grid>
       </Box>
     </>
   )
