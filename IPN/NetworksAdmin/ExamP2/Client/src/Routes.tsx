@@ -4,7 +4,7 @@ import GetTopo from "./GetTopo"
 import Interface from "./Interface"
 import Router from "./Router"
 
-const App = () => (
+const Routes = () => (
   <Switch>
     <Route path="/getTopo" component={GetTopo} />
     <Route path="/:router/:int" component={Interface} />
@@ -13,4 +13,4 @@ const App = () => (
   </Switch>
 )
 
-export default App
+export default Routes

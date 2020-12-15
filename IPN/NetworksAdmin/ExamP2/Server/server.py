@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine
+from typing import Dict, Any
 
 from pexpect import pxssh, spawn
 from ipaddress import IPv4Address
@@ -41,21 +42,33 @@ def read_root():
 
         return router
 
+
 @app.get("/router/{router}/{interface}")
 def get_interface(router: str, interface: str):
     return {"message": "OK"}
 
+
+@app.post("/router/editRouter/{router}")
+def edit_router(router: str, data: Dict[Any, Any]):
+    with engine.connect() as connection:
+        name, ip_id, model, version = data["name"], data["ip_id"], data["model"], data["version"]
+        where = f"WHERE name = '{router}'"
+        values = f"name = '{name}', ip_id = '{ip_id}', model = '{model}', version = '{version}'"
+        query = f"UPDATE router SET {values} {where}" 
+        connection.execute(query)
+
+
+
 @app.get("/router/{router}")
-def read_item(router: str):
+def read_router(router: str):
     with engine.connect() as connection:
         query = f"SELECT * FROM router WHERE name = '{router}'"
         result = tuple(connection.execute(query))[0]
 
         return result
 
-
 @app.get("/topology")
-def read_item():
+def get_topology():
     return FileResponse(f"./net.png")
 
 
