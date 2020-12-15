@@ -15,7 +15,6 @@ username, password = "admin", "admin"
 algorithm, cipher = "diffie-hellman-group1-sha1", "aes256-cbc"
 options = {"KexAlgorithms": algorithm, "Ciphers": cipher}
 
-
 app = FastAPI()
 
 app.add_middleware(
@@ -38,12 +37,46 @@ def read_root():
         return router
 
 
+@app.post("/user/{router}")
+def edit_router(router: str, data: Dict[Any, Any]):
+    old, name, user_password = data["old"], data["name"], data["password"]
+
+    with engine.connect() as connection:
+        query1 = f"DELETE FROM user WHERE username = '{old}' AND router_name = '{router}'"
+        connection.execute(query1)
+
+        if name != "":
+            query2 = f"INSERT INTO user (username, password, router_name) VALUES ('{name}', '{user_password}', '{router}')"
+
+            connection.execute(query2)
+
+        query3 = f"SELECT ip_id FROM router WHERE name = '{router}'"
+        result = tuple(connection.execute(query3))[0]
+
+        ip_id = result[0]
+
+        child = pxssh.pxssh(options=options)
+        child.login(ip_id, username, password, auto_prompt_reset=False)
+
+        print(f"[{router}] logged into")
+
+        child.sendline("configure terminal")
+        child.expect("#")
+        child.sendline(f"no username {old}")
+        child.expect("#")
+
+        if name != "":
+            child.sendline(f"username {name} priv 15 password {user_password}")
+            child.expect(f"#")
+            print(
+                f"[{router}] new user with: username {name} priv 15 password {user_password}")
+
+
 @app.get("/router/{router}/{interface}")
 def get_interface(router: str, interface: str):
     with engine.connect() as connection:
         name = f"{interface[0]}/{interface[1]}"
         query = f"SELECT * FROM interface WHERE router_name = '{router}' AND name = '{name}'"
-        print(query)
         info = tuple(connection.execute(query))[0]
 
         return info
@@ -68,7 +101,10 @@ def read_router(router: str):
         query2 = f"SELECT name, ip_id FROM interface WHERE router_name = '{router}'"
         info2 = tuple(connection.execute(query2))
 
-        return {"info": info1, "interfaces": info2}
+        query3 = f"SELECT username, router_name, password FROM user WHERE router_name = '{router}'"
+        info3 = tuple(connection.execute(query3))
+
+        return {"info": info1, "interfaces": info2, "users": info3}
 
 
 @app.get("/topology")
@@ -79,7 +115,6 @@ def get_topology():
 @app.get("/getTopo")
 def create_topology():
     routers = {}
-
     with engine.connect() as connection:
         connection.execute('DELETE FROM router')
         connection.execute('DELETE FROM interface')

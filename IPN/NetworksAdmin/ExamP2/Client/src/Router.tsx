@@ -14,14 +14,14 @@ const Router = () => {
   if (isLoading) return <Spinner />
   if (error) return null
 
-  const { info, interfaces } = data as any
-
-  const { name, ip_id, model, version } = info as {
-    name: string
-    ip_id: string
-    model: string
-    version: string
+  const { info, interfaces, users } = data as {
+    info: Record<string, string>
+    interfaces: any[]
+    users: any[]
   }
+  const { name, ip_id, model, version } = info
+  users.push({ username: "admin", password: "admin" })
+  users.push({ username: "", password: "" })
 
   return (
     <>
@@ -67,6 +67,43 @@ const Router = () => {
             >
               {int.name}: {int.ip_id}
             </Link>
+          ))}
+        </Grid>
+
+        <Heading>Users</Heading>
+        <Grid templateColumns={"1fr 1fr"} gap={2} margin={3}>
+          {users.map((user: { username: string; password: string }) => (
+            <form
+              style={{ paddingBottom: "2rem" }}
+              onSubmit={e => {
+                const elements = ((e.target as unknown) as { elements: any }).elements
+                const data = { name: elements.name.value, password: elements.password.value }
+
+                fetch("http://localhost:8000/user/" + router, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ ...data, old: user.username }),
+                })
+
+                e.preventDefault()
+                return false
+              }}
+            >
+              {user.username === "admin" ? (
+                <>
+                  username: <Input name="name" disabled value={user.username} />
+                  password: <Input name="password" disabled value={user.password} />
+                </>
+              ) : (
+                <>
+                  username: <Input name="name" defaultValue={user.username} />
+                  password: <Input name="password" defaultValue={user.password} />
+                  <Button mt={4} colorScheme="teal" type="submit">
+                    {user.username === "" ? "add it!" : "edit it!"}
+                  </Button>
+                </>
+              )}
+            </form>
           ))}
         </Grid>
       </Box>

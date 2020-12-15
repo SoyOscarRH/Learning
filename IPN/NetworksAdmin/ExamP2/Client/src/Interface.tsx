@@ -26,15 +26,19 @@ const Interface = () => {
     <>
       <Box borderRadius="1" margin="6">
         <Heading>
-          {router} | Interface {int}
+          {router} | Interface FA{int[0]}/{int[1]}
         </Heading>
         Name: <Input name="name" defaultValue={name} />
         IP: <Input name="ip_id" defaultValue={ip_id} />
         Mask: <Input name="mask" defaultValue={mask} />
         Connected thing:{" "}
-        <Link as={ReachLink} to={"/" + connected_router_name}>
-          {connected_router_name}
-        </Link>
+        {connected_router_name === "terminal" ? (
+          connected_router_name
+        ) : (
+          <Link as={ReachLink} to={"/" + connected_router_name}>
+            {connected_router_name}
+          </Link>
+        )}
       </Box>
     </>
   )

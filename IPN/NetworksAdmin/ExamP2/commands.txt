@@ -129,5 +129,5 @@ Router 4: 8.8.8.1
 Router 5: 8.8.8.2
 Router 6: 8.8.8.6
 
-ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc admin@8.8.8.9
+ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc elpepe@8.8.8.13
 
