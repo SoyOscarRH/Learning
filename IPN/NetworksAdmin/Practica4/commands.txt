@@ -77,9 +77,9 @@ end
   interface FastEthernet 2/0 !--> Router4
   ip address 10.0.4.253 255.255.255.0
 
-  router ospf 1
-  network 10.0.7.0 0.0.0.255 area 0 !TO PC3
-  network 10.0.4.0 0.0.0.255 area 0 !TO PC3
+  !MANUAL router ospf 1
+  !MANUAL network 10.0.7.0 0.0.0.255 area 0 !TO PC3
+  !MANUAL network 10.0.4.0 0.0.0.255 area 0 !TO PC3
 
 
 ! ==== Config PC ====
@@ -95,7 +95,7 @@ end
 
   # Name stuff
   hostname R#
-  ip domain-name R#.LOCAL
+  ip domain-name R1.LOCAL
 
   # Config line
   line vty 0 4
@@ -121,3 +121,5 @@ end
 
   # Generate keys
   crypto key generate rsa
+
+  ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc elpepe@8.8.8.13
