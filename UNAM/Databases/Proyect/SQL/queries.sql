@@ -44,10 +44,12 @@ ORDER BY
 -- ( 5 ) Consultas por especialidadd
 
 SELECT s.*, COUNT(c.id_consultation) AS consultations
-FROM specialty s 
-INNER JOIN consultation c ON c.id_specialty = s.id_specialty
-GROUP BY s.id_specialty 
-ORDER BY consultations DESC;
+FROM specialty as s, consultation as c
+	WHERE c.id_specialty = s.id_specialty
+GROUP BY 
+	s.id_specialty 
+ORDER BY 
+	consultations DESC;
 
 -- ( 6 ) Mayor ganancia por especialidad
 
@@ -101,7 +103,7 @@ WHERE s.current_cost >= 500
 GROUP BY s.id_specialty, s.name, s.current_cost;
 
 
--- ( 12 ) Posible ganancia por farmacos que se han recetado
+-- ( 12 ) Posibles ingresos por farmacos que se han recetado
 SELECT d.id_drug, d.name, COUNT(i.id_drug) * d.price AS possible_revenue
 FROM drug d 
 INNER JOIN indicates i ON i.id_drug = d.id_drug
@@ -109,7 +111,7 @@ GROUP BY d.id_drug, d.name;
 
 
 -- ( 13 ) Demografía por estado pacientes
-SELECT s.id_state , s."name" , COUNT(c.curp) AS patients
+SELECT s."name" , COUNT(c.curp) AS num_patients
 FROM state s 
 INNER JOIN zip z ON z.id_state = s.id_state 
 INNER JOIN person p ON p.zip_code = z.code 

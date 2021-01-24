@@ -22,31 +22,6 @@ begin
     commit;
 end;$$
 
-
-create or replace procedure new_manager(
-   old_manager_curp CHAR(18),
-   new_manager_curp CHAR(18) 
-)
-language plpgsql    
-as $$
-begin
-
-    -- inserting new
-    INSERT INTO manager(curp, id_establishment, rfc, ssn) 
-    SELECT curp, id_establishment, rfc, ssn 
-      FROM general WHERE general.curp = new_manager_curp;
-
-    INSERT INTO general(curp, id_establishment, rfc, ssn) 
-    SELECT curp, id_establishment, rfc, ssn 
-      FROM manager WHERE manager.curp = old_manager_curp;
-
-    -- deleting old
-    DELETE FROM manager WHERE curp = old_manager_curp;
-    DELETE FROM general WHERE curp = new_manager_curp;
-
-    commit;
-end;$$
-
 -- example select * from manager where id_establishment = 1;
 
 
