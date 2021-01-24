@@ -1,4 +1,5 @@
 BEGIN;
+
 INSERT INTO public.state ("name") VALUES
 	 ('Aguascalientes'),
 	 ('Durango'),
@@ -10,6 +11,7 @@ INSERT INTO public.state ("name") VALUES
 	 ('Michoac'),
 	 ('Morelos'),
 	 ('Nayarit');
+
 INSERT INTO public.state ("name") VALUES
 	 ('Nuevo Leon'),
 	 ('Baja California'),
@@ -21,6 +23,7 @@ INSERT INTO public.state ("name") VALUES
 	 ('Sinaloa'),
 	 ('Sonora'),
 	 ('Tabasco');
+
 INSERT INTO public.state ("name") VALUES
 	 ('Tamaulipas'),
 	 ('Tlaxcala'),
@@ -32,9 +35,11 @@ INSERT INTO public.state ("name") VALUES
 	 ('Coahuila de Zaragoza'),
 	 ('Colima'),
 	 ('Chiapas');
+
 INSERT INTO public.state ("name") VALUES
 	 ('Chihuahua'),
-	 ('Ciudad de México');INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
+	 ('Ciudad de México');
+INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('44060',29,'Krzyżowice','Mijiang'),
 	 ('41565',14,'Santa Rosa','Sari'),
 	 ('75339',7,'San Jerónimo','Fussa'),
@@ -45,6 +50,7 @@ INSERT INTO public.state ("name") VALUES
 	 ('56680',9,'Anuchino','Tasikona'),
 	 ('23760',15,'Kugluktuk','Sơn Tây'),
 	 ('42137',28,'Vyaz’ma','Petropavlovsk');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('15759',26,'Sobrosa','Carrascal'),
 	 ('58155',6,'Lazaro Cardenas','Shichuan'),
@@ -56,6 +62,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('68944',2,'San Miguel','Chiconi'),
 	 ('85476',25,'Qarah Bāgh Bāzār','Münster'),
 	 ('65590',6,'Sóc Sơn','Maumbawa');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('26803',14,'El Peñón','Namur'),
 	 ('74243',20,'Banjar Pasekan','Guarujá'),
@@ -67,6 +74,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('30348',15,'Pukou','Taphan Hin'),
 	 ('62303',22,'Campo de la Cruz','Ōmihachiman'),
 	 ('84153',4,'Gaotuan','Sembungin');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('89815',22,'Souto da Casa','Skillingaryd'),
 	 ('62246',1,'San Pedro','Changling'),
@@ -78,6 +86,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('58168',20,'Scottsdale','Ríohacha'),
 	 ('30621',9,'Paobulan','Guta'),
 	 ('98623',23,'Kota Kinabalu','Glinka');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('38788',25,'Wawer','Jīsh'),
 	 ('63512',21,'Banjar Desa','Danidehe'),
@@ -89,6 +98,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('13151',26,'Wuyang','Yaroslavskiy'),
 	 ('65570',16,'Barong','Oroqen Zizhiqi'),
 	 ('17036',25,'Ridder','Shimoda');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('01287',30,'Oslo','Tosno'),
 	 ('13961',32,'Shalkar','Diamantina'),
@@ -100,6 +110,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('46868',8,'Sigaozhuang','Nongoma'),
 	 ('14819',14,'Guanting','Herzliya Pituah'),
 	 ('70942',5,'Oskarshamn','Tunggaoen Timur');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('02169',9,'Dodol','Ridderkerk'),
 	 ('24801',11,'Derbur','Libas'),
@@ -111,6 +122,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('00902',14,'Dunlewy','Cilolohan'),
 	 ('63528',24,'Hiratachō','Kunashak'),
 	 ('64961',19,'Banjarejo','Tyler');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('66118',16,'Tirhanimîne','Sestroretsk'),
 	 ('59671',24,'Sukarama','Sidonganti'),
@@ -122,6 +134,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('79957',24,'Koper','Xingshou'),
 	 ('82792',5,'Ajaccio','Umeå'),
 	 ('03445',15,'Cigadog','Gaoming');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('60504',27,'Jianzhatan','Machikou'),
 	 ('60728',24,'Huanghua','Troparëvo'),
@@ -133,6 +146,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('40486',32,'Säffle','Inya'),
 	 ('46973',21,'Xinqiao','Anjie'),
 	 ('89058',23,'Hongyansi','Bontoc');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('04608',4,'Tsuruga','Baoji'),
 	 ('29311',30,'Damiao','Shazhenxi'),
@@ -144,6 +158,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('91597',13,'Na Yung','Féres'),
 	 ('92756',19,'Bobolice','Yaojiaji'),
 	 ('57706',14,'Cluses','Solkan');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('68151',26,'Biyan','Kuz’minskiye Otverzhki'),
 	 ('88046',9,'Yili','Huangdu'),
@@ -155,6 +170,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('08161',24,'Vale','Archis'),
 	 ('60518',3,'Gurbuki','Kowingir'),
 	 ('11904',6,'Yuqi','Santiago do Cacém');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('81680',7,'Banjarsari','Guanhães'),
 	 ('29705',26,'Telmin Suma','Toulon'),
@@ -166,6 +182,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('54392',26,'Alexandria','Rancageneng Satu'),
 	 ('09090',15,'Stockholm','Chiriguaná'),
 	 ('24381',22,'Melíti','Daoxian');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('87752',27,'Sarulla','Nangang'),
 	 ('46748',5,'Jiguan','Bantuanon'),
@@ -177,6 +194,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('29848',18,'Bolilao','Mílos'),
 	 ('57013',28,'Jorong Lauk','Barice'),
 	 ('09497',1,'Boavista','Ciro Redondo');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('39045',29,'Bella Vista','Velyka Mykhaylivka'),
 	 ('59376',2,'Wairiang','Pegongan'),
@@ -188,6 +206,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('58163',25,'Izvestkovyy','Anlu'),
 	 ('52416',29,'Daying','Miskolc'),
 	 ('42618',11,'Bogandinskiy','Gorbunki');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('82550',26,'Bamusso','Yvetot'),
 	 ('75879',4,'Capitán Bado','Beringovskiy'),
@@ -199,6 +218,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('59562',23,'Stod','Tandahimba'),
 	 ('64312',27,'Neos Voutzás','Bowang'),
 	 ('59214',28,'Niverville','Lengshuijing');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('28158',13,'Yaroslavskaya','Hoxtolgay'),
 	 ('40514',20,'Tungawan','Moyynkum'),
@@ -210,6 +230,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('12206',15,'Roanne','Xiabuji'),
 	 ('40909',30,'Senekal','Sourotí'),
 	 ('92202',25,'Parramos','Nanxia');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('17414',4,'Triwil','Krasnokuts’k'),
 	 ('89831',7,'Buenavista','Nianba'),
@@ -221,6 +242,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('00993',4,'Khlong Khuean','Trzciana'),
 	 ('40052',12,'Żelazków','Chinhoyi'),
 	 ('48922',5,'Daoukro','Houston');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('69441',7,'Jinji','Sanzhou'),
 	 ('35094',32,'Nickby','Wołomin'),
@@ -232,6 +254,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('12469',1,'El Marañón','Dazhongzhuang'),
 	 ('81314',3,'Huangze','Ashgabat'),
 	 ('13299',27,'Cergy-Pontoise','Sanxi');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('63480',1,'Mungyeong','Guchang'),
 	 ('98945',3,'Malilipot','Bitanjuan'),
@@ -243,6 +266,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('87486',28,'Marcara','Reiko'),
 	 ('60595',2,'Norrtälje','Shajia’ao'),
 	 ('13616',31,'Malšice','Le Havre');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('46229',14,'Radnice','Somanda'),
 	 ('10929',24,'Chujiang','Fengping'),
@@ -254,6 +278,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('26868',23,'Nîmes','Danzi'),
 	 ('43525',14,'Chinch''ŏn','Vimmerby'),
 	 ('90263',10,'Salon-de-Provence','Bílina Kyselka');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('25082',28,'Sarajevo','Ambarita'),
 	 ('16640',7,'Binguang','Temirgoyevskaya'),
@@ -265,6 +290,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('50116',11,'Bani','Tall Tamr'),
 	 ('40309',2,'Gjoa Haven','Shanghu'),
 	 ('07710',2,'Rožďalovice','Klyuchevskiy');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('48344',15,'Babirik','Ferkessédougou'),
 	 ('56719',17,'Yaosai','Mirandela'),
@@ -276,6 +302,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('68985',26,'Sukarara Utara','Ayía Triás'),
 	 ('27956',22,'Pirapozinho','Béthune'),
 	 ('16328',16,'Sakule','Dūāb');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('03355',18,'Santiago de los Caballeros','Fenhe'),
 	 ('63890',1,'Lashma','Vigo'),
@@ -287,6 +314,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('25512',31,'Kaduranca','Liangdang Chengguanzhen'),
 	 ('63892',9,'Žeravice','Casma'),
 	 ('21774',1,'Lilongwe','Koani Ndogo');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('89057',22,'Sel’tso','Araouane'),
 	 ('90244',14,'Bressuire','Aswan'),
@@ -298,6 +326,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('03490',7,'Shiroishi','Kafr Zībād'),
 	 ('00469',23,'Chinandega','‘Anātā'),
 	 ('01666',30,'Ḩalabjah','Funafuti');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('42839',12,'Carriedo','Vannes'),
 	 ('37139',6,'Bačka Topola','Dongqinggou'),
@@ -309,6 +338,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('42372',1,'Zelenogorsk','Feondari'),
 	 ('77304',14,'Shostka','Nazca'),
 	 ('92085',5,'Mundybash','Wuqu');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('07788',20,'Kadengan','Oleiros'),
 	 ('57230',1,'Menol','Kuaro'),
@@ -320,6 +350,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('20841',25,'Végueta','Badarganj'),
 	 ('96786',25,'Daogao','Kolomak'),
 	 ('45053',16,'Balagui','Bellavista');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('88181',28,'Jiangxigou','Boljevac'),
 	 ('86905',26,'Tha Ruea','Nove-Misto'),
@@ -331,6 +362,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('13649',18,'Barinitas','Solnechnyy'),
 	 ('07205',12,'Ingeniero Guillermo N. Juárez','Liaozhong'),
 	 ('11167',12,'Araruama','Khorramābād');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('83509',22,'Vereya','Ngulahan'),
 	 ('74214',26,'Villeneuve-la-Garenne','Jindong'),
@@ -342,6 +374,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('06305',27,'Portela','Datarnangka'),
 	 ('35880',22,'Bangshipu','Jinsha'),
 	 ('17663',22,'Trà Ôn','Lamawan');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('67624',14,'Partizansk','Si Prachan'),
 	 ('14347',9,'Bizhou','Maslovare'),
@@ -353,6 +386,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('78224',30,'Nesterovskaya','Sūq ar Rabū‘'),
 	 ('51644',19,'Alpedrinha','Ikang'),
 	 ('59084',7,'Bangeran','Los Dos Caminos');
+
 INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('17612',30,'Pamedilan','Sūrān'),
 	 ('04947',8,'Bordeaux','Nyalindung'),
@@ -362,7 +396,8 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('90599',4,'Vnorovy','Āshtīān'),
 	 ('47505',3,'Noemuti','Juvisy-sur-Orge'),
 	 ('33110',29,'Melgar','Orël'),
-	 ('59234',25,'Rengasdengklok','Lyon');INSERT INTO public.specialty ("name",current_cost) VALUES
+	 ('59234',25,'Rengasdengklok','Lyon');
+INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('General',40.00),
 	 ('Community Outreach Specialist',120.84),
 	 ('Community Outreach Specialist',49.49),
@@ -373,6 +408,7 @@ INSERT INTO public.zip (code,id_state,neighbor,city) VALUES
 	 ('Senior Quality Engineer',225.86),
 	 ('Electrical Engineer',547.12),
 	 ('Speech Pathologist',931.52);
+
 INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('Compensation Analyst',985.52),
 	 ('Nurse Practicioner',643.81),
@@ -384,6 +420,7 @@ INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('Senior Developer',128.49),
 	 ('Staff Accountant II',404.53),
 	 ('Structural Analysis Engineer',805.59);
+
 INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('Developer I',315.97),
 	 ('Tax Accountant',931.28),
@@ -393,7 +430,8 @@ INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('Quality Engineer',691.76),
 	 ('Account Coordinator',317.45),
 	 ('Account Representative III',262.86),
-	 ('Assistant Professor',692.26);INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
+	 ('Assistant Professor',692.26);
+INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Kali phos, Nat phos, Nat sulph','24 hour','Native Remedies, LLC',469.28,true),
 	 ('House Fly','task-force','Nelco Laboratories, Inc.',352.61,true),
 	 ('follitropin','Adaptive','Organon USA Inc.',489.77,true),
@@ -404,6 +442,7 @@ INSERT INTO public.specialty ("name",current_cost) VALUES
 	 ('Hydroxyzine Hydrochloride','composite','American Regent, Inc.',235.90,true),
 	 ('oxygen','fresh-thinking','Shaw Oxygen Company, Inc.',99.00,true),
 	 ('Coal tar','Team-oriented','KMart Corporation',51.02,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Anthracinum, Antimonium crudum, Hydrocotyle asiatica, Juglans regia, Kali bromatum, Ledum palustre, Natrum sulphuratum, Pyrogenium, Radium bromatum, Sanguinaria canadensis, Sulphur iodatum, Thuja occidentalis, Urtica urens','neural-net','Liddell Laboratories, Inc.',797.14,false),
 	 ('alcohol','Realigned','Unifirst First Aid Corporation',945.65,false),
@@ -415,6 +454,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('OCTINOXATE, TITANIUM DIOXIDE','Upgradable','Guerlain S.A.',896.38,false),
 	 ('Naproxen','system engine','Camber Pharmaceuticals',980.19,false),
 	 ('TITANIUM DIOXIDE, OCTINOXATE','multimedia','Anna Lotan Ltd',373.25,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Etodolac','multimedia','Apotex Corp.',903.78,true),
 	 ('glycerin, phenylephrine HCl, pramoxine HCl, white petrolatum','algorithm','Target Corporation',924.61,true),
@@ -426,6 +466,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Loblolly Pine','logistical','Nelco Laboratories, Inc.',950.54,false),
 	 ('Triclosan','bifurcated','Bath & Body Works, Inc.',175.51,true),
 	 ('Meclizine HCl','hierarchy','McKesson (Sunmark)',414.41,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Guaifenesin','logistical','SJ Pharmaceuticals',717.69,true),
 	 ('Octocrylene','needs-based','Babor Cosmetics America, Corp',803.30,true),
@@ -437,6 +478,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Cetirizine HCl, Pseudoephedrine HCl','Persevering','Topco Associates LLC',486.84,false),
 	 ('Benzocaine','initiative','Patterson Dental Supply Inc',584.89,true),
 	 ('Berberis Vulgaris, Chelidonium Majus, Trifolium Pratense, Glycyrrhiza Glabra, Lappa Major, Phytolacca Decandra, Rhamnus Frangula','process improvement','BioActive Nutritional, Inc.',200.99,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Ampicillin sodium','asymmetric','Sandoz Inc',992.13,true),
 	 ('mirtazapine','groupware','PD-Rx Pharmaceuticals, Inc.',79.19,true),
@@ -448,6 +490,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Anagallis arvensis, Aqua marina, Fucus vesiculosus, Mentha piperita, Rosa damascene, Silica marina, Cuprum metallicum, Ferrum phosphoricum, Fumaricum acidum, Aralia hispida, Chimaphila maculate, Derris pinnata, Hedeoma pulegioides, Ononis spinosa, Physalis alkekengi, Quassia amara, Saccharum officinale, Hydrofluoricum acidum','upward-trending','BioVeda',608.51,true),
 	 ('LACTULOSE','national','Pharmaceutical Associates, Inc,',54.66,false),
 	 ('TITANIUM DIOXIDE','focus group','THEFACESHOP CO., LTD.',121.65,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Triclosan','artificial intelligence','Deb USA, Inc.',121.11,false),
 	 ('Clarithromycin','Ergonomic','Wockhardt Limited',440.86,true),
@@ -459,6 +502,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Titanium Dioxide and Zinc oxide','attitude','Bare Escentuals Beauty Inc.',232.04,true),
 	 ('Doxycycline Hyclate','User-centric','Aidarex Pharmaceuticals LLC',485.30,false),
 	 ('Ibuprofen','next generation','Publix Super Markets Inc',78.77,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Desoximetasone','multi-tasking','VersaPharm Incorporated',534.61,false),
 	 ('Maple Sugar','optimizing','ALK-Abello, Inc.',52.85,false),
@@ -470,6 +514,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('ACETAMINOPHEN','artificial intelligence','Athlete''s Needs Inc',430.53,false),
 	 ('naphazoline hydrochloride and pheniramine maleate','upward-trending','Alcon Laboratories, Inc.',616.54,false),
 	 ('Clonazepam','attitude-oriented','Aphena Pharma Solutions - Tennessee, LLC',550.69,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Oxygen','Front-line','Fleming County Hospital Home Medical Equipment',733.66,false),
 	 ('Agaricus e pl. tota 4 Special Order','human-resource','Uriel Pharmacy Inc.',83.69,true),
@@ -481,6 +526,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Skin Protectant','Multi-channelled','Skinfix, Inc.',380.14,false),
 	 ('Avobenzone, Octinoxate, Octisalate, Oxybenzone','concept','Fischer Pharmaceuticals Ltd',153.37,false),
 	 ('Sodium Hypochlorite','static','Century Pharmaceuticals, Inc.',202.81,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Methocarbamol','neural-net','A-S Medication Solutions LLC',277.71,false),
 	 ('Hydrocodone Bitartrate And Acetaminophen','24 hour','Dispensing Solutions, Inc.',253.17,false),
@@ -492,6 +538,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Gabapentin','fresh-thinking','MedVantx Inc.',910.82,false),
 	 ('Hydroquinone','web-enabled','International Beauty Exchange Inc',332.41,true),
 	 ('Ampicillin and Sulbactam','Operative','WG Critical Care, LLC',662.13,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('ALTHAEA OFFICINALIS LEAF - ANTIMONY POTASSIUM TARTRATE - BRYONIA ALBA ROOT - CETRARIA ISLANDICA SUBSP. ISLANDICA - COCHINEAL - COPPER - DROSERA ROTUNDIFOLIA - ECHINACEA ANGUSTIFOLIA - GARDEN THYME - L','intranet','Guna spa',197.75,true),
 	 ('Lidocaine Hydrochloride','Innovative','Mylan Institutional LLC',720.40,true),
@@ -503,6 +550,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('OCTINOXATE','local','Parfums Christian Dior',381.44,false),
 	 ('White Oak','Automated','Nelco Laboratories, Inc.',74.34,true),
 	 ('Ranitidine','Profit-focused','Ohm Laboratories Inc.',908.53,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Titanium Dioxide, Zinc Oxide','Synchronised','Physicians Formula Inc',530.74,true),
 	 ('ciprofloxacin hydrochloride','user-facing','Apotex Corp',378.53,true),
@@ -514,6 +562,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('gadodiamide','database','GE Healthcare Inc.',678.95,false),
 	 ('Menthol','matrix','New World Imports, Inc',484.63,false),
 	 ('mercaptopurine','Distributed','Mylan Pharmaceuticals Inc.',267.72,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Avobenzone, Homosalate, Octisalate, Octocrylene, and Oxybenzone','architecture','Johnson & Johnson Sante Beaute ? France',900.69,true),
 	 ('Bryonia Stannum','process improvement','Uriel Pharmacy Inc.',736.61,false),
@@ -525,6 +574,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Acetaminophen','local','American Sales Company',601.86,false),
 	 ('lamivudine','logistical','ViiV Healthcare Company',168.84,false),
 	 ('calcium carbonate','Re-engineered','Topco Associates LLC',571.75,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Dual-Iron','incremental','Biocomp Pharma, Inc.',410.70,true),
 	 ('Ofloxacin','attitude-oriented','REMEDYREPACK INC.',935.85,true),
@@ -536,6 +586,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Camphor and Menthol','context-sensitive','Quality Care Distributors LLC',209.15,false),
 	 ('Chelidonium majus, Glycyrrhiza glabra, Hydrastis canadensis, Nux muschata','project','Apotheca Company',950.42,true),
 	 ('Chick Pea','bi-directional','Nelco Laboratories, Inc.',612.22,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('nifedipine','conglomeration','Cardinal Health',616.40,false),
 	 ('AZITHROMYCIN DIHYDRATE','Mandatory','REMEDYREPACK INC.',88.07,false),
@@ -547,6 +598,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Petroselinum stivum, Populus tremuloides, Sabal serrulata, Chimaphila umbellata, ATP (Adenosine triphosphate disodium), Equol, Kreosotum,','Multi-lateral','Deseret Biologicals, Inc.',821.31,false),
 	 ('Bone, Calcarea Carbonica, Calcarea Fluorica, Causticum, Cocculus Indicus, Ledum Palustre, Phosphoricum Acidum, Rhus Toxicodendron','Persistent','BioActive Nutritional, Inc.',599.47,false),
 	 ('KETOROLAC TROMETHAMINE','optimizing','REMEDYREPACK INC.',58.33,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('LIDOCAINE HYDROCHLORIDE','full-range','Pure Source Inc',108.20,true),
 	 ('Acetaminophen, Diphenhydramine hydrochloride, Phenylephrine hydrochloride','Visionary','Kmart Corporation',977.53,false),
@@ -558,6 +610,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Loblolly Pine','benchmark','Nelco Laboratories, Inc.',522.90,true),
 	 ('adenosine','core','Astellas Pharma US, Inc.',509.12,true),
 	 ('TRICLOSAN','needs-based','HYVEE INC',880.53,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Caffeine','full-range','DOLGENCORP, LLC',258.65,false),
 	 ('Tramadol Hydrochloride','executive','Contract Pharmacy Services-PA',431.58,false),
@@ -569,6 +622,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Soybean Oil','Profound','B. Braun Medical Inc.',37.71,false),
 	 ('Octinoxate','Versatile','CVS Pharmacy, Inc',783.83,true),
 	 ('avobenzone, homosalate, octisalate, octocrylene, and oxybenzone','architecture','MSD Consumer Care, Inc.',730.91,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('anti-interleukin-1.alpha. immunoglobulin g rabbit, ascorbic acid, metenkefalin, ersofermin, bos taurus cartilage, sus scrofa cartilage, pork collagen, bos taurus red blood cell, sus scrofa red blood cell, interleukin-3, interleukin-3, beef liver, pork liver, beef, pork, bos taurus tendon, sus scrofa tendon, cetermin','composite','VIATREXX BIO INCORPORATED',119.31,true),
 	 ('modafinil','framework','Apotex Corp.',348.20,false),
@@ -580,6 +634,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('ALLANTOIN','Seamless','Dr. Forhair',374.65,false),
 	 ('Piroxicam','hub','Aphena Pharma Solutions - Tennessee, LLC',366.10,false),
 	 ('Acyclovir','project','REMEDYREPACK INC.',602.65,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('CAMPHOR AND MENTHOL','client-server','GUANGXI YULIN PHARMACEUTICAL CO LTD',103.80,true),
 	 ('Nicotine','Organic','Rugby Laboratories',966.23,false),
@@ -591,6 +646,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('DILTIAZEM HYDROCHLORIDE','firmware','State of Florida DOH Central Pharmacy',65.23,false),
 	 ('Cilostazol','paradigm','Corepharma LLC.',313.61,false),
 	 ('pyrithione zinc','initiative','Stiefel Laboratories Inc',464.31,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Levothyroxine Sodium','middleware','Aphena Pharma Solutions - Tennessee, Inc.',454.34,false),
 	 ('Alprazolam','bifurcated','Amneal Pharmaceuticals, LLC',230.47,false),
@@ -602,6 +658,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Modafinil','Organic','Actavis Pharma, Inc.',675.77,true),
 	 ('Arsenicum alb., Bryonia, Cantharis, Chelidonium majus, Cistus canadensis, Conium, Croton, Dulcamara, Graphites, Kali bic., Lycopodium, Mezereum, Nux vom., Petroleum, Pulsatilla, Ranunc. bulb., Rhus toxicodendron, Sarsaparilla, Sepia, Sulphur, Thuja occ., Echinacea, Hypericum','knowledge user','Newton Laboratories, Inc.',783.40,true),
 	 ('ropinirole','dynamic','Mylan Pharmaceuticals Inc.',123.00,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Levetiracetam','forecast','Torrent Pharmaceuticals Limited',837.41,true),
 	 ('Phenol','budgetary management','Cardinal Health',43.74,true),
@@ -613,6 +670,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('California Black Walnut','mobile','Antigen Laboratories, Inc.',771.95,true),
 	 ('Moexipril Hydrochloride','Function-based','Glenmark Generics Inc., USA',886.08,false),
 	 ('Nitroglycerin','customer loyalty','Cardinal Health',317.97,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Ibuprofen','Organic','Velocity Pharma',646.29,true),
 	 ('Levothyroxine Sodium','website','Unit Dose Services',416.37,false),
@@ -624,6 +682,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('External Analgesic Plaster for Removal of Corns and Calluses','discrete','Huangshi Hygenic Material Pharmacy Co. Ltd.',410.42,false),
 	 ('Triclosan','Re-engineered','SJ Creations, Inc.',611.57,true),
 	 ('fentanyl','even-keeled','Janssen Pharmaceuticals, Inc.',596.58,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Losartan Potassium and Hydrochlorothiazide','middleware','REMEDYREPACK INC.',941.67,true),
 	 ('TOBRAMYCIN SULFATE','Profound','Fresenius Kabi USA, LLC',351.09,true),
@@ -635,6 +694,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Dextromethorphan Hydrobromide and GUAIFENESIN','dedicated','Major Pharmaceuticals',73.45,false),
 	 ('ATROPA BELLADONNA ROOT','Customizable','Hyland''s',404.45,true),
 	 ('Glycerin','Optional','TONYMOLY CO., LTD.',281.56,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Polyethylene Glycol 3350, NF Powder for Solution, Laxative','Upgradable','Rebel Distributors Corp',595.06,false),
 	 ('Methimazole','structure','Golden State Medical Supply Inc.',145.51,false),
@@ -646,6 +706,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Povidone-iodine','Configurable','CVS Pharmacy',800.21,false),
 	 ('Anticavity Rinse','secondary','CVS Pharmacy, Inc',977.22,true),
 	 ('Acetaminophen','Adaptive','Walgreens',919.32,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('SELENIUM SULFIDE','conglomeration','SAFEWAY INC.',577.30,true),
 	 ('Oxymorphone Hydrochloride','Programmable','Rebel Distributors Corp',125.10,true),
@@ -657,6 +718,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Pioglitazone Hydrochloride','discrete','American Health Packaging',248.01,false),
 	 ('Phenylephrine HCl','system engine','Cantrell Drug Company',240.49,true),
 	 ('Linden','software','Nelco Laboratories, Inc.',964.48,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Atenolol','superstructure','Lake Erie Medical & Surgical Supply DBA Quality Care Products LLC',240.97,true),
 	 ('testosterone','pricing structure','Lake Erie Medical DBA Quality Care Products LLC',860.58,false),
@@ -668,6 +730,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Acetaminophen, Dextromethorphan HBr, Doxylamine Succinate','Triple-buffered','Amerisource Bergen',323.41,false),
 	 ('SOFOSBUVIR','forecast','Gilead Sciences, Inc.',770.27,true),
 	 ('Isopropyl Alcohol','human-resource','Walgreens',978.97,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Octinoxate, Octocrylene, Oxybenzone, Titanium Dioxide, Zinc Oxide','parallelism','Fallien Cosmeceuticals, LTD.',101.36,false),
 	 ('Hydrogen Peroxide 3%','time-frame','Humco Holding Group, Inc.',673.12,true),
@@ -679,6 +742,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Kali bichromicum','Mandatory','Natures Way Holding Co.',218.99,true),
 	 ('LEVOTHYROXINE SODIUM ANHYDROUS','task-force','Fresenius Kabi USA, LLC',393.38,true),
 	 ('BENZALKONIUM CHLORIDE','Open-architected','KAS Direct LLC dba BabyGanics',889.30,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Teniposide','Implemented','WG Critical Care, LLC',468.20,true),
 	 ('EPIFAGUS VIRGINIANA - IRIS VERSICOLOR ROOT - POTASSIUM IODIDE','time-frame','Washington Homeopathic Products',272.11,false),
@@ -690,6 +754,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Exemestane','bandwidth-monitored','Greenstone LLC',763.02,false),
 	 ('Desonide','Front-line','Perrigo New York Inc',166.85,true),
 	 ('PLATINUM','Expanded','Natural Health Supply',852.49,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Influenza A Virus, Influenza B Virus, Antimon. tart., Arsenicum alb., Bryonia, Camphora, Chelidonium majus, Cinchona, Drosera, Eucalyptus, Hepar sulph. calc., Histaminum hydrochloricum, Ipecac., Kali bic., Kali carb., Kali iod., Lycopodium, Myrrha, Natrum sulphuricum, Nux vom., Phosphorus, Pulsatilla, Sanguinaria, Spongia , Stannum met., Tussilago farfara, Verbascum, Echinacea, Lappa, Rumex crisp.','bottom-line','Newton Laboratories, Inc.',142.76,false),
 	 ('Zinc Oxide','Extended','Ventura Corporation LTD',523.12,true),
@@ -701,6 +766,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('cyclobenzaprine hydrochloride','software','Victory Pharma, Inc.',971.98,true),
 	 ('Oxymetazoline HCl','Digitized','L Perrigo Company',50.14,false),
 	 ('Albuterol Sulfate','pricing structure','Lake Erie Medical DBA Quality Care Products LLC',51.82,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Dextrose Monohydrate, Sodium Chloride, Sodium Lactate, Calcium Chloride, Magnesium Chloride','task-force','Fresenius Medical Care North America',644.58,false),
 	 ('Dexamethasone','architecture','Roxane Laboratories, Inc',235.11,false),
@@ -712,6 +778,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Zincum Aceticum, Zincum Gluconicum','Sharable','Meijer Distribution Inc',743.68,false),
 	 ('Warfarin Sodium','global','Aphena Pharma Solutions - Tennessee, LLC',952.07,true),
 	 ('Hydrocodone Bitartrate and Ibuprofen','hub','STAT Rx USA LLC',463.42,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Flores Formica Special Order','holistic','Uriel Pharmacy Inc.',939.59,false),
 	 ('fluocinolone acetonide','methodical','E. Fougera & Co. a division of Fougera Pharmaceuticals Inc.',280.59,false),
@@ -723,6 +790,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Naproxen','Stand-alone','Contract Pharmacy Services-PA',392.57,false),
 	 ('Triamterene and Hydrochlorothiazide','Monitored','Unit Dose Services',441.06,false),
 	 ('Avobenzone Octinoxate','secondary','ALL NATURAL DYNAMICS',958.11,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Camphor','Multi-channelled','MOBERG PHARMA NORTH AMERICA LLC',741.64,false),
 	 ('ALCOHOL','Public-key','STERIS Corporation',686.82,false),
@@ -734,6 +802,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Atomoxetine hydrochloride','contextually-based','Physicians Total Care, Inc.',196.51,true),
 	 ('Oxygen','functionalities','Quality Home Healthcare, Inc.',638.40,false),
 	 ('Cypress Bald','application','ALK-Abello, Inc.',68.46,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('OXYBENZONE, AVOBENZONE, OCTOCRYLENE','systemic','Access Business Group LLC',90.37,true),
 	 ('SUS SCROFA PLACENTA','bottom-line','TMN K.K.',804.08,true),
@@ -745,6 +814,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Gabapentin','Advanced','ReadyMeds',650.12,true),
 	 ('EUCALYPTOL','system engine','Kmart Corporation',269.72,true),
 	 ('TRAZODONE HYDROCHLORIDE','attitude-oriented','Direct Rx',635.31,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Aurum 6','Adaptive','Uriel Pharmacy Inc.',534.27,false),
 	 ('Piperonyl Butoxide, Pyrethrum Extract','needs-based','American Sales Company',389.36,false),
@@ -756,6 +826,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Diphenhydramine Hydrochloride','flexibility','Dispensing Solutions, Inc.',822.56,true),
 	 ('Nicotine Polacrilex','project','McKesson',379.28,false),
 	 ('OCTINOXATE, OCTOCRYLENE, and ZINC OXIDE','intermediate','SHISEIDO AMERICA INC.',926.49,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Menthol and Methyl Salicylate','regional','Chattem, Inc.',325.15,false),
 	 ('Passiflora Incarnata, Glandula Suprarenalis Suis, Thyroidinum, Arnica Montana, Hypericum Perforatum','tertiary','BioActive Nutritional, Inc.',842.36,true),
@@ -767,6 +838,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Naproxen Sodium','Persistent','L. Perrigo Company',789.63,false),
 	 ('Menthol','firmware','Mondelez Global LLC',247.70,true),
 	 ('Fluocinolone Acetonide','empowering','GW Laboratories, Inc.',489.06,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Dimethicone','Graphical User Interface','CVS Pharmacy, Inc',355.78,false),
 	 ('doxazosin mesylate','intermediate','Golden State Medical Supply, Inc.',259.68,true),
@@ -778,6 +850,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Isopropyl Alcohol','Public-key','Sunmark',181.94,true),
 	 ('Dimethicone','parallelism','TopCo Associates LLC',566.10,false),
 	 ('Hydrocodone Bitartrate And Acetaminophen','Multi-lateral','Liberty Pharmaceuticals, Inc.',614.22,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Neomycin and Polymyxin B Sulfates and Bacitracin Zinc','Synergized','E. Fougera & Co. a division of Fougera Pharmaceuticals Inc.',162.07,true),
 	 ('DIDANOSINE','leverage','American Health Packaging',695.78,false),
@@ -789,6 +862,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Nifedipine','matrix','Rebel Distributors Corp',522.83,false),
 	 ('Atorvastatin Calcium','Secured','Northwind Pharmaceuticals',106.83,false),
 	 ('Lorazepam','attitude-oriented','Cardinal Health',229.66,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('insulin aspart','discrete','Physicians Total Care, Inc.',433.68,false),
 	 ('DOCUSATE SODIUM','Monitored','Rebel Distributors Corp',966.41,true),
@@ -800,6 +874,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('factor ix complex','tertiary','GRIFOLS USA, LLC',282.20,false),
 	 ('Hand Sanitizer Foam','Intuitive','X3 Labs Inc.',432.39,true),
 	 ('AVOBENZONE, OCTISALATE, and OCTOCRYLENE','zero administration','ESTEE LAUDER INC',330.93,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('OCTINOXATE, OXYBENZONE','modular','Ventura Corporation, LTD',812.74,false),
 	 ('FAMOTIDINE','definition','Major Pharmaceuticals',782.92,true),
@@ -811,6 +886,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Fluocinolone Acetonide','Ameliorated','IGI Labs, Inc.',198.27,false),
 	 ('Methyl Salicylate','Sharable','LUEN WAH HK MEDICINE LTD',632.66,true),
 	 ('Sodium Chloride','adapter','General Injectables & Vaccines, Inc',801.71,false);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE AND PHENYLEPHRINE HYDROCHLORIDE','Visionary','Unifirst First Aid Corporation',407.42,true),
 	 ('MEPROBAMATE','throughput','Alembic Pharmaceuticals Limited',162.17,false),
@@ -822,6 +898,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Uricum acidum, Benzoicum acidum, Berber. vulg., Bryonia, Cantharis, Carduus benedictus, Ceanothus, Chelidonium majus, Chionanthus virginica, Cinchona, Dioscorea, Dolichos, Iris versicolor, Juniperus com., Nux vom.,Ptelea,Taraxacum, Carduus mar., Cynara scolymus, Solidago','object-oriented','Newton Laboratories, Inc.',839.44,true),
 	 ('MENTHOL, METHYL SALICYLATE','system engine','Albert Max, Inc.',368.46,true),
 	 ('Spironolactone','portal','McKesson Packaging Services Business Unit of McKesson Corporation',586.07,true);
+
 INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALUES
 	 ('Quack Grass','leverage','Nelco Laboratories, Inc.',903.13,true),
 	 ('Dextromethorphan HBR, Guaifenesin','internet solution','Menper Distributors, Inc.',77.37,true),
@@ -832,7 +909,8 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Octinoxate','protocol','BCM Cosmetique SAS',385.90,true),
 	 ('Alfalfa Pollen','functionalities','Antigen Laboratories, Inc.',976.24,false),
 	 ('Loratadine','pricing structure','Preferred Pharmaceuticals, Inc',788.03,true),
-	 ('Aspirin','analyzing','Wal-Mart Stores Inc',729.41,true);INSERT INTO public.substance ("name") VALUES
+	 ('Aspirin','analyzing','Wal-Mart Stores Inc',729.41,true);
+INSERT INTO public.substance ("name") VALUES
 	 ('Adaptive'),
 	 ('modular'),
 	 ('secured line'),
@@ -843,6 +921,7 @@ INSERT INTO public.drug ("name",presentation,brand,price,need_prescription) VALU
 	 ('Switchable'),
 	 ('multimedia'),
 	 ('task-force');
+
 INSERT INTO public.substance ("name") VALUES
 	 ('project'),
 	 ('projection'),
@@ -854,6 +933,7 @@ INSERT INTO public.substance ("name") VALUES
 	 ('paradigm'),
 	 ('Optional'),
 	 ('clear-thinking');
+
 INSERT INTO public.substance ("name") VALUES
 	 ('bottom-line'),
 	 ('website'),
@@ -865,6 +945,7 @@ INSERT INTO public.substance ("name") VALUES
 	 ('3rd generation'),
 	 ('secured line'),
 	 ('motivating');
+
 INSERT INTO public.substance ("name") VALUES
 	 ('Face to face'),
 	 ('6th generation'),
@@ -875,7 +956,8 @@ INSERT INTO public.substance ("name") VALUES
 	 ('Re-engineered'),
 	 ('Implemented'),
 	 ('Phased'),
-	 ('installation');INSERT INTO public.is_composed (id_drug,id_substance) VALUES
+	 ('installation');
+INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (1,32),
 	 (2,33),
 	 (3,32),
@@ -886,6 +968,7 @@ INSERT INTO public.substance ("name") VALUES
 	 (8,37),
 	 (9,8),
 	 (10,29);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (11,5),
 	 (12,20),
@@ -897,6 +980,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (18,19),
 	 (19,39),
 	 (20,38);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (21,27),
 	 (22,12),
@@ -908,6 +992,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (28,23),
 	 (29,10),
 	 (30,19);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (31,33),
 	 (32,28),
@@ -919,6 +1004,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (38,38),
 	 (39,23),
 	 (40,16);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (41,15),
 	 (42,5),
@@ -930,6 +1016,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (48,40),
 	 (49,35),
 	 (50,12);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (51,38),
 	 (52,10),
@@ -941,6 +1028,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (58,25),
 	 (59,21),
 	 (60,39);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (61,16),
 	 (62,28),
@@ -952,6 +1040,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (68,29),
 	 (69,10),
 	 (70,33);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (71,16),
 	 (72,34),
@@ -963,6 +1052,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (78,4),
 	 (79,38),
 	 (80,21);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (81,25),
 	 (82,20),
@@ -974,6 +1064,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (88,13),
 	 (89,15),
 	 (90,23);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (91,4),
 	 (92,19),
@@ -985,6 +1076,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (98,3),
 	 (99,24),
 	 (100,13);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (101,10),
 	 (102,20),
@@ -996,6 +1088,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (108,9),
 	 (109,36),
 	 (110,20);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (111,14),
 	 (112,23),
@@ -1007,6 +1100,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (118,7),
 	 (119,40),
 	 (120,31);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (121,39),
 	 (122,38),
@@ -1018,6 +1112,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (128,23),
 	 (129,29),
 	 (130,15);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (131,32),
 	 (132,28),
@@ -1029,6 +1124,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (138,33),
 	 (139,27),
 	 (140,25);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (141,40),
 	 (142,22),
@@ -1040,6 +1136,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (148,21),
 	 (149,40),
 	 (150,11);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (151,9),
 	 (152,27),
@@ -1051,6 +1148,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (158,35),
 	 (159,14),
 	 (160,36);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (161,25),
 	 (162,17),
@@ -1062,6 +1160,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (168,4),
 	 (169,21),
 	 (170,9);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (171,11),
 	 (172,40),
@@ -1073,6 +1172,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (178,10),
 	 (179,14),
 	 (180,36);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (181,26),
 	 (182,21),
@@ -1084,6 +1184,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (188,5),
 	 (189,35),
 	 (190,29);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (191,1),
 	 (192,8),
@@ -1095,6 +1196,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (198,27),
 	 (199,7),
 	 (200,9);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (201,21),
 	 (202,35),
@@ -1106,6 +1208,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (208,26),
 	 (209,32),
 	 (210,29);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (211,6),
 	 (212,40),
@@ -1117,6 +1220,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (218,34),
 	 (219,36),
 	 (220,21);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (221,14),
 	 (222,22),
@@ -1128,6 +1232,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (228,16),
 	 (229,8),
 	 (230,20);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (231,31),
 	 (232,16),
@@ -1139,6 +1244,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (238,5),
 	 (239,17),
 	 (240,20);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (241,22),
 	 (242,3),
@@ -1150,6 +1256,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (248,5),
 	 (249,35),
 	 (250,14);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (251,10),
 	 (252,19),
@@ -1161,6 +1268,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (258,36),
 	 (259,32),
 	 (260,30);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (261,4),
 	 (262,29),
@@ -1172,6 +1280,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (268,37),
 	 (269,40),
 	 (270,4);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (271,35),
 	 (272,2),
@@ -1183,6 +1292,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (278,23),
 	 (279,31),
 	 (280,16);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (281,17),
 	 (282,7),
@@ -1194,6 +1304,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (288,37),
 	 (289,10),
 	 (290,39);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (291,13),
 	 (292,8),
@@ -1205,6 +1316,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (298,17),
 	 (299,36),
 	 (300,18);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (301,40),
 	 (302,19),
@@ -1216,6 +1328,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (308,37),
 	 (309,29),
 	 (310,36);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (311,40),
 	 (312,16),
@@ -1227,6 +1340,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (318,10),
 	 (319,14),
 	 (320,6);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (321,37),
 	 (322,28),
@@ -1238,6 +1352,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (328,5),
 	 (329,22),
 	 (330,31);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (331,2),
 	 (332,1),
@@ -1249,6 +1364,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (338,15),
 	 (339,31),
 	 (340,25);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (341,8),
 	 (342,12),
@@ -1260,6 +1376,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (348,3),
 	 (349,9),
 	 (350,37);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (351,31),
 	 (352,26),
@@ -1271,6 +1388,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (358,16),
 	 (359,1),
 	 (360,37);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (361,38),
 	 (362,18),
@@ -1282,6 +1400,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (368,28),
 	 (369,9),
 	 (370,15);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (371,38),
 	 (372,19),
@@ -1293,6 +1412,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (378,13),
 	 (379,40),
 	 (380,34);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (381,13),
 	 (382,30),
@@ -1304,6 +1424,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (388,16),
 	 (389,23),
 	 (390,7);
+
 INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (391,12),
 	 (392,10),
@@ -1314,7 +1435,8 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 (397,17),
 	 (398,16),
 	 (399,5),
-	 (400,35);INSERT INTO public.establishment (street,street_number,zip_code) VALUES
+	 (400,35);
+INSERT INTO public.establishment (street,street_number,zip_code) VALUES
 	 ('Lerdahl',9,'03490'),
 	 ('Cordelia',46283,'45053'),
 	 ('Dahle',1405,'88332'),
@@ -1325,6 +1447,7 @@ INSERT INTO public.is_composed (id_drug,id_substance) VALUES
 	 ('Springs',62,'98623'),
 	 ('Anzinger',7,'60518'),
 	 ('Becker',9,'91163');
+
 INSERT INTO public.establishment (street,street_number,zip_code) VALUES
 	 ('Jenifer',3,'92085'),
 	 ('Marquette',1338,'43525'),
@@ -1335,7 +1458,8 @@ INSERT INTO public.establishment (street,street_number,zip_code) VALUES
 	 ('Kensington',446,'90599'),
 	 ('Annamark',751,'75975'),
 	 ('Oak',1022,'46868'),
-	 ('Clove',22114,'07205');INSERT INTO public.phone_number (id_establishment,phone) VALUES
+	 ('Clove',22114,'07205');
+INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (1,'7196997601'),
 	 (2,'8661183661'),
 	 (3,'7467112295'),
@@ -1346,6 +1470,7 @@ INSERT INTO public.establishment (street,street_number,zip_code) VALUES
 	 (8,'5713524333'),
 	 (9,'1046135440'),
 	 (10,'4099130593');
+
 INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (11,'3201668974'),
 	 (12,'5178781898'),
@@ -1357,6 +1482,7 @@ INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (18,'5672311751'),
 	 (19,'8233464676'),
 	 (20,'2077721083');
+
 INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (1,'9808633496'),
 	 (2,'5824821894'),
@@ -1368,6 +1494,7 @@ INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (8,'4825250752'),
 	 (9,'6161873328'),
 	 (10,'9785226332');
+
 INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (11,'9896148194'),
 	 (12,'1679528521'),
@@ -1379,6 +1506,7 @@ INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (18,'2812380996'),
 	 (19,'1046388271'),
 	 (20,'4005769543');
+
 INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (1,'3322803729'),
 	 (2,'9234612064'),
@@ -1389,7 +1517,8 @@ INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 (7,'1947200985'),
 	 (8,'3618609835'),
 	 (9,'2375783056'),
-	 (10,'6145553803');INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
+	 (10,'6145553803');
+INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OLDU929976EMVFJ583','Tedie','Vivash','Falconar','male','8938847798','Melrose','tfalconar0@hp.com','91684',1),
 	 ('DGUN489902JORXB206','Borden','Necrews','Shelbourne','male','5442190835','Corry','bshelbourne1@bandcamp.com','64961',6816),
 	 ('PZNE156141EMNHE037','Mischa','Leggs','McGillreich','male','4673028503','2nd','mmcgillreich2@elpais.com','26803',847),
@@ -1400,6 +1529,7 @@ INSERT INTO public.phone_number (id_establishment,phone) VALUES
 	 ('BDVC567304SFXMC765','Rhea','Hurnell','Tabary','female','2024155641','Petterle','rtabary7@businesswire.com','44639',409),
 	 ('NJCK203114KPOJY590','Avril','Dunkerley','Yashin','female','4311646876','Oak','ayashin8@sitemeter.com','13649',8545),
 	 ('KZNQ525843OQQVL697','Leanna','Coolahan','Pawley','female','9089683442','Oneill','lpawley9@e-recht24.de','81705',4008);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JVUQ476385YMOPV471','Ethelyn','Pinnell','Liddard','female','4126238672','Shelley','eliddarda@joomla.org','16650',57912),
 	 ('RYIC779163GCFWE725','Hyacinth','Bermingham','Biskupek','female','7628513165','Northridge','hbiskupekb@purevolume.com','47328',21),
@@ -1411,6 +1541,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GPOQ915271JNHEW976','Carole','Ebdin','Rate','female','6349097198','Lukken','crateh@joomla.org','04155',6),
 	 ('VNPG713648OPUWG432','Trip','Anyene','Treagus','male','9506443706','Mayer','ttreagusi@discovery.com','04659',838),
 	 ('LLHO118723QSAYN289','Jarvis','Craven','Honack','male','7886506075','Prairieview','jhonackj@ox.ac.uk','78280',98176);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('FDEQ391539AXLFQ046','Dannie','Danser','Worham','male','3869836458','Randy','dworhamk@usda.gov','33110',586),
 	 ('BFHY427071USJAP493','Clarabelle','Treweela','Cool','female','5528862121','Hovde','ccooll@stumbleupon.com','21121',615),
@@ -1422,6 +1553,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('YKWX590179RQEDQ643','Smitty','Landsberg','Seed','male','2156774134','Vahlen','sseedr@vk.com','68154',7),
 	 ('PPDZ564674JYNPN890','Kimble','Wakeling','Bozward','male','3076294968','Mariners Cove','kbozwards@vimeo.com','46973',744),
 	 ('XRSV916459OYQPZ830','Alfredo','Glossop','Kunc','male','3835143613','Sage','akunct@accuweather.com','17395',79125);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('KBIF290261RPLAB483','Barney','Tosspell','McQuirk','male','7078725865','Stang','bmcquirku@diigo.com','59084',7409),
 	 ('VONI968783NFCZK958','Averil','Dagless','Pettet','male','1724692766','Comanche','apettetv@nifty.com','66118',6333),
@@ -1433,6 +1565,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('RNCY695353XEAFI076','Kandace','De Caroli','Davison','female','4658424934','East','kdavison11@booking.com','66118',6172),
 	 ('ONBK154676KXVVV317','Erhart','Timlin','Arnoud','male','7737897140','Troy','earnoud12@theguardian.com','16640',56),
 	 ('QMFY066636NIRXD478','Reube','Billingham','Rolls','male','1273490049','Carberry','rrolls13@guardian.co.uk','96786',407);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('SQBH424121VONPY587','Tobe','Gland','Meachem','female','2794293268','Butterfield','tmeachem14@barnesandnoble.com','74214',2832),
 	 ('BHVD977888UHPZA895','Eugen','Mossop','Adiscot','male','1525688959','Maywood','eadiscot15@unc.edu','49242',73),
@@ -1444,6 +1577,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GBDW842777IYXNR524','Claudine','Nanson','Huckfield','female','5503702836','Mockingbird','chuckfield1b@ft.com','27956',9),
 	 ('HBMQ866414ETRPW751','Orel','Atwool','Bruty','female','7284251559','Starling','obruty1c@cpanel.net','15565',70),
 	 ('FIDI724571NFFQH767','Carlynne','Rowston','Biles','female','1483999420','Golf','cbiles1d@chicagotribune.com','63890',29536);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('EPWH355488VULEK908','Clara','Cowderay','Twyning','female','9234940559','American','ctwyning1e@ibm.com','00902',81807),
 	 ('KDSF446249GBLPG287','Murdoch','Stemson','Epilet','male','2852645069','7th','mepilet1f@hc360.com','71417',55430),
@@ -1455,6 +1589,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GIGH301414EGYLW929','Roch','Toffolo','Eldered','female','6219165143','Dixon','reldered1l@businessweek.com','80867',508),
 	 ('ZYNG123535ZPWII526','Cirillo','Bunford','Rumford','male','1111604011','Center','crumford1m@oracle.com','12206',76),
 	 ('NKPR080762RHJYJ955','Cacilia','Baylis','Pennicard','female','6972911671','Morning','cpennicard1n@cbslocal.com','57013',10265);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('RRDU131778UFWRS846','Nicola','Brackstone','Francomb','male','6761188500','Elgar','nfrancomb1o@washington.edu','48922',90),
 	 ('GPUZ783784IWGKZ593','Duff','O''Dwyer','Prahl','male','1058014139','Merchant','dprahl1p@about.me','69414',7983),
@@ -1466,6 +1601,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('TMIN807213FYBNH658','Angelo','Ianelli','Totterdell','male','2938425172','Golf','atotterdell1v@bing.com','72157',730),
 	 ('GFAY911676QHRUW030','Zeb','Saurin','Hamm','male','2147770581','Sachtjen','zhamm1w@php.net','84914',95092),
 	 ('ZCTK251288PRSTL369','Garner','Beamand','Blunden','male','5032840784','Forster','gblunden1x@hc360.com','49242',544);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XRLR727308PYXGQ171','Tyne','Shankle','Coling','female','5288886286','Texas','tcoling1y@lulu.com','80884',85),
 	 ('CGCH465302EGTEO600','Feodora','Platt','Barajas','female','9204794146','Clyde Gallagher','fbarajas1z@unc.edu','59587',12),
@@ -1477,6 +1613,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('SUJX828788MWLJK413','Peadar','Milvarnie','Ecclestone','male','2582354970','Sage','pecclestone25@shop-pro.jp','17036',5115),
 	 ('IMJW719484DWPMT009','Brande','Spilling','Barkas','female','7062231648','Ryan','bbarkas26@accuweather.com','54376',441),
 	 ('MJYZ573026TIOVB215','Gibb','Coulthard','Robic','male','5531939677','Forest','grobic27@merriam-webster.com','81705',70);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XGUW648506BCSKT918','Rurik','Sillett','Trowl','male','9882504827','Schlimgen','rtrowl28@feedburner.com','89057',85),
 	 ('UPSB793067LRFPW050','Lauritz','Fozard','Dignall','male','2609610609','Namekagon','ldignall29@bloglovin.com','14950',2),
@@ -1488,6 +1625,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('DZGZ715642GBWRN893','Sarette','Farryan','Elmhirst','female','7584024829','Dexter','selmhirst2f@mapy.cz','60728',664),
 	 ('NHKV520999LGJVA620','Stanfield','Boom','Paulot','male','1266402619','Hermina','spaulot2g@ehow.com','81601',703),
 	 ('HFPY897648AGYSO928','Putnem','Wentworth','Vallery','male','9704699842','Coolidge','pvallery2h@timesonline.co.uk','16328',8);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('PNJG931487MVQKD275','Blair','Kirsop','McGilvra','male','7787747676','Morrow','bmcgilvra2i@senate.gov','63890',86895),
 	 ('OUZF229202HHERU531','Honor','Viveash','Mor','female','1342332432','Pond','hmor2j@flickr.com','21166',5545),
@@ -1499,6 +1637,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('XQCR524111TGUWW840','Atalanta','Bertome','Johnys','female','3017232858','Utah','ajohnys2p@goodreads.com','59214',4354),
 	 ('GRES790571BBZOM729','Marcelo','Blasli','Bough','male','7747206929','Upham','mbough2q@nsw.gov.au','45053',14),
 	 ('FGGG096831TYFKX253','Debi','Zanuciolii','Tofful','female','2172683572','Fallview','dtofful2r@domainmarket.com','68154',14295);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ODGZ789985GZROU388','Inigo','Grain','Hyman','male','5794367100','West','ihyman2s@exblog.jp','59332',21),
 	 ('DOEU282752ZRSGS407','Stacee','Orsi','Juliff','female','3782781748','Transport','sjuliff2t@squidoo.com','10831',7),
@@ -1510,6 +1649,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('RXFR202472SXNRK680','Nikoletta','Vasilchenko','Ewdale','female','5209530693','Kim','newdale2z@soup.io','04659',8882),
 	 ('RBWL495958WQMDU311','Erica','Jereatt','Munton','female','8029242054','Chive','emunton30@jalbum.net','91597',352),
 	 ('XHTW272502XCACW904','Herb','Raison','Atterbury','male','7896765120','Badeau','hatterbury31@mit.edu','03355',4519);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('MMBW200843BMIIS491','Bonni','Leport','Celez','female','6099735812','Lunder','bcelez32@skyrock.com','44060',8589),
 	 ('KPTB147368MXQDV785','Jobyna','Yuryshev','Mitchley','female','9554916334','Scott','jmitchley33@washingtonpost.com','84587',76),
@@ -1521,6 +1661,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('NUQP081951VBSVI183','Jory','Garlant','Jansey','male','9946308947','Troy','jjansey39@amazon.co.uk','70795',2392),
 	 ('LDIS950812IIGEK829','Ozzy','Sloegrave','Leethem','male','2998797251','Esch','oleethem3a@ihg.com','75087',21124),
 	 ('XGZZ840242PXKJP043','Alvan','Skully','Coultass','male','5611033522','Porter','acoultass3b@technorati.com','75879',49);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ICCP643953DNLDA729','Clarice','Ryson','Skune','female','1845401582','Jenna','cskune3c@icio.us','33330',594),
 	 ('HEYY015757TQZPP031','Holli','Kingsbury','Grimsey','female','2066050967','Corscot','hgrimsey3d@yolasite.com','47639',4),
@@ -1532,6 +1673,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('OUSO079533MNOZW475','Ailbert','Michin','Merveille','male','5238413513','Tennyson','amerveille3j@go.com','85476',79),
 	 ('SXGA737804BPXXS732','Jobye','Ciciura','Gipp','female','4268619847','Lakeland','jgipp3k@wix.com','90244',4),
 	 ('VZLV524892CBIJN392','Geordie','Riddick','Watterson','male','2354160010','Hanson','gwatterson3l@webmd.com','91660',15427);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('UJYP457105HAPSF034','Erroll','Varley','Lindl','male','1101176982','Marquette','elindl3m@msu.edu','12347',156),
 	 ('BSNE659250DJVAD705','Alphonse','St. Clair','Bampkin','male','5093375303','Northridge','abampkin3n@1und1.de','76474',29009),
@@ -1543,6 +1685,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('RBYB804202IMGSE319','Cinnamon','Maymand','Bertlin','female','8008263262','Mariners Cove','cbertlin3t@huffingtonpost.com','74873',6),
 	 ('RQNC774341OOBVQ125','Sande','Ackland','Hacker','female','1513818948','Sloan','shacker3u@nasa.gov','67477',7),
 	 ('KHVV120157QBNWD372','Carolan','Willan','Drewell','female','9739214401','Morningstar','cdrewell3v@free.fr','46973',98359);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JACX023404HNONN170','Murielle','Genn','Forker','female','8522761503','Northland','mforker3w@vinaora.com','29848',89),
 	 ('NOAO658913CFYTM989','Nikkie','Totterdell','Gaynsford','female','4624999290','Fair Oaks','ngaynsford3x@usa.gov','59376',7037),
@@ -1554,6 +1697,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('PIKR977681KTGDT593','Mechelle','Brikner','Craighill','female','9125744010','Namekagon','mcraighill43@addtoany.com','60595',5),
 	 ('ZFRO787378MDWJY175','Silvan','Mordan','Greendale','male','7116463694','7th','sgreendale44@dedecms.com','26803',42),
 	 ('GKDQ150070GQCGO952','Dara','Reinbach','Woolston','female','1603199167','Gina','dwoolston45@newyorker.com','21121',9);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GWUQ565806CLFYJ359','Constantine','Meconi','Beri','male','4018882854','Morningstar','cberi46@blogs.com','00353',483),
 	 ('KYTV489121HFWQG515','Kim','Damiata','Thickpenny','male','5431958648','Beilfuss','kthickpenny47@deliciousdays.com','82550',3167),
@@ -1565,6 +1709,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ZMMM522891UDCZY242','Mildred','Domeny','Penkman','female','3625660201','Bluejay','mpenkman4d@usnews.com','92202',1),
 	 ('SZGC126326DRFYY897','Cherlyn','Calbrathe','Mallabar','female','3052681416','Cherokee','cmallabar4e@soup.io','81314',83461),
 	 ('VYSG210975TOZIW556','Currey','Whifen','Crame','male','6872974057','Sunnyside','ccrame4f@4shared.com','03445',28);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('UPHF999095ZEPAY068','Daloris','Farr','Blatcher','female','1808264092','Hoepker','dblatcher4g@foxnews.com','64961',87),
 	 ('ZGUC999734VYYIU065','Kerr','Shulver','Gravell','male','5756676570','Anthes','kgravell4h@shutterfly.com','43903',4),
@@ -1576,6 +1721,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('PWQC723981UZGJM631','Spencer','Croall','Pettendrich','male','2122238756','Jenifer','spettendrich4n@cargocollective.com','88009',311),
 	 ('IQGE132443QMLIB177','Melosa','Pallent','Slack','female','6519764238','Kenwood','mslack4o@marketwatch.com','81314',557),
 	 ('GUOV180737SKAXD411','Brockie','Minshull','Wimms','male','5928394846','Cambridge','bwimms4p@ebay.com','00391',7);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('WJBZ916929RIECF057','Rowan','Cheeseman','Plett','male','4368583344','Erie','rplett4q@yahoo.com','45053',7),
 	 ('LFWN779411HEYSF426','Sella','Nisen','Matzen','female','7809435331','Brickson Park','smatzen4r@over-blog.com','63512',8),
@@ -1587,6 +1733,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WYDZ861005ZKQNR907','Eadmund','Baynes','Ebourne','male','4407820595','Schlimgen','eebourne4x@time.com','90683',311),
 	 ('DZZP279024UBNKG571','Lexi','Wisson','Lecount','female','7939890020','Oneill','llecount4y@qq.com','46698',2),
 	 ('CLHI821991KQFXT617','Luce','Rockingham','Theakston','female','1804486076','Northfield','ltheakston4z@wiley.com','49242',787);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('TCHR657366CUYSO955','Antin','Yerrington','Ronca','male','4154225202','Washington','aronca50@accuweather.com','77175',4850),
 	 ('LODE137458ENNWG632','Cecelia','Dunstan','Studman','female','6241863383','Towne','cstudman51@state.tx.us','46229',56394),
@@ -1598,6 +1745,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('VFER926137LIHQH679','Harv','Oakinfold','Bryan','male','2285764238','Almo','hbryan57@edublogs.org','55827',22),
 	 ('OMMF689584PDXWH882','Moira','de Zamora','Aykroyd','female','6578158562','Lerdahl','maykroyd58@dropbox.com','08032',767),
 	 ('TDXR252209JUULV972','Dew','Wethered','Wenderott','male','9362193957','Dennis','dwenderott59@java.com','46698',403);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('CSGA881090LDDAJ282','Brittani','Murtell','Biddulph','female','2259486178','Westend','bbiddulph5a@mediafire.com','63892',17),
 	 ('WWYU004372MPSJG909','Bettye','Grutchfield','Gettens','female','1667907273','Laurel','bgettens5b@weebly.com','44639',1607),
@@ -1609,6 +1757,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('NZQY342992FHJGI446','Persis','Wivell','Venney','female','7286670377','Fulton','pvenney5h@prlog.org','44802',823),
 	 ('VKPW242863LKYXE358','Veronique','Heis','Kinghorn','female','7908641604','Memorial','vkinghorn5i@go.com','10443',5452),
 	 ('GAIF899720ANPLC839','Lindon','Kernell','Kerrey','male','3015112494','Old Shore','lkerrey5j@xrea.com','99248',74);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('HAFO658636YHTZU930','Ilaire','Geering','Clarkson','male','3962103374','Kim','iclarkson5k@linkedin.com','81314',6674),
 	 ('FFNR888342OYNUX513','Morgun','Aberdeen','Gavey','male','7503077533','Cody','mgavey5l@phpbb.com','09497',45),
@@ -1620,6 +1769,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('XFJS846746CTTOV882','Leelah','Grindle','Shefton','female','1325403671','Mallard','lshefton5r@bigcartel.com','64961',683),
 	 ('MFJT719632JLXXF009','Shaylyn','Pears','Heater','female','3194360334','Caliangt','sheater5s@behance.net','63528',3117),
 	 ('PRIP658239TETAN213','Leslie','Krzysztofiak','Amerighi','male','3264827823','Derek','lamerighi5t@reuters.com','21166',8);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GFYB436412JPILC614','Lindsay','Gethen','Ablewhite','female','7642083218','Bonner','lablewhite5u@guardian.co.uk','06305',87),
 	 ('WDHB070139BKNFH352','Ethelda','Cruft','Cardinale','female','5527940238','Sachs','ecardinale5v@indiatimes.com','84153',6002),
@@ -1631,6 +1781,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('JRPE099516DZMHH095','Susanne','Betham','Veck','female','1647816756','Laurel','sveck61@wp.com','56719',39747),
 	 ('CNTY451162IAJDB945','Bronnie','McVitie','Jubb','male','7622293589','Pawling','bjubb62@g.co','79848',628),
 	 ('KITY201030LUTQU601','Gan','Chatt','MacCaffrey','male','1221053350','Clarendon','gmaccaffrey63@histats.com','90683',8);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('TCDK018120LAPKX631','Cleve','Verdon','Gricks','male','7676448603','Walton','cgricks64@examiner.com','21774',482),
 	 ('JAVL473873CGXJI745','Raphael','Pitkaithly','Jurs','male','4571778547','Eagan','rjurs65@twitpic.com','84076',838),
@@ -1642,6 +1793,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WIEO574018SHYXC918','Morissa','Tritton','Oldred','female','7116428272','Londonderry','moldred6b@twitpic.com','62551',3310),
 	 ('XGRL506246NFEDK861','Stillman','Naseby','Lenney','male','2701801425','Saint Paul','slenney6c@harvard.edu','74243',9677),
 	 ('RWXR156948XYLTS119','Smitty','Marshallsay','Moy','male','7246713909','Pine View','smoy6d@kickstarter.com','63528',7396);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XVNG046979LUQUW195','Sabine','Dinzey','Handke','female','1906186732','Stoughton','shandke6e@ed.gov','12206',20),
 	 ('ZGTR057050CWKBD432','Theobald','Deere','Brabbs','male','4203188864','Evergreen','tbrabbs6f@e-recht24.de','00353',87888),
@@ -1653,6 +1805,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('MSZQ479172ROAZV319','Innis','Jepson','Charette','male','9469879650','Ridge Oak','icharette6l@baidu.com','33110',43),
 	 ('XNAD818074LLTKA239','Onofredo','Reston','Macon','male','8011286422','Mosinee','omacon6m@gmpg.org','11221',96976),
 	 ('JQZT915689CYPCL082','Henderson','Dougal','Gillio','male','4541585330','Maple','hgillio6n@zimbio.com','13616',4);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JEAW964376ENJRA467','Johnny','Norton','Hakking','male','9065800714','Division','jhakking6o@cbsnews.com','77304',1),
 	 ('QASQ393587SJHZX190','Joice','Decent','Osorio','female','3994923557','Rieder','josorio6p@amazon.de','04950',71094),
@@ -1664,6 +1817,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('CFCI496212CZWUZ242','Case','Huncoot','Croxon','male','4404653897','Oak Valley','ccroxon6v@nifty.com','97076',4),
 	 ('FYCZ612209EWAOZ696','Georg','Tolson','Murtell','male','2356920874','Nelson','gmurtell6w@earthlink.net','57013',5677),
 	 ('RVLK304169HPADE239','Bernie','Stollberger','Blasetti','male','1467603201','Monument','bblasetti6x@unblog.fr','35423',2422);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GBJV059580IWWRC253','Niels','Wildgoose','Sommerville','male','3596537664','Butternut','nsommerville6y@ameblo.jp','81172',65750),
 	 ('BUER697369DVSIS960','Tracey','Realph','Jackett','male','1594365319','Milwaukee','tjackett6z@unc.edu','04947',2260),
@@ -1675,6 +1829,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('CGRY130869ZNGWA592','Melessa','Marklund','Merryman','female','8728171986','Trailsway','mmerryman75@twitter.com','59234',72),
 	 ('NWOA646536BXTTQ655','Selie','Battista','Ingley','female','6261605948','Hoepker','singley76@i2i.jp','62303',4031),
 	 ('FJDA017588TJKVM441','Tremaine','Halsted','Waterworth','male','5096062477','Luster','twaterworth77@mac.com','42372',3523);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('BDRS917078DPTGO621','Olin','Annetts','Prujean','male','7302173199','Autumn Leaf','oprujean78@europa.eu','60728',730),
 	 ('ALZD451505QCAUW905','Gennie','Saiger','Vigneron','female','1901975031','Del Sol','gvigneron79@prnewswire.com','62769',13),
@@ -1686,6 +1841,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('FHTF212758PHGYW714','Leupold','Umney','Pinnijar','male','2902810340','Wayridge','lpinnijar7f@mediafire.com','81161',96),
 	 ('UCXS474325LJRLB564','Rodie','Betz','Kidstone','female','3775239985','Colorado','rkidstone7g@wp.com','84153',858),
 	 ('TDDV493330EKYBH290','Courtnay','Dabbs','Haeslier','female','2053582386','Mandrake','chaeslier7h@infoseek.co.jp','73027',7);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('WUIK891032KCBEP439','Perry','Solomonides','Bohl','male','8557388292','Steensland','pbohl7i@ustream.tv','00993',27918),
 	 ('CTZB666543OWKSU419','Drusy','Stanley','Oxnam','female','8452087960','Cody','doxnam7j@omniture.com','17612',50),
@@ -1697,6 +1853,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('LHDJ328800XUKDX785','Douglas','Gellion','Merdew','male','3607082931','Mcbride','dmerdew7p@cdbaby.com','92202',61195),
 	 ('EGVO458057YOIQY349','Cassie','Pattrick','McCloud','female','4806550516','Pond','cmccloud7q@technorati.com','30613',1),
 	 ('GBOW502260NNTQU321','Isiahi','Murdie','Newgrosh','male','3568546639','Emmet','inewgrosh7r@domainmarket.com','79957',23);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('QZAF010893VKIFR424','Dorthea','Crookston','Seebright','female','8938080584','Pennsylvania','dseebright7s@un.org','40909',0),
 	 ('HIJN495412LYZOY427','Delmor','McJarrow','Feasby','male','9343950709','Morrow','dfeasby7t@digg.com','09090',926),
@@ -1708,6 +1865,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GCBW848066OZOTU929','Charyl','Innes','Forsyth','female','7578687315','Aberg','cforsyth7z@infoseek.co.jp','91163',71503),
 	 ('FWLS008186DPOIE216','Dalenna','Daysh','Deschelle','female','9957588508','Haas','ddeschelle80@nyu.edu','14819',91),
 	 ('KUFP681382UBHVA527','Sky','Bantick','Gerry','male','2423380543','Bonner','sgerry81@usgs.gov','47328',55);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('LPIB168590PNILG461','Alyssa','Giannoni','Feldklein','female','6152808351','Everett','afeldklein82@dyndns.org','48344',1),
 	 ('NCBF011554FUFFR129','Twyla','Pinkstone','Sitford','female','4721145040','Bayside','tsitford83@npr.org','07675',222),
@@ -1719,6 +1877,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('OSZX707963DJUQB784','Harmon','O''Halleghane','Maccari','male','4879797401','Del Mar','hmaccari89@ning.com','96748',8052),
 	 ('WFUR170890JDWCN210','Gaston','Capaldi','Lamberts','male','7156894703','Schmedeman','glamberts8a@msu.edu','75516',287),
 	 ('PPCE201086CLLYE095','Kipp','Duckerin','Mowsley','female','1568317794','Killdeer','kmowsley8b@shareasale.com','14347',90654);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('EGUW411750KQVBO408','Bartolemo','Rens','Baddow','male','6265934586','David','bbaddow8c@topsy.com','70942',969),
 	 ('KRLR671154YLYYB663','Cathi','Benterman','Tassell','female','9159846678','Pine View','ctassell8d@symantec.com','86905',78),
@@ -1730,6 +1889,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('KLCV047115DFQSY844','Lonna','Stirland','Moohan','female','8369611370','Grim','lmoohan8j@posterous.com','04608',7),
 	 ('AZAN283480VFQKB256','Deeanne','Swendell','Orro','female','2337026116','Oak','dorro8k@hc360.com','79340',706),
 	 ('QAYB559434ONSRK810','Adrian','Gerrell','Beausang','male','2259568451','Meadow Valley','abeausang8l@artisteer.com','46748',4708);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JYJI076122TOLRF768','Igor','Stroyan','Ansell','male','1137918828','High Crossing','iansell8m@newyorker.com','86905',204),
 	 ('XDAX034790OVBFM656','Chucho','Thebeaud','O''Donohue','male','6163883303','Prairieview','codonohue8n@cbsnews.com','89057',42195),
@@ -1741,6 +1901,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WRZM289448IIGLB647','Brock','Jeske','Masser','male','2339609649','Union','bmasser8t@imageshack.us','90263',37),
 	 ('KWGH589787GTVOK078','Maddalena','Uman','Tailby','female','7162255334','Northland','mtailby8u@europa.eu','54376',52244),
 	 ('EOUF161726KVUUX248','Eduard','Cardow','Dalliwatr','male','1915808731','Huxley','edalliwatr8v@1688.com','77240',22);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XDOH174036DUPIZ990','Ileana','Pedersen','Haslehurst','female','4033487039','Miller','ihaslehurst8w@sbwire.com','42618',3232),
 	 ('PNIC318017GFIDD203','Bartholomeus','Wannan','Jagiello','male','1692855984','West','bjagiello8x@parallels.com','84076',98980),
@@ -1752,6 +1913,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('IPCU869971CMFCE357','Marianne','Blazey','Pusey','female','2574702501','Gulseth','mpusey93@ihg.com','00391',5),
 	 ('RXNX715545JAWJV589','Thelma','Sandry','Lashford','female','4723449653','Golf View','tlashford94@etsy.com','13649',79544),
 	 ('MGDW074391CRFVS939','Novelia','Coltart','Summerlad','female','2406227449','Acker','nsummerlad95@redcross.org','00658',9);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('TJBW007678XHCJG640','Barthel','Godehard.sf','Somerscales','male','4945385849','Stone Corner','bsomerscales96@archive.org','42372',95),
 	 ('GVOJ770921TJRLC006','Jerrie','Polak','Julien','male','3302292396','Melby','jjulien97@vkontakte.ru','21340',329),
@@ -1763,6 +1925,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('MFZG808195ZZMPD968','Barty','Curtoys','Littleton','male','9016954601','Utah','blittleton9d@opera.com','07710',56),
 	 ('IVRD025938SMCCI225','Josi','Gamon','Jacke','female','1336754833','Ohio','jjacke9e@nps.gov','21774',4796),
 	 ('JRFE892151UIDIF947','Juliet','Thiem','Hartfleet','female','9558197603','Sullivan','jhartfleet9f@squarespace.com','81161',6);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JOFN694177OVGBT559','Eleonore','de Marco','Theriot','female','8106587581','Grayhawk','etheriot9g@netscape.com','67624',33056),
 	 ('NDIP509196IIEVA618','Estrella','Sinclaire','Masterman','female','5371228743','Parkside','emasterman9h@omniture.com','46229',331),
@@ -1774,6 +1937,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WPIU694096ADQIR938','Jacqui','Greenall','Passingham','female','4572670808','Waxwing','jpassingham9n@ycombinator.com','40052',784),
 	 ('TMDX842355QXQUA049','Celia','Daborne','Tregidgo','female','3465459821','Upham','ctregidgo9o@yahoo.co.jp','75879',4),
 	 ('FYXV957352SBPOO534','Doloritas','McIllroy','Waszczykowski','female','7757263874','Stuart','dwaszczykowski9p@utexas.edu','04155',61536);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('VSUK205827BHJUO008','Oliver','Grover','Pond-Jones','male','4808319788','Surrey','opondjones9q@yahoo.com','78280',9),
 	 ('MKKV313054HGUNK458','Briana','Moughton','Lilleyman','female','7293143906','Holy Cross','blilleyman9r@intel.com','09090',57),
@@ -1785,6 +1949,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('DNCE312460KAMVF087','Kakalina','Oloshkin','Antrobus','female','4317932300','Autumn Leaf','kantrobus9x@statcounter.com','13616',2),
 	 ('YZYG136120BDDFM354','Raquel','Frudd','Coward','female','1616295594','Burning Wood','rcoward9y@dot.gov','88332',8712),
 	 ('FGCM162053UQFTK428','Theresita','Cluitt','Curthoys','female','6601825789','Banding','tcurthoys9z@jimdo.com','74735',5138);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GECA899501FYNLU891','Millie','Kryzhov','Monks','female','5423696165','John Wall','mmonksa0@usnews.com','59671',652),
 	 ('CIEL679995BZLDV074','Yehudit','Callington','Killingsworth','male','7021356940','Summerview','ykillingswortha1@mozilla.com','82550',6),
@@ -1796,6 +1961,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('JGWD774437VEEAU244','Janos','Bister','Fowlie','male','8898765230','Crest Line','jfowliea7@examiner.com','92756',14056),
 	 ('YJKX121341BMFCS407','Jillayne','Padfield','Verdey','female','7577262421','Haas','jverdeya8@oaic.gov.au','34145',92),
 	 ('NDAV589408YESKF026','Sascha','Pevsner','Kirwin','male','6525056879','Grim','skirwina9@wikipedia.org','38788',94);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('KWZW515336UALVL127','Chauncey','Worcs','Lakin','male','4773890760','Hoard','clakinaa@t-online.de','46748',54576),
 	 ('YTZI468566MJLOJ631','Katina','Ible','Kilfoyle','female','9294391571','Shoshone','kkilfoyleab@prlog.org','09090',896),
@@ -1807,6 +1973,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('QKXC841656ALYVF084','Elwin','Stallen','Queen','male','8094154416','Jenna','equeenah@freewebs.com','04608',36),
 	 ('EAHT905435NAWSO219','Peg','Fend','McCudden','female','4406281954','Heffernan','pmccuddenai@loc.gov','60518',2870),
 	 ('MQSH703106XMYKS213','Inessa','Bocking','Bereford','female','4688475356','Northfield','iberefordaj@live.com','17607',8);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('CXRY319525SUNPS206','Hanson','Ebbings','Boal','male','1685864191','Almo','hboalak@ibm.com','14950',904),
 	 ('ASSD875008RRPEH551','Stesha','Wildman','Carlozzi','female','7953274087','Golf View','scarlozzial@bbb.org','56719',49980),
@@ -1818,6 +1985,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('JKRY819039MSYWC692','Regen','Kee','Praton','male','9139710205','Northport','rpratonar@si.edu','17518',8744),
 	 ('QLOR127774QUYGQ297','Vivyan','Kett','Doumer','female','5115149488','Kennedy','vdoumeras@wikipedia.org','25082',8063),
 	 ('KAKK458967RRXKH015','Cherin','Coade','Howard','female','9188961615','Di Loreto','chowardat@loc.gov','14950',1);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('SZPF456303JFUOE404','Celinka','Beckenham','Faye','female','9932261203','Hansons','cfayeau@skype.com','09885',96),
 	 ('PDLC191363NNEVX617','Bradley','Herreran','Handrok','male','3665799231','Northridge','bhandrokav@t-online.de','01287',79),
@@ -1829,6 +1997,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('XWEJ943539HVJCI341','Violetta','McClenaghan','Dunstan','female','4836147583','Anthes','vdunstanb1@oaic.gov.au','88332',11),
 	 ('UVCR139836CINSZ005','Lolita','Raynor','Lant','female','1511353927','Larry','llantb2@tripod.com','90244',444),
 	 ('PPBX435558UULMG097','Nolana','Sambrook','Alcido','female','4142129442','Pepper Wood','nalcidob3@mail.ru','69497',3);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('RKWT706451XAKSH115','Tonnie','Brennon','Franzotto','male','6096613463','Kipling','tfranzottob4@joomla.org','81172',42971),
 	 ('AXPG959687DEDUQ830','Lek','Rivallant','Hydes','male','6941065113','Declaration','lhydesb5@salon.com','59671',69792),
@@ -1840,6 +2009,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('VVHS510714TVBDO577','Ginger','Crutchley','Crummie','male','2656338635','Goodland','gcrummiebb@indiatimes.com','96450',7571),
 	 ('OVRB315616SIZNJ722','Randolph','Redsell','Bare','male','3072339299','Summit','rbarebc@topsy.com','55827',22),
 	 ('JHBK113760LESTJ126','Nadya','Say','Morilla','female','7919197667','Gina','nmorillabd@networksolutions.com','40514',9);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('HBLM604600WTCJI606','Aleen','Karadzas','Sollas','female','9608676502','Bunting','asollasbe@abc.net.au','43172',849),
 	 ('WQVH961260NTIXJ879','Alica','Marple','Iacoboni','female','4299173787','Service','aiacobonibf@ca.gov','11291',70302),
@@ -1851,6 +2021,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('LBAP135358ZVJGQ043','Meriel','Sargison','Chree','female','3328511595','Leroy','mchreebl@intel.com','70942',60),
 	 ('UTEA769140VWWMP914','Jenny','Simak','Killingbeck','female','3023617427','Shoshone','jkillingbeckbm@who.int','60518',800),
 	 ('LPAT265613PWQMX163','Luise','Lippiatt','Longfoot','female','6883431833','Hanson','llongfootbn@sitemeter.com','04608',71);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('SAVC287336KLRZK723','Weber','Orrah','Lean','male','6259381396','Troy','wleanbo@answers.com','92756',66),
 	 ('DWAN778894TRPJD293','Basil','Ianne','Howlett','male','7567488729','Blue Bill Park','bhowlettbp@homestead.com','75087',665),
@@ -1862,6 +2033,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ADKH648770DMYRK246','Eve','Solway','Verma','female','4599774449','Meadow Valley','evermabv@t-online.de','84910',0),
 	 ('XECN551132PWIGH960','Barnabe','Piffe','Pooke','male','2671119261','Goodland','bpookebw@meetup.com','65367',19042),
 	 ('PVFC556841JXAVU289','Maggee','Dykes','Matthensen','female','4994520067','Algoma','mmatthensenbx@g.co','42839',214);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OELD082185GXDNQ861','Benoit','Kropach','Lillistone','male','4311253116','Oneill','blillistoneby@state.gov','24801',1253),
 	 ('PFKF271336XPCYA822','Norton','Cuchey','Bools','male','4008414978','Hooker','nboolsbz@prweb.com','03230',26125),
@@ -1873,6 +2045,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('FXXD650593PMXZN605','Yard','Martijn','Reddings','male','3921051067','Vahlen','yreddingsc5@marriott.com','50116',54622),
 	 ('JLBI147263BGWAJ616','Lorette','Codd','Ragg','female','4153406568','Eagan','lraggc6@e-recht24.de','34145',7998),
 	 ('OJIZ978358KIJUZ831','Barron','Smeath','Audus','male','6499173019','Gina','baudusc7@paypal.com','48578',310);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('SVEH792817IXZNS296','Lilla','Blewis','Amiranda','female','7751419245','Grasskamp','lamirandac8@state.tx.us','54392',9380),
 	 ('YYAK114191QRGSQ479','Ivie','Tupman','Luney','female','1331069987','Pennsylvania','iluneyc9@printfriendly.com','47328',6),
@@ -1884,6 +2057,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('FDDV831749NPFJV070','Rosmunda','Beaman','Loiterton','female','7142799388','Vera','rloitertoncf@yandex.ru','84910',4),
 	 ('AJBR420040UGFWC279','Arvin','Barns','Aldiss','male','6387120514','Stone Corner','aaldisscg@tinyurl.com','88661',2),
 	 ('SINX083707KNTAN145','Fionna','Rouke','Wederell','female','1361371095','Hazelcrest','fwederellch@wp.com','23760',41);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('AOZT552976FIWIC262','Sherlock','Salvadori','Pittendreigh','male','3191578501','Hanson','spittendreighci@seattletimes.com','62769',46),
 	 ('EFGM013588ALNTP479','Alvie','Crothers','Wickliffe','male','1872809874','Glacier Hill','awickliffecj@unc.edu','26868',94793),
@@ -1895,6 +2069,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('TNCX742553PHGKQ464','Dyane','Bullion','Dalby','female','3997560227','Melvin','ddalbycp@networksolutions.com','27953',171),
 	 ('OOPV533321OORYL050','Carolina','Wingar','Mustoe','female','5821264485','Reinke','cmustoecq@nature.com','05874',2),
 	 ('MGGG663531IOHBH419','Gianina','Rundle','Ruvel','female','6128320417','Parkside','gruvelcr@tumblr.com','14347',9);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('YJIP663974ZYTPA466','Judy','Boissieux','Cheek','female','4578352960','Lyons','jcheekcs@g.co','92085',77330),
 	 ('XPXY620503YURDO010','Hughie','Gilks','Letham','male','5605827935','Vermont','hlethamct@fastcompany.com','54385',91262),
@@ -1906,6 +2081,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ANNB264971JVFCJ802','Adrienne','Cowley','Haslum','female','5049867749','Bobwhite','ahaslumcz@ted.com','48578',1),
 	 ('INAE782666MIEGT127','Davin','Lecky','Twallin','male','9225703412','Clarendon','dtwallind0@imdb.com','07675',4),
 	 ('MVVQ760693ZNCNU207','Lindsay','Eastop','Bauldrey','female','1431744443','Cambridge','lbauldreyd1@tripadvisor.com','45861',579);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('USBC865325UCDOB461','Isidro','Brech','Brunone','male','3921507205','Chive','ibrunoned2@hugedomains.com','90998',644),
 	 ('LKQK677237JMLSQ515','Johannes','Guiden','Hanford','male','3174307266','Thompson','jhanfordd3@goo.ne.jp','65570',8),
@@ -1917,6 +2093,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('MAQH425601LUYBT144','Ewell','Jakubczyk','Haskur','male','3763316430','Cardinal','ehaskurd9@answers.com','08161',0),
 	 ('LHMJ565130CFTRD317','Andrea','Bompas','Simla','male','1504946290','Ridgeway','asimlada@nymag.com','63892',79),
 	 ('FDEN764753OSASL584','Ogdan','Covolini','Worpole','male','6932849969','Moose','oworpoledb@sourceforge.net','43525',5306);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('NNOI593993OYGBE017','Gwendolin','Westfield','Weine','female','1188600009','Lake View','gweinedc@diigo.com','00902',0),
 	 ('KXZC314997YVQYI131','Wallace','Alexsandrowicz','Thirtle','male','2807643806','Heath','wthirtledd@google.com.au','88046',96),
@@ -1928,6 +2105,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ZNAQ288524WBWMT439','Claude','Joannidi','Chesworth','female','5859463688','Morrow','cchesworthdj@amazonaws.com','43525',14609),
 	 ('NMVL095792YVCNR034','Tabbie','Comfort','Ducaen','female','9153378460','Meadow Vale','tducaendk@istockphoto.com','59332',3),
 	 ('ROEX644538AIJPX444','Cris','Ostick','Kondratenko','male','5525186960','Mosinee','ckondratenkodl@baidu.com','54376',7);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('KYLQ905946MLNFR320','Geraldine','Roja','Buckhurst','female','9075202036','5th','gbuckhurstdm@usgs.gov','68985',22),
 	 ('FGMA138587UPRAL223','Melamie','Shankle','Pendlenton','female','5073361127','Harper','mpendlentondn@cnet.com','06305',77),
@@ -1939,6 +2117,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('UYHK351250XERBF187','Sheridan','Gorstidge','Wasbrough','male','3639364347','Dovetail','swasbroughdt@alibaba.com','88009',81),
 	 ('TYDQ345327CORAJ797','Jasmina','Traves','Backsal','female','7838175016','Ilene','jbacksaldu@slideshare.net','00993',10),
 	 ('WUNI217873UVEHJ567','Terri','Crum','Harty','female','9918771570','Muir','thartydv@lycos.com','80867',402);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('WAYS702066VMJHB253','Chrissie','Perico','Slaten','male','6632343706','Kenwood','cslatendw@cnet.com','96748',8765),
 	 ('NTFY272139PDEZN506','Rosa','Eversfield','Nolleth','female','7265746413','Sauthoff','rnollethdx@google.de','57013',6480),
@@ -1950,6 +2129,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('NAWB237663SZMUX627','Sissy','MacIlurick','Thornborrow','female','8512175029','Jenifer','sthornborrowe3@prweb.com','45053',8154),
 	 ('ACPN667117JPZGI217','Rudy','Preedy','Scully','male','2218945263','Cody','rscullye4@intel.com','64961',79751),
 	 ('GMOE943169ESZIZ237','Sophie','Daine','Gannaway','female','8991074787','Del Sol','sgannawaye5@google.cn','33110',2553);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('RPVE188030WCYTZ316','Ciro','Vaune','Grayshan','male','3014761969','Vernon','cgrayshane6@usa.gov','43525',3),
 	 ('PBFY295310WOLOC001','Ambrosi','Aguirrezabala','Rawes','male','9217429326','Corscot','arawese7@meetup.com','14347',5),
@@ -1961,6 +2141,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ONNS322820CLYIU554','Erina','Stummeyer','Djakovic','female','3504041823','Maryland','edjakoviced@harvard.edu','39045',73),
 	 ('XKRV685766RBFNO984','Philippa','Vaz','Gash','female','6147090285','Becker','pgashee@harvard.edu','23762',811),
 	 ('CKSS852898ANOVD260','Pippo','Lemonby','McKeighen','male','6794382205','Laurel','pmckeighenef@salon.com','92085',36);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('LILV225275KZTZL987','Deloris','Errichiello','Mault','female','4699948589','Scott','dmaulteg@spiegel.de','03445',6701),
 	 ('UYDC883352XJQLD196','Orran','Pickworth','Ascrofte','male','4389139689','Kropf','oascrofteeh@bbc.co.uk','45861',3),
@@ -1972,6 +2153,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('LRJN268314LWUDG528','Henrik','Downs','Kettow','male','5037022299','Talisman','hkettowen@1688.com','37139',913),
 	 ('JKIL944288MZQAN845','Glenda','Readett','Durdy','female','4557953081','Magdeline','gdurdyeo@miibeian.gov.cn','72157',1),
 	 ('RJNN871840OZGCI585','Rhodia','Rentenbeck','Antham','female','7958483843','Comanche','ranthamep@sun.com','74243',62697);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OUCV311707KXCBR522','Raeann','Clericoates','Merman','female','1483240949','Waubesa','rmermaneq@cargocollective.com','59562',71),
 	 ('PGZU967905AJDMD634','Marlena','Heaford','Happel','female','1357739942','Lukken','mhappeler@indiegogo.com','68125',3),
@@ -1983,6 +2165,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('VBXX551317RDCNC813','Nelia','Raubenheimers','Fetherstone','female','7063405204','Forster','nfetherstoneex@dion.ne.jp','73852',4878),
 	 ('PPCQ686265COAHC887','Brenna','Hallows','Camell','female','8521985363','Tennessee','bcamelley@gravatar.com','51644',1),
 	 ('BPGB926866CRRAG666','Lorianna','Shitliff','MacElroy','female','9227702462','Riverside','lmacelroyez@soundcloud.com','80884',1921);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('PNDB220441KMNMY656','Hagen','Jaycock','Bitterton','male','5894922166','Dakota','hbittertonf0@epa.gov','33126',41376),
 	 ('CWYL006858IWEFX181','Fernande','Brierton','Aldam','female','4543817900','Atwood','faldamf1@nps.gov','47639',72),
@@ -1994,6 +2177,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('QJOH271055DPUJJ172','Vassily','Gedge','Jeynes','male','2978761452','Corben','vjeynesf7@si.edu','66118',9581),
 	 ('LIML404466QGNSY054','Gertrud','McPeake','Sheaber','female','6724486107','Clove','gsheaberf8@fda.gov','27956',43),
 	 ('CONX499685XQANZ072','Evanne','Rowbury','Sapey','female','7781338532','Bartillon','esapeyf9@businesswire.com','78119',73);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OJHT230137SIFEY106','Mandy','Thon','Tacon','female','2179108794','Ridgeview','mtaconfa@google.co.uk','88181',5032),
 	 ('OKUT190886EMLOS978','Debbi','Duggan','Ewington','female','8803097205','Orin','dewingtonfb@cdbaby.com','20683',2524),
@@ -2005,6 +2189,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ALVS731027XMCLZ403','Cissy','Frisch','Antonich','female','2625268511','Emmet','cantonichfh@t.co','63512',707),
 	 ('QDUU061348MGAUE518','Alfredo','Mattack','Spellward','male','6658315574','Holy Cross','aspellwardfi@noaa.gov','21340',33),
 	 ('OZAC200723HODIX211','Valaria','Allpress','Todman','female','7593316845','Laurel','vtodmanfj@hugedomains.com','17036',85527);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('HMSV097985WZUKD647','Grace','Capelin','Hardiker','female','3559314412','Crest Line','ghardikerfk@tiny.cc','35905',4),
 	 ('KMES145098UIZHE921','Othello','Laffin','Mariel','male','9659563741','Debs','omarielfl@washingtonpost.com','81161',6),
@@ -2016,6 +2201,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WCFD101063RUDVE146','Babita','Paullin','Syplus','female','6087950955','Sycamore','bsyplusfr@scientificamerican.com','00391',8),
 	 ('ONIU157371BQMKU063','Basil','Kimpton','Cazalet','male','4175097459','Weeping Birch','bcazaletfs@dyndns.org','13649',5136),
 	 ('QLQA564116SJDOW224','Dulcy','Guisby','Norres','female','9533650737','Scott','dnorresft@creativecommons.org','74873',1);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('VUIB801435YVTMG127','Shaughn','Nurden','Gianetti','male','9623338688','Waywood','sgianettifu@soundcloud.com','20683',2438),
 	 ('VVCA641114BANJF516','Jerald','Wisdom','Harback','male','9001004281','4th','jharbackfv@linkedin.com','64961',56),
@@ -2027,6 +2213,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('BVOS307864QCHUU237','Dredi','Reaper','Shipperbottom','female','7687437253','Hanover','dshipperbottomg1@homestead.com','37139',3),
 	 ('SZBA611408BNJOM613','Rochette','Farnie','Cantua','female','7934660620','Prairieview','rcantuag2@deviantart.com','23879',8),
 	 ('JVCV812718NKARI969','Hamlin','Hankins','Norgan','male','2409675338','Trailsway','hnorgang3@eventbrite.com','21340',200);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('UIUX195606QDJPK908','Pippo','Bedells','Millery','male','2371335909','Sundown','pmilleryg4@prlog.org','10443',5),
 	 ('PIDV599873BLQQA565','Seamus','Domenget','Nunnerley','male','8903434008','Eliot','snunnerleyg5@hud.gov','59562',0),
@@ -2038,6 +2225,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('WQNA771454XWWHQ288','Carter','Feely','Larraway','male','7274397682','Knutson','clarrawaygb@wikipedia.org','19951',345),
 	 ('AKFH131447QUQEQ281','Guendolen','Sanbroke','Dumbreck','female','7853428104','Fisk','gdumbreckgc@jimdo.com','59139',7339),
 	 ('UBPA329742TNSLA640','Gussie','Hanse','McKendry','female','3779373424','Acker','gmckendrygd@acquirethisname.com','17414',247);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ZZRI210208KGAAZ107','Colan','Kingscote','Sewley','male','4257605329','Corry','csewleyge@bloglovin.com','00353',2096),
 	 ('NGNQ794959AYHYB573','Carolann','Ebbage','O'' Finan','female','8225030930','Dahle','cofinangf@msu.edu','14950',1),
@@ -2049,6 +2237,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('AZQI217627MDIHS738','Land','Larenson','Baxill','male','1351439542','Ludington','lbaxillgl@mediafire.com','21774',5756),
 	 ('DUMH280443BNOKV246','Michele','Yerill','Delap','male','7017220360','Sugar','mdelapgm@vkontakte.ru','39045',3076),
 	 ('HZNC048852TFURM827','Osmond','Stoffersen','Senechault','male','7493020903','Donald','osenechaultgn@sciencedaily.com','84910',492);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ZJNO274450EUJCI322','Meade','Bartke','Averies','male','2553389346','Pleasure','maveriesgo@reddit.com','13961',77626),
 	 ('RGYR336730FBHBH791','Zechariah','O'' Scallan','McManamen','male','1759278082','Express','zmcmanamengp@dagondesign.com','60595',9),
@@ -2060,6 +2249,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('SYAR587778ZGGGB678','Verge','Awdry','Semor','male','8174500398','Loftsgordon','vsemorgv@economist.com','60595',9),
 	 ('NWGE738199JZIRV635','Bridie','Mace','Beatey','female','1848474775','Superior','bbeateygw@slate.com','87752',909),
 	 ('JJZZ564910YHECM649','Felike','Abrams','Standfield','male','2148491749','Spohn','fstandfieldgx@paypal.com','59139',93);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('YCBM457370EMOLA055','Loren','Edgler','Deason','male','5462098980','High Crossing','ldeasongy@time.com','60518',530),
 	 ('AVUB622050OIWFK061','Glyn','Olivetti','Gyse','male','1042556397','Dorton','ggysegz@delicious.com','74243',738),
@@ -2071,6 +2261,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('DXMK662002FJIOL585','Ema','Shakelade','Beincken','female','7527746917','Sachs','ebeinckenh5@nature.com','24567',4277),
 	 ('LNDM071264MRJLK865','Arne','Hurst','Francie','male','1017347291','Elmside','afrancieh6@i2i.jp','45053',99),
 	 ('KDJK186380YKRDS383','Myrvyn','Cracknell','Jonson','male','3207706478','Bartelt','mjonsonh7@cisco.com','81601',60711);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XZIA832359IPHYN030','Leah','Bart','Haselden','female','8165074871','Shelley','lhaseldenh8@java.com','13616',39),
 	 ('GUEN210634EHIRT236','Audrye','Cruickshanks','Sealand','female','4124609625','Pearson','asealandh9@google.nl','16415',6367),
@@ -2082,6 +2273,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('IAWM714725BYZHH749','Betteann','Johananoff','Wilby','female','6791276100','Tony','bwilbyhf@chron.com','78280',41298),
 	 ('YSWE625781RJOGM757','Ingeberg','Michiel','Keane','female','9264844238','Becker','ikeanehg@yelp.com','79957',2496),
 	 ('QEEX046277TOZIB569','Smith','Bownd','Carthy','male','6274224638','Longview','scarthyhh@blogger.com','59139',347);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('YQRI250143VEZSB230','Olenolin','Picford','Grammer','male','3885537171','Fallview','ogrammerhi@nytimes.com','68125',59778),
 	 ('CWEZ160531ISFPY079','Gweneth','Clute','Marmyon','female','9321619968','Colorado','gmarmyonhj@ebay.co.uk','59671',567),
@@ -2093,6 +2285,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('FTWL000163YMXLU047','Northrup','covino','Elmhirst','male','7543792128','Russell','nelmhirsthp@mozilla.com','81314',16895),
 	 ('KKXO634860RKNDZ354','Dian','Goodband','Pauleit','female','9662859849','Oriole','dpauleithq@linkedin.com','41565',7),
 	 ('MFXI202105AKCCW285','Abbe','Milton','Gristhwaite','male','2549517730','Mayfield','agristhwaitehr@wsj.com','57230',6190);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('NEPA195512OWBYB359','Ulberto','McGillicuddy','Coatman','male','1001191788','Schmedeman','ucoatmanhs@addtoany.com','80161',30),
 	 ('DMOK197266WVCCC850','Keary','Kurth','Dyment','male','9399745156','Del Sol','kdymentht@phpbb.com','92085',5222),
@@ -2104,6 +2297,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('HMCN220354IZTAW024','Zarla','Permain','Huws','female','5559979021','Eagan','zhuwshz@pagesperso-orange.fr','90599',12),
 	 ('UFHY002230UGKVL273','Tabatha','Slader','Cartman','female','6558838012','Bunting','tcartmani0@sun.com','09885',3865),
 	 ('YPNR937298OUUML635','Simona','Marzelli','MacIlory','female','9895925361','Northport','smaciloryi1@wunderground.com','50725',4);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ORNM802248IVWYH692','Hyatt','Blissitt','Sharnock','male','9649722093','Harbort','hsharnocki2@topsy.com','47639',70),
 	 ('YLYF542894NPXXO413','Cad','Worling','Cornilli','male','7826026903','Sloan','ccornillii3@nhs.uk','40052',85512),
@@ -2115,6 +2309,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('TFBR333586PTRZJ386','Cull','Kirkby','Castro','male','3952046472','Ramsey','ccastroi9@ameblo.jp','59562',14263),
 	 ('CBUJ290477IIHJD259','Marve','Waison','Elgar','male','6626094555','Onsgard','melgaria@apple.com','04659',9),
 	 ('VUVP636071DTQRU169','Sisile','Tournay','McGinney','female','4659257181','Melby','smcginneyib@pinterest.com','44639',41);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XAIG685624CFUTM496','Weidar','Katzmann','Rendle','male','1613211648','Pearson','wrendleic@naver.com','71417',8),
 	 ('WJAA080576BKZKB584','Rhonda','Dane','Starcks','female','2874640290','Warner','rstarcksid@e-recht24.de','60728',312),
@@ -2126,6 +2321,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('EFRF137032MRDHV767','Libbey','Neubigging','Sieghard','female','4976618184','4th','lsieghardij@cyberchimps.com','03230',12706),
 	 ('TDYN324510MVFNL825','Renaud','Cordelle','Scrimshire','male','3964377942','Hansons','rscrimshireik@a8.net','00469',37851),
 	 ('NKCJ779579OTYLG384','Thoma','Beagen','Lyven','male','9382339907','Pearson','tlyvenil@va.gov','29848',1);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('RCOO336013QSKLW549','Aguie','Gregoli','Campo','male','4395484907','Bowman','acampoim@hubpages.com','59214',6),
 	 ('NSTN979613HGRMQ991','Sandye','Fulger','Bryant','female','4736952065','Arizona','sbryantin@theatlantic.com','59491',4),
@@ -2137,6 +2333,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ISEL566210YFYYK981','Swen','Foad','Hargrove','male','7314404744','Butternut','shargroveit@statcounter.com','02998',1),
 	 ('YKBY966261TYVTY164','Susy','Gallie','Muehler','female','8757181276','Forest Run','smuehleriu@shutterfly.com','96786',10345),
 	 ('GUHH135494RXUQC752','Ilario','Rowledge','Jimpson','male','2997517194','Rieder','ijimpsoniv@princeton.edu','17414',11);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('RXTY222473XRIEV455','Reube','Hamblen','Seifert','male','9045623108','Katie','rseifertiw@fastcompany.com','35880',6703),
 	 ('WBUB292711AUVNF260','Adrienne','Brabin','Rignall','female','6478193325','Farmco','arignallix@yahoo.com','48578',89),
@@ -2148,6 +2345,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('TESL772417KGLRV633','Loralie','De la Zenne','Ziehm','female','9335787817','Novick','lziehmj3@timesonline.co.uk','59084',698),
 	 ('UOHM215893HVWUH051','Prinz','MacCafferky','Wittke','male','4347196998','Ronald Regan','pwittkej4@bing.com','20683',8),
 	 ('LJLV944343OAKOT183','Cornie','Bamlet','McGrale','female','5097324084','Boyd','cmcgralej5@tripadvisor.com','64961',42);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JPLY980103CGLCH386','Nealy','Medwell','Gabbett','male','7687599911','Kinsman','ngabbettj6@amazon.co.jp','60728',216),
 	 ('LOBD534313QDENF963','Hilario','Grotty','Bladge','male','2234259310','Moulton','hbladgej7@springer.com','25604',3890),
@@ -2159,6 +2357,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('OHYB352759MLUKF929','Arleen','Bachelar','Maharry','female','4491287120','Del Mar','amaharryjd@apple.com','79340',38),
 	 ('FBQS587563QLMUM101','Xever','MacNally','Mac Giany','male','2128558148','Algoma','xmacgianyje@cam.ac.uk','47639',3),
 	 ('BVAY136568MXGRL691','Inglis','Halfpenny','Parmley','male','7141850356','Delaware','iparmleyjf@va.gov','69733',3);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JNVK022190REJOR657','Timofei','Wroth','Toplin','male','7641794945','Anniversary','ttoplinjg@istockphoto.com','90683',3103),
 	 ('DLGO942013CRRLH127','Heida','Siely','Robichon','female','3759890277','Utah','hrobichonjh@hibu.com','03490',723),
@@ -2170,6 +2369,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ZOVA226995NQDRA320','Alfred','Blissett','Castaneda','male','4094052266','Karstens','acastanedajn@nsw.gov.au','75975',904),
 	 ('RYOI855354SAWCN970','Witty','Yanne','Dionisetto','male','5288908939','Barnett','wdionisettojo@ted.com','21121',59),
 	 ('AXZQ602988FPEPC403','Elsbeth','Whitelaw','Goghin','female','9238696852','Ludington','egoghinjp@constantcontact.com','29577',6);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GBQJ135977QXAJD694','Horst','Ludee','Vauter','male','1297424204','Namekagon','hvauterjq@list-manage.com','90244',4405),
 	 ('NDWR161185GPRLT248','Falkner','Kitman','Hedgecock','male','3119177908','Brown','fhedgecockjr@1und1.de','58163',640),
@@ -2181,6 +2381,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('IEYP511394WSLKV927','Durante','De Cruce','McCorry','male','9493493198','Ramsey','dmccorryjx@zdnet.com','38788',787),
 	 ('AUNP007879JBOFP552','Gibbie','Blais','Bloyes','male','2315432530','Bayside','gbloyesjy@hhs.gov','59234',2),
 	 ('ANOK075686TKONP561','Egbert','Leggen','Northbridge','male','8014034291','Pine View','enorthbridgejz@cargocollective.com','07205',718);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('XFZS656649DMFDM411','Cyndi','O''Fallon','Tellesson','female','3598504840','Sunfield','ctellessonk0@newyorker.com','17607',3),
 	 ('FPHY845387HLTBJ616','Genvieve','Redier','Scotcher','female','3938188229','Artisan','gscotcherk1@w3.org','14950',2609),
@@ -2192,6 +2393,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('NWEK310668ZXNDX863','Sherrie','MacIlhargy','Ding','female','3686514043','Meadow Vale','sdingk7@cam.ac.uk','75339',1313),
 	 ('YODW551285JGKMY915','Andie','Meenan','Ragge','male','7299169219','Grayhawk','araggek8@360.cn','00902',614),
 	 ('MNTC389461GKQUG244','Guthrey','cornhill','Conaboy','male','9549785469','Evergreen','gconaboyk9@miibeian.gov.cn','16415',86);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('NNDW415745AYGOW943','Fernande','Hatchman','Huckabe','female','2071428527','Division','fhuckabeka@harvard.edu','13151',7315),
 	 ('FVHC289046LJELU321','Ephrayim','Rodriguez','Lloyds','male','3959262479','Prairieview','elloydskb@tuttocitta.it','62551',66),
@@ -2203,6 +2405,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('OFPC701112FSJAW028','Gwenneth','Trowler','Daldry','female','8428024997','Bunker Hill','gdaldrykh@tiny.cc','17395',467),
 	 ('EWZW814256HZVQB719','Doris','Satch','Salmoni','female','2409715952','Havey','dsalmoniki@squarespace.com','84258',29620),
 	 ('LBAN268775FOKWU366','Hilarius','Caseley','Jephson','male','1491860360','Knutson','hjephsonkj@purevolume.com','67477',25205);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('WBVN839916RVKFV493','Ailee','Sarfati','Burdas','female','6993564773','Loftsgordon','aburdaskk@state.gov','52416',4283),
 	 ('TJQC814170TFOQS918','Jaquelyn','Reese','Gallico','female','6933520712','Sunfield','jgallicokl@usgs.gov','91597',9332),
@@ -2214,6 +2417,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('PTYR995941TBRWN245','Franny','Catterson','Seiler','male','6561118590','Warrior','fseilerkr@cnbc.com','88661',784),
 	 ('RFBV316285MKLND148','Hugo','Eastgate','Giacobilio','male','3461181742','Meadow Ridge','hgiacobilioks@baidu.com','24801',2),
 	 ('XZCG642479EXKYL229','Bebe','Androli','Riggey','female','1052165590','Bellgrove','briggeykt@people.com.cn','58163',91215);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('URIY233314ACBMT658','Pierce','Lampl','Oscroft','male','7666307868','Spohn','poscroftku@wikimedia.org','63512',176),
 	 ('JIJR002097UOZYE414','Cyndie','Fenton','McConnal','female','4292501805','Thackeray','cmcconnalkv@seesaa.net','49242',88197),
@@ -2225,6 +2429,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('XGCI540590IZMXM411','Sal','Titterington','Crady','male','2687118637','Derek','scradyl1@shareasale.com','08390',46277),
 	 ('MXPM247619JMQCV421','Britt','Gatcliff','Crew','female','8613699453','Melody','bcrewl2@cpanel.net','07710',71359),
 	 ('ODZQ672774CNDPA056','Shayna','Elliston','Titmarsh','female','5951712973','Marcy','stitmarshl3@theglobeandmail.com','75339',2);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GNEJ017602YRHGE072','Alfy','Top','Ruprich','female','5235898731','Shasta','aruprichl4@usda.gov','42839',9450),
 	 ('HUCQ102647XCLVO919','Gui','Grainge','Bolf','female','8091722109','Warner','gbolfl5@java.com','00112',8378),
@@ -2236,6 +2441,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('JVDY795520UFDBJ923','Davey','Danilchik','Cumpton','male','7808724210','Orin','dcumptonlb@ucoz.com','89033',4364),
 	 ('MBGR793873CVKMU016','Donnie','Potticary','McLaughlan','female','1647004942','Graceland','dmclaughlanlc@indiatimes.com','30348',6),
 	 ('EDNP371498SEOOQ977','Lauren','Haggith','Leitche','male','6858405088','Waubesa','lleitcheld@rediff.com','78224',37449);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('MGFN152962WXCPL801','Igor','McNickle','Harkes','male','5626799193','Moose','iharkesle@vimeo.com','39086',4608),
 	 ('PNBJ570507FASTX995','Stacey','Carles','Loadwick','female','9426414162','Golf Course','sloadwicklf@nps.gov','03490',1281),
@@ -2247,6 +2453,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('YALN280671KZXFZ845','Ase','Duffett','Saundercock','male','9679838938','Bay','asaundercockll@list-manage.com','90244',8),
 	 ('JAMI729528ABLPA946','Tate','Stut','Howden','female','6822009256','Pond','thowdenlm@ehow.com','40309',60752),
 	 ('VDTP273838PUFVB495','Minni','Lefever','Bussell','female','2726063398','Morning','mbussellln@liveinternet.ru','60434',139);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('DGFQ790623AFCDX035','Cooper','Maving','Peet','male','4216251878','Manufacturers','cpeetlo@foxnews.com','81172',152),
 	 ('KIZP643858GHIZV176','Imelda','Dovidaitis','Izakoff','female','4701701947','Myrtle','iizakofflp@soup.io','74214',2),
@@ -2258,6 +2465,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('SLKN903959LEOBL598','Bibi','Baltzar','Minton','female','8271517919','Grayhawk','bmintonlv@harvard.edu','59671',47),
 	 ('UAJC509241AZCHC250','Vachel','Petasch','Evered','male','6491458726','Rutledge','veveredlw@flickr.com','59214',7),
 	 ('UUYS587000OLXIK728','Stern','Shallcross','Sterland','male','6379195299','Nelson','ssterlandlx@irs.gov','91597',39);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('EMKR475759PRRQD995','Samaria','Cowope','Mossman','female','8884092079','Aberg','smossmanly@vimeo.com','69441',37873),
 	 ('QKRM089554ICOIE276','Pascal','Gabby','Cottill','male','6761417467','Sullivan','pcottilllz@sohu.com','14950',1215),
@@ -2269,6 +2477,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('CZCR150201WXHJV966','Elie','Ricardo','Bradbeer','female','6986689373','Menomonie','ebradbeerm5@patch.com','68151',6),
 	 ('NVNC244424UOTYB788','Blondy','Shinn','Di Carlo','female','6661234692','Westerfield','bdicarlom6@java.com','69441',0),
 	 ('MVFV748587ZXLVX537','Ronna','Reide','Drought','female','8245699349','Norway Maple','rdroughtm7@ucla.edu','89831',8485);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('NWXQ342717ECNXH763','Jessey','Blackall','Ferrieri','male','7788426834','Helena','jferrierim8@list-manage.com','56680',332),
 	 ('THMP544344LTRQK568','Ned','MacUchadair','McClure','male','8036895698','Service','nmcclurem9@spiegel.de','07675',6),
@@ -2280,6 +2489,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ZVXN384698LKLDO527','Ruperto','Jaumet','Hindsberg','male','7739230420','Troy','rhindsbergmf@exblog.jp','37139',8),
 	 ('TRPW492752ONRTG715','Ileana','Selman','Phibb','female','8487364395','Corry','iphibbmg@bbc.co.uk','70795',9),
 	 ('CLOG227597OIGQD147','Kenyon','Tomalin','Maric','male','1654491780','Maryland','kmaricmh@printfriendly.com','47639',57);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('HYFE541375MBPHW595','Symon','McMichell','Hagwood','male','6125354756','3rd','shagwoodmi@scientificamerican.com','65590',7),
 	 ('BPTH278781DOKOP131','Lyell','Gomery','Brunt','male','1617484001','Pierstorff','lbruntmj@rediff.com','66118',849),
@@ -2291,6 +2501,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('OXMJ907091PJMBB308','Gae','Marcu','O''Spellissey','female','6421145298','Fulton','gospellisseymp@omniture.com','88046',5),
 	 ('LFXB639516WXWMR464','Gregor','Savins','Seward','male','3151348082','Grover','gsewardmq@ft.com','67962',5539),
 	 ('HKDT218427WNEZW930','Carmela','Taw','Klement','female','9965804364','Grover','cklementmr@netlog.com','47328',9868);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('KONJ803702JEBHP284','Wendel','Aguilar','Lant','male','4044799707','Manufacturers','wlantms@studiopress.com','23879',2),
 	 ('UZMZ778792KFUMW855','Baron','Ciraldo','Lupton','male','4399021130','Northridge','bluptonmt@sitemeter.com','33330',86),
@@ -2302,6 +2513,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('UYBE334236XRASI287','Chrystal','Fereday','Mounfield','female','2876074228','Elmside','cmounfieldmz@amazon.co.uk','07788',5),
 	 ('QUCV705652PTFRH378','Sholom','Peagrim','Hurrell','male','1916127539','Lake View','shurrelln0@vkontakte.ru','96250',2),
 	 ('TYAV220532YIJRR451','Julio','Welham','Eddis','male','7695425778','Oneill','jeddisn1@bluehost.com','00353',4);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('AZXI418301NIIVH158','Ev','Newell','Fenton','male','9346613637','Victoria','efentonn2@icq.com','84910',9330),
 	 ('QYTZ727949EXAWV861','Lynna','Mepsted','Stoffels','female','6884281702','Oneill','lstoffelsn3@goo.ne.jp','88332',2130),
@@ -2313,6 +2525,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('IHGZ148761JOGWB049','Mariska','De Souza','Probet','female','7364799359','Katie','mprobetn9@gov.uk','44802',391),
 	 ('XTOU735122APLTS301','Chrisy','Dalligan','Elsby','male','2394647498','Namekagon','celsbyna@domainmarket.com','07675',7),
 	 ('QCWD417835HJJHV387','Coretta','Sinderson','Dorre','female','7123494754','Pine View','cdorrenb@dmoz.org','00902',94);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('LUAF627606XYDUW709','Josefina','Cowely','Scawn','female','4699721257','Algoma','jscawnnc@sohu.com','44639',5005),
 	 ('GWVU143659TKKBM015','Corena','Bramsom','Larmouth','female','2319374243','Coolidge','clarmouthnd@freewebs.com','04950',86116),
@@ -2324,6 +2537,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('UPSQ467636RXXXY526','Antoine','Cribbin','Rosenbaum','male','6488540450','Sherman','arosenbaumnj@pen.io','10443',213),
 	 ('REDD443391LJRJV290','Brendin','Belf','Mallon','male','4336449964','Scott','bmallonnk@sbwire.com','14819',18588),
 	 ('BDYL451662LSQMK476','Elsy','Denes','Kuhwald','female','7777476184','Warner','ekuhwaldnl@fotki.com','51726',2);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ROHY879127PCHTU827','Barnie','Parmiter','Yesinin','male','1713392846','Talmadge','byesininnm@purevolume.com','17612',6588),
 	 ('MEIM717846PNZVH319','Elinore','Sondon','Milland','female','3565975795','Northridge','emillandnn@csmonitor.com','04036',29710),
@@ -2335,6 +2549,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GJLL535268QYSGD024','Mario','Jouanot','Poppleton','male','1221734294','Graedel','mpoppletonnt@scientificamerican.com','09497',51),
 	 ('FTWG685595YHGVW398','Sile','Toothill','Conrad','female','2415308070','Alpine','sconradnu@ucoz.com','88181',13144),
 	 ('QQXI633005BKRQF803','Lonnie','Brayne','Goodram','female','7752031513','Novick','lgoodramnv@nih.gov','92756',182);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('ALIW522201UTVBH188','Thaddus','Butland','Cockton','male','5487540299','Mifflin','tcocktonnw@buzzfeed.com','25082',4),
 	 ('OEDE426751CYBPL468','Dominik','Luthwood','Leedal','male','9864579975','Carioca','dleedalnx@de.vu','60504',5),
@@ -2346,6 +2561,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('CQLG330288KRBPG619','Fonz','Cheers','Wenzel','male','8701287059','Victoria','fwenzelo3@spiegel.de','86905',42904),
 	 ('SLRP807016UVAZE360','Winn','O''Sharkey','Barns','male','6902173682','Melby','wbarnso4@barnesandnoble.com','64312',1786),
 	 ('OMRP123271KKMFN511','Evita','Jewett','Kovelmann','female','9093042150','Hoepker','ekovelmanno5@bing.com','29633',308);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('GNDA465533IGVZC143','Anetta','Strathdee','Mithon','female','4664842231','Melrose','amithono6@slideshare.net','14347',98),
 	 ('OOYI875755PITBJ273','Angus','Maliphant','Sheahan','male','9814180445','Helena','asheahano7@multiply.com','51644',83252),
@@ -2357,6 +2573,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('GJDL773827JJAZA742','Fey','Sermin','Sporrij','female','6048920632','Bay','fsporrijod@accuweather.com','28158',622),
 	 ('IUQA151483VCVLU345','Korrie','Marnane','Gallardo','female','7601814529','Katie','kgallardooe@tinypic.com','17607',6),
 	 ('WIUH938302SZFAF825','Stephen','Roycroft','Barnard','male','5921284911','Rusk','sbarnardof@japanpost.jp','35905',727);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OBVL539919OTEMQ362','Joe','Galbraith','Isakov','male','5048327030','Rieder','jisakovog@cyberchimps.com','16640',30347),
 	 ('OOZH438760ITVAP303','Armin','London','Boden','male','5921953240','Clemons','abodenoh@nyu.edu','13616',429),
@@ -2368,6 +2585,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('KSKO599935RQQWT104','Joly','Laws','Dignan','female','8744824588','Golf','jdignanon@archive.org','84258',78),
 	 ('NKPJ552028PJRID877','Adham','Delamere','Westnedge','male','1654134561','Farmco','awestnedgeoo@columbia.edu','62551',76935),
 	 ('EUWJ970794NIZSJ416','Caz','Duling','Broderick','male','9209753320','Vidon','cbroderickop@barnesandnoble.com','59084',49165);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('KDBP686046KGOMQ076','Merrilee','Burchett','Casajuana','female','7595536120','Fairfield','mcasajuanaoq@icio.us','40309',36535),
 	 ('NVRQ949209PKLCP182','Val','Franzetti','Sharvell','female','2057044941','Ruskin','vsharvellor@state.gov','80867',60),
@@ -2379,6 +2597,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('HMAL978915HANTF303','Heath','Allaway','Molineux','male','4551997205','David','hmolineuxox@phpbb.com','21340',42984),
 	 ('SUUY019930DVHQK564','Tatiania','McMeyler','Pannett','female','8257478937','Eagle Crest','tpannettoy@bing.com','72157',140),
 	 ('HYWM167514QEUYU853','Emalia','Extence','Mouland','female','1155896426','Menomonie','emoulandoz@sciencedaily.com','24567',2);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('OGMW414364RVOBA952','Selig','Ben','Ruusa','male','2445574681','Nancy','sruusap0@ucoz.com','81705',7226),
 	 ('DSDV630195QFFID948','Tymon','Jocic','Hallagan','male','6804468582','Macpherson','thallaganp1@hp.com','77304',3),
@@ -2390,6 +2609,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('ATGJ671717HIPWW098','Karleen','Issacov','Pozer','female','4658808574','Kim','kpozerp7@ifeng.com','22200',571),
 	 ('NZKA790277UWCGR969','Harman','Hobson','Jenkin','male','4419846815','Tony','hjenkinp8@buzzfeed.com','60504',75),
 	 ('BMPS523034IYAQS430','Marianne','Walworche','Paradin','female','6378102016','Hansons','mparadinp9@biglobe.ne.jp','57013',259);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('DTOB831716HQRPR484','Arthur','Vasilyev','Jugging','male','4541534467','Walton','ajuggingpa@nytimes.com','24801',12785),
 	 ('JNXG649587SOILS052','Karoly','McCullogh','Livard','female','4671533456','Loeprich','klivardpb@stanford.edu','13649',2),
@@ -2401,6 +2621,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('HHSQ496482AZGUE095','Lil','Pfeffer','Ambrodi','female','7468065415','Petterle','lambrodiph@yahoo.com','13843',38633),
 	 ('KXBA289421BLBUC577','Clemence','Tick','Squelch','female','6821838498','Lake View','csquelchpi@zdnet.com','80161',50),
 	 ('UFXR842796LDDBC629','Lilly','Aynold','Carlett','female','7615536016','Pennsylvania','lcarlettpj@discuz.net','04155',60175);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('JLGU784413CAWXW937','Christi','Maiklem','Yegorev','female','3024989269','Main','cyegorevpk@webs.com','04608',687),
 	 ('SWYY879946NOTCJ995','Faulkner','Dell Casa','Skittles','male','4258218863','Elgar','fskittlespl@phoca.cz','05874',810),
@@ -2412,6 +2633,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('YOWA325152LNZOE894','Janine','Ballston','Nodin','female','3606391316','Lukken','jnodinpr@cmu.edu','39086',597),
 	 ('DOIN464364UOBPX686','Jobye','Cammiemile','Guerrieri','female','3556884681','Mccormick','jguerrierips@goo.ne.jp','73852',1086),
 	 ('AFDY457940SICYN434','Thaddus','Skip','Altree','male','8164941810','Buell','taltreept@bbb.org','10443',72040);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('HCSK898917ZYCFX572','Dania','Axten','Gaitskell','female','1163952311','Rowland','dgaitskellpu@furl.net','18892',965),
 	 ('HACN386110HMQNB358','Vanny','Hallows','MacTeggart','female','5016626846','Prentice','vmacteggartpv@artisteer.com','55827',4486),
@@ -2423,6 +2645,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('YKAE920905ZOYWU894','Sigismondo','Correa','Duly','male','7577858610','Laurel','sdulyq1@vk.com','40909',97),
 	 ('UDRY291915CKPVK408','Davide','Armor','Barrell','male','3735506572','Anthes','dbarrellq2@dmoz.org','29311',14591),
 	 ('GRBA016674OHXKX865','Sherwynd','Morigan','Cissell','male','8002417562','Longview','scissellq3@trellian.com','17612',6);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('FPUP444493AXLRX515','Howie','Devers','Maccari','male','9858466745','Carey','hmaccariq4@weebly.com','29705',1677),
 	 ('ZKFF917465ZGEYU356','Ransell','Spires','Spellar','male','4169800255','Gateway','rspellarq5@list-manage.com','02057',993),
@@ -2434,6 +2657,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('BKHC149955SWJNL239','Maressa','Saddleton','Eschalette','female','9714444574','Service','meschaletteqb@lycos.com','76439',623),
 	 ('ZJOV993848UIZUE834','Yetty','Keysel','Saxby','female','8702565277','Ludington','ysaxbyqc@feedburner.com','96748',9),
 	 ('RSJF818963HXTYC459','Marylynne','Orsay','Scallon','female','3124796287','Coleman','mscallonqd@pbs.org','02169',7139);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('AUPS773868EYINS817','Lefty','Killigrew','Korbmaker','male','4468779463','Kropf','lkorbmakerqe@stanford.edu','65367',4),
 	 ('JOCV568984LBUCJ213','Amil','MacDearmaid','Fairnington','female','8011648054','Erie','afairningtonqf@lulu.com','42618',75845),
@@ -2445,6 +2669,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('JNSN846535SYXPZ533','Care','Crosen','Guyet','male','4557657063','Springs','cguyetql@bloomberg.com','84910',1818),
 	 ('RZPO183297OFLDU781','Christi','Eustes','McKinnon','female','7521752136','Grim','cmckinnonqm@bing.com','81161',588),
 	 ('SNYM639210RKQNH200','Lainey','Wisniowski','Silliman','female','2199261565','Anderson','lsillimanqn@geocities.com','04036',94);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('PPSJ397487HLZNK408','Bart','Rigeby','Readwood','male','5053661659','Jenna','breadwoodqo@ucsd.edu','84076',67),
 	 ('NYPD617913YXQHB362','Nickola','Pevsner','Luck','male','1033343238','High Crossing','nluckqp@youtu.be','76474',93),
@@ -2456,6 +2681,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('RMHJ860695SQSHY731','Darill','Iverson','Estcourt','male','2459309298','Dakota','destcourtqv@amazon.de','18892',44),
 	 ('XRLC346112BADCV240','Thane','Logg','Kuhnke','male','2801212435','Debs','tkuhnkeqw@webmd.com','50116',1),
 	 ('IEIN361010OKOCF977','Hastings','Matthensen','Dalton','male','7092795827','Buhler','hdaltonqx@oaic.gov.au','64961',603);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('BPYV243801VXXSJ691','Ema','Bendtsen','Aujouanet','female','7387942148','Declaration','eaujouanetqy@google.co.jp','58163',6321),
 	 ('AULV135955TMQBQ309','Gilberte','Mochar','Spataro','female','1346622417','Prairie Rose','gspataroqz@nifty.com','76474',38),
@@ -2467,6 +2693,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('RVUR005609EQBKQ777','Boothe','Shapera','Antrag','male','1483807035','Sunfield','bantragr5@google.it','90244',17220),
 	 ('HRVJ541969PTKCN393','Shina','Everiss','Frudd','female','2443249111','Claremont','sfruddr6@dmoz.org','60518',1),
 	 ('ZVTB336249UOEJZ854','Annabell','Swaisland','Spraging','female','9633679955','Stephen','aspragingr7@macromedia.com','19951',50);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('FLBN880399YLOQE216','Kristyn','Bohden','Radford','female','8033945034','Waxwing','kradfordr8@trellian.com','51644',8795),
 	 ('SQJN606520EXOKR791','Humfrey','Dur','Torn','male','4439268203','Rusk','htornr9@bravesites.com','65243',34),
@@ -2478,6 +2705,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('XWPB056447BSLMO517','Jared','Swapp','Faulkes','male','7967117376','Hanover','jfaulkesrf@cmu.edu','46748',389),
 	 ('MAYS294665TUTQR211','Colleen','Rosenthaler','Sturman','female','2597770620','Buena Vista','csturmanrg@nbcnews.com','16328',8386),
 	 ('DSER876901SDZOX796','Leda','Mace','Rickerd','female','7404000976','Brickson Park','lrickerdrh@epa.gov','54385',884);
+
 INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,phone,street,email,zip_code,street_number) VALUES
 	 ('MSCJ790965VWKDP728','Fern','Hazleton','Whilder','female','1192290608','Straubel','fwhilderri@fda.gov','76130',3666),
 	 ('GMMV484386SOLWF382','Lonee','MacParlan','Zanre','female','7395806835','Anhalt','lzanrerj@moonfruit.com','11291',4540),
@@ -2488,7 +2716,8 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('BPUZ190759WBVKC034','Domenic','Louedey','Lutwidge','male','9483640775','Jana','dlutwidgero@utexas.edu','17663',1445),
 	 ('TZAX899259VYVLN652','Arny','Meadley','Osgardby','male','2683445426','Truax','aosgardbyrp@oaic.gov.au','84587',474),
 	 ('FPTZ875328OEWFK476','Skelly','Duffy','Pittman','male','9056175077','Thackeray','spittmanrq@merriam-webster.com','06305',4167),
-	 ('TCYK117076KVIGU793','Anatola','Gullane','Rougier','female','8046034630','Russell','arougierrr@soundcloud.com','68985',8);INSERT INTO public.customer (curp,is_patient) VALUES
+	 ('TCYK117076KVIGU793','Anatola','Gullane','Rougier','female','8046034630','Russell','arougierrr@soundcloud.com','68985',8);
+INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('OLDU929976EMVFJ583',false),
 	 ('DGUN489902JORXB206',false),
 	 ('PZNE156141EMNHE037',false),
@@ -2499,6 +2728,7 @@ INSERT INTO public.person (curp,"name",first_lastname,second_lastname,gender,pho
 	 ('BDVC567304SFXMC765',true),
 	 ('NJCK203114KPOJY590',false),
 	 ('KZNQ525843OQQVL697',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JVUQ476385YMOPV471',false),
 	 ('RYIC779163GCFWE725',true),
@@ -2510,6 +2740,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GPOQ915271JNHEW976',true),
 	 ('VNPG713648OPUWG432',false),
 	 ('LLHO118723QSAYN289',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('FDEQ391539AXLFQ046',true),
 	 ('BFHY427071USJAP493',false),
@@ -2521,6 +2752,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('YKWX590179RQEDQ643',true),
 	 ('PPDZ564674JYNPN890',true),
 	 ('XRSV916459OYQPZ830',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('KBIF290261RPLAB483',false),
 	 ('VONI968783NFCZK958',true),
@@ -2532,6 +2764,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('RNCY695353XEAFI076',true),
 	 ('ONBK154676KXVVV317',true),
 	 ('QMFY066636NIRXD478',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('SQBH424121VONPY587',true),
 	 ('BHVD977888UHPZA895',false),
@@ -2543,6 +2776,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GBDW842777IYXNR524',false),
 	 ('HBMQ866414ETRPW751',true),
 	 ('FIDI724571NFFQH767',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('EPWH355488VULEK908',true),
 	 ('KDSF446249GBLPG287',false),
@@ -2554,6 +2788,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GIGH301414EGYLW929',false),
 	 ('ZYNG123535ZPWII526',true),
 	 ('NKPR080762RHJYJ955',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('RRDU131778UFWRS846',true),
 	 ('GPUZ783784IWGKZ593',true),
@@ -2565,6 +2800,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('TMIN807213FYBNH658',false),
 	 ('GFAY911676QHRUW030',false),
 	 ('ZCTK251288PRSTL369',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XRLR727308PYXGQ171',false),
 	 ('CGCH465302EGTEO600',false),
@@ -2576,6 +2812,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('SUJX828788MWLJK413',true),
 	 ('IMJW719484DWPMT009',false),
 	 ('MJYZ573026TIOVB215',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XGUW648506BCSKT918',false),
 	 ('UPSB793067LRFPW050',false),
@@ -2587,6 +2824,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('DZGZ715642GBWRN893',true),
 	 ('NHKV520999LGJVA620',true),
 	 ('HFPY897648AGYSO928',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('PNJG931487MVQKD275',true),
 	 ('OUZF229202HHERU531',false),
@@ -2598,6 +2836,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XQCR524111TGUWW840',true),
 	 ('GRES790571BBZOM729',false),
 	 ('FGGG096831TYFKX253',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('ODGZ789985GZROU388',false),
 	 ('DOEU282752ZRSGS407',true),
@@ -2609,6 +2848,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('RXFR202472SXNRK680',true),
 	 ('RBWL495958WQMDU311',true),
 	 ('XHTW272502XCACW904',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('MMBW200843BMIIS491',true),
 	 ('KPTB147368MXQDV785',false),
@@ -2620,6 +2860,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('NUQP081951VBSVI183',true),
 	 ('LDIS950812IIGEK829',false),
 	 ('XGZZ840242PXKJP043',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('ICCP643953DNLDA729',true),
 	 ('HEYY015757TQZPP031',true),
@@ -2631,6 +2872,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('OUSO079533MNOZW475',true),
 	 ('SXGA737804BPXXS732',false),
 	 ('VZLV524892CBIJN392',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('UJYP457105HAPSF034',true),
 	 ('BSNE659250DJVAD705',true),
@@ -2642,6 +2884,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('RBYB804202IMGSE319',true),
 	 ('RQNC774341OOBVQ125',false),
 	 ('KHVV120157QBNWD372',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JACX023404HNONN170',false),
 	 ('NOAO658913CFYTM989',true),
@@ -2653,6 +2896,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('PIKR977681KTGDT593',false),
 	 ('ZFRO787378MDWJY175',false),
 	 ('GKDQ150070GQCGO952',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GWUQ565806CLFYJ359',true),
 	 ('KYTV489121HFWQG515',false),
@@ -2664,6 +2908,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('ZMMM522891UDCZY242',true),
 	 ('SZGC126326DRFYY897',true),
 	 ('VYSG210975TOZIW556',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('UPHF999095ZEPAY068',false),
 	 ('ZGUC999734VYYIU065',false),
@@ -2675,6 +2920,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('PWQC723981UZGJM631',true),
 	 ('IQGE132443QMLIB177',true),
 	 ('GUOV180737SKAXD411',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WJBZ916929RIECF057',false),
 	 ('LFWN779411HEYSF426',false),
@@ -2686,6 +2932,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WYDZ861005ZKQNR907',true),
 	 ('DZZP279024UBNKG571',false),
 	 ('CLHI821991KQFXT617',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('TCHR657366CUYSO955',true),
 	 ('LODE137458ENNWG632',true),
@@ -2697,6 +2944,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('VFER926137LIHQH679',false),
 	 ('OMMF689584PDXWH882',true),
 	 ('TDXR252209JUULV972',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('CSGA881090LDDAJ282',false),
 	 ('WWYU004372MPSJG909',false),
@@ -2708,6 +2956,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('NZQY342992FHJGI446',true),
 	 ('VKPW242863LKYXE358',false),
 	 ('GAIF899720ANPLC839',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('HAFO658636YHTZU930',false),
 	 ('FFNR888342OYNUX513',true),
@@ -2719,6 +2968,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XFJS846746CTTOV882',true),
 	 ('MFJT719632JLXXF009',true),
 	 ('PRIP658239TETAN213',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GFYB436412JPILC614',false),
 	 ('WDHB070139BKNFH352',true),
@@ -2730,6 +2980,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JRPE099516DZMHH095',true),
 	 ('CNTY451162IAJDB945',true),
 	 ('KITY201030LUTQU601',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('TCDK018120LAPKX631',true),
 	 ('JAVL473873CGXJI745',false),
@@ -2741,6 +2992,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WIEO574018SHYXC918',true),
 	 ('XGRL506246NFEDK861',false),
 	 ('RWXR156948XYLTS119',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XVNG046979LUQUW195',true),
 	 ('ZGTR057050CWKBD432',false),
@@ -2752,6 +3004,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('MSZQ479172ROAZV319',false),
 	 ('XNAD818074LLTKA239',false),
 	 ('JQZT915689CYPCL082',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JEAW964376ENJRA467',true),
 	 ('QASQ393587SJHZX190',false),
@@ -2763,6 +3016,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('CFCI496212CZWUZ242',false),
 	 ('FYCZ612209EWAOZ696',false),
 	 ('RVLK304169HPADE239',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GBJV059580IWWRC253',true),
 	 ('BUER697369DVSIS960',true),
@@ -2774,6 +3028,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('CGRY130869ZNGWA592',false),
 	 ('NWOA646536BXTTQ655',true),
 	 ('FJDA017588TJKVM441',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('BDRS917078DPTGO621',true),
 	 ('ALZD451505QCAUW905',true),
@@ -2785,6 +3040,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('FHTF212758PHGYW714',false),
 	 ('UCXS474325LJRLB564',true),
 	 ('TDDV493330EKYBH290',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WUIK891032KCBEP439',false),
 	 ('CTZB666543OWKSU419',true),
@@ -2796,6 +3052,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('LHDJ328800XUKDX785',false),
 	 ('EGVO458057YOIQY349',true),
 	 ('GBOW502260NNTQU321',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('QZAF010893VKIFR424',false),
 	 ('HIJN495412LYZOY427',false),
@@ -2807,6 +3064,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GCBW848066OZOTU929',true),
 	 ('FWLS008186DPOIE216',true),
 	 ('KUFP681382UBHVA527',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('LPIB168590PNILG461',true),
 	 ('NCBF011554FUFFR129',true),
@@ -2818,6 +3076,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('OSZX707963DJUQB784',true),
 	 ('WFUR170890JDWCN210',false),
 	 ('PPCE201086CLLYE095',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('EGUW411750KQVBO408',true),
 	 ('KRLR671154YLYYB663',false),
@@ -2829,6 +3088,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('KLCV047115DFQSY844',true),
 	 ('AZAN283480VFQKB256',false),
 	 ('QAYB559434ONSRK810',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JYJI076122TOLRF768',false),
 	 ('XDAX034790OVBFM656',true),
@@ -2840,6 +3100,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WRZM289448IIGLB647',false),
 	 ('KWGH589787GTVOK078',false),
 	 ('EOUF161726KVUUX248',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('XDOH174036DUPIZ990',true),
 	 ('PNIC318017GFIDD203',true),
@@ -2851,6 +3112,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('IPCU869971CMFCE357',true),
 	 ('RXNX715545JAWJV589',true),
 	 ('MGDW074391CRFVS939',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('TJBW007678XHCJG640',true),
 	 ('GVOJ770921TJRLC006',false),
@@ -2862,6 +3124,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('MFZG808195ZZMPD968',false),
 	 ('IVRD025938SMCCI225',false),
 	 ('JRFE892151UIDIF947',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JOFN694177OVGBT559',false),
 	 ('NDIP509196IIEVA618',true),
@@ -2873,6 +3136,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('WPIU694096ADQIR938',true),
 	 ('TMDX842355QXQUA049',true),
 	 ('FYXV957352SBPOO534',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('VSUK205827BHJUO008',false),
 	 ('MKKV313054HGUNK458',true),
@@ -2884,6 +3148,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('DNCE312460KAMVF087',false),
 	 ('YZYG136120BDDFM354',true),
 	 ('FGCM162053UQFTK428',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('GECA899501FYNLU891',true),
 	 ('CIEL679995BZLDV074',true),
@@ -2895,6 +3160,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JGWD774437VEEAU244',false),
 	 ('YJKX121341BMFCS407',true),
 	 ('NDAV589408YESKF026',true);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('KWZW515336UALVL127',true),
 	 ('YTZI468566MJLOJ631',true),
@@ -2906,6 +3172,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('QKXC841656ALYVF084',true),
 	 ('EAHT905435NAWSO219',false),
 	 ('MQSH703106XMYKS213',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('CXRY319525SUNPS206',false),
 	 ('ASSD875008RRPEH551',true),
@@ -2917,6 +3184,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('JKRY819039MSYWC692',true),
 	 ('QLOR127774QUYGQ297',true),
 	 ('KAKK458967RRXKH015',false);
+
 INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('SZPF456303JFUOE404',false),
 	 ('PDLC191363NNEVX617',true),
@@ -2927,7 +3195,8 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('IIAV834762NSZMZ270',false),
 	 ('XWEJ943539HVJCI341',true),
 	 ('UVCR139836CINSZ005',false),
-	 ('PPBX435558UULMG097',true);INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
+	 ('PPBX435558UULMG097',true);
+INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('RKWT706451XAKSH115',1,'VTLL383302FJ6','99923980302','8679199'),
 	 ('AXPG959687DEDUQ830',2,'PXBL110714UE1','40220877958','5258533'),
 	 ('RSVD601747IMRDU031',3,'BIGR526989YI9','97432085219','4951198'),
@@ -2938,6 +3207,7 @@ INSERT INTO public.customer (curp,is_patient) VALUES
 	 ('VVHS510714TVBDO577',8,'YYBA447981SM1','18692489413','7686645'),
 	 ('OVRB315616SIZNJ722',9,'NDVW108070HK2','81580481461','4059404'),
 	 ('JHBK113760LESTJ126',10,'OHXV236091JA4','51733951816','5682142');
+
 INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('HBLM604600WTCJI606',11,'DLRK541234WQ4','79361064714','0677983'),
 	 ('WQVH961260NTIXJ879',12,'GSYN194931ZL8','84817901721','1578330'),
@@ -2949,6 +3219,7 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('LBAP135358ZVJGQ043',18,'XHVB240349RA7','12045953162','2226290'),
 	 ('UTEA769140VWWMP914',19,'GQOU172762CM9','73107425032','4077825'),
 	 ('LPAT265613PWQMX163',20,'ZTER818639IO3','82444412150','5374746');
+
 INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('SAVC287336KLRZK723',1,'GTUJ835974CN1','03344766674','1031059'),
 	 ('DWAN778894TRPJD293',2,'HPAR191555DB5','77450698088','0699363'),
@@ -2960,6 +3231,7 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('ADKH648770DMYRK246',8,'HGFL909868LA2','26958306687','6484785'),
 	 ('XECN551132PWIGH960',9,'PEIM371295LG5','02549257612','9937373'),
 	 ('PVFC556841JXAVU289',10,'ERHX350003IQ2','86473496246','2368957');
+
 INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('OELD082185GXDNQ861',11,'WLBR732653JL7','76594428859','7280059'),
 	 ('PFKF271336XPCYA822',12,'BKTO049670DN2','95698283291','5735791'),
@@ -2971,6 +3243,7 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('FXXD650593PMXZN605',18,'JAPO102327MY2','59342614910','0460081'),
 	 ('JLBI147263BGWAJ616',19,'TYCS693579RX4','81718547240','3336976'),
 	 ('OJIZ978358KIJUZ831',20,'UZRC910958JK1','16248865047','3089506');
+
 INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('SVEH792817IXZNS296',1,'VTCP478451RM1','53149448317','3641361'),
 	 ('YYAK114191QRGSQ479',2,'HXIC883396TO2','86338508296','0512526'),
@@ -2982,6 +3255,7 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('FDDV831749NPFJV070',8,'UIMM535570WF0','71135094804','5231222'),
 	 ('AJBR420040UGFWC279',9,'EIGQ312214ZY6','94298714565','2051430'),
 	 ('SINX083707KNTAN145',10,'BIXV711665RV2','20809325884','6625998');
+
 INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) VALUES
 	 ('AOZT552976FIWIC262',11,'VEMT750900RO3','92000442620','5877763'),
 	 ('EFGM013588ALNTP479',12,'XTNA073881NA5','66243252933','0916946'),
@@ -2992,7 +3266,8 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('ROOM363874GHVGO243',17,'PXRT823755OP0','03433788980','2625136'),
 	 ('TNCX742553PHGKQ464',18,'ECWA451463CH5','45393104486','3784955'),
 	 ('OOPV533321OORYL050',19,'TEFF637310XW4','38407285619','2590501'),
-	 ('MGGG663531IOHBH419',20,'WWRC892246ZJ8','90591685516','3813850');INSERT INTO public.manager (curp,id_establishment,rfc,ssn) VALUES
+	 ('MGGG663531IOHBH419',20,'WWRC892246ZJ8','90591685516','3813850');
+INSERT INTO public.manager (curp,id_establishment,rfc,ssn) VALUES
 	 ('YJIP663974ZYTPA466',1,'VMKD703251GK4','34035882579'),
 	 ('XPXY620503YURDO010',2,'DLFG656759SZ3','58022086726'),
 	 ('QEFX051436SCDEN168',3,'QDSI303812NS7','91361247486'),
@@ -3003,6 +3278,7 @@ INSERT INTO public.doctor (curp,id_establishment,rfc,ssn,professional_license) V
 	 ('ANNB264971JVFCJ802',8,'DMSB974475ZK2','41290966844'),
 	 ('INAE782666MIEGT127',9,'SQDL296187WS5','17368500851'),
 	 ('MVVQ760693ZNCNU207',10,'HTSA888219RC8','86354327899');
+
 INSERT INTO public.manager (curp,id_establishment,rfc,ssn) VALUES
 	 ('USBC865325UCDOB461',11,'JSYD940877FV3','36264837242'),
 	 ('LKQK677237JMLSQ515',12,'BDLN803808ZF1','36738473186'),
@@ -3013,7 +3289,8 @@ INSERT INTO public.manager (curp,id_establishment,rfc,ssn) VALUES
 	 ('VAND905572HOSJT202',17,'XSZG073210ZM7','97270481800'),
 	 ('MAQH425601LUYBT144',18,'ASSS156708NH2','48844590579'),
 	 ('LHMJ565130CFTRD317',19,'UJFB647957GN2','70669769755'),
-	 ('FDEN764753OSASL584',20,'YVBO276811NQ7','95914601758');INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
+	 ('FDEN764753OSASL584',20,'YVBO276811NQ7','95914601758');
+INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('NNOI593993OYGBE017',9,'TTQX643554PE5','34627889430','6047720007','motorbike'),
 	 ('KXZC314997YVQYI131',16,'YFGY448914ZT5','25785117644','3445419130','bike'),
 	 ('WAXH172447ZFYJB993',16,'PMDM497439LZ9','40087508704','7345139324','motorbike'),
@@ -3024,6 +3301,7 @@ INSERT INTO public.manager (curp,id_establishment,rfc,ssn) VALUES
 	 ('ZNAQ288524WBWMT439',1,'LDVD886185UG6','83042066292','9123510494','motorbike'),
 	 ('NMVL095792YVCNR034',4,'CCGY364950JD4','86593794495','1365511617','bike'),
 	 ('ROEX644538AIJPX444',7,'CWHM231502YT8','43599752084','5343280144','motorbike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('KYLQ905946MLNFR320',12,'KSPC603809EW6','92782447661','0136114898','motorbike'),
 	 ('FGMA138587UPRAL223',20,'KEAH206012LA1','39415282192','4508595189','bike'),
@@ -3035,6 +3313,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('UYHK351250XERBF187',14,'WESS788627GJ8','68984551487','2169425532','motorbike'),
 	 ('TYDQ345327CORAJ797',17,'LJAC244030YJ9','40874223382','2396441453','bike'),
 	 ('WUNI217873UVEHJ567',8,'DPKW982287BU6','22295886768','5787799698','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('WAYS702066VMJHB253',1,'RMME748286HG4','62437547160','8198263964','bike'),
 	 ('NTFY272139PDEZN506',15,'SSPI523805EB3','75629666072','2471969217','motorbike'),
@@ -3046,6 +3325,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('NAWB237663SZMUX627',9,'QTAF677784AL9','58159224568','5451086182','bike'),
 	 ('ACPN667117JPZGI217',2,'EPCH602447ZV3','41356332003','2382565760','bike'),
 	 ('GMOE943169ESZIZ237',20,'AFCT060504ME0','22634303412','8329871967','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('RPVE188030WCYTZ316',17,'JJRH487826ZU7','51168189253','0213430092','bike'),
 	 ('PBFY295310WOLOC001',1,'MBOP219056US2','27052192870','5336264176','motorbike'),
@@ -3057,6 +3337,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('ONNS322820CLYIU554',7,'DPXA537673HL2','62230403268','6754736848','motorbike'),
 	 ('XKRV685766RBFNO984',3,'JSGU744292KO2','33027409514','7732063893','motorbike'),
 	 ('CKSS852898ANOVD260',18,'YLTL322802MB5','94770103265','0180939339','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('LILV225275KZTZL987',17,'GJXO761284YW3','61184114446','3833301807','bike'),
 	 ('UYDC883352XJQLD196',8,'KJCD713977WK2','21939729303','1830427616','motorbike'),
@@ -3068,6 +3349,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('LRJN268314LWUDG528',9,'JCQB438921XM0','42384185241','8458499791','bike'),
 	 ('JKIL944288MZQAN845',11,'OPPW218149VD4','85374101966','1367475571','bike'),
 	 ('RJNN871840OZGCI585',5,'ONEY237108HH6','31804825159','2736321787','motorbike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('OUCV311707KXCBR522',17,'RBFL168600PV2','23162301617','9654525481','motorbike'),
 	 ('PGZU967905AJDMD634',16,'OJHY948541DI4','37398104018','6908150864','motorbike'),
@@ -3079,6 +3361,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('VBXX551317RDCNC813',16,'TTGF453813TX5','57647010811','9506709933','motorbike'),
 	 ('PPCQ686265COAHC887',5,'YJYB909337VA9','03949774160','5482443041','bike'),
 	 ('BPGB926866CRRAG666',7,'JPTA538146AO8','95114983524','8652290258','motorbike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('PNDB220441KMNMY656',5,'IJQN895782GC1','14753310525','9335194822','motorbike'),
 	 ('CWYL006858IWEFX181',4,'HIRE688143CZ9','42911277482','6562319056','motorbike'),
@@ -3090,6 +3373,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('QJOH271055DPUJJ172',6,'RNLI314623YS2','23588832838','8704707661','motorbike'),
 	 ('LIML404466QGNSY054',14,'QANU087162HP1','68390539356','0211045752','bike'),
 	 ('CONX499685XQANZ072',20,'DBAP758855JQ8','36333911634','3793440423','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('OJHT230137SIFEY106',1,'BEWV773562OV5','93427183080','9945909510','bike'),
 	 ('OKUT190886EMLOS978',2,'YFSX663105LJ3','20916976087','9931791947','bike'),
@@ -3101,6 +3385,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('ALVS731027XMCLZ403',16,'QGXI256860AE0','52100315976','1392172621','motorbike'),
 	 ('QDUU061348MGAUE518',16,'YFHW825503HK7','36911692823','6800182161','bike'),
 	 ('OZAC200723HODIX211',3,'JWAQ122045IU0','41207805601','9201496761','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('HMSV097985WZUKD647',19,'WWPM493238JT7','70796200716','5975220924','motorbike'),
 	 ('KMES145098UIZHE921',10,'NZDH630855BK0','87680864198','2170941361','bike'),
@@ -3112,6 +3397,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('WCFD101063RUDVE146',18,'VHCJ856644SS6','46428247310','9221019022','motorbike'),
 	 ('ONIU157371BQMKU063',11,'TKNX739652BM7','98678632609','3158626855','bike'),
 	 ('QLQA564116SJDOW224',7,'ALTE466156JP4','69079166834','2552711342','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('VUIB801435YVTMG127',8,'RFDT796077VP4','79388466367','7778538659','bike'),
 	 ('VVCA641114BANJF516',17,'XWVK592515EP6','81604053625','7110360684','motorbike'),
@@ -3123,6 +3409,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('BVOS307864QCHUU237',17,'SFJB877318XY1','19253643569','3451524101','bike'),
 	 ('SZBA611408BNJOM613',15,'LJJM817495LP7','43941459899','2629216371','bike'),
 	 ('JVCV812718NKARI969',20,'OYMI277686CW4','46511074698','0284730684','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('UIUX195606QDJPK908',8,'CCRZ038838WX4','80218009686','3043843140','bike'),
 	 ('PIDV599873BLQQA565',2,'HBWD061302IN0','00698283418','3032130077','bike'),
@@ -3134,6 +3421,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('WQNA771454XWWHQ288',20,'KEHL452064PW4','75754330138','5817831643','bike'),
 	 ('AKFH131447QUQEQ281',14,'LQVD015792IA0','96080202158','1596978458','motorbike'),
 	 ('UBPA329742TNSLA640',13,'HGOR274649GA2','35756566429','9935505246','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('ZZRI210208KGAAZ107',19,'WYQR464235MS9','51457801574','2626134074','bike'),
 	 ('NGNQ794959AYHYB573',2,'DXWS817843UQ0','19086076657','8956771877','bike'),
@@ -3145,6 +3433,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('AZQI217627MDIHS738',17,'HFFG025724ZD5','43176866084','4543041284','motorbike'),
 	 ('DUMH280443BNOKV246',17,'CHCF146049RU9','50998694283','1425372006','motorbike'),
 	 ('HZNC048852TFURM827',16,'TGKD271415WW6','25267780770','4145059901','motorbike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('ZJNO274450EUJCI322',6,'JACS676424VB2','23449947739','4910169107','motorbike'),
 	 ('RGYR336730FBHBH791',5,'BWFQ214356IC3','49663758144','3224686679','motorbike'),
@@ -3156,6 +3445,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('SYAR587778ZGGGB678',14,'WNVK458677MA3','47157068584','1208586576','motorbike'),
 	 ('NWGE738199JZIRV635',11,'ILHM760750TJ2','38455838844','0921434351','motorbike'),
 	 ('JJZZ564910YHECM649',16,'CKJI002078RB8','36107576792','9553628621','bike');
+
 INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) VALUES
 	 ('YCBM457370EMOLA055',18,'VWTK459718KS7','90258073465','2789284255','bike'),
 	 ('AVUB622050OIWFK061',16,'EJRA568313CT9','57139028217','2298913115','motorbike'),
@@ -3166,7 +3456,8 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('XDQT250481FVJLO234',17,'NBMW131985YD8','17611391080','3475979799','bike'),
 	 ('DXMK662002FJIOL585',14,'WEGI037973XY3','46803197645','1786325414','motorbike'),
 	 ('LNDM071264MRJLK865',2,'CBAU142272JI0','38225202675','1334901055','bike'),
-	 ('KDJK186380YKRDS383',13,'QQIY694664YU5','39822938133','7422718067','bike');INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
+	 ('KDJK186380YKRDS383',13,'QQIY694664YU5','39822938133','7422718067','bike');
+INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('XZIA832359IPHYN030',20,'DSTZ173708JP3','56335861078'),
 	 ('GUEN210634EHIRT236',8,'KWJS290724HY1','96866906924'),
 	 ('OWBY195653HUFVK802',3,'GLJG858192AP5','98789399943'),
@@ -3177,6 +3468,7 @@ INSERT INTO public.deliveryman (curp,id_establishment,rfc,ssn,license,vehicle) V
 	 ('IAWM714725BYZHH749',18,'NWZN483099VC9','61990668445'),
 	 ('YSWE625781RJOGM757',12,'TKXP150481QI7','25794513986'),
 	 ('QEEX046277TOZIB569',5,'GHGE205089RW3','14494004014');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('YQRI250143VEZSB230',12,'IACO957376PF6','74386582526'),
 	 ('CWEZ160531ISFPY079',12,'XAPV811279NK7','83046089924'),
@@ -3188,6 +3480,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('FTWL000163YMXLU047',7,'FNEW963532OH7','11062868186'),
 	 ('KKXO634860RKNDZ354',20,'RZCY627424EK7','73757570645'),
 	 ('MFXI202105AKCCW285',20,'LDYM218677XV9','32080089036');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('NEPA195512OWBYB359',17,'JYOS317777SG7','77296373310'),
 	 ('DMOK197266WVCCC850',5,'VWWG834442SU8','16933723769'),
@@ -3199,6 +3492,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('HMCN220354IZTAW024',2,'GMHB173578MB3','04681697494'),
 	 ('UFHY002230UGKVL273',10,'QPVT427489HR2','50520739207'),
 	 ('YPNR937298OUUML635',20,'CUEW572391DP9','23843025697');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('ORNM802248IVWYH692',2,'RZZV473862IC2','19047419132'),
 	 ('YLYF542894NPXXO413',6,'QDMN344573AN1','49913626523'),
@@ -3210,6 +3504,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('TFBR333586PTRZJ386',9,'RFOQ498786HF0','88902850188'),
 	 ('CBUJ290477IIHJD259',16,'CDTP776901SN8','91420307095'),
 	 ('VUVP636071DTQRU169',8,'DDCL922928HR0','84913338297');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('XAIG685624CFUTM496',17,'RDAO620927JD2','05043619006'),
 	 ('WJAA080576BKZKB584',3,'WCEX748385SI9','99994593602'),
@@ -3221,6 +3516,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('EFRF137032MRDHV767',10,'YDVT387993KO3','70748731494'),
 	 ('TDYN324510MVFNL825',14,'EVHX430384UJ2','96856803327'),
 	 ('NKCJ779579OTYLG384',13,'OJYF780358DS9','98969764209');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('RCOO336013QSKLW549',5,'NWJG820587LH7','69507456716'),
 	 ('NSTN979613HGRMQ991',5,'WCUA401475FZ7','21476686710'),
@@ -3232,6 +3528,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('ISEL566210YFYYK981',3,'YJHL429697XB7','62194483564'),
 	 ('YKBY966261TYVTY164',1,'VXBP908398WQ1','34335264140'),
 	 ('GUHH135494RXUQC752',14,'KDIW006103HD2','55066243479');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('RXTY222473XRIEV455',11,'MFNC456727JA4','13893154725'),
 	 ('WBUB292711AUVNF260',17,'PYXA621372GL1','88729305393'),
@@ -3243,6 +3540,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('TESL772417KGLRV633',15,'FYUS489114SS3','78881279502'),
 	 ('UOHM215893HVWUH051',15,'AFDI850511DN0','55300603281'),
 	 ('LJLV944343OAKOT183',8,'IGJF385426HF9','45887302830');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('JPLY980103CGLCH386',4,'DNJA488080KM5','40754542939'),
 	 ('LOBD534313QDENF963',8,'VPGI084049MJ3','61750680957'),
@@ -3254,6 +3552,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('OHYB352759MLUKF929',2,'ABOW533774YQ2','94278504347'),
 	 ('FBQS587563QLMUM101',6,'OSVZ885156CC0','37732441584'),
 	 ('BVAY136568MXGRL691',1,'WFVS555680NE0','14928940159');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('JNVK022190REJOR657',11,'FCTI305706HX6','47464841591'),
 	 ('DLGO942013CRRLH127',9,'GEBG548329NJ7','16526318031'),
@@ -3265,6 +3564,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('ZOVA226995NQDRA320',19,'QEBO536585YU7','50319645782'),
 	 ('RYOI855354SAWCN970',8,'VXLN522776JN2','39437223667'),
 	 ('AXZQ602988FPEPC403',17,'YLFX730187VW3','12849942110');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('GBQJ135977QXAJD694',7,'ESCE039678QS7','04485859818'),
 	 ('NDWR161185GPRLT248',14,'NNFZ258010WY9','84019785717'),
@@ -3276,6 +3576,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('IEYP511394WSLKV927',4,'LABJ858542FX6','10900436881'),
 	 ('AUNP007879JBOFP552',3,'RYEC945778GI2','39379536746'),
 	 ('ANOK075686TKONP561',13,'WHCX792079NM3','34465280404');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('XFZS656649DMFDM411',19,'XWLR204999LL0','47507189847'),
 	 ('FPHY845387HLTBJ616',17,'DGGN870845UJ9','62564281349'),
@@ -3287,6 +3588,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('NWEK310668ZXNDX863',6,'BVOI265661MP2','90165884846'),
 	 ('YODW551285JGKMY915',18,'NEVX605341EW6','82066488060'),
 	 ('MNTC389461GKQUG244',16,'LSFF056900GD3','37043462749');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('NNDW415745AYGOW943',8,'PHHA633659HH8','65309754718'),
 	 ('FVHC289046LJELU321',17,'NYJT804278OW5','35513190989'),
@@ -3298,6 +3600,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('OFPC701112FSJAW028',15,'ADKZ266175XU4','70432973321'),
 	 ('EWZW814256HZVQB719',8,'BTTP037894CB9','87276594050'),
 	 ('LBAN268775FOKWU366',19,'WWPV285440KQ4','58876784869');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('WBVN839916RVKFV493',9,'ESUL965240KU0','21384580216'),
 	 ('TJQC814170TFOQS918',18,'IKAZ507164VS9','52523249834'),
@@ -3309,6 +3612,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('PTYR995941TBRWN245',6,'BNHA164124IE3','09585618694'),
 	 ('RFBV316285MKLND148',13,'VTCI977533SZ4','13289435883'),
 	 ('XZCG642479EXKYL229',11,'BFRT180449ZS6','59507534474');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('URIY233314ACBMT658',2,'ZPNO529058YY7','47073187442'),
 	 ('JIJR002097UOZYE414',13,'QNKR213928JI9','19715521417'),
@@ -3320,6 +3624,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('XGCI540590IZMXM411',9,'JRPF553865OG5','16553157296'),
 	 ('MXPM247619JMQCV421',9,'DTEG268548OC8','43343403725'),
 	 ('ODZQ672774CNDPA056',3,'HQDG999843CS7','71760800012');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('GNEJ017602YRHGE072',9,'KYHV106293ZB0','64912548231'),
 	 ('HUCQ102647XCLVO919',4,'ZLMD868121FQ4','31701932623'),
@@ -3331,6 +3636,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('JVDY795520UFDBJ923',14,'EZPL121092YI9','58432700893'),
 	 ('MBGR793873CVKMU016',8,'GNWF321664ID7','77800942360'),
 	 ('EDNP371498SEOOQ977',18,'ICHV539857QD1','74104121326');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('MGFN152962WXCPL801',20,'UMIW548765HY2','39398899026'),
 	 ('PNBJ570507FASTX995',17,'SIRE774108KZ1','24045787290'),
@@ -3342,6 +3648,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('YALN280671KZXFZ845',9,'YFSZ977191CJ9','05032555394'),
 	 ('JAMI729528ABLPA946',5,'SOCB071956FX9','73601458154'),
 	 ('VDTP273838PUFVB495',3,'CPME066932ED3','24270567279');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('DGFQ790623AFCDX035',7,'ZHHS095022SV3','16590989038'),
 	 ('KIZP643858GHIZV176',10,'HKAY633061LA8','89690129890'),
@@ -3353,6 +3660,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('SLKN903959LEOBL598',9,'QRNZ287424RI6','04559281691'),
 	 ('UAJC509241AZCHC250',16,'KNGK612252MR8','57311082844'),
 	 ('UUYS587000OLXIK728',6,'STCA779272VI2','74508896084');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('EMKR475759PRRQD995',4,'CLKY105539SY6','26004257878'),
 	 ('QKRM089554ICOIE276',1,'ITRT344830UR8','25953035474'),
@@ -3364,6 +3672,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('CZCR150201WXHJV966',11,'DJMT274194EY0','80074021474'),
 	 ('NVNC244424UOTYB788',13,'UKBJ738972CW1','49108932700'),
 	 ('MVFV748587ZXLVX537',10,'ESXU295101OS0','49970733054');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('NWXQ342717ECNXH763',7,'SRFD951864YB8','85219467946'),
 	 ('THMP544344LTRQK568',15,'HLPO185799EQ1','03390635053'),
@@ -3375,6 +3684,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('ZVXN384698LKLDO527',14,'QECB307146YA7','98970104377'),
 	 ('TRPW492752ONRTG715',15,'GEHD277440GI5','25159783152'),
 	 ('CLOG227597OIGQD147',17,'HVOY825389KG7','08527906250');
+
 INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('HYFE541375MBPHW595',16,'PMIO507524PQ9','73879095158'),
 	 ('BPTH278781DOKOP131',3,'DSSY698104QW4','28985263173'),
@@ -3385,7 +3695,8 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('DRBE404810XHAUT819',11,'QWJK806837BL1','31402770573'),
 	 ('OXMJ907091PJMBB308',4,'AVDG787013TZ9','09225363051'),
 	 ('LFXB639516WXWMR464',10,'MIJU055513ZR2','30915448643'),
-	 ('HKDT218427WNEZW930',5,'TBKI664646BP5','12466782437');INSERT INTO public.cleaner (curp,id_establishment,rfc,ssn) VALUES
+	 ('HKDT218427WNEZW930',5,'TBKI664646BP5','12466782437');
+INSERT INTO public.cleaner (curp,id_establishment,rfc,ssn) VALUES
 	 ('FLBN880399YLOQE216',1,'BQUY577465OZ9','03605093184'),
 	 ('SQJN606520EXOKR791',2,'SPNU202630RE6','72214232169'),
 	 ('NEPN876726UOJSX596',3,'EWZK970184ZJ6','31154788547'),
@@ -3396,6 +3707,7 @@ INSERT INTO public."general" (curp,id_establishment,rfc,ssn) VALUES
 	 ('XWPB056447BSLMO517',8,'EDUU866632JU2','31466339678'),
 	 ('MAYS294665TUTQR211',9,'CHXV521336DB5','64868719455'),
 	 ('DSER876901SDZOX796',10,'HKXD717945OX9','87009577986');
+
 INSERT INTO public.cleaner (curp,id_establishment,rfc,ssn) VALUES
 	 ('MSCJ790965VWKDP728',11,'QJFZ768030EM1','57407895071'),
 	 ('GMMV484386SOLWF382',12,'TRUI855645HS6','23030279277'),
@@ -3406,7 +3718,8 @@ INSERT INTO public.cleaner (curp,id_establishment,rfc,ssn) VALUES
 	 ('BPUZ190759WBVKC034',17,'SXFD062787XU0','22611084788'),
 	 ('TZAX899259VYVLN652',18,'ECFD250343HT1','47210332051'),
 	 ('FPTZ875328OEWFK476',19,'TTHZ848930ER8','73888894211'),
-	 ('TCYK117076KVIGU793',20,'XSAR479956JW8','86882898982');INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
+	 ('TCYK117076KVIGU793',20,'XSAR479956JW8','86882898982');
+INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('KONJ803702JEBHP284',1,'XQZS634418EH1','81012264441'),
 	 ('UZMZ778792KFUMW855',2,'LFHN559646LL6','31175227071'),
 	 ('FNDC053244EZIEN540',3,'JZXJ200686NH5','88639797680'),
@@ -3417,6 +3730,7 @@ INSERT INTO public.cleaner (curp,id_establishment,rfc,ssn) VALUES
 	 ('UYBE334236XRASI287',8,'JNVC477292ED0','38589402475'),
 	 ('QUCV705652PTFRH378',9,'TZHS868112QX3','21673589362'),
 	 ('TYAV220532YIJRR451',10,'RESD423878CJ3','13924890656');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('AZXI418301NIIVH158',11,'FFND427689XH9','99051891632'),
 	 ('QYTZ727949EXAWV861',12,'XGMV343802BS6','86683914968'),
@@ -3428,6 +3742,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('IHGZ148761JOGWB049',18,'VDZN746291VI5','43578322874'),
 	 ('XTOU735122APLTS301',19,'QCUH633643FS9','01337811213'),
 	 ('QCWD417835HJJHV387',20,'OCMW294551CP9','02337037845');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('LUAF627606XYDUW709',1,'XKVV899503SI2','76710271983'),
 	 ('GWVU143659TKKBM015',2,'GQIV304641ND8','80982217666'),
@@ -3439,6 +3754,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('UPSQ467636RXXXY526',8,'RGOW825735AF7','43567924338'),
 	 ('REDD443391LJRJV290',9,'NZJO608134XH4','64779755264'),
 	 ('BDYL451662LSQMK476',10,'QZVD846877AP7','84370015647');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('ROHY879127PCHTU827',11,'YQIE973521PO4','18315013935'),
 	 ('MEIM717846PNZVH319',12,'ZQPU543070MU4','22385365307'),
@@ -3450,6 +3766,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('GJLL535268QYSGD024',18,'AVFB093432DO3','13549583110'),
 	 ('FTWG685595YHGVW398',19,'QDMU638154BA2','46849688498'),
 	 ('QQXI633005BKRQF803',20,'STYD495710JC0','77783255798');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('ALIW522201UTVBH188',1,'EHLY619243GP4','91495374814'),
 	 ('OEDE426751CYBPL468',2,'OIPH484626SA3','08304085871'),
@@ -3461,6 +3778,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('CQLG330288KRBPG619',8,'THYZ990501KN7','66311018896'),
 	 ('SLRP807016UVAZE360',9,'NXZA041799JV9','52810998124'),
 	 ('OMRP123271KKMFN511',10,'IVZQ289279BM3','67276469003');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('GNDA465533IGVZC143',11,'GWTC572013YF8','59562953246'),
 	 ('OOYI875755PITBJ273',12,'OPYM756615JP0','68649756704'),
@@ -3472,6 +3790,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('GJDL773827JJAZA742',18,'NPDY098268JF7','80581359005'),
 	 ('IUQA151483VCVLU345',19,'KBWC011769WX8','37758716688'),
 	 ('WIUH938302SZFAF825',20,'NJIJ387007MO4','60313763901');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('OBVL539919OTEMQ362',1,'YMVY857375LH5','87589949970'),
 	 ('OOZH438760ITVAP303',2,'VJIQ811304ZD4','07457991574'),
@@ -3483,6 +3802,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('KSKO599935RQQWT104',8,'PMCI391095TY0','47528015742'),
 	 ('NKPJ552028PJRID877',9,'VNSR918968IZ5','18344234522'),
 	 ('EUWJ970794NIZSJ416',10,'OJAV565321TJ4','87102413581');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('KDBP686046KGOMQ076',11,'YULN624490IX6','87829814548'),
 	 ('NVRQ949209PKLCP182',12,'JTSF248481RU1','06480435333'),
@@ -3494,6 +3814,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('HMAL978915HANTF303',18,'ZOZV850008FI1','50525030914'),
 	 ('SUUY019930DVHQK564',19,'JQZO809166FX3','74233396934'),
 	 ('HYWM167514QEUYU853',20,'ZHJJ093968KE5','74633685100');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('OGMW414364RVOBA952',1,'UITX561471KA7','94758486142'),
 	 ('DSDV630195QFFID948',2,'GVZC243155IX3','40612022047'),
@@ -3505,6 +3826,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('ATGJ671717HIPWW098',8,'DSBO479542NH8','51526587971'),
 	 ('NZKA790277UWCGR969',9,'QFAO182123TG9','17809170048'),
 	 ('BMPS523034IYAQS430',10,'LXMY110672VV1','77257982081');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('DTOB831716HQRPR484',11,'QDEV845010FM1','22347988785'),
 	 ('JNXG649587SOILS052',12,'LCML743333AG3','45363364347'),
@@ -3516,6 +3838,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('HHSQ496482AZGUE095',18,'XXWE587539BQ3','49553364998'),
 	 ('KXBA289421BLBUC577',19,'AAHE691104EZ5','63635417283'),
 	 ('UFXR842796LDDBC629',20,'MBOC717836JQ8','29171596964');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('JLGU784413CAWXW937',1,'ZMMD107614WY1','46758261018'),
 	 ('SWYY879946NOTCJ995',2,'YDZB549260SN6','77083417517'),
@@ -3527,6 +3850,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('YOWA325152LNZOE894',8,'PFOT092627NY6','76316740719'),
 	 ('DOIN464364UOBPX686',9,'PCXN202356QB2','95509109566'),
 	 ('AFDY457940SICYN434',10,'HCED228792OU3','27172556074');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('HCSK898917ZYCFX572',11,'PZLK676107RG7','22336324169'),
 	 ('HACN386110HMQNB358',12,'EWXF726086IH1','34767360569'),
@@ -3538,6 +3862,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('YKAE920905ZOYWU894',18,'EGLX517339GI2','34251307945'),
 	 ('UDRY291915CKPVK408',19,'GTXE351012NC7','13902333107'),
 	 ('GRBA016674OHXKX865',20,'KYMK622176HS3','69373831295');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('FPUP444493AXLRX515',1,'SCKP120134MT3','88541504084'),
 	 ('ZKFF917465ZGEYU356',2,'PTXX951102RA8','87097094334'),
@@ -3549,6 +3874,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('BKHC149955SWJNL239',8,'IKWL186361ZO9','43070872605'),
 	 ('ZJOV993848UIZUE834',9,'USZR669646GC7','30080087848'),
 	 ('RSJF818963HXTYC459',10,'GKDW763676LA4','80575124506');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('AUPS773868EYINS817',11,'EWZG709767PP8','02672982357'),
 	 ('JOCV568984LBUCJ213',12,'BHWX499775HX8','21041322486'),
@@ -3560,6 +3886,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('JNSN846535SYXPZ533',18,'RJZT254725XH2','96087780242'),
 	 ('RZPO183297OFLDU781',19,'CRMK046962HV2','50728389033'),
 	 ('SNYM639210RKQNH200',20,'BUWI017024BX8','88887160220');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('PPSJ397487HLZNK408',1,'WKAT000665OU6','28722079460'),
 	 ('NYPD617913YXQHB362',2,'DNIF117367OD9','99839726165'),
@@ -3571,6 +3898,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('RMHJ860695SQSHY731',8,'YCAM436195PE2','85189180697'),
 	 ('XRLC346112BADCV240',9,'BQOK615986FR5','75731006685'),
 	 ('IEIN361010OKOCF977',10,'QMCU539700ZF7','51592687752');
+
 INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('BPYV243801VXXSJ691',11,'WKLE866636CW2','04361208326'),
 	 ('AULV135955TMQBQ309',12,'LVUC188870WW6','61438288148'),
@@ -3581,7 +3909,8 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('ZFNM489487HIJBC051',17,'ENJW334112SD7','04229108830'),
 	 ('RVUR005609EQBKQ777',18,'WJKC482525AZ6','45376461999'),
 	 ('HRVJ541969PTKCN393',19,'UBVR600093QK3','06283443375'),
-	 ('ZVTB336249UOEJZ854',20,'LKBD041993YG1','31089236203');INSERT INTO public.offers (curp,id_specialty) VALUES
+	 ('ZVTB336249UOEJZ854',20,'LKBD041993YG1','31089236203');
+INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('RKWT706451XAKSH115',2),
 	 ('AXPG959687DEDUQ830',14),
 	 ('RSVD601747IMRDU031',5),
@@ -3592,6 +3921,7 @@ INSERT INTO public.cashier (curp,id_establishment,rfc,ssn) VALUES
 	 ('VVHS510714TVBDO577',3),
 	 ('OVRB315616SIZNJ722',27),
 	 ('JHBK113760LESTJ126',12);
+
 INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('HBLM604600WTCJI606',6),
 	 ('WQVH961260NTIXJ879',11),
@@ -3603,6 +3933,7 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('LBAP135358ZVJGQ043',19),
 	 ('UTEA769140VWWMP914',14),
 	 ('LPAT265613PWQMX163',26);
+
 INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('SAVC287336KLRZK723',15),
 	 ('DWAN778894TRPJD293',8),
@@ -3614,6 +3945,7 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('ADKH648770DMYRK246',28),
 	 ('XECN551132PWIGH960',14),
 	 ('PVFC556841JXAVU289',8);
+
 INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('OELD082185GXDNQ861',7),
 	 ('PFKF271336XPCYA822',11),
@@ -3625,6 +3957,7 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('FXXD650593PMXZN605',18),
 	 ('JLBI147263BGWAJ616',25),
 	 ('OJIZ978358KIJUZ831',12);
+
 INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('SVEH792817IXZNS296',27),
 	 ('YYAK114191QRGSQ479',6),
@@ -3636,6 +3969,7 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('FDDV831749NPFJV070',7),
 	 ('AJBR420040UGFWC279',1),
 	 ('SINX083707KNTAN145',24);
+
 INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('AOZT552976FIWIC262',23),
 	 ('EFGM013588ALNTP479',20),
@@ -3646,7 +3980,8 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('ROOM363874GHVGO243',24),
 	 ('TNCX742553PHGKQ464',8),
 	 ('OOPV533321OORYL050',6),
-	 ('MGGG663531IOHBH419',14);INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
+	 ('MGGG663531IOHBH419',14);
+INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EGUW411750KQVBO408',1,'RKWT706451XAKSH115',1,905.00,'morning',2,'2020-08-06'),
 	 ('UBJP393429MLGIU233',2,'AXPG959687DEDUQ830',2,88.00,'afternoon',14,'2020-02-24'),
 	 ('NCZF578639HKGJN166',3,'RSVD601747IMRDU031',3,976.00,'afternoon',5,'2021-01-09'),
@@ -3657,6 +3992,7 @@ INSERT INTO public.offers (curp,id_specialty) VALUES
 	 ('DOEU282752ZRSGS407',8,'VVHS510714TVBDO577',8,458.00,'morning',3,'2020-06-04'),
 	 ('QENE705706VUUKA587',9,'OVRB315616SIZNJ722',9,872.00,'morning',27,'2020-11-05'),
 	 ('PDLC191363NNEVX617',10,'JHBK113760LESTJ126',10,457.00,'morning',12,'2020-07-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RBYB804202IMGSE319',11,'HBLM604600WTCJI606',11,463.00,'afternoon',6,'2020-10-14'),
 	 ('TZWB731495LYDZY487',12,'WQVH961260NTIXJ879',12,882.00,'afternoon',11,'2021-01-12'),
@@ -3668,6 +4004,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QLRU650097PUCGU438',18,'LBAP135358ZVJGQ043',18,90.00,'afternoon',19,'2020-08-08'),
 	 ('QLRU650097PUCGU438',19,'UTEA769140VWWMP914',19,233.00,'morning',14,'2020-10-15'),
 	 ('NCBF011554FUFFR129',20,'LPAT265613PWQMX163',20,468.00,'afternoon',26,'2020-09-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ASSD875008RRPEH551',1,'SAVC287336KLRZK723',21,545.00,'morning',15,'2020-11-10'),
 	 ('QHEK252831JZWHD861',2,'DWAN778894TRPJD293',22,910.00,'afternoon',8,'2020-10-02'),
@@ -3679,6 +4016,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TMDX842355QXQUA049',8,'ADKH648770DMYRK246',28,80.00,'morning',28,'2020-02-29'),
 	 ('THID197141IHASI431',9,'XECN551132PWIGH960',29,379.00,'afternoon',14,'2020-06-14'),
 	 ('XDAX034790OVBFM656',10,'PVFC556841JXAVU289',30,622.00,'morning',8,'2020-12-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CNTY451162IAJDB945',11,'OELD082185GXDNQ861',31,412.00,'morning',7,'2020-04-16'),
 	 ('MLCY685738QHYCJ012',12,'PFKF271336XPCYA822',32,142.00,'morning',11,'2020-09-13'),
@@ -3690,6 +4028,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PQZH407351LWBPV372',18,'FXXD650593PMXZN605',38,222.00,'morning',18,'2020-01-30'),
 	 ('PPBX435558UULMG097',19,'JLBI147263BGWAJ616',39,354.00,'afternoon',25,'2020-07-23'),
 	 ('GULN484567FRHXC805',20,'OJIZ978358KIJUZ831',40,983.00,'morning',12,'2020-01-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZXA483328GTOMZ299',1,'SVEH792817IXZNS296',41,246.00,'morning',27,'2020-09-02'),
 	 ('LJYY941693XYXAN777',2,'YYAK114191QRGSQ479',42,803.00,'afternoon',6,'2020-04-30'),
@@ -3701,6 +4040,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('CNTY451162IAJDB945',8,'FDDV831749NPFJV070',48,545.00,'afternoon',7,'2020-12-22'),
 	 ('QZFD656995ZXOXZ263',9,'AJBR420040UGFWC279',49,733.00,'afternoon',1,'2020-04-24'),
 	 ('KJBV411414YWLJI794',10,'SINX083707KNTAN145',50,495.00,'morning',24,'2020-07-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DOEU282752ZRSGS407',11,'AOZT552976FIWIC262',51,856.00,'morning',23,'2020-09-09'),
 	 ('XDWA067573RUIYC500',12,'EFGM013588ALNTP479',52,35.00,'afternoon',20,'2020-01-26'),
@@ -3712,6 +4052,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UXXE003128HQITR816',18,'TNCX742553PHGKQ464',58,784.00,'afternoon',8,'2020-04-02'),
 	 ('ZCTK251288PRSTL369',19,'OOPV533321OORYL050',59,811.00,'afternoon',6,'2020-10-31'),
 	 ('XVNG046979LUQUW195',20,'MGGG663531IOHBH419',60,204.00,'morning',14,'2020-02-21');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('MMBW200843BMIIS491',1,'RKWT706451XAKSH115',61,208.00,'morning',2,'2020-07-23'),
 	 ('XNNO439081NVLCX577',2,'AXPG959687DEDUQ830',62,444.00,'morning',14,'2020-09-30'),
@@ -3723,6 +4064,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FHLM564991JSUPM979',8,'VVHS510714TVBDO577',68,483.00,'afternoon',3,'2020-03-18'),
 	 ('RVLK304169HPADE239',9,'OVRB315616SIZNJ722',69,35.00,'morning',27,'2020-04-09'),
 	 ('KPKT809508QGOGW781',10,'JHBK113760LESTJ126',70,219.00,'afternoon',12,'2020-09-01');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FGGG096831TYFKX253',11,'HBLM604600WTCJI606',71,546.00,'morning',6,'2020-03-15'),
 	 ('NCBF011554FUFFR129',12,'WQVH961260NTIXJ879',72,406.00,'morning',11,'2020-07-30'),
@@ -3734,6 +4076,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('EGUW411750KQVBO408',18,'LBAP135358ZVJGQ043',78,109.00,'afternoon',19,'2020-10-01'),
 	 ('CTZB666543OWKSU419',19,'UTEA769140VWWMP914',79,86.00,'afternoon',14,'2020-06-17'),
 	 ('XDMI694229HVTNL886',20,'LPAT265613PWQMX163',80,786.00,'afternoon',26,'2020-12-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QZFD656995ZXOXZ263',1,'SAVC287336KLRZK723',81,867.00,'morning',15,'2020-09-06'),
 	 ('XRSV916459OYQPZ830',2,'DWAN778894TRPJD293',82,184.00,'morning',8,'2020-03-25'),
@@ -3745,6 +4088,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MVDT493135UMKXM341',8,'ADKH648770DMYRK246',88,704.00,'morning',28,'2020-05-28'),
 	 ('NCZF578639HKGJN166',9,'XECN551132PWIGH960',89,215.00,'afternoon',14,'2020-08-31'),
 	 ('ZCTK251288PRSTL369',10,'PVFC556841JXAVU289',90,85.00,'afternoon',8,'2020-07-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TJBW007678XHCJG640',11,'OELD082185GXDNQ861',91,150.00,'afternoon',7,'2020-06-11'),
 	 ('SZGC126326DRFYY897',12,'PFKF271336XPCYA822',92,641.00,'afternoon',11,'2020-08-30'),
@@ -3756,6 +4100,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('DZGZ715642GBWRN893',18,'FXXD650593PMXZN605',98,802.00,'afternoon',18,'2020-06-23'),
 	 ('KZNQ525843OQQVL697',19,'JLBI147263BGWAJ616',99,281.00,'afternoon',25,'2020-08-31'),
 	 ('XRSV916459OYQPZ830',20,'OJIZ978358KIJUZ831',100,297.00,'afternoon',12,'2020-11-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PNIC318017GFIDD203',1,'SVEH792817IXZNS296',101,280.00,'morning',27,'2020-11-29'),
 	 ('UXXE003128HQITR816',2,'YYAK114191QRGSQ479',102,87.00,'morning',6,'2020-02-10'),
@@ -3767,6 +4112,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FHLM564991JSUPM979',8,'FDDV831749NPFJV070',108,618.00,'morning',7,'2020-10-05'),
 	 ('QNUK289842DPDWH747',9,'AJBR420040UGFWC279',109,137.00,'afternoon',1,'2020-07-26'),
 	 ('XDAX034790OVBFM656',10,'SINX083707KNTAN145',110,850.00,'morning',24,'2020-10-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDMI694229HVTNL886',11,'AOZT552976FIWIC262',111,726.00,'afternoon',23,'2020-06-10'),
 	 ('XWEJ943539HVJCI341',12,'EFGM013588ALNTP479',112,974.00,'afternoon',20,'2020-12-29'),
@@ -3778,6 +4124,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('YJKX121341BMFCS407',18,'TNCX742553PHGKQ464',118,926.00,'morning',8,'2020-12-11'),
 	 ('TRGB490333ZNPIR671',19,'OOPV533321OORYL050',119,964.00,'morning',6,'2020-09-22'),
 	 ('ZVTB907829KIBMC577',20,'MGGG663531IOHBH419',120,154.00,'afternoon',14,'2020-01-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('KVQP293494BPVZG915',1,'RKWT706451XAKSH115',121,899.00,'afternoon',2,'2020-04-04'),
 	 ('LKQU721130RIBDQ626',2,'AXPG959687DEDUQ830',122,753.00,'morning',14,'2020-04-06'),
@@ -3789,6 +4136,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RWXR156948XYLTS119',8,'VVHS510714TVBDO577',128,978.00,'morning',3,'2020-08-22'),
 	 ('XGZZ840242PXKJP043',9,'OVRB315616SIZNJ722',129,849.00,'morning',27,'2020-11-27'),
 	 ('OMMF689584PDXWH882',10,'JHBK113760LESTJ126',130,70.00,'morning',12,'2020-10-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DOEU282752ZRSGS407',11,'HBLM604600WTCJI606',131,392.00,'afternoon',6,'2020-12-24'),
 	 ('QLRU650097PUCGU438',12,'WQVH961260NTIXJ879',132,741.00,'morning',11,'2020-04-01'),
@@ -3800,6 +4148,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UCXS474325LJRLB564',18,'LBAP135358ZVJGQ043',138,50.00,'morning',19,'2020-04-11'),
 	 ('LPIB168590PNILG461',19,'UTEA769140VWWMP914',139,200.00,'morning',14,'2020-07-31'),
 	 ('JRUP134651VAJOO553',20,'LPAT265613PWQMX163',140,611.00,'afternoon',26,'2020-06-21');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ALZD451505QCAUW905',1,'SAVC287336KLRZK723',141,910.00,'morning',15,'2020-08-07'),
 	 ('WLSN875984CVGYV103',2,'DWAN778894TRPJD293',142,727.00,'morning',8,'2020-02-16'),
@@ -3811,6 +4160,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TXNL585923XJKOF698',8,'ADKH648770DMYRK246',148,539.00,'morning',28,'2020-03-25'),
 	 ('GECA899501FYNLU891',9,'XECN551132PWIGH960',149,827.00,'morning',14,'2020-10-20'),
 	 ('XQCR524111TGUWW840',10,'PVFC556841JXAVU289',150,878.00,'afternoon',8,'2020-06-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XRSV916459OYQPZ830',11,'OELD082185GXDNQ861',151,470.00,'afternoon',7,'2020-09-13'),
 	 ('FFNR888342OYNUX513',12,'PFKF271336XPCYA822',152,375.00,'afternoon',11,'2020-12-05'),
@@ -3822,6 +4172,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QLOR127774QUYGQ297',18,'FXXD650593PMXZN605',158,418.00,'morning',18,'2020-08-08'),
 	 ('TZXA483328GTOMZ299',19,'JLBI147263BGWAJ616',159,930.00,'morning',25,'2020-02-04'),
 	 ('NCBF011554FUFFR129',20,'OJIZ978358KIJUZ831',160,89.00,'afternoon',12,'2020-08-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NDAV589408YESKF026',1,'SVEH792817IXZNS296',161,897.00,'morning',27,'2020-01-24'),
 	 ('BSNE659250DJVAD705',2,'YYAK114191QRGSQ479',162,668.00,'morning',6,'2020-06-11'),
@@ -3833,6 +4184,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LWJC330097YAGXA481',8,'FDDV831749NPFJV070',168,636.00,'afternoon',7,'2020-06-21'),
 	 ('CPLF659966JCBXD998',9,'AJBR420040UGFWC279',169,376.00,'morning',1,'2020-05-19'),
 	 ('QNUK289842DPDWH747',10,'SINX083707KNTAN145',170,185.00,'morning',24,'2020-10-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EGUW411750KQVBO408',11,'AOZT552976FIWIC262',171,458.00,'morning',23,'2020-12-17'),
 	 ('HMJN123070JSPPS879',12,'EFGM013588ALNTP479',172,432.00,'afternoon',20,'2020-08-17'),
@@ -3844,6 +4196,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KPKT809508QGOGW781',18,'TNCX742553PHGKQ464',178,962.00,'afternoon',8,'2020-06-29'),
 	 ('SZGC126326DRFYY897',19,'OOPV533321OORYL050',179,590.00,'morning',6,'2020-02-03'),
 	 ('RYIC779163GCFWE725',20,'MGGG663531IOHBH419',180,352.00,'morning',14,'2020-02-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FWLS008186DPOIE216',1,'RKWT706451XAKSH115',181,855.00,'morning',2,'2020-06-18'),
 	 ('FJXE715147GIUIM279',2,'AXPG959687DEDUQ830',182,745.00,'afternoon',14,'2020-06-03'),
@@ -3855,6 +4208,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZCTK251288PRSTL369',8,'VVHS510714TVBDO577',188,811.00,'morning',3,'2020-12-25'),
 	 ('QHEK252831JZWHD861',9,'OVRB315616SIZNJ722',189,146.00,'morning',27,'2020-04-27'),
 	 ('DOEU282752ZRSGS407',10,'JHBK113760LESTJ126',190,515.00,'morning',12,'2020-04-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('KTPU069372DUAGI194',11,'HBLM604600WTCJI606',191,237.00,'afternoon',6,'2020-02-07'),
 	 ('UFGQ844943SOJFY896',12,'WQVH961260NTIXJ879',192,277.00,'afternoon',11,'2020-09-20'),
@@ -3866,6 +4220,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PNJG931487MVQKD275',18,'LBAP135358ZVJGQ043',198,684.00,'afternoon',19,'2020-08-13'),
 	 ('KPMX389697HXQAW221',19,'UTEA769140VWWMP914',199,59.00,'afternoon',14,'2020-05-25'),
 	 ('GBJV059580IWWRC253',20,'LPAT265613PWQMX163',200,97.00,'morning',26,'2021-01-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NZQY342992FHJGI446',1,'SAVC287336KLRZK723',201,165.00,'morning',15,'2020-10-09'),
 	 ('IPCU869971CMFCE357',2,'DWAN778894TRPJD293',202,299.00,'morning',8,'2020-11-08'),
@@ -3877,6 +4232,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QENE705706VUUKA587',8,'ADKH648770DMYRK246',208,380.00,'afternoon',28,'2020-06-10'),
 	 ('XNNO439081NVLCX577',9,'XECN551132PWIGH960',209,296.00,'afternoon',14,'2020-09-28'),
 	 ('QLOR127774QUYGQ297',10,'PVFC556841JXAVU289',210,27.00,'afternoon',8,'2020-07-28');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('JEAW964376ENJRA467',11,'OELD082185GXDNQ861',211,815.00,'afternoon',7,'2020-01-30'),
 	 ('PDLC191363NNEVX617',12,'PFKF271336XPCYA822',212,382.00,'morning',11,'2020-08-05'),
@@ -3888,6 +4244,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TPZL536479AMEXU515',18,'FXXD650593PMXZN605',218,513.00,'morning',18,'2020-12-15'),
 	 ('FDEQ391539AXLFQ046',19,'JLBI147263BGWAJ616',219,885.00,'afternoon',25,'2020-10-26'),
 	 ('PWQC723981UZGJM631',20,'OJIZ978358KIJUZ831',220,743.00,'afternoon',12,'2020-03-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QNUK289842DPDWH747',1,'SVEH792817IXZNS296',221,197.00,'afternoon',27,'2020-08-17'),
 	 ('IAFH391763ERLVC876',2,'YYAK114191QRGSQ479',222,583.00,'afternoon',6,'2020-09-03'),
@@ -3899,6 +4256,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SPHX112917BZPUE510',8,'FDDV831749NPFJV070',228,767.00,'morning',7,'2020-08-13'),
 	 ('UFGQ844943SOJFY896',9,'AJBR420040UGFWC279',229,641.00,'afternoon',1,'2020-09-01'),
 	 ('GPOQ915271JNHEW976',10,'SINX083707KNTAN145',230,215.00,'afternoon',24,'2020-10-10');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EPWH355488VULEK908',11,'AOZT552976FIWIC262',231,730.00,'afternoon',23,'2020-07-04'),
 	 ('VYSG210975TOZIW556',12,'EFGM013588ALNTP479',232,562.00,'morning',20,'2020-10-27'),
@@ -3910,6 +4268,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SQBH424121VONPY587',18,'TNCX742553PHGKQ464',238,985.00,'afternoon',8,'2020-11-08'),
 	 ('MAUW962317XYVUN322',19,'OOPV533321OORYL050',239,68.00,'afternoon',6,'2020-06-09'),
 	 ('PPCE201086CLLYE095',20,'MGGG663531IOHBH419',240,140.00,'morning',14,'2020-05-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('IQGE132443QMLIB177',1,'RKWT706451XAKSH115',241,587.00,'afternoon',2,'2020-03-18'),
 	 ('MVDT493135UMKXM341',2,'AXPG959687DEDUQ830',242,132.00,'morning',14,'2020-10-18'),
@@ -3921,6 +4280,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FJXE715147GIUIM279',8,'VVHS510714TVBDO577',248,825.00,'afternoon',3,'2020-08-06'),
 	 ('GPOQ915271JNHEW976',9,'OVRB315616SIZNJ722',249,956.00,'afternoon',27,'2020-12-20'),
 	 ('XVNG046979LUQUW195',10,'JHBK113760LESTJ126',250,67.00,'morning',12,'2020-06-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FWLS008186DPOIE216',11,'HBLM604600WTCJI606',251,89.00,'afternoon',6,'2020-09-12'),
 	 ('GUOV180737SKAXD411',12,'WQVH961260NTIXJ879',252,500.00,'afternoon',11,'2020-08-14'),
@@ -3932,6 +4292,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('YLRM193173RKFRZ687',18,'LBAP135358ZVJGQ043',258,46.00,'afternoon',19,'2020-11-23'),
 	 ('FDEQ391539AXLFQ046',19,'UTEA769140VWWMP914',259,809.00,'afternoon',14,'2020-03-28'),
 	 ('QLRU650097PUCGU438',20,'LPAT265613PWQMX163',260,664.00,'morning',26,'2020-01-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EGUW411750KQVBO408',1,'SAVC287336KLRZK723',261,542.00,'afternoon',15,'2020-06-11'),
 	 ('QMFY066636NIRXD478',2,'DWAN778894TRPJD293',262,895.00,'morning',8,'2020-03-07'),
@@ -3943,6 +4304,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('HYUE449110YTTBD831',8,'ADKH648770DMYRK246',268,140.00,'morning',28,'2020-05-07'),
 	 ('KZNQ525843OQQVL697',9,'XECN551132PWIGH960',269,601.00,'afternoon',14,'2020-05-08'),
 	 ('MMBW200843BMIIS491',10,'PVFC556841JXAVU289',270,238.00,'morning',8,'2020-09-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SUJX828788MWLJK413',11,'OELD082185GXDNQ861',271,175.00,'afternoon',7,'2020-09-18'),
 	 ('XQCR524111TGUWW840',12,'PFKF271336XPCYA822',272,194.00,'afternoon',11,'2020-05-05'),
@@ -3954,6 +4316,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FWLS008186DPOIE216',18,'FXXD650593PMXZN605',278,566.00,'afternoon',18,'2020-08-13'),
 	 ('PNIC318017GFIDD203',19,'JLBI147263BGWAJ616',279,364.00,'morning',25,'2020-11-24'),
 	 ('IPCU869971CMFCE357',20,'OJIZ978358KIJUZ831',280,266.00,'morning',12,'2020-03-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FIDI724571NFFQH767',1,'SVEH792817IXZNS296',281,954.00,'morning',27,'2020-01-24'),
 	 ('NZQY342992FHJGI446',2,'YYAK114191QRGSQ479',282,664.00,'afternoon',6,'2020-12-26'),
@@ -3965,6 +4328,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WYDZ861005ZKQNR907',8,'FDDV831749NPFJV070',288,258.00,'morning',7,'2020-06-12'),
 	 ('THID197141IHASI431',9,'AJBR420040UGFWC279',289,740.00,'morning',1,'2020-08-09'),
 	 ('AYYN274903QZMQG873',10,'SINX083707KNTAN145',290,487.00,'morning',24,'2021-01-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FPSF200330WZQCO173',11,'AOZT552976FIWIC262',291,228.00,'morning',23,'2020-01-19'),
 	 ('MMBW200843BMIIS491',12,'EFGM013588ALNTP479',292,585.00,'afternoon',20,'2021-01-13'),
@@ -3976,6 +4340,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('YTZI468566MJLOJ631',18,'TNCX742553PHGKQ464',298,533.00,'afternoon',8,'2020-03-20'),
 	 ('OMMF689584PDXWH882',19,'OOPV533321OORYL050',299,205.00,'morning',6,'2020-05-08'),
 	 ('IPCU869971CMFCE357',20,'MGGG663531IOHBH419',300,41.00,'afternoon',14,'2020-09-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UDHM207974HMIYS691',1,'RKWT706451XAKSH115',301,473.00,'morning',2,'2020-07-29'),
 	 ('SUJX828788MWLJK413',2,'AXPG959687DEDUQ830',302,37.00,'afternoon',14,'2020-12-24'),
@@ -3987,6 +4352,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UBJP393429MLGIU233',8,'VVHS510714TVBDO577',308,444.00,'morning',3,'2020-05-14'),
 	 ('RRDU131778UFWRS846',9,'OVRB315616SIZNJ722',309,929.00,'morning',27,'2020-02-08'),
 	 ('IRFZ115509ZSFQA219',10,'JHBK113760LESTJ126',310,391.00,'afternoon',12,'2020-07-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CNTY451162IAJDB945',11,'HBLM604600WTCJI606',311,964.00,'afternoon',6,'2020-08-28'),
 	 ('UDHM207974HMIYS691',12,'WQVH961260NTIXJ879',312,767.00,'morning',11,'2021-01-01'),
@@ -3998,6 +4364,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('OLNS005231NPQZD507',18,'LBAP135358ZVJGQ043',318,748.00,'morning',19,'2020-10-17'),
 	 ('WPIU694096ADQIR938',19,'UTEA769140VWWMP914',319,893.00,'morning',14,'2020-09-03'),
 	 ('RNCY695353XEAFI076',20,'LPAT265613PWQMX163',320,846.00,'afternoon',26,'2020-01-28');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZYGN737820KDAAY151',1,'SAVC287336KLRZK723',321,731.00,'afternoon',15,'2020-05-02'),
 	 ('AYYN274903QZMQG873',2,'DWAN778894TRPJD293',322,462.00,'afternoon',8,'2020-10-23'),
@@ -4009,6 +4376,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('JRPE099516DZMHH095',8,'ADKH648770DMYRK246',328,736.00,'afternoon',28,'2021-01-05'),
 	 ('NHKV520999LGJVA620',9,'XECN551132PWIGH960',329,940.00,'morning',14,'2020-04-04'),
 	 ('RRDU131778UFWRS846',10,'PVFC556841JXAVU289',330,496.00,'morning',8,'2020-04-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LPIB168590PNILG461',11,'OELD082185GXDNQ861',331,359.00,'morning',7,'2020-12-25'),
 	 ('TDXR252209JUULV972',12,'PFKF271336XPCYA822',332,322.00,'afternoon',11,'2020-05-15'),
@@ -4020,6 +4388,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',18,'FXXD650593PMXZN605',338,769.00,'afternoon',18,'2020-03-23'),
 	 ('SPHX112917BZPUE510',19,'JLBI147263BGWAJ616',339,841.00,'afternoon',25,'2020-08-22'),
 	 ('DVCT675993QJQAY584',20,'OJIZ978358KIJUZ831',340,480.00,'morning',12,'2020-07-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QLOR127774QUYGQ297',1,'SVEH792817IXZNS296',341,882.00,'morning',27,'2021-01-15'),
 	 ('NUQP081951VBSVI183',2,'YYAK114191QRGSQ479',342,643.00,'morning',6,'2020-07-18'),
@@ -4031,6 +4400,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QNUK289842DPDWH747',8,'FDDV831749NPFJV070',348,124.00,'morning',7,'2020-04-21'),
 	 ('OMMF689584PDXWH882',9,'AJBR420040UGFWC279',349,668.00,'morning',1,'2020-08-31'),
 	 ('PWQC723981UZGJM631',10,'SINX083707KNTAN145',350,509.00,'afternoon',24,'2020-09-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RZNG985528EVKQW862',11,'AOZT552976FIWIC262',351,102.00,'afternoon',23,'2020-09-14'),
 	 ('MMBW200843BMIIS491',12,'EFGM013588ALNTP479',352,219.00,'morning',20,'2020-08-19'),
@@ -4042,6 +4412,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RCFS684369ZFMCJ417',18,'TNCX742553PHGKQ464',358,126.00,'morning',8,'2020-09-01'),
 	 ('IQGE132443QMLIB177',19,'OOPV533321OORYL050',359,756.00,'morning',6,'2020-07-17'),
 	 ('GVZY496946TGFJQ162',20,'MGGG663531IOHBH419',360,764.00,'morning',14,'2020-09-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('KVQP293494BPVZG915',1,'RKWT706451XAKSH115',361,858.00,'afternoon',2,'2020-02-02'),
 	 ('JRFE892151UIDIF947',2,'AXPG959687DEDUQ830',362,163.00,'morning',14,'2020-07-03'),
@@ -4053,6 +4424,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NCZF578639HKGJN166',8,'VVHS510714TVBDO577',368,294.00,'afternoon',3,'2020-05-05'),
 	 ('GPUZ783784IWGKZ593',9,'OVRB315616SIZNJ722',369,350.00,'afternoon',27,'2020-06-22'),
 	 ('THID197141IHASI431',10,'JHBK113760LESTJ126',370,854.00,'morning',12,'2020-09-12');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QKXC841656ALYVF084',11,'HBLM604600WTCJI606',371,914.00,'morning',6,'2020-06-21'),
 	 ('QMFY066636NIRXD478',12,'WQVH961260NTIXJ879',372,860.00,'morning',11,'2020-06-04'),
@@ -4064,6 +4436,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GAIF899720ANPLC839',18,'LBAP135358ZVJGQ043',378,686.00,'morning',19,'2020-12-20'),
 	 ('ZVTB907829KIBMC577',19,'UTEA769140VWWMP914',379,94.00,'afternoon',14,'2020-09-19'),
 	 ('THID197141IHASI431',20,'LPAT265613PWQMX163',380,872.00,'morning',26,'2021-01-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZJEK122711GNJWT693',1,'SAVC287336KLRZK723',381,814.00,'morning',15,'2020-11-24'),
 	 ('RYIC779163GCFWE725',2,'DWAN778894TRPJD293',382,305.00,'morning',8,'2021-01-12'),
@@ -4075,6 +4448,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ALZD451505QCAUW905',8,'ADKH648770DMYRK246',388,378.00,'afternoon',28,'2020-02-14'),
 	 ('MAXH583236HTZFK762',9,'XECN551132PWIGH960',389,904.00,'morning',14,'2020-06-04'),
 	 ('UFGU916462JFKOF388',10,'PVFC556841JXAVU289',390,548.00,'afternoon',8,'2020-04-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('YKWX590179RQEDQ643',11,'OELD082185GXDNQ861',391,197.00,'morning',7,'2020-09-21'),
 	 ('TJBW007678XHCJG640',12,'PFKF271336XPCYA822',392,547.00,'morning',11,'2020-01-18'),
@@ -4086,6 +4460,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('INRG434043EEUMD115',18,'FXXD650593PMXZN605',398,940.00,'morning',18,'2020-08-29'),
 	 ('GPUZ783784IWGKZ593',19,'JLBI147263BGWAJ616',399,558.00,'afternoon',25,'2020-11-10'),
 	 ('LILQ949243SNALO426',20,'OJIZ978358KIJUZ831',400,728.00,'afternoon',12,'2020-05-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XVNG046979LUQUW195',1,'SVEH792817IXZNS296',401,613.00,'morning',27,'2020-11-09'),
 	 ('FJXE715147GIUIM279',2,'YYAK114191QRGSQ479',402,722.00,'afternoon',6,'2020-01-30'),
@@ -4097,6 +4472,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RXNX715545JAWJV589',8,'FDDV831749NPFJV070',408,221.00,'morning',7,'2020-10-30'),
 	 ('GVZY496946TGFJQ162',9,'AJBR420040UGFWC279',409,256.00,'morning',1,'2020-07-10'),
 	 ('FJXE715147GIUIM279',10,'SINX083707KNTAN145',410,705.00,'morning',24,'2020-05-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TRGB490333ZNPIR671',11,'AOZT552976FIWIC262',411,979.00,'afternoon',23,'2020-06-18'),
 	 ('GECA899501FYNLU891',12,'EFGM013588ALNTP479',412,825.00,'morning',20,'2020-12-17'),
@@ -4108,6 +4484,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MMBW200843BMIIS491',18,'TNCX742553PHGKQ464',418,638.00,'morning',8,'2020-08-08'),
 	 ('GBJV059580IWWRC253',19,'OOPV533321OORYL050',419,205.00,'morning',6,'2020-06-26'),
 	 ('FDEQ391539AXLFQ046',20,'MGGG663531IOHBH419',420,97.00,'afternoon',14,'2020-09-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PQZH407351LWBPV372',1,'RKWT706451XAKSH115',421,960.00,'morning',2,'2020-08-27'),
 	 ('IPCU869971CMFCE357',2,'AXPG959687DEDUQ830',422,598.00,'afternoon',14,'2020-03-25'),
@@ -4119,6 +4496,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('YJKX121341BMFCS407',8,'VVHS510714TVBDO577',428,848.00,'morning',3,'2020-06-19'),
 	 ('XVNG046979LUQUW195',9,'OVRB315616SIZNJ722',429,285.00,'morning',27,'2020-09-24'),
 	 ('NWOA646536BXTTQ655',10,'JHBK113760LESTJ126',430,81.00,'morning',12,'2020-10-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CTZB666543OWKSU419',11,'HBLM604600WTCJI606',431,966.00,'afternoon',6,'2020-11-07'),
 	 ('KVQP293494BPVZG915',12,'WQVH961260NTIXJ879',432,920.00,'morning',11,'2020-03-16'),
@@ -4130,6 +4508,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GECA899501FYNLU891',18,'LBAP135358ZVJGQ043',438,349.00,'morning',19,'2020-01-21'),
 	 ('GBJV059580IWWRC253',19,'UTEA769140VWWMP914',439,506.00,'afternoon',14,'2020-06-30'),
 	 ('WDHB070139BKNFH352',20,'LPAT265613PWQMX163',440,755.00,'morning',26,'2020-08-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZJEK122711GNJWT693',1,'SAVC287336KLRZK723',441,76.00,'afternoon',15,'2020-09-05'),
 	 ('SZGC126326DRFYY897',2,'DWAN778894TRPJD293',442,453.00,'afternoon',8,'2020-02-01'),
@@ -4141,6 +4520,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LXBX073548DUJJJ562',8,'ADKH648770DMYRK246',448,628.00,'afternoon',28,'2020-11-05'),
 	 ('RCFS684369ZFMCJ417',9,'XECN551132PWIGH960',449,243.00,'morning',14,'2020-06-26'),
 	 ('RDRI070525WYTYU015',10,'PVFC556841JXAVU289',450,306.00,'morning',8,'2020-12-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XWEJ943539HVJCI341',11,'OELD082185GXDNQ861',451,278.00,'morning',7,'2020-07-04'),
 	 ('JRFE892151UIDIF947',12,'PFKF271336XPCYA822',452,765.00,'morning',11,'2020-04-09'),
@@ -4152,6 +4532,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TMDX842355QXQUA049',18,'FXXD650593PMXZN605',458,943.00,'morning',18,'2020-03-26'),
 	 ('XDWA067573RUIYC500',19,'JLBI147263BGWAJ616',459,46.00,'morning',25,'2021-01-02'),
 	 ('RCFS684369ZFMCJ417',20,'OJIZ978358KIJUZ831',460,253.00,'morning',12,'2020-10-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('KPKT809508QGOGW781',1,'SVEH792817IXZNS296',461,974.00,'morning',27,'2020-11-15'),
 	 ('MAXH583236HTZFK762',2,'YYAK114191QRGSQ479',462,757.00,'afternoon',6,'2020-08-07'),
@@ -4163,6 +4544,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GWUQ565806CLFYJ359',8,'FDDV831749NPFJV070',468,176.00,'afternoon',7,'2020-01-24'),
 	 ('PPDZ564674JYNPN890',9,'AJBR420040UGFWC279',469,652.00,'morning',1,'2020-04-24'),
 	 ('GUOV180737SKAXD411',10,'SINX083707KNTAN145',470,454.00,'morning',24,'2020-09-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('HYUE449110YTTBD831',11,'AOZT552976FIWIC262',471,843.00,'morning',23,'2020-05-24'),
 	 ('TDXR252209JUULV972',12,'EFGM013588ALNTP479',472,614.00,'morning',20,'2020-08-14'),
@@ -4174,6 +4556,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GPOQ915271JNHEW976',18,'TNCX742553PHGKQ464',478,208.00,'afternoon',8,'2021-01-04'),
 	 ('ICCP643953DNLDA729',19,'OOPV533321OORYL050',479,937.00,'afternoon',6,'2020-09-30'),
 	 ('FIDI724571NFFQH767',20,'MGGG663531IOHBH419',480,279.00,'morning',14,'2020-06-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('THID197141IHASI431',1,'RKWT706451XAKSH115',481,310.00,'afternoon',2,'2020-03-07'),
 	 ('DVCT675993QJQAY584',2,'AXPG959687DEDUQ830',482,931.00,'afternoon',14,'2020-08-21'),
@@ -4185,6 +4568,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('OLNS005231NPQZD507',8,'VVHS510714TVBDO577',488,887.00,'morning',3,'2020-12-09'),
 	 ('WIEO574018SHYXC918',9,'OVRB315616SIZNJ722',489,170.00,'morning',27,'2020-05-25'),
 	 ('FWLS008186DPOIE216',10,'JHBK113760LESTJ126',490,527.00,'afternoon',12,'2021-01-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XGZZ840242PXKJP043',11,'HBLM604600WTCJI606',491,466.00,'morning',6,'2020-01-27'),
 	 ('PNIC318017GFIDD203',12,'WQVH961260NTIXJ879',492,375.00,'morning',11,'2020-08-06'),
@@ -4196,6 +4580,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NOAO658913CFYTM989',18,'LBAP135358ZVJGQ043',498,485.00,'morning',19,'2020-02-28'),
 	 ('IPCU869971CMFCE357',19,'UTEA769140VWWMP914',499,530.00,'morning',14,'2020-06-09'),
 	 ('JYIA143185JPEHU146',20,'LPAT265613PWQMX163',500,651.00,'morning',26,'2020-02-12');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDWA067573RUIYC500',1,'SAVC287336KLRZK723',501,432.00,'morning',15,'2020-03-24'),
 	 ('KTPU069372DUAGI194',2,'DWAN778894TRPJD293',502,693.00,'afternoon',8,'2020-01-17'),
@@ -4207,6 +4592,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RDRI070525WYTYU015',8,'ADKH648770DMYRK246',508,1000.00,'afternoon',28,'2020-09-16'),
 	 ('ALZD451505QCAUW905',9,'XECN551132PWIGH960',509,770.00,'morning',14,'2020-12-23'),
 	 ('RBYB804202IMGSE319',10,'PVFC556841JXAVU289',510,263.00,'morning',8,'2020-10-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TJBW007678XHCJG640',11,'OELD082185GXDNQ861',511,402.00,'afternoon',7,'2020-10-18'),
 	 ('MAXH583236HTZFK762',12,'PFKF271336XPCYA822',512,36.00,'morning',11,'2020-10-16'),
@@ -4218,6 +4604,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('AYYN274903QZMQG873',18,'FXXD650593PMXZN605',518,239.00,'afternoon',18,'2020-09-06'),
 	 ('PWQC723981UZGJM631',19,'JLBI147263BGWAJ616',519,68.00,'afternoon',25,'2020-10-02'),
 	 ('LKQU721130RIBDQ626',20,'OJIZ978358KIJUZ831',520,439.00,'afternoon',12,'2020-09-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GCBW848066OZOTU929',1,'SVEH792817IXZNS296',521,829.00,'afternoon',27,'2020-04-16'),
 	 ('MKKV313054HGUNK458',2,'YYAK114191QRGSQ479',522,334.00,'morning',6,'2020-10-23'),
@@ -4229,6 +4616,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LILQ949243SNALO426',8,'FDDV831749NPFJV070',528,981.00,'afternoon',7,'2020-05-01'),
 	 ('FGGG096831TYFKX253',9,'AJBR420040UGFWC279',529,266.00,'afternoon',1,'2021-01-01'),
 	 ('JYIA143185JPEHU146',10,'SINX083707KNTAN145',530,363.00,'afternoon',24,'2020-04-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZXA483328GTOMZ299',11,'AOZT552976FIWIC262',531,671.00,'morning',23,'2020-03-09'),
 	 ('JRUP134651VAJOO553',12,'EFGM013588ALNTP479',532,260.00,'morning',20,'2020-08-19'),
@@ -4240,6 +4628,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',18,'TNCX742553PHGKQ464',538,489.00,'afternoon',8,'2020-10-14'),
 	 ('GPOQ915271JNHEW976',19,'OOPV533321OORYL050',539,301.00,'morning',6,'2020-08-28'),
 	 ('QNUK289842DPDWH747',20,'MGGG663531IOHBH419',540,568.00,'morning',14,'2020-07-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('OMMF689584PDXWH882',1,'RKWT706451XAKSH115',541,151.00,'afternoon',2,'2020-11-19'),
 	 ('KPKT809508QGOGW781',2,'AXPG959687DEDUQ830',542,101.00,'morning',14,'2020-09-18'),
@@ -4251,6 +4640,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('IAFH391763ERLVC876',8,'VVHS510714TVBDO577',548,323.00,'afternoon',3,'2020-04-12'),
 	 ('FWLS008186DPOIE216',9,'OVRB315616SIZNJ722',549,749.00,'afternoon',27,'2020-02-06'),
 	 ('FWLS008186DPOIE216',10,'JHBK113760LESTJ126',550,597.00,'afternoon',12,'2020-03-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EPWH355488VULEK908',11,'HBLM604600WTCJI606',551,981.00,'afternoon',6,'2020-03-28'),
 	 ('LXBX073548DUJJJ562',12,'WQVH961260NTIXJ879',552,59.00,'afternoon',11,'2020-08-24'),
@@ -4262,6 +4652,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('OSZX707963DJUQB784',18,'LBAP135358ZVJGQ043',558,956.00,'afternoon',19,'2021-01-06'),
 	 ('TZXA483328GTOMZ299',19,'UTEA769140VWWMP914',559,843.00,'afternoon',14,'2020-04-01'),
 	 ('XNNO439081NVLCX577',20,'LPAT265613PWQMX163',560,165.00,'afternoon',26,'2020-04-01');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PWQJ847465OWTWJ452',1,'SAVC287336KLRZK723',561,261.00,'afternoon',15,'2020-05-17'),
 	 ('KRPR146960ANWEU346',2,'DWAN778894TRPJD293',562,196.00,'morning',8,'2021-01-12'),
@@ -4273,6 +4664,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SUJX828788MWLJK413',8,'ADKH648770DMYRK246',568,232.00,'morning',28,'2020-01-29'),
 	 ('MAUW962317XYVUN322',9,'XECN551132PWIGH960',569,155.00,'afternoon',14,'2020-03-26'),
 	 ('JYIA143185JPEHU146',10,'PVFC556841JXAVU289',570,447.00,'morning',8,'2020-06-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EPWH355488VULEK908',11,'OELD082185GXDNQ861',571,140.00,'morning',7,'2020-05-29'),
 	 ('HYUE449110YTTBD831',12,'PFKF271336XPCYA822',572,644.00,'morning',11,'2020-07-03'),
@@ -4284,6 +4676,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WLSN875984CVGYV103',18,'FXXD650593PMXZN605',578,590.00,'afternoon',18,'2020-06-22'),
 	 ('QNUK289842DPDWH747',19,'JLBI147263BGWAJ616',579,313.00,'afternoon',25,'2020-10-10'),
 	 ('VONI968783NFCZK958',20,'OJIZ978358KIJUZ831',580,227.00,'morning',12,'2021-01-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('VONI968783NFCZK958',1,'SVEH792817IXZNS296',581,728.00,'morning',27,'2020-05-10'),
 	 ('TUJP980174JJQPC844',2,'YYAK114191QRGSQ479',582,19.00,'afternoon',6,'2020-04-26'),
@@ -4295,6 +4688,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WIAT295109LODKE332',8,'FDDV831749NPFJV070',588,646.00,'afternoon',7,'2020-12-11'),
 	 ('QLRU650097PUCGU438',9,'AJBR420040UGFWC279',589,626.00,'morning',1,'2020-01-21'),
 	 ('YTZI468566MJLOJ631',10,'SINX083707KNTAN145',590,564.00,'morning',24,'2020-07-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LILQ949243SNALO426',11,'AOZT552976FIWIC262',591,164.00,'morning',23,'2020-05-08'),
 	 ('TZXA483328GTOMZ299',12,'EFGM013588ALNTP479',592,722.00,'afternoon',20,'2020-07-04'),
@@ -4306,6 +4700,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ORXQ229520VVXJV296',18,'TNCX742553PHGKQ464',598,88.00,'morning',8,'2020-02-16'),
 	 ('CNTY451162IAJDB945',19,'OOPV533321OORYL050',599,430.00,'morning',6,'2020-12-18'),
 	 ('KUBF081246CWDHN836',20,'MGGG663531IOHBH419',600,183.00,'afternoon',14,'2020-10-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('MLCY685738QHYCJ012',1,'RKWT706451XAKSH115',601,456.00,'morning',2,'2020-04-08'),
 	 ('HMJN123070JSPPS879',2,'AXPG959687DEDUQ830',602,565.00,'afternoon',14,'2021-01-13'),
@@ -4317,6 +4712,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('VYSG210975TOZIW556',8,'VVHS510714TVBDO577',608,567.00,'morning',3,'2020-05-20'),
 	 ('WYDZ861005ZKQNR907',9,'OVRB315616SIZNJ722',609,725.00,'afternoon',27,'2020-02-24'),
 	 ('RRDU131778UFWRS846',10,'JHBK113760LESTJ126',610,152.00,'afternoon',12,'2020-05-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UWWT517856MYOQM938',11,'HBLM604600WTCJI606',611,1000.00,'morning',6,'2020-03-04'),
 	 ('FHLM564991JSUPM979',12,'WQVH961260NTIXJ879',612,121.00,'afternoon',11,'2020-07-29'),
@@ -4328,6 +4724,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FPSF200330WZQCO173',18,'LBAP135358ZVJGQ043',618,716.00,'afternoon',19,'2020-04-13'),
 	 ('EGUW411750KQVBO408',19,'UTEA769140VWWMP914',619,262.00,'afternoon',14,'2020-01-18'),
 	 ('NDAV589408YESKF026',20,'LPAT265613PWQMX163',620,789.00,'afternoon',26,'2020-09-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PPDZ564674JYNPN890',1,'SAVC287336KLRZK723',621,46.00,'afternoon',15,'2020-08-14'),
 	 ('CVHE466926IUUSP551',2,'DWAN778894TRPJD293',622,804.00,'afternoon',8,'2020-04-29'),
@@ -4339,6 +4736,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MLCY685738QHYCJ012',8,'ADKH648770DMYRK246',628,197.00,'morning',28,'2020-03-05'),
 	 ('JRUP134651VAJOO553',9,'XECN551132PWIGH960',629,546.00,'afternoon',14,'2020-10-30'),
 	 ('EGVO458057YOIQY349',10,'PVFC556841JXAVU289',630,323.00,'morning',8,'2020-08-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDMI694229HVTNL886',11,'OELD082185GXDNQ861',631,456.00,'afternoon',7,'2020-01-18'),
 	 ('WUXB047617ZYNYW273',12,'PFKF271336XPCYA822',632,300.00,'morning',11,'2020-07-18'),
@@ -4350,6 +4748,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('DQJA698495NRPJU751',18,'FXXD650593PMXZN605',638,747.00,'afternoon',18,'2020-11-27'),
 	 ('WPIU694096ADQIR938',19,'JLBI147263BGWAJ616',639,546.00,'morning',25,'2020-03-12'),
 	 ('IRFZ115509ZSFQA219',20,'OJIZ978358KIJUZ831',640,57.00,'afternoon',12,'2020-05-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('IQGE132443QMLIB177',1,'SVEH792817IXZNS296',641,163.00,'afternoon',27,'2020-03-26'),
 	 ('WLSN875984CVGYV103',2,'YYAK114191QRGSQ479',642,704.00,'afternoon',6,'2020-11-23'),
@@ -4361,6 +4760,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('OSZX707963DJUQB784',8,'FDDV831749NPFJV070',648,37.00,'morning',7,'2020-07-07'),
 	 ('RCFS684369ZFMCJ417',9,'AJBR420040UGFWC279',649,88.00,'afternoon',1,'2020-12-20'),
 	 ('ASSD875008RRPEH551',10,'SINX083707KNTAN145',650,636.00,'morning',24,'2020-03-24');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UCXS474325LJRLB564',11,'AOZT552976FIWIC262',651,228.00,'afternoon',23,'2020-10-21'),
 	 ('JRUP134651VAJOO553',12,'EFGM013588ALNTP479',652,770.00,'afternoon',20,'2020-09-29'),
@@ -4372,6 +4772,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PQZH407351LWBPV372',18,'TNCX742553PHGKQ464',658,457.00,'morning',8,'2020-07-21'),
 	 ('CIEL679995BZLDV074',19,'OOPV533321OORYL050',659,68.00,'afternoon',6,'2020-06-16'),
 	 ('FPSF200330WZQCO173',20,'MGGG663531IOHBH419',660,339.00,'morning',14,'2020-07-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DVCT675993QJQAY584',1,'RKWT706451XAKSH115',661,909.00,'afternoon',2,'2020-03-24'),
 	 ('ICCP643953DNLDA729',2,'AXPG959687DEDUQ830',662,610.00,'afternoon',14,'2020-01-29'),
@@ -4383,6 +4784,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('HYUE449110YTTBD831',8,'VVHS510714TVBDO577',668,835.00,'morning',3,'2020-12-18'),
 	 ('YKWX590179RQEDQ643',9,'OVRB315616SIZNJ722',669,961.00,'afternoon',27,'2020-04-30'),
 	 ('NWOA646536BXTTQ655',10,'JHBK113760LESTJ126',670,805.00,'morning',12,'2020-08-23');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('HBMQ866414ETRPW751',11,'HBLM604600WTCJI606',671,913.00,'morning',6,'2020-04-05'),
 	 ('GPUZ783784IWGKZ593',12,'WQVH961260NTIXJ879',672,312.00,'morning',11,'2020-08-24'),
@@ -4394,6 +4796,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WYDZ861005ZKQNR907',18,'LBAP135358ZVJGQ043',678,649.00,'morning',19,'2020-10-10'),
 	 ('ZKMZ129368BPSGS538',19,'UTEA769140VWWMP914',679,263.00,'afternoon',14,'2020-06-01'),
 	 ('IRFZ115509ZSFQA219',20,'LPAT265613PWQMX163',680,949.00,'morning',26,'2020-07-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DOEU282752ZRSGS407',1,'SAVC287336KLRZK723',681,377.00,'morning',15,'2020-10-01'),
 	 ('RBYB804202IMGSE319',2,'DWAN778894TRPJD293',682,100.00,'morning',8,'2020-05-08'),
@@ -4405,6 +4808,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',8,'ADKH648770DMYRK246',688,503.00,'morning',28,'2020-05-20'),
 	 ('PNIC318017GFIDD203',9,'XECN551132PWIGH960',689,179.00,'afternoon',14,'2020-12-03'),
 	 ('UWWT517856MYOQM938',10,'PVFC556841JXAVU289',690,171.00,'morning',8,'2020-09-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DZGZ715642GBWRN893',11,'OELD082185GXDNQ861',691,699.00,'afternoon',7,'2020-03-22'),
 	 ('OMMF689584PDXWH882',12,'PFKF271336XPCYA822',692,280.00,'afternoon',11,'2020-02-24'),
@@ -4416,6 +4820,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LPIB168590PNILG461',18,'FXXD650593PMXZN605',698,499.00,'afternoon',18,'2020-05-19'),
 	 ('JRPE099516DZMHH095',19,'JLBI147263BGWAJ616',699,190.00,'morning',25,'2020-01-23'),
 	 ('WUXB047617ZYNYW273',20,'OJIZ978358KIJUZ831',700,795.00,'morning',12,'2020-06-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LWJC330097YAGXA481',1,'SVEH792817IXZNS296',701,312.00,'morning',27,'2020-07-26'),
 	 ('GPUZ783784IWGKZ593',2,'YYAK114191QRGSQ479',702,107.00,'morning',6,'2020-02-04'),
@@ -4427,6 +4832,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TRGB490333ZNPIR671',8,'FDDV831749NPFJV070',708,980.00,'morning',7,'2020-04-09'),
 	 ('ZCTK251288PRSTL369',9,'AJBR420040UGFWC279',709,611.00,'afternoon',1,'2020-08-17'),
 	 ('VONI968783NFCZK958',10,'SINX083707KNTAN145',710,984.00,'afternoon',24,'2020-12-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TDXR252209JUULV972',11,'AOZT552976FIWIC262',711,496.00,'afternoon',23,'2020-05-19'),
 	 ('WPPF325651EMBIL706',12,'EFGM013588ALNTP479',712,377.00,'afternoon',20,'2020-11-07'),
@@ -4438,6 +4844,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('AWIX634888IIMAD870',18,'TNCX742553PHGKQ464',718,720.00,'morning',8,'2020-06-16'),
 	 ('ZCTK251288PRSTL369',19,'OOPV533321OORYL050',719,617.00,'afternoon',6,'2020-02-13'),
 	 ('LILQ949243SNALO426',20,'MGGG663531IOHBH419',720,53.00,'afternoon',14,'2020-09-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FHLM564991JSUPM979',1,'RKWT706451XAKSH115',721,595.00,'afternoon',2,'2020-03-13'),
 	 ('NDAV589408YESKF026',2,'AXPG959687DEDUQ830',722,35.00,'morning',14,'2020-07-15'),
@@ -4449,6 +4856,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XDWA067573RUIYC500',8,'VVHS510714TVBDO577',728,835.00,'morning',3,'2020-02-17'),
 	 ('AWIX634888IIMAD870',9,'OVRB315616SIZNJ722',729,625.00,'afternoon',27,'2020-09-06'),
 	 ('MAXH583236HTZFK762',10,'JHBK113760LESTJ126',730,758.00,'morning',12,'2020-06-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('EZWU488164CDIZT962',11,'HBLM604600WTCJI606',731,299.00,'afternoon',6,'2020-04-08'),
 	 ('WUXB047617ZYNYW273',12,'WQVH961260NTIXJ879',732,496.00,'morning',11,'2020-09-29'),
@@ -4460,6 +4868,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NHKV520999LGJVA620',18,'LBAP135358ZVJGQ043',738,703.00,'morning',19,'2020-11-23'),
 	 ('TMDX842355QXQUA049',19,'UTEA769140VWWMP914',739,478.00,'afternoon',14,'2020-04-11'),
 	 ('VYSG210975TOZIW556',20,'LPAT265613PWQMX163',740,371.00,'morning',26,'2020-05-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CTZB666543OWKSU419',1,'SAVC287336KLRZK723',741,797.00,'morning',15,'2020-09-10'),
 	 ('CNTY451162IAJDB945',2,'DWAN778894TRPJD293',742,606.00,'morning',8,'2020-02-10'),
@@ -4471,6 +4880,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LXBX073548DUJJJ562',8,'ADKH648770DMYRK246',748,951.00,'afternoon',28,'2020-11-05'),
 	 ('LILQ949243SNALO426',9,'XECN551132PWIGH960',749,320.00,'afternoon',14,'2020-12-15'),
 	 ('BUER697369DVSIS960',10,'PVFC556841JXAVU289',750,506.00,'morning',8,'2020-12-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('OSZX707963DJUQB784',11,'OELD082185GXDNQ861',751,97.00,'afternoon',7,'2020-12-20'),
 	 ('TRGB490333ZNPIR671',12,'PFKF271336XPCYA822',752,169.00,'afternoon',11,'2020-09-17'),
@@ -4482,6 +4892,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NUQP081951VBSVI183',18,'FXXD650593PMXZN605',758,437.00,'afternoon',18,'2020-02-07'),
 	 ('YTZI468566MJLOJ631',19,'JLBI147263BGWAJ616',759,90.00,'afternoon',25,'2020-05-12'),
 	 ('UJYP457105HAPSF034',20,'OJIZ978358KIJUZ831',760,570.00,'morning',12,'2020-07-01');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GVZY496946TGFJQ162',1,'SVEH792817IXZNS296',761,218.00,'afternoon',27,'2020-05-02'),
 	 ('MAUW962317XYVUN322',2,'YYAK114191QRGSQ479',762,896.00,'morning',6,'2020-11-26'),
@@ -4493,6 +4904,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LXBX073548DUJJJ562',8,'FDDV831749NPFJV070',768,887.00,'afternoon',7,'2021-01-01'),
 	 ('HYPS186576OIPPG548',9,'AJBR420040UGFWC279',769,585.00,'morning',1,'2020-12-18'),
 	 ('LILQ949243SNALO426',10,'SINX083707KNTAN145',770,583.00,'morning',24,'2020-04-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NOAO658913CFYTM989',11,'AOZT552976FIWIC262',771,663.00,'afternoon',23,'2020-05-05'),
 	 ('VONI968783NFCZK958',12,'EFGM013588ALNTP479',772,276.00,'afternoon',20,'2020-12-01'),
@@ -4504,6 +4916,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LODE137458ENNWG632',18,'TNCX742553PHGKQ464',778,719.00,'morning',8,'2020-05-25'),
 	 ('NZQY342992FHJGI446',19,'OOPV533321OORYL050',779,52.00,'afternoon',6,'2021-01-14'),
 	 ('XDWA067573RUIYC500',20,'MGGG663531IOHBH419',780,948.00,'afternoon',14,'2020-11-23');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RZNG985528EVKQW862',1,'RKWT706451XAKSH115',781,320.00,'morning',2,'2020-05-29'),
 	 ('AYYN274903QZMQG873',2,'AXPG959687DEDUQ830',782,228.00,'afternoon',14,'2020-10-11'),
@@ -4515,6 +4928,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GAIF899720ANPLC839',8,'VVHS510714TVBDO577',788,57.00,'afternoon',3,'2020-06-11'),
 	 ('OUSO079533MNOZW475',9,'OVRB315616SIZNJ722',789,483.00,'morning',27,'2020-08-14'),
 	 ('WDHB070139BKNFH352',10,'JHBK113760LESTJ126',790,580.00,'morning',12,'2020-05-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TDXR252209JUULV972',11,'HBLM604600WTCJI606',791,471.00,'afternoon',6,'2020-10-14'),
 	 ('ITCK986469YNFDN078',12,'WQVH961260NTIXJ879',792,937.00,'morning',11,'2020-08-03'),
@@ -4526,6 +4940,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PDSP053301ZYTKE401',18,'LBAP135358ZVJGQ043',798,468.00,'morning',19,'2020-07-18'),
 	 ('XQCR524111TGUWW840',19,'UTEA769140VWWMP914',799,237.00,'afternoon',14,'2020-06-04'),
 	 ('MJYZ573026TIOVB215',20,'LPAT265613PWQMX163',800,243.00,'afternoon',26,'2020-07-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('JEAW964376ENJRA467',1,'SAVC287336KLRZK723',801,579.00,'afternoon',15,'2020-02-29'),
 	 ('FFNR888342OYNUX513',2,'DWAN778894TRPJD293',802,788.00,'morning',8,'2020-04-01'),
@@ -4537,6 +4952,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PWQJ847465OWTWJ452',8,'ADKH648770DMYRK246',808,392.00,'morning',28,'2020-12-10'),
 	 ('RYIC779163GCFWE725',9,'XECN551132PWIGH960',809,506.00,'afternoon',14,'2020-10-31'),
 	 ('XNNO439081NVLCX577',10,'PVFC556841JXAVU289',810,367.00,'afternoon',8,'2020-03-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('MLCY685738QHYCJ012',11,'OELD082185GXDNQ861',811,983.00,'afternoon',7,'2020-08-29'),
 	 ('WYDZ861005ZKQNR907',12,'PFKF271336XPCYA822',812,397.00,'afternoon',11,'2020-09-17'),
@@ -4548,6 +4964,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WDHB070139BKNFH352',18,'FXXD650593PMXZN605',818,957.00,'morning',18,'2020-05-16'),
 	 ('NWOA646536BXTTQ655',19,'JLBI147263BGWAJ616',819,931.00,'morning',25,'2020-09-21'),
 	 ('TCDK018120LAPKX631',20,'OJIZ978358KIJUZ831',820,549.00,'afternoon',12,'2020-05-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('WIEO574018SHYXC918',1,'SVEH792817IXZNS296',821,17.00,'morning',27,'2020-08-04'),
 	 ('RVLK304169HPADE239',2,'YYAK114191QRGSQ479',822,45.00,'afternoon',6,'2020-11-26'),
@@ -4559,6 +4976,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('EZWU488164CDIZT962',8,'FDDV831749NPFJV070',828,956.00,'morning',7,'2021-01-02'),
 	 ('VONI968783NFCZK958',9,'AJBR420040UGFWC279',829,817.00,'afternoon',1,'2020-04-20'),
 	 ('FPSF200330WZQCO173',10,'SINX083707KNTAN145',830,325.00,'afternoon',24,'2020-07-10');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GPUZ783784IWGKZ593',11,'AOZT552976FIWIC262',831,756.00,'afternoon',23,'2020-08-03'),
 	 ('FGCM162053UQFTK428',12,'EFGM013588ALNTP479',832,243.00,'morning',20,'2020-10-08'),
@@ -4570,6 +4988,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QZFD656995ZXOXZ263',18,'TNCX742553PHGKQ464',838,171.00,'afternoon',8,'2020-12-16'),
 	 ('WYDZ861005ZKQNR907',19,'OOPV533321OORYL050',839,389.00,'afternoon',6,'2020-02-06'),
 	 ('LWJC330097YAGXA481',20,'MGGG663531IOHBH419',840,378.00,'afternoon',14,'2020-02-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XQCR524111TGUWW840',1,'RKWT706451XAKSH115',841,756.00,'afternoon',2,'2020-07-03'),
 	 ('CPLF659966JCBXD998',2,'AXPG959687DEDUQ830',842,587.00,'morning',14,'2020-12-17'),
@@ -4581,6 +5000,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PWQC723981UZGJM631',8,'VVHS510714TVBDO577',848,644.00,'afternoon',3,'2020-05-06'),
 	 ('TMDX842355QXQUA049',9,'OVRB315616SIZNJ722',849,810.00,'morning',27,'2020-04-08'),
 	 ('PWQJ847465OWTWJ452',10,'JHBK113760LESTJ126',850,850.00,'morning',12,'2020-02-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('MVDT493135UMKXM341',11,'HBLM604600WTCJI606',851,80.00,'morning',6,'2020-01-24'),
 	 ('YLRM193173RKFRZ687',12,'WQVH961260NTIXJ879',852,214.00,'afternoon',11,'2020-10-03'),
@@ -4592,6 +5012,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KPKT809508QGOGW781',18,'LBAP135358ZVJGQ043',858,500.00,'afternoon',19,'2020-02-08'),
 	 ('JRFE892151UIDIF947',19,'UTEA769140VWWMP914',859,786.00,'morning',14,'2020-08-01'),
 	 ('ZMMM522891UDCZY242',20,'LPAT265613PWQMX163',860,850.00,'afternoon',26,'2020-09-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GPOQ915271JNHEW976',1,'SAVC287336KLRZK723',861,894.00,'morning',15,'2020-10-11'),
 	 ('JEAW964376ENJRA467',2,'DWAN778894TRPJD293',862,316.00,'afternoon',8,'2020-09-24'),
@@ -4603,6 +5024,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('HYPS186576OIPPG548',8,'ADKH648770DMYRK246',868,568.00,'morning',28,'2020-11-23'),
 	 ('RDRI070525WYTYU015',9,'XECN551132PWIGH960',869,806.00,'afternoon',14,'2020-10-26'),
 	 ('FGGG096831TYFKX253',10,'PVFC556841JXAVU289',870,229.00,'afternoon',8,'2020-04-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DZGZ715642GBWRN893',11,'OELD082185GXDNQ861',871,857.00,'morning',7,'2020-04-03'),
 	 ('LWJC330097YAGXA481',12,'PFKF271336XPCYA822',872,188.00,'afternoon',11,'2020-08-30'),
@@ -4614,6 +5036,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZKMZ129368BPSGS538',18,'FXXD650593PMXZN605',878,21.00,'afternoon',18,'2020-09-04'),
 	 ('FDEQ391539AXLFQ046',19,'JLBI147263BGWAJ616',879,164.00,'afternoon',25,'2020-11-14'),
 	 ('LKQU721130RIBDQ626',20,'OJIZ978358KIJUZ831',880,815.00,'afternoon',12,'2020-11-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QZFD656995ZXOXZ263',1,'SVEH792817IXZNS296',881,980.00,'morning',27,'2020-03-26'),
 	 ('MAXH583236HTZFK762',2,'YYAK114191QRGSQ479',882,731.00,'afternoon',6,'2020-02-23'),
@@ -4625,6 +5048,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LWJC330097YAGXA481',8,'FDDV831749NPFJV070',888,308.00,'morning',7,'2020-03-19'),
 	 ('XGZZ840242PXKJP043',9,'AJBR420040UGFWC279',889,469.00,'morning',1,'2020-08-01'),
 	 ('KLCV047115DFQSY844',10,'SINX083707KNTAN145',890,140.00,'morning',24,'2020-10-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('OSZX707963DJUQB784',11,'AOZT552976FIWIC262',891,943.00,'afternoon',23,'2020-06-06'),
 	 ('BSNE659250DJVAD705',12,'EFGM013588ALNTP479',892,913.00,'morning',20,'2020-06-13'),
@@ -4636,6 +5060,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ASSD875008RRPEH551',18,'TNCX742553PHGKQ464',898,295.00,'afternoon',8,'2020-08-08'),
 	 ('OMMF689584PDXWH882',19,'OOPV533321OORYL050',899,764.00,'afternoon',6,'2020-05-21'),
 	 ('WPPF325651EMBIL706',20,'MGGG663531IOHBH419',900,290.00,'afternoon',14,'2020-06-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZPI412610QIQXG067',1,'RKWT706451XAKSH115',901,949.00,'afternoon',2,'2020-07-29'),
 	 ('ZYGN737820KDAAY151',2,'AXPG959687DEDUQ830',902,317.00,'afternoon',14,'2020-12-05'),
@@ -4647,6 +5072,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QMFY066636NIRXD478',8,'VVHS510714TVBDO577',908,103.00,'morning',3,'2020-04-30'),
 	 ('ASSD875008RRPEH551',9,'OVRB315616SIZNJ722',909,248.00,'morning',27,'2020-11-04'),
 	 ('BDVC567304SFXMC765',10,'JHBK113760LESTJ126',910,748.00,'morning',12,'2020-03-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FIDI724571NFFQH767',11,'HBLM604600WTCJI606',911,749.00,'morning',6,'2020-05-04'),
 	 ('THID197141IHASI431',12,'WQVH961260NTIXJ879',912,907.00,'afternoon',11,'2020-10-18'),
@@ -4658,6 +5084,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('OSZX707963DJUQB784',18,'LBAP135358ZVJGQ043',918,574.00,'morning',19,'2020-07-06'),
 	 ('TCDK018120LAPKX631',19,'UTEA769140VWWMP914',919,783.00,'morning',14,'2020-02-07'),
 	 ('SZGC126326DRFYY897',20,'LPAT265613PWQMX163',920,192.00,'afternoon',26,'2020-08-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LWJC330097YAGXA481',1,'SAVC287336KLRZK723',921,584.00,'morning',15,'2020-07-13'),
 	 ('XGZZ840242PXKJP043',2,'DWAN778894TRPJD293',922,166.00,'afternoon',8,'2020-02-18'),
@@ -4669,6 +5096,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('THID197141IHASI431',8,'ADKH648770DMYRK246',928,423.00,'afternoon',28,'2020-12-08'),
 	 ('ALZD451505QCAUW905',9,'XECN551132PWIGH960',929,630.00,'morning',14,'2020-12-21'),
 	 ('DVCT675993QJQAY584',10,'PVFC556841JXAVU289',930,515.00,'afternoon',8,'2020-12-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('JYIA143185JPEHU146',11,'OELD082185GXDNQ861',931,369.00,'afternoon',7,'2020-09-04'),
 	 ('QENE705706VUUKA587',12,'PFKF271336XPCYA822',932,403.00,'morning',11,'2020-09-06'),
@@ -4680,6 +5108,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PWQJ847465OWTWJ452',18,'FXXD650593PMXZN605',938,663.00,'afternoon',18,'2020-06-23'),
 	 ('QNUK289842DPDWH747',19,'JLBI147263BGWAJ616',939,643.00,'afternoon',25,'2020-12-13'),
 	 ('YHVI842932QBNDF656',20,'OJIZ978358KIJUZ831',940,748.00,'afternoon',12,'2020-05-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PQZH407351LWBPV372',1,'SVEH792817IXZNS296',941,534.00,'afternoon',27,'2020-12-31'),
 	 ('PDSP053301ZYTKE401',2,'YYAK114191QRGSQ479',942,828.00,'morning',6,'2020-07-26'),
@@ -4691,6 +5120,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GPOQ915271JNHEW976',8,'FDDV831749NPFJV070',948,125.00,'afternoon',7,'2020-10-15'),
 	 ('PWQC723981UZGJM631',9,'AJBR420040UGFWC279',949,952.00,'afternoon',1,'2020-07-11'),
 	 ('CIEL679995BZLDV074',10,'SINX083707KNTAN145',950,49.00,'afternoon',24,'2020-05-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FHLM564991JSUPM979',11,'AOZT552976FIWIC262',951,305.00,'afternoon',23,'2020-04-07'),
 	 ('GPOQ915271JNHEW976',12,'EFGM013588ALNTP479',952,139.00,'afternoon',20,'2020-01-19'),
@@ -4702,6 +5132,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TCDK018120LAPKX631',18,'TNCX742553PHGKQ464',958,165.00,'morning',8,'2020-01-18'),
 	 ('FGCM162053UQFTK428',19,'OOPV533321OORYL050',959,209.00,'morning',6,'2020-03-28'),
 	 ('FFNR888342OYNUX513',20,'MGGG663531IOHBH419',960,635.00,'morning',14,'2020-05-16');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SQBH424121VONPY587',1,'RKWT706451XAKSH115',961,631.00,'afternoon',2,'2020-12-15'),
 	 ('RBWL495958WQMDU311',2,'AXPG959687DEDUQ830',962,298.00,'morning',14,'2020-04-08'),
@@ -4713,6 +5144,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',8,'VVHS510714TVBDO577',968,560.00,'morning',3,'2020-05-23'),
 	 ('XHTW272502XCACW904',9,'OVRB315616SIZNJ722',969,735.00,'morning',27,'2020-02-17'),
 	 ('XRSV916459OYQPZ830',10,'JHBK113760LESTJ126',970,304.00,'afternoon',12,'2021-01-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ICCP643953DNLDA729',11,'HBLM604600WTCJI606',971,567.00,'morning',6,'2020-10-08'),
 	 ('FKAV245497SGGWR520',12,'WQVH961260NTIXJ879',972,87.00,'afternoon',11,'2020-03-11'),
@@ -4724,6 +5156,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GULN484567FRHXC805',18,'LBAP135358ZVJGQ043',978,635.00,'morning',19,'2020-05-28'),
 	 ('JRPE099516DZMHH095',19,'UTEA769140VWWMP914',979,133.00,'afternoon',14,'2020-12-28'),
 	 ('HFPY897648AGYSO928',20,'LPAT265613PWQMX163',980,538.00,'morning',26,'2020-02-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TCDK018120LAPKX631',1,'SAVC287336KLRZK723',981,720.00,'morning',15,'2020-12-21'),
 	 ('NWOA646536BXTTQ655',2,'DWAN778894TRPJD293',982,359.00,'morning',8,'2020-08-26'),
@@ -4735,6 +5168,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NZQY342992FHJGI446',8,'ADKH648770DMYRK246',988,869.00,'afternoon',28,'2020-02-12'),
 	 ('KUBF081246CWDHN836',9,'XECN551132PWIGH960',989,810.00,'afternoon',14,'2020-03-08'),
 	 ('FGGG096831TYFKX253',10,'PVFC556841JXAVU289',990,983.00,'morning',8,'2020-12-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UBJP393429MLGIU233',11,'OELD082185GXDNQ861',991,930.00,'afternoon',7,'2020-04-17'),
 	 ('UJYP457105HAPSF034',12,'PFKF271336XPCYA822',992,44.00,'morning',11,'2020-11-01'),
@@ -4746,6 +5180,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XQCR524111TGUWW840',18,'FXXD650593PMXZN605',998,755.00,'morning',18,'2020-10-25'),
 	 ('WPIU694096ADQIR938',19,'JLBI147263BGWAJ616',999,343.00,'morning',25,'2020-08-02'),
 	 ('XDOH174036DUPIZ990',20,'OJIZ978358KIJUZ831',1000,367.00,'morning',12,'2020-11-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FFNR888342OYNUX513',10,'PVFC556841JXAVU289',1,34.00,'morning',2,'2020-08-24'),
 	 ('TPZL536479AMEXU515',3,'RSVD601747IMRDU031',2,333.00,'afternoon',14,'2020-08-03'),
@@ -4757,6 +5192,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZCTK251288PRSTL369',15,'VINN331036LTBFR660',8,640.00,'afternoon',3,'2020-06-23'),
 	 ('ONBK154676KXVVV317',5,'NJPX477125JTDBL030',9,24.00,'morning',27,'2020-06-16'),
 	 ('ZVTB907829KIBMC577',8,'VVHS510714TVBDO577',10,819.00,'morning',12,'2020-10-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NCZF578639HKGJN166',8,'FDDV831749NPFJV070',11,30.00,'morning',6,'2020-03-23'),
 	 ('HBMQ866414ETRPW751',16,'QPOZ774594DLUSH427',12,829.00,'morning',11,'2020-04-23'),
@@ -4768,6 +5204,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XRSV916459OYQPZ830',18,'LBAP135358ZVJGQ043',18,215.00,'morning',19,'2021-01-14'),
 	 ('XDAX034790OVBFM656',7,'UCJI104807IUBZI552',19,64.00,'afternoon',14,'2020-01-25'),
 	 ('LODE137458ENNWG632',11,'OELD082185GXDNQ861',20,573.00,'morning',26,'2020-01-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TDXR252209JUULV972',13,'FYMD787703WAMEH778',21,223.00,'afternoon',15,'2020-01-18'),
 	 ('QMFY066636NIRXD478',12,'PFKF271336XPCYA822',22,62.00,'morning',8,'2020-12-05'),
@@ -4779,6 +5216,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MFJT719632JLXXF009',15,'VINN331036LTBFR660',28,35.00,'afternoon',28,'2020-04-09'),
 	 ('IAFH391763ERLVC876',9,'AJBR420040UGFWC279',29,46.00,'morning',14,'2020-10-07'),
 	 ('UWWT517856MYOQM938',9,'AJBR420040UGFWC279',30,687.00,'afternoon',8,'2020-07-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TJBW007678XHCJG640',18,'LBAP135358ZVJGQ043',31,870.00,'morning',7,'2020-12-26'),
 	 ('FFNR888342OYNUX513',3,'IJSS370132NVHSN751',32,97.00,'afternoon',11,'2020-12-14'),
@@ -4790,6 +5228,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RWXR156948XYLTS119',13,'FYMD787703WAMEH778',38,278.00,'morning',18,'2020-04-11'),
 	 ('WIEO574018SHYXC918',13,'ZMOQ813721IWKQY603',39,529.00,'morning',25,'2020-05-18'),
 	 ('RWXR156948XYLTS119',19,'UTEA769140VWWMP914',40,269.00,'morning',12,'2020-12-01');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UFGQ844943SOJFY896',18,'FXXD650593PMXZN605',41,562.00,'morning',27,'2020-02-25'),
 	 ('HFPY897648AGYSO928',10,'PVFC556841JXAVU289',42,867.00,'morning',6,'2020-02-04'),
@@ -4801,6 +5240,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SZGC126326DRFYY897',15,'UPAH076030NECCF487',48,940.00,'afternoon',7,'2020-03-23'),
 	 ('WPIU694096ADQIR938',2,'DWAN778894TRPJD293',49,18.00,'morning',1,'2020-05-02'),
 	 ('ZYGN737820KDAAY151',19,'UTEA769140VWWMP914',50,45.00,'morning',24,'2020-07-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QENE705706VUUKA587',19,'JLBI147263BGWAJ616',51,517.00,'afternoon',23,'2020-11-21'),
 	 ('KZNQ525843OQQVL697',5,'FDSA558260ZVLTS713',52,800.00,'morning',20,'2020-10-27'),
@@ -4812,6 +5252,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('DOEU282752ZRSGS407',11,'HBLM604600WTCJI606',58,147.00,'afternoon',8,'2020-03-13'),
 	 ('AWIX634888IIMAD870',8,'VVHS510714TVBDO577',59,17.00,'afternoon',6,'2020-02-12'),
 	 ('JRPE099516DZMHH095',5,'FDSA558260ZVLTS713',60,846.00,'afternoon',14,'2020-01-28');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PNJG931487MVQKD275',2,'DWAN778894TRPJD293',61,653.00,'afternoon',2,'2020-08-31'),
 	 ('INRG434043EEUMD115',7,'UCJI104807IUBZI552',62,261.00,'morning',14,'2020-06-24'),
@@ -4823,6 +5264,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZMMM522891UDCZY242',6,'FLWV678212SBGPV018',68,550.00,'morning',3,'2020-04-12'),
 	 ('GULN484567FRHXC805',7,'GAOK120360YFLTQ309',69,721.00,'morning',27,'2020-08-16'),
 	 ('SUJX828788MWLJK413',1,'SAVC287336KLRZK723',70,361.00,'morning',12,'2020-04-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PPBX435558UULMG097',20,'OJIZ978358KIJUZ831',71,844.00,'morning',6,'2020-04-30'),
 	 ('RWXR156948XYLTS119',4,'LWQU035344EDICN235',72,742.00,'afternoon',11,'2020-06-26'),
@@ -4834,6 +5276,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LILQ949243SNALO426',10,'JHBK113760LESTJ126',78,314.00,'morning',19,'2020-07-17'),
 	 ('MFJT719632JLXXF009',1,'RKWT706451XAKSH115',79,110.00,'afternoon',14,'2020-05-09'),
 	 ('QHEK252831JZWHD861',19,'UTEA769140VWWMP914',80,631.00,'morning',26,'2020-09-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LXBX073548DUJJJ562',10,'JHBK113760LESTJ126',81,925.00,'afternoon',15,'2020-10-09'),
 	 ('KPMX389697HXQAW221',15,'JFXI938663JQPYD414',82,774.00,'afternoon',8,'2020-09-15'),
@@ -4845,6 +5288,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('THID197141IHASI431',12,'EFGM013588ALNTP479',88,434.00,'afternoon',28,'2020-08-19'),
 	 ('MLCY685738QHYCJ012',10,'PVFC556841JXAVU289',89,758.00,'afternoon',14,'2020-11-03'),
 	 ('NZQY342992FHJGI446',20,'LPAT265613PWQMX163',90,680.00,'afternoon',8,'2020-11-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SQBH424121VONPY587',1,'RKWT706451XAKSH115',91,706.00,'afternoon',7,'2020-06-26'),
 	 ('RNCY695353XEAFI076',12,'WQVH961260NTIXJ879',92,178.00,'afternoon',11,'2020-10-09'),
@@ -4856,6 +5300,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TPZL536479AMEXU515',16,'NEPT613248TSSJT590',98,383.00,'morning',18,'2020-05-17'),
 	 ('JKRY819039MSYWC692',1,'SVEH792817IXZNS296',99,688.00,'afternoon',25,'2020-11-19'),
 	 ('XWEJ943539HVJCI341',6,'FLWV678212SBGPV018',100,245.00,'afternoon',12,'2020-02-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ICCP643953DNLDA729',6,'XWTJ508144GWZPH605',101,952.00,'morning',27,'2020-02-16'),
 	 ('LPIB168590PNILG461',11,'HBLM604600WTCJI606',102,426.00,'morning',6,'2020-07-23'),
@@ -4867,6 +5312,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('CTZB666543OWKSU419',7,'UCJI104807IUBZI552',108,915.00,'afternoon',7,'2020-01-30'),
 	 ('INRG434043EEUMD115',4,'JNMM074531DFBFG157',109,709.00,'afternoon',1,'2020-05-06'),
 	 ('GWUQ565806CLFYJ359',11,'AOZT552976FIWIC262',110,947.00,'afternoon',24,'2020-08-23');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NDIP509196IIEVA618',5,'FDSA558260ZVLTS713',111,444.00,'afternoon',23,'2020-02-24'),
 	 ('RRDU131778UFWRS846',14,'SYPP600671BOPKA349',112,59.00,'morning',20,'2020-10-07'),
@@ -4878,6 +5324,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MLCY685738QHYCJ012',1,'SVEH792817IXZNS296',118,683.00,'afternoon',8,'2020-12-11'),
 	 ('SQBH424121VONPY587',15,'VINN331036LTBFR660',119,793.00,'afternoon',6,'2020-01-27'),
 	 ('EPWH355488VULEK908',6,'IPSL070793ISNYI017',120,76.00,'morning',14,'2020-12-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('YTZI468566MJLOJ631',18,'TNCX742553PHGKQ464',121,584.00,'morning',2,'2020-02-26'),
 	 ('RXFR202472SXNRK680',20,'OJIZ978358KIJUZ831',122,640.00,'morning',14,'2020-09-18'),
@@ -4889,6 +5336,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PQZH407351LWBPV372',7,'UCJI104807IUBZI552',128,706.00,'morning',3,'2020-06-26'),
 	 ('ITCK986469YNFDN078',2,'AXPG959687DEDUQ830',129,233.00,'afternoon',27,'2020-10-13'),
 	 ('MJYZ573026TIOVB215',2,'AXPG959687DEDUQ830',130,616.00,'afternoon',12,'2020-09-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RXNX715545JAWJV589',5,'NJPX477125JTDBL030',131,803.00,'afternoon',6,'2020-06-27'),
 	 ('SZGC126326DRFYY897',18,'FXXD650593PMXZN605',132,373.00,'morning',11,'2020-10-24'),
@@ -4900,6 +5348,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SPHX112917BZPUE510',7,'MTSL356752WNBAQ714',138,85.00,'morning',19,'2020-10-03'),
 	 ('RYIC779163GCFWE725',2,'YYAK114191QRGSQ479',139,350.00,'morning',14,'2020-04-15'),
 	 ('NHKV520999LGJVA620',4,'JNMM074531DFBFG157',140,909.00,'afternoon',26,'2020-06-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UWWT517856MYOQM938',20,'LPAT265613PWQMX163',141,523.00,'morning',15,'2020-02-27'),
 	 ('XVNG046979LUQUW195',15,'JFXI938663JQPYD414',142,892.00,'afternoon',8,'2020-06-25'),
@@ -4911,6 +5360,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UFGQ844943SOJFY896',11,'AOZT552976FIWIC262',148,874.00,'afternoon',28,'2020-02-18'),
 	 ('JRPE099516DZMHH095',12,'PFKF271336XPCYA822',149,550.00,'afternoon',14,'2020-11-04'),
 	 ('BDVC567304SFXMC765',13,'ZMOQ813721IWKQY603',150,373.00,'afternoon',8,'2020-10-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZPI412610QIQXG067',19,'UTEA769140VWWMP914',151,269.00,'afternoon',7,'2020-12-10'),
 	 ('VZLV524892CBIJN392',13,'FYMD787703WAMEH778',152,930.00,'morning',11,'2020-07-04'),
@@ -4922,6 +5372,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FGGG096831TYFKX253',10,'SINX083707KNTAN145',158,868.00,'afternoon',18,'2020-12-11'),
 	 ('BSNE659250DJVAD705',20,'MGGG663531IOHBH419',159,353.00,'afternoon',25,'2021-01-09'),
 	 ('KRPR146960ANWEU346',11,'AOZT552976FIWIC262',160,330.00,'afternoon',12,'2020-06-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDMI694229HVTNL886',20,'LPAT265613PWQMX163',161,967.00,'morning',27,'2020-11-14'),
 	 ('OSZX707963DJUQB784',5,'DVJM681323DUPJQ608',162,267.00,'afternoon',6,'2020-04-29'),
@@ -4933,6 +5384,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('EPWH355488VULEK908',2,'DWAN778894TRPJD293',168,811.00,'morning',7,'2020-05-13'),
 	 ('BSNE659250DJVAD705',15,'UPAH076030NECCF487',169,215.00,'morning',1,'2020-02-10'),
 	 ('FFNR888342OYNUX513',4,'JNMM074531DFBFG157',170,178.00,'afternoon',24,'2020-06-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QZFD656995ZXOXZ263',8,'FDDV831749NPFJV070',171,356.00,'morning',23,'2020-09-22'),
 	 ('SZGC126326DRFYY897',17,'ZGOM793916SALAG489',172,325.00,'morning',20,'2020-03-17'),
@@ -4944,6 +5396,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('EGUW411750KQVBO408',16,'QPOZ774594DLUSH427',178,377.00,'morning',8,'2020-07-05'),
 	 ('QNUK289842DPDWH747',3,'IJSS370132NVHSN751',179,80.00,'morning',6,'2021-01-12'),
 	 ('MAUW962317XYVUN322',7,'MTSL356752WNBAQ714',180,928.00,'morning',14,'2020-07-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QQID662744VPPYJ126',10,'JHBK113760LESTJ126',181,851.00,'afternoon',2,'2020-05-15'),
 	 ('MLCY685738QHYCJ012',14,'SYPP600671BOPKA349',182,595.00,'afternoon',14,'2020-05-28'),
@@ -4955,6 +5408,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PDSP053301ZYTKE401',7,'MTSL356752WNBAQ714',188,522.00,'afternoon',3,'2020-08-07'),
 	 ('ZMMM522891UDCZY242',5,'DVJM681323DUPJQ608',189,466.00,'afternoon',27,'2020-07-07'),
 	 ('FIDI724571NFFQH767',12,'WQVH961260NTIXJ879',190,763.00,'morning',12,'2020-04-28');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PWQC723981UZGJM631',6,'XWTJ508144GWZPH605',191,182.00,'morning',6,'2020-11-02'),
 	 ('QQID662744VPPYJ126',9,'AJBR420040UGFWC279',192,586.00,'afternoon',11,'2020-11-12'),
@@ -4966,6 +5420,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('HEYY015757TQZPP031',4,'JNMM074531DFBFG157',198,627.00,'morning',19,'2020-05-11'),
 	 ('DOEU282752ZRSGS407',19,'UTEA769140VWWMP914',199,471.00,'afternoon',14,'2020-07-09'),
 	 ('TXNL585923XJKOF698',13,'TTDP798536TBIAW919',200,602.00,'afternoon',26,'2020-05-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PDLC191363NNEVX617',19,'UTEA769140VWWMP914',201,881.00,'morning',15,'2020-05-18'),
 	 ('WPIU694096ADQIR938',6,'XWTJ508144GWZPH605',202,773.00,'afternoon',8,'2020-09-19'),
@@ -4977,6 +5432,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KJBV411414YWLJI794',13,'TTDP798536TBIAW919',208,183.00,'morning',28,'2020-11-20'),
 	 ('ZYNG123535ZPWII526',11,'OELD082185GXDNQ861',209,438.00,'morning',14,'2020-02-05'),
 	 ('ZVTB907829KIBMC577',17,'ROOM363874GHVGO243',210,115.00,'morning',8,'2020-01-24');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GAIF899720ANPLC839',11,'AOZT552976FIWIC262',211,359.00,'morning',7,'2020-11-12'),
 	 ('EPWH355488VULEK908',9,'AJBR420040UGFWC279',212,637.00,'afternoon',11,'2020-07-27'),
@@ -4988,6 +5444,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KVQP293494BPVZG915',12,'WQVH961260NTIXJ879',218,525.00,'afternoon',18,'2020-10-16'),
 	 ('MFJT719632JLXXF009',20,'LPAT265613PWQMX163',219,676.00,'morning',25,'2020-10-26'),
 	 ('DOEU282752ZRSGS407',1,'SAVC287336KLRZK723',220,377.00,'morning',12,'2020-02-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDWA067573RUIYC500',12,'EFGM013588ALNTP479',221,189.00,'afternoon',27,'2020-05-13'),
 	 ('GPOQ915271JNHEW976',18,'TNCX742553PHGKQ464',222,181.00,'morning',6,'2020-09-30'),
@@ -4999,6 +5456,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LODE137458ENNWG632',19,'OOPV533321OORYL050',228,213.00,'morning',7,'2020-02-09'),
 	 ('QNUK289842DPDWH747',19,'UTEA769140VWWMP914',229,956.00,'afternoon',1,'2020-07-16'),
 	 ('PPBX435558UULMG097',13,'TTDP798536TBIAW919',230,934.00,'afternoon',24,'2020-07-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TJBW007678XHCJG640',1,'SAVC287336KLRZK723',231,48.00,'morning',23,'2020-03-30'),
 	 ('THID197141IHASI431',11,'HBLM604600WTCJI606',232,400.00,'afternoon',20,'2020-04-16'),
@@ -5010,6 +5468,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZVTB907829KIBMC577',9,'OVRB315616SIZNJ722',238,919.00,'afternoon',8,'2020-06-21'),
 	 ('MJYZ573026TIOVB215',9,'XECN551132PWIGH960',239,979.00,'afternoon',6,'2020-07-05'),
 	 ('BUER697369DVSIS960',15,'JFXI938663JQPYD414',240,57.00,'afternoon',14,'2020-10-17');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FGGG096831TYFKX253',18,'TNCX742553PHGKQ464',241,662.00,'afternoon',2,'2020-07-27'),
 	 ('XDOH174036DUPIZ990',4,'GNLF895633AGYZY724',242,363.00,'afternoon',14,'2020-09-27'),
@@ -5021,6 +5480,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FGGG096831TYFKX253',13,'ZMOQ813721IWKQY603',248,785.00,'morning',3,'2020-04-11'),
 	 ('WDPL532201OTFBZ436',6,'FLWV678212SBGPV018',249,40.00,'morning',27,'2020-09-27'),
 	 ('ASSD875008RRPEH551',3,'RSVD601747IMRDU031',250,193.00,'morning',12,'2020-06-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FDEQ391539AXLFQ046',11,'AOZT552976FIWIC262',251,989.00,'morning',6,'2020-12-24'),
 	 ('RRDU131778UFWRS846',13,'FYMD787703WAMEH778',252,25.00,'afternoon',11,'2020-05-07'),
@@ -5032,6 +5492,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('BSNE659250DJVAD705',17,'ROOM363874GHVGO243',258,269.00,'afternoon',19,'2020-08-28'),
 	 ('AWIX634888IIMAD870',17,'ZGOM793916SALAG489',259,484.00,'morning',14,'2021-01-15'),
 	 ('PDLC191363NNEVX617',14,'YUGN160774WUZSP685',260,355.00,'morning',26,'2020-05-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ONBK154676KXVVV317',14,'YUGN160774WUZSP685',261,207.00,'morning',15,'2020-07-23'),
 	 ('ASSD875008RRPEH551',14,'YUGN160774WUZSP685',262,822.00,'morning',8,'2020-06-17'),
@@ -5043,6 +5504,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XHTW272502XCACW904',3,'RSVD601747IMRDU031',268,597.00,'afternoon',28,'2020-01-18'),
 	 ('ZMMM522891UDCZY242',6,'FLWV678212SBGPV018',269,193.00,'morning',14,'2020-08-29'),
 	 ('BDRS917078DPTGO621',13,'FYMD787703WAMEH778',270,657.00,'afternoon',8,'2020-01-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZMMM522891UDCZY242',20,'LPAT265613PWQMX163',271,664.00,'afternoon',7,'2020-08-27'),
 	 ('GUOV180737SKAXD411',19,'JLBI147263BGWAJ616',272,24.00,'morning',11,'2020-02-02'),
@@ -5054,6 +5516,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NDIP509196IIEVA618',12,'WQVH961260NTIXJ879',278,233.00,'morning',18,'2021-01-11'),
 	 ('JYIA143185JPEHU146',10,'PVFC556841JXAVU289',279,37.00,'afternoon',25,'2020-11-10'),
 	 ('JRFE892151UIDIF947',4,'LWQU035344EDICN235',280,152.00,'afternoon',12,'2020-06-01');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FFNR888342OYNUX513',1,'RKWT706451XAKSH115',281,148.00,'morning',27,'2020-07-25'),
 	 ('RVLK304169HPADE239',19,'OOPV533321OORYL050',282,99.00,'afternoon',6,'2020-04-12'),
@@ -5065,6 +5528,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('BDRS917078DPTGO621',5,'NJPX477125JTDBL030',288,503.00,'morning',7,'2020-03-17'),
 	 ('MMBW200843BMIIS491',9,'AJBR420040UGFWC279',289,588.00,'afternoon',1,'2020-02-10'),
 	 ('MKKV313054HGUNK458',9,'AJBR420040UGFWC279',290,785.00,'afternoon',24,'2020-12-18');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QHEK252831JZWHD861',11,'HBLM604600WTCJI606',291,238.00,'afternoon',23,'2020-05-27'),
 	 ('QQID662744VPPYJ126',7,'UCJI104807IUBZI552',292,693.00,'morning',20,'2020-11-07'),
@@ -5076,6 +5540,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',2,'YYAK114191QRGSQ479',298,94.00,'morning',8,'2020-09-11'),
 	 ('XWEJ943539HVJCI341',19,'JLBI147263BGWAJ616',299,236.00,'morning',6,'2020-07-10'),
 	 ('XFJS846746CTTOV882',9,'OVRB315616SIZNJ722',300,773.00,'afternoon',14,'2020-09-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZPI412610QIQXG067',8,'ADKH648770DMYRK246',301,707.00,'morning',2,'2020-06-24'),
 	 ('YKWX590179RQEDQ643',12,'PFKF271336XPCYA822',302,898.00,'afternoon',14,'2020-06-08'),
@@ -5087,6 +5552,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NDIP509196IIEVA618',10,'JHBK113760LESTJ126',308,186.00,'morning',3,'2020-05-13'),
 	 ('CPLF659966JCBXD998',1,'RKWT706451XAKSH115',309,988.00,'morning',27,'2020-10-08'),
 	 ('UFGU916462JFKOF388',11,'OELD082185GXDNQ861',310,800.00,'afternoon',12,'2020-05-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('OLNS005231NPQZD507',5,'DVJM681323DUPJQ608',311,295.00,'afternoon',6,'2020-12-20'),
 	 ('ITCK986469YNFDN078',1,'SVEH792817IXZNS296',312,238.00,'afternoon',11,'2020-08-23'),
@@ -5098,6 +5564,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ICCP643953DNLDA729',8,'ADKH648770DMYRK246',318,880.00,'morning',19,'2020-02-24'),
 	 ('TZPI412610QIQXG067',15,'UPAH076030NECCF487',319,525.00,'morning',14,'2020-03-26'),
 	 ('JGYK142695IRTQL912',6,'XWTJ508144GWZPH605',320,479.00,'morning',26,'2020-11-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('JKRY819039MSYWC692',20,'MGGG663531IOHBH419',321,90.00,'morning',15,'2020-09-13'),
 	 ('TXNL585923XJKOF698',17,'ZGOM793916SALAG489',322,898.00,'morning',8,'2020-04-27'),
@@ -5109,6 +5576,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KJBV411414YWLJI794',16,'NEPT613248TSSJT590',328,675.00,'morning',28,'2020-05-25'),
 	 ('IAFH391763ERLVC876',19,'UTEA769140VWWMP914',329,556.00,'morning',14,'2020-08-01'),
 	 ('TZXA483328GTOMZ299',13,'FYMD787703WAMEH778',330,120.00,'afternoon',8,'2020-09-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NDIP509196IIEVA618',12,'EFGM013588ALNTP479',331,146.00,'afternoon',7,'2020-11-24'),
 	 ('RBYB804202IMGSE319',10,'PVFC556841JXAVU289',332,479.00,'afternoon',11,'2020-07-08'),
@@ -5120,6 +5588,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PQZH407351LWBPV372',15,'UPAH076030NECCF487',338,158.00,'afternoon',18,'2020-03-01'),
 	 ('NDAV589408YESKF026',2,'AXPG959687DEDUQ830',339,799.00,'morning',25,'2020-08-23'),
 	 ('AYYN274903QZMQG873',15,'VINN331036LTBFR660',340,894.00,'afternoon',12,'2020-04-21');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PNJG931487MVQKD275',10,'JHBK113760LESTJ126',341,907.00,'morning',27,'2020-08-14'),
 	 ('IQGE132443QMLIB177',10,'SINX083707KNTAN145',342,556.00,'afternoon',6,'2020-05-26'),
@@ -5131,6 +5600,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QZFD656995ZXOXZ263',7,'MTSL356752WNBAQ714',348,431.00,'morning',7,'2020-11-20'),
 	 ('GUOV180737SKAXD411',7,'MTSL356752WNBAQ714',349,239.00,'afternoon',1,'2020-02-16'),
 	 ('ALZD451505QCAUW905',11,'AOZT552976FIWIC262',350,583.00,'afternoon',24,'2020-09-21');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('HMJN123070JSPPS879',9,'OVRB315616SIZNJ722',351,481.00,'afternoon',23,'2020-08-11'),
 	 ('BDRS917078DPTGO621',3,'MDAF941802GXWGQ075',352,426.00,'afternoon',20,'2020-11-10'),
@@ -5142,6 +5612,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PNJG931487MVQKD275',12,'WQVH961260NTIXJ879',358,360.00,'morning',8,'2020-05-22'),
 	 ('FIDI724571NFFQH767',3,'MDAF941802GXWGQ075',359,270.00,'morning',6,'2020-07-04'),
 	 ('WLSN875984CVGYV103',6,'FLWV678212SBGPV018',360,506.00,'afternoon',14,'2020-03-16');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('MVDT493135UMKXM341',5,'FDSA558260ZVLTS713',361,754.00,'afternoon',2,'2020-10-28'),
 	 ('ZMMM522891UDCZY242',19,'OOPV533321OORYL050',362,579.00,'morning',14,'2020-05-02'),
@@ -5153,6 +5624,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KLCV047115DFQSY844',14,'LKUA657518NFZBO603',368,871.00,'afternoon',3,'2020-03-15'),
 	 ('CTZB666543OWKSU419',4,'JNMM074531DFBFG157',369,486.00,'afternoon',27,'2020-12-25'),
 	 ('VONI968783NFCZK958',20,'LPAT265613PWQMX163',370,100.00,'morning',12,'2020-03-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NCBF011554FUFFR129',17,'ROOM363874GHVGO243',371,593.00,'afternoon',6,'2020-06-25'),
 	 ('XDAX034790OVBFM656',15,'JFXI938663JQPYD414',372,280.00,'morning',11,'2020-07-07'),
@@ -5164,6 +5636,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TCHR657366CUYSO955',13,'FYMD787703WAMEH778',378,978.00,'morning',19,'2020-10-17'),
 	 ('JYIA143185JPEHU146',19,'OOPV533321OORYL050',379,192.00,'afternoon',14,'2020-12-25'),
 	 ('UCXS474325LJRLB564',11,'OELD082185GXDNQ861',380,850.00,'afternoon',26,'2020-04-30');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('OSZX707963DJUQB784',5,'NJPX477125JTDBL030',381,69.00,'morning',15,'2020-04-21'),
 	 ('QKXC841656ALYVF084',9,'AJBR420040UGFWC279',382,863.00,'morning',8,'2020-02-12'),
@@ -5175,6 +5648,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WUXB047617ZYNYW273',13,'TTDP798536TBIAW919',388,238.00,'morning',28,'2020-04-20'),
 	 ('ASSD875008RRPEH551',9,'XECN551132PWIGH960',389,683.00,'morning',14,'2020-06-15'),
 	 ('NDIP509196IIEVA618',13,'TTDP798536TBIAW919',390,443.00,'morning',8,'2020-08-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('WIAT295109LODKE332',1,'SAVC287336KLRZK723',391,23.00,'afternoon',7,'2020-01-19'),
 	 ('KPMX389697HXQAW221',3,'IJSS370132NVHSN751',392,455.00,'afternoon',11,'2020-03-29'),
@@ -5186,6 +5660,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GVZY496946TGFJQ162',6,'XWTJ508144GWZPH605',398,361.00,'afternoon',18,'2020-07-17'),
 	 ('ZJEK122711GNJWT693',2,'AXPG959687DEDUQ830',399,920.00,'morning',25,'2020-03-19'),
 	 ('NDAV589408YESKF026',12,'WQVH961260NTIXJ879',400,979.00,'afternoon',12,'2020-02-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TCHR657366CUYSO955',15,'VINN331036LTBFR660',401,350.00,'morning',27,'2020-10-29'),
 	 ('WPPF325651EMBIL706',19,'OOPV533321OORYL050',402,559.00,'afternoon',6,'2020-04-22'),
@@ -5197,6 +5672,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('QQID662744VPPYJ126',19,'JLBI147263BGWAJ616',408,434.00,'afternoon',7,'2020-12-30'),
 	 ('MAXH583236HTZFK762',8,'ADKH648770DMYRK246',409,319.00,'afternoon',1,'2020-07-13'),
 	 ('IAFH391763ERLVC876',20,'OJIZ978358KIJUZ831',410,655.00,'morning',24,'2020-04-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NOAO658913CFYTM989',16,'NEPT613248TSSJT590',411,877.00,'afternoon',23,'2020-07-06'),
 	 ('MAUW962317XYVUN322',18,'LBAP135358ZVJGQ043',412,718.00,'morning',20,'2020-11-30'),
@@ -5208,6 +5684,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FKAV245497SGGWR520',16,'NEPT613248TSSJT590',418,814.00,'afternoon',8,'2020-03-28'),
 	 ('GPOQ915271JNHEW976',1,'RKWT706451XAKSH115',419,52.00,'morning',6,'2020-07-30'),
 	 ('NZQY342992FHJGI446',13,'ZMOQ813721IWKQY603',420,488.00,'morning',14,'2020-03-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TPZL536479AMEXU515',2,'YYAK114191QRGSQ479',421,232.00,'afternoon',2,'2020-08-16'),
 	 ('WPPF325651EMBIL706',2,'AXPG959687DEDUQ830',422,680.00,'morning',14,'2020-02-19'),
@@ -5219,6 +5696,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RNCY695353XEAFI076',4,'GNLF895633AGYZY724',428,207.00,'morning',3,'2020-07-03'),
 	 ('GUOV180737SKAXD411',20,'OJIZ978358KIJUZ831',429,656.00,'afternoon',27,'2020-10-23'),
 	 ('WDPL532201OTFBZ436',4,'GNLF895633AGYZY724',430,852.00,'afternoon',12,'2020-10-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GPOQ915271JNHEW976',5,'NJPX477125JTDBL030',431,410.00,'afternoon',6,'2020-11-18'),
 	 ('XDWA067573RUIYC500',17,'NJZE385304NDCWM021',432,880.00,'morning',11,'2020-02-02'),
@@ -5230,6 +5708,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PDLC191363NNEVX617',19,'JLBI147263BGWAJ616',438,962.00,'morning',19,'2020-02-22'),
 	 ('RNCY695353XEAFI076',8,'ADKH648770DMYRK246',439,626.00,'morning',14,'2020-12-18'),
 	 ('NHKV520999LGJVA620',17,'ZGOM793916SALAG489',440,457.00,'afternoon',26,'2020-01-24');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDAX034790OVBFM656',16,'ZWZP336905CQTFZ205',441,851.00,'morning',15,'2020-05-11'),
 	 ('UBJP393429MLGIU233',4,'LWQU035344EDICN235',442,987.00,'morning',8,'2020-05-27'),
@@ -5241,6 +5720,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LWJC330097YAGXA481',7,'GAOK120360YFLTQ309',448,407.00,'morning',28,'2020-02-23'),
 	 ('QHEK252831JZWHD861',14,'LKUA657518NFZBO603',449,558.00,'afternoon',14,'2020-07-09'),
 	 ('UXXE003128HQITR816',12,'EFGM013588ALNTP479',450,190.00,'morning',8,'2020-10-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NWOA646536BXTTQ655',5,'NJPX477125JTDBL030',451,922.00,'afternoon',7,'2020-08-23'),
 	 ('TXNL585923XJKOF698',2,'YYAK114191QRGSQ479',452,674.00,'afternoon',11,'2020-04-10'),
@@ -5252,6 +5732,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('IRFZ115509ZSFQA219',13,'ZMOQ813721IWKQY603',458,855.00,'morning',18,'2020-06-08'),
 	 ('ZYNG123535ZPWII526',13,'ZMOQ813721IWKQY603',459,876.00,'afternoon',25,'2020-01-31'),
 	 ('PQZH407351LWBPV372',7,'GAOK120360YFLTQ309',460,246.00,'morning',12,'2020-02-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('XDMI694229HVTNL886',17,'NJZE385304NDCWM021',461,105.00,'morning',27,'2020-11-05'),
 	 ('UXXE003128HQITR816',8,'VVHS510714TVBDO577',462,838.00,'afternoon',6,'2020-03-10'),
@@ -5263,6 +5744,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('CIEL679995BZLDV074',19,'OOPV533321OORYL050',468,716.00,'morning',7,'2020-10-17'),
 	 ('GAIF899720ANPLC839',10,'PVFC556841JXAVU289',469,420.00,'morning',1,'2020-08-03'),
 	 ('PDLC191363NNEVX617',9,'XECN551132PWIGH960',470,428.00,'afternoon',24,'2021-01-11');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RNCY695353XEAFI076',2,'AXPG959687DEDUQ830',471,399.00,'afternoon',23,'2020-08-03'),
 	 ('LJYY941693XYXAN777',15,'JFXI938663JQPYD414',472,897.00,'afternoon',20,'2020-11-20'),
@@ -5274,6 +5756,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NDIP509196IIEVA618',12,'PFKF271336XPCYA822',478,673.00,'afternoon',8,'2020-11-27'),
 	 ('NDAV589408YESKF026',14,'SYPP600671BOPKA349',479,572.00,'afternoon',6,'2020-02-24'),
 	 ('DQJA698495NRPJU751',1,'RKWT706451XAKSH115',480,725.00,'afternoon',14,'2020-07-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QNUK289842DPDWH747',13,'TTDP798536TBIAW919',481,138.00,'morning',2,'2020-11-24'),
 	 ('AYYN274903QZMQG873',20,'LPAT265613PWQMX163',482,788.00,'morning',14,'2020-02-11'),
@@ -5285,6 +5768,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('AYYN274903QZMQG873',11,'AOZT552976FIWIC262',488,343.00,'afternoon',3,'2020-10-23'),
 	 ('EGVO458057YOIQY349',2,'DWAN778894TRPJD293',489,406.00,'morning',27,'2020-05-28'),
 	 ('WPIU694096ADQIR938',6,'FLWV678212SBGPV018',490,135.00,'afternoon',12,'2020-11-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('WPIU694096ADQIR938',12,'PFKF271336XPCYA822',491,739.00,'morning',6,'2020-04-25'),
 	 ('RBYB804202IMGSE319',3,'MDAF941802GXWGQ075',492,254.00,'morning',11,'2020-06-24'),
@@ -5296,6 +5780,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('VONI968783NFCZK958',16,'QPOZ774594DLUSH427',498,72.00,'afternoon',19,'2020-06-16'),
 	 ('EPWH355488VULEK908',6,'IPSL070793ISNYI017',499,984.00,'morning',14,'2020-04-04'),
 	 ('THID197141IHASI431',5,'NJPX477125JTDBL030',500,967.00,'afternoon',26,'2020-10-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ALZD451505QCAUW905',15,'VINN331036LTBFR660',501,602.00,'afternoon',15,'2020-05-27'),
 	 ('ASSD875008RRPEH551',12,'WQVH961260NTIXJ879',502,843.00,'afternoon',8,'2020-03-09'),
@@ -5307,6 +5792,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PPDZ564674JYNPN890',10,'PVFC556841JXAVU289',508,92.00,'afternoon',28,'2020-10-21'),
 	 ('QNUK289842DPDWH747',9,'OVRB315616SIZNJ722',509,357.00,'afternoon',14,'2020-04-25'),
 	 ('YHVI842932QBNDF656',6,'FLWV678212SBGPV018',510,667.00,'morning',8,'2020-05-23');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('BDRS917078DPTGO621',17,'ROOM363874GHVGO243',511,582.00,'morning',7,'2020-04-25'),
 	 ('XQCR524111TGUWW840',1,'RKWT706451XAKSH115',512,42.00,'afternoon',11,'2020-06-08'),
@@ -5318,6 +5804,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RWXR156948XYLTS119',1,'RKWT706451XAKSH115',518,961.00,'morning',18,'2020-02-27'),
 	 ('XGZZ840242PXKJP043',9,'OVRB315616SIZNJ722',519,460.00,'afternoon',25,'2020-08-14'),
 	 ('HYPS186576OIPPG548',17,'ROOM363874GHVGO243',520,477.00,'morning',12,'2020-05-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FHLM564991JSUPM979',2,'YYAK114191QRGSQ479',521,792.00,'afternoon',27,'2020-06-22'),
 	 ('HMJN123070JSPPS879',20,'LPAT265613PWQMX163',522,1000.00,'morning',6,'2020-07-01'),
@@ -5329,6 +5816,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LWJC330097YAGXA481',14,'LKUA657518NFZBO603',528,738.00,'afternoon',7,'2020-11-06'),
 	 ('BSNE659250DJVAD705',8,'FDDV831749NPFJV070',529,70.00,'afternoon',1,'2020-10-06'),
 	 ('JRPE099516DZMHH095',12,'WQVH961260NTIXJ879',530,704.00,'afternoon',24,'2020-04-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('IQGE132443QMLIB177',19,'JLBI147263BGWAJ616',531,579.00,'afternoon',23,'2020-03-22'),
 	 ('VONI968783NFCZK958',1,'RKWT706451XAKSH115',532,698.00,'morning',20,'2020-12-23'),
@@ -5340,6 +5828,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MVDT493135UMKXM341',11,'AOZT552976FIWIC262',538,564.00,'afternoon',8,'2020-05-31'),
 	 ('JKRY819039MSYWC692',12,'WQVH961260NTIXJ879',539,981.00,'morning',6,'2020-12-02'),
 	 ('XHTW272502XCACW904',16,'QPOZ774594DLUSH427',540,197.00,'morning',14,'2020-03-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DVCT675993QJQAY584',20,'LPAT265613PWQMX163',541,362.00,'afternoon',2,'2020-09-04'),
 	 ('QQID662744VPPYJ126',8,'ADKH648770DMYRK246',542,908.00,'morning',14,'2020-08-26'),
@@ -5351,6 +5840,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XDWA067573RUIYC500',19,'UTEA769140VWWMP914',548,58.00,'morning',3,'2020-11-19'),
 	 ('LKQU721130RIBDQ626',12,'PFKF271336XPCYA822',549,210.00,'afternoon',27,'2021-01-10'),
 	 ('TUJP980174JJQPC844',13,'FYMD787703WAMEH778',550,139.00,'afternoon',12,'2020-04-10');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DOEU282752ZRSGS407',9,'XECN551132PWIGH960',551,300.00,'morning',6,'2020-10-12'),
 	 ('QQID662744VPPYJ126',9,'AJBR420040UGFWC279',552,220.00,'morning',11,'2020-04-24'),
@@ -5362,6 +5852,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NUQP081951VBSVI183',15,'JFXI938663JQPYD414',558,862.00,'afternoon',19,'2020-04-02'),
 	 ('MAXH583236HTZFK762',13,'TTDP798536TBIAW919',559,732.00,'afternoon',14,'2020-06-21'),
 	 ('WIAT295109LODKE332',13,'TTDP798536TBIAW919',560,770.00,'morning',26,'2020-11-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PPCE201086CLLYE095',20,'MGGG663531IOHBH419',561,534.00,'afternoon',15,'2020-05-12'),
 	 ('GUOV180737SKAXD411',16,'QPOZ774594DLUSH427',562,530.00,'afternoon',8,'2020-04-29'),
@@ -5373,6 +5864,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GAIF899720ANPLC839',13,'TTDP798536TBIAW919',568,962.00,'afternoon',28,'2020-10-03'),
 	 ('AYYN274903QZMQG873',13,'ZMOQ813721IWKQY603',569,491.00,'afternoon',14,'2020-12-08'),
 	 ('LXBX073548DUJJJ562',2,'YYAK114191QRGSQ479',570,442.00,'morning',8,'2020-09-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZYNG123535ZPWII526',4,'LWQU035344EDICN235',571,483.00,'afternoon',7,'2020-06-11'),
 	 ('ORXQ229520VVXJV296',9,'OVRB315616SIZNJ722',572,402.00,'morning',11,'2020-06-16'),
@@ -5384,6 +5876,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('CVHE466926IUUSP551',10,'PVFC556841JXAVU289',578,574.00,'morning',18,'2020-06-24'),
 	 ('GULN484567FRHXC805',17,'ZGOM793916SALAG489',579,303.00,'morning',25,'2020-04-24'),
 	 ('ZYNG123535ZPWII526',14,'YUGN160774WUZSP685',580,662.00,'afternoon',12,'2020-04-02');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SPHX112917BZPUE510',3,'IJSS370132NVHSN751',581,628.00,'afternoon',27,'2020-04-17'),
 	 ('EPWH355488VULEK908',17,'NJZE385304NDCWM021',582,743.00,'morning',6,'2020-04-03'),
@@ -5395,6 +5888,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SUJX828788MWLJK413',10,'JHBK113760LESTJ126',588,671.00,'morning',7,'2020-05-17'),
 	 ('ZKMZ129368BPSGS538',8,'VVHS510714TVBDO577',589,249.00,'afternoon',1,'2020-03-25'),
 	 ('GULN484567FRHXC805',19,'UTEA769140VWWMP914',590,442.00,'morning',24,'2020-03-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('UCXS474325LJRLB564',16,'NEPT613248TSSJT590',591,433.00,'morning',23,'2020-09-09'),
 	 ('UCXS474325LJRLB564',6,'XWTJ508144GWZPH605',592,932.00,'afternoon',20,'2020-02-21'),
@@ -5406,6 +5900,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('JRUP134651VAJOO553',7,'UCJI104807IUBZI552',598,491.00,'afternoon',8,'2020-06-02'),
 	 ('JRPE099516DZMHH095',6,'FLWV678212SBGPV018',599,860.00,'afternoon',6,'2020-08-13'),
 	 ('JRPE099516DZMHH095',19,'UTEA769140VWWMP914',600,22.00,'afternoon',14,'2020-05-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ASSD875008RRPEH551',13,'FYMD787703WAMEH778',601,162.00,'morning',2,'2020-06-11'),
 	 ('TUJP980174JJQPC844',6,'XWTJ508144GWZPH605',602,551.00,'afternoon',14,'2020-04-15'),
@@ -5417,6 +5912,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GAIF899720ANPLC839',17,'ZGOM793916SALAG489',608,55.00,'afternoon',3,'2020-01-18'),
 	 ('MJYZ573026TIOVB215',10,'SINX083707KNTAN145',609,487.00,'afternoon',27,'2020-08-28'),
 	 ('QMFY066636NIRXD478',9,'OVRB315616SIZNJ722',610,757.00,'morning',12,'2020-02-07');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('BDVC567304SFXMC765',20,'LPAT265613PWQMX163',611,482.00,'afternoon',6,'2021-01-03'),
 	 ('NCBF011554FUFFR129',8,'VVHS510714TVBDO577',612,576.00,'afternoon',11,'2020-11-30'),
@@ -5428,6 +5924,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GCBW848066OZOTU929',17,'ZGOM793916SALAG489',618,122.00,'afternoon',19,'2020-11-19'),
 	 ('DVCT675993QJQAY584',11,'OELD082185GXDNQ861',619,878.00,'morning',14,'2020-11-03'),
 	 ('TZXA483328GTOMZ299',4,'GNLF895633AGYZY724',620,200.00,'afternoon',26,'2020-02-04');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SQBH424121VONPY587',5,'FDSA558260ZVLTS713',621,736.00,'morning',15,'2020-08-26'),
 	 ('JKRY819039MSYWC692',14,'SYPP600671BOPKA349',622,215.00,'afternoon',8,'2020-06-09'),
@@ -5439,6 +5936,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UCXS474325LJRLB564',13,'ZMOQ813721IWKQY603',628,255.00,'afternoon',28,'2020-10-27'),
 	 ('WLSN875984CVGYV103',14,'LKUA657518NFZBO603',629,428.00,'morning',14,'2020-02-24'),
 	 ('DVCT675993QJQAY584',6,'IPSL070793ISNYI017',630,891.00,'afternoon',8,'2020-01-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZYNG123535ZPWII526',20,'OJIZ978358KIJUZ831',631,224.00,'afternoon',7,'2020-06-08'),
 	 ('DVCT675993QJQAY584',6,'FLWV678212SBGPV018',632,986.00,'afternoon',11,'2020-02-29'),
@@ -5450,6 +5948,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('MFJT719632JLXXF009',15,'UPAH076030NECCF487',638,63.00,'afternoon',18,'2020-08-22'),
 	 ('RYIC779163GCFWE725',10,'JHBK113760LESTJ126',639,206.00,'afternoon',25,'2020-06-06'),
 	 ('IQGE132443QMLIB177',10,'PVFC556841JXAVU289',640,204.00,'afternoon',12,'2020-12-04');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('SPHX112917BZPUE510',14,'SYPP600671BOPKA349',641,469.00,'afternoon',27,'2020-09-20'),
 	 ('DOEU282752ZRSGS407',8,'ADKH648770DMYRK246',642,528.00,'afternoon',6,'2020-06-08'),
@@ -5461,6 +5960,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GVZY496946TGFJQ162',1,'SVEH792817IXZNS296',648,419.00,'afternoon',7,'2020-05-18'),
 	 ('XWEJ943539HVJCI341',12,'WQVH961260NTIXJ879',649,650.00,'morning',1,'2020-12-04'),
 	 ('GECA899501FYNLU891',7,'UCJI104807IUBZI552',650,992.00,'afternoon',24,'2020-05-05');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ASSD875008RRPEH551',4,'LWQU035344EDICN235',651,523.00,'afternoon',23,'2020-11-14'),
 	 ('ZVTB907829KIBMC577',17,'ZGOM793916SALAG489',652,761.00,'afternoon',20,'2020-03-02'),
@@ -5472,6 +5972,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('LWJC330097YAGXA481',18,'TNCX742553PHGKQ464',658,299.00,'afternoon',8,'2020-06-05'),
 	 ('RYIC779163GCFWE725',18,'TNCX742553PHGKQ464',659,623.00,'afternoon',6,'2020-04-21'),
 	 ('NOAO658913CFYTM989',13,'TTDP798536TBIAW919',660,194.00,'morning',14,'2020-04-12');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QZFD656995ZXOXZ263',8,'ADKH648770DMYRK246',661,669.00,'afternoon',2,'2020-05-09'),
 	 ('UFGU916462JFKOF388',18,'FXXD650593PMXZN605',662,1000.00,'afternoon',14,'2020-12-25'),
@@ -5483,6 +5984,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('IQGE132443QMLIB177',7,'MTSL356752WNBAQ714',668,89.00,'afternoon',3,'2020-11-10'),
 	 ('VYSG210975TOZIW556',3,'RSVD601747IMRDU031',669,874.00,'afternoon',27,'2020-11-21'),
 	 ('GECA899501FYNLU891',12,'PFKF271336XPCYA822',670,91.00,'afternoon',12,'2020-11-09');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('IPCU869971CMFCE357',1,'SVEH792817IXZNS296',671,547.00,'afternoon',6,'2020-03-09'),
 	 ('MJYZ573026TIOVB215',7,'GAOK120360YFLTQ309',672,627.00,'morning',11,'2020-08-10'),
@@ -5494,6 +5996,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',19,'UTEA769140VWWMP914',678,803.00,'afternoon',19,'2020-06-27'),
 	 ('JKRY819039MSYWC692',13,'ZMOQ813721IWKQY603',679,853.00,'morning',14,'2020-07-13'),
 	 ('ASSD875008RRPEH551',7,'GAOK120360YFLTQ309',680,254.00,'morning',26,'2020-05-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('PDSP053301ZYTKE401',3,'IJSS370132NVHSN751',681,357.00,'afternoon',15,'2020-05-10'),
 	 ('FDEQ391539AXLFQ046',6,'XWTJ508144GWZPH605',682,85.00,'morning',8,'2020-04-19'),
@@ -5505,6 +6008,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NZQY342992FHJGI446',12,'PFKF271336XPCYA822',688,267.00,'morning',28,'2020-09-28'),
 	 ('RWXR156948XYLTS119',1,'SVEH792817IXZNS296',689,161.00,'afternoon',14,'2020-08-17'),
 	 ('WUXB047617ZYNYW273',8,'ADKH648770DMYRK246',690,80.00,'afternoon',8,'2020-10-23');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('VONI968783NFCZK958',10,'JHBK113760LESTJ126',691,178.00,'afternoon',7,'2020-10-03'),
 	 ('XQCR524111TGUWW840',17,'ROOM363874GHVGO243',692,80.00,'morning',11,'2020-10-02'),
@@ -5516,6 +6020,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('IQGE132443QMLIB177',1,'SVEH792817IXZNS296',698,477.00,'afternoon',18,'2020-12-13'),
 	 ('QHEK252831JZWHD861',1,'RKWT706451XAKSH115',699,456.00,'afternoon',25,'2020-09-02'),
 	 ('MJYZ573026TIOVB215',12,'PFKF271336XPCYA822',700,293.00,'morning',12,'2020-07-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('INRG434043EEUMD115',7,'UCJI104807IUBZI552',701,256.00,'afternoon',27,'2020-12-02'),
 	 ('KPKT809508QGOGW781',16,'QPOZ774594DLUSH427',702,712.00,'morning',6,'2020-06-01'),
@@ -5527,6 +6032,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WLSN875984CVGYV103',20,'MGGG663531IOHBH419',708,372.00,'afternoon',7,'2020-04-13'),
 	 ('IRFZ115509ZSFQA219',2,'DWAN778894TRPJD293',709,954.00,'afternoon',1,'2020-08-27'),
 	 ('MFJT719632JLXXF009',12,'EFGM013588ALNTP479',710,84.00,'morning',24,'2020-05-16');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('WPIU694096ADQIR938',1,'SAVC287336KLRZK723',711,49.00,'afternoon',23,'2020-05-31'),
 	 ('LODE137458ENNWG632',1,'SAVC287336KLRZK723',712,232.00,'morning',20,'2020-08-08'),
@@ -5538,6 +6044,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ITCK986469YNFDN078',5,'NJPX477125JTDBL030',718,708.00,'afternoon',8,'2020-09-06'),
 	 ('DQJA698495NRPJU751',5,'NJPX477125JTDBL030',719,453.00,'afternoon',6,'2020-08-28'),
 	 ('DVCT675993QJQAY584',19,'UTEA769140VWWMP914',720,619.00,'afternoon',14,'2020-12-08');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GPOQ915271JNHEW976',9,'AJBR420040UGFWC279',721,877.00,'afternoon',2,'2020-05-07'),
 	 ('ZKMZ129368BPSGS538',8,'VVHS510714TVBDO577',722,374.00,'afternoon',14,'2020-06-27'),
@@ -5549,6 +6056,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UBJP393429MLGIU233',1,'RKWT706451XAKSH115',728,605.00,'afternoon',3,'2020-03-20'),
 	 ('QHEK252831JZWHD861',12,'EFGM013588ALNTP479',729,487.00,'afternoon',27,'2020-11-12'),
 	 ('GECA899501FYNLU891',18,'LBAP135358ZVJGQ043',730,974.00,'morning',12,'2020-07-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FIDI724571NFFQH767',1,'RKWT706451XAKSH115',731,273.00,'afternoon',6,'2020-10-17'),
 	 ('KWZW515336UALVL127',13,'FYMD787703WAMEH778',732,685.00,'afternoon',11,'2020-03-28'),
@@ -5560,6 +6068,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('FWLS008186DPOIE216',16,'QPOZ774594DLUSH427',738,35.00,'afternoon',19,'2020-09-29'),
 	 ('HEYY015757TQZPP031',9,'AJBR420040UGFWC279',739,418.00,'afternoon',14,'2020-11-04'),
 	 ('OSZX707963DJUQB784',6,'XWTJ508144GWZPH605',740,283.00,'afternoon',26,'2020-07-03');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FKAV245497SGGWR520',13,'ZMOQ813721IWKQY603',741,327.00,'morning',15,'2020-06-17'),
 	 ('FGGG096831TYFKX253',15,'JFXI938663JQPYD414',742,624.00,'morning',8,'2020-09-11'),
@@ -5571,6 +6080,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TZXA483328GTOMZ299',6,'FLWV678212SBGPV018',748,895.00,'morning',28,'2020-11-18'),
 	 ('QENE705706VUUKA587',8,'ADKH648770DMYRK246',749,677.00,'afternoon',14,'2020-05-06'),
 	 ('DVCT675993QJQAY584',13,'FYMD787703WAMEH778',750,266.00,'morning',8,'2020-08-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FWLS008186DPOIE216',14,'YUGN160774WUZSP685',751,308.00,'morning',7,'2020-10-22'),
 	 ('MMBW200843BMIIS491',18,'FXXD650593PMXZN605',752,802.00,'morning',11,'2020-06-11'),
@@ -5582,6 +6092,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('BSNE659250DJVAD705',4,'GNLF895633AGYZY724',758,343.00,'morning',18,'2020-11-25'),
 	 ('NOAO658913CFYTM989',14,'SYPP600671BOPKA349',759,961.00,'morning',25,'2020-11-15'),
 	 ('KUBF081246CWDHN836',6,'XWTJ508144GWZPH605',760,183.00,'afternoon',12,'2020-05-19');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ICCP643953DNLDA729',17,'ZGOM793916SALAG489',761,678.00,'afternoon',27,'2020-12-03'),
 	 ('MAXH583236HTZFK762',3,'IJSS370132NVHSN751',762,516.00,'afternoon',6,'2020-07-20'),
@@ -5593,6 +6104,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('BDVC567304SFXMC765',14,'LKUA657518NFZBO603',768,984.00,'morning',7,'2020-03-23'),
 	 ('ZVTB907829KIBMC577',2,'YYAK114191QRGSQ479',769,279.00,'morning',1,'2020-02-01'),
 	 ('DVCT675993QJQAY584',19,'UTEA769140VWWMP914',770,78.00,'morning',24,'2020-09-30');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZVTB907829KIBMC577',20,'OJIZ978358KIJUZ831',771,478.00,'afternoon',23,'2021-01-07'),
 	 ('NDAV589408YESKF026',7,'MTSL356752WNBAQ714',772,799.00,'morning',20,'2020-04-14'),
@@ -5604,6 +6116,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RCFS684369ZFMCJ417',7,'MTSL356752WNBAQ714',778,607.00,'afternoon',8,'2020-09-05'),
 	 ('FHLM564991JSUPM979',16,'NEPT613248TSSJT590',779,251.00,'morning',6,'2020-10-13'),
 	 ('GULN484567FRHXC805',10,'JHBK113760LESTJ126',780,379.00,'afternoon',14,'2020-05-14');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('GWUQ565806CLFYJ359',20,'OJIZ978358KIJUZ831',781,569.00,'morning',2,'2020-07-11'),
 	 ('JGYK142695IRTQL912',13,'TTDP798536TBIAW919',782,188.00,'morning',14,'2020-10-18'),
@@ -5615,6 +6128,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('NHKV520999LGJVA620',17,'ZGOM793916SALAG489',788,699.00,'afternoon',3,'2020-03-10'),
 	 ('YTZI468566MJLOJ631',9,'OVRB315616SIZNJ722',789,838.00,'afternoon',27,'2020-12-30'),
 	 ('XQCR524111TGUWW840',19,'UTEA769140VWWMP914',790,18.00,'afternoon',12,'2020-07-30');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('FFNR888342OYNUX513',18,'TNCX742553PHGKQ464',791,552.00,'morning',6,'2020-05-26'),
 	 ('TDXR252209JUULV972',15,'JFXI938663JQPYD414',792,473.00,'morning',11,'2020-03-23'),
@@ -5626,6 +6140,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GPOQ915271JNHEW976',2,'YYAK114191QRGSQ479',798,325.00,'morning',19,'2020-10-29'),
 	 ('WPIU694096ADQIR938',5,'FDSA558260ZVLTS713',799,938.00,'morning',14,'2020-12-31'),
 	 ('XGZZ840242PXKJP043',16,'NEPT613248TSSJT590',800,647.00,'morning',26,'2020-07-04');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QKXC841656ALYVF084',2,'YYAK114191QRGSQ479',801,196.00,'afternoon',15,'2020-06-03'),
 	 ('QENE705706VUUKA587',4,'GNLF895633AGYZY724',802,423.00,'afternoon',8,'2020-04-28'),
@@ -5637,6 +6152,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('VZLV524892CBIJN392',6,'XWTJ508144GWZPH605',808,536.00,'morning',28,'2020-11-29'),
 	 ('UBJP393429MLGIU233',9,'AJBR420040UGFWC279',809,75.00,'morning',14,'2020-05-26'),
 	 ('YZYG136120BDDFM354',7,'MTSL356752WNBAQ714',810,752.00,'morning',8,'2020-07-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('INRG434043EEUMD115',17,'ROOM363874GHVGO243',811,939.00,'afternoon',7,'2020-06-27'),
 	 ('XHTW272502XCACW904',18,'FXXD650593PMXZN605',812,794.00,'afternoon',11,'2020-12-02'),
@@ -5648,6 +6164,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('SQBH424121VONPY587',8,'ADKH648770DMYRK246',818,543.00,'morning',18,'2020-10-05'),
 	 ('JYIA143185JPEHU146',12,'PFKF271336XPCYA822',819,570.00,'afternoon',25,'2020-12-01'),
 	 ('CTZB666543OWKSU419',11,'HBLM604600WTCJI606',820,591.00,'morning',12,'2020-09-15');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZPI412610QIQXG067',15,'JFXI938663JQPYD414',821,537.00,'afternoon',27,'2020-06-10'),
 	 ('JRPE099516DZMHH095',13,'FYMD787703WAMEH778',822,331.00,'morning',6,'2020-03-17'),
@@ -5659,6 +6176,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XGZZ840242PXKJP043',19,'UTEA769140VWWMP914',828,622.00,'morning',7,'2020-02-24'),
 	 ('UFGQ844943SOJFY896',15,'JFXI938663JQPYD414',829,310.00,'afternoon',1,'2020-06-15'),
 	 ('MVDT493135UMKXM341',6,'XWTJ508144GWZPH605',830,335.00,'morning',24,'2020-11-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RVLK304169HPADE239',17,'ZGOM793916SALAG489',831,166.00,'morning',23,'2020-10-10'),
 	 ('CPLF659966JCBXD998',19,'UTEA769140VWWMP914',832,647.00,'afternoon',20,'2020-07-30'),
@@ -5670,6 +6188,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('TMDX842355QXQUA049',17,'ZGOM793916SALAG489',838,862.00,'morning',8,'2020-10-29'),
 	 ('IRFZ115509ZSFQA219',2,'YYAK114191QRGSQ479',839,110.00,'morning',6,'2020-07-22'),
 	 ('FDEQ391539AXLFQ046',3,'MDAF941802GXWGQ075',840,115.00,'afternoon',14,'2020-09-21');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TRGB490333ZNPIR671',5,'FDSA558260ZVLTS713',841,841.00,'morning',2,'2020-10-10'),
 	 ('ZVTB907829KIBMC577',8,'FDDV831749NPFJV070',842,295.00,'morning',14,'2020-12-27'),
@@ -5681,6 +6200,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ZVTB907829KIBMC577',17,'ZGOM793916SALAG489',848,980.00,'afternoon',3,'2020-04-06'),
 	 ('NHKV520999LGJVA620',17,'ZGOM793916SALAG489',849,268.00,'morning',27,'2020-10-30'),
 	 ('KTPU069372DUAGI194',14,'YUGN160774WUZSP685',850,370.00,'afternoon',12,'2020-12-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('JKRY819039MSYWC692',4,'LWQU035344EDICN235',851,878.00,'afternoon',6,'2020-11-29'),
 	 ('JKRY819039MSYWC692',7,'UCJI104807IUBZI552',852,846.00,'afternoon',11,'2020-03-13'),
@@ -5692,6 +6212,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GWUQ565806CLFYJ359',3,'MDAF941802GXWGQ075',858,416.00,'morning',19,'2020-12-08'),
 	 ('RYIC779163GCFWE725',7,'GAOK120360YFLTQ309',859,246.00,'afternoon',14,'2020-06-19'),
 	 ('CNTY451162IAJDB945',11,'OELD082185GXDNQ861',860,502.00,'afternoon',26,'2020-09-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CIEL679995BZLDV074',8,'VVHS510714TVBDO577',861,437.00,'afternoon',15,'2021-01-11'),
 	 ('FDEQ391539AXLFQ046',2,'YYAK114191QRGSQ479',862,866.00,'afternoon',8,'2020-06-23'),
@@ -5703,6 +6224,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('GPUZ783784IWGKZ593',11,'HBLM604600WTCJI606',868,571.00,'morning',28,'2020-03-31'),
 	 ('HYPS186576OIPPG548',3,'IJSS370132NVHSN751',869,23.00,'afternoon',14,'2020-06-16'),
 	 ('XNNO439081NVLCX577',1,'SVEH792817IXZNS296',870,713.00,'morning',8,'2020-01-25');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ONBK154676KXVVV317',19,'JLBI147263BGWAJ616',871,421.00,'afternoon',7,'2020-04-08'),
 	 ('IRFZ115509ZSFQA219',12,'WQVH961260NTIXJ879',872,471.00,'afternoon',11,'2020-01-25'),
@@ -5714,6 +6236,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('WDHB070139BKNFH352',8,'VVHS510714TVBDO577',878,82.00,'afternoon',18,'2020-05-25'),
 	 ('CPLF659966JCBXD998',5,'FDSA558260ZVLTS713',879,464.00,'afternoon',25,'2020-09-23'),
 	 ('QNUK289842DPDWH747',5,'FDSA558260ZVLTS713',880,692.00,'morning',12,'2020-04-10');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('QKXC841656ALYVF084',17,'ROOM363874GHVGO243',881,48.00,'afternoon',27,'2020-06-11'),
 	 ('WDHB070139BKNFH352',7,'GAOK120360YFLTQ309',882,788.00,'afternoon',6,'2020-12-30'),
@@ -5725,6 +6248,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('XDOH174036DUPIZ990',3,'RSVD601747IMRDU031',888,908.00,'morning',7,'2020-03-18'),
 	 ('FJXE715147GIUIM279',4,'GNLF895633AGYZY724',889,100.00,'morning',1,'2020-08-10'),
 	 ('ZYGN737820KDAAY151',16,'ZWZP336905CQTFZ205',890,69.00,'morning',24,'2020-08-31');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('CIEL679995BZLDV074',7,'UCJI104807IUBZI552',891,51.00,'morning',23,'2020-10-20'),
 	 ('NCZF578639HKGJN166',7,'UCJI104807IUBZI552',892,984.00,'afternoon',20,'2020-01-28'),
@@ -5736,6 +6260,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UJYP457105HAPSF034',13,'TTDP798536TBIAW919',898,439.00,'afternoon',8,'2020-09-18'),
 	 ('CTZB666543OWKSU419',4,'GNLF895633AGYZY724',899,940.00,'afternoon',6,'2020-03-03'),
 	 ('QLRU650097PUCGU438',12,'PFKF271336XPCYA822',900,460.00,'afternoon',14,'2020-05-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('LILQ949243SNALO426',10,'JHBK113760LESTJ126',901,872.00,'afternoon',2,'2020-01-23'),
 	 ('GPUZ783784IWGKZ593',18,'TNCX742553PHGKQ464',902,548.00,'morning',14,'2020-04-30'),
@@ -5747,6 +6272,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('INRG434043EEUMD115',20,'OJIZ978358KIJUZ831',908,199.00,'morning',3,'2020-08-04'),
 	 ('WPPF325651EMBIL706',4,'LWQU035344EDICN235',909,741.00,'afternoon',27,'2020-07-12'),
 	 ('XNNO439081NVLCX577',7,'GAOK120360YFLTQ309',910,353.00,'morning',12,'2020-09-22');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZXA483328GTOMZ299',16,'ZWZP336905CQTFZ205',911,325.00,'afternoon',6,'2020-03-28'),
 	 ('HFPY897648AGYSO928',15,'UPAH076030NECCF487',912,532.00,'morning',11,'2020-02-08'),
@@ -5758,6 +6284,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('KZNQ525843OQQVL697',3,'IJSS370132NVHSN751',918,523.00,'afternoon',19,'2020-12-11'),
 	 ('KJBV411414YWLJI794',15,'UPAH076030NECCF487',919,47.00,'morning',14,'2020-11-06'),
 	 ('MJYZ573026TIOVB215',18,'LBAP135358ZVJGQ043',920,638.00,'morning',26,'2020-12-06');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('DZGZ715642GBWRN893',13,'FYMD787703WAMEH778',921,160.00,'morning',15,'2020-10-14'),
 	 ('AROG023981IPWAD759',19,'UTEA769140VWWMP914',922,248.00,'afternoon',8,'2020-06-27'),
@@ -5769,6 +6296,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('INRG434043EEUMD115',18,'LBAP135358ZVJGQ043',928,335.00,'morning',28,'2020-04-07'),
 	 ('PPDZ564674JYNPN890',14,'LKUA657518NFZBO603',929,219.00,'afternoon',14,'2020-12-15'),
 	 ('PWQC723981UZGJM631',3,'RSVD601747IMRDU031',930,210.00,'morning',8,'2020-08-16');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('RWXR156948XYLTS119',17,'NJZE385304NDCWM021',931,694.00,'afternoon',7,'2020-01-17'),
 	 ('TJBW007678XHCJG640',16,'NEPT613248TSSJT590',932,57.00,'morning',11,'2020-07-03'),
@@ -5780,6 +6308,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ONBK154676KXVVV317',5,'DVJM681323DUPJQ608',938,902.00,'afternoon',18,'2020-10-30'),
 	 ('QHEK252831JZWHD861',18,'FXXD650593PMXZN605',939,832.00,'morning',25,'2020-07-22'),
 	 ('KUBF081246CWDHN836',11,'OELD082185GXDNQ861',940,889.00,'afternoon',12,'2020-02-27');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('AWIX634888IIMAD870',6,'XWTJ508144GWZPH605',941,65.00,'morning',27,'2020-01-17'),
 	 ('XDOH174036DUPIZ990',16,'NEPT613248TSSJT590',942,892.00,'morning',6,'2020-11-07'),
@@ -5791,6 +6320,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('JRUP134651VAJOO553',19,'UTEA769140VWWMP914',948,506.00,'afternoon',7,'2020-09-29'),
 	 ('WPIU694096ADQIR938',10,'PVFC556841JXAVU289',949,866.00,'afternoon',1,'2020-08-01'),
 	 ('LODE137458ENNWG632',20,'MGGG663531IOHBH419',950,280.00,'afternoon',24,'2020-03-28');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('NDAV589408YESKF026',18,'LBAP135358ZVJGQ043',951,976.00,'morning',23,'2020-06-07'),
 	 ('NHKV520999LGJVA620',19,'OOPV533321OORYL050',952,390.00,'morning',20,'2020-08-31'),
@@ -5802,6 +6332,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('ASSD875008RRPEH551',10,'JHBK113760LESTJ126',958,739.00,'afternoon',8,'2020-07-26'),
 	 ('OSZX707963DJUQB784',12,'PFKF271336XPCYA822',959,740.00,'morning',6,'2020-08-17'),
 	 ('WLSN875984CVGYV103',15,'JFXI938663JQPYD414',960,86.00,'morning',14,'2020-12-13');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ZCTK251288PRSTL369',15,'VINN331036LTBFR660',961,489.00,'morning',2,'2020-03-28'),
 	 ('RWXR156948XYLTS119',1,'SAVC287336KLRZK723',962,917.00,'morning',14,'2020-09-21'),
@@ -5813,6 +6344,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('UJYP457105HAPSF034',2,'DWAN778894TRPJD293',968,491.00,'afternoon',3,'2020-01-26'),
 	 ('MJYZ573026TIOVB215',4,'JNMM074531DFBFG157',969,963.00,'afternoon',27,'2020-07-28'),
 	 ('PPCE201086CLLYE095',10,'JHBK113760LESTJ126',970,21.00,'afternoon',12,'2020-12-26');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('ORXQ229520VVXJV296',6,'FLWV678212SBGPV018',971,32.00,'morning',6,'2020-11-07'),
 	 ('MMBW200843BMIIS491',10,'PVFC556841JXAVU289',972,355.00,'morning',11,'2020-12-03'),
@@ -5824,6 +6356,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('PPBX435558UULMG097',3,'RSVD601747IMRDU031',978,551.00,'morning',19,'2020-11-15'),
 	 ('RBWL495958WQMDU311',9,'OVRB315616SIZNJ722',979,431.00,'morning',14,'2020-03-07'),
 	 ('MAXH583236HTZFK762',9,'XECN551132PWIGH960',980,897.00,'morning',26,'2020-10-29');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('INRG434043EEUMD115',16,'NEPT613248TSSJT590',981,812.00,'afternoon',15,'2020-10-09'),
 	 ('XFJS846746CTTOV882',6,'XWTJ508144GWZPH605',982,992.00,'afternoon',8,'2020-07-09'),
@@ -5835,6 +6368,7 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('BDRS917078DPTGO621',3,'RSVD601747IMRDU031',988,448.00,'morning',28,'2020-11-30'),
 	 ('RRDU131778UFWRS846',4,'JNMM074531DFBFG157',989,80.00,'morning',14,'2020-04-23'),
 	 ('LXBX073548DUJJJ562',15,'UPAH076030NECCF487',990,200.00,'morning',8,'2020-05-20');
+
 INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost,shift,id_specialty,"date") VALUES
 	 ('TZWB731495LYDZY487',12,'EFGM013588ALNTP479',991,456.00,'afternoon',7,'2020-04-20'),
 	 ('GBJV059580IWWRC253',18,'TNCX742553PHGKQ464',992,249.00,'morning',11,'2020-07-14'),
@@ -5845,7 +6379,8 @@ INSERT INTO public.consultation (patient,id_establishment,doctor,turn,total_cost
 	 ('RRDU131778UFWRS846',8,'FDDV831749NPFJV070',997,404.00,'afternoon',12,'2020-05-17'),
 	 ('MKKV313054HGUNK458',20,'LPAT265613PWQMX163',998,65.00,'afternoon',18,'2020-01-30'),
 	 ('QLOR127774QUYGQ297',1,'SVEH792817IXZNS296',999,949.00,'morning',25,'2020-01-28'),
-	 ('GVZY496946TGFJQ162',16,'NEPT613248TSSJT590',1000,842.00,'afternoon',12,'2020-10-24');INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
+	 ('GVZY496946TGFJQ162',16,'NEPT613248TSSJT590',1000,842.00,'afternoon',12,'2020-10-24');
+INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1,'2021-04-13','49TFHLVT16565ZEAV1F38QNKD','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (2,'2021-06-07','9U6N2QDN3UKR458YJABNC0KN4','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (3,'2021-02-02','QLLOST7RFYGWX7DLBKT2LQTZT','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
@@ -5874,6 +6409,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (10,'2021-05-28','OI4MQP5G4UJQNZRY2MF4BVAEU','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (11,'2021-02-11','IUJWXWGDN79I0V95W0F9RI7GJ','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
@@ -5907,6 +6443,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (21,'2021-05-21','C01X51AJ0G0CICDGESR4P1IPQ','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (22,'2021-03-10','84C898JZ3QJK3WQYCGO12G1VQ','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -5940,6 +6477,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 	 (29,'2021-05-31','ZQBKUQLHP847S8PG47C227E9T','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (30,'2021-04-20','T6T2FLU9D0AG72AMJIRBD7DI3','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -5973,6 +6511,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (40,'2021-06-15','I0Z9UZ7TCIE80WZRIUO2CNO9J','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
@@ -5994,6 +6533,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 	 (49,'2021-04-05','BZDTAP19HS2TO21VJ5T7QMPYU','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (50,'2021-06-27','5GBFTQ2IFP2FL4XJ28BEM5YXM','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (51,'2021-05-01','ZC0SWB5GOJKKXCYPN2CRUPLAF','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
@@ -6021,6 +6561,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (58,'2021-02-28','NRABS550Y4EJSWKT55VSXXHEN','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (59,'2021-06-28','LRJBMY0T8R4AC6E0E89KQI66S','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
@@ -6050,6 +6591,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (69,'2021-06-28','FD0B28BMYG99PE1L94E25ORJ4','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
@@ -6087,6 +6629,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (78,'2021-03-10','3SJGQRAR6FI51GP4NHJANCXNQ','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
@@ -6116,6 +6659,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (88,'2021-03-03','938I9GIM96U5WGY40XP0EFCQV','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
@@ -6153,6 +6697,7 @@ Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pu
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (100,'2021-05-18','6KN0VGTMYE8RFA71T4UX05SRI','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.'),
 	 (101,'2021-05-27','HPXSTRAALZZYDV1XCOVZ6AMD6','Phasellus in felis. Donec semper sapien a libero. Nam dui.
@@ -6180,6 +6725,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (108,'2021-03-13','PMYJD0MBZ840W3H43RU4LQ6D8','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.'),
 	 (109,'2021-02-04','J6SGGY81MR2EDC14WWUWD6KQ3','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (110,'2021-06-07','SPEYJOCZJORNPL49C4FBX8ID2','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.'),
 	 (111,'2021-04-16','3WMZJ24S3DMFBKCFAOFBOE7N0','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
@@ -6213,6 +6759,7 @@ Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integ
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (120,'2021-03-02','R0978W29PZ4EEILJMWHA8QLSV','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
@@ -6258,6 +6805,7 @@ Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (129,'2021-03-27','NVLTVB3ZTVTEXK061JLU4D3B2','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
@@ -6291,6 +6839,7 @@ Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in s
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (139,'2021-03-08','MGA5WPDMPDPO4FI16W469MBP5','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
@@ -6314,6 +6863,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (373,'2021-03-18','9QHJ1XFVM2SMW034ABRB5SK5N','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (148,'2021-03-04','0SQLBBJM9QCNH04YYWO3YMBCA','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
@@ -6341,6 +6891,7 @@ Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in s
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.'),
 	 (156,'2021-02-15','8XJYKNRR3FYIBX04FHOHTR00Y','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
 	 (157,'2021-05-18','5Z6KIIPITYAF8SAFSQD2DG61O','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (158,'2021-03-11','LNTS0OI0KCI8IKNXETTD8ENSD','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
@@ -6378,6 +6929,7 @@ In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, di
 	 (167,'2021-06-28','Z05UPEQXIKM7JVTGGBRD85KWJ','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (168,'2021-06-01','9H8RXVTMHR752DA2OXKTHMOXA','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (169,'2021-04-07','QLKD0W2X2QSZ9BDCD6QWYEWSN','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
@@ -6401,6 +6953,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 	 (177,'2021-02-22','0ZVR6W7CK8PBQSX75W7RZFA51','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (178,'2021-06-20','9SIIEP8JPOS4KE5EQJZCE3IHC','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
@@ -6442,6 +6995,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
 
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (188,'2021-05-28','062P0QPHTXDCW6C2NKSLMEPB2','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.'),
 	 (189,'2021-05-13','QKUKTQCRW6P0PDGNKVPSWD3A9','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
@@ -6471,6 +7025,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (197,'2021-05-23','RQJY66VQP1UGWJXE6W7YG5PWK','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (198,'2021-05-30','GSAR70M8QNC0RSR198VXM4YR6','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
@@ -6502,6 +7057,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (208,'2021-05-06','MH6DLBD248BN8D2J2QGQGV0RQ','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (209,'2021-04-25','NJIPFDI2OXOQBOBCP2S4FVYFX','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
@@ -6527,6 +7083,7 @@ Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pu
 	 (215,'2021-05-10','HYHAIUKHBYXRVVZDXIZRHJYAB','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
 	 (216,'2021-05-07','K8DQ4IIM8748XBT244RNVDJWF','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (217,'2021-06-16','EBQRDTNP2QU7F5A3ZI1EJIGYK','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (218,'2021-05-14','WVP5KF23BU831NGPNDZI02SNV','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
@@ -6564,6 +7121,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (226,'2021-04-18','82ZV8N4AHO78X93XERQ7KVKDQ','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (227,'2021-03-17','CEC8ZPBPW7DYZ92VYCEHC9GRB','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
 	 (228,'2021-06-18','UCBJDCITUEIGD1KGC25JUGHQT','Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.'),
@@ -6603,6 +7161,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (237,'2021-05-05','NH8F2WXLWRVCQET0SLMUZ07R2','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
@@ -6632,6 +7191,7 @@ Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'
 Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
 	 (245,'2021-03-07','UUZ1HUPEQS41CCDRXSLKLFUMU','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (246,'2021-04-12','MGCMR1FIWKMDWX0YS0QPP1KXN','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (296,'2021-04-29','UM3531G25R26LC3VFSQNTZILD','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -6667,6 +7227,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (256,'2021-03-26','J44UMBSWL50ZOPS4W4SDIKJ62','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
@@ -6696,6 +7257,7 @@ Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'
 	 (263,'2021-05-12','TOPMRZHF045HXWOS7GT9A4LWT','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.'),
 	 (264,'2021-06-02','GIXN6V8IF5GVYWXKQVPSGFY1J','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (265,'2021-02-21','ET5THOGTT9UUDHZXO3G6ZQT3Y','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (266,'2021-03-15','2D3N5RPY7UOOX2CRJB4REVQYB','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
@@ -6733,6 +7295,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (276,'2021-05-19','8PB8QZ4ZRV4QVV9OR1XVF7RDS','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (277,'2021-05-26','IRLQA78T4Z7OIT3EOVT8YMC2P','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
@@ -6760,6 +7323,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 	 (286,'2021-05-17','LJMH5H9SORCJEZT97IROM9I1Y','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (287,'2021-04-22','GQ6451XFWH7B3MPY7VRUMP5PE','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
@@ -6793,6 +7357,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 	 (297,'2021-04-11','JD88BMPIMBS62A8FIN04LAF3C','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (298,'2021-06-11','OWRD8NW1TPT76TZK0YHUDCBVG','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
@@ -6824,6 +7389,7 @@ Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est ris
 	 (307,'2021-04-29','B4TDUX8S2JQ5QHLI400PYDQBD','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (308,'2021-05-29','6JOCEAJ66SQOP3PNWSSYZRZL1','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (309,'2021-04-01','17LGQIJPQ115USMFAV9K7HZEO','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -6859,6 +7425,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (317,'2021-04-07','OP1HKHETC1K8SFQ36DTWIETZL','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (318,'2021-02-14','4FK2IMAX7YF113DD1LHUIRIQ5','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
@@ -6886,6 +7453,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.'),
 	 (327,'2021-03-31','K9N1NDVY24SUE3RFX3DT9GCWA','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (328,'2021-04-08','I725II2AHX6ZZ0E64ZH9S4WJL','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -6919,6 +7487,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 	 (337,'2021-02-01','05EP7E2UNGWRSW7D8VG2ROULP','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (338,'2021-06-20','LZTWWLFB6NHEA8KS2SRISLK28','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
@@ -6948,6 +7517,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
 	 (347,'2021-02-17','RBM1UJ6X8OI5HZPNUU24GK1W3','In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (555,'2021-05-08','XX2QF4F45AHKZK9FYTYT7QT6C','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
 	 (349,'2021-06-07','BR3O03DOYIK5Q333Z3XEM4BNK','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
@@ -6981,6 +7551,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (358,'2021-05-17','0GJAHZIBGKG14EZHMNZTXVZG0','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -7006,6 +7577,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.'),
 	 (366,'2021-04-28','G9A42RGHIXEMQ2S6NUZGP0E6Z','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (367,'2021-05-08','EWS3S7YNQTZUT0XLDIV3Y49Q0','In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (368,'2021-04-15','6UE6TSFFZ6SAK4JX46UXPYZ95','Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (369,'2021-05-10','VJC7Q5TGN6J02ARGIYE5KZFPW','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
@@ -7031,6 +7603,7 @@ Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare
 	 (376,'2021-04-17','414KA21VN7Y45J5X8KSULPSXZ','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (377,'2021-04-02','HHL0677YK5F21RSHKBMXPBJ5H','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
 	 (378,'2021-05-23','HZ7XPMFO9HWKF56Y8B9NOD1BM','Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (379,'2021-06-14','TTDEZAFSAWMDL4CA3OGK0P5FI','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (380,'2021-03-20','71WX9HJSV41X24PTPME8YJ58K','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
@@ -7066,6 +7639,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 	 (388,'2021-05-11','L7DD38D8VU7A6TOCZQDAEXVUK','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (389,'2021-03-31','UT1V9NVLSP7H7JJ4U5BC0FLD0','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -7097,6 +7671,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 	 (398,'2021-05-06','ZQ8IOKVEONWP84MDMFTZQWQUY','In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (399,'2021-03-04','HRLYGMIVBLE2G8FMY7KCOR0WA','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -7128,6 +7703,7 @@ Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum an
 	 (407,'2021-02-28','9WDTF49SPE2L2L57HEDJANM8H','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (408,'2021-06-04','5PFIL9HIYBA0LGKOXA0T28G97','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
@@ -7169,6 +7745,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
 In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (418,'2021-04-30','U6JLNZXJ47RCXZDGVNO3YK3VP','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.'),
 	 (419,'2021-06-10','1J6XR95LXWM85EDJWN4WLIA5O','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.'),
@@ -7192,6 +7769,7 @@ Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (428,'2021-02-16','HYOHMK7HD0A21TQWUD8H1D9YS','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.'),
 	 (429,'2021-03-19','OTXTBLHJPGUD67BDQOIGOG1JY','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (430,'2021-06-19','N9DQPZNV6QGUV4IGA7R3PAXI3','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
@@ -7227,6 +7805,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 	 (439,'2021-04-23','BMV2E8B6VPSBE5NXZGGVZAHXX','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (440,'2021-04-11','G0Q8M8WP48JY9BRQVHOV6R223','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
 
@@ -7254,6 +7833,7 @@ Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, 
 	 (447,'2021-05-29','MRRATBHKZRMRYYSY5CVCHZRUM','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
 	 (448,'2021-02-28','6JL5MUI6DYJNQ1HMFVNBUVV9D','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (449,'2021-05-19','YVRMN8VVQH9JDXZSVG9BDYXW8','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (450,'2021-03-21','80XRC2GVI26D930SOO1IEAEN3','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
@@ -7277,6 +7857,7 @@ Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pu
 	 (458,'2021-06-11','S7SV0O4F8TLTGI9K0UDGUM0K5','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (459,'2021-04-08','YUH1QQWXGJ0ML0LNXBZMGH26H','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -7298,6 +7879,7 @@ Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (468,'2021-05-19','506MBO5JWHQ9POAQ89M1ARRGG','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (469,'2021-02-01','3LWR9AEDDD0F87K0EQ6Q1SNG1','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
 	 (470,'2021-03-08','L2DYEHFMEP6LXF6FZ2YWB4AXX','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
@@ -7325,6 +7907,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (478,'2021-05-29','J1HU38A7NN4SKWBW8UM00F8B8','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (479,'2021-04-08','VX1V0AAT64QGYA16XX79PND3Y','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 	 (480,'2021-05-11','V525BBZWJ75AXC5W03E2WK2O5','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
@@ -7348,6 +7931,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.'),
 	 (487,'2021-04-10','TJ3BYLEE8MS79B3V6BLX55OZB','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (488,'2021-03-05','ZUAAWQG3RJQY395FH08KWOIGZ','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
@@ -7385,6 +7969,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (498,'2021-04-27','P5XA4F0YVDEK406E00NVY7SB5','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
@@ -7416,6 +8001,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (506,'2021-03-17','H880JI2LLECGS93HXKIY8DU5T','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
 	 (507,'2021-06-07','XIOQ2RH2NM0G288SD4Z0G1WZ7','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
@@ -7449,6 +8035,7 @@ In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, di
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (516,'2021-02-02','I9HET8E3IIFQ549XBKM1B1IQ5','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 	 (517,'2021-03-10','NGDLQYQDYA6MDXQC41HRFNIED','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
@@ -7480,6 +8067,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (525,'2021-03-12','D94DRLQ8C5VZISK4PP6MHBEAW','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (526,'2021-02-03','BP53FODDLS89M4WXECFX422II','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (527,'2021-06-17','7429H2ISD8HGTVF7NQIDPG1DZ','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
@@ -7509,6 +8097,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 	 (536,'2021-06-04','6HLYHR0P1HMVZK60E1UBAM2C2','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (537,'2021-04-14','RSAI42SG8D89KUWLKTN0BD4WW','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
@@ -7544,6 +8133,7 @@ Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in s
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (547,'2021-05-21','YCUYFNDDZKZBIE42K62CNDCSU','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
@@ -7579,6 +8169,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (558,'2021-02-08','6SFA2YU63LTKRT48HXIUMKYDY','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
@@ -7614,6 +8205,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (568,'2021-05-04','BAANBFQ92VRM7ILBU6UFGXR4O','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
@@ -7653,6 +8245,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (602,'2021-02-15','HCG1AV387OVNAQVSM7C2IHYBC','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (863,'2021-05-07','KGTQKUJK8C4MC529814019L1P','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
@@ -7682,6 +8275,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (586,'2021-05-21','QGFWKSUXDNWHMXIXB82ZY7NIY','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
 
@@ -7713,6 +8307,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.'),
 	 (595,'2021-05-31','HAWPHDBL96DGM6LXIVN2B6JJ0','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (596,'2021-05-23','WCAVAPSCI1VEBBKQ3PR8JRZQ5','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
@@ -7754,6 +8349,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (607,'2021-06-25','FFT8SFPPD4YKPLK6IE3O16MNJ','In congue. Etiam justo. Etiam pretium iaculis justo.'),
 	 (608,'2021-04-15','834ZHBP7DP3Y15UMPDAV0WXT4','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
@@ -7783,6 +8379,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 	 (616,'2021-03-28','MDO0DHOPOLAIJHQB8LWLURH90','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (617,'2021-03-08','UPNCSTTICSIU43A2S4K18CWY1','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
@@ -7816,6 +8413,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (625,'2021-02-18','U9CWHBEMGW9V0P63GMXK352N6','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
@@ -7843,6 +8441,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (634,'2021-05-24','2NPKX6O0E7SDNBUIK3HHT4CB8','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (635,'2021-03-21','ZPMF83JE44AI39RFK7JIOILBE','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (636,'2021-03-19','HVO21IFGL15YUMZC52TOO03B8','Fusce consequat. Nulla nisl. Nunc nisl.'),
@@ -7872,6 +8471,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (645,'2021-04-17','XCHV2VGTS67J86LTAULSZEG9A','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -7905,6 +8505,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (657,'2021-05-02','LJ5UAIVRN3KDX1L3QOTLGYA76','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.'),
 	 (658,'2021-06-05','H6BP717BPLGJJJGDTJEOEPWIS','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
@@ -7930,6 +8531,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 	 (666,'2021-05-01','VZEURVO3MAIXR26JRAF4NMUH5','In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (667,'2021-03-07','BXM96N1CGBAL7RL37RGGCSFVV','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
@@ -7961,6 +8563,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (676,'2021-02-14','DDRT8F1EXEOQF67N0NDSMKM67','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (706,'2021-03-02','BYHVBQ0B6XIZQ5XKF1NUPTRBI','In congue. Etiam justo. Etiam pretium iaculis justo.
 
@@ -7986,6 +8589,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (685,'2021-02-22','86RG2OKY84IARZ0VLKHY293N9','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (686,'2021-03-17','ZG6DV7UOT4ZSYQ6WELW4WRVOC','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.'),
 	 (687,'2021-03-29','19EV93A2S0ZJDZPA6RFCR9M5G','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
@@ -8009,6 +8613,7 @@ Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (693,'2021-03-31','10NPHLPRR487LRN1B5ZZ7FGQD','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (694,'2021-02-09','628X4TWLM496K2EPYSLVVWGIR','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
 	 (695,'2021-06-01','SFSPV8A3YGYBBNLFJO2CSHQGK','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (696,'2021-03-28','3Q47U826IL4PM8TAH94NHGY55','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
 	 (697,'2021-04-03','X9GMRU0BZN1P6ETZ0M7Y4CJ5B','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
@@ -8036,6 +8641,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (707,'2021-05-29','GUDCE19ABHO3LAYYFN5Z4R9XI','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
 
@@ -8065,6 +8671,7 @@ Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in s
 	 (716,'2021-02-13','5WCPFESSO660MZB7YMB28MI9E','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (717,'2021-06-07','QVLR9PXWFBVUOLEUMEP3QZJN9','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.'),
 	 (718,'2021-03-27','C4H0K01WNCYHK5NC0IY6TDJ8B','Sed ante. Vivamus tortor. Duis mattis egestas metus.
@@ -8094,6 +8701,7 @@ Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integ
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
 In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (727,'2021-05-02','FRLOFAU3IAJ4JCM4A10T195G4','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (728,'2021-04-15','1E0BI5S1EXJ0MWOMOTYS9N6WJ','In congue. Etiam justo. Etiam pretium iaculis justo.'),
@@ -8121,6 +8729,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
 Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (737,'2021-03-18','2YNI8GPL3L98LMZHZFUMLYEG0','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
@@ -8160,6 +8769,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (747,'2021-06-19','RSAAQS4H2CKMMCYLB1HUYZ7FC','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
@@ -8181,6 +8791,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 	 (756,'2021-06-18','ZDK06P84FQCAXGOP7WZED7N10','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (757,'2021-04-20','NY45DN1U2HHB5603146ANTCMV','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 	 (758,'2021-06-18','09MP92N34B1CKJCLPOC4QMW5A','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
@@ -8208,6 +8819,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (767,'2021-04-23','1R7TA6CF4BHVM2RDPLNX7CKHY','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (768,'2021-06-27','P5AAVPPDCTR57X99CN4EJSV25','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
@@ -8249,6 +8861,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (777,'2021-02-13','TPG7VME5DWS4I90OWEI15ZX56','Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (778,'2021-05-15','3E23V8JHWCP833DPBE7KSD99Z','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -8280,6 +8893,7 @@ Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integ
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (788,'2021-06-25','3OIT9WPTX1G8JURHEU0EOWIU3','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
@@ -8315,6 +8929,7 @@ Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed 
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (798,'2021-04-09','54NCZXSX79UZ9UUG0ZK5ER1BX','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.'),
 	 (799,'2021-04-24','ZYFNRMZY7RJUUQ3WFYONBUYS5','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
@@ -8338,6 +8953,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (808,'2021-06-12','MFTVOVAJQ0DGYBJV0AUNOUUIP','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
 	 (809,'2021-03-08','HN8OD9PXWFC7WF1BG4WSLNYW3','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
@@ -8365,6 +8981,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.'),
 	 (815,'2021-03-20','9DLGN2RKBYFCO0WCVNOASFIZH','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (816,'2021-05-14','9HUN3VR5V8TIMTWV36W4T9M52','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (817,'2021-02-23','60PI736SIQWO3NP48G2V6OI61','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
@@ -8400,6 +9017,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (827,'2021-04-09','QOGGFXXOB4Y7W89AG3W5W7TH0','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.'),
 	 (828,'2021-05-05','71EBR9Q5Z5U7IGFHFTD6N7II7','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
@@ -8421,6 +9039,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (864,'2021-05-28','E04P72PKLDVT40M1DI1A21M0K','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (835,'2021-06-22','77JGGHH4E9YIR2GPF2UMPV8YO','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
@@ -8458,6 +9077,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 	 (844,'2021-04-18','Q5IWYI765LG20F6WUUME2RLC5','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (845,'2021-04-12','1OGKAXOESKYSO8NPKPUK02T0F','Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (846,'2021-06-22','BF67FD233BY3FBSW1TZ57NCSB','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
@@ -8485,6 +9105,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 Fusce consequat. Nulla nisl. Nunc nisl.
 
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (855,'2021-06-11','2PTQRA5C5J4IG4C5RMGGQPJK8','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
@@ -8516,6 +9137,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 	 (869,'2021-06-04','LLJT5UDBIW94X8NBILIKE2JDI','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (870,'2021-05-24','8VAL620A3YV3D6NA4IUAFSGH5','Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.'),
 	 (871,'2021-04-05','KFJNN1DGY2VV27XQ3LQZXHERR','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
@@ -8547,6 +9169,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (880,'2021-05-08','0LVT49ZCAEY9C0Y7A7S2TQSJW','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
@@ -8582,6 +9205,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (891,'2021-06-07','VE9XXYOVF6J1BVRCWV7QPF22Z','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
@@ -8615,6 +9239,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 	 (900,'2021-03-27','6O87MCRTH8LEZ2RYRR2RMVHDO','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (901,'2021-06-11','JZWCELTFPB002YE8BPRTO38QP','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
@@ -8652,6 +9277,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
 Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (911,'2021-04-12','VGO67FWJALFPFDBIKEA1VUQWF','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
@@ -8689,6 +9315,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (921,'2021-05-05','G3U69GSAZ5JAK8VVLF39WDS88','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.'),
 	 (922,'2021-02-22','8GU26QSTAZPM5TS3L1QUHKP8O','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
@@ -8718,6 +9345,7 @@ Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integ
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (931,'2021-03-01','7NWVS06L8CQXAX35A972RSC0O','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (932,'2021-03-18','4ZENUDT6FKRQR7D86IYYH8MY9','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
@@ -8747,6 +9375,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (940,'2021-02-24','0U5UHKQ8XDHBO8FGLF8Z8Q2X5','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -8776,6 +9405,7 @@ Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci
 	 (949,'2021-03-27','JY5HS3348BULEJFCNTUNZQG10','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (950,'2021-03-10','4Q75YEOF0ZAWMCJ24MUFZMQN1','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
@@ -8813,6 +9443,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 	 (959,'2021-06-28','97REH55IYHNDCWGIMNUSQIABY','Fusce consequat. Nulla nisl. Nunc nisl.
 
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (961,'2021-04-05','ME25MP5831HBU5AVEGCCNECCN','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
@@ -8848,6 +9479,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 	 (970,'2021-03-29','GE52DW6L8N8TEA5H82KRMA4CK','Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (971,'2021-04-02','4BICGQB5NDPK91OBY5FW4SSKA','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
@@ -8887,6 +9519,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.'),
 	 (980,'2021-06-14','155F4R8RCW5KZGFU58NIA3BXP','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (981,'2021-05-21','X2AHJ0DPDBR8EK5TKTH8B3BR6','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
@@ -8922,6 +9555,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (990,'2021-03-02','ITGTLO3HIX0M1TR4NGKWRLOXY','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (991,'2021-03-15','L7MGSPEPIVNUYAWF1FV9YJDDM','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
@@ -8956,7 +9590,8 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1,'2021-04-13','49TFHLVT16565ZEAV1F38QNKD','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (2,'2021-06-07','9U6N2QDN3UKR458YJABNC0KN4','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (3,'2021-02-02','QLLOST7RFYGWX7DLBKT2LQTZT','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
@@ -8985,6 +9620,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (10,'2021-05-28','OI4MQP5G4UJQNZRY2MF4BVAEU','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (11,'2021-02-11','IUJWXWGDN79I0V95W0F9RI7GJ','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
@@ -9018,6 +9654,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (21,'2021-05-21','C01X51AJ0G0CICDGESR4P1IPQ','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (22,'2021-03-10','84C898JZ3QJK3WQYCGO12G1VQ','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -9051,6 +9688,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 	 (29,'2021-05-31','ZQBKUQLHP847S8PG47C227E9T','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (30,'2021-04-20','T6T2FLU9D0AG72AMJIRBD7DI3','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -9084,6 +9722,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (40,'2021-06-15','I0Z9UZ7TCIE80WZRIUO2CNO9J','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
@@ -9105,6 +9744,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 	 (49,'2021-04-05','BZDTAP19HS2TO21VJ5T7QMPYU','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (50,'2021-06-27','5GBFTQ2IFP2FL4XJ28BEM5YXM','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (51,'2021-05-01','ZC0SWB5GOJKKXCYPN2CRUPLAF','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
@@ -9128,6 +9768,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.'),
 	 (55,'2021-04-15','Y9OMWG7YP8DZXDHYQ69NDX3HP','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (56,'2021-03-29','IQY7JHG5QGHF899I7SZXWUZHQ','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (57,'2021-02-25','NQDM5WVDL8NZ1CG0PL8RDE9MS','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
@@ -9153,6 +9794,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (65,'2021-02-26','YH3UHYPUBBG4XKGBUFQH8WO1N','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (66,'2021-04-18','77CP3QWO0PE8TP4W4PYWTG0VT','Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (67,'2021-04-25','DK41Y5QXP6XXA1BPYIFYJF0RU','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
@@ -9190,6 +9832,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.'),
 	 (99,'2021-04-26','7JTAWLTACCRC83IF4P162X1ZP','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1307,NULL,'KQOWV083055G0SE0QWQO9WOTA',''),
 	 (76,'2021-02-14','5ADD4B5RLCRIPAJYCVWBBWKXU','Sed ante. Vivamus tortor. Duis mattis egestas metus.
@@ -9221,6 +9864,7 @@ Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum an
 	 (84,'2021-02-12','A7764TG0WNFKTMIYS0QWPV494','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
 
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (85,'2021-05-14','Z1TUEP9RLZ8OK9SRFWBE8M2LT','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (86,'2021-03-15','Y1WIWRM8O39W4DPLZZSJS6JGL','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
@@ -9256,6 +9900,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (94,'2021-05-07','ZMNVLMCZ7WNSCZ76KR526FZQ1','Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (95,'2021-03-03','WKQAL43YJTVP56QST4LJ0RQU0','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
 	 (96,'2021-02-25','0XJYVK7QQKLNE2A4OF1HCNTRM','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
@@ -9287,6 +9932,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
 	 (105,'2021-05-22','MZMG0TE92S1B83NVWLOTOJEFN','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (106,'2021-03-13','0D6IOTZTNTPL2183DU0YTFSZL','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
@@ -9314,6 +9960,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 	 (115,'2021-04-03','B9TUVG6VB6OAPVG7N0KNM3PJ6','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (116,'2021-05-25','K1FKRDKSAP8EHUBETQ9JI6IPT','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -9355,6 +10002,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (125,'2021-06-19','79ENKW6RFGRMCYVCPRHJNX7I3','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
@@ -9390,6 +10038,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 	 (134,'2021-02-25','Q1NT8765SBVXNQUI9VAHUSB58','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (135,'2021-04-25','SUAYSOSS7LHG3UTV4V4DH8KNQ','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
@@ -9417,6 +10066,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 	 (142,'2021-04-13','4ZEFS79K7YXM37637YCQA546X','In congue. Etiam justo. Etiam pretium iaculis justo.'),
 	 (143,'2021-02-24','CWFOZ8MWRUOMW71AAHHE2OKDF','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.'),
 	 (144,'2021-03-11','97N6DB1JICVZTM9884QIXN08P','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (145,'2021-04-20','OMVN48F4F38HFG93IYH5AG91A','In congue. Etiam justo. Etiam pretium iaculis justo.
 
@@ -9448,6 +10098,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 	 (153,'2021-06-20','P4N5V3TLYJNJ88TL13VGP0LNM','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (154,'2021-03-20','8H1OUV8IRX5GJEA01NCYFZI66','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.'),
 	 (155,'2021-05-21','4DS5GVEQNTEACRT3O3UQVSIMW','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -9481,6 +10132,7 @@ Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (164,'2021-06-14','WWMA2L4A908GTMUWCZW1H7QN2','In congue. Etiam justo. Etiam pretium iaculis justo.
 
@@ -9510,6 +10162,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 	 (173,'2021-06-09','D7UP5NAXW7QFJ9J6RLLNPSECR','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (174,'2021-03-16','LN1C637RABYVRHN60JFGXV6MF','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
 	 (175,'2021-02-16','7HAO69OP3MCGBNYKZYKFJHNTK','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
@@ -9541,6 +10194,7 @@ Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turp
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (184,'2021-03-01','I5RW7PGKZYA8917XFZUPHCO3O','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
@@ -9572,6 +10226,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (194,'2021-05-04','M2R0C8MR92MKDW971VLHAV6FS','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
@@ -9603,6 +10258,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (204,'2021-05-23','K9H1X0RWHWB9G771GZTQNV1RF','Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
 
@@ -9636,6 +10292,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (214,'2021-05-18','N8JATNX90RVRJZGDLHNK864R6','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
@@ -9667,6 +10324,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1772,'2021-03-19','YPAW4625HA8JGEW1ERDVVTCX8',''),
 	 (223,'2021-03-19','QKEN0T8ZGILWIOUX0QV6KYOQ3','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
@@ -9698,6 +10356,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (232,'2021-02-22','FB6AQ1WW9G31U5E2SGJJUOKSJ','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
@@ -9735,6 +10394,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
 	 (241,'2021-03-16','8YOZWGUZ0DZL8JO8QZ7AGN7LA','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (242,'2021-05-20','07HJXG68V9X4OWU0KVMU841BM','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -9768,6 +10428,7 @@ Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum an
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (251,'2021-05-10','XDR8MEDZTQXOP1065VAAWGDPL','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.'),
 	 (252,'2021-02-02','SXFQORYPO89O586IX7U7HKIFN','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
@@ -9801,6 +10462,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.'),
 	 (260,'2021-04-16','HC8J30I4WXUDU0EAU7DGARE28','Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (261,'2021-03-06','3I9D5AWQHFMWCBL6N68ZSAR78','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -9830,6 +10492,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (270,'2021-04-06','T23YXS6338WX5DAY6MKJBQBOE','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (271,'2021-02-01','U7YK0HE604OV59XVTJO71NEO0','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -9863,6 +10526,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (282,'2021-04-27','9ELLU8AZZM03L6MIEBP4YV3G2','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
 
@@ -9892,6 +10556,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 	 (291,'2021-06-09','IXBJUYCC1TWAZAKTCGIL88WTN','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (292,'2021-05-14','6VH0DHWXJ2GXCIFEYCNVEK3LT','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
@@ -9923,6 +10588,7 @@ Phasellus in felis. Donec semper sapien a libero. Nam dui.
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.'),
 	 (300,'2021-04-30','OAIPPZKS70ZQQH7BHE00799CN','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (301,'2021-02-25','IAM9QNE80CCNFY1P4UJLJ0T71','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (302,'2021-04-12','YXQE6LQE031MKIVSSRHQ5UDG4','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -9954,6 +10620,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 	 (311,'2021-04-21','MERVDVIDCCY2HSKBHQVY6R2NH','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (312,'2021-06-20','RGYS95O50LQGSS0XVF8O2BNB7','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
 
@@ -9991,6 +10658,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (322,'2021-06-25','LTVEK5UT90EVEFDD9PVVYDC62','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
 	 (323,'2021-06-06','V8QXAQ3K1UTE698NCE10RI1KL','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
@@ -10020,6 +10688,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (331,'2021-03-01','GA8HV0K3FDM57RYQ0APP2BKSS','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (332,'2021-03-15','IQR8C2SK10QK74EY4JRGR7BLM','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
 	 (333,'2021-03-21','CSMP0MMK01XWHQG165HKOVM2S','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
@@ -10045,6 +10714,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (340,'2021-02-13','JPAXGKH8WHIIP4V6MR1ZHD7VP','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
 	 (341,'2021-04-16','0U2NC1UICUVOS9PRMT8WQVK1K','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (342,'2021-04-14','9QAKU4GICB4HGGUA865CAFLXS','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
@@ -10076,6 +10746,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (351,'2021-03-07','IKHOGS5TR839JZ4LEL3642F6A','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (352,'2021-06-23','THELAJ1TBOBB44AV3ZXURBJ1E','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
@@ -10111,6 +10782,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 	 (361,'2021-05-24','7KG34JQTLVBFNP1YD2RK0HYR6','Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (362,'2021-03-01','8604FTNUP69EKMY8G8JG6EAUC','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (363,'2021-03-17','4V5HMZGKYIVRW9TK9AQ583IET','In congue. Etiam justo. Etiam pretium iaculis justo.'),
@@ -10138,6 +10810,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (372,'2021-06-06','WLQ1KSYX40RKR2L75PCZ8A8F7','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -10161,6 +10834,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
 	 (382,'2021-05-03','0YD3BDCGVWSNOKD0MRL39QQAS','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (383,'2021-04-27','EO80FRUUSASSNCV4A2OC9WGIM','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
@@ -10202,6 +10876,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (393,'2021-06-06','4J910C1SG6YG4VN3AYFSJQWQ5','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (394,'2021-02-09','13O4NBCA9TM5E6268DB8JRH7H','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
@@ -10223,6 +10898,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (400,'2021-05-20','VZEEXY501Y3WENP4OYSJR5V6J','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.'),
 	 (401,'2021-02-16','2YCSUGO6GVR9T7FIVIB5EDAMX','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (425,'2021-02-14','3LSQ4UQO9TPUXJGPJZG81H28U','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (402,'2021-03-03','FXQRNBKW3ZKR4AG7AKXDDEGLQ','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
@@ -10258,6 +10934,7 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (411,'2021-05-09','6YABCANJ5T6KNRUOFY63YKCFE','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (412,'2021-06-20','Q9GO5YRK1M6F03D2REKCDVIZ2','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -10293,6 +10970,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 	 (421,'2021-05-21','H1VZBLKTLLSP1514QFS1X1HAH','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
 Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (422,'2021-03-07','3A59SKP7IZJCM0W6WIBFTE6O5','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -10324,6 +11002,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (434,'2021-02-08','79XS2R216Z6CTI3X3AY1IWS1E','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
@@ -10361,6 +11040,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (443,'2021-02-25','KJNOHHQANDVWN9DJHRLYA2ETA','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (444,'2021-02-27','GA2FFZO00UA9FPPGO3INSEEML','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'),
 	 (445,'2021-05-26','HU3HX28NREIT5G18IFXXN83HM','Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.'),
@@ -10380,6 +11060,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (760,'2021-03-15','JHMXY4SD41BYQ8UQF5OWYV5RT','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (453,'2021-05-13','N1S009MBQM7SQR7IHV68R0NRU','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
@@ -10407,6 +11088,7 @@ Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, sempe
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (462,'2021-04-24','POIW3MARH84FASEE6TFAGA641','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (463,'2021-02-02','ZXS5UMW4DC3B2ISWQGRN0NAEO','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (464,'2021-03-07','TUE92W7L5O9Y8KWZSCFXU9T6Q','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
@@ -10428,6 +11110,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (472,'2021-02-15','LKE2AKKYXND3TQS0NAV896381','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (473,'2021-03-03','T9IIL84QNB7GK2Q8YAI10KDLK','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (474,'2021-04-30','ZK4FX5TALATKKC8ZQ72SRDBQW','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
@@ -10449,6 +11132,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (860,'2021-02-14','01SEJ72PB4H096ASIGA9NFGPR','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (482,'2021-04-11','8IPHXVX210HF6MNI400SYELAV','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
@@ -10480,6 +11164,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 	 (491,'2021-04-21','H8WEYCU4UVOM5X6DU0KU623CQ','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (492,'2021-06-28','WCQ0P3WZYOSQTJQH182BL9UZM','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -10515,6 +11200,7 @@ Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integ
 	 (501,'2021-06-07','APDC577X2QI997YOCBRNRFY5F','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (502,'2021-05-05','Z5MR9S8GU3CU10TXTAAH0SDIS','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'),
 	 (503,'2021-06-12','R8HPE845R8W8PZYC40Z5MQFJB','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
@@ -10546,6 +11232,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 	 (509,'2021-04-24','8UI2MENSOCQ7F288YD48YMTOX','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (510,'2021-04-16','ZRYH0CZJRZ2SZ17GYG97I8PGQ','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
@@ -10575,6 +11262,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (520,'2021-06-17','QJPYPJHM6NC1IHR5H5IFYZ73F','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
@@ -10606,6 +11294,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (528,'2021-03-14','6JS4T2HGEPF0WFRT1Y3KHELYV','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.'),
 	 (530,'2021-05-06','61LO1QSFEXZB3MH2WCV4VLGOI','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (531,'2021-03-29','O5AF86TGSSTNY9WDUEC1JRRG2','Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
@@ -10643,6 +11332,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
 	 (540,'2021-02-23','0GQ0ROU84AET7YHFE25PKEUXD','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (541,'2021-02-16','RAHI6LB1CDS75UEVS2B2BK5YD','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
@@ -10676,6 +11366,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 	 (550,'2021-04-03','NKGBREJ0YHNAI77UYY3848CXK','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (551,'2021-05-25','EZPQ362IGZZFYO59PG54IECH6','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
 	 (552,'2021-03-01','F1YPTX4H519XQMJTAO1RS6V4D','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
@@ -10711,6 +11402,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 	 (561,'2021-04-27','JMNNJWBVNRU3WRV70YO8RVSG5','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (562,'2021-04-23','RYHC6TV2GD0SCRANCSCX50ATN','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
 
@@ -10750,6 +11442,7 @@ Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pu
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (572,'2021-02-23','KP73LG1INW0S0X2S9H2ZTE3DA','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
@@ -10783,6 +11476,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
 
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (580,'2021-04-09','LZY8AUBKF5ICTXZA5I8E8YNQO','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.'),
 	 (581,'2021-03-11','K3QS5JVGRKO3A50AB4QZKSBBL','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -10808,6 +11502,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 	 (587,'2021-03-07','44SLZUP7WO7A01TP3I9PZH4DQ','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.'),
 	 (588,'2021-02-24','1JWR7HSJR25EFQ47K1VHF6OC0','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (589,'2021-06-14','BWH59MHHGFAO9HRYVZ7N9GA7P','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (590,'2021-03-09','CHSDSOECXB4GE5FNX8O2L6OGP','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
@@ -10847,6 +11542,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 	 (599,'2021-03-25','954JVEDM6POZIYPLLSPUQPH3E','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (600,'2021-04-21','UTFCI9CLYTF4PRDP3Q9U7M79C','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (601,'2021-03-23','HGWEJSOHBO746SNPX34ZYBQMF','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
@@ -10880,6 +11576,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 
 Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (610,'2021-03-07','OGGMVS3TK7AK3JAH7V16RMFYB','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (611,'2021-04-17','N76W4BF4D37HU8T3EJMI5YEWH','In congue. Etiam justo. Etiam pretium iaculis justo.
 
@@ -10915,6 +11612,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 	 (620,'2021-05-08','6E70MN0MVHUC4NS8UKW95AOAV','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
 In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (621,'2021-05-31','5AYVN70BYRAH6NBIMPBR9DEGG','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
@@ -10946,6 +11644,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
 	 (628,'2021-05-05','Y70NCNJ6WT4UUVIN4FT9YFVA3','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (629,'2021-05-28','9GQZES8LNRIWNJV1W0UQX6LOY','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
@@ -10969,6 +11668,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (639,'2021-02-18','2KGRSH8RFFHGPSM62DSNL9DV5','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
@@ -10996,6 +11696,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 	 (646,'2021-02-06','IGBCMD32KNO8H2I5733MAVDFZ','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.'),
 	 (647,'2021-03-08','0W9WWN16PF3KYPE1FA82UR46E','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
 	 (648,'2021-06-29','44SX73M54QUQVQE55D212SJTA','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (649,'2021-04-15','YR5U3C25DQ0OV1ZLVAZIFM2AE','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
@@ -11027,6 +11728,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 	 (658,'2021-06-05','H6BP717BPLGJJJGDTJEOEPWIS','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
 	 (659,'2021-04-23','ZXUAS118QGSKYRXWPT6544WUM','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (660,'2021-03-02','PCG3LF1193XGRVM61UBRR2Q5P','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (661,'2021-03-02','9GNT7RNPZIYU9O7T17XEMKIJN','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
@@ -11062,6 +11764,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (670,'2021-06-22','S1EAQ8YMHITIY9133LJSXN6ZB','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (671,'2021-04-26','Z13Y2XPDPHJTST553VYJ2JTX9','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
@@ -11095,6 +11798,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (680,'2021-04-15','IY2SVS841GG1V549XRECXW7LH','Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 	 (681,'2021-04-26','GJSFNNCV7RIG6FRA651Z7XGZ2','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
@@ -11114,6 +11818,7 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 	 (689,'2021-02-11','OLQ9GH21U0CN9JL79XPJTH1MK','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (690,'2021-06-21','VON68D4TCC9SLXRRMV4YD65WX','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.'),
 	 (691,'2021-02-16','Q7KH6FKZAZ3WSGS9SOKOSWZDV','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
@@ -11135,6 +11840,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (699,'2021-05-10','YXN5S1QN1XHI20HCMX9AJFXLP','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (700,'2021-02-14','U2OAT87G7PYZX508U6W49455J','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.'),
 	 (701,'2021-04-18','FHXS8QO9CG4V93BDU0R4AMIU3','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
@@ -11164,6 +11870,7 @@ Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue 
 	 (709,'2021-04-14','PRES1BTAMIAGBX85S3CB7ZSFV','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (710,'2021-03-03','P10N4WERRXA4U6AGAT2B2DBYS','Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.'),
 	 (711,'2021-05-12','QR98D1FRMSHKQ3XPN3GNEEAX4','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
@@ -11193,6 +11900,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 	 (719,'2021-06-12','72DGURQ9BP3Y7UVF1NXV7V880','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (720,'2021-05-17','97E273PAHAAI0CKXOG3ZSPJYG','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
@@ -11220,6 +11928,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (730,'2021-06-23','3TSVWJVEOJ6GQGCNPRHCT0P0X','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -11247,6 +11956,7 @@ In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, di
 	 (738,'2021-04-08','ZYQRVRINZXQPBMDGNQGQ7FR6A','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (739,'2021-04-05','9EZSJONCAGCJ0VZI66TUEFDZS','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
@@ -11286,6 +11996,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (748,'2021-03-30','QXBWOGLAON6G18R2JFTLIB8RN','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (749,'2021-03-21','LIT0089GSCCQAQY97G1FZPQ9U','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (750,'2021-02-07','0OG2UMEW3V9M0RREG2EXI6H62','Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
@@ -11303,6 +12014,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.'),
 	 (757,'2021-04-20','NY45DN1U2HHB5603146ANTCMV','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 	 (758,'2021-06-18','09MP92N34B1CKJCLPOC4QMW5A','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (759,'2021-05-08','1UQMZSFPW98NDC4MTWVJIJF0D','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (761,'2021-05-31','MYMQKQ6VDUMCEP2POYVJ8B6VL','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
@@ -11338,6 +12050,7 @@ Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (770,'2021-02-06','MGWGRWZV5J4KYHC5V82D8MGS5','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.'),
 	 (771,'2021-04-26','00R7DJ7IP1374R711BSHTFIBL','Fusce consequat. Nulla nisl. Nunc nisl.
@@ -11373,6 +12086,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 
 In congue. Etiam justo. Etiam pretium iaculis justo.'),
 	 (779,'2021-04-14','JTGYR5ND7CUTEZTIWLUG4ET8B','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (780,'2021-06-20','QPU6J8TKZUC3FBT8YCGG2AX3N','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
@@ -11406,6 +12120,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (789,'2021-05-26','YWBMWY4U9DYOBX0O64JJCUIOE','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (790,'2021-04-23','IDQ4S7124MQEEIFGRCUBB0HKM','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
@@ -11437,6 +12152,7 @@ Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
 	 (798,'2021-04-09','54NCZXSX79UZ9UUG0ZK5ER1BX','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.'),
 	 (799,'2021-04-24','ZYFNRMZY7RJUUQ3WFYONBUYS5','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (800,'2021-04-18','1VIYLZC7BY8AHZ7IIM2SJ05VJ','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
@@ -11464,6 +12180,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (861,'2021-05-25','J8BU4E2OV64OZJSX0GN2LQ503','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (810,'2021-02-17','SAYY2I61XPBX38EFDVK2EE98T','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
@@ -11493,6 +12210,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (819,'2021-04-18','1M4OEUTO9ZOEZLVO2TBBBOG67','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
@@ -11522,6 +12240,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.'),
 	 (827,'2021-04-09','QOGGFXXOB4Y7W89AG3W5W7TH0','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.'),
 	 (828,'2021-05-05','71EBR9Q5Z5U7IGFHFTD6N7II7','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (829,'2021-02-22','PHGXKRKU6QCSMUUXU51TAQ1B6','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
@@ -11549,6 +12268,7 @@ Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat 
 	 (836,'2021-03-23','JHAWPHJJAA7QJ3B07ZHPVYNU9','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
 Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (837,'2021-02-17','VS7PRYV6WF8S4VHKNSN6KPF77','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (838,'2021-06-08','NO4JIC2GJ7T1Z3A6EE6SC2HC8','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -11584,6 +12304,7 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (847,'2021-04-28','7UP7JRRGG6ELTGB2KQYUJCFV3','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (848,'2021-03-31','QMUN8409FHXEJTGROYJ2SIK5A','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.'),
@@ -11611,6 +12332,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
 	 (856,'2021-04-09','3UC30HOLI7U5KMD0DV1ADWH3S','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (857,'2021-05-17','U6FPYZS6TILM5BYUMH4IS2180','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
@@ -11640,6 +12362,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 	 (871,'2021-04-05','KFJNN1DGY2VV27XQ3LQZXHERR','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (872,'2021-04-11','ZW1MK69GLV5WF7YT4G7NHJR2K','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (873,'2021-04-07','34KJA3RQDQNINAM0X2X94ALPK','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
@@ -11673,6 +12396,7 @@ Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est ris
 
 Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (881,'2021-03-14','Q8GXGSD0LUNIF1ETW4DZI39PI','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (882,'2021-05-23','IL76KYKBS59PZ4Q3KAAJ9VR0A','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
@@ -11708,6 +12432,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 	 (892,'2021-05-30','SCJ3UI5ZWWSUFDFHS3YTIMB84','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (893,'2021-03-12','JS8SNQ39NRDVEPC5J1JPAG1ZK','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.'),
 	 (894,'2021-05-25','HU77XFUY2VO66JDBC2DA0N2SE','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
@@ -11741,6 +12466,7 @@ Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, 
 
 Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.'),
 	 (902,'2021-03-09','LL9PV57NCM7NWDWWZ1CBD6N6J','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (903,'2021-06-06','W68BY1TQ08JCXQWCA6E7T0TED','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
@@ -11778,6 +12504,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (1161,NULL,'UM3R8ACKUHXVRLNR2HWLVQN7S','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (912,'2021-03-18','EJ1WHLQUWT29JPFCL7TKWRXP3','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.'),
 	 (913,'2021-02-21','WLT1P74D4D94L8LR6F2WOUV8I','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
@@ -11811,6 +12538,7 @@ Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspend
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 	 (921,'2021-05-05','G3U69GSAZ5JAK8VVLF39WDS88','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (922,'2021-02-22','8GU26QSTAZPM5TS3L1QUHKP8O','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
 	 (923,'2021-04-08','XBF6OFFR2E2RFN68VHHGQWAFR','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
@@ -11840,6 +12568,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 	 (931,'2021-03-01','7NWVS06L8CQXAX35A972RSC0O','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (932,'2021-03-18','4ZENUDT6FKRQR7D86IYYH8MY9','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
 	 (933,'2021-05-13','Y2GMR8TOPJROF6EDULL4ZUUCT','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
@@ -11869,6 +12598,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (940,'2021-02-24','0U5UHKQ8XDHBO8FGLF8Z8Q2X5','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -11898,6 +12628,7 @@ Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci
 	 (949,'2021-03-27','JY5HS3348BULEJFCNTUNZQG10','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (950,'2021-03-10','4Q75YEOF0ZAWMCJ24MUFZMQN1','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
@@ -11935,6 +12666,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 	 (959,'2021-06-28','97REH55IYHNDCWGIMNUSQIABY','Fusce consequat. Nulla nisl. Nunc nisl.
 
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1234,NULL,'QZH8S75BKYK7ZLWZXLSB6LION',''),
 	 (961,'2021-04-05','ME25MP5831HBU5AVEGCCNECCN','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
@@ -11968,6 +12700,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.'),
 	 (969,'2021-04-30','MDO9MVCSHOZENQDOCOU1DLZQU','Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (970,'2021-03-29','GE52DW6L8N8TEA5H82KRMA4CK','Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
@@ -12009,6 +12742,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 	 (979,'2021-03-21','RNS32MP5OFFZEU4RBSI04JNT7','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
 Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (980,'2021-06-14','155F4R8RCW5KZGFU58NIA3BXP','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
 	 (981,'2021-05-21','X2AHJ0DPDBR8EK5TKTH8B3BR6','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -12040,6 +12774,7 @@ Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non
 	 (987,'2021-02-08','5VBG4U69KGZW6XJ9B67A2V6OV','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (988,'2021-04-06','8EKA80H7V00Q94U616VQR52R1','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
@@ -12071,6 +12806,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
 	 (996,'2021-05-14','V91Z4SWU2PE3JOBKC85WPYXGY','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (997,'2021-02-24','C1WHKDCFMGA1SHU1ARR41H6S7','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (998,'2021-03-26','JJHVC5DNPWOERDXTCHGFX8ZHH','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
 	 (999,'2021-02-02','FDIAJWKK6RD3H92R1B7W2ACVE','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
@@ -12096,6 +12832,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1008,'2021-03-29','H1IHOC17XMCWU5U9CD0LO4B2S',''),
 	 (1015,NULL,'BP1KX6N71GKSKSB52V5H896GR','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
@@ -12111,6 +12848,7 @@ INSERT INTO public.prescription (id_consultation,next_appointment,digital_signat
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1024,'2021-06-24','60KHN1JTC2TKJGS5S3DV9GPXJ','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
@@ -12136,6 +12874,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 	 (1031,'2021-04-27','CZR42SJ3N5UI4H0VQNEEIJCSU',''),
 	 (1032,'2021-03-15','HVF2XMJ6KISQ4I7D0IM2FTAO6',''),
 	 (1033,'2021-03-05','SJNI8U1ZYLZSUJMDVM1MW2XRR','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1034,'2021-05-28','UR3X1EGOJH3K4I64G2RXD5VBD','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
@@ -12155,6 +12894,7 @@ In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, di
 
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.'),
 	 (1043,'2021-06-06','MSQC5PD5F1BOUCJ3M1BIZ9QWI','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1044,NULL,'KMCYVAKND707YAMSICJQVKZR2','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
@@ -12172,6 +12912,7 @@ Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (1051,NULL,'0NWNGAPGRX0RN1FUABPMYXMUD',''),
 	 (1052,NULL,'SBG1QT2RGP51P6DQJEM1N6C4R',''),
 	 (1053,NULL,'9ZK0ZJJ9C4NTX7EY5T79PNZR7','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1054,NULL,'6LEKF2J963287K25KDJIGKSYP','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
@@ -12199,6 +12940,7 @@ Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1063,NULL,'MRD9ZMV2L7Y4VFJY8P2H04OUD',''),
 	 (1064,'2021-06-09','SWIWYU19WOYPO6EJ19GBXU8EA',''),
@@ -12222,6 +12964,7 @@ Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est ris
 Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1073,NULL,'SLDJ6UR4L05XAOXG6N8R3CYL8','Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
@@ -12249,6 +12992,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
 Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1083,NULL,'JW4TWJ3WP15V7A74W2LXH4QNG','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
@@ -12272,6 +13016,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (1090,NULL,'S2BPXZJAZJ23Y8MALYIRDAZIJ',''),
 	 (1091,NULL,'IFGAGIL3CVXQHURWS3YP290WY',''),
 	 (1092,NULL,'A4CC7D1OMJ01NG0NPU6AT2LGN','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1093,NULL,'IPYSWDNRV68MNFBCZSQE0GDID','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
@@ -12301,6 +13046,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (1101,'2021-05-09','8KT76VNRTGILROFSFANYSIWI5','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1102,NULL,'2T7MSI0ZI5VR7UZG82HEGW8CH',''),
 	 (1103,'2021-04-11','AS76R245ZY2Y77P3CP4Q5WFSV','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
@@ -12328,6 +13074,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
 Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1112,NULL,'CXSOMU8JVSB6AYNTH8977WN34','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
@@ -12349,6 +13096,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1122,NULL,'6FP1TAHJM20O1I8JBWSTNJXBN','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
@@ -12376,6 +13124,7 @@ Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turp
 	 (1131,NULL,'NBCUE3CXJFFXHZ04ONEJHQ56O','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1132,'2021-05-28','MR8FOLVMU0K59KLWLX0ZSRA17',''),
 	 (1133,NULL,'4OZ8VI8QVGCSBVS4IBGVYRS8W','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
@@ -12399,6 +13148,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 	 (1139,NULL,'MENM8LHKLK94PHZ9HNK91BHV8',''),
 	 (1140,'2021-03-03','JUM9051Z40U1VBFG5BP6T6M16','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
 	 (1141,'2021-06-05','63IUNEET4K1CFHWGW60LM4LBL','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1142,'2021-06-23','C74MOPHGZJ4CIZ31JKERHSWS7',''),
 	 (1143,NULL,'AL5XLUCRGX9O11D48W3OTL1XC','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
@@ -12428,6 +13178,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1152,NULL,'UJC8552AGDTYGSC8EDU5KKXTJ',''),
 	 (1153,NULL,'XEJ4E66C3VEDV6RILZ87ZJJYY',''),
@@ -12461,6 +13212,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1164,NULL,'0ZY19HJKBTD3HK1MNFL03BSF4','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
@@ -12496,6 +13248,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1174,NULL,'RMDGQMZW4BE3GGE2O0GIXMGPK',''),
 	 (1175,'2021-05-25','G5T7MHVJM9EZB1QF9CCHKHST3',''),
@@ -12521,6 +13274,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.'),
 	 (1183,NULL,'4M2KVV7J4NZ2K7BGKNDC7EQNU','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1184,NULL,'SFH0OUISH5ET2O4A1TUFPG1VI',''),
 	 (1185,NULL,'UHXI462L2RL862W474LDII74N',''),
@@ -12534,6 +13288,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 	 (1191,'2021-04-22','UTGLW1TPNHLAO14EKM67J82UV',''),
 	 (1192,NULL,'7GA24CLPEO50WD003HT7HYTFP',''),
 	 (1193,'2021-04-19','BQX15FA7DJ9LOWXMIOPDLVINN','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1194,'2021-05-05','3N96DX5DDMNCR6XCMT7GX0WKO',''),
 	 (1195,NULL,'YEVBMIJ6OLFK3RVR0FAFPROV1',''),
@@ -12559,6 +13314,7 @@ Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turp
 
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.'),
 	 (1202,'2021-04-08','PW1Y61MU3QAV42JKZCQ3HD3BD','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1203,'2021-04-05','I7BO4YMCQJ8RZ8AKKUKYDQR8S',''),
 	 (1204,NULL,'U7UGJ45F1V0DYN2GLJM1SSB5W','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.'),
@@ -12578,6 +13334,7 @@ Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus 
 	 (1210,'2021-02-17','N7G23FT1UAZR1BJW05GDR4W5I','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
 	 (1211,'2021-06-07','M1ZTQUUGPYQ8WPTQ68K9NUY99',''),
 	 (1212,NULL,'F1R5BPA4LISE6YPL32YGGXY1J','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1213,NULL,'QX6LZRKRZI0DVQRYL7R6ZW11K',''),
 	 (1214,NULL,'OLPMQLM1AT9F9BBRHM0HNSYOH',''),
@@ -12597,6 +13354,7 @@ Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, sempe
 
 Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (1222,NULL,'P7KUB5A9HKFR750GLR20P7A7A','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1223,NULL,'69XNU2T5OEFUHDNMIKBNOIVRR','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
 	 (1224,NULL,'96CLVX827Z8SBEFLVUT28M31R','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
@@ -12620,6 +13378,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 	 (1232,NULL,'DH9B44PY0MW6U0DMSLK578CKN','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
 
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1233,NULL,'RY9AJY0S6APWRH2YFVINF0E37','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
@@ -12643,6 +13402,7 @@ Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, sempe
 	 (1243,NULL,'5GYP0VGL1J8AZPX1AUQ765N0W','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1244,'2021-03-05','7UT53NO05J97GNWJ5K5UC4HC0','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
@@ -12666,6 +13426,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 	 (1253,NULL,'QEGKFPK8NVCIU23FKNVBG0443','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1254,'2021-03-29','ZUHN7EVGZ5NT5OZDDYZ44EXJH','In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
@@ -12687,6 +13448,7 @@ Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est ris
 	 (1261,NULL,'GTAFY8J165FLC9UHQPX8JKEOT',''),
 	 (1262,NULL,'DXTVKZU3YO96I4GILZ64UB52O','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (1263,'2021-02-09','IFB4NJ103RM2HV5482VRFYNP1','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1264,NULL,'IQR5FY6AHVVYNX1Y0CTQPYYR3','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
@@ -12714,6 +13476,7 @@ Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum
 	 (1271,'2021-02-28','9S1UTLVQF1MYRAW81SE7F5UUM','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
 	 (1272,'2021-02-11','B1JZD8RN14EU2Q48K5V60F4V4',''),
 	 (1273,NULL,'NMIW290GU31INJQXCC8OE4926','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1274,'2021-02-11','LD7SNE0VQKRDH3H22DTEMAHTB',''),
 	 (1275,'2021-05-20','Q66ZU6373A3HROL9XECGB1455','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
@@ -12743,6 +13506,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
 	 (1283,NULL,'LI6Y4STEXW3XS35RBZ2SUUDBE','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1284,NULL,'82HAHCQQ7U0IH7QRAM2J0Z1OP','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
@@ -12768,6 +13532,7 @@ Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttito
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
 	 (1293,'2021-05-17','RZDWN5B8EOQRD3VEVB2BCZNOE','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1294,NULL,'4XZ54FSDCGTAGFJNKBQGCTPOO',''),
 	 (1295,NULL,'F4FCG2V957HL1PZ6B6YSKZ75G','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
@@ -12787,6 +13552,7 @@ Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
 	 (1302,NULL,'EM9D6FLLWHXVNJY84RWAVSI9C',''),
 	 (1303,NULL,'M3Z68NDTHLHBRALZ8ULT1UVQ1','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1304,NULL,'QEEKJT0345EWL1PMEWJJKZ1WB','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
@@ -12816,6 +13582,7 @@ Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque liber
 Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (1314,NULL,'MJ7I7X9JDPRCNI84B7XJSNTHI',''),
 	 (1315,NULL,'OTNL2BDQ8FTDXQFWVHDR1C696','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1316,NULL,'R2U4U6J1890X9ZM1R031EX6DI',''),
 	 (1317,NULL,'MTW887NH15GPIOE2IVXI3KNV1','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
@@ -12843,6 +13610,7 @@ Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in s
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.'),
 	 (1325,NULL,'4AP5FH07PJUN7LGITYNYY69DH','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1326,'2021-06-11','H8LPBTS7K68X91Z0MLTHNGDRR','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
@@ -12868,6 +13636,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
 	 (1334,NULL,'ZVOGXUZK0V8177RVAJXLZM18O',''),
 	 (1335,NULL,'NU38GHTBOVXN5LJ6R1UX22LXS','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1336,'2021-06-16','OM0YGU4Z0E6QZBQAD0EHIAFRW',''),
 	 (1337,'2021-05-04','6G1WLNIA09JP1N15ULAP5R0S0',''),
@@ -12885,6 +13654,7 @@ Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turp
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.'),
 	 (1344,NULL,'3KAAME54UOXR388GL706KOCKQ','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1345,'2021-06-12','OOFEQ034MO2DLMDFN81XGSJYP','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.'),
 	 (1346,'2021-05-01','TE4V1ZMH1Q7KESB89QOJ09CJ8','In congue. Etiam justo. Etiam pretium iaculis justo.
@@ -12914,6 +13684,7 @@ Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare
 	 (1354,NULL,'S9TTD1O7ZZM6CVNAT9TN0O3Q5','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1355,NULL,'K9X0UX02AFPU9EX6QO9CW7P9G',''),
 	 (1356,'2021-03-18','IXIYF33D4Q4M4ASNLHST1W3U6',''),
@@ -12935,6 +13706,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
 	 (1364,NULL,'5AX7DZC9H7U01Q4S37VPEMD73','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1365,NULL,'H16LC7TM7DOGJJJREDXPR77ZS','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -12962,6 +13734,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (1374,NULL,'SJE1A98L89YJETMTB8CORNDR6','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1375,'2021-03-23','XHZBPPTYMRCND43R1SSX1O2H2','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
@@ -12981,6 +13754,7 @@ Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque
 	 (1381,NULL,'4HCR1KY7QEY5SGQ4C4UW2QQY6',''),
 	 (1382,'2021-04-05','KYCWTVJGL5S2VBEWKV5E06DJH','Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 	 (1383,'2021-03-28','RH5WFOOT13I6TKX5NWX83D7R6','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1384,NULL,'6VZ7CFCQD934ITGRR07NZUC64','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
@@ -13006,6 +13780,7 @@ Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (1391,NULL,'DJE4ID6GFRO53YYCKD7CYHLXI',''),
 	 (1392,NULL,'86W8CAJAGM0BBFM5805ZP51FR',''),
 	 (1393,NULL,'RLD2GJQZQN97F6T8RRRRN4UUW','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1394,'2021-03-15','26QRHWBC4RULQOLR6FPYHBOOW','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
 	 (1395,NULL,'RQFZ0VRUTKR59MOPUUSVJWQ35','Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
@@ -13033,6 +13808,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1404,NULL,'H329075IE3Z98M3IX2GT6R0AP',''),
 	 (1405,'2021-03-02','G0AC3ZNI2F43H6ARLSWRU9LSA','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
@@ -13056,6 +13832,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
 Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1412,NULL,'V5LM1BIL5UVMYSMXRVU56XM7M','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
@@ -13073,6 +13850,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (1421,'2021-05-24','X43JVK2Y6N87XFNFO0WZ2LGGW','Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1422,'2021-03-12','VP7OATWYP6MADF7Z5WSSAOR2I',''),
 	 (1423,NULL,'HGK91CD8XRTBHL3CLZYDRZ0HH','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
@@ -13096,6 +13874,7 @@ Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est ris
 Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (1430,NULL,'IGZR57282PIWGDQVAP48KL1UV',''),
 	 (1431,'2021-02-14','IBO0AAMFXBFA3CVRP90IZTYSR','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1432,NULL,'W2Z07TYJF5RAJ67MGTKVQPGR0',''),
 	 (1433,'2021-05-26','BYIH48Q5MFX2W4W70RK4OFVPW','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
@@ -13119,6 +13898,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (1441,NULL,'1RNWD2F6ESU9L69T6UI1OYU0P','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1442,NULL,'E8PFUS3LFPLHE4LRM2G1P0NI3','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
@@ -13142,6 +13922,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 	 (1451,NULL,'L4C04ZIT6KORJ3K5G1RT4KJC1',''),
 	 (1452,NULL,'CEUXN59DE8USN7RN28U2LULYV',''),
 	 (1453,NULL,'055QRC8AX3KJS96MW8J2HQV28','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1454,NULL,'CY6SPSZRNEAXT52KKQ4SR1BS9','Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
@@ -13165,6 +13946,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (1463,NULL,'0YZ0HUBVCEDJLJ4MIBV7I99Q4','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1464,NULL,'NGYDSAIEC6AYGYYOQR7197B59',''),
 	 (1465,NULL,'NF8NF6L1LVL179U55HYE2P8MU',''),
@@ -13182,6 +13964,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
 	 (1472,'2021-05-17','0XGWKHWYZ8C8EE1VV5Q60CXQU','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.'),
 	 (1473,NULL,'3PUKZKUD42OI7HR6XY9DZO0TM','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1474,NULL,'DZPEV64YIPUI8IOW8I34HFEAM','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
@@ -13209,6 +13992,7 @@ Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, 
 Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1484,NULL,'W9VETTHOGG3CRW31ITBSPSFV8','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
 	 (1485,NULL,'3XKA7DXR2XIYWTWJ1YM71QVTE',''),
@@ -13234,6 +14018,7 @@ Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1494,NULL,'EPVPX2ETG8CKTHOYUS2X20393','Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
@@ -13249,6 +14034,7 @@ Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
 	 (1501,NULL,'OWT5TBWMACAM2ZD377LM9TL1M',''),
 	 (1502,NULL,'6V80JHH0NQUU17INJ2XK8FJ0T',''),
 	 (1503,NULL,'Y3M260JPMGTJ2H5VMD7WNXI66','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1504,'2021-04-15','00BBRYHMY69OBU323XDGX0TKR','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
 	 (1505,'2021-04-27','BY5OZLL0NISFDQYS6FH3F7BS9','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
@@ -13270,6 +14056,7 @@ Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed 
 
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
 	 (1513,NULL,'4UN451WUVQOEH7YQ0UQDH1F8E','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1514,NULL,'Z9MAYXRXV0K9Z8J4NN7DN48ZB','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (1515,NULL,'ZGO39YE9KVZ21V8I5N8DQ5TSI','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
@@ -13305,6 +14092,7 @@ Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
 	 (1522,NULL,'0APSUDBEW69DIPARRE5X76I0E',''),
 	 (1523,NULL,'UCP6ZY3EYECULELH97CDJ83FS','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1524,NULL,'SLGEM3WOJ8I6VKBZBXPGU5LDK',''),
 	 (1525,'2021-02-06','PWLV3XWP2MHFOD6LZKMCNYA3B',''),
@@ -13322,6 +14110,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
 	 (1535,'2021-05-12','XKEISZGN1ROQ7725CIW31PKJA',''),
 	 (1536,NULL,'QVQHS8LEHU42TT8ZBF81SL5FO','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1537,'2021-04-05','HBMQD5MVO1PVB9RHQ3UTAW79G','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (1538,NULL,'ZN8YKXM07TC2Q7AURR3K6LBHE','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
@@ -13345,6 +14134,7 @@ Fusce consequat. Nulla nisl. Nunc nisl.'),
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (1546,NULL,'UYYS6LS5BAOKPHCJIPLSSAXSJ','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1547,NULL,'FVCVGSVR2J7WYZEWU18DW46I1','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.'),
 	 (1548,'2021-04-23','8CJ31CGTEH9WR5LEMHL19L05H',''),
@@ -13364,6 +14154,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1557,NULL,'UE646SNTHOWF9V9YC9V35KU8A',''),
 	 (1558,'2021-02-14','Z8O1BDTR8B4TEGF27K3ZF91R1','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -13385,6 +14176,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 	 (1566,NULL,'SGYRWK8JT05LD8E0X85W10WY2','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
 
 Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1567,'2021-02-04','QWB1XW9D1ASDVHIM979IB9L94',''),
 	 (1568,NULL,'C0K547LZJW4L92GKEB920H50D','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -13406,6 +14198,7 @@ Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, t
 	 (1575,NULL,'PDCI4Y1TM9G17T1ZULVRQBNYB','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1576,NULL,'6YCFQX4ICKCP429KMO0NI2S55','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
@@ -13427,6 +14220,7 @@ Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luc
 	 (1583,NULL,'PNKBO9TL98C2K6TUMVFG3XBLX','Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.'),
 	 (1584,NULL,'1M69L4SJMKHH8KI6N34H5XZVP',''),
 	 (1585,NULL,'QYZXJWISRVCK4PO82SZHC8ICM','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1586,NULL,'ILGE693ICXYYWWHWS89DZZMI3',''),
 	 (1587,'2021-05-15','61S3YD92US30GTUCJGXLZCG8N',''),
@@ -13442,6 +14236,7 @@ Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed 
 	 (1595,NULL,'HW2LNK8GKCJ4NJXPHR8RGTOXS','Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
 Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1596,NULL,'3SSSIC8MBRZ1HAT7PBTLKM9FT','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.'),
 	 (1597,'2021-04-25','AS8370GNUZ7O0241IZCYYSD88',''),
@@ -13461,6 +14256,7 @@ Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 	 (1603,NULL,'ZWQ8OWRFP2D61T5EZZV6F7IW6',''),
 	 (1604,'2021-06-03','GW47YC90HZFUL0KXSA3QSQIXF','Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (1605,NULL,'81CFQGS6ID9GFYUUP6LHLVITN','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1606,'2021-04-22','WRJYTWRQPV6U7AOJXCK5JU14V',''),
 	 (1607,'2021-05-09','HI2YWQYE74KZSKF7RIYLBO37J','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
@@ -13480,6 +14276,7 @@ Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turp
 	 (1613,'2021-05-29','7R3B0JMIKXIOSUC4I9MA3FH1D','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
 In congue. Etiam justo. Etiam pretium iaculis justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1614,NULL,'TSDJECG72YLZAPZD1HREHL6VC','Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.'),
 	 (1615,NULL,'QUM4S2B74MARJ1VG3I1U6PDHO','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
@@ -13499,6 +14296,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 	 (1621,NULL,'498PHPM3K7WLDC4RWAD4V7JIV',''),
 	 (1622,NULL,'Q3Q9EIO9K1UUG2Y1CLSDXSTAH',''),
 	 (1623,NULL,'UETYZD8TYK4PA8LLM6JVGOJBC','Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1624,NULL,'769U8TL38H48L86JYS200OY3T','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
@@ -13536,6 +14334,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1634,NULL,'JAXSMRN68H3DX1I3TURDB2U62','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
@@ -13557,6 +14356,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
 Fusce consequat. Nulla nisl. Nunc nisl.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1644,NULL,'D1H0VLDL3UAA0UM16Z7TTNOCR',''),
 	 (1645,'2021-04-16','HHE1Y9VEZ3RSUX83J2YJC4KKT','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
@@ -13576,6 +14376,7 @@ Sed ante. Vivamus tortor. Duis mattis egestas metus.'),
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
 	 (1652,'2021-03-31','DWSAAETLJEJMQ0EXB1QXPOURO','Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (1653,'2021-04-03','U4M5AAPB5H1X111GLWDSU62KC','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1654,NULL,'HZJZ08MKP2HZP0U5YQ4S8NTTV','In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (1655,NULL,'FHZE9ZH5V76R3N5A1EM64GIBB',''),
@@ -13591,6 +14392,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 	 (1661,NULL,'SZAWH2VOY9H48OC9BEP6Y0EXU',''),
 	 (1662,'2021-06-20','EZ0GL0CFOGSNWI0UVQ7NNPF0A','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (1663,NULL,'PUVIFUCAKMZKXZ3BA3IHNM58J','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1664,NULL,'F9D6PZQ3OCIDOOM64G4RRB81K','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 
@@ -13614,6 +14416,7 @@ In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultric
 	 (1673,'2021-02-04','KUABHWOHHW8KOTKF2BXFMVBRF','Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1674,NULL,'HQRVJNZWND0WQ4WRE21OB1SDS','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.'),
 	 (1675,NULL,'UDGFGKWDNB0BQRQA1EDJ1O6TQ','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
@@ -13629,6 +14432,7 @@ Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quis
 Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.'),
 	 (1682,'2021-06-27','BMLN48EGEUF74KBSJSK5WMYAP',''),
 	 (1683,NULL,'HVDZVAF49USDDATTB0NUS858X','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1684,NULL,'0D6R48NLG8SW8RGLDINPXHS6Z','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
@@ -13656,6 +14460,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 	 (1693,NULL,'RFMX02VGMSTX696EHSYBWF6PE','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1694,NULL,'R0IPKKEBT5ILSH26UW12DB3ET','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
@@ -13683,6 +14488,7 @@ In congue. Etiam justo. Etiam pretium iaculis justo.'),
 Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1704,'2021-06-08','PRLLN4QRRE663W8S3EK2SVUCS','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
@@ -13702,6 +14508,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
 	 (1712,'2021-04-25','UK4FBYERY37XX6UA34YK3WP6H',''),
 	 (1713,NULL,'N8OKA0Q9E506DM0RTZ917UGQ0','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1714,NULL,'4535VMNC07S9704H2ATFS9YPL',''),
 	 (1715,'2021-03-18','HHQCIXSZFXQAED68VW6G0L3SW',''),
@@ -13723,6 +14530,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.'),
 	 (1723,'2021-04-12','PS6H6HW7I23YY68AUYJ3TLG2L','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1724,'2021-06-18','VBDS2TLX9C0UAP6J7NHTBPN16',''),
 	 (1725,NULL,'1RMH61UJYEN296ZF9YO7LYIJ8',''),
@@ -13740,6 +14548,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 
 Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.'),
 	 (1733,NULL,'7ZRKA4T4UTUQ3RKGTTSS23R3G','Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1734,NULL,'S6D0ZW6HHKKSED1L6FRWXQ2W0','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -13767,6 +14576,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 	 (1743,NULL,'IBU6YPA9WMNW3YD6SAQSGHXQH','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1744,NULL,'ARH9KM15HEQ7MAWDTL630NIZ4','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.'),
 	 (1745,NULL,'PN5X98XSW5W2JJYUBIRCIVFCE','Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.'),
@@ -13792,6 +14602,7 @@ Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (1752,'2021-04-19','UF0RQTGWQ9DXLIEMHRY3RTM9I',''),
 	 (1753,NULL,'0S09BZCC4AU96VZ1MJ9Z0TEXT','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1754,NULL,'OET14C5IF9QKF4BO496QNXT4P','Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.'),
 	 (1755,'2021-03-19','SN5C0BAL7ZWCKIYSS4KWQ1Z5E','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
@@ -13815,6 +14626,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1764,NULL,'004O6QQOCCO3PYV9265H4ER3E','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.'),
 	 (1765,NULL,'G8PQDJ2BSK6RVB8HA52OC8EZT',''),
@@ -13836,6 +14648,7 @@ Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.'),
 	 (1779,NULL,'TVXOT93FJQWDRDD278U2AXF6M',''),
 	 (1780,NULL,'D7WXV2PH3N2SSSVCODJXMSASX','Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1781,NULL,'SA7CP6NQX57OCCZ4FXZUUT40L','In congue. Etiam justo. Etiam pretium iaculis justo.
 
@@ -13863,6 +14676,7 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 	 (1790,'2021-03-03','2IT5LNCBF6VHUMWOS727UC123','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
 Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1791,'2021-05-18','VCKZU7F8VWQS49DRG5MT5UJ76','Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
@@ -13886,6 +14700,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1801,NULL,'PG0IE0Y8NJZML2E2H0P1KVPCT','Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'),
 	 (1802,'2021-06-23','99HJ2D34ZN5RA2ZT3X1PUPW91','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
@@ -13917,6 +14732,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 	 (1809,NULL,'YPUKV9FT9RY9889XVREBRB430','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1810,NULL,'GWDOSAB9PKSXQ5T0A82O1VAIR','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
@@ -13940,6 +14756,7 @@ In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.'),
 Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (1818,NULL,'TDH7UL8TVKZPBA3C0HH8K0TK8',''),
 	 (1819,'2021-02-25','XQ1IED8UT9NUOBWTO1TJ72KKN','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1820,NULL,'X4N12K0XP55YA6GYPFL9DQHAA',''),
 	 (1821,NULL,'G2GKZ11BUAI1SIUXANKGOG5AT',''),
@@ -13965,6 +14782,7 @@ Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non m
 Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1830,'2021-04-21','UVVIYFI7ETXO5A2NPJB43RQIF',''),
 	 (1831,NULL,'YZPCD7PKW1I333HP2MSCZ147E',''),
@@ -13986,6 +14804,7 @@ Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum pri
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.'),
 	 (1838,NULL,'3NWEYJV2H6I36KOQF8FHRLGP8',''),
 	 (1910,'2021-05-07','G3YU6JK2AGWPQDKKZLH4V0W6B','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1911,'2021-05-31','9QBB6F1EY1X8389DXDUL2V00M',''),
 	 (1839,'2021-03-24','UPP0AB4MIS7LZIEWL53HYUNRZ','Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
@@ -14005,6 +14824,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (1845,NULL,'Q9OAX93N2D797SD5N9L362P7R',''),
 	 (1846,'2021-05-19','2RXEH28I2UMS2S52BR2P4T8MO',''),
 	 (1847,NULL,'R06SML0KDHAL45D25KHMSA37H','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1848,'2021-02-09','QFBGRMJ77S7HKGYIB8RZDXVGV',''),
 	 (1849,NULL,'JB5NCSVE0R5JZUMOXRR512CS2',''),
@@ -14024,6 +14844,7 @@ Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit u
 Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.'),
 	 (1856,NULL,'BEKPC930N9KEUXFQ1Z2BM8ZB2','Fusce consequat. Nulla nisl. Nunc nisl.'),
 	 (1857,NULL,'3TFTCZPFPBTHQMS37PDKW6BR2','Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1858,NULL,'VU3S85DAQTGIBW7IORP3G90EC','Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.'),
 	 (1859,NULL,'RBO4B29Q4J27SWE44EU91MRDA','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
@@ -14055,6 +14876,7 @@ Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscip
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.'),
 	 (1866,'2021-05-01','BZM2K6JL0LHCENMY9RC5N5QYD',''),
 	 (1867,NULL,'UPD9GAC5PMWSG4ILHM9DOX52W','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1868,NULL,'9KD8SK3I8666SP5HLCEHRSCXQ','Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'),
 	 (1869,NULL,'XATAMWXU90VSUESW15REEFADL','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
@@ -14074,6 +14896,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.'),
 	 (1875,'2021-04-11','L0TP06ETQ2KIA7WDIDCFDH5T6',''),
 	 (1876,NULL,'QFUWFJ08VBSC1RPDAIT4BZNBG','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1877,'2021-05-31','190512NJGET9FWKNT6XCOSD8D',''),
 	 (1878,NULL,'IQZZ2MH0CTQUGOJKB1WTJE291',''),
@@ -14097,6 +14920,7 @@ Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet 
 	 (1886,'2021-03-02','FOL4HH5VLHOB0BYDUJWINDN6K','Fusce consequat. Nulla nisl. Nunc nisl.
 
 Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1887,'2021-05-27','ZNJE96EO773SJ2A9SV6LZALH3','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
@@ -14128,6 +14952,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.'),
 	 (1896,'2021-03-28','40406OG6Q02C002XH7PQJ0WGQ','Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1897,NULL,'GP3VA0ED29LJICXUZJ1PR54VB','Fusce consequat. Nulla nisl. Nunc nisl.
 
@@ -14151,6 +14976,7 @@ Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
 Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1907,'2021-05-26','A05CJE0TK2N48JWPBHF1ZU7U2','Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
@@ -14174,6 +15000,7 @@ Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer al
 Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.'),
 	 (1917,NULL,'ONHSVAFNIA6BD8OWPGDJOH643',''),
 	 (1918,'2021-02-11','KKTZBYRQCYR2YSLI7XJX5AHL7','');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1919,NULL,'FP7O245HMIRTT4O2Q6AERFYDL','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
@@ -14193,6 +15020,7 @@ Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.'),
 	 (1926,NULL,'EZ54UFCQLVWGDMT1NQBZEOZP3',''),
 	 (1927,'2021-05-20','EOX5JX1VUNW9UX9XLAPJPAGEK',''),
 	 (1928,NULL,'4PKTYL0BYKTS5MMWLNSVNCHB3','Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1929,NULL,'2P2D0IPJHQMV92OP80PBMRSJ4','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
@@ -14212,6 +15040,7 @@ Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vi
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.'),
 	 (1938,'2021-04-23','46GT987ME0BG07Z1VP8VNU9PO','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1939,'2021-03-13','AZXYFRIGMDEVYSJ44NXDCL7SY',''),
 	 (1940,NULL,'ZL8NI1BF5JLF0Z93UALS0TJ0V',''),
@@ -14235,6 +15064,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'),
 	 (1948,'2021-03-28','HEN36WBZRWW3M9Q9TY7H5WZHG','Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1949,'2021-06-19','XI4T8X1LAWGOGKXLHXIF1QP9M',''),
 	 (1985,'2021-03-29','IVQOOP21PC6W72KQI6PAQYZOT',''),
@@ -14258,6 +15088,7 @@ Phasellus in felis. Donec semper sapien a libero. Nam dui.'),
 	 (1959,'2021-05-29','3G4QXNNK49VDNFWBCEJRDJMLI','Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 
 Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1960,'2021-03-18','EK0S5Y5NZEYYD8AQLXDWHTW9U','Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.'),
 	 (1961,NULL,'8XCRHQ2M3IW1ES3ON8ETMW65D','Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -14277,6 +15108,7 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 	 (1969,NULL,'TNGJC91EHN98K3L3G0RGD3YG9','Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1970,NULL,'8YKHDGSH2UF9IGHT77KGDT7AH','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
@@ -14310,6 +15142,7 @@ In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, di
 	 (1979,NULL,'69NWQV77LYZN8CC31959KFRAN','Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
 Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1980,'2021-04-03','WYD7O6Q6V7MFTET354OI5LHJ8',''),
 	 (1981,'2021-02-07','KYKNZ934JL2CMH6MY1BLNQDFG','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
@@ -14337,6 +15170,7 @@ Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.');
+
 INSERT INTO public.prescription (id_consultation,next_appointment,digital_signature,additional_indications) VALUES
 	 (1991,NULL,'OXDBOG95PJHICJPBBSPQR3ADI','In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
@@ -14361,7 +15195,8 @@ Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.'),
 Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.'),
 	 (1998,NULL,'29WAMIUJ1BL9W5NV40WMO0GY4',''),
 	 (1999,NULL,'ZQWWAQOPRFDQNG7DSM12A12VF',''),
-	 (2000,'2021-02-05','58FT7JBQV7AEWQRXMGDRD94XS','');INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
+	 (2000,'2021-02-05','58FT7JBQV7AEWQRXMGDRD94XS','');
+INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (34,111,1,12),
 	 (474,196,2,12),
 	 (359,246,1,24),
@@ -14372,6 +15207,7 @@ Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare
 	 (75,185,2,72),
 	 (973,265,3,24),
 	 (349,262,2,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (741,271,3,8),
 	 (771,228,3,8),
@@ -14383,6 +15219,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (209,92,3,3),
 	 (439,112,3,72),
 	 (280,348,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (801,212,3,3),
 	 (258,120,3,12),
@@ -14394,6 +15231,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (899,146,3,8),
 	 (348,313,3,24),
 	 (627,300,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (727,176,3,8),
 	 (19,17,2,8),
@@ -14405,6 +15243,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (94,243,1,8),
 	 (227,161,2,72),
 	 (310,82,3,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (687,225,1,72),
 	 (448,130,1,8),
@@ -14416,6 +15255,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (12,27,3,3),
 	 (785,388,3,8),
 	 (238,340,3,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (153,6,3,6),
 	 (296,201,1,24),
@@ -14427,6 +15267,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (548,203,2,3),
 	 (843,121,3,6),
 	 (918,244,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (328,354,3,24),
 	 (750,117,1,24),
@@ -14438,6 +15279,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (842,164,1,8),
 	 (152,368,1,8),
 	 (494,84,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (693,194,3,24),
 	 (147,282,1,3),
@@ -14449,6 +15291,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (776,347,3,8),
 	 (396,371,3,8),
 	 (649,230,3,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (137,267,1,24),
 	 (973,252,2,3),
@@ -14460,6 +15303,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (778,397,1,3),
 	 (693,9,1,6),
 	 (576,380,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (858,77,2,6),
 	 (188,143,2,8),
@@ -14471,6 +15315,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (899,87,2,8),
 	 (564,190,2,3),
 	 (308,142,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (741,144,1,6),
 	 (415,335,3,3),
@@ -14482,6 +15327,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (988,352,1,72),
 	 (935,46,2,8),
 	 (424,181,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (603,388,2,24),
 	 (725,305,3,3),
@@ -14493,6 +15339,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (111,228,1,12),
 	 (512,98,2,72),
 	 (484,89,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (537,45,2,12),
 	 (132,270,1,8),
@@ -14504,6 +15351,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (619,264,1,8),
 	 (390,133,3,3),
 	 (676,19,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (542,268,1,12),
 	 (816,18,3,24),
@@ -14515,6 +15363,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (34,190,2,72),
 	 (739,41,3,6),
 	 (266,47,2,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (690,49,3,3),
 	 (896,311,1,3),
@@ -14526,6 +15375,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (132,216,2,8),
 	 (15,231,2,8),
 	 (814,149,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (999,322,2,24),
 	 (246,241,1,3),
@@ -14537,6 +15387,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (752,159,2,72),
 	 (238,330,3,3),
 	 (336,27,3,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (675,288,3,3),
 	 (241,137,2,12),
@@ -14548,6 +15399,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (402,41,1,3),
 	 (842,100,3,3),
 	 (651,54,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (598,211,3,24),
 	 (469,271,1,3),
@@ -14559,6 +15411,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (219,309,2,6),
 	 (112,145,3,24),
 	 (229,99,1,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (258,146,1,12),
 	 (336,279,2,8),
@@ -14570,6 +15423,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (502,13,3,24),
 	 (198,273,1,72),
 	 (260,227,3,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (115,354,3,3),
 	 (699,114,1,3),
@@ -14581,6 +15435,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (634,73,3,6),
 	 (808,311,2,72),
 	 (640,349,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (813,11,1,12),
 	 (317,73,2,72),
@@ -14592,6 +15447,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (912,368,3,3),
 	 (357,312,2,72),
 	 (574,221,2,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (504,281,1,3),
 	 (65,139,3,8),
@@ -14603,6 +15459,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (310,386,1,24),
 	 (114,246,2,8),
 	 (261,376,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (822,266,3,24),
 	 (487,147,3,24),
@@ -14614,6 +15471,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (375,65,3,3),
 	 (51,299,3,12),
 	 (575,160,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (359,135,2,24),
 	 (538,399,2,6),
@@ -14625,6 +15483,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (866,104,2,24),
 	 (375,107,2,12),
 	 (81,203,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (689,187,2,8),
 	 (333,198,3,72),
@@ -14636,6 +15495,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (10,72,3,8),
 	 (802,58,3,8),
 	 (672,176,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (878,143,3,3),
 	 (157,20,1,12),
@@ -14647,6 +15507,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (879,296,1,12),
 	 (978,183,2,6),
 	 (125,194,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (167,158,3,3),
 	 (278,140,2,3),
@@ -14658,6 +15519,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (129,17,2,24),
 	 (633,369,1,8),
 	 (470,297,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (585,77,1,24),
 	 (352,363,2,8),
@@ -14669,6 +15531,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (846,194,2,12),
 	 (345,273,2,3),
 	 (211,58,1,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (523,187,2,24),
 	 (245,328,2,6),
@@ -14680,6 +15543,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (923,190,1,24),
 	 (241,376,2,6),
 	 (139,337,3,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (567,397,1,3),
 	 (853,52,3,6),
@@ -14691,6 +15555,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (79,355,2,3),
 	 (416,27,1,24),
 	 (128,363,2,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (988,374,1,24),
 	 (680,360,1,6),
@@ -14702,6 +15567,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (253,215,2,12),
 	 (171,236,1,8),
 	 (435,306,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (56,216,1,72),
 	 (291,60,3,12),
@@ -14713,6 +15579,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (61,187,1,12),
 	 (871,112,2,12),
 	 (801,264,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (708,92,3,12),
 	 (500,350,3,6),
@@ -14724,6 +15591,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (534,279,2,6),
 	 (375,44,2,6),
 	 (538,330,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (842,30,1,12),
 	 (41,194,1,8),
@@ -14735,6 +15603,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (939,162,1,72),
 	 (880,362,1,72),
 	 (21,186,2,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (453,189,2,12),
 	 (167,309,2,24),
@@ -14746,6 +15615,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (310,189,1,12),
 	 (395,314,1,6),
 	 (597,100,3,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (251,143,1,6),
 	 (27,88,2,6),
@@ -14757,6 +15627,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (478,79,3,72),
 	 (203,27,1,6),
 	 (313,298,2,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (112,331,1,8),
 	 (939,231,1,12),
@@ -14768,6 +15639,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (801,107,3,3),
 	 (7,374,3,72),
 	 (364,251,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (990,201,3,24),
 	 (890,199,1,3),
@@ -14779,6 +15651,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (917,112,2,3),
 	 (76,293,2,8),
 	 (771,199,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (990,118,3,6),
 	 (320,349,2,3),
@@ -14790,6 +15663,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (169,170,1,8),
 	 (607,205,1,24),
 	 (198,315,1,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (725,267,3,6),
 	 (483,149,2,72),
@@ -14801,6 +15675,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (173,304,2,24),
 	 (428,35,3,8),
 	 (674,261,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (207,133,2,24),
 	 (514,396,2,8),
@@ -14812,6 +15687,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (806,197,3,8),
 	 (346,157,2,8),
 	 (198,385,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (437,349,2,12),
 	 (482,275,3,6),
@@ -14823,6 +15699,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (865,311,2,3),
 	 (155,294,1,72),
 	 (364,61,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (861,25,3,6),
 	 (203,303,3,72),
@@ -14834,6 +15711,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (989,16,1,72),
 	 (135,305,1,8),
 	 (215,70,3,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (26,120,1,24),
 	 (661,210,2,3),
@@ -14845,6 +15723,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (621,91,2,3),
 	 (229,312,2,6),
 	 (248,139,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (635,218,3,12),
 	 (151,151,1,12),
@@ -14856,6 +15735,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (729,116,1,3),
 	 (397,310,3,72),
 	 (302,294,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (669,296,3,3),
 	 (154,290,3,6),
@@ -14867,6 +15747,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (48,277,1,3),
 	 (219,148,1,8),
 	 (832,104,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (510,174,3,24),
 	 (964,269,3,72),
@@ -14878,6 +15759,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (618,132,2,8),
 	 (86,32,3,72),
 	 (697,168,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (104,262,2,24),
 	 (79,182,1,12),
@@ -14889,6 +15771,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (879,229,2,12),
 	 (857,279,3,3),
 	 (535,117,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (907,9,3,3),
 	 (53,336,3,72),
@@ -14900,6 +15783,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (444,373,1,24),
 	 (845,56,2,24),
 	 (93,86,2,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (164,335,1,3),
 	 (479,179,2,72),
@@ -14911,6 +15795,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (978,335,3,24),
 	 (340,94,3,12),
 	 (743,267,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1947,259,2,8),
 	 (1976,92,1,8),
@@ -14922,6 +15807,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1572,28,1,24),
 	 (1653,176,1,12),
 	 (1012,190,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1438,387,1,8),
 	 (1507,126,1,3),
@@ -14933,6 +15819,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1178,335,1,3),
 	 (1737,38,3,6),
 	 (1222,159,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1649,239,3,8),
 	 (1479,93,2,3),
@@ -14944,6 +15831,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1687,14,1,24),
 	 (1178,313,2,6),
 	 (1849,333,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1140,27,3,24),
 	 (1553,81,3,8),
@@ -14955,6 +15843,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1499,328,3,12),
 	 (1066,13,1,3),
 	 (1386,222,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1801,334,3,8),
 	 (1598,275,3,3),
@@ -14966,6 +15855,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1448,92,1,8),
 	 (1314,142,1,3),
 	 (1549,31,1,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1011,87,1,72),
 	 (1466,19,3,3),
@@ -14977,6 +15867,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1111,6,2,12),
 	 (1098,171,1,3),
 	 (1404,290,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1123,221,3,3),
 	 (1817,44,3,6),
@@ -14988,6 +15879,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1791,298,1,72),
 	 (1138,279,2,8),
 	 (1196,279,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1108,303,1,24),
 	 (1524,303,2,12),
@@ -14999,6 +15891,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1996,252,2,3),
 	 (1513,257,1,24),
 	 (1329,304,2,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1732,76,1,72),
 	 (1410,293,3,24),
@@ -15010,6 +15903,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1984,183,1,24),
 	 (1346,139,2,24),
 	 (1894,140,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1915,37,3,6),
 	 (1148,115,1,3),
@@ -15021,6 +15915,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1541,120,3,24),
 	 (1129,145,2,6),
 	 (1047,236,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1178,97,2,6),
 	 (1234,224,1,12),
@@ -15032,6 +15927,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1171,333,2,72),
 	 (1298,275,3,6),
 	 (1847,233,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1866,246,3,72),
 	 (1033,53,2,24),
@@ -15043,6 +15939,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1387,69,2,8),
 	 (1248,212,1,24),
 	 (1047,88,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1334,335,3,3),
 	 (1002,36,3,72),
@@ -15054,6 +15951,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1877,307,2,6),
 	 (1839,219,3,72),
 	 (1368,169,2,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1826,86,3,3),
 	 (1543,201,2,3),
@@ -15065,6 +15963,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1919,369,1,6),
 	 (1916,121,1,8),
 	 (1364,177,2,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1699,26,2,24),
 	 (1046,95,3,8),
@@ -15076,6 +15975,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1425,206,2,3),
 	 (1202,206,3,8),
 	 (1684,284,3,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1877,169,2,8),
 	 (1121,126,1,24),
@@ -15087,6 +15987,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1075,92,2,12),
 	 (1750,4,2,8),
 	 (1421,226,1,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1723,341,1,6),
 	 (1030,56,2,24),
@@ -15098,6 +15999,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1965,276,3,12),
 	 (1618,78,2,8),
 	 (1241,105,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1798,217,1,6),
 	 (1162,287,3,24),
@@ -15109,6 +16011,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1832,138,2,8),
 	 (1927,290,1,8),
 	 (1187,149,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1066,82,1,72),
 	 (1230,288,3,3),
@@ -15120,6 +16023,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1996,64,2,3),
 	 (1516,247,3,8),
 	 (1859,258,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1198,175,2,72),
 	 (1343,103,2,8),
@@ -15131,6 +16035,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1076,42,1,72),
 	 (1673,8,2,8),
 	 (1473,178,3,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1983,45,1,24),
 	 (1373,54,2,12),
@@ -15142,6 +16047,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1173,174,3,72),
 	 (1070,44,1,3),
 	 (1277,313,2,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1980,241,2,24),
 	 (1655,83,3,3),
@@ -15153,6 +16059,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1528,4,1,3),
 	 (1652,304,2,3),
 	 (1479,197,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1292,220,2,3),
 	 (1721,349,3,8),
@@ -15164,6 +16071,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1696,138,1,3),
 	 (1414,355,1,24),
 	 (1569,12,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1063,286,3,24),
 	 (1719,392,1,3),
@@ -15175,6 +16083,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1563,320,1,8),
 	 (1445,161,2,24),
 	 (1728,56,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1371,325,3,8),
 	 (1592,115,1,12),
@@ -15186,6 +16095,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1091,318,2,72),
 	 (1849,202,1,72),
 	 (1024,260,2,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1911,173,3,12),
 	 (1399,180,2,24),
@@ -15197,6 +16107,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1626,161,2,8),
 	 (1397,251,3,12),
 	 (1090,56,2,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1879,399,1,8),
 	 (1537,251,2,12),
@@ -15208,6 +16119,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1510,342,3,24),
 	 (1132,217,3,12),
 	 (1150,395,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1328,225,2,8),
 	 (1952,214,3,8),
@@ -15219,6 +16131,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1029,352,3,6),
 	 (1587,274,1,3),
 	 (1094,87,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1419,94,3,8),
 	 (1668,355,1,72),
@@ -15230,6 +16143,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1810,85,2,72),
 	 (1313,136,1,24),
 	 (1047,325,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1383,43,3,3),
 	 (1559,251,2,12),
@@ -15241,6 +16155,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1211,90,1,72),
 	 (1266,139,3,6),
 	 (1069,189,3,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1015,227,3,12),
 	 (1782,313,2,8),
@@ -15252,6 +16167,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1920,347,3,3),
 	 (1309,130,2,12),
 	 (1155,332,3,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1155,283,2,12),
 	 (1309,120,3,8),
@@ -15263,6 +16179,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1322,104,1,3),
 	 (1181,18,1,8),
 	 (1079,370,3,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1179,262,2,3),
 	 (1793,182,1,24),
@@ -15274,6 +16191,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1783,330,1,12),
 	 (1842,27,3,8),
 	 (1861,236,3,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1751,290,1,6),
 	 (1761,180,1,12),
@@ -15285,6 +16203,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1429,194,1,72),
 	 (1716,335,1,8),
 	 (1311,37,2,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1680,346,1,3),
 	 (2000,265,1,12),
@@ -15296,6 +16215,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1155,57,2,24),
 	 (1074,244,2,12),
 	 (1176,146,1,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1852,274,3,24),
 	 (1889,154,2,12),
@@ -15307,6 +16227,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1384,114,1,6),
 	 (1782,83,1,3),
 	 (1798,377,1,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1157,248,1,6),
 	 (1235,266,2,6),
@@ -15318,6 +16239,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1979,75,3,24),
 	 (1512,388,2,6),
 	 (1902,121,2,24);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1659,169,2,24),
 	 (1854,294,2,12),
@@ -15329,6 +16251,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1356,36,1,6),
 	 (1535,227,1,8),
 	 (1652,238,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1653,271,3,72),
 	 (1551,243,3,6),
@@ -15340,6 +16263,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1087,326,2,12),
 	 (1176,33,3,72),
 	 (1921,299,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1856,151,2,24),
 	 (1793,386,3,6),
@@ -15351,6 +16275,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1517,1,3,72),
 	 (1669,130,3,12),
 	 (1435,277,3,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1310,73,3,8),
 	 (1093,175,3,8),
@@ -15362,6 +16287,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1300,171,3,3),
 	 (1858,392,1,24),
 	 (1287,48,1,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1676,308,1,6),
 	 (1492,35,1,24),
@@ -15373,6 +16299,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1963,145,1,12),
 	 (1214,307,2,6),
 	 (1926,117,3,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1413,47,2,24),
 	 (1392,200,2,8),
@@ -15384,6 +16311,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1848,207,3,8),
 	 (1072,178,3,8),
 	 (1389,117,3,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1568,336,1,8),
 	 (1548,289,3,8),
@@ -15395,6 +16323,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1420,76,1,8),
 	 (1366,188,3,24),
 	 (1345,123,1,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1775,266,1,72),
 	 (1357,254,3,6),
@@ -15406,6 +16335,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1055,107,1,6),
 	 (1717,344,1,8),
 	 (1469,218,3,3);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1314,113,2,12),
 	 (1796,276,1,3),
@@ -15417,6 +16347,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1179,382,2,12),
 	 (1253,94,1,24),
 	 (1998,396,1,6);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1156,216,3,3),
 	 (1732,334,2,3),
@@ -15428,6 +16359,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1092,268,1,6),
 	 (1074,118,3,6),
 	 (1899,126,1,8);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1019,346,1,8),
 	 (1578,214,3,24),
@@ -15439,6 +16371,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1025,41,2,72),
 	 (1727,300,2,72),
 	 (1638,82,2,12);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1020,227,1,12),
 	 (1028,274,1,8),
@@ -15450,6 +16383,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1593,327,2,24),
 	 (1731,299,3,24),
 	 (1126,165,2,72);
+
 INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1108,297,3,12),
 	 (1357,329,1,8),
@@ -15460,7 +16394,8 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 (1056,272,1,6),
 	 (1074,33,1,6),
 	 (1088,217,3,3),
-	 (1778,307,3,8);INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
+	 (1778,307,3,8);
+INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('XGZZ840242PXKJP043','QMRH001516PFUAR562','2020-01-30 21:53:09','cash',170.50,15),
 	 ('TCDK018120LAPKX631','UQJB931643XVYUP036','2020-08-22 23:36:48','ewallet',524.38,7),
 	 ('GKIC997413LTOLM142','JOCV568984LBUCJ213','2020-10-15 07:19:49','cash',154.93,12),
@@ -15471,6 +16406,7 @@ INSERT INTO public.indicates (invoice,id_drug,dosis,hours) VALUES
 	 ('YVJS088173JXPOK694','SZEN211603HMRJN915','2021-01-07 14:04:46','creditcard',718.31,16),
 	 ('KBIF290261RPLAB483','CFQU986688VXWKJ506','2020-07-25 04:25:22','cash',401.32,15),
 	 ('TDDV493330EKYBH290','UFXR842796LDDBC629','2020-07-27 17:34:05','cash',402.77,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CVHE466926IUUSP551','HACN386110HMQNB358','2020-08-01 04:30:18','ewallet',371.62,12),
 	 ('LKQU721130RIBDQ626','HCSK898917ZYCFX572','2020-12-06 21:15:50','cash',837.17,11),
@@ -15482,6 +16418,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KBIF290261RPLAB483','HMAL978915HANTF303','2020-11-07 02:02:30','creditcard',980.65,18),
 	 ('VLOD142637VDISX887','HACN386110HMQNB358','2020-08-28 17:24:18','cash',736.44,12),
 	 ('FAHJ108286KECEO626','KXBA289421BLBUC577','2020-02-28 16:09:57','creditcard',503.79,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('INRG434043EEUMD115','BDTJ401139ASJOV955','2020-06-06 07:26:20','cash',185.11,6),
 	 ('EGVO458057YOIQY349','FKTE654103ZLVVH845','2021-01-14 13:49:37','creditcard',545.27,15),
@@ -15493,6 +16430,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JPMM768022LYQZR153','YHZC176932MKOLO741','2020-11-20 17:09:53','ewallet',624.49,3),
 	 ('TXEU978399NBMTT242','QMRH001516PFUAR562','2020-02-21 13:07:20','ewallet',331.15,15),
 	 ('QZFD656995ZXOXZ263','YJYU092273GYYLR462','2020-11-23 18:04:21','creditcard',486.60,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ZURQ322733EFAHA442','UQJB931643XVYUP036','2020-07-15 16:41:47','creditcard',637.09,7),
 	 ('KFDO692542WVJGQ327','SUUY019930DVHQK564','2020-03-07 02:02:37','ewallet',405.11,19),
@@ -15504,6 +16442,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('EPWH355488VULEK908','ETSO858602GRHHP824','2020-11-30 15:56:42','creditcard',308.83,3),
 	 ('XFJS846746CTTOV882','GRBA016674OHXKX865','2020-09-03 20:19:50','cash',155.12,20),
 	 ('MLCY685738QHYCJ012','FNDC053244EZIEN540','2020-10-22 02:54:51','cash',922.79,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('BDRS917078DPTGO621','SNYM639210RKQNH200','2020-12-13 14:41:50','ewallet',143.14,20),
 	 ('IRFZ115509ZSFQA219','XTOU735122APLTS301','2020-08-18 19:46:18','cash',180.02,19),
@@ -15515,6 +16454,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ZKMZ129368BPSGS538','HDQL246699KWZNP042','2020-05-03 15:52:08','cash',543.98,4),
 	 ('HFPY897648AGYSO928','ZOFJ160334OOALD653','2020-12-31 19:48:10','cash',384.04,13),
 	 ('IVRD025938SMCCI225','UZMZ778792KFUMW855','2020-10-17 13:18:50','cash',959.21,2);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('GFAY911676QHRUW030','TFER919508FSCFU921','2020-10-18 17:04:20','ewallet',552.70,13),
 	 ('ZYNG123535ZPWII526','BKHC149955SWJNL239','2020-02-01 03:41:37','cash',233.25,8),
@@ -15526,6 +16466,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GKDQ150070GQCGO952','OFSG400624BLLJC322','2020-07-01 12:23:57','cash',271.14,15),
 	 ('TZWB731495LYDZY487','ZVTB336249UOEJZ854','2020-08-22 04:31:16','creditcard',384.13,20),
 	 ('TMDX842355QXQUA049','ZKFF917465ZGEYU356','2020-03-31 22:10:35','cash',552.94,2);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IIAV834762NSZMZ270','ZXKK738148WNGPC476','2020-03-09 15:52:20','creditcard',432.72,7),
 	 ('KBIR460287PXGRO436','REDD443391LJRJV290','2020-10-25 02:23:20','cash',180.66,9),
@@ -15537,6 +16478,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JOFN694177OVGBT559','QNRZ988430ISGJE933','2020-12-13 16:53:24','cash',223.85,4),
 	 ('ZOPK324860DNZYV394','ZNIN065773KHQZL502','2020-05-28 17:36:50','creditcard',863.41,14),
 	 ('ZGTR057050CWKBD432','VKLH822853RDCCE930','2020-11-14 14:22:56','cash',974.40,5);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CPLF659966JCBXD998','YKAE920905ZOYWU894','2020-06-06 19:23:48','ewallet',203.44,18),
 	 ('YVJS088173JXPOK694','JNXG649587SOILS052','2020-08-19 06:11:16','cash',328.70,12),
@@ -15548,6 +16490,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WPPF325651EMBIL706','NYPD617913YXQHB362','2020-08-06 15:47:09','ewallet',982.50,2),
 	 ('IRFZ115509ZSFQA219','SWYY879946NOTCJ995','2020-11-01 18:08:17','cash',990.04,2),
 	 ('YLRM193173RKFRZ687','XTOU735122APLTS301','2020-02-18 15:02:45','ewallet',473.00,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('OMMF689584PDXWH882','QTZC903783UOXOV435','2020-05-03 01:08:33','cash',248.68,7),
 	 ('XFJS846746CTTOV882','IHGZ148761JOGWB049','2020-05-11 07:54:45','cash',802.80,18),
@@ -15559,6 +16502,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VVSK881348JHQED489','UYBE334236XRASI287','2020-10-25 15:47:41','creditcard',405.85,8),
 	 ('VYSG210975TOZIW556','CFQU986688VXWKJ506','2020-02-18 23:36:19','creditcard',111.48,15),
 	 ('FJDA017588TJKVM441','XTOU735122APLTS301','2020-05-03 00:48:34','creditcard',605.25,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('NCBF011554FUFFR129','ETSO858602GRHHP824','2020-08-14 10:46:49','ewallet',982.23,3),
 	 ('GPOQ915271JNHEW976','PASM973656FNECQ079','2020-05-17 10:59:56','creditcard',565.43,3),
@@ -15570,6 +16514,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QMXQ315898JZJBB563','AFDY457940SICYN434','2020-10-08 07:40:13','creditcard',357.98,10),
 	 ('XQCR524111TGUWW840','QUCV705652PTFRH378','2020-06-07 11:40:24','cash',178.28,9),
 	 ('FVDH111116LJIMG867','IKGH660819PFONZ453','2020-08-29 19:15:18','ewallet',619.71,7);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('DPBV717575ADQQN040','JLNA111313OLEBV199','2020-12-25 17:42:57','cash',765.75,7),
 	 ('RXCO887772BJVUA918','QUCV705652PTFRH378','2020-01-24 09:33:39','creditcard',977.37,9),
@@ -15581,6 +16526,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('AWIX634888IIMAD870','FDZN291529UDXPS395','2020-05-16 23:57:24','cash',535.60,16),
 	 ('DZGZ715642GBWRN893','YKAE920905ZOYWU894','2020-02-20 09:18:35','ewallet',450.98,18),
 	 ('FVDH111116LJIMG867','NZKA790277UWCGR969','2020-10-18 10:12:29','ewallet',138.65,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('FJDA017588TJKVM441','JLNA111313OLEBV199','2020-03-31 03:08:40','ewallet',619.30,7),
 	 ('QZAF010893VKIFR424','FDZN291529UDXPS395','2020-04-04 20:46:30','ewallet',580.43,16),
@@ -15592,6 +16538,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KDSF446249GBLPG287','GRBA016674OHXKX865','2020-04-18 06:24:22','creditcard',321.03,20),
 	 ('ORXQ229520VVXJV296','XLQQ936947QRUOX489','2021-01-14 21:19:29','creditcard',445.13,6),
 	 ('KFDO692542WVJGQ327','UFXR842796LDDBC629','2020-08-27 08:20:27','cash',393.58,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('VLOD142637VDISX887','XRLC346112BADCV240','2020-12-27 13:49:10','cash',882.48,9),
 	 ('GECA899501FYNLU891','JILI462637LDUBY088','2020-05-09 08:41:21','cash',171.98,7),
@@ -15603,6 +16550,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('MWCW124741CTHFK844','RZPO183297OFLDU781','2020-02-15 01:40:18','ewallet',376.53,19),
 	 ('VNRG267311RDLCX457','FNHG385795ZCXNG296','2020-03-27 23:10:02','creditcard',217.82,6),
 	 ('HAFO658636YHTZU930','XTOU735122APLTS301','2020-09-08 23:23:51','cash',931.48,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KVWY502186DQTIZ483','HHSQ496482AZGUE095','2020-03-29 04:08:00','creditcard',316.82,18),
 	 ('JYIA143185JPEHU146','QVQH778735TJRUC920','2020-07-23 03:26:09','ewallet',780.86,14),
@@ -15614,6 +16562,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VCVX320403TNREZ437','OIWJ471758TNHNW890','2020-08-15 22:23:30','cash',764.16,14),
 	 ('IPCU869971CMFCE357','BDTJ401139ASJOV955','2020-12-13 08:25:04','creditcard',915.04,6),
 	 ('XGZZ840242PXKJP043','ACEJ647989OGKMP732','2020-06-15 18:21:35','creditcard',140.57,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('FGGG096831TYFKX253','RMHJ860695SQSHY731','2020-05-17 07:19:31','cash',301.83,8),
 	 ('JRFE892151UIDIF947','GRBA016674OHXKX865','2020-04-05 04:29:38','creditcard',191.35,20),
@@ -15625,6 +16574,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GFYB436412JPILC614','FDZN291529UDXPS395','2020-06-19 14:04:34','creditcard',455.36,16),
 	 ('XGZZ840242PXKJP043','JLNA111313OLEBV199','2020-11-12 14:30:51','creditcard',962.71,7),
 	 ('SZPF456303JFUOE404','REDD443391LJRJV290','2020-11-10 06:28:38','cash',950.71,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('XGUW648506BCSKT918','RVUR005609EQBKQ777','2020-07-15 07:47:37','ewallet',464.78,18),
 	 ('UFGQ844943SOJFY896','KONJ803702JEBHP284','2020-12-28 10:53:11','ewallet',721.02,1),
@@ -15636,6 +16586,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QENE705706VUUKA587','SNYM639210RKQNH200','2020-03-12 13:44:03','creditcard',382.23,20),
 	 ('PJJB496890NPBDR027','UYBE334236XRASI287','2020-12-04 21:28:37','creditcard',182.08,8),
 	 ('VNPG713648OPUWG432','SUUY019930DVHQK564','2020-12-21 07:05:21','creditcard',246.24,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('WDHB070139BKNFH352','NXYY929688UGPXX533','2020-04-13 17:07:22','creditcard',496.70,15),
 	 ('HMMY414015FTOYW775','NIWS516815YYVKW032','2020-03-18 02:59:01','ewallet',481.38,15),
@@ -15647,6 +16598,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VZLV524892CBIJN392','KSKO599935RQQWT104','2020-10-04 06:57:51','cash',174.20,8),
 	 ('NKPR080762RHJYJ955','DTOB831716HQRPR484','2020-06-02 20:12:57','creditcard',166.52,11),
 	 ('MFJT719632JLXXF009','DQWS051085SWGPB912','2020-02-15 01:13:22','ewallet',216.45,7);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KYTV489121HFWQG515','HMAL978915HANTF303','2020-05-29 06:33:29','cash',809.92,18),
 	 ('SJGM060181NYEBL531','HACN386110HMQNB358','2020-04-03 11:15:46','ewallet',806.40,12),
@@ -15658,6 +16610,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JYJI076122TOLRF768','UQJB931643XVYUP036','2020-08-26 08:44:16','ewallet',507.68,7),
 	 ('JOFN694177OVGBT559','HMAL978915HANTF303','2020-02-05 11:43:21','cash',700.41,18),
 	 ('WNXY190793QDGVT014','NKPJ552028PJRID877','2020-02-21 14:27:11','creditcard',974.57,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('JPMM768022LYQZR153','MWNZ479903RXAZV246','2020-11-10 19:57:18','creditcard',147.47,3),
 	 ('RWXR156948XYLTS119','OFSG400624BLLJC322','2020-10-07 00:17:00','cash',360.07,15),
@@ -15669,6 +16622,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('CMLZ326893OVOAE454','IHGZ148761JOGWB049','2020-08-15 21:41:28','cash',685.64,18),
 	 ('LXBX073548DUJJJ562','ALIW522201UTVBH188','2020-01-31 01:31:38','creditcard',138.16,1),
 	 ('YLSB471581TADYL167','IUQA151483VCVLU345','2021-01-16 23:21:21','ewallet',411.40,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('UXXE003128HQITR816','OMRP123271KKMFN511','2020-02-20 05:29:47','ewallet',596.18,10),
 	 ('WDHB070139BKNFH352','PVPU729079OWQOF556','2020-10-20 17:50:34','cash',185.53,4),
@@ -15680,6 +16634,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VLHE345185TVPCG259','CQLG330288KRBPG619','2020-11-07 02:07:19','ewallet',150.46,8),
 	 ('KBIF290261RPLAB483','HRVJ541969PTKCN393','2020-01-18 20:19:41','creditcard',917.08,19),
 	 ('HZWL730659APHVS090','ZVTB336249UOEJZ854','2020-09-10 19:43:46','cash',865.28,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('AZAN283480VFQKB256','PVPU729079OWQOF556','2020-11-07 20:10:21','cash',739.29,4),
 	 ('DXMK435075HUNJL154','KSKO599935RQQWT104','2020-09-18 02:30:08','cash',309.33,8),
@@ -15691,6 +16646,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TMIN807213FYBNH658','YOWA325152LNZOE894','2020-04-12 08:14:51','ewallet',155.58,8),
 	 ('BFVB067772SPOVG250','UQJB931643XVYUP036','2020-02-29 05:52:19','ewallet',500.02,7),
 	 ('THID197141IHASI431','SLRP807016UVAZE360','2020-05-08 14:18:17','ewallet',540.87,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('EGUW411750KQVBO408','NVRQ949209PKLCP182','2020-08-02 06:25:04','creditcard',523.74,12),
 	 ('SJGM060181NYEBL531','DOIN464364UOBPX686','2020-05-24 03:58:56','cash',622.50,9),
@@ -15702,6 +16658,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TJBW007678XHCJG640','KSKO599935RQQWT104','2020-06-04 05:29:42','ewallet',345.94,8),
 	 ('LHDJ328800XUKDX785','JILI462637LDUBY088','2020-02-14 19:26:10','ewallet',253.34,7),
 	 ('UXXE003128HQITR816','GNDA465533IGVZC143','2020-04-27 19:58:53','cash',620.39,11);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('MMBW200843BMIIS491','NXYY929688UGPXX533','2020-01-23 01:39:27','ewallet',497.76,15),
 	 ('DVHY367853XAUES724','VHWO650729QWQFC114','2020-04-29 03:51:10','cash',221.12,3),
@@ -15713,6 +16670,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('DVHY367853XAUES724','HACN386110HMQNB358','2020-08-01 18:50:53','ewallet',794.62,12),
 	 ('EKJF555299YOURW631','IKGH660819PFONZ453','2020-09-24 01:25:52','ewallet',747.35,7),
 	 ('QMFY066636NIRXD478','ACEJ647989OGKMP732','2020-12-05 14:17:05','creditcard',413.16,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ZMMM522891UDCZY242','GJDL773827JJAZA742','2020-01-29 21:07:28','ewallet',479.63,18),
 	 ('LKQU721130RIBDQ626','ZXKK738148WNGPC476','2020-12-18 02:30:28','cash',816.29,7),
@@ -15724,6 +16682,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TDXR252209JUULV972','HYWM167514QEUYU853','2020-10-12 03:43:11','cash',105.60,20),
 	 ('PUIB993244DUEXA119','SZEN211603HMRJN915','2020-09-14 05:20:19','cash',615.42,16),
 	 ('FHLM564991JSUPM979','ZZSK611462VJGML660','2020-08-30 19:22:45','creditcard',514.75,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('OLNS005231NPQZD507','QTZC903783UOXOV435','2020-02-11 06:12:45','creditcard',118.78,7),
 	 ('QHGI669301OTUGM863','ACEJ647989OGKMP732','2020-12-04 17:58:50','cash',678.70,14),
@@ -15735,6 +16694,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('PVJW602335QIBCK184','OOYI875755PITBJ273','2020-01-27 06:34:53','creditcard',414.65,12),
 	 ('IVRD025938SMCCI225','ICHG247738EHNPQ734','2020-10-17 00:25:55','cash',487.85,14),
 	 ('WUXB047617ZYNYW273','ETSO858602GRHHP824','2020-12-03 18:56:25','creditcard',322.97,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('TMIN807213FYBNH658','DOIN464364UOBPX686','2020-08-20 03:21:42','cash',261.65,9),
 	 ('TZPI412610QIQXG067','QQXI633005BKRQF803','2020-01-21 07:45:13','ewallet',557.49,20),
@@ -15746,6 +16706,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QLOR127774QUYGQ297','LUAF627606XYDUW709','2020-06-13 21:15:05','creditcard',191.68,1),
 	 ('NJCK203114KPOJY590','HRVJ541969PTKCN393','2021-01-08 13:11:46','creditcard',421.21,19),
 	 ('MVDT493135UMKXM341','KSKO599935RQQWT104','2020-03-20 14:11:36','ewallet',658.74,8);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IJGM374631EBJNL247','OBVL539919OTEMQ362','2020-03-23 16:46:48','creditcard',261.81,1),
 	 ('NYQR049150OPXCO917','XJJG239340DQTFW656','2020-09-28 15:44:50','ewallet',960.01,14),
@@ -15757,6 +16718,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VCVX320403TNREZ437','ZXKK738148WNGPC476','2020-02-18 21:57:35','cash',818.25,7),
 	 ('XGRY212599SYVNW530','OOZH438760ITVAP303','2020-11-08 20:05:47','ewallet',114.16,2),
 	 ('TZWB731495LYDZY487','HHSQ496482AZGUE095','2020-08-07 21:25:06','cash',478.46,18);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('JRFE892151UIDIF947','WBUA056783JFVGP042','2020-07-20 21:22:46','ewallet',977.49,17),
 	 ('TPZL536479AMEXU515','TELT249500ZDRSU357','2020-07-05 03:57:44','ewallet',945.05,5),
@@ -15768,6 +16730,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ZYNG123535ZPWII526','AICW172156CKGFW793','2020-05-19 14:42:58','cash',784.45,17),
 	 ('JFHI997157UWBOA022','ESZS722633SSAVA847','2020-05-11 19:12:47','cash',779.27,4),
 	 ('OSUF632675NIYEL488','ZOFJ160334OOALD653','2020-08-16 09:23:49','ewallet',547.69,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CGRY130869ZNGWA592','CYYE547403EACZO053','2020-01-17 16:03:52','cash',936.61,4),
 	 ('QASQ393587SJHZX190','YJYU092273GYYLR462','2020-09-28 05:31:09','creditcard',860.20,13),
@@ -15779,6 +16742,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('RCFS684369ZFMCJ417','YHZC176932MKOLO741','2020-11-25 02:33:45','ewallet',914.57,3),
 	 ('INVS996895KAGLV343','UQJB931643XVYUP036','2020-11-24 08:35:12','creditcard',421.52,7),
 	 ('FHTF212758PHGYW714','OOYI875755PITBJ273','2021-01-12 05:05:59','cash',746.02,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('TMDX842355QXQUA049','VRRD756969RNIZM496','2020-09-25 10:12:06','ewallet',204.40,15),
 	 ('RXNX715545JAWJV589','ZJOV993848UIZUE834','2020-02-16 00:19:21','cash',170.95,9),
@@ -15790,6 +16754,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('RJCV561787YQNWB980','HKSM805477SVAYG018','2020-12-04 21:48:40','ewallet',155.90,13),
 	 ('CSGA881090LDDAJ282','FPUP444493AXLRX515','2020-07-09 19:01:02','creditcard',602.41,1),
 	 ('GPUZ783784IWGKZ593','YJYU092273GYYLR462','2020-01-22 02:05:13','creditcard',172.86,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('XGRY212599SYVNW530','IHGZ148761JOGWB049','2020-11-04 00:59:15','ewallet',704.16,18),
 	 ('PDSP053301ZYTKE401','NZKA790277UWCGR969','2020-12-02 10:22:20','cash',452.39,9),
@@ -15801,6 +16766,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('CFYV724032JIVYX574','HHSQ496482AZGUE095','2020-08-17 16:35:28','cash',514.16,18),
 	 ('PNIC318017GFIDD203','NWNS250662TVPLX349','2020-06-10 19:30:36','cash',132.70,7),
 	 ('OSZX707963DJUQB784','OGMW414364RVOBA952','2020-10-21 08:54:18','creditcard',319.56,1);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CNTY451162IAJDB945','BKHC149955SWJNL239','2020-10-26 20:58:36','creditcard',893.19,8),
 	 ('ODGZ789985GZROU388','ZVTB336249UOEJZ854','2020-09-20 04:52:35','cash',176.59,20),
@@ -15812,6 +16778,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('BEET110681NOAOQ889','REDD443391LJRJV290','2020-09-29 00:18:38','ewallet',201.97,9),
 	 ('ODJI223707LYSBG250','ROHY879127PCHTU827','2020-09-30 00:57:53','creditcard',684.33,11),
 	 ('SUJX828788MWLJK413','FKTE654103ZLVVH845','2020-02-16 04:21:34','creditcard',867.23,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('EVHY875681EWCAI352','LXZD960628XJDHI625','2020-04-25 22:08:08','ewallet',468.19,6),
 	 ('ZXGS651990AMBUN829','ZJOV993848UIZUE834','2020-04-11 20:24:04','creditcard',494.11,9),
@@ -15823,6 +16790,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JYJI076122TOLRF768','ZXKK738148WNGPC476','2020-03-29 05:24:44','creditcard',778.97,7),
 	 ('XDWA067573RUIYC500','ZNIN065773KHQZL502','2020-09-19 07:11:02','cash',105.25,14),
 	 ('KFAL762129WQWEX763','IUQA151483VCVLU345','2020-10-13 07:27:18','creditcard',832.38,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('NMTL715370BVTCP878','XRLC346112BADCV240','2021-01-04 08:20:18','cash',772.52,9),
 	 ('RNCY695353XEAFI076','RMHJ860695SQSHY731','2020-02-05 03:33:54','creditcard',513.19,8),
@@ -15834,6 +16802,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XQCR524111TGUWW840','ROHY879127PCHTU827','2020-02-09 00:17:33','cash',746.58,11),
 	 ('TXEU978399NBMTT242','HMAL978915HANTF303','2020-04-19 23:01:56','ewallet',399.20,18),
 	 ('PPDZ564674JYNPN890','OMRP123271KKMFN511','2020-02-18 01:10:53','ewallet',816.59,10);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ZYNG123535ZPWII526','NIWS516815YYVKW032','2020-08-31 02:39:19','cash',525.18,15),
 	 ('KITY201030LUTQU601','DOIN464364UOBPX686','2020-08-19 14:23:48','creditcard',622.22,9),
@@ -15845,6 +16814,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XQCR524111TGUWW840','PVPU729079OWQOF556','2020-08-29 10:57:52','creditcard',275.53,4),
 	 ('DVCT675993QJQAY584','KSKO599935RQQWT104','2020-10-23 01:04:59','ewallet',799.70,8),
 	 ('QLOR127774QUYGQ297','QYTZ727949EXAWV861','2020-06-12 05:32:33','cash',896.01,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('WPPF325651EMBIL706','DSDV630195QFFID948','2020-11-26 22:09:06','cash',985.62,2),
 	 ('QASQ393587SJHZX190','AFDY457940SICYN434','2020-04-10 11:42:16','cash',964.59,10),
@@ -15856,6 +16826,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TDXR252209JUULV972','KXBA289421BLBUC577','2020-02-19 13:50:02','cash',606.92,19),
 	 ('ZXGS651990AMBUN829','JOPW913823DSAXW110','2020-09-25 19:07:46','cash',447.56,3),
 	 ('DNCE312460KAMVF087','AZXI418301NIIVH158','2020-03-14 09:27:18','creditcard',449.79,11);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('HAFO658636YHTZU930','QTZC903783UOXOV435','2020-12-01 11:02:37','ewallet',381.34,7),
 	 ('NCZF578639HKGJN166','MWNZ479903RXAZV246','2020-08-24 19:42:27','creditcard',702.93,3),
@@ -15867,6 +16838,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GWUQ565806CLFYJ359','FZGD436344UYCPR950','2020-08-19 22:36:47','cash',802.67,5),
 	 ('KYTV489121HFWQG515','JLNA111313OLEBV199','2020-10-17 19:34:39','creditcard',340.11,7),
 	 ('TMDX842355QXQUA049','WIUH938302SZFAF825','2020-05-30 02:34:01','ewallet',778.40,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('FWLS008186DPOIE216','HRVJ541969PTKCN393','2020-03-05 03:31:31','creditcard',537.02,19),
 	 ('NJCK203114KPOJY590','RIPR712215JDWSW560','2020-10-22 17:53:37','cash',741.65,17),
@@ -15878,6 +16850,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JAVL473873CGXJI745','VRRD756969RNIZM496','2020-10-07 03:34:45','creditcard',411.58,15),
 	 ('TCOL956884VDKHF104','OOZH438760ITVAP303','2020-02-29 15:44:00','creditcard',971.89,2),
 	 ('IAFH391763ERLVC876','NIWS516815YYVKW032','2020-11-17 01:44:55','cash',202.34,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IRFZ115509ZSFQA219','BDYL451662LSQMK476','2020-02-28 16:36:17','creditcard',195.54,10),
 	 ('JRUP134651VAJOO553','GNDA465533IGVZC143','2020-03-03 11:26:29','cash',878.65,11),
@@ -15889,6 +16862,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GVZY496946TGFJQ162','FNHG385795ZCXNG296','2020-03-10 18:16:52','creditcard',871.27,6),
 	 ('EOUF161726KVUUX248','DQWS051085SWGPB912','2020-12-31 08:32:32','ewallet',215.62,7),
 	 ('CQIL727960UXSAP269','RGXU945683HAJPV767','2020-03-06 03:32:43','creditcard',924.36,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('VLHE345185TVPCG259','OOYI875755PITBJ273','2020-04-07 22:14:19','cash',908.15,12),
 	 ('HMMY414015FTOYW775','XJJG239340DQTFW656','2020-03-12 15:56:35','ewallet',272.99,14),
@@ -15900,6 +16874,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('HBMQ866414ETRPW751','IHGZ148761JOGWB049','2020-03-27 18:31:03','cash',121.46,18),
 	 ('KWGH589787GTVOK078','UYBE334236XRASI287','2020-05-21 21:00:17','creditcard',839.74,8),
 	 ('YLRM193173RKFRZ687','FTWG685595YHGVW398','2021-01-03 23:57:46','ewallet',261.48,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KWGH589787GTVOK078','JOCV568984LBUCJ213','2020-01-27 05:41:18','cash',860.53,12),
 	 ('YJKX121341BMFCS407','RPJW632700PCNGM878','2020-10-10 14:41:19','ewallet',133.60,14),
@@ -15911,6 +16886,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('FZPZ971189AXFAN669','LUAF627606XYDUW709','2020-11-26 20:44:26','creditcard',736.60,1),
 	 ('ZGTR057050CWKBD432','JOFI433343KRRNP908','2020-08-24 02:10:07','ewallet',471.20,17),
 	 ('FVDH111116LJIMG867','HMAL978915HANTF303','2020-10-26 02:49:19','cash',433.98,18);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('GBOW502260NNTQU321','AUPS773868EYINS817','2021-01-11 11:07:08','creditcard',405.32,11),
 	 ('TTLH855888QMSUN818','UFXR842796LDDBC629','2020-03-30 23:05:01','ewallet',976.17,20),
@@ -15922,6 +16898,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('LHFC830724EFYYR697','TELT249500ZDRSU357','2020-10-15 14:04:28','creditcard',676.54,5),
 	 ('GVGN398361TRRGE650','ZFNM489487HIJBC051','2020-02-28 13:38:09','cash',286.13,17),
 	 ('TMIN807213FYBNH658','VHWO650729QWQFC114','2020-02-06 22:01:40','ewallet',693.70,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('UJYP457105HAPSF034','LNLY009466CLEHQ598','2020-09-21 19:26:18','ewallet',247.23,5),
 	 ('GECA899501FYNLU891','ZVTB336249UOEJZ854','2020-07-17 19:42:23','ewallet',627.31,20),
@@ -15933,6 +16910,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('BCAO680515OTZIH634','QCWD417835HJJHV387','2020-03-27 23:51:04','creditcard',637.69,20),
 	 ('PPCE201086CLLYE095','QQXI633005BKRQF803','2020-10-14 19:39:42','ewallet',879.68,20),
 	 ('EAHT905435NAWSO219','PASM973656FNECQ079','2020-06-22 20:09:15','ewallet',922.11,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('TZPI412610QIQXG067','ACEJ647989OGKMP732','2020-11-24 22:53:42','cash',480.29,14),
 	 ('DQJA698495NRPJU751','CLPQ870835BUSBG064','2020-05-02 08:33:32','cash',175.51,14),
@@ -15944,6 +16922,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KPTB147368MXQDV785','XRLC346112BADCV240','2020-07-16 12:24:39','ewallet',215.45,9),
 	 ('HYUE449110YTTBD831','KDBP686046KGOMQ076','2020-10-22 03:35:41','creditcard',683.65,11),
 	 ('EOUF161726KVUUX248','PPSJ397487HLZNK408','2020-04-26 23:46:52','ewallet',771.50,1);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('EOUF161726KVUUX248','NYPD617913YXQHB362','2020-08-09 04:40:25','ewallet',491.98,2),
 	 ('QAYB559434ONSRK810','UQJB931643XVYUP036','2020-08-27 10:14:15','creditcard',190.44,7),
@@ -15955,6 +16934,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('RJCV561787YQNWB980','ARQZ831744MXHNC441','2020-11-20 19:38:57','creditcard',390.80,4),
 	 ('CTZB666543OWKSU419','OOZH438760ITVAP303','2020-09-05 11:24:51','creditcard',554.23,2),
 	 ('XNNO439081NVLCX577','HYWM167514QEUYU853','2020-05-17 11:01:42','ewallet',343.16,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('JYJI076122TOLRF768','JOCV568984LBUCJ213','2020-08-20 17:47:53','ewallet',239.49,12),
 	 ('DVHY367853XAUES724','UQNY002157JQLRD428','2020-06-11 02:22:35','cash',179.73,16),
@@ -15966,6 +16946,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('SZPF456303JFUOE404','FUPF695090AQWRW060','2020-05-25 05:12:05','ewallet',212.61,6),
 	 ('TXNL585923XJKOF698','OMRP123271KKMFN511','2020-12-28 01:24:35','cash',683.16,10),
 	 ('GPUZ783784IWGKZ593','XLQQ936947QRUOX489','2020-11-19 17:13:05','ewallet',394.34,6);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('YTBT002618ZOLSU864','SNYM639210RKQNH200','2020-09-01 22:21:38','creditcard',452.66,20),
 	 ('VZLV524892CBIJN392','YHZC176932MKOLO741','2020-08-19 00:30:55','creditcard',346.13,3),
@@ -15977,6 +16958,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('FJDA017588TJKVM441','XRLC346112BADCV240','2020-03-24 19:18:53','ewallet',426.99,9),
 	 ('GKDQ150070GQCGO952','QQXI633005BKRQF803','2020-04-24 23:57:28','creditcard',464.40,20),
 	 ('AROG023981IPWAD759','MEIM717846PNZVH319','2020-05-27 10:27:08','cash',736.15,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('YTBT002618ZOLSU864','ZDVC908734JXDBD323','2020-09-24 21:58:36','ewallet',338.12,4),
 	 ('WWYU004372MPSJG909','JLGU784413CAWXW937','2020-09-19 13:30:38','cash',556.44,1),
@@ -15988,6 +16970,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WRZM289448IIGLB647','MEIM717846PNZVH319','2020-11-17 02:14:43','creditcard',532.72,12),
 	 ('FHTF212758PHGYW714','JLNA111313OLEBV199','2020-09-29 00:38:55','cash',392.64,7),
 	 ('JAVL473873CGXJI745','RIPR712215JDWSW560','2020-07-12 02:32:17','creditcard',523.24,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('LFTA201084UVYXS054','SWYY879946NOTCJ995','2020-07-12 16:50:23','cash',175.66,2),
 	 ('ICCP643953DNLDA729','JLNA111313OLEBV199','2020-05-10 23:27:53','cash',461.20,7),
@@ -15999,6 +16982,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('BFHY427071USJAP493','CLPQ870835BUSBG064','2020-05-10 06:25:27','cash',704.31,14),
 	 ('BDVC567304SFXMC765','AZXI418301NIIVH158','2020-09-05 05:34:23','ewallet',755.53,11),
 	 ('PPBX435558UULMG097','OFSG400624BLLJC322','2020-04-09 06:20:59','cash',639.89,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('TPZL536479AMEXU515','HMAL978915HANTF303','2020-10-26 14:28:41','ewallet',535.41,18),
 	 ('KFDO692542WVJGQ327','QVQH778735TJRUC920','2020-06-22 10:29:03','ewallet',842.71,14),
@@ -16010,6 +16994,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('IAFH391763ERLVC876','JILI462637LDUBY088','2020-08-05 02:28:58','cash',517.12,7),
 	 ('IVRD025938SMCCI225','BKHC149955SWJNL239','2020-12-10 23:19:33','ewallet',134.34,8),
 	 ('IRFZ115509ZSFQA219','OFSG400624BLLJC322','2020-05-25 15:57:08','ewallet',127.32,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('JQZT915689CYPCL082','PVPU729079OWQOF556','2020-04-03 04:05:52','cash',497.80,4),
 	 ('WPIU694096ADQIR938','SUUY019930DVHQK564','2020-03-18 00:26:31','creditcard',233.41,19),
@@ -16021,6 +17006,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QHEK252831JZWHD861','IHGZ148761JOGWB049','2020-09-01 22:56:55','creditcard',388.11,18),
 	 ('DPBV717575ADQQN040','YULR764975UQATC181','2020-12-20 01:46:59','creditcard',900.78,17),
 	 ('GPOQ915271JNHEW976','AICW172156CKGFW793','2020-04-28 10:16:49','cash',488.66,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('BHVD977888UHPZA895','RVUR005609EQBKQ777','2020-04-22 07:29:07','cash',549.73,18),
 	 ('HYPS186576OIPPG548','FNHG385795ZCXNG296','2020-08-26 15:43:02','ewallet',325.93,6),
@@ -16032,6 +17018,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('RXFR202472SXNRK680','UZMZ778792KFUMW855','2020-03-29 16:33:36','creditcard',338.01,2),
 	 ('SXGA737804BPXXS732','IUQA151483VCVLU345','2020-05-29 22:22:57','creditcard',124.11,19),
 	 ('TTLH855888QMSUN818','NIWS516815YYVKW032','2020-05-20 09:13:42','creditcard',674.62,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('NCZF578639HKGJN166','KJQM467075AANWW384','2020-03-11 12:27:05','cash',546.90,16),
 	 ('FGCM162053UQFTK428','ZDVC908734JXDBD323','2020-09-12 07:21:10','cash',247.55,4),
@@ -16043,6 +17030,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('LJYY941693XYXAN777','BMPS523034IYAQS430','2020-10-07 17:42:21','ewallet',973.23,10),
 	 ('KFAL762129WQWEX763','CRQS138539IFXTB708','2020-08-06 15:07:32','ewallet',388.90,5),
 	 ('NZQY342992FHJGI446','VENC435259UTGDA593','2020-05-09 23:57:05','cash',746.52,6);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('QHEK252831JZWHD861','XEEQ373657UXGBJ798','2020-08-30 18:42:07','creditcard',659.65,16),
 	 ('YJKX121341BMFCS407','ARQZ831744MXHNC441','2020-05-25 12:29:50','cash',959.21,4),
@@ -16054,6 +17042,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TPZL536479AMEXU515','ZJOV993848UIZUE834','2020-07-10 11:07:54','cash',215.13,9),
 	 ('GULN484567FRHXC805','IHOM787740OCSIC757','2020-07-25 08:07:13','ewallet',874.40,5),
 	 ('JEAW964376ENJRA467','ICHG247738EHNPQ734','2020-09-25 12:41:24','creditcard',233.84,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('LFTA201084UVYXS054','GJDL773827JJAZA742','2020-09-08 18:06:51','ewallet',186.24,18),
 	 ('ODGZ789985GZROU388','TFER919508FSCFU921','2020-12-05 19:41:34','creditcard',374.55,13),
@@ -16065,6 +17054,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VLHE345185TVPCG259','FTWG685595YHGVW398','2020-08-10 10:27:43','ewallet',773.29,19),
 	 ('TMDX842355QXQUA049','QYTZ727949EXAWV861','2020-06-04 05:21:18','ewallet',546.86,12),
 	 ('IJGM374631EBJNL247','PVPU729079OWQOF556','2020-09-23 17:42:18','ewallet',614.59,4);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('PVJW602335QIBCK184','NXYY929688UGPXX533','2020-11-21 18:19:34','cash',284.59,15),
 	 ('LWJC330097YAGXA481','OSCA055681XCEDW423','2020-03-18 13:05:39','ewallet',996.06,5),
@@ -16076,6 +17066,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TCOL956884VDKHF104','YKAE920905ZOYWU894','2020-12-04 07:21:22','creditcard',428.03,18),
 	 ('JYJI076122TOLRF768','TYAV220532YIJRR451','2020-11-13 18:26:40','creditcard',449.71,10),
 	 ('RYIC779163GCFWE725','UPSQ467636RXXXY526','2021-01-11 07:50:31','cash',390.69,8);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('BSNE659250DJVAD705','GNDA465533IGVZC143','2020-07-11 15:27:23','cash',509.88,11),
 	 ('NJCK203114KPOJY590','JNXG649587SOILS052','2020-03-09 18:23:18','creditcard',831.16,12),
@@ -16087,6 +17078,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('VQUL079066GLOWP451','QUCV705652PTFRH378','2020-07-07 02:22:58','creditcard',610.64,9),
 	 ('SQBH424121VONPY587','OOYI875755PITBJ273','2020-12-02 06:49:54','ewallet',946.45,12),
 	 ('UFGU916462JFKOF388','IJYC469785VOJBR328','2020-10-12 20:10:30','creditcard',240.03,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('AEYQ820811UHJWQ574','OEDE426751CYBPL468','2020-04-24 18:54:24','ewallet',194.79,2),
 	 ('CPLF659966JCBXD998','AFDY457940SICYN434','2020-09-26 11:50:07','cash',536.51,10),
@@ -16098,6 +17090,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('TCOL956884VDKHF104','QXYC270895BDOAY897','2020-05-31 08:30:25','ewallet',733.78,6),
 	 ('YLRM193173RKFRZ687','VHWO650729QWQFC114','2020-12-09 07:02:49','creditcard',110.68,3),
 	 ('VXQM124060FGGRA189','KXBA289421BLBUC577','2020-11-13 04:41:55','cash',829.86,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('VXQM124060FGGRA189','BKHC149955SWJNL239','2020-10-28 23:07:12','ewallet',338.00,8),
 	 ('FAHJ108286KECEO626','YKAE920905ZOYWU894','2020-12-19 21:13:45','ewallet',237.94,18),
@@ -16109,6 +17102,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('AAPO203771FHENV223','TYAV220532YIJRR451','2020-08-04 20:18:08','ewallet',779.04,10),
 	 ('GCBW848066OZOTU929','XLQQ936947QRUOX489','2020-09-23 09:03:56','creditcard',679.85,6),
 	 ('RHZS166644IVIAO252','WBUA056783JFVGP042','2020-08-29 08:33:39','cash',415.00,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('JVUQ476385YMOPV471','TCEO062057FJTPD010','2020-05-01 13:52:05','cash',435.98,16),
 	 ('VYSG210975TOZIW556','UYBE334236XRASI287','2020-03-17 07:41:16','creditcard',919.31,8),
@@ -16120,6 +17114,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('MFZG808195ZZMPD968','CYYE547403EACZO053','2020-10-12 10:49:54','ewallet',990.91,4),
 	 ('LJYY941693XYXAN777','JLGU784413CAWXW937','2020-02-11 12:34:19','cash',906.07,1),
 	 ('JEAW964376ENJRA467','YULR764975UQATC181','2020-03-05 09:05:15','creditcard',698.28,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ODGZ789985GZROU388','JNSN846535SYXPZ533','2020-12-05 02:16:19','cash',620.57,18),
 	 ('KVWY502186DQTIZ483','JOPW913823DSAXW110','2020-04-26 09:58:00','cash',959.29,3),
@@ -16131,6 +17126,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WNXY190793QDGVT014','HKSM805477SVAYG018','2020-09-16 19:06:55','creditcard',224.51,13),
 	 ('DXMK435075HUNJL154','MEIM717846PNZVH319','2020-11-10 14:11:31','ewallet',449.60,12),
 	 ('NOAO658913CFYTM989','JLGU784413CAWXW937','2020-05-21 08:47:48','ewallet',388.01,1);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('LXBX073548DUJJJ562','OAFZ407613DRCDD375','2020-04-13 21:08:34','creditcard',359.29,5),
 	 ('NUQP081951VBSVI183','UZMZ778792KFUMW855','2020-12-27 18:01:00','cash',836.39,2),
@@ -16142,6 +17138,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KAKK458967RRXKH015','FNDC053244EZIEN540','2020-09-06 18:28:56','cash',803.73,3),
 	 ('ZYNG123535ZPWII526','TELT249500ZDRSU357','2020-06-29 13:09:53','creditcard',753.55,5),
 	 ('XDOH174036DUPIZ990','FKTE654103ZLVVH845','2020-02-05 03:09:59','ewallet',425.05,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ITCK986469YNFDN078','ETSO858602GRHHP824','2020-03-06 15:41:09','cash',407.48,3),
 	 ('NWOA646536BXTTQ655','AUPS773868EYINS817','2020-09-17 00:07:23','creditcard',799.85,11),
@@ -16153,6 +17150,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('NQEB877595DYTIU211','GJLL535268QYSGD024','2020-05-20 07:03:15','ewallet',606.79,18),
 	 ('PIKR977681KTGDT593','IHOM787740OCSIC757','2020-07-12 21:27:28','ewallet',372.47,5),
 	 ('ZYNG123535ZPWII526','BMPS523034IYAQS430','2020-08-06 21:09:46','ewallet',411.60,10);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KYTV489121HFWQG515','CQLG330288KRBPG619','2020-09-05 22:59:54','ewallet',833.49,8),
 	 ('KBIF290261RPLAB483','UZMZ778792KFUMW855','2020-12-08 21:26:52','cash',320.00,2),
@@ -16164,6 +17162,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('CXRY319525SUNPS206','GJDL773827JJAZA742','2020-01-27 09:32:58','ewallet',770.38,18),
 	 ('XBJJ530824MLMHW761','ATGJ671717HIPWW098','2020-03-17 12:55:36','ewallet',344.77,8),
 	 ('KPMX389697HXQAW221','CEQM634770LYNNL059','2020-08-12 07:43:39','ewallet',155.36,17);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IIAV834762NSZMZ270','OSCA055681XCEDW423','2020-04-11 18:04:08','creditcard',783.99,5),
 	 ('KRLR671154YLYYB663','BPYV243801VXXSJ691','2020-02-19 17:55:48','creditcard',497.32,11),
@@ -16175,6 +17174,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JVUQ476385YMOPV471','QCWD417835HJJHV387','2021-01-09 17:54:46','creditcard',808.07,20),
 	 ('NHKV520999LGJVA620','XRLC346112BADCV240','2021-01-03 13:33:43','ewallet',708.14,9),
 	 ('FHTF212758PHGYW714','JNXG649587SOILS052','2020-03-14 20:22:53','creditcard',155.00,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('AROG023981IPWAD759','OAFZ407613DRCDD375','2020-05-07 00:42:06','creditcard',618.50,5),
 	 ('ZOPK324860DNZYV394','VKLH822853RDCCE930','2020-02-17 00:30:24','cash',328.91,5),
@@ -16186,6 +17186,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('IQGE132443QMLIB177','SZEN211603HMRJN915','2020-11-02 20:55:14','ewallet',870.12,16),
 	 ('UVCR139836CINSZ005','YHZC176932MKOLO741','2020-08-17 16:58:23','ewallet',960.91,3),
 	 ('SJGM060181NYEBL531','ZDVC908734JXDBD323','2020-06-30 09:16:37','cash',547.20,4);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('WNXY190793QDGVT014','YOWA325152LNZOE894','2020-02-17 13:53:09','creditcard',108.81,8),
 	 ('CPLF659966JCBXD998','CYYE547403EACZO053','2020-02-09 04:50:55','cash',501.61,4),
@@ -16197,6 +17198,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XGZZ840242PXKJP043','NKPJ552028PJRID877','2020-03-14 10:05:57','creditcard',486.29,9),
 	 ('QMXQ315898JZJBB563','DTOB831716HQRPR484','2021-01-02 10:59:56','cash',699.10,11),
 	 ('CNTY451162IAJDB945','UPSQ467636RXXXY526','2020-05-04 01:08:11','ewallet',100.70,8);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('RGRW018009FMGSN869','ZNIN065773KHQZL502','2020-08-10 17:18:51','cash',840.55,14),
 	 ('PPCE201086CLLYE095','XJJG239340DQTFW656','2021-01-11 08:34:15','ewallet',431.02,14),
@@ -16208,6 +17210,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('IQGE132443QMLIB177','OGMW414364RVOBA952','2020-02-25 08:14:01','cash',275.01,1),
 	 ('XGUW648506BCSKT918','HRVJ541969PTKCN393','2020-05-15 00:41:37','cash',102.89,19),
 	 ('XGZZ840242PXKJP043','LXZD960628XJDHI625','2020-05-13 21:14:34','cash',492.51,6);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('GKDQ150070GQCGO952','RSJF818963HXTYC459','2020-07-09 08:40:17','cash',910.52,10),
 	 ('XWEJ943539HVJCI341','DSDV630195QFFID948','2020-08-08 13:39:48','ewallet',763.33,2),
@@ -16219,6 +17222,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KLWM184292SEDRE905','KJQM467075AANWW384','2020-11-22 19:42:33','creditcard',334.10,16),
 	 ('PJJB496890NPBDR027','YULR764975UQATC181','2020-06-16 15:33:59','ewallet',258.89,17),
 	 ('KYTV489121HFWQG515','AFDY457940SICYN434','2020-02-15 09:24:36','creditcard',284.21,10);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ZYGN737820KDAAY151','OEDE426751CYBPL468','2020-09-04 08:28:07','cash',203.09,2),
 	 ('GPUZ783784IWGKZ593','FDZN291529UDXPS395','2020-12-10 19:37:21','ewallet',424.28,16),
@@ -16230,6 +17234,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('PWQC723981UZGJM631','QMRH001516PFUAR562','2020-02-03 19:07:48','ewallet',123.64,15),
 	 ('QLRU650097PUCGU438','OOZH438760ITVAP303','2020-04-02 04:27:18','creditcard',610.90,2),
 	 ('LHDJ328800XUKDX785','FNDC053244EZIEN540','2020-06-15 14:56:55','creditcard',941.41,3);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('UPHF999095ZEPAY068','WIUH938302SZFAF825','2020-06-08 06:42:01','ewallet',267.78,20),
 	 ('LFTA201084UVYXS054','GRBA016674OHXKX865','2020-03-28 10:24:12','creditcard',720.60,20),
@@ -16241,6 +17246,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QLOR127774QUYGQ297','BMPS523034IYAQS430','2020-11-27 06:48:05','creditcard',591.76,10),
 	 ('MLCY685738QHYCJ012','JLNA111313OLEBV199','2020-11-30 12:24:02','cash',303.48,7),
 	 ('AHWV686950ANYUI203','GWVU143659TKKBM015','2020-12-15 20:26:04','ewallet',160.95,2);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('DJXL018413UKUGH489','WIUH938302SZFAF825','2020-12-28 21:34:18','ewallet',847.11,20),
 	 ('ZURQ322733EFAHA442','VKLH822853RDCCE930','2020-12-28 18:39:05','creditcard',852.98,5),
@@ -16252,6 +17258,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WPPF325651EMBIL706','CYYE547403EACZO053','2020-05-12 11:06:42','ewallet',222.76,4),
 	 ('WWYU004372MPSJG909','MEIM717846PNZVH319','2020-09-09 04:48:56','creditcard',609.56,12),
 	 ('NDIP509196IIEVA618','CQLG330288KRBPG619','2020-06-25 04:17:44','creditcard',777.49,8);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CNTY451162IAJDB945','ETSO858602GRHHP824','2020-08-26 01:40:09','creditcard',877.37,3),
 	 ('PBGB118824EBSWQ874','WMHK482146YBVJK913','2020-09-08 23:31:11','cash',473.68,16),
@@ -16263,6 +17270,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WIEO574018SHYXC918','DQWS051085SWGPB912','2020-07-04 13:01:46','creditcard',905.19,7),
 	 ('LKQU721130RIBDQ626','OAFZ407613DRCDD375','2020-03-18 08:11:41','ewallet',475.75,5),
 	 ('YVJS088173JXPOK694','VGNL609079MWZZB786','2020-12-13 06:51:05','cash',890.32,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CFCI496212CZWUZ242','TFER919508FSCFU921','2020-03-04 06:52:03','ewallet',414.68,13),
 	 ('BHVD977888UHPZA895','GRBA016674OHXKX865','2020-12-13 07:07:18','cash',983.02,20),
@@ -16274,6 +17282,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('LFWN779411HEYSF426','ZXKK738148WNGPC476','2021-01-01 07:55:31','ewallet',562.34,7),
 	 ('GVZY496946TGFJQ162','NZKA790277UWCGR969','2020-05-11 07:15:36','ewallet',288.44,9),
 	 ('ZURQ322733EFAHA442','QMRH001516PFUAR562','2020-12-05 17:58:57','creditcard',133.51,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IVRD025938SMCCI225','DQWS051085SWGPB912','2020-08-27 16:05:03','cash',972.46,7),
 	 ('SBRT984875HKECV586','NYPD617913YXQHB362','2020-05-02 05:55:47','cash',316.38,2),
@@ -16285,6 +17294,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('OLDU929976EMVFJ583','JLNA111313OLEBV199','2020-05-05 17:17:41','ewallet',872.76,7),
 	 ('LLTE913138FCWIA508','WMHK482146YBVJK913','2020-02-27 00:00:17','ewallet',774.80,16),
 	 ('CFCI496212CZWUZ242','NVRQ949209PKLCP182','2021-01-04 03:52:45','ewallet',157.63,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KDSF446249GBLPG287','GNDA465533IGVZC143','2020-08-16 22:13:57','ewallet',197.97,11),
 	 ('OMMF689584PDXWH882','OBVL539919OTEMQ362','2020-11-20 01:33:53','creditcard',213.14,1),
@@ -16296,6 +17306,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GCBW848066OZOTU929','AZXI418301NIIVH158','2020-08-07 22:49:43','cash',295.57,11),
 	 ('CLHI821991KQFXT617','OMRP123271KKMFN511','2020-11-19 17:37:31','cash',267.08,10),
 	 ('WIMW498685UBEMY205','QVQH778735TJRUC920','2020-06-12 23:25:01','ewallet',248.65,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('EWAB775683XOKJN273','XRLC346112BADCV240','2021-01-07 00:02:17','cash',534.65,9),
 	 ('GPUZ783784IWGKZ593','FKTE654103ZLVVH845','2020-11-26 02:11:58','ewallet',198.18,15),
@@ -16307,6 +17318,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WIEO574018SHYXC918','VRRD756969RNIZM496','2020-11-24 19:13:19','creditcard',455.06,15),
 	 ('UWUM391663DCNVG827','OIWJ471758TNHNW890','2020-07-16 18:57:31','creditcard',582.12,14),
 	 ('BDRS917078DPTGO621','ARQZ831744MXHNC441','2020-05-11 06:32:18','cash',541.42,4);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('NDIP509196IIEVA618','FDZN291529UDXPS395','2020-11-02 23:24:19','ewallet',587.88,16),
 	 ('GWUQ565806CLFYJ359','KXBA289421BLBUC577','2020-07-13 21:47:40','creditcard',999.51,19),
@@ -16318,6 +17330,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XHTW272502XCACW904','UQJB931643XVYUP036','2020-10-05 16:43:47','creditcard',298.21,7),
 	 ('BDVC567304SFXMC765','TFER919508FSCFU921','2020-10-28 09:51:01','cash',504.75,13),
 	 ('NDIP509196IIEVA618','HELK864138KMVFL145','2020-06-19 14:29:54','ewallet',447.73,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('PVJW602335QIBCK184','ARQZ831744MXHNC441','2021-01-04 18:58:20','cash',616.54,4),
 	 ('EZWU488164CDIZT962','LYTU305856TMHGW864','2020-05-06 17:04:59','ewallet',586.08,16),
@@ -16329,6 +17342,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('QMXQ315898JZJBB563','IJYC469785VOJBR328','2020-03-03 07:46:42','cash',113.22,17),
 	 ('FJXE715147GIUIM279','YULR764975UQATC181','2020-03-10 12:17:17','ewallet',239.93,17),
 	 ('XRSV916459OYQPZ830','ROHY879127PCHTU827','2020-02-09 23:45:45','creditcard',649.44,11);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CMLZ326893OVOAE454','FKTE654103ZLVVH845','2020-02-14 17:20:51','cash',625.59,15),
 	 ('YZYG136120BDDFM354','PPSJ397487HLZNK408','2020-11-25 09:14:59','cash',650.30,1),
@@ -16340,6 +17354,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('MMBW200843BMIIS491','JLGU784413CAWXW937','2020-01-29 11:40:19','cash',570.10,1),
 	 ('NWOA646536BXTTQ655','IHGZ148761JOGWB049','2020-06-30 04:45:03','creditcard',197.89,18),
 	 ('IIAV834762NSZMZ270','GQWF115145LPKAR892','2020-06-04 21:01:34','cash',310.97,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('KDSF446249GBLPG287','HDQL246699KWZNP042','2020-06-19 03:31:55','ewallet',415.07,4),
 	 ('WJBZ916929RIECF057','UFXR842796LDDBC629','2020-02-12 05:39:08','creditcard',530.56,20),
@@ -16351,6 +17366,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('UVCR139836CINSZ005','NVRQ949209PKLCP182','2020-08-30 11:57:48','creditcard',964.25,12),
 	 ('RXCO887772BJVUA918','NXYY929688UGPXX533','2020-09-29 16:19:58','creditcard',984.45,15),
 	 ('PJJB496890NPBDR027','HMAL978915HANTF303','2020-04-04 21:58:16','cash',599.54,18);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('OUSO079533MNOZW475','OOZH438760ITVAP303','2020-05-20 03:15:04','cash',250.65,2),
 	 ('TUJP980174JJQPC844','BKHC149955SWJNL239','2020-07-08 15:58:55','ewallet',796.40,8),
@@ -16362,6 +17378,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XWEJ943539HVJCI341','YOWA325152LNZOE894','2020-12-27 12:33:05','creditcard',169.04,8),
 	 ('KFDO692542WVJGQ327','KXBA289421BLBUC577','2020-05-14 19:46:34','ewallet',110.88,19),
 	 ('KAKK458967RRXKH015','TYAV220532YIJRR451','2020-04-03 21:44:35','cash',648.94,10);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('ZXGS651990AMBUN829','ZOFJ160334OOALD653','2020-02-19 07:35:04','cash',982.71,13),
 	 ('TZWB731495LYDZY487','RSJF818963HXTYC459','2020-08-18 13:11:45','creditcard',889.97,10),
@@ -16373,6 +17390,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WUIK891032KCBEP439','FDZN291529UDXPS395','2020-12-16 06:21:45','creditcard',150.28,16),
 	 ('GWUQ565806CLFYJ359','KONJ803702JEBHP284','2020-02-22 23:06:27','creditcard',999.40,1),
 	 ('CTZB666543OWKSU419','BDTJ401139ASJOV955','2020-07-10 21:47:19','cash',568.74,6);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('PHTQ894233ACLOZ242','ZXKK738148WNGPC476','2020-10-21 18:55:27','cash',227.59,7),
 	 ('UBJP393429MLGIU233','IEIN361010OKOCF977','2020-07-05 12:24:50','cash',921.98,10),
@@ -16384,6 +17402,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('JQZT915689CYPCL082','IUQA151483VCVLU345','2020-04-26 15:20:08','cash',899.24,19),
 	 ('QZAF010893VKIFR424','LXZD960628XJDHI625','2020-11-20 15:43:01','cash',404.35,6),
 	 ('EKJF555299YOURW631','FTWG685595YHGVW398','2020-05-20 02:05:57','creditcard',714.77,19);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('IIAV834762NSZMZ270','IEIN361010OKOCF977','2020-08-29 16:23:08','creditcard',985.34,10),
 	 ('TZPI412610QIQXG067','QYTZ727949EXAWV861','2020-09-10 14:01:38','creditcard',624.57,12),
@@ -16395,6 +17414,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ZYGN737820KDAAY151','RIPR712215JDWSW560','2020-08-09 10:04:10','ewallet',263.88,17),
 	 ('KPTB147368MXQDV785','IUQA151483VCVLU345','2020-01-23 13:18:28','cash',937.14,19),
 	 ('YJKX121341BMFCS407','OOYI875755PITBJ273','2020-07-12 16:49:07','cash',129.93,12);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('TTLH855888QMSUN818','CEQM634770LYNNL059','2020-07-23 06:00:37','ewallet',358.37,17),
 	 ('NDAV589408YESKF026','XTOU735122APLTS301','2020-10-31 05:06:57','cash',271.80,19),
@@ -16406,6 +17426,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KFDO692542WVJGQ327','CRQS138539IFXTB708','2020-07-18 11:52:32','creditcard',594.42,5),
 	 ('LPIB168590PNILG461','HYWM167514QEUYU853','2020-06-01 11:42:17','creditcard',809.17,20),
 	 ('AIRT784489AMPXK110','BKHC149955SWJNL239','2020-04-03 15:42:08','creditcard',955.08,8);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CDHZ680743RZCTM125','AZXI418301NIIVH158','2021-01-15 09:20:38','cash',198.51,11),
 	 ('UJYP457105HAPSF034','RSJF818963HXTYC459','2020-01-23 12:28:56','ewallet',825.59,10),
@@ -16417,6 +17438,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('CMLZ326893OVOAE454','XLQQ936947QRUOX489','2020-04-28 06:26:10','cash',852.21,6),
 	 ('LFWN779411HEYSF426','RMHJ860695SQSHY731','2020-09-01 12:23:09','ewallet',925.15,8),
 	 ('UCXS474325LJRLB564','UFXR842796LDDBC629','2020-09-10 07:37:45','cash',206.60,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('PJJB496890NPBDR027','QXYC270895BDOAY897','2020-02-16 08:58:15','ewallet',176.03,6),
 	 ('YTZI468566MJLOJ631','UPSQ467636RXXXY526','2020-03-28 01:22:11','cash',543.15,8),
@@ -16428,6 +17450,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('XDAX034790OVBFM656','PPSJ397487HLZNK408','2020-07-29 04:14:02','cash',997.91,1),
 	 ('NDAV589408YESKF026','OEDE426751CYBPL468','2020-05-15 05:44:55','cash',327.15,2),
 	 ('HFPY897648AGYSO928','SNYM639210RKQNH200','2020-01-24 21:43:13','ewallet',635.02,20);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('LHDJ328800XUKDX785','SZEN211603HMRJN915','2020-08-03 07:35:24','ewallet',427.01,16),
 	 ('AYYN274903QZMQG873','IEIN361010OKOCF977','2020-10-17 11:31:27','creditcard',888.77,10),
@@ -16439,6 +17462,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('GBOW502260NNTQU321','IJYC469785VOJBR328','2020-12-20 21:49:45','ewallet',302.50,17),
 	 ('JAVL473873CGXJI745','OAFZ407613DRCDD375','2020-04-02 16:09:42','ewallet',366.75,5),
 	 ('RBYB804202IMGSE319','XJJG239340DQTFW656','2020-08-15 22:00:36','creditcard',480.03,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('WPPF325651EMBIL706','HACN386110HMQNB358','2020-10-04 18:03:48','cash',570.16,12),
 	 ('JGYK142695IRTQL912','KJQM467075AANWW384','2020-06-14 08:22:57','cash',460.59,16),
@@ -16450,6 +17474,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ZJEK122711GNJWT693','JLNA111313OLEBV199','2020-12-12 16:32:03','creditcard',489.97,7),
 	 ('KITY201030LUTQU601','LNLY009466CLEHQ598','2020-06-14 00:35:30','ewallet',345.00,5),
 	 ('QKXC841656ALYVF084','JLNA111313OLEBV199','2020-03-28 21:52:54','creditcard',556.75,7);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('SUJX828788MWLJK413','YHZC176932MKOLO741','2020-12-23 09:00:21','creditcard',868.41,3),
 	 ('PPBX435558UULMG097','QYTZ727949EXAWV861','2020-10-26 22:22:33','ewallet',483.26,12),
@@ -16461,6 +17486,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('UPSB793067LRFPW050','JILI462637LDUBY088','2020-06-16 13:44:04','ewallet',316.44,7),
 	 ('XQCR524111TGUWW840','ETSO858602GRHHP824','2020-04-14 02:35:47','creditcard',281.82,3),
 	 ('LLHO118723QSAYN289','GQWF115145LPKAR892','2020-03-30 12:22:00','ewallet',508.13,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('FEMI764661SZLBR228','ZNIN065773KHQZL502','2020-02-24 08:41:42','cash',135.68,14),
 	 ('HYUE449110YTTBD831','RZPO183297OFLDU781','2020-09-08 16:30:12','creditcard',278.37,19),
@@ -16472,6 +17498,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ICCP643953DNLDA729','CRQS138539IFXTB708','2020-09-08 03:15:35','cash',575.66,5),
 	 ('JFHI997157UWBOA022','GRBA016674OHXKX865','2020-01-29 22:01:35','cash',444.03,20),
 	 ('EAHT905435NAWSO219','XRLC346112BADCV240','2020-11-27 20:36:37','ewallet',527.57,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('RXFR202472SXNRK680','HCSK898917ZYCFX572','2020-07-30 00:48:31','ewallet',785.76,11),
 	 ('FAHJ108286KECEO626','IHGZ148761JOGWB049','2020-03-23 00:53:26','cash',109.75,18),
@@ -16483,6 +17510,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('KTPU069372DUAGI194','HMAL978915HANTF303','2020-10-10 14:55:01','cash',529.64,18),
 	 ('FDEQ391539AXLFQ046','VENC435259UTGDA593','2020-03-27 07:14:41','creditcard',557.23,6),
 	 ('KTXW576902FWKOL451','MYJZ441071MSYNA121','2020-07-27 06:49:50','ewallet',883.09,13);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('GVZY496946TGFJQ162','CEQM634770LYNNL059','2020-07-04 04:48:06','ewallet',208.52,17),
 	 ('QMFY066636NIRXD478','ATGJ671717HIPWW098','2021-01-16 19:03:11','cash',588.38,8),
@@ -16494,6 +17522,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('BFHY427071USJAP493','FUPF695090AQWRW060','2020-03-29 17:23:26','creditcard',566.97,6),
 	 ('IRFZ115509ZSFQA219','QQXI633005BKRQF803','2020-01-24 12:17:03','ewallet',860.65,20),
 	 ('LILQ949243SNALO426','NYPD617913YXQHB362','2020-08-23 06:11:06','cash',639.46,2);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('OSZX707963DJUQB784','OIWJ471758TNHNW890','2020-01-31 16:07:39','cash',552.28,14),
 	 ('PWQJ847465OWTWJ452','LUAF627606XYDUW709','2020-01-31 11:18:05','ewallet',810.47,1),
@@ -16505,6 +17534,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('BUER697369DVSIS960','FUPF695090AQWRW060','2020-03-06 17:36:06','creditcard',714.06,6),
 	 ('NDAV589408YESKF026','CYYE547403EACZO053','2020-08-08 08:19:18','creditcard',297.54,4),
 	 ('CFYV724032JIVYX574','GQWF115145LPKAR892','2020-03-02 23:32:09','cash',785.33,15);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('CVHE466926IUUSP551','JNSN846535SYXPZ533','2020-12-29 15:20:49','creditcard',602.55,18),
 	 ('DZGZ715642GBWRN893','CYYE547403EACZO053','2020-12-27 23:06:23','ewallet',206.42,4),
@@ -16516,6 +17546,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('PVJW602335QIBCK184','ROHY879127PCHTU827','2020-07-31 19:19:15','cash',871.52,11),
 	 ('UFGU916462JFKOF388','UZMZ778792KFUMW855','2020-07-02 23:49:30','cash',398.56,2),
 	 ('RNCY695353XEAFI076','DOIN464364UOBPX686','2020-01-24 10:58:54','cash',246.64,9);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('MVDT493135UMKXM341','HKSM805477SVAYG018','2020-08-15 22:48:22','cash',305.66,13),
 	 ('UVCR139836CINSZ005','GQWF115145LPKAR892','2020-04-23 11:31:57','cash',620.42,15),
@@ -16527,6 +17558,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('WRZM289448IIGLB647','VKLH822853RDCCE930','2020-04-21 01:32:44','creditcard',396.71,5),
 	 ('CFCI496212CZWUZ242','ARQZ831744MXHNC441','2020-07-05 21:24:24','ewallet',996.09,4),
 	 ('KPMX389697HXQAW221','UQJB931643XVYUP036','2020-05-18 08:01:59','creditcard',878.16,7);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('FGGG096831TYFKX253','FDZN291529UDXPS395','2020-06-07 05:05:22','cash',195.57,16),
 	 ('LLHO118723QSAYN289','DQWS051085SWGPB912','2020-07-08 12:57:33','cash',916.78,7),
@@ -16538,6 +17570,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('NJCK203114KPOJY590','AULV135955TMQBQ309','2020-08-30 01:03:08','cash',401.54,12),
 	 ('PZNE156141EMNHE037','HKSM805477SVAYG018','2020-10-01 16:21:33','ewallet',463.66,13),
 	 ('MWCW124741CTHFK844','PVPU729079OWQOF556','2020-08-06 14:07:47','creditcard',644.02,4);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('AHWV686950ANYUI203','FKTE654103ZLVVH845','2020-11-11 16:57:26','creditcard',906.42,15),
 	 ('RBYB804202IMGSE319','OOYI875755PITBJ273','2020-10-26 14:46:36','creditcard',921.31,12),
@@ -16549,6 +17582,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('ZGTR057050CWKBD432','XLQQ936947QRUOX489','2020-07-29 19:39:26','ewallet',143.31,6),
 	 ('DPBV717575ADQQN040','UQJB931643XVYUP036','2020-02-26 19:53:09','creditcard',342.89,7),
 	 ('KLWM184292SEDRE905','OIWJ471758TNHNW890','2020-05-13 16:09:28','ewallet',415.51,14);
+
 INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,id_establishment) VALUES
 	 ('GAIF899720ANPLC839','ICHG247738EHNPQ734','2020-09-09 16:30:36','ewallet',272.80,14),
 	 ('MFJT719632JLXXF009','HHSQ496482AZGUE095','2020-02-07 01:06:19','creditcard',351.45,18),
@@ -16559,7 +17593,8 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 ('MGLQ396442UCQLP506','BMPS523034IYAQS430','2020-10-10 09:28:47','ewallet',779.82,10),
 	 ('PPDZ564674JYNPN890','NVRQ949209PKLCP182','2020-10-04 11:33:19','creditcard',467.80,12),
 	 ('FDEQ391539AXLFQ046','IHGZ148761JOGWB049','2021-01-09 10:59:24','creditcard',784.06,18),
-	 ('KITY201030LUTQU601','ACEJ647989OGKMP732','2020-04-24 03:51:59','ewallet',615.92,14);INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
+	 ('KITY201030LUTQU601','ACEJ647989OGKMP732','2020-04-24 03:51:59','ewallet',615.92,14);
+INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (1,199,2),
 	 (2,255,2),
 	 (3,284,3),
@@ -16570,6 +17605,7 @@ INSERT INTO public.purchase (customer,cashier,"timestamp",payment_method,total,i
 	 (8,334,3),
 	 (9,84,2),
 	 (10,222,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (11,178,3),
 	 (12,250,3),
@@ -16581,6 +17617,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (18,169,3),
 	 (19,356,2),
 	 (20,88,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (21,242,2),
 	 (22,363,2),
@@ -16592,6 +17629,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (28,387,2),
 	 (29,108,3),
 	 (30,228,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (31,334,3),
 	 (32,333,2),
@@ -16603,6 +17641,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (38,105,3),
 	 (39,285,2),
 	 (40,81,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (41,360,1),
 	 (42,55,2),
@@ -16614,6 +17653,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (48,76,1),
 	 (49,69,2),
 	 (50,349,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (51,196,3),
 	 (52,214,2),
@@ -16625,6 +17665,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (58,333,3),
 	 (59,30,1),
 	 (60,78,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (61,373,2),
 	 (62,296,2),
@@ -16636,6 +17677,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (68,169,2),
 	 (69,150,3),
 	 (70,132,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (71,88,3),
 	 (72,309,3),
@@ -16647,6 +17689,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (78,194,3),
 	 (79,226,1),
 	 (80,142,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (81,350,2),
 	 (82,186,2),
@@ -16658,6 +17701,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (88,220,1),
 	 (89,76,2),
 	 (90,384,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (91,133,2),
 	 (92,88,2),
@@ -16669,6 +17713,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (98,320,3),
 	 (99,262,3),
 	 (100,321,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (101,383,2),
 	 (102,200,2),
@@ -16680,6 +17725,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (108,7,2),
 	 (109,204,3),
 	 (110,358,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (111,341,3),
 	 (112,199,3),
@@ -16691,6 +17737,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (118,166,3),
 	 (119,5,3),
 	 (120,214,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (121,12,1),
 	 (122,40,3),
@@ -16702,6 +17749,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (128,298,2),
 	 (129,132,2),
 	 (130,223,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (131,16,1),
 	 (132,202,3),
@@ -16713,6 +17761,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (138,142,1),
 	 (139,19,1),
 	 (140,335,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (141,264,1),
 	 (142,254,2),
@@ -16724,6 +17773,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (148,162,1),
 	 (149,330,2),
 	 (150,235,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (151,194,2),
 	 (152,113,2),
@@ -16735,6 +17785,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (158,237,2),
 	 (159,106,1),
 	 (160,186,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (161,183,2),
 	 (162,46,1),
@@ -16746,6 +17797,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (168,14,2),
 	 (169,360,3),
 	 (170,114,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (171,281,3),
 	 (172,80,1),
@@ -16757,6 +17809,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (178,361,3),
 	 (179,336,2),
 	 (180,19,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (181,156,1),
 	 (182,59,3),
@@ -16768,6 +17821,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (188,350,1),
 	 (189,292,2),
 	 (190,279,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (191,293,2),
 	 (192,247,2),
@@ -16779,6 +17833,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (198,76,3),
 	 (199,350,3),
 	 (200,208,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (201,127,1),
 	 (202,170,1),
@@ -16790,6 +17845,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (208,333,3),
 	 (209,360,3),
 	 (210,132,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (211,107,3),
 	 (212,55,1),
@@ -16801,6 +17857,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (218,264,1),
 	 (219,262,1),
 	 (220,113,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (221,387,1),
 	 (222,186,3),
@@ -16812,6 +17869,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (228,230,1),
 	 (229,128,2),
 	 (230,16,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (231,288,3),
 	 (232,268,1),
@@ -16823,6 +17881,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (238,279,1),
 	 (239,49,1),
 	 (240,228,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (241,274,1),
 	 (242,100,3),
@@ -16834,6 +17893,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (248,132,1),
 	 (249,364,3),
 	 (250,285,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (251,227,1),
 	 (252,284,2),
@@ -16845,6 +17905,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (258,116,1),
 	 (259,78,1),
 	 (260,277,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (261,305,2),
 	 (262,322,2),
@@ -16856,6 +17917,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (268,262,3),
 	 (269,93,1),
 	 (270,230,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (271,344,2),
 	 (272,86,2),
@@ -16867,6 +17929,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (278,235,3),
 	 (279,330,2),
 	 (280,16,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (281,62,2),
 	 (282,51,1),
@@ -16878,6 +17941,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (288,222,3),
 	 (289,320,1),
 	 (290,376,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (291,199,3),
 	 (292,395,1),
@@ -16889,6 +17953,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (298,95,2),
 	 (299,94,1),
 	 (300,127,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (301,96,2),
 	 (302,251,1),
@@ -16900,6 +17965,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (308,82,1),
 	 (309,95,3),
 	 (310,268,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (311,205,3),
 	 (312,288,3),
@@ -16911,6 +17977,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (318,155,3),
 	 (319,47,2),
 	 (320,341,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (321,151,2),
 	 (322,240,3),
@@ -16922,6 +17989,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (328,358,1),
 	 (329,68,3),
 	 (330,200,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (331,247,1),
 	 (332,335,3),
@@ -16933,6 +18001,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (338,12,2),
 	 (339,46,2),
 	 (340,302,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (341,74,2),
 	 (342,358,3),
@@ -16944,6 +18013,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (348,247,2),
 	 (349,218,3),
 	 (350,290,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (351,235,2),
 	 (352,309,2),
@@ -16955,6 +18025,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (358,103,2),
 	 (359,45,2),
 	 (360,82,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (361,19,2),
 	 (362,59,3),
@@ -16966,6 +18037,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (368,114,3),
 	 (369,373,3),
 	 (370,288,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (371,85,1),
 	 (372,293,1),
@@ -16977,6 +18049,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (378,74,3),
 	 (379,285,1),
 	 (380,265,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (381,113,2),
 	 (382,387,2),
@@ -16988,6 +18061,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (388,98,3),
 	 (389,251,2),
 	 (390,12,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (391,107,3),
 	 (392,160,1),
@@ -16999,6 +18073,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (398,142,1),
 	 (399,93,3),
 	 (400,260,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (401,382,1),
 	 (402,199,3),
@@ -17010,6 +18085,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (408,69,3),
 	 (409,30,2),
 	 (410,100,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (411,206,3),
 	 (412,85,1),
@@ -17021,6 +18097,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (418,175,1),
 	 (419,114,1),
 	 (420,254,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (421,170,1),
 	 (422,78,2),
@@ -17032,6 +18109,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (428,292,3),
 	 (429,228,2),
 	 (430,316,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (431,69,3),
 	 (432,360,1),
@@ -17043,6 +18121,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (438,242,1),
 	 (439,218,2),
 	 (440,40,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (441,51,3),
 	 (442,344,2),
@@ -17054,6 +18133,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (448,35,1),
 	 (449,59,2),
 	 (450,376,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (451,205,3),
 	 (452,393,3),
@@ -17065,6 +18145,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (458,378,3),
 	 (459,112,1),
 	 (460,118,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (461,105,3),
 	 (462,82,3),
@@ -17076,6 +18157,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (468,303,1),
 	 (469,137,2),
 	 (470,371,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (471,380,2),
 	 (472,284,1),
@@ -17087,6 +18169,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (478,162,2),
 	 (479,138,3),
 	 (480,110,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (481,38,1),
 	 (482,105,2),
@@ -17098,6 +18181,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (488,5,2),
 	 (489,55,3),
 	 (490,226,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (491,320,3),
 	 (492,174,1),
@@ -17109,6 +18193,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (498,179,3),
 	 (499,175,3),
 	 (500,398,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (501,185,1),
 	 (502,169,2),
@@ -17120,6 +18205,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (508,218,3),
 	 (509,12,3),
 	 (510,326,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (511,140,3),
 	 (512,95,3),
@@ -17131,6 +18217,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (518,172,1),
 	 (519,251,1),
 	 (520,145,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (521,329,3),
 	 (522,16,1),
@@ -17142,6 +18229,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (528,349,3),
 	 (529,170,1),
 	 (530,233,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (531,200,3),
 	 (532,375,1),
@@ -17153,6 +18241,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (538,79,3),
 	 (539,98,2),
 	 (540,341,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (541,364,3),
 	 (542,54,3),
@@ -17164,6 +18253,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (548,88,2),
 	 (549,235,3),
 	 (550,184,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (551,80,2),
 	 (552,233,2),
@@ -17175,6 +18265,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (558,227,2),
 	 (559,137,1),
 	 (560,314,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (561,305,2),
 	 (562,109,1),
@@ -17186,6 +18277,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (568,361,3),
 	 (569,11,3),
 	 (570,40,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (571,85,3),
 	 (572,223,1),
@@ -17197,6 +18289,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (578,316,3),
 	 (579,224,1),
 	 (580,344,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (581,382,3),
 	 (582,5,3),
@@ -17208,6 +18301,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (588,107,3),
 	 (589,200,3),
 	 (590,143,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (591,222,2),
 	 (592,237,3),
@@ -17219,6 +18313,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (598,326,1),
 	 (599,76,1),
 	 (600,166,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (601,40,3),
 	 (602,108,2),
@@ -17230,6 +18325,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (608,107,3),
 	 (609,230,2),
 	 (610,237,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (611,16,2),
 	 (612,5,3),
@@ -17241,6 +18337,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (618,174,1),
 	 (619,152,2),
 	 (620,220,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (621,110,1),
 	 (622,268,3),
@@ -17252,6 +18349,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (628,166,2),
 	 (629,250,2),
 	 (630,338,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (631,62,1),
 	 (632,248,3),
@@ -17263,6 +18361,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (638,243,2),
 	 (639,87,1),
 	 (640,142,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (641,79,3),
 	 (642,270,3),
@@ -17274,6 +18373,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (648,46,2),
 	 (649,206,3),
 	 (650,126,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (651,294,3),
 	 (652,162,3),
@@ -17285,6 +18385,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (658,321,2),
 	 (659,33,3),
 	 (660,87,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (661,307,2),
 	 (662,62,1),
@@ -17296,6 +18397,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (668,307,3),
 	 (669,114,3),
 	 (670,6,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (671,307,1),
 	 (672,305,1),
@@ -17307,6 +18409,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (678,270,2),
 	 (679,204,3),
 	 (680,11,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (681,69,2),
 	 (682,172,2),
@@ -17318,6 +18421,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (688,69,2),
 	 (689,205,1),
 	 (690,285,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (691,112,3),
 	 (692,107,1),
@@ -17329,6 +18433,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (698,150,2),
 	 (699,368,1),
 	 (700,299,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (701,150,1),
 	 (702,158,3),
@@ -17340,6 +18445,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (708,247,1),
 	 (709,314,1),
 	 (710,142,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (711,126,3),
 	 (712,262,2),
@@ -17351,6 +18457,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (718,75,1),
 	 (719,363,3),
 	 (720,305,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (721,51,3),
 	 (722,152,3),
@@ -17362,6 +18469,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (728,28,1),
 	 (729,305,1),
 	 (730,155,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (731,265,2),
 	 (732,251,3),
@@ -17373,6 +18481,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (738,301,1),
 	 (739,174,3),
 	 (740,128,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (741,313,1),
 	 (742,137,2),
@@ -17384,6 +18493,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (748,291,1),
 	 (749,364,3),
 	 (750,382,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (751,30,1),
 	 (752,93,1),
@@ -17395,6 +18505,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (758,11,2),
 	 (759,274,1),
 	 (760,155,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (761,333,1),
 	 (762,250,3),
@@ -17406,6 +18517,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (768,45,1),
 	 (769,61,2),
 	 (770,264,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (771,87,2),
 	 (772,130,2),
@@ -17417,6 +18529,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (778,294,1),
 	 (779,184,2),
 	 (780,344,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (781,130,3),
 	 (782,74,3),
@@ -17428,6 +18541,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (788,208,1),
 	 (789,108,2),
 	 (790,96,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (791,168,3),
 	 (792,215,1),
@@ -17439,6 +18553,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (798,71,1),
 	 (799,85,3),
 	 (800,172,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (801,40,3),
 	 (802,10,1),
@@ -17450,6 +18565,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (808,302,3),
 	 (809,133,3),
 	 (810,360,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (811,139,3),
 	 (812,88,3),
@@ -17461,6 +18577,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (818,152,3),
 	 (819,19,2),
 	 (820,393,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (821,281,2),
 	 (822,162,1),
@@ -17472,6 +18589,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (828,128,1),
 	 (829,206,1),
 	 (830,54,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (831,69,1),
 	 (832,290,1),
@@ -17483,6 +18601,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (838,12,2),
 	 (839,113,2),
 	 (840,262,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (841,139,3),
 	 (842,214,3),
@@ -17494,6 +18613,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (848,96,1),
 	 (849,307,1),
 	 (850,61,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (851,140,2),
 	 (852,338,3),
@@ -17505,6 +18625,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (858,139,3),
 	 (859,67,1),
 	 (860,106,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (861,45,3),
 	 (862,204,1),
@@ -17516,6 +18637,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (868,68,3),
 	 (869,85,1),
 	 (870,95,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (871,158,3),
 	 (872,98,1),
@@ -17527,6 +18649,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (878,293,2),
 	 (879,331,1),
 	 (880,222,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (881,116,3),
 	 (882,226,3),
@@ -17538,6 +18661,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (888,55,1),
 	 (889,62,1),
 	 (890,147,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (891,98,1),
 	 (892,168,1),
@@ -17549,6 +18673,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (898,28,2),
 	 (899,142,1),
 	 (900,109,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (901,326,2),
 	 (902,208,2),
@@ -17560,6 +18685,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (908,75,2),
 	 (909,162,2),
 	 (910,294,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (911,358,1),
 	 (912,78,1),
@@ -17571,6 +18697,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (918,281,3),
 	 (919,174,1),
 	 (920,166,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (921,127,3),
 	 (922,71,3),
@@ -17582,6 +18709,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (928,28,2),
 	 (929,314,1),
 	 (930,152,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (931,155,1),
 	 (932,67,1),
@@ -17593,6 +18721,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (938,168,2),
 	 (939,373,2),
 	 (940,380,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (941,307,1),
 	 (942,128,3),
@@ -17604,6 +18733,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (948,86,1),
 	 (949,338,2),
 	 (950,277,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (951,382,3),
 	 (952,172,2),
@@ -17615,6 +18745,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (958,302,3),
 	 (959,61,2),
 	 (960,349,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (961,183,1),
 	 (962,11,1),
@@ -17626,6 +18757,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (968,293,3),
 	 (969,276,3),
 	 (970,341,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (971,145,1),
 	 (972,235,3),
@@ -17637,6 +18769,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (978,395,1),
 	 (979,115,2),
 	 (980,18,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (981,329,1),
 	 (982,162,1),
@@ -17648,6 +18781,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (988,223,1),
 	 (989,63,3),
 	 (990,321,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (991,68,3),
 	 (992,6,2),
@@ -17659,6 +18793,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (998,143,1),
 	 (999,276,3),
 	 (1000,279,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (401,133,3),
 	 (492,138,3),
@@ -17670,6 +18805,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (613,185,3),
 	 (701,278,1),
 	 (220,151,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (217,353,3),
 	 (559,291,1),
@@ -17681,6 +18817,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (371,57,3),
 	 (929,58,3),
 	 (994,203,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (89,159,1),
 	 (519,211,2),
@@ -17692,6 +18829,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (94,247,2),
 	 (430,164,3),
 	 (432,131,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (378,342,2),
 	 (484,95,1),
@@ -17703,6 +18841,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (135,261,2),
 	 (449,289,1),
 	 (839,166,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (256,318,2),
 	 (239,275,3),
@@ -17714,6 +18853,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (875,376,1),
 	 (831,230,1),
 	 (636,59,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (159,159,3),
 	 (165,200,1),
@@ -17725,6 +18865,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (17,381,1),
 	 (559,62,1),
 	 (794,44,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (716,58,1),
 	 (563,279,3),
@@ -17736,6 +18877,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (767,232,1),
 	 (830,238,2),
 	 (290,140,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (752,4,1),
 	 (573,272,2),
@@ -17747,6 +18889,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (772,118,1),
 	 (156,137,2),
 	 (293,207,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (903,205,3),
 	 (386,3,2),
@@ -17758,6 +18901,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (826,362,1),
 	 (601,268,3),
 	 (160,260,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (465,325,2),
 	 (105,244,1),
@@ -17769,6 +18913,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (471,201,2),
 	 (353,380,1),
 	 (426,384,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (515,46,1),
 	 (680,295,3),
@@ -17780,6 +18925,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (30,350,3),
 	 (728,41,1),
 	 (509,365,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (91,93,1),
 	 (996,270,1),
@@ -17791,6 +18937,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (547,50,1),
 	 (470,107,1),
 	 (93,8,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (698,268,3),
 	 (456,302,3),
@@ -17802,6 +18949,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (811,220,3),
 	 (833,18,1),
 	 (520,221,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (114,254,2),
 	 (986,265,3),
@@ -17813,6 +18961,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (129,206,2),
 	 (730,122,2),
 	 (364,302,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (803,70,1),
 	 (286,366,2),
@@ -17824,6 +18973,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (146,197,2),
 	 (491,24,2),
 	 (484,118,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (932,15,1),
 	 (416,256,2),
@@ -17835,6 +18985,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (63,22,2),
 	 (945,333,1),
 	 (673,119,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (3,275,3),
 	 (954,342,3),
@@ -17846,6 +18997,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (700,145,3),
 	 (580,208,3),
 	 (31,144,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (668,271,3),
 	 (962,359,2),
@@ -17857,6 +19009,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (979,254,2),
 	 (831,8,2),
 	 (164,274,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (17,386,2),
 	 (941,122,2),
@@ -17868,6 +19021,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (889,269,2),
 	 (957,295,2),
 	 (992,117,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (901,364,2),
 	 (597,349,1),
@@ -17879,6 +19033,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (320,229,2),
 	 (47,384,3),
 	 (943,236,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (478,109,3),
 	 (136,186,1),
@@ -17890,6 +19045,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (377,53,1),
 	 (905,224,1),
 	 (473,104,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (255,358,2),
 	 (404,246,2),
@@ -17901,6 +19057,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (998,157,1),
 	 (957,11,1),
 	 (38,91,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (959,363,3),
 	 (282,11,2),
@@ -17912,6 +19069,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (396,368,3),
 	 (977,53,1),
 	 (26,69,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (335,49,2),
 	 (758,294,1),
@@ -17923,6 +19081,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (582,174,1),
 	 (28,305,1),
 	 (169,16,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (444,294,1),
 	 (34,361,3),
@@ -17934,6 +19093,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (593,134,2),
 	 (758,111,3),
 	 (417,223,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (492,98,2),
 	 (232,38,3),
@@ -17945,6 +19105,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (942,385,2),
 	 (426,84,2),
 	 (322,364,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (432,129,1),
 	 (689,185,2),
@@ -17956,6 +19117,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (304,329,2),
 	 (902,102,1),
 	 (529,207,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (703,81,2),
 	 (190,90,1),
@@ -17967,6 +19129,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (599,286,3),
 	 (376,52,1),
 	 (668,311,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (372,70,1),
 	 (185,60,1),
@@ -17978,6 +19141,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (887,170,1),
 	 (207,19,3),
 	 (462,49,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (67,344,3),
 	 (349,231,1),
@@ -17989,6 +19153,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (68,254,2),
 	 (63,39,2),
 	 (576,302,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (216,288,3),
 	 (346,231,3),
@@ -18000,6 +19165,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (528,257,3),
 	 (217,7,3),
 	 (140,155,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (410,275,3),
 	 (8,283,3),
@@ -18011,6 +19177,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (917,384,1),
 	 (508,52,2),
 	 (990,302,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (380,319,3),
 	 (465,346,3),
@@ -18022,6 +19189,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (337,289,1),
 	 (611,334,2),
 	 (214,12,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (972,74,2),
 	 (929,355,2),
@@ -18033,6 +19201,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (962,319,1),
 	 (215,150,1),
 	 (157,256,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (884,211,3),
 	 (540,192,1),
@@ -18044,6 +19213,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (385,223,2),
 	 (701,349,2),
 	 (92,239,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (967,364,2),
 	 (152,178,3),
@@ -18055,6 +19225,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (590,237,1),
 	 (531,47,3),
 	 (317,318,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (805,53,2),
 	 (917,98,3),
@@ -18066,6 +19237,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (558,335,3),
 	 (59,358,3),
 	 (860,277,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (148,199,2),
 	 (407,256,2),
@@ -18077,6 +19249,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (901,4,2),
 	 (432,150,2),
 	 (826,366,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (796,166,2),
 	 (800,198,2),
@@ -18088,6 +19261,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (151,131,3),
 	 (81,307,3),
 	 (472,310,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (317,155,2),
 	 (34,65,3),
@@ -18099,6 +19273,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (822,212,2),
 	 (2,263,3),
 	 (24,84,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (857,27,1),
 	 (595,196,3),
@@ -18110,6 +19285,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (124,138,3),
 	 (895,229,3),
 	 (647,341,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (233,73,1),
 	 (895,285,1),
@@ -18121,6 +19297,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (506,377,3),
 	 (188,342,2),
 	 (70,387,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (892,134,3),
 	 (252,139,3),
@@ -18132,6 +19309,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (902,340,3),
 	 (764,94,1),
 	 (17,379,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (586,133,2),
 	 (252,345,1),
@@ -18143,6 +19321,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (775,362,3),
 	 (527,378,2),
 	 (696,73,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (513,62,1),
 	 (571,39,3),
@@ -18154,6 +19333,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (784,206,3),
 	 (490,398,1),
 	 (24,247,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (790,318,3),
 	 (445,250,3),
@@ -18165,6 +19345,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (872,166,1),
 	 (495,161,2),
 	 (362,388,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (226,395,3),
 	 (593,228,2),
@@ -18176,6 +19357,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (65,248,3),
 	 (180,177,3),
 	 (104,192,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (43,167,3),
 	 (597,115,2),
@@ -18187,6 +19369,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (198,66,1),
 	 (460,336,1),
 	 (332,149,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (770,273,2),
 	 (436,319,1),
@@ -18198,6 +19381,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (962,256,3),
 	 (648,96,2),
 	 (647,148,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (27,14,3),
 	 (17,328,2),
@@ -18209,6 +19393,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (836,254,2),
 	 (367,298,2),
 	 (251,370,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (844,173,2),
 	 (252,320,1),
@@ -18220,6 +19405,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (414,297,3),
 	 (154,240,1),
 	 (643,209,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (74,116,1),
 	 (537,231,1),
@@ -18231,6 +19417,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (504,125,2),
 	 (643,141,2),
 	 (969,347,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (459,3,2),
 	 (170,181,2),
@@ -18242,6 +19429,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (13,238,1),
 	 (432,357,3),
 	 (907,216,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (826,334,1),
 	 (809,292,2),
@@ -18253,6 +19441,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (30,243,2),
 	 (927,354,1),
 	 (445,394,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (922,96,3),
 	 (824,340,1),
@@ -18264,6 +19453,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (314,75,1),
 	 (821,29,1),
 	 (142,216,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (177,77,3),
 	 (471,97,1),
@@ -18275,6 +19465,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (327,383,1),
 	 (914,82,3),
 	 (203,145,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (45,343,3),
 	 (244,235,2),
@@ -18286,6 +19477,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (915,122,1),
 	 (94,102,1),
 	 (88,223,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (681,46,2),
 	 (108,219,1),
@@ -18297,6 +19489,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (25,340,1),
 	 (606,30,1),
 	 (703,305,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (402,168,3),
 	 (949,63,1),
@@ -18308,6 +19501,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (437,33,2),
 	 (371,346,1),
 	 (422,370,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (964,90,1),
 	 (44,21,2),
@@ -18319,6 +19513,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (532,41,2),
 	 (568,316,3),
 	 (38,227,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (667,73,3),
 	 (764,19,2),
@@ -18330,6 +19525,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (978,302,2),
 	 (780,148,1),
 	 (431,228,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (674,78,3),
 	 (660,355,1),
@@ -18341,6 +19537,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (104,352,1),
 	 (212,73,3),
 	 (590,68,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (970,37,2),
 	 (400,300,1),
@@ -18352,6 +19549,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (84,306,1),
 	 (347,299,2),
 	 (520,169,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (569,321,2),
 	 (27,363,3),
@@ -18363,6 +19561,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (503,112,2),
 	 (190,286,1),
 	 (348,24,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (538,113,1),
 	 (192,115,3),
@@ -18374,6 +19573,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (268,297,2),
 	 (557,323,1),
 	 (629,186,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (292,255,1),
 	 (688,14,3),
@@ -18385,6 +19585,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (296,180,3),
 	 (358,240,3),
 	 (479,9,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (291,274,2),
 	 (454,135,1),
@@ -18396,6 +19597,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (817,164,2),
 	 (6,6,3),
 	 (666,106,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (818,137,3),
 	 (202,178,3),
@@ -18407,6 +19609,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (189,330,3),
 	 (708,369,1),
 	 (392,79,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (89,249,2),
 	 (387,156,3),
@@ -18418,6 +19621,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (986,31,2),
 	 (613,95,1),
 	 (345,87,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (181,305,3),
 	 (274,321,2),
@@ -18429,6 +19633,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (400,94,3),
 	 (828,343,3),
 	 (339,202,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (211,221,2),
 	 (579,354,2),
@@ -18440,6 +19645,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (819,229,3),
 	 (352,153,2),
 	 (968,193,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (248,86,1),
 	 (769,174,1),
@@ -18451,6 +19657,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (212,186,2),
 	 (616,266,3),
 	 (815,329,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (507,203,2),
 	 (679,115,1),
@@ -18462,6 +19669,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (727,313,1),
 	 (945,59,1),
 	 (636,381,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (735,386,1),
 	 (114,305,1),
@@ -18473,6 +19681,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (873,192,3),
 	 (217,60,1),
 	 (141,27,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (330,269,1),
 	 (753,8,2),
@@ -18484,6 +19693,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (248,219,3),
 	 (802,293,3),
 	 (516,304,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (285,175,1),
 	 (152,330,3),
@@ -18495,6 +19705,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (547,205,3),
 	 (59,95,1),
 	 (704,101,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (768,54,3),
 	 (880,258,3),
@@ -18506,6 +19717,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (846,305,3),
 	 (322,276,1),
 	 (763,378,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (226,248,3),
 	 (692,138,2),
@@ -18517,6 +19729,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (153,317,3),
 	 (814,44,3),
 	 (30,36,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (402,123,2),
 	 (599,90,2),
@@ -18528,6 +19741,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (27,164,1),
 	 (782,241,3),
 	 (156,281,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (504,35,3),
 	 (848,88,2),
@@ -18539,6 +19753,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (624,240,1),
 	 (270,150,3),
 	 (278,170,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (620,266,3),
 	 (895,191,2),
@@ -18550,6 +19765,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (143,326,2),
 	 (741,200,1),
 	 (400,140,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (165,381,3),
 	 (752,303,2),
@@ -18561,6 +19777,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (296,212,1),
 	 (209,348,1),
 	 (640,61,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (466,56,1),
 	 (32,24,3),
@@ -18572,6 +19789,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (601,303,3),
 	 (243,180,1),
 	 (624,135,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (313,374,1),
 	 (452,390,1),
@@ -18583,6 +19801,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (219,387,2),
 	 (536,341,1),
 	 (108,320,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (327,357,3),
 	 (965,163,2),
@@ -18594,6 +19813,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (158,86,3),
 	 (735,256,1),
 	 (23,11,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (452,294,2),
 	 (365,335,2),
@@ -18605,6 +19825,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (185,166,1),
 	 (917,129,2),
 	 (896,252,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (389,163,3),
 	 (768,152,1),
@@ -18616,6 +19837,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (622,134,2),
 	 (249,359,2),
 	 (494,326,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (606,312,2),
 	 (527,306,2),
@@ -18627,6 +19849,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (128,155,2),
 	 (370,400,2),
 	 (119,381,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (880,206,2),
 	 (869,37,2),
@@ -18638,6 +19861,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (604,337,3),
 	 (861,239,3),
 	 (808,324,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (333,8,3),
 	 (329,341,3),
@@ -18649,6 +19873,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (421,174,3),
 	 (300,380,3),
 	 (887,197,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (86,75,3),
 	 (358,92,2),
@@ -18660,6 +19885,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (465,319,2),
 	 (867,46,2),
 	 (923,86,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (981,154,2),
 	 (406,50,2),
@@ -18671,6 +19897,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (403,380,1),
 	 (420,61,2),
 	 (960,370,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (752,121,3),
 	 (488,284,1),
@@ -18682,6 +19909,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (402,396,3),
 	 (729,15,3),
 	 (394,94,3);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (198,329,2),
 	 (953,284,2),
@@ -18693,6 +19921,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (233,255,2),
 	 (873,16,2),
 	 (991,74,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (588,29,1),
 	 (461,158,1),
@@ -18704,6 +19933,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (197,64,1),
 	 (689,364,1),
 	 (413,149,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (717,295,2),
 	 (796,244,3),
@@ -18715,6 +19945,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (263,343,2),
 	 (27,1,1),
 	 (332,321,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (968,51,3),
 	 (16,286,2),
@@ -18726,6 +19957,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (320,153,1),
 	 (674,316,2),
 	 (632,14,1);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (909,62,3),
 	 (797,222,2),
@@ -18737,6 +19969,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (259,211,1),
 	 (791,288,3),
 	 (575,228,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (263,211,3),
 	 (981,341,3),
@@ -18748,6 +19981,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (727,360,2),
 	 (610,6,3),
 	 (787,71,2);
+
 INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (136,146,1),
 	 (787,235,1),
@@ -18758,7 +19992,8 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 (964,66,3),
 	 (221,197,3),
 	 (337,47,2),
-	 (100,155,3);INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
+	 (100,155,3);
+INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('02119273991666','OLDU929976EMVFJ583',3927.81),
 	 ('18693272617363','DGUN489902JORXB206',5776.88),
 	 ('39861989893707','PZNE156141EMNHE037',6136.04),
@@ -18769,6 +20004,7 @@ INSERT INTO public.buys (id_purchase,id_drug,quantity) VALUES
 	 ('10203150616994','BDVC567304SFXMC765',7251.40),
 	 ('31332970587821','NJCK203114KPOJY590',6746.67),
 	 ('06974214662151','KZNQ525843OQQVL697',315.10);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('82460864223100','JVUQ476385YMOPV471',2571.68),
 	 ('57718670225972','RYIC779163GCFWE725',849.48),
@@ -18780,6 +20016,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('95092636476960','GPOQ915271JNHEW976',4263.13),
 	 ('43112313151919','VNPG713648OPUWG432',2606.53),
 	 ('33218391535864','LLHO118723QSAYN289',6108.70);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('71941333267913','FDEQ391539AXLFQ046',136.77),
 	 ('90238897173033','BFHY427071USJAP493',5905.58),
@@ -18791,6 +20028,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('81511170902177','YKWX590179RQEDQ643',6800.64),
 	 ('18962810213172','PPDZ564674JYNPN890',9501.25),
 	 ('66746461058704','XRSV916459OYQPZ830',5647.58);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('87139845327930','KBIF290261RPLAB483',1105.32),
 	 ('69750677508136','VONI968783NFCZK958',8888.79),
@@ -18802,6 +20040,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('40532672751400','RNCY695353XEAFI076',9371.11),
 	 ('11995894967783','ONBK154676KXVVV317',4959.74),
 	 ('21329774231380','QMFY066636NIRXD478',8259.81);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('93953100661904','SQBH424121VONPY587',4063.99),
 	 ('33182086965632','BHVD977888UHPZA895',1826.97),
@@ -18813,6 +20052,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('10934608622244','GBDW842777IYXNR524',5711.64),
 	 ('71638076461867','HBMQ866414ETRPW751',778.66),
 	 ('41106125002840','FIDI724571NFFQH767',418.26);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('17784501726198','EPWH355488VULEK908',9833.80),
 	 ('08936686073475','KDSF446249GBLPG287',4021.55),
@@ -18824,6 +20064,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('81144814136662','GIGH301414EGYLW929',5403.50),
 	 ('17973183706797','ZYNG123535ZPWII526',1953.13),
 	 ('48523121763678','NKPR080762RHJYJ955',4973.16);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('51344680830067','RRDU131778UFWRS846',3175.42),
 	 ('51535346981379','GPUZ783784IWGKZ593',3712.99),
@@ -18835,6 +20076,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('13479526904085','TMIN807213FYBNH658',5199.54),
 	 ('17656147906218','GFAY911676QHRUW030',5429.26),
 	 ('55869047709530','ZCTK251288PRSTL369',6781.27);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('92522502100453','XRLR727308PYXGQ171',4369.93),
 	 ('80518735408002','CGCH465302EGTEO600',6296.22),
@@ -18846,6 +20088,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('72373580072510','SUJX828788MWLJK413',8024.56),
 	 ('54557720994413','IMJW719484DWPMT009',1261.35),
 	 ('71543711103134','MJYZ573026TIOVB215',1880.07);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('48181946310504','XGUW648506BCSKT918',5766.01),
 	 ('86947909872689','UPSB793067LRFPW050',9235.92),
@@ -18857,6 +20100,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('45892857161050','DZGZ715642GBWRN893',8914.70),
 	 ('20437447769125','NHKV520999LGJVA620',5065.47),
 	 ('02389878076168','HFPY897648AGYSO928',3256.84);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('40002292496033','PNJG931487MVQKD275',8196.19),
 	 ('84534072948826','OUZF229202HHERU531',3587.67),
@@ -18868,6 +20112,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('14016155087904','XQCR524111TGUWW840',7159.92),
 	 ('97049676500448','GRES790571BBZOM729',3401.10),
 	 ('28805123323594','FGGG096831TYFKX253',4693.35);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('61550886353348','ODGZ789985GZROU388',5899.25),
 	 ('50508897374944','DOEU282752ZRSGS407',8673.58),
@@ -18879,6 +20124,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('06097369291772','RXFR202472SXNRK680',4068.52),
 	 ('11630860240401','RBWL495958WQMDU311',1128.14),
 	 ('82654852498427','XHTW272502XCACW904',3505.94);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('85553784180898','MMBW200843BMIIS491',802.97),
 	 ('73145053805074','KPTB147368MXQDV785',586.53),
@@ -18890,6 +20136,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('11121047870107','NUQP081951VBSVI183',7141.56),
 	 ('85689257955611','LDIS950812IIGEK829',4836.01),
 	 ('00092744609936','XGZZ840242PXKJP043',1893.64);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('90249246568859','ICCP643953DNLDA729',2140.68),
 	 ('22782687917274','HEYY015757TQZPP031',344.92),
@@ -18901,6 +20148,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('05908267227058','OUSO079533MNOZW475',5387.84),
 	 ('64359302737457','SXGA737804BPXXS732',7186.73),
 	 ('72373355685010','VZLV524892CBIJN392',7219.49);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('26376031289178','UJYP457105HAPSF034',1087.20),
 	 ('74733415791544','BSNE659250DJVAD705',7417.32),
@@ -18912,6 +20160,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('36879195835910','RBYB804202IMGSE319',6031.37),
 	 ('12923082123135','RQNC774341OOBVQ125',846.64),
 	 ('50623391758611','KHVV120157QBNWD372',3100.94);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('73081971068220','JACX023404HNONN170',3360.46),
 	 ('05527937166571','NOAO658913CFYTM989',8283.58),
@@ -18923,6 +20172,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('68676658439405','PIKR977681KTGDT593',7571.61),
 	 ('49313576599015','ZFRO787378MDWJY175',8587.72),
 	 ('47281254188990','GKDQ150070GQCGO952',8510.04);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('67797748057254','GWUQ565806CLFYJ359',3873.46),
 	 ('54486009046668','KYTV489121HFWQG515',3121.70),
@@ -18934,6 +20184,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('71530712393134','ZMMM522891UDCZY242',3417.88),
 	 ('86882410848767','SZGC126326DRFYY897',9556.81),
 	 ('16831044039451','VYSG210975TOZIW556',2753.69);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('39803321602663','UPHF999095ZEPAY068',9832.80),
 	 ('97829256525233','ZGUC999734VYYIU065',3851.62),
@@ -18945,6 +20196,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('10327657914128','PWQC723981UZGJM631',6707.82),
 	 ('21829019545183','IQGE132443QMLIB177',8376.42),
 	 ('38462335576022','GUOV180737SKAXD411',9071.59);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('83641478403648','WJBZ916929RIECF057',7500.71),
 	 ('47434877338491','LFWN779411HEYSF426',1686.98),
@@ -18956,6 +20208,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('23759999863122','WYDZ861005ZKQNR907',8305.98),
 	 ('31410000593319','DZZP279024UBNKG571',7388.16),
 	 ('41740291628727','CLHI821991KQFXT617',9555.11);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('73639343826252','TCHR657366CUYSO955',6329.37),
 	 ('10674365910325','LODE137458ENNWG632',6990.57),
@@ -18967,6 +20220,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('21960986745837','VFER926137LIHQH679',611.78),
 	 ('17345933854583','OMMF689584PDXWH882',9600.01),
 	 ('53981274029748','TDXR252209JUULV972',988.28);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('37459926820039','CSGA881090LDDAJ282',4969.36),
 	 ('76093043296968','WWYU004372MPSJG909',8310.09),
@@ -18978,6 +20232,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('06835091520532','NZQY342992FHJGI446',280.25),
 	 ('79470617121544','VKPW242863LKYXE358',7752.76),
 	 ('78754936564327','GAIF899720ANPLC839',1131.61);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('21904012292555','HAFO658636YHTZU930',5369.36),
 	 ('05795074755948','FFNR888342OYNUX513',7724.12),
@@ -18989,6 +20244,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('45220946154538','XFJS846746CTTOV882',1509.67),
 	 ('25939182253760','MFJT719632JLXXF009',7314.25),
 	 ('90028625226381','PRIP658239TETAN213',5374.84);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('54616703312760','GFYB436412JPILC614',6599.87),
 	 ('31570178604272','WDHB070139BKNFH352',2645.50),
@@ -19000,6 +20256,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('06201809707190','JRPE099516DZMHH095',6217.46),
 	 ('72310924094629','CNTY451162IAJDB945',5393.65),
 	 ('22417841590440','KITY201030LUTQU601',62.06);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('62458083225404','TCDK018120LAPKX631',5291.68),
 	 ('72839016068689','JAVL473873CGXJI745',4339.45),
@@ -19011,6 +20268,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('15163070347558','WIEO574018SHYXC918',9298.82),
 	 ('25020333300772','XGRL506246NFEDK861',5256.29),
 	 ('52021334908614','RWXR156948XYLTS119',7433.51);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('44774665306621','XVNG046979LUQUW195',2179.67),
 	 ('21385356973385','ZGTR057050CWKBD432',7068.52),
@@ -19022,6 +20280,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('88867810492864','MSZQ479172ROAZV319',6545.83),
 	 ('60253571608867','XNAD818074LLTKA239',9335.96),
 	 ('98849241455904','JQZT915689CYPCL082',1130.85);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('96843713152423','JEAW964376ENJRA467',2480.98),
 	 ('50708448789758','QASQ393587SJHZX190',6379.83),
@@ -19033,6 +20292,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('70968066184524','CFCI496212CZWUZ242',3262.45),
 	 ('27138770461374','FYCZ612209EWAOZ696',1673.18),
 	 ('25496986435061','RVLK304169HPADE239',9257.58);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('63198394306388','GBJV059580IWWRC253',6968.61),
 	 ('51609622089343','BUER697369DVSIS960',9011.76),
@@ -19044,6 +20304,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('99236531716141','CGRY130869ZNGWA592',9908.64),
 	 ('33858743155685','NWOA646536BXTTQ655',5530.74),
 	 ('92239782895240','FJDA017588TJKVM441',5195.28);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('51300851520146','BDRS917078DPTGO621',4602.14),
 	 ('84027572895621','ALZD451505QCAUW905',4069.46),
@@ -19055,6 +20316,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('86772567985591','FHTF212758PHGYW714',1916.77),
 	 ('63360491426997','UCXS474325LJRLB564',457.12),
 	 ('16466862811143','TDDV493330EKYBH290',8287.01);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('36939716667896','WUIK891032KCBEP439',8780.96),
 	 ('60573477603405','CTZB666543OWKSU419',1654.10),
@@ -19066,6 +20328,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('24803358825848','LHDJ328800XUKDX785',7882.52),
 	 ('43112303875553','EGVO458057YOIQY349',8561.97),
 	 ('95147621514393','GBOW502260NNTQU321',1802.79);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('58601412901810','QZAF010893VKIFR424',9460.10),
 	 ('87746219537702','HIJN495412LYZOY427',361.54),
@@ -19077,6 +20340,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('09851920385794','GCBW848066OZOTU929',2411.64),
 	 ('46708252463700','FWLS008186DPOIE216',305.56),
 	 ('94922808928733','KUFP681382UBHVA527',5056.80);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('63070399103525','LPIB168590PNILG461',8519.05),
 	 ('86675697748649','NCBF011554FUFFR129',8587.79),
@@ -19088,6 +20352,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('46899513983020','OSZX707963DJUQB784',5554.31),
 	 ('27764148677053','WFUR170890JDWCN210',6462.51),
 	 ('88309488563017','PPCE201086CLLYE095',5429.52);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('06513206043035','EGUW411750KQVBO408',2694.55),
 	 ('72395057783425','KRLR671154YLYYB663',6467.26),
@@ -19099,6 +20364,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('24543257290001','KLCV047115DFQSY844',5731.45),
 	 ('31736098738016','AZAN283480VFQKB256',97.70),
 	 ('91045238261175','QAYB559434ONSRK810',862.03);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('42607961646075','JYJI076122TOLRF768',8237.58),
 	 ('99511506023680','XDAX034790OVBFM656',3200.04),
@@ -19110,6 +20376,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('06508170038371','WRZM289448IIGLB647',5351.99),
 	 ('11239693821042','KWGH589787GTVOK078',8386.53),
 	 ('48536694282276','EOUF161726KVUUX248',1577.07);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('91096407772082','XDOH174036DUPIZ990',9850.39),
 	 ('48818518998501','PNIC318017GFIDD203',4951.44),
@@ -19121,6 +20388,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('05980977081800','IPCU869971CMFCE357',9594.17),
 	 ('45117298982104','RXNX715545JAWJV589',6262.37),
 	 ('50182658841791','MGDW074391CRFVS939',4861.09);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('52306197443410','TJBW007678XHCJG640',5651.76),
 	 ('10075214591513','GVOJ770921TJRLC006',7600.66),
@@ -19132,6 +20400,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('71733561030019','MFZG808195ZZMPD968',1043.53),
 	 ('56546297870924','IVRD025938SMCCI225',4992.40),
 	 ('21067892652091','JRFE892151UIDIF947',3179.11);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('19156990198195','JOFN694177OVGBT559',2599.53),
 	 ('35448165428861','NDIP509196IIEVA618',6301.03),
@@ -19143,6 +20412,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('76450582502585','WPIU694096ADQIR938',5988.74),
 	 ('93371788941047','TMDX842355QXQUA049',5856.15),
 	 ('45511302826325','FYXV957352SBPOO534',9381.32);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('72759727558777','VSUK205827BHJUO008',1332.15),
 	 ('84695949078360','MKKV313054HGUNK458',5896.89),
@@ -19154,6 +20424,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('23423620632170','DNCE312460KAMVF087',8785.63),
 	 ('05621903809155','YZYG136120BDDFM354',7900.38),
 	 ('58927692888821','FGCM162053UQFTK428',677.24);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('20947700781103','GECA899501FYNLU891',7769.74),
 	 ('60002572295747','CIEL679995BZLDV074',6024.28),
@@ -19165,6 +20436,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('39548532979439','JGWD774437VEEAU244',5278.80),
 	 ('57651721933899','YJKX121341BMFCS407',2496.23),
 	 ('90042324704819','NDAV589408YESKF026',708.26);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('92817145854719','KWZW515336UALVL127',4359.95),
 	 ('31590119036384','YTZI468566MJLOJ631',7998.40),
@@ -19176,6 +20448,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('64196349222969','QKXC841656ALYVF084',1235.87),
 	 ('86368624568871','EAHT905435NAWSO219',6633.26),
 	 ('84756187023583','MQSH703106XMYKS213',3161.14);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('61119856838338','CXRY319525SUNPS206',7706.03),
 	 ('17483121582420','ASSD875008RRPEH551',3866.15),
@@ -19187,6 +20460,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('83875127447991','JKRY819039MSYWC692',7341.94),
 	 ('05176046529398','QLOR127774QUYGQ297',9852.95),
 	 ('02598941105442','KAKK458967RRXKH015',4006.43);
+
 INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('03600765085920','SZPF456303JFUOE404',7772.46),
 	 ('15193690204286','PDLC191363NNEVX617',140.89),
@@ -19197,7 +20471,8 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 ('26307737194077','IIAV834762NSZMZ270',9938.42),
 	 ('76570747974371','XWEJ943539HVJCI341',8470.01),
 	 ('22985299769765','UVCR139836CINSZ005',9878.65),
-	 ('14996602433750','PPBX435558UULMG097',3693.73);INSERT INTO public.has (id_purchase,invoice) VALUES
+	 ('14996602433750','PPBX435558UULMG097',3693.73);
+INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (932,456),
 	 (914,154),
 	 (338,638),
@@ -19208,6 +20483,7 @@ INSERT INTO public.ewallet (ewallet_number,curp,balance) VALUES
 	 (493,262),
 	 (438,418),
 	 (703,667);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (75,977),
 	 (28,189),
@@ -19219,6 +20495,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (444,566),
 	 (963,17),
 	 (775,648);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (768,41),
 	 (348,875),
@@ -19230,6 +20507,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (113,495),
 	 (696,413),
 	 (16,773);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (284,668),
 	 (813,22),
@@ -19241,6 +20519,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (64,10),
 	 (656,950),
 	 (66,857);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (632,933),
 	 (571,973),
@@ -19252,6 +20531,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (25,949),
 	 (162,608),
 	 (48,644);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (595,813),
 	 (928,257),
@@ -19263,6 +20543,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (35,723),
 	 (653,10),
 	 (152,929);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (918,940),
 	 (456,17),
@@ -19274,6 +20555,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (563,404),
 	 (101,428),
 	 (852,377);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (608,306),
 	 (707,527),
@@ -19285,6 +20567,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (600,791),
 	 (54,150),
 	 (251,572);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (984,509),
 	 (81,128),
@@ -19296,6 +20579,7 @@ INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (44,930),
 	 (339,903),
 	 (959,186);
+
 INSERT INTO public.has (id_purchase,invoice) VALUES
 	 (93,524),
 	 (816,182),
