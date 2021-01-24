@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS person(
   	first_lastname  VARCHAR(100) 	NOT NULL,
   	second_lastname VARCHAR(100) 	NOT NULL,
   	gender          GENDER 				NOT NULL,
- 	phone           	VARCHAR(13)  	NOT NULL,
+ 		phone           VARCHAR(13)  	NOT NULL,
   	street          VARCHAR(100) 	NOT NULL,
   	email           VARCHAR(100) 	NOT NULL,
   	zip_code        CHAR(5)  			NOT NULL,
