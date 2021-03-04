@@ -1,1 +1,0 @@
-javac -cp gson-2.8.6.jar Main.java && java -cp gson-2.8.6.jar:. Main
